@@ -1,0 +1,654 @@
+{
+  "acquisitionMetadata": [
+    {
+      "channelNames": [
+        "PLCA.PLCA1.SHZ",
+        "PLCA.PLCAB.BHZ",
+        "PLCA.PLCAB.BHN",
+        "PLCA.PLCAB.BHE"
+      ],
+      "waveformSummaries": {
+        "PLCA.PLCA1.SHZ": {
+          "channelName": "PLCA.PLCA1.SHZ",
+          "startTime": "2020-01-23T23:45:19.597Z",
+          "endTime": "2020-01-23T23:45:29.572Z"
+        },
+        "PLCA.PLCAB.BHE": {
+          "channelName": "PLCA.PLCAB.BHE",
+          "startTime": "2020-01-23T23:45:19.597Z",
+          "endTime": "2020-01-23T23:45:29.572Z"
+        },
+        "PLCA.PLCAB.BHN": {
+          "channelName": "PLCA.PLCAB.BHN",
+          "startTime": "2020-01-23T23:45:19.597Z",
+          "endTime": "2020-01-23T23:45:29.572Z"
+        },
+        "PLCA.PLCAB.BHZ": {
+          "channelName": "PLCA.PLCAB.BHZ",
+          "startTime": "2020-01-23T23:45:19.597Z",
+          "endTime": "2020-01-23T23:45:29.572Z"
+        }
+      },
+      "payloadStartTime": "2020-01-23T23:45:19.597Z",
+      "payloadEndTime": "2020-01-23T23:45:29.597Z",
+      "receptionTime": "2020-01-23T23:45:59.909454Z",
+      "payloadFormat": "CD11",
+      "authenticationStatus": "NOT_YET_AUTHENTICATED",
+      "stationName": "PLCA"
+    }
+  ],
+  "acquiredChannelEnvironmentIssues": [
+    {
+      "id": "b6e00a04-5cbe-4df9-a482-e950b665ac72",
+      "channelName": "PLCA.PLCA1.SHZ",
+      "type": "DEAD_SENSOR_CHANNEL",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "7f2f8b1e-47ac-4399-82c7-018eff16e00a",
+      "channelName": "PLCA.PLCA1.SHZ",
+      "type": "ZEROED_DATA",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "21e0ac53-4cd4-4fd4-b68e-846d55134cbd",
+      "channelName": "PLCA.PLCA1.SHZ",
+      "type": "CLIPPED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "1fef93b9-3530-4fee-91e6-1ff2cf045b27",
+      "channelName": "PLCA.PLCA1.SHZ",
+      "type": "CALIBRATION_UNDERWAY",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "65e2d5b2-1cf5-41f2-9cba-0f4beeb2e66a",
+      "channelName": "PLCA.PLCA1.SHZ",
+      "type": "EQUIPMENT_HOUSING_OPEN",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "3d5328d2-f5b4-413a-8249-6c522e795800",
+      "channelName": "PLCA.PLCA1.SHZ",
+      "type": "DIGITIZING_EQUIPMENT_OPEN",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "f8af380f-523a-47ec-867f-a64702ee24dd",
+      "channelName": "PLCA.PLCA1.SHZ",
+      "type": "VAULT_DOOR_OPENED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "9624ba22-eba0-4658-bcd8-938890ba5793",
+      "channelName": "PLCA.PLCA1.SHZ",
+      "type": "AUTHENTICATION_SEAL_BROKEN",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "e1242b49-4ae6-40e0-b74c-4f658074c74e",
+      "channelName": "PLCA.PLCA1.SHZ",
+      "type": "EQUIPMENT_MOVED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "3ff08c83-bd31-4511-b1f2-9622639187b1",
+      "channelName": "PLCA.PLCA1.SHZ",
+      "type": "CLOCK_DIFFERENTIAL_TOO_LARGE",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "d12129ad-587e-47ed-8d38-c9bbb3293d83",
+      "channelName": "PLCA.PLCA1.SHZ",
+      "type": "GPS_RECEIVER_OFF",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "01e1efd3-b5b7-4310-b696-74576a043d41",
+      "channelName": "PLCA.PLCA1.SHZ",
+      "type": "GPS_RECEIVER_UNLOCKED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "0e1d05eb-a151-42c1-b1c0-1ad934477c74",
+      "channelName": "PLCA.PLCA1.SHZ",
+      "type": "DIGITIZER_ANALOG_INPUT_SHORTED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "9ec25327-9a32-4fc2-a403-7294614a3796",
+      "channelName": "PLCA.PLCA1.SHZ",
+      "type": "DIGITIZER_CALIBRATION_LOOP_BACK",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "131f63a6-0473-4041-9ed1-2fe2319a63f6",
+      "channelName": "PLCA.PLCA1.SHZ",
+      "type": "MAIN_POWER_FAILURE",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "4cc354a0-d2c3-4487-b78d-6cf749ca892b",
+      "channelName": "PLCA.PLCA1.SHZ",
+      "type": "BACKUP_POWER_UNSTABLE",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "157bc3bb-1f06-4d9c-a7f1-2b026bcb5277",
+      "channelName": "PLCA.PLCA1.SHZ",
+      "type": "CLOCK_DIFFERENTIAL_IN_MICROSECONDS",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": 0.0,
+      "valueType": "analog"
+    },
+    {
+      "id": "99e4d41f-08f0-49d7-95f1-6cb7178f41e1",
+      "channelName": "PLCA.PLCAB.BHZ",
+      "type": "DEAD_SENSOR_CHANNEL",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "871697e6-2771-4173-a352-6b83f61a8806",
+      "channelName": "PLCA.PLCAB.BHZ",
+      "type": "ZEROED_DATA",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "25b1bce9-9aef-4068-b47f-3581dcb6ff5a",
+      "channelName": "PLCA.PLCAB.BHZ",
+      "type": "CLIPPED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "eb6ff2b3-3bf4-403d-9c2b-ea0dc1cb25a4",
+      "channelName": "PLCA.PLCAB.BHZ",
+      "type": "CALIBRATION_UNDERWAY",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "98869727-0714-4194-8a28-771fcc891175",
+      "channelName": "PLCA.PLCAB.BHZ",
+      "type": "EQUIPMENT_HOUSING_OPEN",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "7ed4d178-fe94-4f28-8ec9-f7d6864d6afc",
+      "channelName": "PLCA.PLCAB.BHZ",
+      "type": "DIGITIZING_EQUIPMENT_OPEN",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "5227199d-33df-4d51-bfcc-8ace13530148",
+      "channelName": "PLCA.PLCAB.BHZ",
+      "type": "VAULT_DOOR_OPENED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "29138175-88ce-4d93-ad32-49e8f9f5921f",
+      "channelName": "PLCA.PLCAB.BHZ",
+      "type": "AUTHENTICATION_SEAL_BROKEN",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "0f78be12-03ab-43a6-b9fa-3a63cb8a03ed",
+      "channelName": "PLCA.PLCAB.BHZ",
+      "type": "EQUIPMENT_MOVED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "f9d0daed-a755-4965-8add-59f81b40091d",
+      "channelName": "PLCA.PLCAB.BHZ",
+      "type": "CLOCK_DIFFERENTIAL_TOO_LARGE",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "0028ab27-abcf-424c-81b5-ca150ad08a47",
+      "channelName": "PLCA.PLCAB.BHZ",
+      "type": "GPS_RECEIVER_OFF",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "0632cd77-80be-4bd4-aa3e-3de34ca0be92",
+      "channelName": "PLCA.PLCAB.BHZ",
+      "type": "GPS_RECEIVER_UNLOCKED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "24dfb89b-d148-4338-8ed1-800f14e5d248",
+      "channelName": "PLCA.PLCAB.BHZ",
+      "type": "DIGITIZER_ANALOG_INPUT_SHORTED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "3bc3d8d4-a901-477e-883a-3b6fd59f9d8d",
+      "channelName": "PLCA.PLCAB.BHZ",
+      "type": "DIGITIZER_CALIBRATION_LOOP_BACK",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "2ede9201-87f8-4a0e-b827-abb6e9d41545",
+      "channelName": "PLCA.PLCAB.BHZ",
+      "type": "MAIN_POWER_FAILURE",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "b659cd89-de2e-404f-b440-42fd05ee9d1a",
+      "channelName": "PLCA.PLCAB.BHZ",
+      "type": "BACKUP_POWER_UNSTABLE",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "73820102-808b-44d0-8687-b203022635b7",
+      "channelName": "PLCA.PLCAB.BHZ",
+      "type": "CLOCK_DIFFERENTIAL_IN_MICROSECONDS",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": 0.0,
+      "valueType": "analog"
+    },
+    {
+      "id": "e6a93489-2ebf-43b9-a294-686ad095b968",
+      "channelName": "PLCA.PLCAB.BHN",
+      "type": "DEAD_SENSOR_CHANNEL",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "dc845b67-a69b-4343-9226-d462f4c67401",
+      "channelName": "PLCA.PLCAB.BHN",
+      "type": "ZEROED_DATA",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "b57a5f83-57f9-458d-826c-b5b2a2959907",
+      "channelName": "PLCA.PLCAB.BHN",
+      "type": "CLIPPED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "c9c63dd3-984f-4b55-b04a-81662a8e9eb1",
+      "channelName": "PLCA.PLCAB.BHN",
+      "type": "CALIBRATION_UNDERWAY",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "a3ef830c-8b71-41dd-b3e5-9907f730e75f",
+      "channelName": "PLCA.PLCAB.BHN",
+      "type": "EQUIPMENT_HOUSING_OPEN",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "48030807-ab1b-40d4-acd4-b0e8df210b0a",
+      "channelName": "PLCA.PLCAB.BHN",
+      "type": "DIGITIZING_EQUIPMENT_OPEN",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "501a9505-7e63-4255-8980-666588ee6dc6",
+      "channelName": "PLCA.PLCAB.BHN",
+      "type": "VAULT_DOOR_OPENED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "d8f7694b-b80c-4d47-a32c-522e0887cf08",
+      "channelName": "PLCA.PLCAB.BHN",
+      "type": "AUTHENTICATION_SEAL_BROKEN",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "86b651c1-4809-4837-aa03-8090f2ac953b",
+      "channelName": "PLCA.PLCAB.BHN",
+      "type": "EQUIPMENT_MOVED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "60d7c929-7fa1-4a38-9074-94770fb5ea8f",
+      "channelName": "PLCA.PLCAB.BHN",
+      "type": "CLOCK_DIFFERENTIAL_TOO_LARGE",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "9edbaa36-f495-4c05-a5e5-18bc9c21eb7a",
+      "channelName": "PLCA.PLCAB.BHN",
+      "type": "GPS_RECEIVER_OFF",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "6c6dc138-bd5b-4678-9bda-da185f1ff20d",
+      "channelName": "PLCA.PLCAB.BHN",
+      "type": "GPS_RECEIVER_UNLOCKED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "e0dfc19c-6b17-4537-90da-bda0ceb0768b",
+      "channelName": "PLCA.PLCAB.BHN",
+      "type": "DIGITIZER_ANALOG_INPUT_SHORTED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "506e4f18-7fd2-44aa-9902-d07e6392dda2",
+      "channelName": "PLCA.PLCAB.BHN",
+      "type": "DIGITIZER_CALIBRATION_LOOP_BACK",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "282d58f1-765a-4ebe-8ba6-c0ce7748af5e",
+      "channelName": "PLCA.PLCAB.BHN",
+      "type": "MAIN_POWER_FAILURE",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "b80d929e-5248-4d9c-9279-7bd4ca4abe4a",
+      "channelName": "PLCA.PLCAB.BHN",
+      "type": "BACKUP_POWER_UNSTABLE",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "79499ee2-0a58-44f6-bdbe-1a4132b2ede5",
+      "channelName": "PLCA.PLCAB.BHN",
+      "type": "CLOCK_DIFFERENTIAL_IN_MICROSECONDS",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": 0.0,
+      "valueType": "analog"
+    },
+    {
+      "id": "142fe788-ea9a-4726-9981-47eb2c7e2391",
+      "channelName": "PLCA.PLCAB.BHE",
+      "type": "DEAD_SENSOR_CHANNEL",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "d8a6bd60-bf8e-47a0-9eed-9166e7980499",
+      "channelName": "PLCA.PLCAB.BHE",
+      "type": "ZEROED_DATA",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "f722d9d4-5ab0-440c-aee9-4ac298af4c2b",
+      "channelName": "PLCA.PLCAB.BHE",
+      "type": "CLIPPED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "aa82a5c7-8a6a-4150-91b7-2f311cb5be1b",
+      "channelName": "PLCA.PLCAB.BHE",
+      "type": "CALIBRATION_UNDERWAY",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "8b8e7414-50e3-48a3-9c58-71283a5fc595",
+      "channelName": "PLCA.PLCAB.BHE",
+      "type": "EQUIPMENT_HOUSING_OPEN",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "42e44ac8-f8a1-4b1a-bcfb-933159fa7179",
+      "channelName": "PLCA.PLCAB.BHE",
+      "type": "DIGITIZING_EQUIPMENT_OPEN",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "bae12314-986a-46b1-bac9-70a7ab9ec9c5",
+      "channelName": "PLCA.PLCAB.BHE",
+      "type": "VAULT_DOOR_OPENED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "b7e35e23-f0e5-4afb-8491-0f5ec31591d6",
+      "channelName": "PLCA.PLCAB.BHE",
+      "type": "AUTHENTICATION_SEAL_BROKEN",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "b09911b0-dab4-4f4f-bf91-5f05060426de",
+      "channelName": "PLCA.PLCAB.BHE",
+      "type": "EQUIPMENT_MOVED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "6b780272-be6c-4756-bfbe-3443af3e6859",
+      "channelName": "PLCA.PLCAB.BHE",
+      "type": "CLOCK_DIFFERENTIAL_TOO_LARGE",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "1fe1ba66-7ab0-4c2f-8b40-82c6a8197900",
+      "channelName": "PLCA.PLCAB.BHE",
+      "type": "GPS_RECEIVER_OFF",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "78904d9c-603b-451a-9720-c765e55d1bb6",
+      "channelName": "PLCA.PLCAB.BHE",
+      "type": "GPS_RECEIVER_UNLOCKED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "102a960e-8e82-4891-bcae-53498a4939de",
+      "channelName": "PLCA.PLCAB.BHE",
+      "type": "DIGITIZER_ANALOG_INPUT_SHORTED",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "8b555d63-8635-47a7-a1f9-9b646256d934",
+      "channelName": "PLCA.PLCAB.BHE",
+      "type": "DIGITIZER_CALIBRATION_LOOP_BACK",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "12fd6776-0ca8-46f9-ba46-01f5cc1f1926",
+      "channelName": "PLCA.PLCAB.BHE",
+      "type": "MAIN_POWER_FAILURE",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "dad6875f-6137-4709-be1f-b992ab126e7b",
+      "channelName": "PLCA.PLCAB.BHE",
+      "type": "BACKUP_POWER_UNSTABLE",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": false,
+      "valueType": "boolean"
+    },
+    {
+      "id": "21ebf9ea-ee8a-46b0-974d-98e55087b29f",
+      "channelName": "PLCA.PLCAB.BHE",
+      "type": "CLOCK_DIFFERENTIAL_IN_MICROSECONDS",
+      "startTime": "2020-01-23T23:45:19.597Z",
+      "endTime": "2020-01-23T23:45:29.572Z",
+      "status": 0.0,
+      "valueType": "analog"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+#!/bin/bash
+
+# ------------------------------------------------------------------------------
+#
+# This script is used to push release Docker images to a remote registry.
+# Detailed instructions for running this script are on the Release Process page
+# of the GMS wiki.
+#
+# Dependencies: curl, jq
+#
+# Command line arguments:
+#
+#   --source-registry: Source Docker registry hostname (mandatory)
+#
+#   --target-registry: Target Docker registry hostname (mandatory)
+#
+#   --api-key: API key to use when querying the source registry (mandatory)
+#
+#   --tag: Docker image tag to export (mandatory)
+#
+# Example usage:
+#
+#   ./push-release-images --source-registry gms-docker-registry.example.com --target-registry artifactory.example.com --api-key xxxxxxxxxx --tag 1-15-1-0
+#
+# ------------------------------------------------------------------------------
+
+set -eu
+
+# Parse command line arguments
+while [ $# -gt 0 ]; do
+    case "$1" in
+      --source-registry)
+          # Extract the user supplied value and shift the command line by 2 (to skip over flag and value)
+          SOURCE_REGISTRY=$2
+          shift 2
+          ;;
+      --target-registry)
+          TARGET_REGISTRY=$2
+          shift 2
+          ;;
+      --api-key)
+          API_KEY=$2
+          shift 2
+          ;;
+      --tag|--branch)
+          TAG=$2
+          shift 2
+          ;;
+      --)
+          # Command line is done so break out
+          break
+          ;;
+      *)
+          # Error out on any other unexpected arguments
+          echo "ERROR: Unexpected argument: $1"
+          exit 1
+          ;;
+    esac
+done
+
+# Check that all mandatory arguments were provided, and exit if not
+args_ok=1
+if [[ -z "${SOURCE_REGISTRY}" ]]; then
+    echo "ERROR: Mandatory argument --source-registry must be provided specifying the source Docker registry hostname"
+    args_ok=0
+fi
+if [[ -z "${TARGET_REGISTRY}" ]]; then
+    echo "ERROR: Mandatory argument --target-registry must be provided specifying the target Docker registry hostname"
+    args_ok=0
+fi
+if [[ -z "${API_KEY}" ]]; then
+    echo "ERROR: Mandatory argument --api-key must be provided specifying the API key to use when querying the source registry"
+    args_ok=0
+fi
+if [[ -z "${TAG}" ]]; then
+    echo "ERROR: Mandatory argument --tag must be provided specifying the Docker image tag to export"
+    args_ok=0
+fi
+if [[ "${args_ok}" == "0" ]]; then
+    exit 1
+fi
+
+echo Querying source registry ${SOURCE_REGISTRY} for tag ${TAG}...
+
+# Query list of Docker images tagged with $TAG on the $SOURCE_REGISTRY
+IMAGES=$(curl --stderr /dev/null -H 'Content-Type:text/plain' -H "X-JFrog-Art-Api: $API_KEY" -X POST https://${SOURCE_REGISTRY}:443/artifactory/api/search/aql -d '
+items.find(
+  {
+    "$and":[
+      {"name":{"$eq":"manifest.json"}},
+      {"@docker.manifest":{"$match":"'"$TAG"'"}},
+      {"repo":{"$eq":"sandbox_docker_local"}}
+    ]
+  }
+).include("@docker.repoName")' | jq -r '.results[].properties[] | select(.key=="docker.repoName") | .value' | sort)
+
+num_images=$(echo "$IMAGES" | wc -w | sed 's/ //g')
+echo "Found ${num_images} images tagged with ${TAG}."
+
+for image in $IMAGES; do
+    source_image="${SOURCE_REGISTRY}/${image}:${TAG}"
+    target_image="${TARGET_REGISTRY}/${image}:${TAG}"
+
+    echo "Pull/tag/push ${source_image} ---> ${target_image}..."
+    docker pull ${source_image}
+    docker tag ${source_image} ${target_image}
+    docker push ${target_image}
+done

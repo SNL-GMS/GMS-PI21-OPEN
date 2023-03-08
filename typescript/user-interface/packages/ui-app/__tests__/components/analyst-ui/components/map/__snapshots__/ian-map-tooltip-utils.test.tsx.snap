@@ -1,0 +1,417 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ian map tooltip utils ianMapStationTooltipLabel should match snapshot 1`] = `
+Entity {
+  "_availability": undefined,
+  "_billboard": undefined,
+  "_billboardSubscription": undefined,
+  "_box": undefined,
+  "_boxSubscription": undefined,
+  "_children": Array [],
+  "_corridor": undefined,
+  "_corridorSubscription": undefined,
+  "_cylinder": undefined,
+  "_cylinderSubscription": undefined,
+  "_definitionChanged": Event {
+    "_insideRaiseEvent": false,
+    "_listeners": Array [],
+    "_scopes": Array [],
+    "_toRemove": Array [],
+  },
+  "_description": undefined,
+  "_descriptionSubscription": undefined,
+  "_ellipse": undefined,
+  "_ellipseSubscription": undefined,
+  "_ellipsoid": undefined,
+  "_ellipsoidSubscription": undefined,
+  "_id": "hoverLabelEntity",
+  "_label": LabelGraphics {
+    "_backgroundColor": undefined,
+    "_backgroundColorSubscription": undefined,
+    "_backgroundPadding": undefined,
+    "_backgroundPaddingSubscription": undefined,
+    "_definitionChanged": Event {
+      "_insideRaiseEvent": false,
+      "_listeners": Array [
+        [Function],
+      ],
+      "_scopes": Array [
+        [Circular],
+      ],
+      "_toRemove": Array [],
+    },
+    "_disableDepthTestDistance": undefined,
+    "_disableDepthTestDistanceSubscription": undefined,
+    "_distanceDisplayCondition": undefined,
+    "_distanceDisplayConditionSubscription": undefined,
+    "_eyeOffset": ConstantProperty {
+      "_definitionChanged": Event {
+        "_insideRaiseEvent": false,
+        "_listeners": Array [
+          [Function],
+        ],
+        "_scopes": Array [
+          [Circular],
+        ],
+        "_toRemove": Array [],
+      },
+      "_hasClone": true,
+      "_hasEquals": true,
+      "_value": Cartesian3 {
+        "x": 0,
+        "y": 0,
+        "z": -50,
+      },
+    },
+    "_eyeOffsetSubscription": [Function],
+    "_fillColor": undefined,
+    "_fillColorSubscription": undefined,
+    "_font": ConstantProperty {
+      "_definitionChanged": Event {
+        "_insideRaiseEvent": false,
+        "_listeners": Array [
+          [Function],
+        ],
+        "_scopes": Array [
+          [Circular],
+        ],
+        "_toRemove": Array [],
+      },
+      "_hasClone": false,
+      "_hasEquals": false,
+      "_value": "14px undefined",
+    },
+    "_fontSubscription": [Function],
+    "_heightReference": undefined,
+    "_heightReferenceSubscription": undefined,
+    "_horizontalOrigin": undefined,
+    "_horizontalOriginSubscription": undefined,
+    "_outlineColor": undefined,
+    "_outlineColorSubscription": undefined,
+    "_outlineWidth": undefined,
+    "_outlineWidthSubscription": undefined,
+    "_pixelOffset": ConstantProperty {
+      "_definitionChanged": Event {
+        "_insideRaiseEvent": false,
+        "_listeners": Array [
+          [Function],
+        ],
+        "_scopes": Array [
+          [Circular],
+        ],
+        "_toRemove": Array [],
+      },
+      "_hasClone": true,
+      "_hasEquals": true,
+      "_value": Cartesian2 {
+        "x": 15,
+        "y": 0,
+      },
+    },
+    "_pixelOffsetScaleByDistance": undefined,
+    "_pixelOffsetScaleByDistanceSubscription": undefined,
+    "_pixelOffsetSubscription": [Function],
+    "_scale": undefined,
+    "_scaleByDistance": undefined,
+    "_scaleByDistanceSubscription": undefined,
+    "_scaleSubscription": undefined,
+    "_show": ConstantProperty {
+      "_definitionChanged": Event {
+        "_insideRaiseEvent": false,
+        "_listeners": Array [
+          [Function],
+        ],
+        "_scopes": Array [
+          [Circular],
+        ],
+        "_toRemove": Array [],
+      },
+      "_hasClone": false,
+      "_hasEquals": false,
+      "_value": false,
+    },
+    "_showBackground": ConstantProperty {
+      "_definitionChanged": Event {
+        "_insideRaiseEvent": false,
+        "_listeners": Array [
+          [Function],
+        ],
+        "_scopes": Array [
+          [Circular],
+        ],
+        "_toRemove": Array [],
+      },
+      "_hasClone": false,
+      "_hasEquals": false,
+      "_value": true,
+    },
+    "_showBackgroundSubscription": [Function],
+    "_showSubscription": [Function],
+    "_style": undefined,
+    "_styleSubscription": undefined,
+    "_text": ConstantProperty {
+      "_definitionChanged": Event {
+        "_insideRaiseEvent": false,
+        "_listeners": Array [
+          [Function],
+        ],
+        "_scopes": Array [
+          [Circular],
+        ],
+        "_toRemove": Array [],
+      },
+      "_hasClone": false,
+      "_hasEquals": false,
+      "_value": "loading",
+    },
+    "_textSubscription": [Function],
+    "_translucencyByDistance": undefined,
+    "_translucencyByDistanceSubscription": undefined,
+    "_verticalOrigin": ConstantProperty {
+      "_definitionChanged": Event {
+        "_insideRaiseEvent": false,
+        "_listeners": Array [
+          [Function],
+        ],
+        "_scopes": Array [
+          [Circular],
+        ],
+        "_toRemove": Array [],
+      },
+      "_hasClone": false,
+      "_hasEquals": false,
+      "_value": 0,
+    },
+    "_verticalOriginSubscription": [Function],
+  },
+  "_labelSubscription": [Function],
+  "_model": undefined,
+  "_modelSubscription": undefined,
+  "_name": undefined,
+  "_orientation": undefined,
+  "_orientationSubscription": undefined,
+  "_parent": undefined,
+  "_path": undefined,
+  "_pathSubscription": undefined,
+  "_plane": undefined,
+  "_planeSubscription": undefined,
+  "_point": undefined,
+  "_pointSubscription": undefined,
+  "_polygon": undefined,
+  "_polygonSubscription": undefined,
+  "_polyline": undefined,
+  "_polylineSubscription": undefined,
+  "_polylineVolume": undefined,
+  "_polylineVolumeSubscription": undefined,
+  "_position": undefined,
+  "_positionSubscription": undefined,
+  "_properties": undefined,
+  "_propertiesSubscription": undefined,
+  "_propertyNames": Array [
+    "billboard",
+    "box",
+    "corridor",
+    "cylinder",
+    "description",
+    "ellipse",
+    "ellipsoid",
+    "label",
+    "model",
+    "tileset",
+    "orientation",
+    "path",
+    "plane",
+    "point",
+    "polygon",
+    "polyline",
+    "polylineVolume",
+    "position",
+    "properties",
+    "rectangle",
+    "viewFrom",
+    "wall",
+  ],
+  "_rectangle": undefined,
+  "_rectangleSubscription": undefined,
+  "_show": true,
+  "_tileset": undefined,
+  "_tilesetSubscription": undefined,
+  "_viewFrom": undefined,
+  "_viewFromSubscription": undefined,
+  "_wall": undefined,
+  "_wallSubscription": undefined,
+  "entityCollection": undefined,
+}
+`;
+
+exports[`Ian map tooltip utils ianMapTooltipHandleAltClick should handle updating the labels for an event 1`] = `undefined`;
+
+exports[`Ian map tooltip utils ianMapTooltipHandleMouseMove should handle updating the labels for a Channel Group 1`] = `
+Object {
+  "id": "hoverLabelEntity",
+  "label": Object {
+    "backgroundColor": Object {
+      "_value": Object {
+        "alpha": 0,
+      },
+      "getValue": [MockFunction],
+    },
+    "backgroundPadding": Object {
+      "_value": Cartesian2 {
+        "x": 7.15,
+        "y": 4,
+      },
+      "getValue": [MockFunction],
+    },
+    "fillColor": Object {
+      "_value": Object {
+        "alpha": 0,
+      },
+      "getValue": [MockFunction],
+    },
+    "font": Object {
+      "_value": "10px undefined",
+      "getValue": [MockFunction],
+    },
+    "scale": Object {
+      "_value": 1.4,
+      "getValue": [MockFunction],
+    },
+    "show": Object {
+      "_value": true,
+      "getValue": [MockFunction],
+    },
+    "text": Object {
+      "_value": "AAK0",
+      "getValue": [MockFunction],
+    },
+  },
+  "position": Object {
+    "x": 1,
+    "y": 2,
+    "z": 3,
+  },
+}
+`;
+
+exports[`Ian map tooltip utils ianMapTooltipHandleMouseMove should handle updating the labels for a Station 1`] = `
+Object {
+  "id": "hoverLabelEntity",
+  "label": Object {
+    "show": Object {
+      "_value": false,
+      "getValue": [MockFunction],
+    },
+    "text": "default",
+  },
+}
+`;
+
+exports[`Ian map tooltip utils ianMapTooltipHandleMouseMove should handle updating the labels for a Station 2`] = `
+Object {
+  "id": "hoverLabelEntity",
+  "label": Object {
+    "backgroundColor": Object {
+      "_value": Object {
+        "alpha": 0,
+      },
+      "getValue": [MockFunction],
+    },
+    "backgroundPadding": Object {
+      "_value": Cartesian2 {
+        "x": 7.15,
+        "y": 4,
+      },
+      "getValue": [MockFunction],
+    },
+    "fillColor": Object {
+      "_value": Object {
+        "alpha": 0,
+      },
+      "getValue": [MockFunction],
+    },
+    "font": Object {
+      "_value": "10px undefined",
+      "getValue": [MockFunction],
+    },
+    "scale": Object {
+      "_value": 1.4,
+      "getValue": [MockFunction],
+    },
+    "show": Object {
+      "_value": true,
+      "getValue": [MockFunction],
+    },
+    "text": Object {
+      "_value": "AAK",
+      "getValue": [MockFunction],
+    },
+  },
+  "position": Object {
+    "x": 1,
+    "y": 2,
+    "z": 3,
+  },
+}
+`;
+
+exports[`Ian map tooltip utils ianMapTooltipHandleMouseMove should handle updating the labels for a signal detection 1`] = `
+Object {
+  "id": "hoverLabelEntity",
+  "label": Object {
+    "show": Object {
+      "_value": true,
+      "getValue": [MockFunction],
+    },
+    "text": Object {
+      "_value": "P-station",
+      "getValue": [MockFunction],
+    },
+  },
+  "position": mockConstructor {},
+}
+`;
+
+exports[`Ian map tooltip utils ianMapTooltipHandleMouseMove should handle updating the labels for an Event 1`] = `
+Object {
+  "id": "hoverLabelEntity",
+  "label": Object {
+    "backgroundColor": Object {
+      "_value": Object {
+        "alpha": 0,
+      },
+      "getValue": [MockFunction],
+    },
+    "backgroundPadding": Object {
+      "_value": Cartesian2 {
+        "x": 7.15,
+        "y": 4,
+      },
+      "getValue": [MockFunction],
+    },
+    "fillColor": Object {
+      "_value": Object {
+        "alpha": 0,
+      },
+      "getValue": [MockFunction],
+    },
+    "font": Object {
+      "_value": "10px undefined",
+      "getValue": [MockFunction],
+    },
+    "scale": Object {
+      "_value": 1.4,
+      "getValue": [MockFunction],
+    },
+    "show": Object {
+      "_value": true,
+      "getValue": [MockFunction],
+    },
+    "text": Object {
+      "_value": "00:00:00.000",
+      "getValue": [MockFunction],
+    },
+  },
+  "position": mockConstructor {},
+}
+`;

@@ -1,0 +1,12 @@
+{
+  "lerna": "3.19.0",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "packages": ["packages/*"],
+  "command": {
+    "run": {
+      "ignore": ["@gms/golden-layout"]
+    }
+  },
+  "version": "independent"
+}

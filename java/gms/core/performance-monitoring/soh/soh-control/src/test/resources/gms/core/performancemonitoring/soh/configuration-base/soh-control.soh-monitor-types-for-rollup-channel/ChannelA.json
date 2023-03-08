@@ -1,0 +1,21 @@
+{
+  "name": "ChannelA",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "ChannelName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "ChannelA"
+      ]
+    }
+  ],
+  "parameters": {
+    "sohMonitorTypesForRollup": [
+      "LAG"
+    ]
+  }
+}

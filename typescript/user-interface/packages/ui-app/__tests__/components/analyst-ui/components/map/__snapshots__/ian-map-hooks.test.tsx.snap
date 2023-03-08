@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ui map call useMapNonPreferredEventData 1`] = `Array []`;
+
+exports[`ui map call useMapPreferredEventData 1`] = `
+Array [
+  Object {
+    "activeAnalysts": Array [],
+    "confidenceSemiMajorAxis": undefined,
+    "confidenceSemiMajorAxisTrend": undefined,
+    "confidenceSemiMinorAxis": undefined,
+    "conflict": false,
+    "coverageSemiMajorAxis": undefined,
+    "coverageSemiMajorAxisTrend": undefined,
+    "coverageSemiMinorAxis": undefined,
+    "depthKm": 3.3,
+    "edgeEventType": "After",
+    "id": "eventID",
+    "isOpen": false,
+    "latitudeDegrees": 1.1,
+    "longitudeDegrees": 2.2,
+    "magnitudeMb": 1.2,
+    "magnitudeMl": undefined,
+    "magnitudeMs": undefined,
+    "preferred": "TBD",
+    "region": "TBD",
+    "rejected": "False",
+    "status": undefined,
+    "time": 3600,
+  },
+  Object {
+    "activeAnalysts": Array [],
+    "confidenceSemiMajorAxis": undefined,
+    "confidenceSemiMajorAxisTrend": undefined,
+    "confidenceSemiMinorAxis": undefined,
+    "conflict": false,
+    "coverageSemiMajorAxis": undefined,
+    "coverageSemiMajorAxisTrend": undefined,
+    "coverageSemiMinorAxis": undefined,
+    "depthKm": 3.3,
+    "edgeEventType": "After",
+    "id": "eventID",
+    "isOpen": false,
+    "latitudeDegrees": 1.1,
+    "longitudeDegrees": 2.2,
+    "magnitudeMb": 1.2,
+    "magnitudeMl": undefined,
+    "magnitudeMs": undefined,
+    "preferred": "TBD",
+    "region": "TBD",
+    "rejected": "False",
+    "status": undefined,
+    "time": 3600,
+  },
+]
+`;

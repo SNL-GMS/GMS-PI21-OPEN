@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Core drop down Renders 1`] = `
+<div>
+  <div
+    class="filterable-option-list"
+  >
+    <input
+      class="filterable-option-list__search"
+      placeholder="Search input"
+      style="width: 120px; margin-left: 0px;"
+      tabindex="0"
+      type="search"
+      value="o"
+    />
+    <div
+      class="filterable-option-list__list"
+      style="width: 120px; margin-left: 0px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Core drop down accepts enter key 1`] = `
+Object {
+  "currentFilter": "delta",
+  "currentlySelected": "delta",
+}
+`;

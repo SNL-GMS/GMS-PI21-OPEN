@@ -1,0 +1,281 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`workflow operations should close a stage interval 1`] = `Array []`;
+
+exports[`workflow operations should close an activity and remove selected 1`] = `
+Array [
+  Object {
+    "payload": null,
+    "type": "analyst/setSelectedFilterList",
+  },
+  Object {
+    "payload": Array [
+      "3",
+    ],
+    "type": "workflow/setOpenActivityNames",
+  },
+]
+`;
+
+exports[`workflow operations should close an activity and remove selected 2`] = `
+Array [
+  Object {
+    "payload": null,
+    "type": "analyst/setSelectedFilterList",
+  },
+  Object {
+    "payload": Array [
+      "3",
+    ],
+    "type": "workflow/setOpenActivityNames",
+  },
+  Object {
+    "payload": Object {
+      "endTimeSecs": undefined,
+      "startTimeSecs": undefined,
+    },
+    "type": "workflow/setTimeRange",
+  },
+  Object {
+    "payload": undefined,
+    "type": "analyst/setEffectiveNowTime",
+  },
+  Object {
+    "payload": null,
+    "type": "analyst/setSelectedFilterList",
+  },
+  Object {
+    "payload": Array [],
+    "type": "analyst/setSelectedSdIds",
+  },
+  Object {
+    "payload": undefined,
+    "type": "analyst/setOpenEventId",
+  },
+  Object {
+    "payload": Array [],
+    "type": "analyst/setSelectedEventIds",
+  },
+  Object {
+    "payload": Array [],
+    "type": "analyst/setSdIdsToShowFk",
+  },
+  Object {
+    "payload": "Default",
+    "type": "analyst/setMode",
+  },
+  Object {
+    "payload": Object {},
+    "type": "analyst/setMeasurementModeEntries",
+  },
+  Object {
+    "payload": "Station: A-Z",
+    "type": "analyst/setSelectedSortType",
+  },
+  Object {
+    "payload": undefined,
+    "type": "workflow/setStationGroup",
+  },
+  Object {
+    "payload": undefined,
+    "type": "workflow/setOpenIntervalName",
+  },
+  Object {
+    "payload": Array [],
+    "type": "workflow/setOpenActivityNames",
+  },
+  Object {
+    "payload": undefined,
+    "type": "workflow/setAnalysisMode",
+  },
+  Object {
+    "payload": Array [],
+    "type": "common/setSelectedStationIds",
+  },
+  Object {
+    "payload": Object {},
+    "type": "waveform/setStationsVisibility",
+  },
+  Object {
+    "payload": null,
+    "type": "waveform/setViewableInterval",
+  },
+  Object {
+    "payload": null,
+    "type": "waveform/setZoomInterval",
+  },
+  Object {
+    "payload": undefined,
+    "type": "eventManagerApi/resetApiState",
+  },
+  Object {
+    "payload": undefined,
+    "type": "waveform/resetLoading",
+  },
+  Object {
+    "payload": undefined,
+    "type": "data/clearAll",
+  },
+]
+`;
+
+exports[`workflow operations should close an interval activity 1`] = `Array []`;
+
+exports[`workflow operations should open an interval 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "endTimeSecs": undefined,
+      "startTimeSecs": undefined,
+    },
+    "type": "workflow/setTimeRange",
+  },
+  Object {
+    "payload": undefined,
+    "type": "analyst/setEffectiveNowTime",
+  },
+  Object {
+    "payload": null,
+    "type": "analyst/setSelectedFilterList",
+  },
+  Object {
+    "payload": Array [],
+    "type": "analyst/setSelectedSdIds",
+  },
+  Object {
+    "payload": undefined,
+    "type": "analyst/setOpenEventId",
+  },
+  Object {
+    "payload": Array [],
+    "type": "analyst/setSelectedEventIds",
+  },
+  Object {
+    "payload": Array [],
+    "type": "analyst/setSdIdsToShowFk",
+  },
+  Object {
+    "payload": "Default",
+    "type": "analyst/setMode",
+  },
+  Object {
+    "payload": Object {},
+    "type": "analyst/setMeasurementModeEntries",
+  },
+  Object {
+    "payload": "Station: A-Z",
+    "type": "analyst/setSelectedSortType",
+  },
+  Object {
+    "payload": undefined,
+    "type": "workflow/setStationGroup",
+  },
+  Object {
+    "payload": undefined,
+    "type": "workflow/setOpenIntervalName",
+  },
+  Object {
+    "payload": Array [],
+    "type": "workflow/setOpenActivityNames",
+  },
+  Object {
+    "payload": undefined,
+    "type": "workflow/setAnalysisMode",
+  },
+  Object {
+    "payload": Array [],
+    "type": "common/setSelectedStationIds",
+  },
+  Object {
+    "payload": Object {},
+    "type": "waveform/setStationsVisibility",
+  },
+  Object {
+    "payload": null,
+    "type": "waveform/setViewableInterval",
+  },
+  Object {
+    "payload": null,
+    "type": "waveform/setZoomInterval",
+  },
+  Object {
+    "payload": undefined,
+    "type": "eventManagerApi/resetApiState",
+  },
+  Object {
+    "payload": undefined,
+    "type": "waveform/resetLoading",
+  },
+  Object {
+    "payload": undefined,
+    "type": "data/clearAll",
+  },
+  Object {
+    "payload": null,
+    "type": "analyst/setSelectedFilterList",
+  },
+  Object {
+    "payload": Object {
+      "endTimeSecs": 2,
+      "startTimeSecs": 1,
+    },
+    "type": "workflow/setTimeRange",
+  },
+  Object {
+    "payload": Object {
+      "description": "description",
+      "effectiveAt": 1,
+      "name": "name",
+    },
+    "type": "workflow/setStationGroup",
+  },
+  Object {
+    "payload": "1",
+    "type": "workflow/setOpenIntervalName",
+  },
+  Object {
+    "payload": Array [
+      "2",
+    ],
+    "type": "workflow/setOpenActivityNames",
+  },
+  Object {
+    "payload": "SCAN",
+    "type": "workflow/setAnalysisMode",
+  },
+]
+`;
+
+exports[`workflow operations should open an interval with no change 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "endTimeSecs": 2,
+      "startTimeSecs": 1,
+    },
+    "type": "workflow/setTimeRange",
+  },
+  Object {
+    "payload": Object {
+      "description": "description",
+      "effectiveAt": 1,
+      "name": "name",
+    },
+    "type": "workflow/setStationGroup",
+  },
+  Object {
+    "payload": "1",
+    "type": "workflow/setOpenIntervalName",
+  },
+  Object {
+    "payload": Array [
+      "2",
+    ],
+    "type": "workflow/setOpenActivityNames",
+  },
+  Object {
+    "payload": "SCAN",
+    "type": "workflow/setAnalysisMode",
+  },
+]
+`;

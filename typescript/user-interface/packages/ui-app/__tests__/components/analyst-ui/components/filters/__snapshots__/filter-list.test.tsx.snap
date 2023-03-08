@@ -1,0 +1,249 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterList matches a non ideal state snapshot when given no filter list 1`] = `
+<div
+  className="bp4-non-ideal-state"
+>
+  <h4
+    className="bp4-heading"
+  >
+    Filter List
+  </h4>
+  <div>
+    No filter lists found
+  </div>
+</div>
+`;
+
+exports[`FilterList matches a snapshot 1`] = `
+<section
+  className="filter-list__container filter-list__container--scrollable"
+  onBlur={[Function]}
+  onFocusCapture={[Function]}
+  onKeyDown={[Function]}
+  role="menu"
+  style={
+    Object {
+      "--active-text-color": "#668668",
+    }
+  }
+  tabIndex={-1}
+>
+  <h6
+    className="bp4-heading filter-list__header"
+  >
+    Filters
+  </h6>
+  <ol
+    className="filter-list"
+  >
+    <li
+      className="filter-list-entry filter-list-entry--selected"
+      onClick={[Function]}
+      role="button"
+      tabIndex={-1}
+    >
+      <span
+        aria-hidden={true}
+        className="bp4-icon bp4-icon-star filter-list-entry__icon filter-list-entry__button"
+        icon="star"
+        onClick={[Function]}
+      >
+        <svg
+          data-icon="star"
+          height={16}
+          viewBox="0 0 16 16"
+          width={16}
+        >
+          <path
+            d="M8 0l2.5 5.3 5.5.8-4 4.1.9 5.8L8 13.3 3.1 16l.9-5.8-4-4.1 5.5-.8z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </span>
+      <span
+        aria-haspopup="true"
+        className="filter-list-entry__tooltip-wrapper bp4-popover2-target"
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <div
+          className="filter-list-entry__title"
+          tabIndex={0}
+        >
+          filter def name 1
+          <span
+            aria-haspopup="true"
+            className="filter-list-entry__info filter-list-entry__icon bp4-popover2-target"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <span
+              aria-hidden={true}
+              className="bp4-icon bp4-icon-info-sign"
+              icon="info-sign"
+              tabIndex={0}
+            >
+              <svg
+                data-icon="info-sign"
+                height={16}
+                viewBox="0 0 16 16"
+                width={16}
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM7 3h2v2H7V3zm3 10H6v-1h1V7H6V6h3v6h1v1z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </span>
+        </div>
+      </span>
+    </li>
+    <li
+      className="filter-list-entry"
+      onClick={[Function]}
+      role="button"
+      tabIndex={-1}
+    >
+      <span
+        aria-hidden={true}
+        className="bp4-icon bp4-icon-star-empty filter-list-entry__icon filter-list-entry__button filter-list-entry__button--hidden"
+        icon="star-empty"
+        onClick={[Function]}
+      >
+        <svg
+          data-icon="star-empty"
+          height={16}
+          viewBox="0 0 16 16"
+          width={16}
+        >
+          <path
+            d="M16 6.11l-5.53-.84L8 0 5.53 5.27 0 6.11l4 4.1L3.06 16 8 13.27 12.94 16 12 10.21l4-4.1zM4.91 13.2l.59-3.62L3 7.02l3.45-.53L8 3.2l1.55 3.29 3.45.53-2.5 2.56.59 3.62L8 11.49 4.91 13.2z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </span>
+      <span
+        aria-haspopup="true"
+        className="filter-list-entry__tooltip-wrapper bp4-popover2-target"
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <div
+          className="filter-list-entry__title"
+          tabIndex={0}
+        >
+          filter def name 1
+          <span
+            aria-haspopup="true"
+            className="filter-list-entry__info filter-list-entry__icon bp4-popover2-target"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <span
+              aria-hidden={true}
+              className="bp4-icon bp4-icon-info-sign"
+              icon="info-sign"
+              tabIndex={0}
+            >
+              <svg
+                data-icon="info-sign"
+                height={16}
+                viewBox="0 0 16 16"
+                width={16}
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM7 3h2v2H7V3zm3 10H6v-1h1V7H6V6h3v6h1v1z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </span>
+        </div>
+      </span>
+    </li>
+    <li
+      className="filter-list-entry"
+      onClick={[Function]}
+      role="button"
+      tabIndex={-1}
+    >
+      <span
+        aria-hidden={true}
+        className="bp4-icon bp4-icon-star filter-list-entry__icon filter-list-entry__button"
+        icon="star"
+        onClick={[Function]}
+      >
+        <svg
+          data-icon="star"
+          height={16}
+          viewBox="0 0 16 16"
+          width={16}
+        >
+          <path
+            d="M8 0l2.5 5.3 5.5.8-4 4.1.9 5.8L8 13.3 3.1 16l.9-5.8-4-4.1 5.5-.8z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </span>
+      <span
+        aria-haspopup="true"
+        className="filter-list-entry__tooltip-wrapper bp4-popover2-target"
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <div
+          className="filter-list-entry__title"
+          tabIndex={0}
+        >
+          Unfiltered
+          <span
+            aria-haspopup="true"
+            className="filter-list-entry__info filter-list-entry__icon bp4-popover2-target"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <span
+              aria-hidden={true}
+              className="bp4-icon bp4-icon-info-sign"
+              icon="info-sign"
+              tabIndex={0}
+            >
+              <svg
+                data-icon="info-sign"
+                height={16}
+                viewBox="0 0 16 16"
+                width={16}
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM7 3h2v2H7V3zm3 10H6v-1h1V7H6V6h3v6h1v1z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </span>
+        </div>
+      </span>
+    </li>
+  </ol>
+</section>
+`;

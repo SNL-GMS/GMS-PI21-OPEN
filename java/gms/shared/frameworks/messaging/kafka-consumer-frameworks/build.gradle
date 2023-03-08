@@ -1,0 +1,23 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+    // Gradle sub-project dependencies.
+    api project(':frameworks-service-generator')
+    implementation project(':frameworks-osd-commonobjects')
+    implementation project(':frameworks-osd-api')
+    implementation project(':frameworks-osd-repository')
+    implementation project(':flux-frameworks')
+
+    api libs.io.projectreactor.reactor.core
+    api 'io.projectreactor.kafka:reactor-kafka:1.3.9'
+    api project(':kafka-utilities')
+
+    // Google AutoValue
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    testImplementation libs.io.projectreactor.reactor.test
+    testImplementation libs.ch.qos.logback.logback.classic
+}

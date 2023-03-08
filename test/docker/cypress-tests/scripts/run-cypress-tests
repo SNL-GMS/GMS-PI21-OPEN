@@ -1,0 +1,22 @@
+#!/bin/bash
+
+source pre-test "dist"
+
+if [ -z "${CYPRESS_BASE_URL}" ]; then
+    echo "ERROR: Variable 'CYPRESS_BASE_URL' must be set to the external URL of the UI under test."
+    exit 1
+fi
+if [ -z "${CYPRESS_COMMAND}" ]; then
+    echo "ERROR: Variable 'CYPRESS_COMMAND' must be set to the yarn command to run."
+    exit 1
+fi
+echo "RUNNING: ${CYPRESS_COMMAND}" | tee -a ${TESTRUN_OUTPUT}
+${CYPRESS_COMMAND} | tee -a ${TESTRUN_OUTPUT}
+test_exit_status=${PIPESTATUS[0]}
+yarn report | tee -a ${TESTRUN_OUTPUT}
+# correct the line coverage paths for sonar qube analysis
+echo "Correcting paths for the code coverage lcov file ${RESULTS_PATH}/coverage/lcov.info for sonarqube"
+sed -i -E 's/(\.\.\/)+builds\//\/builds\//g' ${RESULTS_PATH}/coverage/lcov.info
+
+source post-test
+exit 0

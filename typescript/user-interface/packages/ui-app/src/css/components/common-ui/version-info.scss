@@ -1,0 +1,7 @@
+.version-info {
+  color: var(--gms-soft, $gms-soft);
+  font-family: $gms-mono;
+  &:hover {
+    color: var(--gms-prominent, $gms-prominent);
+  }
+}

@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SOH Station Group matches a snapshot when given proper props 1`] = `
+<div
+  className="resizer quadra-grid-cell soh-overview-table__wrapper"
+  data-cy="soh-overview-group-Group 4"
+  style={
+    Object {
+      "height": 400,
+      "maxHeight": 800,
+    }
+  }
+>
+  <div
+    className="divider-container"
+  >
+    <div
+      className="top-component"
+      style={
+        Object {
+          "height": "200px",
+          "minHeight": 145,
+        }
+      }
+    >
+      <div
+        className="soh-overview-table"
+      >
+        <div
+          className="soh-overview-group-header__container"
+          data-cy="soh-overview-header"
+        >
+          <div
+            className="soh-overview-group-header__network"
+            data-capability-status="bad"
+            data-cy="soh-overview-group-header__network"
+            title="Total station count for this group: 4"
+          >
+            Group 4
+          </div>
+          <div
+            className="soh-overview-group-header__count--bad soh-overview-group-header__count"
+            data-cy="soh-overview-group-header__count--bad"
+          >
+            0
+          </div>
+          <div
+            className="soh-overview-group-header__count--marginal soh-overview-group-header__count"
+            data-cy="soh-overview-group-header__count--marginal"
+          >
+            1
+          </div>
+          <div
+            className="soh-overview-group-header__count--good soh-overview-group-header__count"
+            data-cy="soh-overview-group-header__count--good"
+          >
+            3
+          </div>
+        </div>
+        <div
+          className="soh-overview-table__bin soh-overview-table__bin--top"
+        >
+          <div
+            className="soh-table-label"
+          >
+            Needs Attention
+          </div>
+          <div
+            className="soh-overview-cell__container"
+            data-cy="soh-unacknowledged"
+          >
+            <div
+              draggable={true}
+              onDragEnd={[Function]}
+              onDragStart={[Function]}
+            >
+              <div
+                className="soh-overview-cell
+          soh-overview-cell--draggable
+          soh-overview-cell--selected
+        "
+                data-cy="soh-overview-cell"
+                data-cy-status="GOOD"
+                data-soh-status="good"
+                data-station-id="H05N"
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                tabIndex={0}
+                title="Capability Rollup - GOOD"
+              >
+                H05N
+              </div>
+            </div>
+            <div
+              draggable={true}
+              onDragEnd={[Function]}
+              onDragStart={[Function]}
+            >
+              <div
+                className="soh-overview-cell
+          soh-overview-cell--draggable
+          
+        "
+                data-cy="soh-overview-cell"
+                data-cy-status="GOOD"
+                data-soh-status="good"
+                data-station-id="H06N"
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                tabIndex={0}
+                title="Capability Rollup - GOOD"
+              >
+                H06N
+                <div
+                  className="soh-cell__right-container"
+                  data-capability-status="marginal"
+                  data-cy="soh-worst-of-badge"
+                  style={
+                    Object {
+                      "width": 30,
+                    }
+                  }
+                >
+                  <img
+                    alt="MARGINAL"
+                    className="badge"
+                    height="16.88"
+                    src="test-file-stub"
+                    title="Worst of Rollup - MARGINAL"
+                    width="18.996"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              draggable={true}
+              onDragEnd={[Function]}
+              onDragStart={[Function]}
+            >
+              <div
+                className="soh-overview-cell
+          soh-overview-cell--draggable
+          
+        "
+                data-cy="soh-overview-cell"
+                data-cy-status="GOOD"
+                data-soh-status="good"
+                data-station-id="H07N"
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                tabIndex={0}
+                title="Capability Rollup - GOOD"
+              >
+                H07N
+                <div
+                  className="soh-cell__right-container"
+                  data-capability-status="bad"
+                  data-cy="soh-worst-of-badge"
+                  style={
+                    Object {
+                      "width": 30,
+                    }
+                  }
+                >
+                  <img
+                    alt="BAD"
+                    className="badge"
+                    height="23"
+                    src="test-file-stub"
+                    title="Worst of Rollup - BAD"
+                    width="17.583"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              draggable={true}
+              onDragEnd={[Function]}
+              onDragStart={[Function]}
+            >
+              <div
+                className="soh-overview-cell
+          soh-overview-cell--draggable
+          
+        "
+                data-cy="soh-overview-cell"
+                data-cy-status="MARGINAL"
+                data-soh-status="marginal"
+                data-station-id="H08N"
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                tabIndex={0}
+                title="Capability Rollup - MARGINAL"
+              >
+                H08N
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="horizontal-divider"
+      onMouseDown={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      onMouseUp={[Function]}
+    >
+      <div
+        className="horizontal-divider__target"
+      />
+      <div
+        className="horizontal-divider__spacer"
+      />
+      <svg
+        className="resize-handle"
+        height="7"
+        viewBox="0 0 18 7"
+        width="18"
+      >
+        <title>
+          Resize
+        </title>
+        <g
+          className="resize-handle-group"
+          data-name="resize-handle-group"
+        >
+          <rect
+            height="7"
+            rx="1"
+            width="2"
+          />
+          <rect
+            height="7"
+            rx="1"
+            width="2"
+            x="4"
+          />
+          <rect
+            height="7"
+            rx="1"
+            width="2"
+            x="8"
+          />
+          <rect
+            height="7"
+            rx="1"
+            width="2"
+            x="12"
+          />
+          <rect
+            height="7"
+            rx="1"
+            width="2"
+            x="16"
+          />
+        </g>
+      </svg>
+      <div
+        className="horizontal-divider__spacer"
+      />
+    </div>
+    <div
+      className="bottom-component"
+      style={
+        Object {
+          "height": "1px",
+          "minHeight": 110,
+        }
+      }
+    >
+      <div
+        className="soh-overview-table"
+      >
+        <div
+          className="soh-overview-table__bin soh-overview-table__bin--bottom"
+          data-cy="soh-acknowledged"
+        >
+          <div
+            className="drop-zone
+          
+          soh-overview-table__drop-zone soh-overview-cell__container
+                  soh-overview-table__drop-zone--highlighted"
+            onDragOver={[Function]}
+            onDrop={[Function]}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="resizer__handle resizer__handle--height resizer__handle--bottom"
+  />
+  <div
+    className="resizer__sensor resizer__sensor--bottom"
+    onMouseDown={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+</div>
+`;

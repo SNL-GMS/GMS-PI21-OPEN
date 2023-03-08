@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weavess PickMarker Marker renders 1`] = `
+<div>
+  <div
+    class="pick-marker pick-marker--selectable"
+    style="--pick-marker-color: #ff000;"
+  >
+    <div
+      class="pick-marker__vertical"
+      data-cy-predicted="pick-marker-pick-predicted-false"
+      style="left: 8%; filter: none;"
+    />
+    <div
+      class="pick-marker__label pick-marker__label--top"
+      data-cy="pick-marker-my-id"
+      data-cy-color="pick-marker-#ff000"
+      data-cy-is-predicted-phase="false"
+      data-cy-phase="my pick marker"
+      data-cy-style-left="8"
+      style="left: calc(4px + 8%); filter: none; cursor: pointer;"
+    >
+      my pick marker
+    </div>
+  </div>
+</div>
+`;

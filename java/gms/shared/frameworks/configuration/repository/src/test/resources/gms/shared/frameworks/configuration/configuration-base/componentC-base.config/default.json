@@ -1,0 +1,46 @@
+[
+{
+  "name": "baz-default1",
+  "constraints": [
+  {
+    "constraintType": "DEFAULT"
+  }, {
+    "constraintType": "STRING",
+    "criterion": "name",
+    "operator": {
+      "type": "EQ",
+      "negated": false
+    },
+    "value": [ "foo" ],
+    "priority": 100
+  }
+  ],
+  "parameters": {
+    "numeric": 4.4,
+    "string": "fooString",
+    "binary": true
+  }
+},
+{
+  "name": "baz-default2",
+  "constraints": [
+  {
+    "constraintType": "DEFAULT"
+  }, {
+    "constraintType": "STRING",
+    "criterion": "type",
+    "operator": {
+      "type": "EQ",
+      "negated": false
+    },
+    "value": [ "baz" ],
+    "priority": 100
+  }
+  ],
+  "parameters": {
+    "numeric": 4.4,
+    "string": "fooString",
+    "binary": true
+  }
+}
+]

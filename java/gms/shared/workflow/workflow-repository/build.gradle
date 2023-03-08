@@ -1,0 +1,25 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+    api project(':workflow-api')
+    api project(':workflow-coi')
+    implementation project(':workflow-dao')
+    implementation project(':bridge-utilities')
+    implementation project(':java-utilities')
+    implementation project(':spring-framework-utilities')
+
+    implementation libs.org.hibernate.hibernate.entitymanager
+    implementation libs.javax.persistence.javax.persistence.api
+    implementation libs.org.springframework.boot.spring.boot.starter.web
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+
+    // Testing.
+    testImplementation project(':station-definition-testfixtures')
+    testImplementation project(':db-test-utils')
+    testImplementation(testFixtures(project(':workflow-coi')))
+
+    testImplementation libs.org.testcontainers.testcontainers
+    testImplementation libs.com.h2database.h2
+}

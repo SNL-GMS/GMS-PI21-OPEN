@@ -1,0 +1,16 @@
+I50H1  BDF       2005104     2865  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090116 12:00:00
+I50H1  LDA       2005104     2873  2286324 n       0.0000   -1.0   -1.0 Absolute_Pressure                                  20090116 12:00:00
+I50H1  LKO       2005104     2874  2286324 n       0.0000   -1.0   -1.0 External_temperature                               20090116 12:00:00
+I50H1  LWD       2005104     2875  2286324 n       0.0000   -1.0   -1.0 Wind_Direction                                     20090116 12:00:00
+I50H1  LWS       2005104     2876  2286324 n       0.0000   -1.0   -1.0 Wind_speed                                         20090116 12:00:00
+I50H2  BDF       2005104     2866  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090116 12:00:00
+I50H3  BDF       2005104     2867  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090116 12:00:00
+I50H4  BDF       2005104     2868  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090116 12:00:00
+I50H5  BDF       2017285     8468  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20171024 12:00:00
+I50H6  BDF       2017285     8469  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20171024 12:00:00
+I50H7  BDF       2017285     8470  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20171024 12:00:00
+I50H8  BDF       2017285     8471  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20171024 12:00:00
+I50L1  BDF       2005104     2869  2017284 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20171024 12:00:00
+I50L2  BDF       2005104     2870  2017284 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20171024 12:00:00
+I50L3  BDF       2005104     2871  2017284 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20171024 12:00:00
+I50L4  BDF       2005104     2872  2017284 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20171024 12:00:00

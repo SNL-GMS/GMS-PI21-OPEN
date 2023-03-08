@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SwitchToolbarItem SwitchToolbarItem renders directly 1`] = `
+<div>
+  <div
+    class="toolbar-switch"
+    title="Switch tooltip"
+  >
+    <div
+      class="toolbar-switch-label"
+    >
+      Switch Label:
+    </div>
+    <label
+      class="bp4-control bp4-switch bp4-large toolbar-switch__blueprint switch-label"
+    >
+      <input
+        checked=""
+        title="Switch tooltip"
+        type="checkbox"
+      />
+      <span
+        class="bp4-control-indicator"
+      />
+    </label>
+  </div>
+</div>
+`;

@@ -1,0 +1,7 @@
+*
+!setup.py
+!gmskube
+!_deploy
+!_container-wallet
+!environment.lock.yml
+!docker-entrypoint.sh

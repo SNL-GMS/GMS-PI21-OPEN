@@ -1,0 +1,105 @@
+dependencies.constraints {
+
+// ---- Test Dependencies ----
+    implementation libs.org.junit.jupiter.junit.jupiter.api
+    implementation libs.org.junit.jupiter.junit.jupiter.params
+    implementation libs.org.junit.jupiter.junit.jupiter.engine
+    implementation libs.org.junit.jupiter.junit.jupiter.base
+
+    implementation libs.org.assertj.assertj.core
+
+    testImplementation libs.org.jmockit
+    testImplementation libs.org.mockito.mockito.core
+    testImplementation libs.org.mockito.mockito.inline
+    testImplementation libs.org.mockito.mockito.junit.jupiter
+
+    testImplementation libs.io.projectreactor.reactor.test
+    implementation libs.io.projectreactor.tools.blockhound
+
+    testImplementation libs.com.h2database.h2
+    testImplementation libs.com.google.auto.value.auto.value.annotations
+    testImplementation libs.com.github.tomakehurst.wiremock.jre8
+
+    testImplementation libs.javax.json.javax.json.api
+
+    implementation(libs.nl.jqno.equalsverifier) {
+        because 'leveraged by testing-related subprojects'
+    }
+
+// Testcontainers dependencies (implementation to allow as library)
+    implementation libs.org.testcontainers.testcontainers
+    implementation libs.org.testcontainers.junit.jupiter
+    implementation libs.org.testcontainers.postgresql
+    implementation libs.org.testcontainers.kafka
+
+// Docker Java dependencies
+    implementation libs.com.github.docker.java.docker.java.base
+    implementation libs.com.github.docker.java.docker.java.core
+    implementation libs.com.github.docker.java.docker.java.transport.httpclient5
+
+// ---- Compile/Runtime Dependencies ----
+
+// Annotation Processing
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+    testAnnotationProcessor libs.com.google.auto.value.auto.value.base
+    implementation libs.com.google.auto.value.auto.value.annotations
+
+// OSD/Persistence dependencies
+    implementation libs.org.hibernate.hibernate.c3p0
+    implementation libs.org.hibernate.hibernate.core
+    implementation libs.org.hibernate.hibernate.entitymanager
+    implementation libs.org.postgresql.postgresql
+    implementation libs.com.oracle.ojdbc.ojdbc8
+    implementation libs.com.vladmihalcea.hibernate.types52
+    implementation libs.org.hibernate.hibernate.ehcache
+
+// Misc 3rd Party dependencies
+    implementation libs.args4j.args4j
+    implementation libs.com.fasterxml.jackson.core.jackson.databind
+    implementation libs.com.fasterxml.jackson.datatype.jackson.datatype.guava
+    implementation libs.com.fasterxml.jackson.datatype.jackson.datatype.jdk8
+    implementation libs.com.fasterxml.jackson.datatype.jackson.datatype.jsr310
+    implementation libs.com.fasterxml.jackson.dataformat.jackson.dataformat.yaml
+    implementation libs.com.github.ffpojo.ffpojo
+    implementation libs.com.google.guava.guava
+    implementation libs.io.etcd.jetcd.core
+    implementation libs.commons.io.commons.io
+    implementation libs.io.swagger.core.v3.swagger.core
+    implementation libs.javax.cache.cache.api
+    implementation libs.javax.persistence.javax.persistence.api
+    implementation libs.javax.ws.rs.javax.ws.rs.api
+    implementation libs.javax.xml.bind.jaxb.api
+    implementation libs.net.jodah.failsafe
+    implementation libs.org.apache.commons.commons.lang3
+    implementation libs.org.apache.commons.commons.math3
+    implementation libs.org.apache.commons.commons.text
+    implementation libs.commons.cli.commons.cli
+
+    implementation libs.org.apache.kafka.kafka.clients
+    implementation libs.org.apache.httpcomponents.httpclient
+    implementation libs.org.apache.logging.log4j.log4j.core
+    implementation libs.org.apache.logging.log4j.log4j.slf4j.impl
+    implementation libs.org.apache.logging.log4j.log4j.to.slf4j
+    implementation libs.org.slf4j.slf4j.api
+    implementation libs.org.msgpack.jackson.dataformat.msgpack
+    implementation libs.org.quartz.scheduler.quartz
+    implementation libs.org.yaml.snakeyaml
+
+// reactor and reactor dependencies
+    implementation libs.io.projectreactor.reactor.core
+    implementation libs.io.projectreactor.reactor.tools
+    implementation libs.io.projectreactor.kafka.reactor.kafka
+    implementation libs.io.projectreactor.netty.reactor.netty
+    implementation libs.io.micrometer.micrometer.core
+
+// ignite dependencies
+    implementation libs.org.apache.ignite.ignite.core
+    implementation libs.org.apache.ignite.ignite.slf4j
+    implementation libs.org.apache.ignite.ignite.kubernetes
+    implementation libs.org.apache.ignite.ignite.visor.console
+
+// logback dependencies
+    implementation libs.ch.qos.logback.logback.classic
+    implementation libs.net.logstash.logback.logstash.logback.encoder
+    implementation libs.org.owasp.encoder.encoder
+}

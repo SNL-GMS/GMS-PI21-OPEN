@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weavess Vertical Marker shallow renders as left marker 1`] = `
+<div>
+  <div
+    class="uncertainty-marker"
+  >
+    <div
+      class="uncertainty-marker--vertical"
+      style="border-left: 1.5px solid #ff0000; left: 90%; box-shadow: initial;"
+    />
+    <div
+      class="uncertainty-marker--horizontal"
+      style="border-top: 1.5px solid #ff0000; left: 90%; width: 2%; box-shadow: initial;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Weavess Vertical Marker shallow renders as right marker 1`] = `
+<div>
+  <div
+    class="uncertainty-marker"
+  >
+    <div
+      class="uncertainty-marker--vertical"
+      style="border-left: 1.5px solid #ff0000; left: 90%; box-shadow: initial;"
+    />
+    <div
+      class="uncertainty-marker--horizontal"
+      style="border-top: 1.5px solid #ff0000; left: 92%; width: 2%; box-shadow: initial;"
+    />
+  </div>
+</div>
+`;

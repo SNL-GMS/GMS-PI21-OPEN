@@ -1,0 +1,38 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+
+    implementation project(':station-definition-dao')
+    implementation project(':station-definition-repository')
+    implementation project(':station-definition-accessor')
+    implementation project(':station-definition-testfixtures')
+    implementation project(':structured-logging')
+    implementation project(':bridge-utilities')
+    implementation project(':spring-framework-utilities')
+    implementation libs.org.hibernate.hibernate.entitymanager
+    implementation libs.com.google.auto.value.auto.value.annotations
+    implementation libs.org.apache.commons.commons.lang3
+    implementation project(':caching-utils')
+
+    api project(':waveform-coi')
+    api project(':waveform-api')
+    api project(':waveform-converter')
+
+    implementation libs.org.apache.ignite.ignite.core
+    implementation libs.org.apache.ignite.ignite.slf4j
+
+    implementation libs.org.springframework.boot.spring.boot.starter.web
+
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    testImplementation project(':test-utils')
+    testImplementation project(':station-definition-testfixtures')
+    testImplementation project(':waveform-testfixtures')
+}
+configurations {
+    all {
+        exclude group: 'org.apache.logging.log4j', module: 'log4j-slf4j-impl'
+    }
+}
+

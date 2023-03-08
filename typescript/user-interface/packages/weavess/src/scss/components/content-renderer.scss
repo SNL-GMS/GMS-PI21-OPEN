@@ -1,0 +1,56 @@
+.contentrenderer {
+  display: flex;
+  height: inherit;
+  flex: 1 1 auto;
+  &:focus {
+    outline: none;
+  }
+  border-right: 1px solid;
+
+  .contentrenderer-content {
+    position: absolute;
+    height: inherit;
+    width: calc(100% - 184px);
+    overflow: hidden;
+
+    &--sticky {
+      position: sticky;
+      width: calc(100vw - 184px);
+      left: 184px;
+      right: 0;
+      overflow: unset;
+    }
+
+    &-description-label {
+      display: flex;
+      text-align: right;
+      height: 100%;
+      width: 100%;
+      bottom: 0px;
+      margin-left: auto;
+      font-size: 0.7rem;
+      white-space: nowrap;
+    }
+    &__description {
+      padding-right: 6px;
+      margin-left: auto;
+      margin-top: auto;
+    }
+
+    &-drag-indicator {
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      border-left: 1px solid red;
+      display: none;
+    }
+
+    &-markers {
+      pointer-events: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+    }
+  }
+}

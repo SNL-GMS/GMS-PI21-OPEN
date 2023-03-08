@@ -1,0 +1,58 @@
+.ag-theme-dark--soh {
+  border-radius: $cell-cap-radius;
+
+  .ag-header {
+    background: transparent;
+  }
+
+  .ag-header-cell {
+    .ag-react-container {
+      width: 100%;
+    }
+  }
+  .ag-header-viewport {
+    background-color: var(--gms-prominent-background, $gms-prominent-background);
+  }
+
+  .ag-row {
+    overflow: hidden;
+    border-radius: $cell-cap-radius;
+  }
+
+  .ag-ltr .ag-cell:not(.ag-cell-focus).ag-cell-last-left-pinned,
+  .ag-ltr .ag-row.ag-cell-last-left-pinned,
+  .ag-horizontal-left-spacer {
+    border-right: none;
+  }
+
+  &:not(.table--cell-selection-only) {
+    .ag-row-hover .ag-cell {
+      @include brighten;
+    }
+  }
+  &.table--cell-selection-only {
+    .ag-cell:hover {
+      @include brighten;
+    }
+  }
+
+  // TODO: Make this dynamic so it doesn't expect a fixed
+  // number of columns
+  .ag-row-selected {
+    .ag-cell .table-cell {
+      box-sizing: border-box;
+      @include selectedBorder('top', 'bottom');
+    }
+    .ag-cell[aria-colindex='1'] .table-cell {
+      @include selectedBorder('left');
+    }
+    .ag-cell .table-cell[data-col-position='last'] {
+      @include selectedBorder('right');
+    }
+  }
+
+  .ag-body-viewport,
+  .ag-root-wrapper {
+    background: transparent;
+  }
+}

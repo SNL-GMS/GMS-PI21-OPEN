@@ -1,0 +1,11 @@
+[
+  {
+    "id": "5c3558d0-c53e-3d95-bf75-d1f6fd43b731",
+    "stationId": "6bdc9cc8-daf5-3f8b-b9bd-bf8eca93311a",
+    "networkId": "8668fcbc-6378-3d45-9294-3b212c40bba0",
+    "actualChangeTime": "2000-04-01T00:00:00Z",
+    "systemChangeTime": "2000-04-01T00:00:00Z",
+    "status": "ACTIVE",
+    "comment": "Relationship for network CD1.1 and station MKAR"
+  }
+]

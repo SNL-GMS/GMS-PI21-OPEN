@@ -1,0 +1,23 @@
+plugins {
+    id('java-library')
+}
+dependencies {
+    api project(':frameworks-system-config')
+    api project(':frameworks-client-generator')
+    api project(':frameworks-configuration-commonobjects')
+    api project(':frameworks-configuration-api')
+    api project(':frameworks-configuration-repository')
+
+    implementation project(':frameworks-utilities')
+    implementation project(':frameworks-http-service-library')
+    api project(':frameworks-service-generator')
+
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    testImplementation libs.org.jmockit
+}
+
+test {
+    jvmArgs "-javaagent:${classpath.find { it.name.contains("jmockit") }.absolutePath}"
+}

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Custom Hooks usePrevious returns the initial value the first time and the next value the second time 1`] = `
+<TestComponent
+  count={1}
+  nextValue="a new value"
+>
+  <div>
+    next value
+    -
+    1
+  </div>
+</TestComponent>
+`;

@@ -1,0 +1,141 @@
+#!/bin/bash
+
+# ------------------------------------------------------------------------------
+#
+# This script is used to help export Docker images for transfer to the customer
+# as part of a GMS release.  Detailed instructions for running this script are
+# on the Release Process page of the GMS wiki.
+#
+# Dependencies: curl, grep
+#
+# Command line arguments:
+#
+#   --artifactory-host: The fully qualified domain name and port for the Artifactory server api.
+#                       Note this is the hostname:port that would be used to access the artifactory UI,
+#                       which is not necessarily the same as the docker hostname:port. (mandatory)
+#
+#   --docker-repo: Name of the docker repository inside Artifactory where the source docker images are
+#                  stored. (mandatory)
+#
+#   --source-registry: Source Docker registry hostname:port, used for docker pull (mandatory)
+#
+#   --target-registry: Target Docker registry hostname:port, used for docker push (mandatory)
+#
+#   --api-key: Artifactory API key to use when querying the source registry (mandatory)
+#
+#   --tag: Docker image tag to export from the Source Docker registry (mandatory)
+#
+# Example usage:
+#
+#   ./export-docker-images --artifactory-host gms-artifactory.example.com:443 --api-key xxxxxxxxxx --docker-repo gms-docker-local --source-registry gms-docker-registry.example.com --target-registry artifactory.example.com:5000 --tag 1-18-1-0
+#
+# ------------------------------------------------------------------------------
+
+# Parse command line arguments
+while [ $# -gt 0 ]; do
+    case "$1" in
+      --artifactory-host)
+          # Extract the user supplied value and shift the command line by 2 (to skip over flag and value)
+          ARTIFACTORY_HOST=$2
+          shift 2
+          ;;
+      --docker-repo)
+          DOCKER_REPO=$2
+          shift 2
+          ;;
+      --source-registry)
+          SOURCE_REGISTRY=$2
+          shift 2
+          ;;
+      --target-registry)
+          TARGET_REGISTRY=$2
+          shift 2
+          ;;
+      --api-key)
+          API_KEY=$2
+          shift 2
+          ;;
+      --tag|--branch)
+          TAG=$2
+          shift 2
+          ;;
+      --)
+          # Command line is done so break out
+          break
+          ;;
+      *)
+          # Error out on any other unexpected arguments
+          echo "ERROR: Unexpected argument: $1"
+          exit 1
+          ;;
+    esac
+done
+
+# Check that all mandatory arguments were provided, and exit if not
+args_ok=1
+if [[ -z "${ARTIFACTORY_HOST}" ]]; then
+    echo "ERROR: Mandatory argument --artifactory-host must be provided specifying the artifactory api hostname including port"
+    args_ok=0
+fi
+if [[ -z "${DOCKER_REPO}" ]]; then
+    echo "ERROR: Mandatory argument --docker-repo must be provided specifying the docker repository name in artifactory"
+    args_ok=0
+fi
+if [[ -z "${SOURCE_REGISTRY}" ]]; then
+    echo "ERROR: Mandatory argument --source-registry must be provided specifying the source Docker registry hostname including port"
+    args_ok=0
+fi
+if [[ -z "${TARGET_REGISTRY}" ]]; then
+    echo "ERROR: Mandatory argument --target-registry must be provided specifying the target Docker registry hostname including port"
+    args_ok=0
+fi
+if [[ -z "${API_KEY}" ]]; then
+    echo "ERROR: Mandatory argument --api-key must be provided specifying the artifactory API key to use when querying the artifactory host"
+    args_ok=0
+fi
+if [[ -z "${TAG}" ]]; then
+    echo "ERROR: Mandatory argument --tag must be provided specifying the Docker image tag to export"
+    args_ok=0
+fi
+if [[ "${args_ok}" == "0" ]]; then
+    exit 1
+fi
+
+# Query list of Docker images tagged with $TAG on the $ARTIFACTORY_HOST
+IMAGES=$(curl --stderr /dev/null -H 'Content-Type:text/plain' -H "X-JFrog-Art-Api: $API_KEY" -X POST https://${ARTIFACTORY_HOST}/artifactory/api/search/aql -d '
+items.find(
+  {
+    "$and":[
+      {"name":{"$eq":"manifest.json"}},
+      {"@docker.manifest":{"$match":"'"$TAG"'"}},
+      {"repo":{"$eq":"'"$DOCKER_REPO"'"}}
+    ]
+  }
+).include("@docker.repoName")' | grep -Eo '"value"[^,]*' | grep -Eo '[^:]*$' | tr -d '"')
+
+# Generate "docker pull" command for each image
+for image in $IMAGES; do
+    echo "docker pull ${SOURCE_REGISTRY}/${image}:${TAG}"
+done
+
+# Generate "docker tag" command for each image to tag it for the target repository's URL
+echo
+for image in $IMAGES; do
+    echo "docker tag ${SOURCE_REGISTRY}/${image}:${TAG} ${TARGET_REGISTRY}/${image}:${TAG}"
+done
+
+# Generate the "docker save" command to package up all the images in an rsync'able file
+echo
+echo "docker save -o release-${TAG}.docker \\"
+for image in $IMAGES; do
+    echo "    ${TARGET_REGISTRY}/${image}:${TAG} \\"
+done
+echo ";"
+
+# Generate "docker push" command for each image (to be run at the customer site)
+echo
+echo "# After running a 'docker load -i release-${TAG}.docker' at the target site, use"
+echo "# these 'docker push' commands to publish individual images to the target registry:"
+for image in $IMAGES; do
+    echo "#docker push ${TARGET_REGISTRY}/${image}:${TAG}"
+done

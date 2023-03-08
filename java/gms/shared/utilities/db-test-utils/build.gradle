@@ -1,0 +1,16 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+    api project(':frameworks-osd-testfixtures')
+    api project(':frameworks-osd-commonobjects')
+
+    api libs.org.postgresql.postgresql
+    api libs.org.testcontainers.junit.jupiter
+    api libs.org.testcontainers.postgresql
+
+    api libs.org.hibernate.hibernate.entitymanager
+}
+
+

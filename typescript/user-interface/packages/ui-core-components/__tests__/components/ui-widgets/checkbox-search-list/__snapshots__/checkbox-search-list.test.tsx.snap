@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxSearchList CheckboxSearchList renders 1`] = `
+<CheckboxSearchList
+  items={
+    Array [
+      Object {
+        "checked": true,
+        "id": "1",
+        "name": "first",
+      },
+      Object {
+        "checked": false,
+        "id": "2",
+        "name": "second",
+      },
+      Object {
+        "checked": false,
+        "id": "3",
+        "name": "third",
+      },
+    ]
+  }
+  maxHeightPx={300}
+  onCheckboxChecked={[MockFunction]}
+>
+  <div
+    className="checkbox-search-list"
+    style={
+      Object {
+        "height": "300px",
+      }
+    }
+  >
+    <input
+      autoFocus={true}
+      className="checkbox-search-list__search"
+      onChange={[Function]}
+      placeholder="Search input"
+      tabIndex={0}
+      type="search"
+      value=""
+    />
+    <div
+      className="checkbox-search-list-item"
+      key="checkbox-search-list1"
+    >
+      <Blueprint4.Checkbox
+        checked={true}
+        data-cy-station-checkbox="first"
+        onChange={[Function]}
+      >
+        <Control
+          checked={true}
+          data-cy-station-checkbox="first"
+          inputRef={[Function]}
+          onChange={[Function]}
+          type="checkbox"
+          typeClassName="bp4-checkbox"
+        >
+          <label
+            className="bp4-control bp4-checkbox"
+          >
+            <input
+              checked={true}
+              data-cy-station-checkbox="first"
+              onChange={[Function]}
+              type="checkbox"
+            />
+            <span
+              className="bp4-control-indicator"
+            />
+          </label>
+        </Control>
+      </Blueprint4.Checkbox>
+      <span
+        className="checkbox-search-list-item__label"
+      >
+        first
+      </span>
+    </div>
+    <div
+      className="checkbox-search-list-item"
+      key="checkbox-search-list2"
+    >
+      <Blueprint4.Checkbox
+        checked={false}
+        data-cy-station-checkbox="second"
+        onChange={[Function]}
+      >
+        <Control
+          checked={false}
+          data-cy-station-checkbox="second"
+          inputRef={[Function]}
+          onChange={[Function]}
+          type="checkbox"
+          typeClassName="bp4-checkbox"
+        >
+          <label
+            className="bp4-control bp4-checkbox"
+          >
+            <input
+              checked={false}
+              data-cy-station-checkbox="second"
+              onChange={[Function]}
+              type="checkbox"
+            />
+            <span
+              className="bp4-control-indicator"
+            />
+          </label>
+        </Control>
+      </Blueprint4.Checkbox>
+      <span
+        className="checkbox-search-list-item__label"
+      >
+        second
+      </span>
+    </div>
+    <div
+      className="checkbox-search-list-item"
+      key="checkbox-search-list3"
+    >
+      <Blueprint4.Checkbox
+        checked={false}
+        data-cy-station-checkbox="third"
+        onChange={[Function]}
+      >
+        <Control
+          checked={false}
+          data-cy-station-checkbox="third"
+          inputRef={[Function]}
+          onChange={[Function]}
+          type="checkbox"
+          typeClassName="bp4-checkbox"
+        >
+          <label
+            className="bp4-control bp4-checkbox"
+          >
+            <input
+              checked={false}
+              data-cy-station-checkbox="third"
+              onChange={[Function]}
+              type="checkbox"
+            />
+            <span
+              className="bp4-control-indicator"
+            />
+          </label>
+        </Control>
+      </Blueprint4.Checkbox>
+      <span
+        className="checkbox-search-list-item__label"
+      >
+        third
+      </span>
+    </div>
+  </div>
+</CheckboxSearchList>
+`;

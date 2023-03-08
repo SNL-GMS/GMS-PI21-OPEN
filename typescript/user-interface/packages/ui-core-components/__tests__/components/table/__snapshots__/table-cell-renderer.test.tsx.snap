@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`table cell renderer renders 1`] = `
+<div>
+  <div
+    class="table-cell test-cell"
+    data-cy="table-cell"
+    style="height: 100px; overflow: hidden;"
+    title="tooltip message"
+  >
+    <div
+      class="table-cell__value--center table-cell__value "
+      data-cy="table-cell__value"
+    >
+      <span>
+        cell value
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`table cell renderer renders using the TableCellRendererFramework method 1`] = `
+<Memo(TableCellComponent)
+  data-col-position={5}
+  isDate={true}
+  isNumeric={true}
+  tooltipMsg="1"
+  value="1"
+>
+  <div
+    className="table-cell "
+    data-col-position={5}
+    data-cy="table-cell"
+    style={
+      Object {
+        "height": "36px",
+        "overflow": "hidden",
+      }
+    }
+    title="1"
+  >
+    <div
+      className="table-cell__value--date table-cell__value--numeric table-cell__value "
+      data-cy="table-cell__value"
+    >
+      <span>
+        1
+      </span>
+    </div>
+  </div>
+</Memo(TableCellComponent)>
+`;
+
+exports[`table cell renderer renders using the TableCellRendererFramework method 2`] = `
+<Memo(TableCellComponent)
+  isDate={true}
+  isNumeric={true}
+  tooltipMsg="Mock Value"
+  value="Mock Value"
+>
+  <div
+    className="table-cell "
+    data-cy="table-cell"
+    style={
+      Object {
+        "height": "36px",
+        "overflow": "hidden",
+      }
+    }
+    title="Mock Value"
+  >
+    <div
+      className="table-cell__value--date table-cell__value--numeric table-cell__value "
+      data-cy="table-cell__value"
+    >
+      <span>
+        Mock Value
+      </span>
+    </div>
+  </div>
+</Memo(TableCellComponent)>
+`;
+
+exports[`table cell renderer renders with leftChild 1`] = `
+<div>
+  <div
+    class="table-cell test-cell"
+    data-cy="table-cell"
+    style="height: 100px; overflow: hidden;"
+    title="tooltip message"
+  >
+    <div>
+       this is a child div
+    </div>
+    <div
+      class="table-cell__value--center table-cell__value "
+      data-cy="table-cell__value"
+    >
+      <span>
+        cell value
+      </span>
+    </div>
+  </div>
+</div>
+`;

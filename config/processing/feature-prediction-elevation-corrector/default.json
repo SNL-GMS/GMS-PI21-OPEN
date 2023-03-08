@@ -1,0 +1,14 @@
+{
+  "name": "feature-prediction-elevation-corrector",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+
+  "parameters": {
+    "mediumVelocityEarthModelPluginNameByModelName": {
+      "Ak135": "ak135GlobalMediumVelocity"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+I56H1  BDF       2002276     2014  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20120813 12:00:00
+I56H1  LKO       2002276     2018  2012220 n       0.0000   -1.0   -1.0 External_temperature                               20120813 12:00:00
+I56H1  LKO       2014141     5017  2286324 n       0.0000   -1.0   -1.0 External_temperature                               20140602 12:00:00
+I56H1  LWD       2002276     2019  2012220 n       0.0000   -1.0   -1.0 Wind_Direction                                     20120813 12:00:00
+I56H1  LWD       2014141     5018  2286324 n       0.0000   -1.0   -1.0 Wind_Direction                                     20140602 12:00:00
+I56H1  LWS       2002276     2020  2012220 n       0.0000   -1.0   -1.0 Wind_speed                                         20120813 12:00:00
+I56H1  LWS       2014141     5019  2286324 n       0.0000   -1.0   -1.0 Wind_speed                                         20140602 12:00:00
+I56H1  MKO       2012226     3913  2014140 n       0.0000   -1.0   -1.0 External_temperature                               20140602 12:00:00
+I56H1  MWD       2012226     3914  2014140 n       0.0000   -1.0   -1.0 Wind_Direction                                     20140602 12:00:00
+I56H1  MWS       2012226     3915  2014140 n       0.0000   -1.0   -1.0 Wind_speed                                         20140602 12:00:00
+I56H2  BDF       2002276     2015  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20120813 12:00:00
+I56H3  BDF       2002276     2016  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20120813 12:00:00
+I56H4  BDF       2002276     2017  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20120813 12:00:00
+I56H4  LDA       2014141     5016  2286324 n       0.0000   -1.0   -1.0 Absolute_barometric_pressure                       20140602 12:00:00
+I56H4  MDA       2013141     4738  2014140 n       0.0000   -1.0   -1.0 Absolute_barometric_pressure                       20140602 12:00:00

@@ -1,0 +1,11 @@
+{
+  "name": "ak135-travel-time-lookup-table",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+      "minio_key_prefix": "travel-time/ak135/"
+  }
+}

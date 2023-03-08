@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "language": "en",
+  "words": [
+    "AUTOREGRESSIVE",
+    "BANDPASS",
+    "BANDREJECT",
+    "BUTTERWORTH",
+    "CHEBYSHEV",
+    "cstruct",
+    "ctemp",
+    "HIGHPASS",
+    "LOWPASS"
+  ]
+}

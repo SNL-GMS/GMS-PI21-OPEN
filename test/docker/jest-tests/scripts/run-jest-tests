@@ -1,0 +1,25 @@
+#!/bin/bash
+
+source pre-test "artifacts"
+
+if [ -z "${DEPLOYMENT_NAME}" ]; then
+    echo "ERROR: Variable 'DEPLOYMENT_NAME' must be set to the deployment under test."
+    exit 1
+fi
+if [ -z "${SERVICE_URL}" ]; then
+    echo "ERROR: Variable 'SERVICE_URL' must be set to the external URL of the UI under test."
+    exit 1
+fi
+echo "DEPLOYMENT_NAME=${DEPLOYMENT_NAME}" | tee -a ${TESTRUN_OUTPUT}
+echo "SERVICE_URL=${SERVICE_URL}" | tee -a ${TESTRUN_OUTPUT} 
+echo "pwd" | tee -a ${TESTRUN_OUTPUT} 
+pwd | tee -a ${TESTRUN_OUTPUT}
+echo "ls" | tee -a ${TESTRUN_OUTPUT} 
+ls | tee -a ${TESTRUN_OUTPUT}
+echo "RUNNING: yarn integration-test" | tee -a ${TESTRUN_OUTPUT}
+yarn integration-test | tee -a ${TESTRUN_OUTPUT}
+test_exit_status=${PIPESTATUS[0]}
+yarn report | tee -a ${TESTRUN_OUTPUT}
+
+source post-test
+exit 0

@@ -1,0 +1,11 @@
+{
+    "name": "ak135-global-medium-velocity",
+    "constraints": [
+        {
+            "constraintType": "DEFAULT"
+        }
+    ],
+    "parameters": {
+        "dataDescriptor": "mediumvelocity/ak135"
+    }
+}

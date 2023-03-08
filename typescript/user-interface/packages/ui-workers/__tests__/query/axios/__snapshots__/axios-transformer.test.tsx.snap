@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`axios response transformers axios query succeeds with message pack and instance type transformer 1`] = `
+Object {
+  "additionalInvalid": Object {
+    "badNull": Object {
+      "duration": undefined,
+    },
+    "badUndefined": Object {
+      "duration": undefined,
+    },
+    "duration": 0,
+  },
+  "badFormats": Object {
+    "duration": 0,
+    "effectiveTime": "my time is 2010-05-21T03:24:33.123Z",
+    "endTime": "2010-5-21T 3:24:33.123Z",
+    "modificationTime": "2010-05-21 03:24:33.123Z",
+    "processingEndTime": "2010-05-21T03:24:33.123",
+    "processingStartTime": "2010-05-2103:24:33.123Z",
+    "startTime": "2010/05/21T03:24:33.123Z",
+  },
+  "creationTime": 1274415873.123,
+  "duration": 300,
+  "effectiveTime": 1274415873.123,
+  "endTime": 1274412333.123,
+  "invalid": Object {
+    "duration": 0,
+    "effectiveTime": " ",
+    "endTime": undefined,
+    "modificationTime": 1,
+    "processingEndTime": Object {
+      "a time": "2010-05-21T03:24:33.123",
+    },
+    "processingStartTime": "this is not a time",
+    "startTime": undefined,
+  },
+  "modificationTime": 1274412273.123,
+  "moreInvalid": Object {
+    "duration": 0,
+    "effectiveTime": "",
+    "endTime": "undefined",
+    "startTime": "null",
+  },
+  "multiValueTest": Object {
+    "arrivalTime": Object {
+      "standardDeviation": 0,
+      "value": 15,
+    },
+    "duration": Object {
+      "standardDeviation": 3,
+      "value": 45,
+    },
+    "startTime": Object {
+      "standardDeviation": 60,
+      "value": 45,
+    },
+    "testNonObjects": Object {
+      "duration": 3,
+      "startTime": 12,
+    },
+    "travelTime": Object {
+      "standardDeviation": 1,
+      "value": 15,
+    },
+  },
+  "processingEndTime": 1274412273.123,
+  "processingStartTime": 1274412273,
+  "referenceTime": 1274412273.123,
+  "startTime": 1274412273.123,
+  "travelTime": 1274412273.123,
+}
+`;

@@ -1,0 +1,27 @@
+plugins {
+    id('application')
+}
+
+mainClassName = "gms.core.performancemonitoring.soh.control.configuration.ConfigurationChecker"
+
+dependencies {
+
+    implementation project(':frameworks-control')
+
+    // Google AutoValue
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    implementation project(':frameworks-osd-commonobjects')
+    implementation project(':soh-control-api')
+    implementation project(':soh-control')
+
+    implementation project(':frameworks-utilities')
+
+    implementation project(':frameworks-osd-api')
+    implementation project(':frameworks-client-library')
+
+    implementation libs.io.projectreactor.reactor.core
+
+    implementation libs.args4j.args4j
+}

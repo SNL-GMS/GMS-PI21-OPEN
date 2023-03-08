@@ -1,0 +1,82 @@
+[
+  {
+    "name": "INFRA-CD1.1-soh-monitor-types-for-rollup-channel",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "StationName",
+        "operator": {
+          "type": "IN",
+          "negated": false
+        },
+        "value": [
+          "I02AR",
+          "I03AU",
+          "I04AU",
+          "I05AU",
+          "I06AU",
+          "I07AU",
+          "I09BR",
+          "I11CV",
+          "I13CL",
+          "I18DK",
+          "I19DJ",
+          "I20EC",
+          "I24FR",
+          "I27DE",
+          "I30JP",
+          "I31KZ",
+          "I32KE",
+          "I35NA",
+          "I36NZ",
+          "I37NO",
+          "I39PW",
+          "I40PG",
+          "I41PY",
+          "I42PT",
+          "I43RU",
+          "I44RU",
+          "I45RU",
+          "I46RU",
+          "I47ZA",
+          "I48TN",
+          "I49GB",
+          "I50GB",
+          "I51GB",
+          "I52GB",
+          "I53US",
+          "I55US",
+          "I56US",
+          "I57US",
+          "I58US",
+          "I59US",
+          "I60US"
+        ]
+      }
+    ],
+    "parameters": {
+      "sohMonitorTypesForRollup": [
+        "TIMELINESS",
+        "ENV_AUTHENTICATION_SEAL_BROKEN",
+        "ENV_BACKUP_POWER_UNSTABLE",
+        "ENV_CALIBRATION_UNDERWAY",
+        "ENV_CLIPPED",
+        "ENV_CLOCK_DIFFERENTIAL_TOO_LARGE",
+        "ENV_DEAD_SENSOR_CHANNEL",
+        "ENV_DIGITIZER_ANALOG_INPUT_SHORTED",
+        "ENV_DIGITIZER_CALIBRATION_LOOP_BACK",
+        "ENV_DIGITIZING_EQUIPMENT_OPEN",
+        "ENV_EQUIPMENT_HOUSING_OPEN",
+        "ENV_EQUIPMENT_MOVED",
+        "ENV_GPS_RECEIVER_OFF",
+        "ENV_GPS_RECEIVER_UNLOCKED",
+        "ENV_MAIN_POWER_FAILURE",
+        "ENV_VAULT_DOOR_OPENED",
+        "ENV_ZEROED_DATA"
+      ]
+    }
+  }
+]

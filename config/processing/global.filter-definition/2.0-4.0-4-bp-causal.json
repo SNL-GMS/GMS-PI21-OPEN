@@ -1,0 +1,26 @@
+{
+    "name": "2.0-4.0-4-bp-causal",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "name",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "2.0 4.0 4 BP causal"
+            ]
+        }
+    ],
+    "parameters": {
+        "name": "2.0 4.0 4 BP causal",
+        "comments": "Butterworth IIR band-pass, 2.0-4.0 Hz, order 4, causal",
+		"filterDescription": {
+			"$ref=global.filter-description":[{ 
+				"criterion": "name",
+				"value": "2.0 4.0 4 BP causal Description"
+			}]
+		}
+    }
+}

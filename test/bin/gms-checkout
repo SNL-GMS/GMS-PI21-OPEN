@@ -1,0 +1,1772 @@
+#!/usr/bin/env python3
+
+# -----------------------------------------------------------------------------
+# gms-checkout test script
+#
+# The gms-checkout script performs a basic system checkout of a
+# running gms instance. The output can be formatted in markdown.
+# -----------------------------------------------------------------------------
+
+import argparse
+import concurrent.futures
+import json
+import os
+import re
+import subprocess
+import sys
+import time
+from argparse import ArgumentParser, RawDescriptionHelpFormatter
+from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime, timedelta
+
+import requests
+import yaml
+from packaging.version import Version
+from termcolor import cprint
+
+
+# termcolors
+class tc:
+    BOLD = '\033[1m'
+    RED = '\033[31m'
+    GREEN = '\033[32m'
+    YELLOW = '\033[33m'
+    MAGENTA = '\033[35m'
+    CYAN = '\033[36m'
+    ENDC = '\033[0m'
+
+
+# -----------------------------------------------------------------------------
+# These are the deployed containers we expect to be running
+# -----------------------------------------------------------------------------
+EXPECTED_DEPLOYMENTS = {}
+
+EXPECTED_DEPLOYMENTS['soh'] = [
+    'acei-merge-processor',
+    'capability-soh-rollup-kafka-consumer',
+    'cd11-rsdf-processor',
+    'config-loader',
+    'da-connman',
+    'da-dataman',
+    'etcd',
+    'frameworks-configuration-service',
+    'frameworks-osd-rsdf-kafka-consumer',
+    'frameworks-osd-service',
+    'frameworks-osd-station-soh-kafka-consumer',
+    'frameworks-osd-systemmessage-kafka-consumer',
+    'interactive-analysis-api-gateway',
+    'interactive-analysis-ui',
+    'kafka',
+    'postgresql-exporter',
+    'postgresql-gms',
+    'prometheus',
+    'smds-service',
+    'soh-control',
+    'soh-quieted-list-kafka-consumer',
+    'soh-status-change-kafka-consumer',
+    'ssam-control',
+    'ui-processing-configuration-service',
+    'user-manager-service',
+    'zookeeper'
+]
+
+EXPECTED_DEPLOYMENTS['ian'] = [
+    'config-loader',
+    'etcd',
+    'event-manager-service',
+    'frameworks-configuration-service',
+    'frameworks-osd-service',
+    'interactive-analysis-ui',
+    'interactive-analysis-api-gateway',
+    'kafka',
+    'postgresql-exporter',
+    'postgresql-gms',
+    'prometheus',
+    'signal-detection-manager-service',
+    'signal-enhancement-configuration-manager-service',
+    'station-definition-service',
+    'ui-processing-configuration-service',
+    'user-manager-service',
+    'waveform-manager-service',
+    'workflow-manager-service',
+    'zookeeper'
+]
+
+EXPECTED_DEPLOYMENTS['sb'] = [
+    'config-loader',
+    'etcd',
+    'event-manager-service',
+    'frameworks-configuration-service',
+    'frameworks-osd-service',
+    'kafka',
+    'postgresql-gms',
+    'signal-detection-manager-service',
+    'station-definition-service',
+    'user-manager-service',
+    'waveform-manager-service',
+    'workflow-manager-service',
+    'zookeeper'
+]
+
+# -----------------------------------------------------------------------------
+# These are services we expect to have working 'alive' endpoints
+# -----------------------------------------------------------------------------
+EXPECTED_ALIVE_SERVICES = {}
+
+EXPECTED_ALIVE_SERVICES['soh'] = [
+    'frameworks-configuration-service',
+    'frameworks-osd-service',
+    'soh-control',
+    'ssam-control',
+    'ui-processing-configuration-service',
+    'user-manager-service'
+]
+
+EXPECTED_ALIVE_SERVICES['ian'] = [
+    'event-manager-service',
+    'frameworks-configuration-service',
+    'frameworks-osd-service',
+    'signal-detection-manager-service',
+    'station-definition-service',
+    'ui-processing-configuration-service',
+    'user-manager-service',
+    'waveform-manager-service',
+    'workflow-manager-service'
+]
+
+EXPECTED_ALIVE_SERVICES['sb'] = [
+    'event-manager-service',
+    'frameworks-configuration-service',
+    'frameworks-osd-service',
+    'signal-detection-manager-service',
+    'station-definition-service',
+    'user-manager-service',
+    'waveform-manager-service',
+    'workflow-manager-service'
+]
+
+# -----------------------------------------------------------------------------
+# More that this is a worrisome amount of kafka messages to be behind by
+# -----------------------------------------------------------------------------
+LAG_THRESHOLD = 4096
+
+# -----------------------------------------------------------------------------
+# Wait this many seconds between kafka samples to gauge the traffic rate
+# -----------------------------------------------------------------------------
+KAFKA_SAMPLE_TIME_IN_SECONDS = 20
+
+# ------------------------------------------------------------------------------
+# These are kafka groups/topics which we expect to have non-zero traffic rates
+# ------------------------------------------------------------------------------
+BUSY_KAFKA_TOPICS = {}
+
+BUSY_KAFKA_TOPICS['soh'] = {
+    'acei-merge-processor-application'  :        [ 'soh.acei' ],
+    'capability-soh-rollup-kafka-consumer':      [ 'soh.capability-rollup' ],
+    'cd11-rsdf-processor':                       [ 'soh.rsdf' ],
+    'frameworks-osd-rsdf-kafka-consumer':        [ 'soh.rsdf' ],
+    'frameworks-osd-station-soh-kafka-consumer': [ 'soh.station-soh' ],
+    'soh-application':                           [ 'soh.extract' ],
+    'soh-status-change-kafka-consumer':          [ 'soh.status-change-event' ],
+    'ssam-application':                          [ 'soh.station-soh',
+                                                  'soh.capability-rollup' ]
+}  # yapf: disable
+
+# -----------------------------------------------------------------------------
+# ERROR log messages (grouped by pod) with the word 'error' that have these
+#       regex substring are expected and are not considered errors.
+#
+# NOTE: regular expression character (such as parenthesis and brackets)
+#       must be escaped by putting a `\` in front of them.
+# -----------------------------------------------------------------------------
+EXPECTED_ERRORS = {
+
+    # Expected COTS container errors
+    "etcd": [
+        r"etcdserver: read-only range request.*invalid auth token",
+        r"addrConn.resetTransport failed to create client transport: "
+        r"connection error: .* Error while dialing dial tcp",
+        r"Server.processUnaryRPC failed to write status\: connection error\: "
+        r"desc = \"transport is closing\""
+    ],
+    "kafka": [
+        r"org\.apache\.kafka\.common\.errors\.Invalid"
+        r"ReplicationFactorException",
+        r"This error can be ignored if the cluster is starting up and not all "
+        r"brokers are up yet.",
+        r"This server does not host this topic-partition",
+        r"Error for partition .* at offset",
+        r"INFO Opening socket connection to server zoo.*Will not attempt to "
+        r"authenticate using SASL",
+        r"INFO Socket error occurred: zoo",
+        r"ReplicaFetcher .* Retrying leaderEpoch request for partition .* as "
+        r"the leader reported an error: UNKNOWN_LEADER_EPOCH",
+        r"Error while executing topic command : Replication factor: .* larger "
+        r"than available brokers:",
+        r"WARN.*Error in response for fetch request",
+        r"Failed to connect within",
+        r"Preparing to rebalance group .* in state PreparingRebalance with "
+        r"old generation",
+        r"Closing connection due to error during produce request",
+        r"Topic and partition to exceptions.*org\.apache\.kafka\."
+        r"common\.errors\.NotLeaderForPartitionException",
+        r"unexpected error, closing socket connection and attempting "
+        r"reconnect",
+        r"Fatal error during KafkaServer startup. Prepare to shutdown",
+        r"Connection to \d* was disconnected before the response was read",
+        r"Error during controlled shutdown, possibly because leader movement "
+        r"took longer than the configured",
+        r"Error sending fetch request",
+        r"ERROR Exiting Kafka."
+    ],
+    "postgresql-gms": [
+        r"canceling statement due to user request",
+        r"current transaction is aborted"
+    ],
+    "postgresql-exporter":
+    [r"Error opening connection to database.*connect: connection refused"],
+    "zoo": [r"Invalid configuration, only one server specified \(ignoring\)"],
+
+    # Expected GLOBAL GMS container errors (could happen in any
+    # container) (mostly kafka 'errors')
+    "global": [
+        r"Error while fetching metadata.*LEADER_NOT_AVAILABLE",
+        r"Got error produce response.*Error\: NOT_LEADER_OR_FOLLOWER",
+        r"Received invalid metadata error in produce request on.*due to org\."
+        r"apache\.kafka\.common\.errors\.NotLeaderOrFollowerException",
+        r"Rebalance failed.*This is not the correct coordinator",
+        r"Received invalid metadata error in produce request.*Going to "
+        r"request metadata update now",
+        r"Got error produce response with correlation id.*NETWORK_EXCEPTION",
+        r"UnknownMemberIdException: The coordinator is not aware of this "
+        r"member",
+        r"Error retrieving System Config:.* Retrying...",
+        r"Failed service request to .* failure=java\.net\.ConnectException: "
+        r"Connection refused\], will try again...",
+        r"Failed service request to .* failure=gms\.shared\.frameworks\."
+        r"client\.ServiceClientJdkHttp.* will try again...",
+        r"Opening socket connection to server zookeeper.*Will not attempt to "
+        r"authenticate using SASL",
+        r"INFO.* Setting level of logger.* to ERROR",
+        r"Note: further occurrences of this error will be logged at "
+        r"DEBUG level."
+    ],
+
+    # Expected GMS container errors
+    "acei-merge-processor": [
+        r"Error registering AppInfo mbean",
+        r"Failed service request to http://frameworks-configuration-service"
+        r":8080/processing-cfg/range"
+    ],
+    "capability-soh-rollup-kafka-consumer": [
+        r"io\.grpc\.internal\.ManagedChannelImpl\$NameResolverListener "
+        r"handleErrorInSyncContext",
+        r"org\.apache\.kafka\.common\.errors\.DisconnectException: null"
+    ],
+    "cd11-rsdf-processor": [
+        r"No Configuration\(s\) found for key prefix\(es\)",
+        r"Failed service request to http://frameworks-configuration-service"
+        r":8080/processing-cfg/range"
+    ],
+    "da-connman": [
+        r"Failed service request to http://frameworks-configuration-service"
+        r":8080/processing-cfg/range",
+        r"Dropping malformed frame due to read error"
+    ],
+    "da-dataman": [
+        r"Error parsing ACKNACK frame, frame dropped from transaction",
+        r"Irrecoverable error encountered in DATA frame",
+        r"Irrecoverable error encountered in ACKNACK frame handler",
+        r"Error publishing frames to kafka",
+        r"Error parsing partial frame to Cd11Frame. Frame will be sent to "
+        r"malformed topic",
+        r"Failed service request to http://frameworks-configuration-service"
+        r":8080/processing-cfg/range",
+        r"Operator called default onErrorDropped",
+    ],
+    "frameworks-configuration-service": [
+        r"io.grpc.internal.ManagedChannelImpl\$NameResolverListener "
+        r"handleErrorInSyncContext",
+    ],
+    "frameworks-osd-rsdf-kafka-consumer": [
+        r"io.grpc.internal.ManagedChannelImpl\$NameResolverListener "
+        r"handleErrorInSyncContext",
+        r"org\.apache\.kafka\.common\.errors\.DisconnectException: null",
+    ],
+    "frameworks-osd-service": [
+        r"io.grpc.internal.ManagedChannelImpl\$NameResolverListener "
+        r"handleErrorInSyncContext",
+        r"org\.apache\.kafka\.common\.errors\.DisconnectException: null",
+    ],
+    "frameworks-osd-station-soh-kafka-consumer": [
+        r"io.grpc.internal.ManagedChannelImpl\$NameResolverListener "
+        r"handleErrorInSyncContext",
+        r"org\.apache\.kafka\.common\.errors\.DisconnectException: null",
+    ],
+    "frameworks-osd-systemmessage-kafka-consumer": [
+        r"io.grpc.internal.ManagedChannelImpl\$NameResolverListener "
+        r"handleErrorInSyncContext",
+        r"org\.apache\.kafka\.common\.errors\.DisconnectException: null",
+    ],
+    "interactive-analysis-api-gateway": [
+        r"\[username\] - sample client error log",
+        r"sample error log",
+        r"HTTP Request Error:",
+        r"Response Fetch\(key: \d*, version: \d*\)",
+        r"Response JoinGroup\(key: \d*, version: \d*\)",
+        r"Response SyncGroup\(key: \d*, version: \d*\)",
+        r"The group is rebalancing, re-joining"
+    ],
+    "interactive-analysis-ui": [
+        r"connect\(\) failed.*Connection refused.*while connecting to "
+        r"upstream, client:",
+        r"GET /cesium/Workers/RuntimeError.*cesiumWorkerBootstrapper\.js",
+        r"GET \/interactive-analysis-ui\/cesium\/Workers\/RuntimeError"
+        r"-.*\" \(200\|304\)"
+    ],
+    "signal-detection-manager-service": [],
+    "soh-quieted-list-kafka-consumer": [
+        r"io.grpc.internal.ManagedChannelImpl\$NameResolverListener "
+        r"handleErrorInSyncContext",
+        r"org\.apache\.kafka\.common\.errors\.DisconnectException: null"
+    ],
+    "soh-status-change-kafka-consumer": [
+        r"io.grpc.internal.ManagedChannelImpl\$NameResolverListener "
+        r"handleErrorInSyncContext",
+        r"org\.apache\.kafka\.common\.errors\.DisconnectException: null"
+    ],
+    "soh-control": [
+        r"Failed service request to http://frameworks-configuration-service"
+        r":8080/processing-cfg/range"
+    ],
+    "ssam-control": [
+        r"Error registering AppInfo mbean",
+        r"Duplicate values for channel and monitor type found in "
+        r"SohStatusChange",
+        r"SohStatusChange objects cannot have duplicate channel names and "
+        r"monitor types",
+        r"No Configuration\(s\) found for key prefix\(es\)",
+        r"Failed service request to http://frameworks-configuration-service"
+        r":8080/processing-cfg/range",
+        r"canceling statement due to user request"
+    ],
+    "station-definition-service": [
+        r"Client environment.*error_prone_annotations.*jar",
+        r"MainSiteDao does not exist, could not create station"
+    ],
+    "ui-processing-configuration-service":
+    [r"Failed service request to.*range with error"],
+    "user-manager-service": [
+        r"io.grpc.internal.ManagedChannelImpl\$NameResolverListener "
+        r"handleErrorInSyncContext",
+    ],
+    "waveform-manager-service": []
+}
+
+# replicate expected errors for multiple kafka instances
+EXPECTED_ERRORS['kafka1'] = EXPECTED_ERRORS['kafka']
+EXPECTED_ERRORS['kafka2'] = EXPECTED_ERRORS['kafka']
+EXPECTED_ERRORS['kafka3'] = EXPECTED_ERRORS['kafka']
+
+# -----------------------------------------------------------------------------
+# These are per-type POSTGRES database queries
+# -----------------------------------------------------------------------------
+POSTGRES_QUERIES = {}
+
+POSTGRES_QUERIES['soh'] = {
+    'unique_stations': {
+        'query':
+        "select distinct station_name from gms_soh.raw_station_data_frame "
+        "order by station_name asc;",
+        'json': False
+    },
+    'oldest_soh': {
+        'query':
+        "select array_to_json(array_agg(r)) from (select * from "
+        "gms_soh.station_soh order by creation_time asc limit 10) r;",
+        'json': True
+    }
+}
+
+
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+def main():
+
+    #-- verify kubectl is available
+    if not which('kubectl'):
+        print(
+            "ERROR: 'kubectl' executable not found in PATH. "
+            "Please install kubectl."
+        )
+        sys.exit(1)
+
+    #-- verify helm is available
+    if not which('helm'):
+        print(
+            "ERROR: 'helm' executable not found in PATH. Please install helm."
+        )
+        sys.exit(1)
+
+    #-- verify gms-logs is available
+    if not which('gms-logs'):
+        print("ERROR: 'gms-logs' not found in PATH.")
+        sys.exit(1)
+
+    #-- verify KUBECONFIG is set
+    if not "KUBECONFIG" in os.environ:
+        print(
+            "ERROR: Variable 'KUBECONFIG' must be set to the "
+            "kubernetes configuration."
+        )
+        sys.exit(1)
+
+    try:
+        with open(os.environ["KUBECONFIG"]) as file:
+            if Version(yaml.__version__) < Version('5.1'):
+                kubeconfig = yaml.load(file)
+            else:
+                kubeconfig = yaml.load(file, Loader=yaml.FullLoader)
+
+            if 'clusters' not in kubeconfig:
+                print(
+                    "ERROR: No clusters defined in file"
+                    f"'{os.environ['KUBECONFIG']}"
+                )
+                sys.exit(1)
+
+            cluster = kubeconfig['clusters'][0]  # use the first cluster
+    except yaml.YAMLError as e:
+        if hasattr(e, 'problem_mark'):
+            mark = e.problem_mark
+            print(
+                "ERROR: Failed to parse KUBECONFIG file "
+                f"'{os.environ['KUBECONFIG']}' at line {mark.line}, "
+                f"column {mark.column+1}"
+            )
+            print(f"{e.problem}")
+        else:
+            print(
+                "ERROR: Failed to parse KUBECONFIG file "
+                f"'{os.environ['KUBECONFIG']}' {e}"
+            )
+        sys.exit(1)
+    except Exception as e:
+        print(
+            "ERROR: Failed to open KUBECONFIG file "
+            f"'{os.environ['KUBECONFIG']}' {e}"
+        )
+        sys.exit(1)
+
+    args = get_args()
+
+    instance = get_instance_info(args.name)
+
+    if not instance:
+        print(f"{args.name} instance not found.")
+        sys.exit(1)
+
+    configured_scans = " [ uptime ]"
+    if args.alive:
+        configured_scans += " [ alive ]"
+    if args.kafka:
+        configured_scans += " [ kafka ]"
+    if args.logs:
+        configured_scans += " [ logging ]"
+    if args.db:
+        configured_scans += " [ database ]"
+    cprint(
+        f"Checkout of "
+        f"{args.name} on {cluster['name'].upper()}: {configured_scans}",
+        'green'
+    )
+
+    alive_failures = []
+    kafka_topics = None
+    log_errors = None
+    db_results = None
+
+    cprint("Scanning uptime information...", 'yellow')
+    pods = get_pod_info(instance)
+    if args.alive:
+        alive_failures = scan_alive_endpoints(
+            instance["name"],
+            instance["gms/type"]
+        )
+    if args.kafka:
+        kafka_topics = scan_kafka(instance, pods)
+    if args.logs:
+        log_errors = scan_logs_for_errors(
+            instance,
+            pods,
+            args.context,
+            args.after,
+            args.before
+        )
+    if args.db:
+        db_results = scan_database(instance)
+        postgres_size = query_postgres(instance)
+
+    cprint('Searching for errors...', 'yellow')
+    status = analyze_instance_status(
+        instance,
+        pods,
+        alive_failures,
+        kafka_topics,
+        log_errors,
+        db_results
+    )
+    cprint('---\n', 'green')
+
+    if args.db and db_results:
+        date_time_now = datetime.utcnow()
+        oldest_db_creation_time = db_results['oldest_soh']['result'][0][
+            'creation_time']
+        now = datetime.utcnow()
+        before = timedelta(days=30, minutes=60)
+        oldest_db_expected_time = now - before
+
+    if args.markdown:
+        # duplicate stdout to the markdown file.
+        original_stdout = sys.stdout
+        sys.stdout = FileLogger(args.markdown)
+        badge_name = instance['name'].replace('-', '--')
+        print(
+            f" ![IMG](https://shields.io/badge/{badge_name}-black?"
+            f"style=for-the-badge) ![IMG](https://shields.io/badge/-"
+            f"{cluster['name'].upper()}-blue?style=for-the-badge)"
+        )
+        print(f"  **Updated:** {instance['updated']}")
+        print(f"  **Type:**    {instance['gms/type']}")
+        print(f"  **Tag:**     {instance['gms/image-tag']}")
+        print(f"  **User:**    {instance['gms/user']} ")
+        if (instance['gms/type'] == 'soh' 
+                and instance['gms/cd11-live-data'] == 'true'):
+            print(
+                f"  **Processing Live Data:** "
+                f"{instance['gms/cd11-connman-port']} / "
+                f"{instance['gms/cd11-dataman-port-start']} - "
+                f"{instance['gms/cd11-dataman-port-end']}"
+            )
+        print()
+
+        if status['missing']:
+            print("___\n**MISSING PODS**\n")
+            print(
+                f"|{'NAME':63}|{'READY':8}|{'STATUS':12}|"
+                f"{'RESTARTS':11}|{'AGE':20}|"
+            )
+            print(f"|:{'-'*62}|:{'-'*7}|:{'-'*11}|:{'-'*10}|:{'-'*19}|")
+            for deployment_name in pods:
+                for pod in pods[deployment_name]:
+                    if pod['missing']:
+                        print(
+                            f"|{pod['name']:<63}|{pod['ready']:<8}|"
+                            f"{pod['status']:<12}|{pod['restarts']:<11}|"
+                            f"{pod['age']:<20}|"
+                        )
+            print()
+
+        if args.alive and alive_failures:
+            print("___\n**ALIVE ENDPOINT FAILURES**")
+            for service in alive_failures:
+                print(f" * **{service}** has failed its 'alive' check")
+            print()
+
+        if args.kafka and kafka_topics and (
+            status['idle_kafka_topics'] or status['lagging_kafka_topics']
+        ):
+            print("___\n**IDENTIFIED KAFKA ISSUES**\n")
+            print(
+                f"|{' ':8}|{'GROUP':44}|{'TOPIC':28}|{'OFFSET':12}|{'LAG':12}|"
+                f"{'RATE (msg/s)':14}|{'CLIENT-ID':32}|"
+            )
+            print(
+                f"|:{'-'*7}|:{'-'*43}|:{'-'*27}|:{'-'*11}|:{'-'*11}|:"
+                f"{'-'*13}|:{'-'*31}|"
+            )
+            for group in status['idle_kafka_topics']:
+                for topic in status['idle_kafka_topics'][group]:
+                    print(
+                        f"|{'IDLE':8}|{group:44}|{topic:28}|"
+                        f"{kafka_topics[group][topic]['offset']:<12}|"
+                        f"{kafka_topics[group][topic]['lag']:<12}|"
+                        f"{kafka_topics[group][topic]['rate']:<14}|"
+                        f"{kafka_topics[group][topic]['client']:20}|"
+                    )
+            for group in status['lagging_kafka_topics']:
+                for topic in status['lagging_kafka_topics'][group]:
+                    print(
+                        f"|{'LAGGING':8}|{group:44}|{topic:28}|"
+                        f"{kafka_topics[group][topic]['offset']:<12}|"
+                        f"{kafka_topics[group][topic]['lag']:<12}|"
+                        f"{kafka_topics[group][topic]['rate']:<14}|"
+                        f"{kafka_topics[group][topic]['client']:20}|"
+                    )
+            print()
+
+        if args.logs and log_errors:
+            print("___\n**IDENTIFIED LOG ISSUES**")
+            for service in log_errors:
+                print(
+                    f" * **{service}** has {len(log_errors[service])} "
+                    "unexpected error(s)."
+                )
+                # TODO: if we print the logs, this is too long to post
+
+        if args.db:
+            db_issues = {name: query for name, query in db_results.items()
+                         if not query['success']}
+            if len(db_issues) > 0:
+                print("___\n**IDENTIFIED DATABASE QUERY ISSUES**")
+                for name, query in db_issues.items():
+                    print(f"  * **{name}**: {query['result']}")
+
+        if status['result'] == 'PASSED':
+            print("___\n**NO ISSUES IDENTIFIED!**")
+
+        if args.db and db_results:
+            print("___\n**CURRENT TIME: **")
+            print(f"  {date_time_now}")
+            print()
+            print("___\n**OLDEST POSTGRES DATA CREATED ON: **")
+            print(f"  {oldest_db_creation_time}")
+            print()
+            if db_results['oldest_soh']['success'] == True:
+                print(
+                    "  * Oldest Postgres data is within the 30 day TTL "
+                    "time range."
+                )
+                print()
+            else:
+                print(
+                    "  * Oldest Postgres data is beyond the 30 day TTL time "
+                    "range. Check data and TTL."
+                )
+                print()
+            print("___\n**POSTGRES SIZE: **")
+            print(f"  {postgres_size}")
+            print()
+
+        # Restore stdout
+        print('\n___')
+        sys.stdout = original_stdout
+        print(f"Markdown summary written to {args.markdown}")
+
+    else:  # terminal output
+        print(
+            f"[{instance['name']}/{cluster['name'].upper()}] "
+            "CHECKOUT RESULTS"
+        )
+        print("---")
+        print(f"  Updated: {instance['updated']}")
+        print(f"  Type:    {instance['gms/type']}")
+        print(f"  Tag:     {instance['gms/image-tag']}")
+        print(f"  User:    {instance['gms/user']} ")
+        if (instance['gms/type'] == 'soh' 
+                and instance['gms/cd11-live-data'] == 'true'):
+            print(
+                f"  Processing Live Data: "
+                f"{instance['gms/cd11-connman-port']} / "
+                f"{instance['gms/cd11-dataman-port-start']} - "
+                f"{instance['gms/cd11-dataman-port-end']}"
+            )
+        print(f"  Scans:  {configured_scans}")
+        print("---")
+
+        if status['missing']:
+            cprint("  MISSING PODS", 'yellow', attrs=['bold'])
+            print(
+                f"  {'NAME':63}{'READY':8}{'STATUS':12}"
+                f"{'RESTARTS':11}{'AGE':20}"
+            )
+            for deployment_name in pods:
+                for pod in pods[deployment_name]:
+                    if pod['missing']:
+                        print(
+                            f"  {pod['name']:<63}{pod['ready']:<8}"
+                            f"{pod['status']:<12}{pod['restarts']:<11}"
+                            f"{pod['age']:<20}"
+                        )
+            print("---")
+
+        if args.alive and alive_failures:
+            cprint(
+                "  IDENTIFIED ALIVE ENDPOINT FAILURES",
+                'yellow',
+                attrs=['bold']
+            )
+            for service in alive_failures:
+                cprint(f"  {service} has failed its 'alive' check")
+            print("---")
+
+        if args.kafka and kafka_topics and (
+            status['idle_kafka_topics'] or status['lagging_kafka_topics']
+        ):
+            cprint("  IDENTIFIED KAFKA ISSUES", 'yellow', attrs=['bold'])
+            print(
+                f"  {' ':8}{'GROUP':44}{'TOPIC':28}{'OFFSET':12}{'LAG':12}"
+                f"{'RATE (msg/s)':14}{'CLIENT-ID':32}"
+            )
+            for group in status['idle_kafka_topics']:
+                for topic in status['idle_kafka_topics'][group]:
+                    print(
+                        f"  {'IDLE':8}{group:44}{topic:28}"
+                        f"{kafka_topics[group][topic]['offset']:<12}"
+                        f"{kafka_topics[group][topic]['lag']:<12}"
+                        f"{kafka_topics[group][topic]['rate']:<14}"
+                        f"{kafka_topics[group][topic]['client']:20}"
+                    )
+            for group in status['lagging_kafka_topics']:
+                for topic in status['lagging_kafka_topics'][group]:
+                    print(
+                        f"  {'LAGGING':8}{group:44}{topic:28}"
+                        f"{kafka_topics[group][topic]['offset']:<12}"
+                        f"{kafka_topics[group][topic]['lag']:<12}"
+                        f"{kafka_topics[group][topic]['rate']:<14}"
+                        f"{kafka_topics[group][topic]['client']:20}"
+                    )
+            print("---")
+
+        if args.db:
+            db_issues = {name: query for name, query in db_results.items()
+                         if not query['success']}
+            if len(db_issues) > 0:
+                cprint(
+                    "  IDENTIFIED DATABASE QUERY ISSUES",
+                    'yellow',
+                    attrs=['bold']
+                )
+                for name, query in db_issues.items():
+                    print(f"  {name}: {query['result']}")
+                print("---")
+
+        if args.db and db_results:
+            cprint("  CURRENT TIME: ", 'yellow', attrs=['bold'])
+            print(f"  {date_time_now}")
+            print("---")
+            cprint(
+                "  OLDEST POSTGRES DATA CREATED ON: ",
+                'yellow',
+                attrs=['bold']
+            )
+            print(f"  {oldest_db_creation_time}")
+            if db_results['oldest_soh']['success'] == True:
+                print(
+                    f"  * Oldest Postgres data is within the 30 day "
+                    f"TTL time range."
+                )
+                print("---")
+            else:
+                print(
+                    f"  * Oldest Postgres data is beyond the 30 day TTL "
+                    f"time range. Check data and TTL."
+                )
+                print("---")
+            cprint("  POSTGRES SIZE: ", 'yellow', attrs=['bold'])
+            print(f"  {postgres_size}")
+            print("---")
+
+        if args.logs and log_errors:
+            cprint("  IDENTIFIED LOG ISSUES", 'yellow', attrs=['bold'])
+            for service in log_errors:
+                cprint(
+                    f"  {service} has {len(log_errors[service])} "
+                    "unexpected error(s).",
+                    'cyan',
+                    attrs=['bold']
+                )
+                if args.verbose:
+                    for error in log_errors[service]:
+                        # print context around error
+                        # line (with error line in bold)
+                        if args.context > 0:
+                            print("...")
+                            for i in range(len(error['context'])):
+                                if i == args.context:
+                                    cprint(error['context'][i], attrs=['bold'])
+                                else:
+                                    print(error['context'][i])
+                        else:
+                            print(error['line'])
+            print("---")
+
+        if args.verbose:
+            cprint("  PODS", 'cyan', attrs=['bold'])
+            print(
+                f"  {'NAME':63}{'READY':8}{'STATUS':12}"
+                f"{'RESTARTS':11}{'AGE':20}"
+            )
+            for deployment_name in pods:
+                for pod in pods[deployment_name]:
+                    if pod['missing']:
+                        cprint(
+                            f"  {pod['name']:<63}{pod['ready']:<8}"
+                            f"{pod['status']:<12}{pod['restarts']:<11}"
+                            f"{pod['age']:<20}",
+                            'yellow'
+                        )
+                    else:
+                        print(
+                            f"  {pod['name']:<63}{pod['ready']:<8}"
+                            f"{pod['status']:<12}{pod['restarts']:<11}"
+                            f"{pod['age']:<20}"
+                        )
+            print("---")
+
+        if args.verbose and args.kafka:
+            cprint("  KAFKA TOPICS", 'cyan', attrs=['bold'])
+            print(
+                f"  {'GROUP':44}{'TOPIC':28}{'OFFSET':12}{'LAG':12}"
+                f"{'RATE (msg/s)':14}{'CLIENT-ID':32}"
+            )
+            for group in kafka_topics:
+                for topic in kafka_topics[group]:
+                    print(
+                        f"  {group:44}{topic:28}"
+                        f"{kafka_topics[group][topic]['offset']:<12}"
+                        f"{kafka_topics[group][topic]['lag']:<12}"
+                        f"{kafka_topics[group][topic]['rate']:<14}"
+                        f"{kafka_topics[group][topic]['client']:20}"
+                    )
+
+        if status['result'] == 'PASSED':
+            cprint("  NO ISSUES IDENTIFIED!", 'green')
+
+    # write any output files to --dst if specified
+
+    if args.dst and log_errors:
+        for service in log_errors:
+            log_context_filename = os.path.join(args.dst, service + ".txt")
+            cprint(f"Writing log errors to {log_context_filename}")
+            try:
+                with open(log_context_filename, 'w') as file:
+                    print(
+                        f" {service} has {len(log_errors[service])} "
+                        "unexpected error(s).",
+                        file=file
+                    )
+                    print("---", file=file)
+                    for error in log_errors[service]:
+                        for i in range(len(error['context'])):
+                            # print with an arrow pointing
+                            # to the line with the error
+                            if i == args.context:
+                                print(f"=> {error['context'][i]}", file=file)
+                            else:
+                                print(f"   {error['context'][i]}", file=file)
+                        print("...", file=file)
+            except Exception as ex:
+                print(ex)
+                sys.exit(1)
+
+    if args.dst and db_results:
+        if 'unique_stations' in db_results:
+            unique_stations_filename = os.path.join(
+                args.dst,
+                "DB_unique_stations.txt"
+            )
+            cprint(
+                f"Writing unique station query output to "
+                f"{unique_stations_filename}"
+            )
+            try:
+                with open(unique_stations_filename, 'w') as file:
+                    print(db_results['unique_stations']['result'], file=file)
+            except Exception as ex:
+                print(ex)
+                sys.exit(1)
+
+    sys.exit(0)
+
+
+# -----------------------------------------------------------------------------
+def get_args():
+    'Get command-line arguments.'
+
+    description = """
+description:
+  gms-checkout performs a rudimentary system checkout to
+  assess the state of a running instance of the GMS system.
+
+  There are four checks that can be done:
+  --alive  : scan alive endpoints for supported services
+  --kafka  : scan kafka topics and consumer groups for backlog
+  --logs   : scan logs for unknown errrors
+  --db     : scan postgresl for expected results
+
+  Specifying --full will include all possible scans.
+
+  If none of the checks are specified, it will default to showing all of them.
+
+  Note that using the --context argument to gather log context slows down
+  log gathering considerably (from under one minute to tens of minutes).
+    """
+    parser = ArgumentParser(
+        description=description,
+        formatter_class=RawDescriptionHelpFormatter
+    )
+
+    parser.add_argument(
+        '--name',
+        '-n',
+        required=True,
+        help="Name of the instance to checkout"
+    )
+
+    parser.add_argument(
+        '--alive',
+        '-a',
+        action='store_true',
+        help="Check 'alive' endpoints"
+    )
+
+    parser.add_argument(
+        '--kafka',
+        '-k',
+        action='store_true',
+        help="Examine Kafka queues"
+    )
+
+    parser.add_argument(
+        '--logs',
+        '-l',
+        action='store_true',
+        help="Scan logs for unexpected errors"
+    )
+
+    parser.add_argument(
+        '--db',
+        '-d',
+        action='store_true',
+        help="Check database contents"
+    )
+
+    parser.add_argument(
+        '--full',
+        '-f',
+        action='store_true',
+        help="Perform full checkout (alive, kafka, logs, db)"
+    )
+
+    parser.add_argument(
+        '--verbose',
+        '-v',
+        action='store_true',
+        help="Print all gathered information"
+    )
+
+    parser.add_argument(
+        '--markdown',
+        '-m',
+        default=None,
+        help="Write summary report in markdown"
+    )
+
+    parser.add_argument(
+        '--dst',
+        default=None,
+        help="Destination directory for output context files"
+    )
+    parser.add_argument(
+        '--context',
+        '-c',
+        type=int,
+        default=0,
+        help="When scanning logs capture this number of context lines "
+        "before/after errors"
+    )
+    parser.add_argument(
+        '--after',
+        default="now-1d",
+        help="When scanning logs, only include logs after this time."
+    )
+    parser.add_argument(
+        '--before',
+        default="now",
+        help="When scanning logs, only include logs before this time."
+    )
+
+    args = parser.parse_args()
+
+    #-- A full checkout activates all available scans
+    if args.full:
+        args.alive = True
+        args.kafka = True
+        args.logs = True
+        args.db = True
+
+    if not args.logs:
+        if args.context:
+            print(
+                f"WARNING: --context not used if --logs "
+                "or --all not specified."
+            )
+
+    #-- create the destination directory if necessary
+    if args.dst:
+        if not os.path.exists(args.dst):
+            try:
+                os.mkdir(args.dst)
+            except:
+                print(
+                    f"Failed to create output directory '{args.dst}'.  "
+                    "Defaulting to '.'"
+                )
+                args.dst = '.'
+
+    return args
+
+
+# -----------------------------------------------------------------------------
+def get_ingress_domain_url(instance_name: str) -> str:
+    """
+    Use ``gmskube ingress`` to get the ingress URL for the
+    ``user-manager-service``.
+
+    Args:
+        instance_name:  The name of the instance.
+
+    Raises:
+        RuntimeError:  If something goes wrong with ``gmskube ingress``.
+
+    Returns:
+       Returns the URL through the port (which is appended to domain via
+       ":<port_number>"), stripping off anything following
+    """
+
+    ingress_url = ""
+    _, out, _ = run(f"gmskube ingress {instance_name}")
+
+    for line in out.splitlines():
+        if "user-manager-service" in line:
+            ingress_url = line.split()[1]
+
+    if ingress_url == "":
+        raise RuntimeError(
+            "Unable to get the ingress URL for the "
+            "`user-manager-service`."
+        )
+
+    return re.search(r"^(https://.*:.*)/.*$", ingress_url).group(1)
+
+
+# -----------------------------------------------------------------------------
+def scan_alive_endpoints(instance_name: str, instance_type: str) -> list[str]:
+    """
+    Scan the alive endpoints to see if expected services are reporting
+    back alive.
+
+    Args:
+        instance_name:  The name of the instance to scan.
+        instance_type:  The type of the instance (``ian``, ``sb``,
+            ``soh``).
+
+    Returns:
+        The services that were not alive.
+    """
+    cprint("Scanning alive endpoints...", color="yellow")
+    alive_failures = []
+
+    # fetch the base url - including instance name, cluster, domain, and port
+    try:
+        base_url = get_ingress_domain_url(instance_name)
+    except RuntimeError:
+        raise RuntimeError("Unable to get domain name.")
+
+    for service in EXPECTED_ALIVE_SERVICES[instance_type]:
+        cprint(f"- Checking {service} alive endpoint...", color="yellow")
+
+        try:
+            response = requests.get(f"{base_url}/{service}/alive")
+            response.raise_for_status()
+
+            if response.status_code != 200:
+                alive_failures.append(service)
+
+        except Exception as err:
+            print(
+                "*** EXCEPTION in response returned from alive endpoint check"
+            )
+            alive_failures.append(service)
+        print()
+
+    return alive_failures
+
+
+# ------------------------------------------------------------------------------
+def scan_kafka(instance, pods):
+    """
+    Scan kafka queues to gather the message rate and lag for every topic.
+    """
+
+    # -----------------------------------------
+    def run_kafka_consumer_group(name, kafka_deployment, group):
+        """
+        Thread executor to run a single kafka consumer
+        group command for one group
+        """
+        rc, out, err = run(
+            f"kubectl exec -n {name} {kafka_deployment} "
+            f"-- kafka-consumer-groups.sh --bootstrap-server localhost:9092 "
+            f"--group {group} --describe",
+            num_tries=3
+        )
+        if rc != 0:
+            cprint(err, 'red')
+        return {'group': group, 'out': out}
+
+    # -----------------------------------------
+    def get_kafka_topic_offsets(
+        name,
+        kafka_deployment,
+        consumer_groups,
+        pass_name
+    ):
+        """
+        Utility function to gather topic offsets for a list of
+        kafka consumer groups as quickly as possible
+        """
+        kafka_topic_offsets = {}
+
+        #-- use a threadpool executor to run multiple
+        #kafka-consumer-group commands in parallel
+        futures = []
+        for group in consumer_groups:
+            kafka_topic_offsets[group] = {}
+            futures.append(
+                ThreadPoolExecutor(max_workers=5).submit(
+                    run_kafka_consumer_group,
+                    name,
+                    kafka_deployment,
+                    group
+                )
+            )
+
+        #-- sift through the results of the kafka offsets as they are completed
+        for future in concurrent.futures.as_completed(futures):
+            result = future.result()
+            cprint(
+                f"- Gathering {pass_name} offsets for "
+                f"'{result['group']}' topics...",
+                'yellow'
+            )
+            for line in result['out'].splitlines():
+                if len(line) > 0 and not line.startswith("TOPIC"):
+                    columns = line.split()
+                    topic = columns[0]
+                    kafka_topic_offsets[result['group']][topic] = {}
+                    topic_info = kafka_topic_offsets[result['group']][topic]
+                    topic_info['topic'] = topic
+                    topic_info['offset'] = (0 if columns[2].startswith('-')
+                                            else int(columns[2]))
+                    topic_info['lag'] = (0 if columns[4].startswith('-')
+                                         else int(columns[4]))
+                    topic_info['client'] = columns[7]
+                    topic_info['wallclock'] = datetime.now()
+
+        return kafka_topic_offsets
+
+    cprint("Scanning kafka queues...", 'yellow')
+
+    #-- find the name of the kafka deployment for this instance
+    if 'kafka' in pods:
+        kafka_deployment = 'deployment/kafka'
+    elif 'kafka1' in pods:
+        kafka_deployment = 'deployment/kafka1'
+    else:
+        cprint(
+            "- Skipping kafka scan: kafka not present "
+            f"in {instance['name']}...",
+            'yellow'
+        )
+        return None
+
+    #-- get list of kafka consumer groups
+    rc, out, err = run(
+        f"kubectl exec -n {instance['name']} {kafka_deployment} "
+        f"-- kafka-consumer-groups.sh --bootstrap-server localhost:9092 "
+        f"--list"
+    )
+    consumer_groups = []
+    for line in out.splitlines():
+        if line and line.strip():
+            consumer_groups.append(line)
+
+    initial_offsets = get_kafka_topic_offsets(
+        instance['name'],
+        kafka_deployment,
+        consumer_groups,
+        "initial"
+    )
+    cprint(
+        f"- Waiting {KAFKA_SAMPLE_TIME_IN_SECONDS} seconds to "
+        "gather second sample...",
+        'yellow'
+    )
+    time.sleep(KAFKA_SAMPLE_TIME_IN_SECONDS)
+    delta_offsets = get_kafka_topic_offsets(
+        instance['name'],
+        kafka_deployment,
+        consumer_groups,
+        "delta"
+    )
+
+    for group in delta_offsets:
+        for topic in delta_offsets[group]:
+            if group in initial_offsets and topic in initial_offsets[group]:
+                #-- compute flow through kafka queue in
+                # "messages/sec" to two decimal places
+                delta = (delta_offsets[group][topic]['wallclock'] 
+                         - initial_offsets[group][topic]['wallclock'])
+                if delta.total_seconds() > 0:
+                    rate = (
+                        delta_offsets[group][topic]['offset']
+                        - initial_offsets[group][topic]['offset']
+                    ) / delta.total_seconds()
+                else:
+                    rate = 0.0
+
+                delta_offsets[group][topic]['rate'] = round(rate, 2)
+            else:
+                delta_offsets[group][topic]['rate'] = 0.0
+
+    return delta_offsets
+
+
+# -----------------------------------------------------------------------------
+def scan_logs_for_errors(
+    instance,
+    pods,
+    num_context_lines=0,
+    after='now-24h',
+    before='now'
+):
+    """
+    Scan all pod logs for the word ERROR.
+    """
+    error_pattern = re.compile(r'.*(ERROR).*', flags=re.IGNORECASE)
+
+    # -----------------------------------------
+    def run_log_scan(name, deployment_name, pod_name, expected_errors):
+        """
+        Thread executor to run a single kubectl logs
+        command and parse the output
+        """
+        cprint(f"- Scanning {deployment_name} logs...", 'yellow')
+
+        # if no context lines are needed, we can go faster
+        # by only getting lines with the word ERROR
+        # note: this is a case-insensitive match on the word error
+        match_arg = "--match 'ERROR'" if num_context_lines == 0 else ''
+
+        # note: gms-logs sometimes fails - try multiple times
+        rc, out, err = run(
+            f"gms-logs -n {name} -c {deployment_name} {match_arg} "
+            f"--after '{after}' --before '{before}'", num_tries=4
+        )
+        if rc == 0:
+            count = 0
+            error_lines = []
+            output_lines = out.splitlines()
+            for line in output_lines:
+                if error_pattern.match(line):
+                    # ignore this line if it is an expected error
+                    expected = False
+                    for expected_error in expected_errors:
+                        if re.search(expected_error, line):
+                            expected = True
+                            break
+
+                    if not expected:
+                        # capture context around error
+                        # line for downstream reporting
+                        line_info = {
+                            'line':
+                            line,
+                            'context':
+                            output_lines[count - num_context_lines:count
+                                         + num_context_lines + 1]
+                        }
+                        error_lines.append(line_info)
+                count = count + 1
+        else:
+            cprint(
+                f"- ERROR gms-logs for {deployment_name} failed "
+                f"with exit code {rc}. Skipping...",
+                'red'
+            )
+            print(err)
+            error_lines = []
+
+        return {'pod_name': pod_name, 'errors': error_lines}
+
+    cprint("Scanning logs for unexpected errors...", 'yellow')
+    log_errors = {}
+    futures = []
+
+    if num_context_lines > 0:
+        cprint(
+            "- NOTE: including context lines may slow "
+            "down log collection SIGNIFICANTLY",
+            'cyan'
+        )
+
+    for deployment_name in pods:
+        for pod in pods[deployment_name]:
+            # filter expected errors by deployment name
+            # (and also filter any globally expected errors)
+            expected_errors = (EXPECTED_ERRORS.get(deployment_name, []) 
+                               + EXPECTED_ERRORS.get("global",[]))
+            # avoid the temptation to use more threads... too many
+            # simultaneous log requests fail with x509 cert errors
+            futures.append(
+                ThreadPoolExecutor(max_workers=3).submit(
+                    run_log_scan,
+                    instance['name'],
+                    deployment_name,
+                    pod['name'],
+                    expected_errors
+                )
+            )
+    #-- gather the results of the log scans as they are completed
+    for future in concurrent.futures.as_completed(futures):
+        result = future.result()
+        if len(result['errors']) > 0:
+            log_errors[result['pod_name']] = result['errors']
+
+    return log_errors
+
+
+# -----------------------------------------------------------------------------
+def scan_database(instance):
+    """
+    Scan database for expected tables (and expected contents of tables).
+    """
+
+    # -----------------------------------------
+    def run_query(query, parse_json=False):
+        """"
+        :returns: {success, result} dict
+        """
+        rc, out, err = run(
+            f"kubectl exec -i -n {instance['name']} deployment/postgresql-gms "
+            f"-c postgresql-gms -- sh "
+            f"-c 'PGPASSWORD=$GMS_POSTGRES_READ_ONLY_PASSWORD psql "
+            f"-S gms gms_read_only -c \"{query}\"'"
+        )
+        result = {'success': (rc == 0)}
+        if rc == 0:
+            if out:
+                try:
+                    # psql prints out lots of extra cruft: find square
+                    # brackets and remove everything before & after those
+                    result['result'] = json.loads(
+                        out[out.find('[') - 1:out.find(']') + 1]
+                    ) if parse_json else out
+                except json.decoder.JSONDecodeError as ex:
+                    cprint(
+                        f"- ERROR: Failed to parse json output "
+                        f"from query: {ex}",
+                        'red'
+                    )
+                    for line in out.splitlines():
+                        cprint(f"  | {line}", 'red')
+
+                    # if json parsing fails, just return an empty list
+                    result['success'] = False
+                    result['result'] = "No results returned."
+            else:
+                result['result'] = "No results returned."
+        else:
+            result['result'] = err
+        return result
+
+    results = {}
+
+    cprint(
+        f"Scanning database for {instance['gms/type']} information...",
+        'yellow'
+    )
+    if instance['gms/type'] in POSTGRES_QUERIES:
+        for name, query in POSTGRES_QUERIES[instance['gms/type']].items():
+            cprint(f"- Running '{name}' query...", 'yellow')
+            results[name] = run_query(query['query'], query['json'])
+    else:
+        cprint(
+            f"No database tests defined for "
+            f"{instance['gms/type']}, skipping...",
+            'yellow'
+        )
+
+    return results
+
+
+# ------------------------------------------------------------------------------
+def query_postgres(instance) -> str:
+    """
+    Query postgres to determine space usage.
+    """
+    status = ""
+    du_cmd = (f"kubectl exec -n {instance['name']} -i "
+              f"deployment/postgresql-gms -c postgresql-gms "
+              f"-- du -sh /var/lib/postgresql/data/pgdata/")
+
+    rc, out, err = run(du_cmd)
+    if rc != 0:
+        cprint(err, 'red')
+        status = err
+    else:
+        #return the first token in the string, which is the disk usage size
+        status = out.split()[0]
+
+    return status
+
+
+# -----------------------------------------------------------------------------
+def analyze_instance_status(
+    instance,
+    pods,
+    alive_failures,
+    kafka_topics,
+    log_errors,
+    db_results
+):
+    """
+    Analyze the state of a given instance based on collected metrics
+    """
+
+    status = {}
+    overall_result = 'PASSED'  # innocent until proven guilty
+
+    #-- search for any missing containers:
+    missing = defaultdict(list)
+    if pods:
+        for deployment_name in pods:
+            for pod in pods[deployment_name]:
+                if pod['missing']:
+                    missing[deployment_name].append(pod)
+                    overall_result = 'FAILED'
+
+    status['missing'] = missing
+
+    #-- any services failing the alive check?
+    if alive_failures:
+        if len(alive_failures) > 0:
+            overall_result = 'FAILED'
+
+    #-- are there logs with errors?
+    if log_errors:
+        overall_result = 'FAILED'
+
+    #-- check for unexpeected idle topics or excessive lags in kafka
+    if kafka_topics:
+        idle_kafka_topics = defaultdict(list)
+        lagging_kafka_topics = defaultdict(list)
+
+        if ('gms/type' in instance and
+            instance['gms/type'] in BUSY_KAFKA_TOPICS):
+            expected_busy_topics = BUSY_KAFKA_TOPICS[instance['gms/type']]
+        else:
+            expected_busy_topics = None
+
+        for group in kafka_topics:
+            for topic in kafka_topics[group]:
+                if (expected_busy_topics
+                        and group in expected_busy_topics
+                        and topic in expected_busy_topics[group]):
+                    if kafka_topics[group][topic]['rate'] == 0:
+                        idle_kafka_topics[group].append(topic)
+                        overall_result = 'FAILED'
+                if kafka_topics[group][topic]['lag'] > LAG_THRESHOLD:
+                    lagging_kafka_topics[group].append(topic)
+                    overall_result = 'FAILED'
+
+        status['idle_kafka_topics'] = idle_kafka_topics
+        status['lagging_kafka_topics'] = lagging_kafka_topics
+
+    #-- check if ANY of the db scans failed
+    # and then do some type-specific checks
+    if db_results:
+        for name in db_results:
+            if not db_results[name].get('success', False):
+                overall_result = 'FAILED'
+
+        #-- PERFORM DEEPER ANALYSIS ON DATABASE QUERY RESULTS:
+
+        #-- verify no SOH creation time > 30 days
+        if ('oldest_soh' in db_results
+               and db_results['oldest_soh'].get('success', False)):
+            #-- TTL runs every hour, so valid oldest expected
+            # times may be up to 30 days + 1 HOUR ago
+            now = datetime.utcnow()
+            before = timedelta(days=30, minutes=60)
+            oldest_expected_time = now - before
+            for row in db_results['oldest_soh'].get('result', []):
+                creation_time = convert_datetime(row['creation_time'])
+                # Update the status/result if this further
+                # analysis indicates failure
+                if creation_time < oldest_expected_time:
+                    overall_result = 'FAILED'
+                    db_results['oldest_soh']['success'] = False
+                    db_results['oldest_soh']['result'] = (
+                        f"[ {row['station_name']} ] 'station_soh' entry "
+                        f"'{creation_time}' is older than oldest expected TTL "
+                        f"'{oldest_expected_time}'"
+                    )
+                    break
+
+    status['result'] = overall_result
+    return status
+
+
+# -----------------------------------------------------------------------------
+def get_instance_info(name):
+    """
+    Gather a dictionary of information about a named instance.
+    """
+    summary = run_json_command(f"helm list --all -n {name} --output json")
+
+    if not summary:
+        return None
+
+    instance = {}
+    instance['name'] = summary[0]['name']
+    instance['status'] = summary[0]['status']
+    instance['updated'] = summary[0]['updated']
+
+    configmap = run_json_command(
+        f"kubectl get configmap --namespace {name} --field-selector "
+        "metadata.name==gms -o json"
+    )
+    labels = configmap['items'][0]['metadata']['labels']
+
+    for label in [
+        'gms/type',
+        'gms/user',
+        'gms/image-tag',
+        'gms/cd11-live-data',
+        'gms/cd11-connman-port',
+        'gms/cd11-dataman-port-start',
+        'gms/cd11-dataman-port-end'
+    ]:
+        if label in labels:
+            instance[label] = labels[label]
+        else:
+            instance[label] = None
+
+    return instance
+
+
+# -----------------------------------------------------------------------------
+def get_pod_info(instance):
+    """
+    Gather a dictionary of running pods for the given instance name.
+    """
+
+    # -----------------------------------------
+    def is_expected(instance, name):
+        if ('gms/type' in instance
+                and instance['gms/type'] in EXPECTED_DEPLOYMENTS):
+            expected = EXPECTED_DEPLOYMENTS[instance['gms/type']]
+            return deployment_name in expected
+        return False
+
+    rc, out, err = run(f"kubectl get pods -n {instance['name']} --no-headers")
+
+    pods = defaultdict(list)
+    for line in out.splitlines():
+        columns = line.split()
+
+        # The general pod naming convention is to append a unique hash that
+        #   contains an embedded dash to the service name segment
+        #   (i.e., service-name-hash1-hash2).
+        # To capture only the service name segment from the pod name, the
+        #   hash segment that is appended to the service name has to be
+        #   parsed out and stripped off.
+        # The dashes in the pod name are utilized to tokenize the pod name
+        #   string and the last 2 hash tokens are stripped off.  This leaves
+        #   only service name which is stored in the deployment_name variable
+        #   below.
+
+        deployment_name = columns[0].rsplit('-', 2)[0]
+
+        # Note that for IAN instances only, one particular pod name
+        #    (signal-enhancement-configuration-manager-service-hash)
+        #    reaches the Kubernetes-imposed threshold length of 63 chars
+        #    when the hash is appended to the service name.
+        # This threshold limit is believed to be the reason no dash is
+        #    embedded into the appended hash for this pod name
+        #    (i.e., service-name-hash).
+        # Because of this anomoly, only the last token (instead of the last 2
+        #    tokens) needs to be stripped off to capture the service name
+        #    segment and store it in the deployment_name variable below.
+
+        if (
+            instance['gms/type'] == "ian"
+            and deployment_name == "signal-enhancement-configuration-manager"
+        ):
+            deployment_name = columns[0].rsplit('-', 1)[0]
+
+        pod = {}
+        pod['deployment_name'] = deployment_name
+        pod['name'] = columns[0]
+        pod['ready'] = columns[1]
+        pod['status'] = columns[2]
+        pod['restarts'] = columns[3]
+        pod['age'] = columns[4]
+
+        #-- mark this as missing if we are expecting it
+        # but it is not Running or Completed
+        pod['missing'] = False
+        if (is_expected(instance, deployment_name)
+                and pod['status'] != 'Running'
+                and pod['status'] != 'Completed'):
+            pod['missing'] = True
+
+        pods[deployment_name].append(pod)
+
+    # check for any expected pods that are NOT even present
+    for deployment_name in EXPECTED_DEPLOYMENTS[instance['gms/type']]:
+        if deployment_name not in pods:
+            pod = {}
+            pod['deployment_name'] = deployment_name
+            pod['name'] = deployment_name
+            pod['ready'] = '0/0'
+            pod['status'] = 'Missing'
+            pod['restarts'] = '0'
+            pod['missing'] = True
+            pod['age'] = '0'
+            pods[deployment_name].append(pod)
+
+    return pods
+
+
+# -----------------------------------------------------------------------------
+def run(command, print_output=False, num_tries=1):
+    """
+    Execute the specified command and return
+        when the command execution is completed.
+    :param print_output: Enable printing of stdout and stderr immediately
+    :param num_tries: Retry this number of times if command fails
+    Returns the return code, stdout, and stderr of the command.
+    """
+
+    while True:
+        cmd = subprocess.Popen(
+            command,
+            shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            stdin=subprocess.PIPE
+        )
+        out, err = cmd.communicate()
+        out = out.decode()
+        err = err.decode()
+
+        if print_output:
+            print(out)
+            if len(err) > 0:
+                cprint(err, 'yellow')
+
+        if cmd.returncode == 0 or num_tries == 0:
+            break
+        else:
+            num_tries = num_tries - 1
+
+    return cmd.returncode, out, err
+
+
+# -----------------------------------------------------------------------------
+def run_json_command(command):
+    """
+    Run a command that produces JSON output and return the result as a dict.
+    """
+    result = None
+    try:
+        cmd = subprocess.Popen(
+            command.split(),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            stdin=subprocess.PIPE
+        )
+        out, err = cmd.communicate()
+        out = out.decode()
+        err = err.decode()
+
+        if cmd.returncode != 0:
+            print(
+                f"ERROR: '{command.split()[0]}' returned {cmd.returncode}."
+            )
+            print(out)
+            cprint(err, 'yellow')
+            return None
+
+        result = json.loads(out)
+    except Exception as ex:
+        print(ex)
+        sys.exit(1)
+
+    return result
+
+
+# -----------------------------------------------------------------------------
+def which(program):
+    """
+    Search PATH for a given program.
+    """
+    for path in os.environ["PATH"].split(os.pathsep):
+        fpath = os.path.join(path, program)
+        if (os.path.exists(fpath)
+                and os.path.isfile(fpath)
+                and os.access(fpath, os.X_OK)):
+            return fpath
+
+    return None
+
+
+# -----------------------------------------------------------------------------
+def convert_datetime(s):
+    supported_formats = [
+        "%Y-%m-%dT%H:%M:%S.%f",
+        "%Y-%m-%dT%H:%M:%S.%fZ",
+        "%Y-%m-%dT%H:%M:%SZ",
+        "%Y-%m-%dT%H:%M:%S"
+    ]
+    value = None
+    for format in supported_formats:
+        try:
+            value = datetime.strptime(s, format)
+        except Exception as e:
+            pass
+        if value:
+            break
+
+    if not value:
+        print(
+            f"ERROR: time data '{s}' does not match "
+            "any expected date/time format"
+        )
+        sys.exit(1)
+
+    return value
+
+
+# -----------------------------------------------------------------------------
+class FileLogger(object):
+    "Class to duplicate stdout to a file"
+
+    def __init__(self, filename):
+        self.terminal = sys.stdout
+        self.file = open(filename, 'w')
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.file.write(message)
+
+
+# -----------------------------------------------------------------------------
+if __name__ == "__main__":
+    main()

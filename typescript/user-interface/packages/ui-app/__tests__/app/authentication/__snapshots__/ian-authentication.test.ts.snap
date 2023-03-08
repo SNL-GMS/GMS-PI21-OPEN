@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ian-authentication authenticateWith('test') with IS_MODE_IAN = false should return an authenticated session 1`] = `
+Object {
+  "authenticated": true,
+  "authenticationCheckComplete": true,
+  "failedToConnect": false,
+  "userName": "test",
+}
+`;
+
+exports[`ian-authentication authenticateWith('test') with IS_MODE_IAN = true should return an authenticated session 1`] = `
+Object {
+  "authenticated": true,
+  "authenticationCheckComplete": true,
+  "failedToConnect": false,
+  "userName": "test",
+}
+`;
+
+exports[`ian-authentication authenticateWith() with IS_MODE_IAN = false should return an unauthenticated session 1`] = `
+Object {
+  "authenticated": false,
+  "authenticationCheckComplete": true,
+  "failedToConnect": false,
+  "userName": "",
+}
+`;
+
+exports[`ian-authentication authenticateWith() with IS_MODE_IAN = true should return an authenticated session 1`] = `
+Object {
+  "authenticated": true,
+  "authenticationCheckComplete": true,
+  "failedToConnect": false,
+  "userName": "username",
+}
+`;
+
+exports[`ian-authentication checkIsAuthenticated should return an authenticated session 1`] = `
+Object {
+  "authenticated": true,
+  "authenticationCheckComplete": true,
+  "failedToConnect": false,
+  "userName": "username",
+}
+`;
+
+exports[`ian-authentication checkIsAuthenticated should return an unauthenticated session 1`] = `
+Object {
+  "authenticated": false,
+  "authenticationCheckComplete": true,
+  "failedToConnect": false,
+  "userName": "",
+}
+`;
+
+exports[`ian-authentication logout should call back with an unauthenticated session 1`] = `
+Object {
+  "authenticated": false,
+  "authenticationCheckComplete": true,
+  "failedToConnect": false,
+  "userName": "default",
+}
+`;

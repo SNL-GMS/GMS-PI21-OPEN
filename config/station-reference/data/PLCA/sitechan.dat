@@ -1,0 +1,19 @@
+PLCA   be        1995100       18  2002141 n       0.0000   90.0   90.0 broadband_east_54000                               20020701 12:00:00
+PLCA   bn        1995100       39  2002141 n       0.0000    0.0   90.0 broadband_north_54000                              20020701 12:00:00
+PLCA   bz        1995100       61  2002141 n       0.0000   -1.0    0.0 broadband_vertical_54000                           20020701 12:00:00
+PLCA   le        1995100      126  2002141 n       0.0000   90.0   90.0 long period_east_54000                             20020701 12:00:00
+PLCA   ln        1995100      172  2002141 n       0.0000    0.0   90.0 long period_north_54000                            20020701 12:00:00
+PLCA   lz        1995100      218  2002141 n       0.0000   -1.0    0.0 long period_vertical_54000                         20020701 12:00:00
+PLCA   sz        1995100      560  2002141 n       0.0000   -1.0    0.0 short period_vertical_GS21                         20020701 12:00:00
+PLCA01 SHZ       2002146     1551  2002247 n       0.0308   -1.0    0.0 short_period_vertical_GS21                         20130708 12:00:00
+PLCA1  SHZ       2002247     1687  2286324 n       0.0308   -1.0    0.0 short_period_vertical_GS21                         20020904 12:00:00
+PLCA31 BHE       2002146     1550  2002247 n       0.0930   90.0   90.0 broadband_east_KS54000                             20020710 12:00:00
+PLCA31 BHN       2002146     1549  2002247 n       0.0930    0.0   90.0 broadband_north_KS54000                            20020710 12:00:00
+PLCA31 BHZ       2002146     1548  2002247 n       0.0930   -1.0    0.0 broadband_vertical_KS54000                         20020710 12:00:00
+PLCAB  BHE       2002247     1686  2010281 n       0.0930   90.0   90.0 broadband_east_KS54000                             20101115 12:00:00
+PLCAB  BHE       2010281     1686  2014093 n       0.0930   70.0   90.0 broadband_east_KS54000                             20140408 12:00:00
+PLCAB  BHE       2014093     1686  2286324 n       0.0930   90.0   90.0 broadband_east_KS54000                             20140408 12:00:00
+PLCAB  BHN       2002247     1685  2010281 n       0.0930    0.0   90.0 broadband_north_KS54000                            20101115 12:00:00
+PLCAB  BHN       2010281     1685  2014093 n       0.0930  340.0   90.0 broadband_north_KS54000                            20140408 12:00:00
+PLCAB  BHN       2014093     1685  2286324 n       0.0930    0.0   90.0 broadband_north_KS54000                            20140408 12:00:00
+PLCAB  BHZ       2002247     1684  2286324 n       0.0930   -1.0    0.0 broadband_vertical_KS54000                         20040920 12:00:00

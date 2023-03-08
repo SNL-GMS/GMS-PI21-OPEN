@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weavess Content Renderer create all markers 1`] = `
+<div>
+  <div
+    class="contentrenderer"
+    tabindex="0"
+  >
+    <div
+      class="contentrenderer-content contentrenderer-content--sticky"
+      style="width: calc(100% - 184);"
+    >
+      <div
+        class="contentrenderer-content-description-label"
+        data-cy="filtered-channel-label"
+        data-cy-color="#ff000"
+      >
+        <span
+          class="contentrenderer-content__description"
+        >
+          description
+        </span>
+      </div>
+    </div>
+    <div
+      class="contentrenderer-content"
+      data-cy-station-waveform="channel-id"
+      style="left: 184px; width: calc(100% - 184px);"
+    >
+      <div
+        class="contentrenderer-content-drag-indicator"
+      />
+      <div
+        class="contentrenderer-content-markers"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Weavess Content Renderer renders 1`] = `
+<div>
+  <div
+    class="contentrenderer"
+    tabindex="0"
+  >
+    <div
+      class="contentrenderer-content contentrenderer-content--sticky"
+      style="width: calc(100% - 184);"
+    >
+      <div
+        class="contentrenderer-content-description-label"
+        data-cy="filtered-channel-label"
+        data-cy-color="#ff000"
+      >
+        <span
+          class="contentrenderer-content__description"
+        >
+          description
+        </span>
+      </div>
+    </div>
+    <div
+      class="contentrenderer-content"
+      data-cy-station-waveform="channel-id"
+      style="left: 184px; width: calc(100% - 184px);"
+    >
+      <div
+        class="contentrenderer-content-drag-indicator"
+      />
+      <div
+        class="contentrenderer-content-markers"
+      />
+    </div>
+  </div>
+</div>
+`;

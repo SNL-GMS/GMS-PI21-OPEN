@@ -1,0 +1,91 @@
+#!/bin/bash
+set -o pipefail
+
+# ------------------------------------------------------------------------------
+# ci-docker-upstream
+# ------------------------------------------------------------------------------
+
+SCRIPT_DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" > /dev/null && pwd)"
+
+source ${SCRIPT_DIR}/ci.env
+source ${SCRIPT_DIR}/repository.env
+source ${SCRIPT_DIR}/versions.env
+
+#-- decouple from docker-ucp environment settings
+unset DOCKER_HOST
+unset DOCKER_TLS_VERIFY
+
+print_usage() {
+    echo "usage: ci-docker-tag-source --source SOURCE [--push]"
+    echo ""
+    echo "description:"
+    echo "  Pull and Tag (and optionally push) a source docker image from upstream with no modifications."
+    echo "  Note the source image is always pulled. The image is re-tagged for the CI_DOCKER_REGISTRY"
+    echo "  and the tag is appended with the UPSTREAM_TAG_SUFFIX. This is used to `pin` upstream"
+    echo "  images to a specific point in time."
+    echo "arguments:"
+    echo "    --source      Full name and tag of the source image to tag."
+    echo "    --push        Push the resulting image to the remote artifactory repo."
+    echo ""
+    echo "  The --push argument is typically only used by the automated CI pipeline to "
+    echo "  push the build container to the docker registry specified by CI_DOCKER_REGISTRY."
+    echo "  To push the environment variables CI_USER and CI_PASSWORD must be defined to "
+    echo "  obtain access to the CI_DOCKER_REGISTRY."
+    echo ""
+    echo "examples:"
+    echo "  # Tag the kafka container"
+    echo "  $ ci-docker-tag-source --source some.repository.com/bitnami/kafka:7.0.1 --push"
+    exit 0
+}
+
+if [ $# -eq 0 ]; then print_usage; fi
+
+function echo_run() {
+    echo ">> $@"
+    eval time $@
+    status=$?
+    if [ ${status} -ne 0 ]; then echo "ERROR: failed with exit status ${status}"; exit ${status}; fi
+}
+
+# Parse our command-line arguments
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --source)      docker_image_source=$2;      shift 2;;
+        --push)        docker_push=1;               shift 1;;
+        -h|--help) print_usage;                    shift 1;;
+        *)  echo "ERROR: unrecognized option '$1'"; exit 1;;
+    esac
+done
+
+if [ -z "${docker_image_source:-}" ]; then echo "ERROR: missing required --source argument"; exit 1; fi
+
+#-- explicitly expand any escaped variables in image source
+docker_image_source=$(eval echo ${docker_image_source})
+
+#-- strip everything until the first / (i.e. the source host name)
+docker_image_name=$(echo ${docker_image_source} | sed 's|^[^/]*/||g')
+
+if [ ${CI_DEBUG:-} ]; then
+    echo "DEBUG: docker_image_source=${docker_image_source}"
+    echo "DEBUG: docker_image_name=${docker_image_name}"
+    echo "DEBUG: docker_push=${docker_push}"
+fi
+
+echo "---------------------------------------------------------------------"
+echo ""
+echo "PULLING ${docker_image_source}"
+echo ""
+echo "---------------------------------------------------------------------"
+echo_run docker pull ${docker_image_source}
+
+echo "---------------------------------------------------------------------"
+echo ""
+echo "TAGGING ${docker_image_name}"
+echo ""
+echo "---------------------------------------------------------------------"
+echo_run docker tag ${docker_image_source} ${CI_DOCKER_REGISTRY}/${docker_image_name}${UPSTREAM_TAG_SUFFIX}
+
+if [ ${docker_push:-0} == 1  ]; then
+    echo_run docker push ${CI_DOCKER_REGISTRY}/${docker_image_name}${UPSTREAM_TAG_SUFFIX}
+fi
+exit 0

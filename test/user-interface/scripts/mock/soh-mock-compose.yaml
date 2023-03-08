@@ -1,0 +1,55 @@
+version: '3.7'
+
+services:
+  etcd:
+    platform: linux/amd64
+    image: '${CI_DOCKER_REGISTRY}/gms-common/etcd:${VERSION:-develop}'
+    restart: on-failure
+    networks:
+      - kafka-net
+    environment:
+      GMS_ETCD_USER: gms
+      GMS_ETCD_PASSWORD: SOME-PASSWORD
+      GMS_ETCD_ADMIN_USER: gmsadmin
+      GMS_ETCD_ADMIN_PASSWORD: ANOTHER-PASSWORD
+      GMS_ETCD_ROOT_USER: root
+      GMS_ETCD_ROOT_PASSWORD: FINAL-PASSWORD
+
+  kafka:
+    platform: linux/amd64
+    image: '${CI_DOCKER_REGISTRY}/confluentinc/cp-kafka:5.0.0'
+    container_name: kafka
+    networks:
+      - kafka-net
+    ports:
+      - '9092:9092'
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_CREATE_TOPICS: 'soh.station-soh:1:1,soh.capability-rollup:1:1,soh.ui-materialized-view:1:1,soh.ack-station-soh:1:1,soh.quieted-list:1:1,system.system-messages:1:1'
+    depends_on:
+      - zookeeper
+
+  zookeeper:
+    platform: linux/amd64
+    image: '${CI_DOCKER_REGISTRY}/confluentinc/cp-zookeeper:5.0.0'
+    container_name: zookeeper
+    networks:
+      - kafka-net
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+
+  mock-data-server:
+    platform: linux/amd64
+    image: '${CI_DOCKER_REGISTRY}/gms-common/mock-data-server:${VERSION:-develop}'
+    ports:
+      - '3001:3000'
+
+networks:
+  kafka-net:
+    name: kafka-net
+    attachable: true

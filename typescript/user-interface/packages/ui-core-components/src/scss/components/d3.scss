@@ -1,0 +1,50 @@
+.tooltip-body {
+  padding: 0.5em;
+  font-size: 1em;
+  border-radius: 3px;
+  background-color: var(--core-prominent, var(--gms-prominent, $core-prominent));
+  color: var(--core-main-inverted, var(--gms-main-inverted, $core-main-inverted));
+  opacity: 0.9;
+}
+
+.no-pointer {
+  pointer-events: none;
+}
+
+.chart__axis {
+  path {
+    stroke: var(--core-soft, var(--gms-soft, \$core-soft));
+  }
+  pointer-events: all;
+}
+
+.chart__axis-label {
+  fill: var(--core-prominent, var(--gms-prominent, $core-prominent));
+}
+
+.chart-bar:hover {
+  cursor: pointer;
+}
+
+.x-tick {
+  font-size: 1em;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif, Icons16 !important;
+  pointer-events: all;
+  &--no-data {
+    fill: var(--core-soft, var(--gms-soft, \$core-soft));
+  }
+}
+
+.x-tick-container {
+  pointer-events: all;
+}
+.chart-title {
+  font-size: 1.5em;
+  fill: var(--core-main, var(--gms-main, $core-main));
+}
+.chart-subtitle {
+  font-size: 1.25em;
+  fill: var(--core-prominent, var(--gms-prominent, $core-prominent));
+  font-weight: 100;
+  text-rendering: geometricPrecision;
+}

@@ -1,0 +1,2626 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Data should be verified FK Data should have valid event data 1`] = `
+Object {
+  "eventHypotheses": Array [
+    Object {
+      "associatedSignalDetectionHypotheses": Array [],
+      "id": Object {
+        "eventId": "82ca9908-4272-4738-802b-f3d8f3099767",
+        "hypothesisId": "44388ae5-5856-45e3-bf2f-4212a5af37c5",
+      },
+      "locationSolutions": Array [
+        Object {
+          "featurePredictions": Object {
+            "featurePredictions": Array [],
+          },
+          "id": "c083f904-5083-4532-8b22-94eaf2426c7d",
+          "location": Object {
+            "depthKm": 1.1,
+            "latitudeDegrees": 1.1,
+            "longitudeDegrees": 1.1,
+            "time": 0,
+          },
+          "locationBehaviors": Array [],
+          "locationRestraint": Object {
+            "depthRestraintType": "UNRESTRAINED",
+            "positionRestraintType": "UNRESTRAINED",
+            "timeRestraintType": "UNRESTRAINED",
+          },
+          "locationUncertainty": Object {
+            "ellipses": Array [
+              Object {
+                "confidenceLevel": 0.5,
+                "depthUncertaintyKm": 0,
+                "kWeight": 0,
+                "scalingFactorType": "CONFIDENCE",
+                "semiMajorAxisLengthKm": 0,
+                "semiMajorAxisTrendDeg": 0,
+                "semiMinorAxisLengthKm": 0,
+                "timeUncertainty": "PT5S",
+              },
+            ],
+            "ellipsoids": Array [],
+            "stdDevOneObservation": 1.1,
+            "tt": 1.1,
+            "xt": 1.1,
+            "xx": 1.1,
+            "xy": 1.1,
+            "xz": 1.1,
+            "yt": 1.1,
+            "yy": 1.1,
+            "yz": 1.1,
+            "zt": 1.1,
+            "zz": 1.1,
+          },
+          "name": "location solution one",
+          "networkMagnitudeSolutions": Array [
+            Object {
+              "magnitude": Object {
+                "standardDeviation": 0.1,
+                "units": "MAGNITUDE",
+                "value": 1.1,
+              },
+              "magnitudeBehaviors": Array [
+                Object {
+                  "isDefining": true,
+                  "residual": 1.1,
+                  "stationMagnitudeSolution": Object {
+                    "magnitude": Object {
+                      "standardDeviation": 0.1,
+                      "units": "MAGNITUDE",
+                      "value": 1.1,
+                    },
+                    "measurement": Object {
+                      "channel": Object {
+                        "effectiveAt": 1636503404,
+                        "name": "ASAR.AS01.SHZ",
+                      },
+                      "featureMeasurementType": "PHASE",
+                      "measuredChannelSegment": Object {
+                        "id": Object {
+                          "channel": Object {
+                            "effectiveAt": 1636503404,
+                            "name": "ASAR.AS01.SHZ",
+                          },
+                          "creationTime": 1636503404,
+                          "endTime": 1636503504,
+                          "startTime": 1636503404,
+                        },
+                      },
+                      "measurementValue": Object {
+                        "confidence": 0.5,
+                        "value": "P",
+                      },
+                      "snr": null,
+                    },
+                    "model": "UNKNOWN",
+                    "phase": "UNKNOWN",
+                    "station": Object {
+                      "allRawChannels": Array [
+                        Object {
+                          "canonicalName": "Canonical Name One",
+                          "channelBandType": "B",
+                          "channelDataType": "DIAGNOSTIC_SOH",
+                          "channelInstrumentType": "H",
+                          "channelOrientationCode": "Z",
+                          "channelOrientationType": "Z",
+                          "configuredInputs": Array [],
+                          "description": "Example description",
+                          "effectiveAt": 0,
+                          "effectiveUntil": 1634680114.58,
+                          "location": Object {
+                            "depthKm": 100,
+                            "elevationKm": 5500,
+                            "latitudeDegrees": 35,
+                            "longitudeDegrees": -125,
+                          },
+                          "name": "Real Channel Name One",
+                          "nominalSampleRateHz": 65,
+                          "orientationAngles": Object {
+                            "horizontalAngleDeg": 65,
+                            "verticalAngleDeg": 135,
+                          },
+                          "processingDefinition": undefined,
+                          "processingMetadata": undefined,
+                          "response": Object {
+                            "calibration": Object {
+                              "calibrationFactor": Object {
+                                "standardDeviation": 0.112,
+                                "units": "SECONDS",
+                                "value": 1.2,
+                              },
+                              "calibrationPeriodSec": 14.5,
+                              "calibrationTimeShift": "PT2S",
+                            },
+                            "effectiveAt": 0,
+                            "effectiveUntil": 253370764800,
+                            "fapResponse": undefined,
+                            "id": "5dc3dce4-ae3c-3fb0-84ba-2f83fb5a89d2",
+                          },
+                          "station": Object {
+                            "name": "STA",
+                          },
+                          "units": "NANOMETERS",
+                        },
+                        Object {
+                          "canonicalName": "Canonical Name Two",
+                          "channelBandType": "B",
+                          "channelDataType": "DIAGNOSTIC_SOH",
+                          "channelInstrumentType": "H",
+                          "channelOrientationCode": "Z",
+                          "channelOrientationType": "Z",
+                          "configuredInputs": Array [],
+                          "description": "Example description",
+                          "effectiveAt": 0,
+                          "effectiveUntil": 1634680114.582,
+                          "location": Object {
+                            "depthKm": 100,
+                            "elevationKm": 5500,
+                            "latitudeDegrees": 35,
+                            "longitudeDegrees": -125,
+                          },
+                          "name": "Real Channel Name Two",
+                          "nominalSampleRateHz": 65,
+                          "orientationAngles": Object {
+                            "horizontalAngleDeg": 65,
+                            "verticalAngleDeg": 135,
+                          },
+                          "processingDefinition": undefined,
+                          "processingMetadata": undefined,
+                          "response": Object {
+                            "calibration": Object {
+                              "calibrationFactor": Object {
+                                "standardDeviation": 0.112,
+                                "units": "SECONDS",
+                                "value": 1.2,
+                              },
+                              "calibrationPeriodSec": 14.5,
+                              "calibrationTimeShift": "PT2S",
+                            },
+                            "effectiveAt": 0,
+                            "effectiveUntil": 253370764800,
+                            "fapResponse": undefined,
+                            "id": "a9497b80-f49c-3bdc-9283-7c64b5562cd6",
+                          },
+                          "station": Object {
+                            "name": "STA",
+                          },
+                          "units": "NANOMETERS",
+                        },
+                      ],
+                      "channelGroups": Array [
+                        Object {
+                          "channels": Array [
+                            Object {
+                              "canonicalName": "Canonical Name One",
+                              "channelBandType": "B",
+                              "channelDataType": "DIAGNOSTIC_SOH",
+                              "channelInstrumentType": "H",
+                              "channelOrientationCode": "Z",
+                              "channelOrientationType": "Z",
+                              "configuredInputs": Array [],
+                              "description": "Example description",
+                              "effectiveAt": 0,
+                              "effectiveUntil": 1634680114.58,
+                              "location": Object {
+                                "depthKm": 100,
+                                "elevationKm": 5500,
+                                "latitudeDegrees": 35,
+                                "longitudeDegrees": -125,
+                              },
+                              "name": "Real Channel Name One",
+                              "nominalSampleRateHz": 65,
+                              "orientationAngles": Object {
+                                "horizontalAngleDeg": 65,
+                                "verticalAngleDeg": 135,
+                              },
+                              "processingDefinition": undefined,
+                              "processingMetadata": undefined,
+                              "response": Object {
+                                "calibration": Object {
+                                  "calibrationFactor": Object {
+                                    "standardDeviation": 0.112,
+                                    "units": "SECONDS",
+                                    "value": 1.2,
+                                  },
+                                  "calibrationPeriodSec": 14.5,
+                                  "calibrationTimeShift": "PT2S",
+                                },
+                                "effectiveAt": 0,
+                                "effectiveUntil": 253370764800,
+                                "fapResponse": undefined,
+                                "id": "5dc3dce4-ae3c-3fb0-84ba-2f83fb5a89d2",
+                              },
+                              "station": Object {
+                                "name": "STA",
+                              },
+                              "units": "NANOMETERS",
+                            },
+                          ],
+                          "description": "Channel Group Description",
+                          "effectiveAt": 0,
+                          "effectiveUntil": 253370764800,
+                          "location": Object {
+                            "depthKm": 100,
+                            "elevationKm": 5500,
+                            "latitudeDegrees": 35,
+                            "longitudeDegrees": -125,
+                          },
+                          "name": "Test Channel Group",
+                          "type": "PROCESSING_GROUP",
+                        },
+                      ],
+                      "description": "This is a test station",
+                      "effectiveAt": 1634678314.635,
+                      "effectiveUntil": 253370764800,
+                      "location": Object {
+                        "depthKm": 50,
+                        "elevationKm": 10,
+                        "latitudeDegrees": 35.647,
+                        "longitudeDegrees": 100,
+                      },
+                      "name": "STA",
+                      "relativePositionsByChannel": Object {
+                        "Real Channel Name One": Object {
+                          "eastDisplacementKm": 5,
+                          "northDisplacementKm": 50,
+                          "verticalDisplacementKm": 10,
+                        },
+                        "Real Channel Name Two": Object {
+                          "eastDisplacementKm": 5,
+                          "northDisplacementKm": 50,
+                          "verticalDisplacementKm": 10,
+                        },
+                      },
+                      "type": "HYDROACOUSTIC",
+                    },
+                    "type": "MB",
+                  },
+                  "weight": 1.1,
+                },
+              ],
+              "type": "MB",
+            },
+          ],
+        },
+      ],
+      "name": "hypothesis",
+      "parentEventHypotheses": Array [],
+      "preferredLocationSolution": Object {
+        "id": "c083f904-5083-4532-8b22-94eaf2426c7d",
+      },
+      "rejected": false,
+    },
+  ],
+  "finalEventHypothesisHistory": Array [
+    Object {
+      "associatedSignalDetectionHypotheses": Array [],
+      "id": Object {
+        "eventId": "82ca9908-4272-4738-802b-f3d8f3099767",
+        "hypothesisId": "44388ae5-5856-45e3-bf2f-4212a5af37c5",
+      },
+      "locationSolutions": Array [
+        Object {
+          "featurePredictions": Object {
+            "featurePredictions": Array [],
+          },
+          "id": "c083f904-5083-4532-8b22-94eaf2426c7d",
+          "location": Object {
+            "depthKm": 1.1,
+            "latitudeDegrees": 1.1,
+            "longitudeDegrees": 1.1,
+            "time": 0,
+          },
+          "locationBehaviors": Array [],
+          "locationRestraint": Object {
+            "depthRestraintType": "UNRESTRAINED",
+            "positionRestraintType": "UNRESTRAINED",
+            "timeRestraintType": "UNRESTRAINED",
+          },
+          "locationUncertainty": Object {
+            "ellipses": Array [
+              Object {
+                "confidenceLevel": 0.5,
+                "depthUncertaintyKm": 0,
+                "kWeight": 0,
+                "scalingFactorType": "CONFIDENCE",
+                "semiMajorAxisLengthKm": 0,
+                "semiMajorAxisTrendDeg": 0,
+                "semiMinorAxisLengthKm": 0,
+                "timeUncertainty": "PT5S",
+              },
+            ],
+            "ellipsoids": Array [],
+            "stdDevOneObservation": 1.1,
+            "tt": 1.1,
+            "xt": 1.1,
+            "xx": 1.1,
+            "xy": 1.1,
+            "xz": 1.1,
+            "yt": 1.1,
+            "yy": 1.1,
+            "yz": 1.1,
+            "zt": 1.1,
+            "zz": 1.1,
+          },
+          "name": "location solution one",
+          "networkMagnitudeSolutions": Array [
+            Object {
+              "magnitude": Object {
+                "standardDeviation": 0.1,
+                "units": "MAGNITUDE",
+                "value": 1.1,
+              },
+              "magnitudeBehaviors": Array [
+                Object {
+                  "isDefining": true,
+                  "residual": 1.1,
+                  "stationMagnitudeSolution": Object {
+                    "magnitude": Object {
+                      "standardDeviation": 0.1,
+                      "units": "MAGNITUDE",
+                      "value": 1.1,
+                    },
+                    "measurement": Object {
+                      "channel": Object {
+                        "effectiveAt": 1636503404,
+                        "name": "ASAR.AS01.SHZ",
+                      },
+                      "featureMeasurementType": "PHASE",
+                      "measuredChannelSegment": Object {
+                        "id": Object {
+                          "channel": Object {
+                            "effectiveAt": 1636503404,
+                            "name": "ASAR.AS01.SHZ",
+                          },
+                          "creationTime": 1636503404,
+                          "endTime": 1636503504,
+                          "startTime": 1636503404,
+                        },
+                      },
+                      "measurementValue": Object {
+                        "confidence": 0.5,
+                        "value": "P",
+                      },
+                      "snr": null,
+                    },
+                    "model": "UNKNOWN",
+                    "phase": "UNKNOWN",
+                    "station": Object {
+                      "allRawChannels": Array [
+                        Object {
+                          "canonicalName": "Canonical Name One",
+                          "channelBandType": "B",
+                          "channelDataType": "DIAGNOSTIC_SOH",
+                          "channelInstrumentType": "H",
+                          "channelOrientationCode": "Z",
+                          "channelOrientationType": "Z",
+                          "configuredInputs": Array [],
+                          "description": "Example description",
+                          "effectiveAt": 0,
+                          "effectiveUntil": 1634680114.58,
+                          "location": Object {
+                            "depthKm": 100,
+                            "elevationKm": 5500,
+                            "latitudeDegrees": 35,
+                            "longitudeDegrees": -125,
+                          },
+                          "name": "Real Channel Name One",
+                          "nominalSampleRateHz": 65,
+                          "orientationAngles": Object {
+                            "horizontalAngleDeg": 65,
+                            "verticalAngleDeg": 135,
+                          },
+                          "processingDefinition": undefined,
+                          "processingMetadata": undefined,
+                          "response": Object {
+                            "calibration": Object {
+                              "calibrationFactor": Object {
+                                "standardDeviation": 0.112,
+                                "units": "SECONDS",
+                                "value": 1.2,
+                              },
+                              "calibrationPeriodSec": 14.5,
+                              "calibrationTimeShift": "PT2S",
+                            },
+                            "effectiveAt": 0,
+                            "effectiveUntil": 253370764800,
+                            "fapResponse": undefined,
+                            "id": "5dc3dce4-ae3c-3fb0-84ba-2f83fb5a89d2",
+                          },
+                          "station": Object {
+                            "name": "STA",
+                          },
+                          "units": "NANOMETERS",
+                        },
+                        Object {
+                          "canonicalName": "Canonical Name Two",
+                          "channelBandType": "B",
+                          "channelDataType": "DIAGNOSTIC_SOH",
+                          "channelInstrumentType": "H",
+                          "channelOrientationCode": "Z",
+                          "channelOrientationType": "Z",
+                          "configuredInputs": Array [],
+                          "description": "Example description",
+                          "effectiveAt": 0,
+                          "effectiveUntil": 1634680114.582,
+                          "location": Object {
+                            "depthKm": 100,
+                            "elevationKm": 5500,
+                            "latitudeDegrees": 35,
+                            "longitudeDegrees": -125,
+                          },
+                          "name": "Real Channel Name Two",
+                          "nominalSampleRateHz": 65,
+                          "orientationAngles": Object {
+                            "horizontalAngleDeg": 65,
+                            "verticalAngleDeg": 135,
+                          },
+                          "processingDefinition": undefined,
+                          "processingMetadata": undefined,
+                          "response": Object {
+                            "calibration": Object {
+                              "calibrationFactor": Object {
+                                "standardDeviation": 0.112,
+                                "units": "SECONDS",
+                                "value": 1.2,
+                              },
+                              "calibrationPeriodSec": 14.5,
+                              "calibrationTimeShift": "PT2S",
+                            },
+                            "effectiveAt": 0,
+                            "effectiveUntil": 253370764800,
+                            "fapResponse": undefined,
+                            "id": "a9497b80-f49c-3bdc-9283-7c64b5562cd6",
+                          },
+                          "station": Object {
+                            "name": "STA",
+                          },
+                          "units": "NANOMETERS",
+                        },
+                      ],
+                      "channelGroups": Array [
+                        Object {
+                          "channels": Array [
+                            Object {
+                              "canonicalName": "Canonical Name One",
+                              "channelBandType": "B",
+                              "channelDataType": "DIAGNOSTIC_SOH",
+                              "channelInstrumentType": "H",
+                              "channelOrientationCode": "Z",
+                              "channelOrientationType": "Z",
+                              "configuredInputs": Array [],
+                              "description": "Example description",
+                              "effectiveAt": 0,
+                              "effectiveUntil": 1634680114.58,
+                              "location": Object {
+                                "depthKm": 100,
+                                "elevationKm": 5500,
+                                "latitudeDegrees": 35,
+                                "longitudeDegrees": -125,
+                              },
+                              "name": "Real Channel Name One",
+                              "nominalSampleRateHz": 65,
+                              "orientationAngles": Object {
+                                "horizontalAngleDeg": 65,
+                                "verticalAngleDeg": 135,
+                              },
+                              "processingDefinition": undefined,
+                              "processingMetadata": undefined,
+                              "response": Object {
+                                "calibration": Object {
+                                  "calibrationFactor": Object {
+                                    "standardDeviation": 0.112,
+                                    "units": "SECONDS",
+                                    "value": 1.2,
+                                  },
+                                  "calibrationPeriodSec": 14.5,
+                                  "calibrationTimeShift": "PT2S",
+                                },
+                                "effectiveAt": 0,
+                                "effectiveUntil": 253370764800,
+                                "fapResponse": undefined,
+                                "id": "5dc3dce4-ae3c-3fb0-84ba-2f83fb5a89d2",
+                              },
+                              "station": Object {
+                                "name": "STA",
+                              },
+                              "units": "NANOMETERS",
+                            },
+                          ],
+                          "description": "Channel Group Description",
+                          "effectiveAt": 0,
+                          "effectiveUntil": 253370764800,
+                          "location": Object {
+                            "depthKm": 100,
+                            "elevationKm": 5500,
+                            "latitudeDegrees": 35,
+                            "longitudeDegrees": -125,
+                          },
+                          "name": "Test Channel Group",
+                          "type": "PROCESSING_GROUP",
+                        },
+                      ],
+                      "description": "This is a test station",
+                      "effectiveAt": 1634678314.635,
+                      "effectiveUntil": 253370764800,
+                      "location": Object {
+                        "depthKm": 50,
+                        "elevationKm": 10,
+                        "latitudeDegrees": 35.647,
+                        "longitudeDegrees": 100,
+                      },
+                      "name": "STA",
+                      "relativePositionsByChannel": Object {
+                        "Real Channel Name One": Object {
+                          "eastDisplacementKm": 5,
+                          "northDisplacementKm": 50,
+                          "verticalDisplacementKm": 10,
+                        },
+                        "Real Channel Name Two": Object {
+                          "eastDisplacementKm": 5,
+                          "northDisplacementKm": 50,
+                          "verticalDisplacementKm": 10,
+                        },
+                      },
+                      "type": "HYDROACOUSTIC",
+                    },
+                    "type": "MB",
+                  },
+                  "weight": 1.1,
+                },
+              ],
+              "type": "MB",
+            },
+          ],
+        },
+      ],
+      "name": "final event",
+      "parentEventHypotheses": Array [],
+      "preferredLocationSolution": Object {
+        "id": "c083f904-5083-4532-8b22-94eaf2426c7d",
+      },
+      "rejected": false,
+    },
+  ],
+  "id": "82ca9908-4272-4738-802b-f3d8f3099767",
+  "monitoringOrganization": "Test Monitoring Org",
+  "name": "Event one",
+  "overallPreferred": Object {
+    "associatedSignalDetectionHypotheses": Array [
+      Object {
+        "id": Object {
+          "id": "20cc9505-efe3-3068-b7d5-59196f37992c",
+          "signalDetectionId": null,
+        },
+      },
+    ],
+    "id": Object {
+      "eventId": "82ca9908-4272-4738-802b-f3d8f3099767",
+      "hypothesisId": "44388ae5-5856-45e3-bf2f-4212a5af37c5",
+    },
+    "locationSolutions": Array [
+      Object {
+        "featurePredictions": Object {
+          "featurePredictions": Array [],
+        },
+        "id": "c083f904-5083-4532-8b22-94eaf2426c7d",
+        "location": Object {
+          "depthKm": 1.1,
+          "latitudeDegrees": 1.1,
+          "longitudeDegrees": 1.1,
+          "time": 0,
+        },
+        "locationBehaviors": Array [],
+        "locationRestraint": Object {
+          "depthRestraintType": "UNRESTRAINED",
+          "positionRestraintType": "UNRESTRAINED",
+          "timeRestraintType": "UNRESTRAINED",
+        },
+        "locationUncertainty": Object {
+          "ellipses": Array [
+            Object {
+              "confidenceLevel": 0.5,
+              "depthUncertaintyKm": 0,
+              "kWeight": 0,
+              "scalingFactorType": "CONFIDENCE",
+              "semiMajorAxisLengthKm": 0,
+              "semiMajorAxisTrendDeg": 0,
+              "semiMinorAxisLengthKm": 0,
+              "timeUncertainty": "PT5S",
+            },
+          ],
+          "ellipsoids": Array [],
+          "stdDevOneObservation": 1.1,
+          "tt": 1.1,
+          "xt": 1.1,
+          "xx": 1.1,
+          "xy": 1.1,
+          "xz": 1.1,
+          "yt": 1.1,
+          "yy": 1.1,
+          "yz": 1.1,
+          "zt": 1.1,
+          "zz": 1.1,
+        },
+        "name": "location solution one",
+        "networkMagnitudeSolutions": Array [
+          Object {
+            "magnitude": Object {
+              "standardDeviation": 0.1,
+              "units": "MAGNITUDE",
+              "value": 1.1,
+            },
+            "magnitudeBehaviors": Array [
+              Object {
+                "isDefining": true,
+                "residual": 1.1,
+                "stationMagnitudeSolution": Object {
+                  "magnitude": Object {
+                    "standardDeviation": 0.1,
+                    "units": "MAGNITUDE",
+                    "value": 1.1,
+                  },
+                  "measurement": Object {
+                    "channel": Object {
+                      "effectiveAt": 1636503404,
+                      "name": "ASAR.AS01.SHZ",
+                    },
+                    "featureMeasurementType": "PHASE",
+                    "measuredChannelSegment": Object {
+                      "id": Object {
+                        "channel": Object {
+                          "effectiveAt": 1636503404,
+                          "name": "ASAR.AS01.SHZ",
+                        },
+                        "creationTime": 1636503404,
+                        "endTime": 1636503504,
+                        "startTime": 1636503404,
+                      },
+                    },
+                    "measurementValue": Object {
+                      "confidence": 0.5,
+                      "value": "P",
+                    },
+                    "snr": null,
+                  },
+                  "model": "UNKNOWN",
+                  "phase": "UNKNOWN",
+                  "station": Object {
+                    "allRawChannels": Array [
+                      Object {
+                        "canonicalName": "Canonical Name One",
+                        "channelBandType": "B",
+                        "channelDataType": "DIAGNOSTIC_SOH",
+                        "channelInstrumentType": "H",
+                        "channelOrientationCode": "Z",
+                        "channelOrientationType": "Z",
+                        "configuredInputs": Array [],
+                        "description": "Example description",
+                        "effectiveAt": 0,
+                        "effectiveUntil": 1634680114.58,
+                        "location": Object {
+                          "depthKm": 100,
+                          "elevationKm": 5500,
+                          "latitudeDegrees": 35,
+                          "longitudeDegrees": -125,
+                        },
+                        "name": "Real Channel Name One",
+                        "nominalSampleRateHz": 65,
+                        "orientationAngles": Object {
+                          "horizontalAngleDeg": 65,
+                          "verticalAngleDeg": 135,
+                        },
+                        "processingDefinition": undefined,
+                        "processingMetadata": undefined,
+                        "response": Object {
+                          "calibration": Object {
+                            "calibrationFactor": Object {
+                              "standardDeviation": 0.112,
+                              "units": "SECONDS",
+                              "value": 1.2,
+                            },
+                            "calibrationPeriodSec": 14.5,
+                            "calibrationTimeShift": "PT2S",
+                          },
+                          "effectiveAt": 0,
+                          "effectiveUntil": 253370764800,
+                          "fapResponse": undefined,
+                          "id": "5dc3dce4-ae3c-3fb0-84ba-2f83fb5a89d2",
+                        },
+                        "station": Object {
+                          "name": "STA",
+                        },
+                        "units": "NANOMETERS",
+                      },
+                      Object {
+                        "canonicalName": "Canonical Name Two",
+                        "channelBandType": "B",
+                        "channelDataType": "DIAGNOSTIC_SOH",
+                        "channelInstrumentType": "H",
+                        "channelOrientationCode": "Z",
+                        "channelOrientationType": "Z",
+                        "configuredInputs": Array [],
+                        "description": "Example description",
+                        "effectiveAt": 0,
+                        "effectiveUntil": 1634680114.582,
+                        "location": Object {
+                          "depthKm": 100,
+                          "elevationKm": 5500,
+                          "latitudeDegrees": 35,
+                          "longitudeDegrees": -125,
+                        },
+                        "name": "Real Channel Name Two",
+                        "nominalSampleRateHz": 65,
+                        "orientationAngles": Object {
+                          "horizontalAngleDeg": 65,
+                          "verticalAngleDeg": 135,
+                        },
+                        "processingDefinition": undefined,
+                        "processingMetadata": undefined,
+                        "response": Object {
+                          "calibration": Object {
+                            "calibrationFactor": Object {
+                              "standardDeviation": 0.112,
+                              "units": "SECONDS",
+                              "value": 1.2,
+                            },
+                            "calibrationPeriodSec": 14.5,
+                            "calibrationTimeShift": "PT2S",
+                          },
+                          "effectiveAt": 0,
+                          "effectiveUntil": 253370764800,
+                          "fapResponse": undefined,
+                          "id": "a9497b80-f49c-3bdc-9283-7c64b5562cd6",
+                        },
+                        "station": Object {
+                          "name": "STA",
+                        },
+                        "units": "NANOMETERS",
+                      },
+                    ],
+                    "channelGroups": Array [
+                      Object {
+                        "channels": Array [
+                          Object {
+                            "canonicalName": "Canonical Name One",
+                            "channelBandType": "B",
+                            "channelDataType": "DIAGNOSTIC_SOH",
+                            "channelInstrumentType": "H",
+                            "channelOrientationCode": "Z",
+                            "channelOrientationType": "Z",
+                            "configuredInputs": Array [],
+                            "description": "Example description",
+                            "effectiveAt": 0,
+                            "effectiveUntil": 1634680114.58,
+                            "location": Object {
+                              "depthKm": 100,
+                              "elevationKm": 5500,
+                              "latitudeDegrees": 35,
+                              "longitudeDegrees": -125,
+                            },
+                            "name": "Real Channel Name One",
+                            "nominalSampleRateHz": 65,
+                            "orientationAngles": Object {
+                              "horizontalAngleDeg": 65,
+                              "verticalAngleDeg": 135,
+                            },
+                            "processingDefinition": undefined,
+                            "processingMetadata": undefined,
+                            "response": Object {
+                              "calibration": Object {
+                                "calibrationFactor": Object {
+                                  "standardDeviation": 0.112,
+                                  "units": "SECONDS",
+                                  "value": 1.2,
+                                },
+                                "calibrationPeriodSec": 14.5,
+                                "calibrationTimeShift": "PT2S",
+                              },
+                              "effectiveAt": 0,
+                              "effectiveUntil": 253370764800,
+                              "fapResponse": undefined,
+                              "id": "5dc3dce4-ae3c-3fb0-84ba-2f83fb5a89d2",
+                            },
+                            "station": Object {
+                              "name": "STA",
+                            },
+                            "units": "NANOMETERS",
+                          },
+                        ],
+                        "description": "Channel Group Description",
+                        "effectiveAt": 0,
+                        "effectiveUntil": 253370764800,
+                        "location": Object {
+                          "depthKm": 100,
+                          "elevationKm": 5500,
+                          "latitudeDegrees": 35,
+                          "longitudeDegrees": -125,
+                        },
+                        "name": "Test Channel Group",
+                        "type": "PROCESSING_GROUP",
+                      },
+                    ],
+                    "description": "This is a test station",
+                    "effectiveAt": 1634678314.635,
+                    "effectiveUntil": 253370764800,
+                    "location": Object {
+                      "depthKm": 50,
+                      "elevationKm": 10,
+                      "latitudeDegrees": 35.647,
+                      "longitudeDegrees": 100,
+                    },
+                    "name": "STA",
+                    "relativePositionsByChannel": Object {
+                      "Real Channel Name One": Object {
+                        "eastDisplacementKm": 5,
+                        "northDisplacementKm": 50,
+                        "verticalDisplacementKm": 10,
+                      },
+                      "Real Channel Name Two": Object {
+                        "eastDisplacementKm": 5,
+                        "northDisplacementKm": 50,
+                        "verticalDisplacementKm": 10,
+                      },
+                    },
+                    "type": "HYDROACOUSTIC",
+                  },
+                  "type": "MB",
+                },
+                "weight": 1.1,
+              },
+            ],
+            "type": "MB",
+          },
+        ],
+      },
+    ],
+    "name": "overall preferred",
+    "parentEventHypotheses": Array [],
+    "preferredLocationSolution": Object {
+      "id": "c083f904-5083-4532-8b22-94eaf2426c7d",
+    },
+    "rejected": false,
+  },
+  "preferredEventHypothesisByStage": Array [
+    Object {
+      "preferred": Object {
+        "associatedSignalDetectionHypotheses": Array [],
+        "id": Object {
+          "eventId": "82ca9908-4272-4738-802b-f3d8f3099767",
+          "hypothesisId": "44388ae5-5856-45e3-bf2f-4212a5af37c5",
+        },
+        "locationSolutions": Array [
+          Object {
+            "featurePredictions": Object {
+              "featurePredictions": Array [],
+            },
+            "id": "c083f904-5083-4532-8b22-94eaf2426c7d",
+            "location": Object {
+              "depthKm": 1.1,
+              "latitudeDegrees": 1.1,
+              "longitudeDegrees": 1.1,
+              "time": 0,
+            },
+            "locationBehaviors": Array [],
+            "locationRestraint": Object {
+              "depthRestraintType": "UNRESTRAINED",
+              "positionRestraintType": "UNRESTRAINED",
+              "timeRestraintType": "UNRESTRAINED",
+            },
+            "locationUncertainty": Object {
+              "ellipses": Array [
+                Object {
+                  "confidenceLevel": 0.5,
+                  "depthUncertaintyKm": 0,
+                  "kWeight": 0,
+                  "scalingFactorType": "CONFIDENCE",
+                  "semiMajorAxisLengthKm": 0,
+                  "semiMajorAxisTrendDeg": 0,
+                  "semiMinorAxisLengthKm": 0,
+                  "timeUncertainty": "PT5S",
+                },
+              ],
+              "ellipsoids": Array [],
+              "stdDevOneObservation": 1.1,
+              "tt": 1.1,
+              "xt": 1.1,
+              "xx": 1.1,
+              "xy": 1.1,
+              "xz": 1.1,
+              "yt": 1.1,
+              "yy": 1.1,
+              "yz": 1.1,
+              "zt": 1.1,
+              "zz": 1.1,
+            },
+            "name": "location solution one",
+            "networkMagnitudeSolutions": Array [
+              Object {
+                "magnitude": Object {
+                  "standardDeviation": 0.1,
+                  "units": "MAGNITUDE",
+                  "value": 1.1,
+                },
+                "magnitudeBehaviors": Array [
+                  Object {
+                    "isDefining": true,
+                    "residual": 1.1,
+                    "stationMagnitudeSolution": Object {
+                      "magnitude": Object {
+                        "standardDeviation": 0.1,
+                        "units": "MAGNITUDE",
+                        "value": 1.1,
+                      },
+                      "measurement": Object {
+                        "channel": Object {
+                          "effectiveAt": 1636503404,
+                          "name": "ASAR.AS01.SHZ",
+                        },
+                        "featureMeasurementType": "PHASE",
+                        "measuredChannelSegment": Object {
+                          "id": Object {
+                            "channel": Object {
+                              "effectiveAt": 1636503404,
+                              "name": "ASAR.AS01.SHZ",
+                            },
+                            "creationTime": 1636503404,
+                            "endTime": 1636503504,
+                            "startTime": 1636503404,
+                          },
+                        },
+                        "measurementValue": Object {
+                          "confidence": 0.5,
+                          "value": "P",
+                        },
+                        "snr": null,
+                      },
+                      "model": "UNKNOWN",
+                      "phase": "UNKNOWN",
+                      "station": Object {
+                        "allRawChannels": Array [
+                          Object {
+                            "canonicalName": "Canonical Name One",
+                            "channelBandType": "B",
+                            "channelDataType": "DIAGNOSTIC_SOH",
+                            "channelInstrumentType": "H",
+                            "channelOrientationCode": "Z",
+                            "channelOrientationType": "Z",
+                            "configuredInputs": Array [],
+                            "description": "Example description",
+                            "effectiveAt": 0,
+                            "effectiveUntil": 1634680114.58,
+                            "location": Object {
+                              "depthKm": 100,
+                              "elevationKm": 5500,
+                              "latitudeDegrees": 35,
+                              "longitudeDegrees": -125,
+                            },
+                            "name": "Real Channel Name One",
+                            "nominalSampleRateHz": 65,
+                            "orientationAngles": Object {
+                              "horizontalAngleDeg": 65,
+                              "verticalAngleDeg": 135,
+                            },
+                            "processingDefinition": undefined,
+                            "processingMetadata": undefined,
+                            "response": Object {
+                              "calibration": Object {
+                                "calibrationFactor": Object {
+                                  "standardDeviation": 0.112,
+                                  "units": "SECONDS",
+                                  "value": 1.2,
+                                },
+                                "calibrationPeriodSec": 14.5,
+                                "calibrationTimeShift": "PT2S",
+                              },
+                              "effectiveAt": 0,
+                              "effectiveUntil": 253370764800,
+                              "fapResponse": undefined,
+                              "id": "5dc3dce4-ae3c-3fb0-84ba-2f83fb5a89d2",
+                            },
+                            "station": Object {
+                              "name": "STA",
+                            },
+                            "units": "NANOMETERS",
+                          },
+                          Object {
+                            "canonicalName": "Canonical Name Two",
+                            "channelBandType": "B",
+                            "channelDataType": "DIAGNOSTIC_SOH",
+                            "channelInstrumentType": "H",
+                            "channelOrientationCode": "Z",
+                            "channelOrientationType": "Z",
+                            "configuredInputs": Array [],
+                            "description": "Example description",
+                            "effectiveAt": 0,
+                            "effectiveUntil": 1634680114.582,
+                            "location": Object {
+                              "depthKm": 100,
+                              "elevationKm": 5500,
+                              "latitudeDegrees": 35,
+                              "longitudeDegrees": -125,
+                            },
+                            "name": "Real Channel Name Two",
+                            "nominalSampleRateHz": 65,
+                            "orientationAngles": Object {
+                              "horizontalAngleDeg": 65,
+                              "verticalAngleDeg": 135,
+                            },
+                            "processingDefinition": undefined,
+                            "processingMetadata": undefined,
+                            "response": Object {
+                              "calibration": Object {
+                                "calibrationFactor": Object {
+                                  "standardDeviation": 0.112,
+                                  "units": "SECONDS",
+                                  "value": 1.2,
+                                },
+                                "calibrationPeriodSec": 14.5,
+                                "calibrationTimeShift": "PT2S",
+                              },
+                              "effectiveAt": 0,
+                              "effectiveUntil": 253370764800,
+                              "fapResponse": undefined,
+                              "id": "a9497b80-f49c-3bdc-9283-7c64b5562cd6",
+                            },
+                            "station": Object {
+                              "name": "STA",
+                            },
+                            "units": "NANOMETERS",
+                          },
+                        ],
+                        "channelGroups": Array [
+                          Object {
+                            "channels": Array [
+                              Object {
+                                "canonicalName": "Canonical Name One",
+                                "channelBandType": "B",
+                                "channelDataType": "DIAGNOSTIC_SOH",
+                                "channelInstrumentType": "H",
+                                "channelOrientationCode": "Z",
+                                "channelOrientationType": "Z",
+                                "configuredInputs": Array [],
+                                "description": "Example description",
+                                "effectiveAt": 0,
+                                "effectiveUntil": 1634680114.58,
+                                "location": Object {
+                                  "depthKm": 100,
+                                  "elevationKm": 5500,
+                                  "latitudeDegrees": 35,
+                                  "longitudeDegrees": -125,
+                                },
+                                "name": "Real Channel Name One",
+                                "nominalSampleRateHz": 65,
+                                "orientationAngles": Object {
+                                  "horizontalAngleDeg": 65,
+                                  "verticalAngleDeg": 135,
+                                },
+                                "processingDefinition": undefined,
+                                "processingMetadata": undefined,
+                                "response": Object {
+                                  "calibration": Object {
+                                    "calibrationFactor": Object {
+                                      "standardDeviation": 0.112,
+                                      "units": "SECONDS",
+                                      "value": 1.2,
+                                    },
+                                    "calibrationPeriodSec": 14.5,
+                                    "calibrationTimeShift": "PT2S",
+                                  },
+                                  "effectiveAt": 0,
+                                  "effectiveUntil": 253370764800,
+                                  "fapResponse": undefined,
+                                  "id": "5dc3dce4-ae3c-3fb0-84ba-2f83fb5a89d2",
+                                },
+                                "station": Object {
+                                  "name": "STA",
+                                },
+                                "units": "NANOMETERS",
+                              },
+                            ],
+                            "description": "Channel Group Description",
+                            "effectiveAt": 0,
+                            "effectiveUntil": 253370764800,
+                            "location": Object {
+                              "depthKm": 100,
+                              "elevationKm": 5500,
+                              "latitudeDegrees": 35,
+                              "longitudeDegrees": -125,
+                            },
+                            "name": "Test Channel Group",
+                            "type": "PROCESSING_GROUP",
+                          },
+                        ],
+                        "description": "This is a test station",
+                        "effectiveAt": 1634678314.635,
+                        "effectiveUntil": 253370764800,
+                        "location": Object {
+                          "depthKm": 50,
+                          "elevationKm": 10,
+                          "latitudeDegrees": 35.647,
+                          "longitudeDegrees": 100,
+                        },
+                        "name": "STA",
+                        "relativePositionsByChannel": Object {
+                          "Real Channel Name One": Object {
+                            "eastDisplacementKm": 5,
+                            "northDisplacementKm": 50,
+                            "verticalDisplacementKm": 10,
+                          },
+                          "Real Channel Name Two": Object {
+                            "eastDisplacementKm": 5,
+                            "northDisplacementKm": 50,
+                            "verticalDisplacementKm": 10,
+                          },
+                        },
+                        "type": "HYDROACOUSTIC",
+                      },
+                      "type": "MB",
+                    },
+                    "weight": 1.1,
+                  },
+                ],
+                "type": "MB",
+              },
+            ],
+          },
+        ],
+        "name": "preferred one",
+        "parentEventHypotheses": Array [],
+        "preferredLocationSolution": Object {
+          "id": "c083f904-5083-4532-8b22-94eaf2426c7d",
+        },
+        "rejected": false,
+      },
+      "preferredBy": "ANALYST1",
+      "stage": Object {
+        "name": "AL1",
+      },
+    },
+  ],
+  "rejectedSignalDetectionAssociations": Array [],
+}
+`;
+
+exports[`Data should be verified FK Data should have valid eventIds 1`] = `
+Array [
+  "82ca9908-4272-4738-802b-f3d8f3099767",
+]
+`;
+
+exports[`Data should be verified FK Data should have valid legacy event data 1`] = `
+Object {
+  "conflictingSdIds": Array [],
+  "currentEventHypothesis": Object {
+    "eventHypothesis": Object {
+      "associationsMaxArrivalTime": 1274399905.01,
+      "event": Object {
+        "id": "186f997b-7d7d-3151-8b4d-5609f7a8f31f",
+        "status": "ReadyForRefinement",
+      },
+      "id": "186f997b-7d7d-3151-8b4d-5609f7a8f31f",
+      "locationSolutionSets": Array [
+        Object {
+          "count": 1,
+          "id": "186f997b-7d7d-3151-8b4d-5609f7a8f31f",
+          "locationSolutions": Array [
+            Object {
+              "featurePredictions": Array [],
+              "id": "186f997b-7d7d-3151-8b4d-5609f7a8f31f",
+              "location": Object {
+                "depthKm": 0,
+                "latitudeDegrees": 67.57425,
+                "longitudeDegrees": 33.59468,
+                "time": 1274399850.081,
+              },
+              "locationBehaviors": Array [
+                Object {
+                  "defining": false,
+                  "featureMeasurementType": "AMPLITUDE",
+                  "residual": 1.28,
+                  "signalDetectionId": "00000000-0000-0000-0000-000000000000",
+                  "weight": 0.734,
+                },
+              ],
+              "locationRestraint": Object {
+                "depthRestraintKm": null,
+                "depthRestraintType": "FIXED_AT_SURFACE",
+                "latitudeRestraintDegrees": null,
+                "latitudeRestraintType": "UNRESTRAINED",
+                "longitudeRestraintDegrees": null,
+                "longitudeRestraintType": "UNRESTRAINED",
+                "timeRestraint": null,
+                "timeRestraintType": "UNRESTRAINED",
+              },
+              "locationToStationDistances": Array [],
+              "locationType": "standard",
+              "locationUncertainty": Object {
+                "ellipses": Array [
+                  Object {
+                    "confidenceLevel": 0.9,
+                    "depthUncertainty": -1,
+                    "kWeight": 0,
+                    "majorAxisLength": "49.1513",
+                    "majorAxisTrend": 37.23,
+                    "minorAxisLength": "29.2083",
+                    "minorAxisTrend": -1,
+                    "scalingFactorType": "CONFIDENCE",
+                    "timeUncertainty": "PT4.235S",
+                  },
+                ],
+                "ellipsoids": Array [],
+                "stDevOneObservation": 1.0484,
+                "tt": 6.6189,
+                "xt": -26.6202,
+                "xy": 163.665,
+                "xz": -1,
+                "yt": 20.2312,
+                "yy": 400.817,
+                "yz": -1,
+                "zt": -1,
+                "zz": -1,
+              },
+              "networkMagnitudeSolutions": Array [
+                Object {
+                  "magnitude": 3.6532,
+                  "magnitudeType": "MB",
+                  "networkMagnitudeBehaviors": Array [
+                    Object {
+                      "defining": true,
+                      "residual": -0.6995,
+                      "stationMagnitudeSolution": Object {
+                        "featureMeasurement": Object {
+                          "channel": Object {
+                            "effectiveAt": 1636503404,
+                            "name": "ASAR.AS01.SHZ",
+                          },
+                          "featureMeasurementType": "PHASE",
+                          "measuredChannelSegment": Object {
+                            "id": Object {
+                              "channel": Object {
+                                "effectiveAt": 1636503404,
+                                "name": "ASAR.AS01.SHZ",
+                              },
+                              "creationTime": 1636503404,
+                              "endTime": 1636503504,
+                              "startTime": 1636503404,
+                            },
+                          },
+                          "measurementValue": Object {
+                            "confidence": 0.5,
+                            "value": "Pn",
+                          },
+                          "snr": null,
+                        },
+                        "magnitude": 2.9357,
+                        "magnitudeUncertainty": 0.4228,
+                        "model": "QFVC1",
+                        "modelCorrection": 1,
+                        "phase": "Pn",
+                        "stationCorrection": 1,
+                        "stationName": "e03b9548-fda0-393e-9606-af73bf25f420",
+                        "type": "MB",
+                      },
+                      "weight": 1,
+                    },
+                    Object {
+                      "defining": true,
+                      "residual": 0.0657,
+                      "stationMagnitudeSolution": Object {
+                        "featureMeasurement": Object {
+                          "channel": Object {
+                            "effectiveAt": 1636503404,
+                            "name": "ASAR.AS01.SHZ",
+                          },
+                          "featureMeasurementType": "PHASE",
+                          "measuredChannelSegment": Object {
+                            "id": Object {
+                              "channel": Object {
+                                "effectiveAt": 1636503404,
+                                "name": "ASAR.AS01.SHZ",
+                              },
+                              "creationTime": 1636503404,
+                              "endTime": 1636503504,
+                              "startTime": 1636503404,
+                            },
+                          },
+                          "measurementValue": Object {
+                            "confidence": 0.5,
+                            "value": "P",
+                          },
+                          "snr": null,
+                        },
+                        "magnitude": 3.7008,
+                        "magnitudeUncertainty": 0.281,
+                        "model": "QFVC1",
+                        "modelCorrection": 1,
+                        "phase": "P",
+                        "stationCorrection": 1,
+                        "stationName": "f7567432-5db0-3a03-a4cd-20db18ded4e7",
+                        "type": "MB",
+                      },
+                      "weight": 1,
+                    },
+                    Object {
+                      "defining": true,
+                      "residual": -0.3711,
+                      "stationMagnitudeSolution": Object {
+                        "featureMeasurement": Object {
+                          "channel": Object {
+                            "effectiveAt": 1636503404,
+                            "name": "ASAR.AS01.SHZ",
+                          },
+                          "featureMeasurementType": "PHASE",
+                          "measuredChannelSegment": Object {
+                            "id": Object {
+                              "channel": Object {
+                                "effectiveAt": 1636503404,
+                                "name": "ASAR.AS01.SHZ",
+                              },
+                              "creationTime": 1636503404,
+                              "endTime": 1636503504,
+                              "startTime": 1636503404,
+                            },
+                          },
+                          "measurementValue": Object {
+                            "confidence": 0.5,
+                            "value": "Pn",
+                          },
+                          "snr": null,
+                        },
+                        "magnitude": 3.264,
+                        "magnitudeUncertainty": 0.403,
+                        "model": "QFVC1",
+                        "modelCorrection": 1,
+                        "phase": "Pn",
+                        "stationCorrection": 1,
+                        "stationName": "4dd5d739-f4d6-37d6-82c0-099bfaf54b73",
+                        "type": "MB",
+                      },
+                      "weight": 1,
+                    },
+                    Object {
+                      "defining": true,
+                      "residual": -0.0507,
+                      "stationMagnitudeSolution": Object {
+                        "featureMeasurement": Object {
+                          "channel": Object {
+                            "effectiveAt": 1636503404,
+                            "name": "ASAR.AS01.SHZ",
+                          },
+                          "featureMeasurementType": "PHASE",
+                          "measuredChannelSegment": Object {
+                            "id": Object {
+                              "channel": Object {
+                                "effectiveAt": 1636503404,
+                                "name": "ASAR.AS01.SHZ",
+                              },
+                              "creationTime": 1636503404,
+                              "endTime": 1636503504,
+                              "startTime": 1636503404,
+                            },
+                          },
+                          "measurementValue": Object {
+                            "confidence": 0.5,
+                            "value": "P",
+                          },
+                          "snr": null,
+                        },
+                        "magnitude": 3.5844,
+                        "magnitudeUncertainty": 0.3449,
+                        "model": "QFVC1",
+                        "modelCorrection": 1,
+                        "phase": "P",
+                        "stationCorrection": 1,
+                        "stationName": "3695d63e-7071-3f74-b6a5-a92681fd2567",
+                        "type": "MB",
+                      },
+                      "weight": 1,
+                    },
+                    Object {
+                      "defining": true,
+                      "residual": -0.0777,
+                      "stationMagnitudeSolution": Object {
+                        "featureMeasurement": Object {
+                          "channel": Object {
+                            "effectiveAt": 1636503404,
+                            "name": "ASAR.AS01.SHZ",
+                          },
+                          "featureMeasurementType": "PHASE",
+                          "measuredChannelSegment": Object {
+                            "id": Object {
+                              "channel": Object {
+                                "effectiveAt": 1636503404,
+                                "name": "ASAR.AS01.SHZ",
+                              },
+                              "creationTime": 1636503404,
+                              "endTime": 1636503504,
+                              "startTime": 1636503404,
+                            },
+                          },
+                          "measurementValue": Object {
+                            "confidence": 0.5,
+                            "value": "P",
+                          },
+                          "snr": null,
+                        },
+                        "magnitude": 3.5574,
+                        "magnitudeUncertainty": 0.3449,
+                        "model": "QFVC1",
+                        "modelCorrection": 1,
+                        "phase": "P",
+                        "stationCorrection": 1,
+                        "stationName": "6856c4c5-54cf-377d-87dc-ed322f36c0bb",
+                        "type": "MB",
+                      },
+                      "weight": 1,
+                    },
+                    Object {
+                      "defining": true,
+                      "residual": 0.5089,
+                      "stationMagnitudeSolution": Object {
+                        "featureMeasurement": Object {
+                          "channel": Object {
+                            "effectiveAt": 1636503404,
+                            "name": "ASAR.AS01.SHZ",
+                          },
+                          "featureMeasurementType": "PHASE",
+                          "measuredChannelSegment": Object {
+                            "id": Object {
+                              "channel": Object {
+                                "effectiveAt": 1636503404,
+                                "name": "ASAR.AS01.SHZ",
+                              },
+                              "creationTime": 1636503404,
+                              "endTime": 1636503504,
+                              "startTime": 1636503404,
+                            },
+                          },
+                          "measurementValue": Object {
+                            "confidence": 0.5,
+                            "value": "P",
+                          },
+                          "snr": null,
+                        },
+                        "magnitude": 4.1441,
+                        "magnitudeUncertainty": 0.281,
+                        "model": "QFVC1",
+                        "modelCorrection": 1,
+                        "phase": "P",
+                        "stationCorrection": 1,
+                        "stationName": "e7437e38-94ba-34d4-a95c-0a9e3983c689",
+                        "type": "MB",
+                      },
+                      "weight": 1,
+                    },
+                  ],
+                  "uncertainty": 0.1611,
+                },
+              ],
+              "snapshots": Array [],
+            },
+          ],
+        },
+      ],
+      "preferredLocationSolution": Object {
+        "locationSolution": Object {
+          "featurePredictions": Array [],
+          "id": "186f997b-7d7d-3151-8b4d-5609f7a8f31f",
+          "location": Object {
+            "depthKm": 0,
+            "latitudeDegrees": 67.57425,
+            "longitudeDegrees": 33.59468,
+            "time": 1274399850.081,
+          },
+          "locationBehaviors": Array [
+            Object {
+              "defining": false,
+              "featureMeasurementType": "AMPLITUDE",
+              "residual": 1.28,
+              "signalDetectionId": "00000000-0000-0000-0000-000000000000",
+              "weight": 0.734,
+            },
+          ],
+          "locationRestraint": Object {
+            "depthRestraintKm": null,
+            "depthRestraintType": "FIXED_AT_SURFACE",
+            "latitudeRestraintDegrees": null,
+            "latitudeRestraintType": "UNRESTRAINED",
+            "longitudeRestraintDegrees": null,
+            "longitudeRestraintType": "UNRESTRAINED",
+            "timeRestraint": null,
+            "timeRestraintType": "UNRESTRAINED",
+          },
+          "locationToStationDistances": Array [],
+          "locationType": "standard",
+          "locationUncertainty": Object {
+            "ellipses": Array [
+              Object {
+                "confidenceLevel": 0.9,
+                "depthUncertainty": -1,
+                "kWeight": 0,
+                "majorAxisLength": "49.1513",
+                "majorAxisTrend": 37.23,
+                "minorAxisLength": "29.2083",
+                "minorAxisTrend": -1,
+                "scalingFactorType": "CONFIDENCE",
+                "timeUncertainty": "PT4.235S",
+              },
+            ],
+            "ellipsoids": Array [],
+            "stDevOneObservation": 1.0484,
+            "tt": 6.6189,
+            "xt": -26.6202,
+            "xy": 163.665,
+            "xz": -1,
+            "yt": 20.2312,
+            "yy": 400.817,
+            "yz": -1,
+            "zt": -1,
+            "zz": -1,
+          },
+          "networkMagnitudeSolutions": Array [
+            Object {
+              "magnitude": 3.6532,
+              "magnitudeType": "MB",
+              "networkMagnitudeBehaviors": Array [
+                Object {
+                  "defining": true,
+                  "residual": -0.6995,
+                  "stationMagnitudeSolution": Object {
+                    "featureMeasurement": Object {
+                      "channel": Object {
+                        "effectiveAt": 1636503404,
+                        "name": "ASAR.AS01.SHZ",
+                      },
+                      "featureMeasurementType": "PHASE",
+                      "measuredChannelSegment": Object {
+                        "id": Object {
+                          "channel": Object {
+                            "effectiveAt": 1636503404,
+                            "name": "ASAR.AS01.SHZ",
+                          },
+                          "creationTime": 1636503404,
+                          "endTime": 1636503504,
+                          "startTime": 1636503404,
+                        },
+                      },
+                      "measurementValue": Object {
+                        "confidence": 0.5,
+                        "value": "Pn",
+                      },
+                      "snr": null,
+                    },
+                    "magnitude": 2.9357,
+                    "magnitudeUncertainty": 0.4228,
+                    "model": "QFVC1",
+                    "modelCorrection": 1,
+                    "phase": "Pn",
+                    "stationCorrection": 1,
+                    "stationName": "e03b9548-fda0-393e-9606-af73bf25f420",
+                    "type": "MB",
+                  },
+                  "weight": 1,
+                },
+                Object {
+                  "defining": true,
+                  "residual": 0.0657,
+                  "stationMagnitudeSolution": Object {
+                    "featureMeasurement": Object {
+                      "channel": Object {
+                        "effectiveAt": 1636503404,
+                        "name": "ASAR.AS01.SHZ",
+                      },
+                      "featureMeasurementType": "PHASE",
+                      "measuredChannelSegment": Object {
+                        "id": Object {
+                          "channel": Object {
+                            "effectiveAt": 1636503404,
+                            "name": "ASAR.AS01.SHZ",
+                          },
+                          "creationTime": 1636503404,
+                          "endTime": 1636503504,
+                          "startTime": 1636503404,
+                        },
+                      },
+                      "measurementValue": Object {
+                        "confidence": 0.5,
+                        "value": "P",
+                      },
+                      "snr": null,
+                    },
+                    "magnitude": 3.7008,
+                    "magnitudeUncertainty": 0.281,
+                    "model": "QFVC1",
+                    "modelCorrection": 1,
+                    "phase": "P",
+                    "stationCorrection": 1,
+                    "stationName": "f7567432-5db0-3a03-a4cd-20db18ded4e7",
+                    "type": "MB",
+                  },
+                  "weight": 1,
+                },
+                Object {
+                  "defining": true,
+                  "residual": -0.3711,
+                  "stationMagnitudeSolution": Object {
+                    "featureMeasurement": Object {
+                      "channel": Object {
+                        "effectiveAt": 1636503404,
+                        "name": "ASAR.AS01.SHZ",
+                      },
+                      "featureMeasurementType": "PHASE",
+                      "measuredChannelSegment": Object {
+                        "id": Object {
+                          "channel": Object {
+                            "effectiveAt": 1636503404,
+                            "name": "ASAR.AS01.SHZ",
+                          },
+                          "creationTime": 1636503404,
+                          "endTime": 1636503504,
+                          "startTime": 1636503404,
+                        },
+                      },
+                      "measurementValue": Object {
+                        "confidence": 0.5,
+                        "value": "Pn",
+                      },
+                      "snr": null,
+                    },
+                    "magnitude": 3.264,
+                    "magnitudeUncertainty": 0.403,
+                    "model": "QFVC1",
+                    "modelCorrection": 1,
+                    "phase": "Pn",
+                    "stationCorrection": 1,
+                    "stationName": "4dd5d739-f4d6-37d6-82c0-099bfaf54b73",
+                    "type": "MB",
+                  },
+                  "weight": 1,
+                },
+                Object {
+                  "defining": true,
+                  "residual": -0.0507,
+                  "stationMagnitudeSolution": Object {
+                    "featureMeasurement": Object {
+                      "channel": Object {
+                        "effectiveAt": 1636503404,
+                        "name": "ASAR.AS01.SHZ",
+                      },
+                      "featureMeasurementType": "PHASE",
+                      "measuredChannelSegment": Object {
+                        "id": Object {
+                          "channel": Object {
+                            "effectiveAt": 1636503404,
+                            "name": "ASAR.AS01.SHZ",
+                          },
+                          "creationTime": 1636503404,
+                          "endTime": 1636503504,
+                          "startTime": 1636503404,
+                        },
+                      },
+                      "measurementValue": Object {
+                        "confidence": 0.5,
+                        "value": "P",
+                      },
+                      "snr": null,
+                    },
+                    "magnitude": 3.5844,
+                    "magnitudeUncertainty": 0.3449,
+                    "model": "QFVC1",
+                    "modelCorrection": 1,
+                    "phase": "P",
+                    "stationCorrection": 1,
+                    "stationName": "3695d63e-7071-3f74-b6a5-a92681fd2567",
+                    "type": "MB",
+                  },
+                  "weight": 1,
+                },
+                Object {
+                  "defining": true,
+                  "residual": -0.0777,
+                  "stationMagnitudeSolution": Object {
+                    "featureMeasurement": Object {
+                      "channel": Object {
+                        "effectiveAt": 1636503404,
+                        "name": "ASAR.AS01.SHZ",
+                      },
+                      "featureMeasurementType": "PHASE",
+                      "measuredChannelSegment": Object {
+                        "id": Object {
+                          "channel": Object {
+                            "effectiveAt": 1636503404,
+                            "name": "ASAR.AS01.SHZ",
+                          },
+                          "creationTime": 1636503404,
+                          "endTime": 1636503504,
+                          "startTime": 1636503404,
+                        },
+                      },
+                      "measurementValue": Object {
+                        "confidence": 0.5,
+                        "value": "P",
+                      },
+                      "snr": null,
+                    },
+                    "magnitude": 3.5574,
+                    "magnitudeUncertainty": 0.3449,
+                    "model": "QFVC1",
+                    "modelCorrection": 1,
+                    "phase": "P",
+                    "stationCorrection": 1,
+                    "stationName": "6856c4c5-54cf-377d-87dc-ed322f36c0bb",
+                    "type": "MB",
+                  },
+                  "weight": 1,
+                },
+                Object {
+                  "defining": true,
+                  "residual": 0.5089,
+                  "stationMagnitudeSolution": Object {
+                    "featureMeasurement": Object {
+                      "channel": Object {
+                        "effectiveAt": 1636503404,
+                        "name": "ASAR.AS01.SHZ",
+                      },
+                      "featureMeasurementType": "PHASE",
+                      "measuredChannelSegment": Object {
+                        "id": Object {
+                          "channel": Object {
+                            "effectiveAt": 1636503404,
+                            "name": "ASAR.AS01.SHZ",
+                          },
+                          "creationTime": 1636503404,
+                          "endTime": 1636503504,
+                          "startTime": 1636503404,
+                        },
+                      },
+                      "measurementValue": Object {
+                        "confidence": 0.5,
+                        "value": "P",
+                      },
+                      "snr": null,
+                    },
+                    "magnitude": 4.1441,
+                    "magnitudeUncertainty": 0.281,
+                    "model": "QFVC1",
+                    "modelCorrection": 1,
+                    "phase": "P",
+                    "stationCorrection": 1,
+                    "stationName": "e7437e38-94ba-34d4-a95c-0a9e3983c689",
+                    "type": "MB",
+                  },
+                  "weight": 1,
+                },
+              ],
+              "uncertainty": 0.1611,
+            },
+          ],
+          "snapshots": Array [],
+        },
+      },
+      "rejected": false,
+      "signalDetectionAssociations": Array [
+        Object {
+          "eventHypothesisId": "186f997b-7d7d-3151-8b4d-5609f7a8f31f",
+          "id": "527562d9-027e-4b88-941e-91543763b7a4",
+          "rejected": false,
+          "signalDetectionHypothesis": Object {
+            "id": "1c8f8122-0056-3ed9-9304-ddea79de2393",
+            "parentSignalDetectionId": "1c8f8122-0056-3ed9-9304-ddea79de2393",
+            "rejected": false,
+          },
+        },
+      ],
+    },
+    "processingStage": Object {
+      "id": "1",
+    },
+  },
+  "hasConflict": false,
+  "id": "f43f58f9-6a87-40e3-95ac-44168325fc49",
+  "modified": false,
+  "status": "ReadyForRefinement",
+}
+`;
+
+exports[`Data should be verified FK Data should have valid signal detection data 1`] = `
+Array [
+  Object {
+    "id": "012de1b9-8ae3-3fd4-800d-58665c3152cc",
+    "monitoringOrganization": "GMS",
+    "signalDetectionHypotheses": Array [
+      Object {
+        "featureMeasurements": Array [
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "LONG_PERIOD_FIRST_MOTION",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "confidence": null,
+              "referenceTime": 1636503404,
+              "value": "INDETERMINATE",
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "ARRIVAL_TIME",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "arrivalTime": Object {
+                "standardDeviation": 1.162,
+                "value": 1636503404,
+              },
+              "travelTime": null,
+            },
+            "snr": Object {
+              "standardDeviation": null,
+              "units": "DECIBELS",
+              "value": 8.9939442,
+            },
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "PHASE",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "confidence": 50,
+              "referenceTime": 1636503404,
+              "value": "P",
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "SHORT_PERIOD_FIRST_MOTION",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "confidence": null,
+              "referenceTime": 1636503404,
+              "value": "INDETERMINATE",
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "RECEIVER_TO_SOURCE_AZIMUTH",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "measuredValue": Object {
+                "standardDeviation": 2.2089042,
+                "units": "DEGREES",
+                "value": 90.142121,
+              },
+              "referenceTime": null,
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "EMERGENCE_ANGLE",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "measuredValue": Object {
+                "standardDeviation": null,
+                "units": "DEGREES",
+                "value": -1,
+              },
+              "referenceTime": null,
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "SLOWNESS",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "measuredValue": Object {
+                "standardDeviation": 0.27,
+                "units": "SECONDS_PER_DEGREE",
+                "value": 7.1219535,
+              },
+              "referenceTime": null,
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "RECTILINEARITY",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "measuredValue": Object {
+                "standardDeviation": null,
+                "units": "UNITLESS",
+                "value": -1,
+              },
+              "referenceTime": null,
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "AMPLITUDE_A5_OVER_2",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "amplitude": Object {
+                "standardDeviation": 0.5,
+                "units": "MAGNITUDE",
+                "value": 5,
+              },
+              "period": 0.25,
+              "startTime": 1636503404,
+            },
+            "snr": Object {
+              "standardDeviation": null,
+              "units": "DECIBELS",
+              "value": 8.9939442,
+            },
+          },
+        ],
+        "id": Object {
+          "id": "20cc9505-efe3-3068-b7d5-59196f37992c",
+          "signalDetectionId": "012de1b9-8ae3-3fd4-800d-58665c3152cc",
+        },
+        "monitoringOrganization": "GMS",
+        "parentSignalDetectionHypothesis": null,
+        "rejected": false,
+      },
+    ],
+    "station": Object {
+      "effectiveAt": null,
+      "name": "ASAR",
+    },
+  },
+  Object {
+    "id": "012de1b9-8ae3-3fd4-800d-58123c3152cc",
+    "monitoringOrganization": "GMS",
+    "signalDetectionHypotheses": Array [
+      Object {
+        "featureMeasurements": Array [
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "LONG_PERIOD_FIRST_MOTION",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "confidence": null,
+              "referenceTime": 1636503404,
+              "value": "INDETERMINATE",
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "ARRIVAL_TIME",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "arrivalTime": Object {
+                "standardDeviation": null,
+                "value": 1636503420,
+              },
+              "travelTime": null,
+            },
+            "snr": Object {
+              "standardDeviation": null,
+              "units": "DECIBELS",
+              "value": 8.9939442,
+            },
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "PHASE",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "confidence": 50,
+              "referenceTime": 1636503404,
+              "value": "P",
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "SHORT_PERIOD_FIRST_MOTION",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "confidence": null,
+              "referenceTime": 1636503404,
+              "value": "INDETERMINATE",
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "RECEIVER_TO_SOURCE_AZIMUTH",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "measuredValue": Object {
+                "standardDeviation": 2.2089042,
+                "units": "DEGREES",
+                "value": 90.142121,
+              },
+              "referenceTime": null,
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "EMERGENCE_ANGLE",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "measuredValue": Object {
+                "standardDeviation": null,
+                "units": "DEGREES",
+                "value": -1,
+              },
+              "referenceTime": null,
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "SLOWNESS",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "measuredValue": Object {
+                "standardDeviation": 0.27,
+                "units": "SECONDS_PER_DEGREE",
+                "value": 7.1219535,
+              },
+              "referenceTime": null,
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "RECTILINEARITY",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "measuredValue": Object {
+                "standardDeviation": null,
+                "units": "UNITLESS",
+                "value": -1,
+              },
+              "referenceTime": null,
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "AMPLITUDE_A5_OVER_2",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "amplitude": Object {
+                "standardDeviation": 0.5,
+                "units": "MAGNITUDE",
+                "value": 5,
+              },
+              "period": 0.75,
+              "startTime": 1636503422,
+            },
+            "snr": Object {
+              "standardDeviation": null,
+              "units": "DECIBELS",
+              "value": 8.9939442,
+            },
+          },
+        ],
+        "id": Object {
+          "id": "20cc9505-efe3-3068-b7d5-59196f37992d",
+          "signalDetectionId": "012de1b9-8ae3-3fd4-800d-58123c3152cc",
+        },
+        "monitoringOrganization": "GMS",
+        "parentSignalDetectionHypothesis": null,
+        "rejected": false,
+      },
+    ],
+    "station": Object {
+      "effectiveAt": null,
+      "name": "ASAR",
+    },
+  },
+  Object {
+    "id": "012de1b9-8ae3-3fd4-800d-58165c3152cc",
+    "monitoringOrganization": "GMS",
+    "signalDetectionHypotheses": Array [
+      Object {
+        "featureMeasurements": Array [
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "LONG_PERIOD_FIRST_MOTION",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "confidence": null,
+              "referenceTime": 1636503404,
+              "value": "INDETERMINATE",
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "ARRIVAL_TIME",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "arrivalTime": null,
+              "travelTime": null,
+            },
+            "snr": Object {
+              "standardDeviation": null,
+              "units": "DECIBELS",
+              "value": 8.9939442,
+            },
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "PHASE",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "confidence": 50,
+              "referenceTime": 1636503404,
+              "value": "P",
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "SHORT_PERIOD_FIRST_MOTION",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "confidence": null,
+              "referenceTime": 1636503404,
+              "value": "INDETERMINATE",
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "RECEIVER_TO_SOURCE_AZIMUTH",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "measuredValue": Object {
+                "standardDeviation": 2.2089042,
+                "units": "DEGREES",
+                "value": 90.142121,
+              },
+              "referenceTime": null,
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "EMERGENCE_ANGLE",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "measuredValue": Object {
+                "standardDeviation": null,
+                "units": "DEGREES",
+                "value": -1,
+              },
+              "referenceTime": null,
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "SLOWNESS",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "measuredValue": Object {
+                "standardDeviation": 0.27,
+                "units": "SECONDS_PER_DEGREE",
+                "value": 7.1219535,
+              },
+              "referenceTime": null,
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "RECTILINEARITY",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "measuredValue": Object {
+                "standardDeviation": null,
+                "units": "UNITLESS",
+                "value": -1,
+              },
+              "referenceTime": null,
+            },
+            "snr": null,
+          },
+          Object {
+            "channel": Object {
+              "effectiveAt": 1636503404,
+              "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+            },
+            "featureMeasurementType": "AMPLITUDE_A5_OVER_2",
+            "measuredChannelSegment": Object {
+              "id": Object {
+                "channel": Object {
+                  "effectiveAt": 1636503404,
+                  "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                },
+                "creationTime": 1636503404,
+                "endTime": 1636503704,
+                "startTime": 1636503404,
+              },
+            },
+            "measurementValue": Object {
+              "amplitude": Object {
+                "standardDeviation": 0.5,
+                "units": "MAGNITUDE",
+                "value": 5,
+              },
+              "period": 1,
+              "startTime": 1636503404,
+            },
+            "snr": Object {
+              "standardDeviation": null,
+              "units": "DECIBELS",
+              "value": 8.9939442,
+            },
+          },
+        ],
+        "id": Object {
+          "id": "20cc9505-efe3-3068-b7d5-59196f37992e",
+          "signalDetectionId": "012de1b9-8ae3-3fd4-800d-58165c3152cc",
+        },
+        "monitoringOrganization": "GMS",
+        "parentSignalDetectionHypothesis": null,
+        "rejected": false,
+      },
+    ],
+    "station": Object {
+      "effectiveAt": null,
+      "name": "ASAR",
+    },
+  },
+]
+`;
+
+exports[`Data should be verified FK Data should have valid signalDetectionIds 1`] = `
+Array [
+  "012de1b9-8ae3-3fd4-800d-58665c3152cc",
+  "012de1b9-8ae3-3fd4-800d-58123c3152cc",
+  "012de1b9-8ae3-3fd4-800d-58165c3152cc",
+]
+`;

@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Core Table Renders 1`] = `
+<AgGridReact
+  animateRows={false}
+  columnDefs={
+    Array [
+      Object {
+        "field": "test",
+        "headerName": "test",
+        "headerTooltip": "test",
+        "width": 10,
+      },
+      Object {
+        "field": "test2",
+        "headerName": "test2",
+        "headerTooltip": "test2",
+        "sort": "asc",
+        "width": 10,
+      },
+    ]
+  }
+  defaultColDef={
+    Object {
+      "lockVisible": true,
+      "resizable": true,
+      "sortingOrder": Array [
+        "asc",
+        "desc",
+      ],
+      "suppressCellFlash": true,
+    }
+  }
+  enableBrowserTooltips={true}
+  getRowId={[Function]}
+  headerHeight={32}
+  onCellClicked={[MockFunction]}
+  onCellContextMenu={[MockFunction]}
+  onColumnMoved={[Function]}
+  onGridReady={[Function]}
+  onRowClicked={[Function]}
+  onRowSelected={[MockFunction]}
+  preventDefaultOnContextMenu={true}
+  rowBuffer={10}
+  rowData={null}
+  rowDataChangeDetectionStrategy="IdentityCheck"
+  suppressContextMenu={true}
+  suppressLoadingOverlay={true}
+  suppressScrollOnNewData={true}
+/>
+`;

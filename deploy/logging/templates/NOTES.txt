@@ -1,0 +1,12 @@
+Type:                       {{ .Chart.Name }}
+Instance name:              {{ .Release.Name }}
+Namespace:                  {{ .Release.Namespace }}
+Base domain:                {{ .Values.global.baseDomain }}
+User:                       {{ .Values.global.user }}
+Image registry:             {{ .Values.global.imageRegistry }}
+Image tag:                  {{ .Values.global.imageTag }}
+Elasticsearch image name:   {{ .Values.elasticsearch.image}}
+Elasticsearch image tag:    {{ .Values.elasticsearch.imageTag }}
+Elasticsearch ingress host: {{ index .Values.elasticsearch.ingress.hosts 0 }}
+Kibana image name:          {{ .Values.kibana.image}}
+Kibana image tag:           {{ .Values.kibana.imageTag }}

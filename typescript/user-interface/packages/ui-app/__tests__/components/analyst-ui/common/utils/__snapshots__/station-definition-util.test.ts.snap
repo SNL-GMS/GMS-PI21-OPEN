@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Station Definition Util Tests Sort station definition 3C channels for multiple groups 1`] = `
+Array [
+  Object {
+    "name": "station.site1.xyZ",
+  },
+  Object {
+    "name": "station.site1.xyN",
+  },
+  Object {
+    "name": "station.site1.xyE",
+  },
+  Object {
+    "name": "station.site2.xyZ",
+  },
+  Object {
+    "name": "station.site2.xyN",
+  },
+  Object {
+    "name": "station.site2.xyE",
+  },
+  Object {
+    "name": "station.site3.xyZ",
+  },
+  Object {
+    "name": "station.site3.xyN",
+  },
+  Object {
+    "name": "station.site3.xyE",
+  },
+]
+`;
+
+exports[`Station Definition Util Tests Sort station definition 3C channels for multiple stations and groups 1`] = `
+Array [
+  Object {
+    "name": "station1.site.xyZ",
+  },
+  Object {
+    "name": "station1.site.xyN",
+  },
+  Object {
+    "name": "station1.site.xyE",
+  },
+  Object {
+    "name": "station1.site1.xyZ",
+  },
+  Object {
+    "name": "station1.site1.xyN",
+  },
+  Object {
+    "name": "station1.site1.xyE",
+  },
+  Object {
+    "name": "station1.site2.xyZ",
+  },
+  Object {
+    "name": "station1.site2.xyN",
+  },
+  Object {
+    "name": "station1.site2.xyE",
+  },
+  Object {
+    "name": "station2.site.xyZ",
+  },
+  Object {
+    "name": "station2.site.xyN",
+  },
+  Object {
+    "name": "station2.site.xyE",
+  },
+  Object {
+    "name": "station3.site.xyZ",
+  },
+  Object {
+    "name": "station3.site.xyN",
+  },
+  Object {
+    "name": "station3.site.xyE",
+  },
+  Object {
+    "name": "station3.site1.xyZ",
+  },
+  Object {
+    "name": "station3.site1.xyN",
+  },
+  Object {
+    "name": "station3.site1.xyE",
+  },
+]
+`;

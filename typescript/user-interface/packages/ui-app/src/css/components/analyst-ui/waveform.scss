@@ -1,0 +1,67 @@
+.station-name {
+  font-family: $gms-mono;
+  white-space: nowrap;
+
+  &__channel-name {
+    color: var(--gms-main, $gms-main);
+    font-family: $gms-mono;
+    font-size: 0.8em;
+  }
+}
+
+.label
+  .label-container
+  .label-container-content
+  .label-container-content-label
+  .weavess-tooltip__target
+  .distance-azimuth {
+  font-family: $gms-mono;
+  font-size: 12px;
+  color: var(--gms-prominent, $gms-prominent);
+  & p {
+    margin-bottom: 0;
+  }
+}
+
+.label
+  .label-container
+  .label-container-content
+  .label-container-content-label
+  .weavess-tooltip__target {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.label-container-content-mask-indicator {
+  white-space: nowrap;
+
+  &__channel-name {
+    color: var(--gms-prominent, $gms-prominent);
+    font-size: 0.8em;
+  }
+}
+
+.radio-dropdown {
+  padding: 0.5rem 1rem;
+  label {
+    margin: 0 -0.5em;
+    height: 2.125em;
+    display: flex;
+    align-items: center;
+    &:hover {
+      filter: brightness(0.8);
+    }
+    * + .bp4-html-select {
+      margin-left: 1ch;
+    }
+  }
+}
+
+.radio-dropdown .bp4-control .bp4-control-indicator {
+  margin-top: 0;
+}
+
+.weavess .weavess-wp-time-range {
+  font-family: $gms-mono;
+}

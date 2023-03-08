@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "esNext",
+    "module": "commonjs",
+    "sourceMap": true,
+    "strict": true,
+    "outDir": "../build", // Output transpiled files to build/electron/
+    "rootDir": "../",
+    "noEmitOnError": true,
+    "typeRoots": [
+      "@types",
+      "./@types",
+      "./node_modules/@types",
+      "../../node_modules/@types"
+    ]
+  }
+}

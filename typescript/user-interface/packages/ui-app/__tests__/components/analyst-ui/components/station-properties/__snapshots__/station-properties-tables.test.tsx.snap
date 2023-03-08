@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`station-properties-tables ideal state 1`] = `<div />`;
+
+exports[`station-properties-tables non-ideal state 1`] = `<div />`;
+
+exports[`station-properties-tables non-ideal state missing channel group 1`] = `<div />`;

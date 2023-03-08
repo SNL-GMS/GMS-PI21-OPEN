@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Get Channel Segments for Channels build a builder using addGetChannelSegmentsByChannelReducers 1`] = `
+Map {
+  "channelSegment/getChannelSegmentsByChannel/pending" => [Function],
+  "channelSegment/getChannelSegmentsByChannel/fulfilled" => [Function],
+  "channelSegment/getChannelSegmentsByChannel/rejected" => [Function],
+}
+`;
+
+exports[`Get Channel Segments for Channels build a builder using addGetChannelSegmentsByChannelReducers 2`] = `
+Object {
+  "queries": Object {
+    "getChannelSegmentsByChannel": Object {
+      "channelName": Object {
+        "12345": Object {
+          "arg": Object {
+            "channel": Object {
+              "name": "channelName",
+            },
+          },
+          "error": undefined,
+          "status": "pending",
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Get Channel Segments for Channels build a builder using addGetChannelSegmentsByChannelReducers 3`] = `
+Object {
+  "queries": Object {
+    "getChannelSegmentsByChannel": Object {
+      "channelName": Object {
+        "12345": Object {
+          "arg": Object {
+            "channel": Object {
+              "name": "channelName",
+            },
+          },
+          "error": undefined,
+          "status": "fulfilled",
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Get Channel Segments for Channels build a builder using addGetChannelSegmentsByChannelReducers 4`] = `
+Object {
+  "queries": Object {
+    "getChannelSegmentsByChannel": Object {
+      "channelName": Object {
+        "12345": Object {
+          "arg": Object {
+            "channel": Object {
+              "name": "channelName",
+            },
+          },
+          "error": undefined,
+          "status": "rejected",
+        },
+      },
+    },
+  },
+}
+`;

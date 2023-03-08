@@ -1,0 +1,64 @@
+spring:
+  application:
+    name: workflow-manager
+  processing:
+    configuration-names: workflow-manager
+server:
+  compression:
+    enabled: true
+    mime-types: "text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json,application/msgpack"
+    min-response-size: 1024
+  servlet:
+    context-path: /workflow-manager-service
+
+persistenceUnitName: workflow-dao
+
+service:
+  run-state:
+    manager-config: bridged
+    repository:
+      state: bridged
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
+
+---
+spring:
+  config:
+    activate:
+      on-profile: ui-dev
+  application:
+    name: workflow-manager
+  processing:
+    configuration-names: workflow-manager
+  autoconfigure:
+    exclude: >
+      org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,
+      org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration,
+      org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
+server:
+  servlet:
+    context-path: /workflow-manager-service
+
+persistenceUnitName: workflow-dao
+
+service:
+  run-state:
+    manager-config: ui-dev
+    processing-config:
+      state: local
+      local-path: /opt/gms/workflow-manager/ui-dev-processing-config
+    repository:
+      state: ui-dev
+      generator:
+        # These are configurable in case the smallest interval span (currently 5 minutes) ever changes
+        initialDelay-millis: 300000
+        fixedDelay-millis: 300000
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
+
+logging.level.gms.shared.workflow: DEBUG
+#logging.level.org.springframework.boot: DEBUG

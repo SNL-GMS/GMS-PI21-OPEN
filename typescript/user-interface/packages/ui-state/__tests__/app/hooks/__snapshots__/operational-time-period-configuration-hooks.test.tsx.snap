@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`operational time period configuration hooks can use current interval with buffer 1`] = `
+<div>
+  {"startTimeSecs":200,"endTimeSecs":400}
+</div>
+`;
+
+exports[`operational time period configuration hooks can use effective time 1`] = `"0.1"`;
+
+exports[`operational time period configuration hooks can use operational time period configuration 1`] = `"{\\"operationalTimePeriodConfigurationQuery\\":{\\"data\\":{}}}"`;
+
+exports[`operational time period configuration hooks can use operational time period configuration 2`] = `"{\\"timeRange\\":{\\"startTimeSecs\\":-100,\\"endTimeSecs\\":-200},\\"operationalTimePeriodConfigurationQuery\\":{\\"data\\":{\\"operationalPeriodStart\\":100,\\"operationalPeriodEnd\\":200}}}"`;
+
+exports[`operational time period configuration hooks can use operational time period time range 1`] = `
+<div>
+  {"startTimeSecs":50,"endTimeSecs":-150}
+</div>
+`;
+
+exports[`operational time period configuration hooks can use operational time period time range 2`] = `<div />`;
+
+exports[`operational time period configuration hooks can use undefined current interval with buffer 1`] = `
+<div>
+  {"startTimeSecs":null,"endTimeSecs":null}
+</div>
+`;

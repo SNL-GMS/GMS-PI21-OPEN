@@ -1,0 +1,88 @@
+#!/usr/bin/env python3
+
+from datetime import datetime, timedelta
+import matplotlib.pyplot as plt
+import os
+import random
+import pandas
+import requests
+
+AUTH_TOKEN = os.getenv('GANTT_ACCESS_TOKEN') #personal access token (gitlab profile -> access tokens -> create token with api access)
+PROJECT_ID = os.getenv('CI_PROJECT_ID') #gms-common gitlab ID
+API_URL = os.getenv('CI_API_V4_URL')
+HEADERS = {'PRIVATE-TOKEN': AUTH_TOKEN}
+PIPELINE_ID = os.getenv('CI_PIPELINE_ID') #pipeline ID to chart
+
+# List jobs for pipeline. The max per-page is 100, so loop if necessary
+jobs_url = f'{API_URL}/projects/{PROJECT_ID}/pipelines/{PIPELINE_ID}/jobs?per_page=100'
+jobs = []
+while True:
+    response = requests.get(jobs_url, headers=HEADERS)
+    jobs_json = response.json()
+    for j in jobs_json:
+        if j['started_at'] is None or j['finished_at'] is None:
+            # skip jobs that didn't run or have not finished
+            continue
+
+        jobs.append({
+            'id': j['id'],
+            'name': j['name'],
+            'queued': pandas.to_datetime(j['started_at']) - timedelta(seconds=j['queued_duration']),
+            'start': pandas.to_datetime(j['started_at']),
+            'end': pandas.to_datetime(j['finished_at']),
+            'duration': j['duration'],
+            'queued_duration': j['queued_duration'],
+            'stage': j['stage']
+        })
+
+    # gitlab will send back a next link in the response if there are more pages
+    if 'next' in response.links:
+        jobs_url = response.links['next']['url']
+    else:
+        break
+
+# pandas dataframe
+df = pandas.DataFrame(jobs)
+# sort by start date
+df.sort_values(by='start', ascending=True)
+
+# generate a random color for each job based on the stage
+colors = {stage: plt.cm.Paired(i) for i, stage in enumerate(df.stage.unique())}
+
+# get min, max, and total duration (queued + running) to create relative x-axis scale
+p_queued = df.queued.min()
+p_start = df.start.min()
+p_end = df.end.max()
+p_total_duration = (p_end - p_queued).seconds
+
+# xticks and labels (they are the same in this case)
+x_ticks = [i for i in range(0, p_total_duration, 30)]
+
+# shift from absolute date to relative seconds
+df['rel_queued'] = df.queued.apply(lambda x: (x-p_queued).seconds)
+df['rel_start'] = df.start.apply(lambda x: (x-p_start).seconds)
+
+# create custom legends
+run_handles = []
+run_labels = []
+queue_handles = [plt.Rectangle((0,0),1,1, color="lightgray")]
+queue_labels = ["Queued"]
+for stage in colors:
+    run_handles.append(plt.Rectangle((0,0),1,1, color=colors[stage]))
+    run_labels.append(stage)
+
+# plot horizontal bar
+plt.figure(figsize=[14,10])
+b1 = plt.barh(y=df.name, left=df.rel_queued, width=df.queued_duration, color='lightgray')
+b2 = plt.barh(y=df.name, left=df.rel_start, width=df.duration, color=df.stage.map(colors))
+plt.xticks(ticks=x_ticks, labels=x_ticks, rotation=90, fontsize=6)
+plt.yticks(fontsize=6)
+plt.grid(axis='x', alpha=0.5)
+plt.title(f'Pipeline {PIPELINE_ID} Jobs Gantt (in seconds)')
+
+plt.gca().add_artist(plt.legend(queue_handles, queue_labels, title="Queue Duration", loc="upper right"))
+plt.legend(run_handles, run_labels, title="Job Durations by Stage", loc="center right")
+
+#plt.show()
+
+plt.savefig('pipeline_gantt.png')

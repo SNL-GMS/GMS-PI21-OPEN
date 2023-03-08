@@ -1,0 +1,63 @@
+plugins {
+    alias(libs.plugins.org.sonarqube)
+}
+
+// ***** Project-wide Configuration *****
+allprojects {
+    group 'gms'
+    version 'LATEST'
+}
+
+// ***** Root Project Configuration *****
+sonarqube {
+    properties {
+        property 'sonar.coverage.exclusions',
+                '**Dao.java,' + '**Key.java,' +
+                        'gms/shared/utilities/file-store-utility/src/main/java/gms/shared/utilities/filestore/spring/FileStoreConfiguration.java,' + // Non-unit testable @Configuration class
+                        'gms/shared/frameworks/frameworks-osd-api**,' +
+                        'gms/shared/frameworks/frameworks/testfixtures**,' +
+                        'gms/shared/station-definition/station-definition-api**,' +
+                        'gms/shared/station-definition/station-definition-testfixtures**,' +
+                        'gms/shared/station-definition/station-definition-application**,' +
+                        'gms/shared/station-definition/station-definition-accessor/src/main/java/gms/shared/stationdefinition/cache/configuration/**,' +
+                        'gms/shared/signal-detection/signal-detection-application**,' +
+                        'gms/shared/signal-detection/signal-detection-testfixtures**,' +
+                        'gms/shared/signal-enhancement-configuration/signal-enhancement-configuration-application**,' +
+                        'gms/shared/user-manager/user-preferences-api**,' +
+                        'gms/shared/user-manager/user-preferences-testfixtures**,' +
+                        'gms/shared/user-manager/user-manager-application/src/main/java/gms/shared/user/config/**,' +
+                        'gms/shared/user-manager/user-manager-application/src/main/java/gms/shared/user/UserManagerApplication.java,' +
+                        'gms/shared/waveform/waveform-api**,' +
+                        'gms/shared/waveform/waveform-accessor**,' +
+                        'gms/shared/waveform/waveform-testfixtures**,' +
+                        'gms/shared/waveform/waveform-manager-application/src/main/java/gms/shared/waveform/config/**,' + // tested with typescript IT tests and not Spring IT tests
+                        'gms/shared/waveform/waveform-manager-application/src/main/java/gms/shared/waveform/WaveformManagerApplication.java,' +
+                        'gms/core/ui-services/ui-processing-configuration-service/src/main/java/gms/core/ui/processing/configuration/UiProcessingConfigurationApplication.java,' +
+                        'gms/shared/utilities/test-utils**,' +
+                        'gms/shared/utilities/db-test-utils**,' +
+                        'gms/shared/utilities/spring-framework-utilities**,' + // tested with typescript IT tests and not Spring IT tests
+                        'gms/shared/utilities/spring-persistence-oracle**,' +
+                        'gms/shared/utilities/spring-persistence-postgres**'
+    }
+}
+
+// ***** Sub-project Configuration *****
+subprojects {
+    apply from: "${rootDir}/gradle/scripts/gms_java_plugin.gradle"
+}
+
+// Root level task to generate javadoc for all sub-projects
+task allJavadoc(type: Javadoc, group: "Documentation") {
+    afterEvaluate {
+        exclude "**/generated/**"
+        exclude "module-info.java"
+        failOnError = false
+        title = "Geophysical Monitoring System (GMS), version ${version}"
+        description = 'Generate JavaDocs for all GMS modules'
+        source subprojects.collect { it.sourceSets.main.allJava }
+        classpath = files(subprojects.collect { it.sourceSets.main.runtimeClasspath })
+        options.memberLevel = JavadocMemberLevel.PROTECTED
+        options.overview = 'overview.html'
+        destinationDir = file("./docs/javadoc")
+    }
+}

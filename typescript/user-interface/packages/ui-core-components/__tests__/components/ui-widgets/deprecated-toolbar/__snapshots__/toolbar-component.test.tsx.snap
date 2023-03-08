@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toolbar component Toolbar builds with snap 1`] = `
+<div>
+  <div
+    class="toolbar"
+    style="width: 10px;"
+  >
+    <div
+      class="toolbar__left-group"
+    />
+    <div
+      class="toolbar__center-group"
+    >
+      <div
+        class="toolbar__whitespace"
+        style="width: 0px;"
+      />
+    </div>
+    <div
+      class="toolbar__right-group"
+    >
+      <span
+        class="bp4-popover-wrapper"
+      >
+        <span
+          aria-haspopup="true"
+          class="bp4-popover-target"
+        >
+          <button
+            class="bp4-button toolbar-overflow-menu-button "
+            data-cy="overflow-button"
+            style="width: 30px; transform: rotate(90deg);"
+            type="button"
+          >
+            <span
+              aria-hidden="true"
+              class="bp4-icon bp4-icon-more"
+              icon="more"
+            >
+              <svg
+                data-icon="more"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </button>
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toolbar component Toolbar builds with snap and lots of pixels 1`] = `
+<div>
+  <div
+    class="toolbar"
+    style="width: 1000px;"
+  >
+    <div
+      class="toolbar__left-group"
+    >
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div
+          class="toolbar-label-value"
+        >
+          <div
+            class="label-value-container"
+          >
+            <div
+              class="label-value__label"
+              data-cy="test-label"
+            >
+              test: 
+            </div>
+            <div
+              class="label-value__value"
+              data-cy="test-value"
+              title="test"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div
+          class="toolbar-label-value"
+        >
+          <div
+            class="label-value-container"
+          >
+            <div
+              class="label-value__label"
+              data-cy="test-label"
+            >
+              test: 
+            </div>
+            <div
+              class="label-value__value"
+              data-cy="test-value"
+              title="test"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="toolbar__center-group"
+    >
+      <div
+        class="toolbar__whitespace"
+        style="width: 984px;"
+      />
+    </div>
+    <div
+      class="toolbar__right-group"
+    >
+      <div
+        class="toolbar-item
+                    "
+      >
+        <div
+          class="toolbar-label-value"
+        >
+          <div
+            class="label-value-container"
+          >
+            <div
+              class="label-value__label"
+              data-cy="test-label"
+            >
+              test: 
+            </div>
+            <div
+              class="label-value__value"
+              data-cy="test-value"
+              title="test"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,275 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a component 1`] = `
+<div>
+  <div>
+    <h3
+      class="bp3-heading"
+    >
+      Examples
+    </h3>
+    <p>
+      If this project is cloned or downloaded, these examples can be loaded as files in the browser. Otherwise, peruse the source code for ideas on how to use the components in UI Core Components.
+    </p>
+    <h3
+      class="bp3-heading"
+    >
+      Documentation
+    </h3>
+    <p>
+      Currently, the only documentation is on an internal wiki.
+    </p>
+  </div>
+  <br />
+  <div>
+    <h4
+      class="bp3-heading"
+    >
+      <span
+        class="bp3-icon bp3-icon-properties"
+        icon="properties"
+      >
+        <svg
+          data-icon="properties"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            properties
+          </desc>
+          <path
+            d="M2 6C.9 6 0 6.9 0 8s.9 2 2 2 2-.9 2-2-.9-2-2-2zm4-3h9c.55 0 1-.45 1-1s-.45-1-1-1H6c-.55 0-1 .45-1 1s.45 1 1 1zm-4 9c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm13-5H6c-.55 0-1 .45-1 1s.45 1 1 1h9c.55 0 1-.45 1-1s-.45-1-1-1zm0 6H6c-.55 0-1 .45-1 1s.45 1 1 1h9c.55 0 1-.45 1-1s-.45-1-1-1zM2 0C.9 0 0 .9 0 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <a
+        href="#/DropDownExample"
+      >
+         Drop Down Example
+      </a>
+    </h4>
+    <p>
+      Select items from a dropdown populated by an enum.
+    </p>
+    <h4
+      class="bp3-heading"
+    >
+      <span
+        class="bp3-icon bp3-icon-calendar"
+        icon="calendar"
+      >
+        <svg
+          data-icon="calendar"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            calendar
+          </desc>
+          <path
+            d="M11 3c.6 0 1-.5 1-1V1c0-.6-.4-1-1-1s-1 .4-1 1v1c0 .5.4 1 1 1zm3-2h-1v1c0 1.1-.9 2-2 2s-2-.9-2-2V1H6v1c0 1.1-.9 2-2 2s-2-.9-2-2V1H1c-.6 0-1 .5-1 1v12c0 .6.4 1 1 1h13c.6 0 1-.4 1-1V2c0-.6-.5-1-1-1zM5 13H2v-3h3v3zm0-4H2V6h3v3zm4 4H6v-3h3v3zm0-4H6V6h3v3zm4 4h-3v-3h3v3zm0-4h-3V6h3v3zM4 3c.6 0 1-.5 1-1V1c0-.6-.4-1-1-1S3 .4 3 1v1c0 .5.4 1 1 1z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <a
+        href="#/IntervalPickerExample"
+      >
+         Interval Picker Example
+      </a>
+    </h4>
+    <p>
+      Select a time range.
+    </p>
+    <h4
+      class="bp3-heading"
+    >
+      <span
+        class="bp3-icon bp3-icon-time"
+        icon="time"
+      >
+        <svg
+          data-icon="time"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            time
+          </desc>
+          <path
+            d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm1-6.41V4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .28.11.53.29.71l2 2a1.003 1.003 0 001.42-1.42L9 7.59z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <a
+        href="#/FilterableOptionListExample"
+      >
+         FilterableOptionList Example
+      </a>
+    </h4>
+    <p>
+      You literally select things from a filterable list
+    </p>
+    <h4
+      class="bp3-heading"
+    >
+      <span
+        class="bp3-icon bp3-icon-application"
+        icon="application"
+      >
+        <svg
+          data-icon="application"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            application
+          </desc>
+          <path
+            d="M3.5 7h7c.28 0 .5-.22.5-.5s-.22-.5-.5-.5h-7c-.28 0-.5.22-.5.5s.22.5.5.5zM15 1H1c-.55 0-1 .45-1 1v12c0 .55.45 1 1 1h14c.55 0 1-.45 1-1V2c0-.55-.45-1-1-1zm-1 12H2V5h12v8zM3.5 9h4c.28 0 .5-.22.5-.5S7.78 8 7.5 8h-4c-.28 0-.5.22-.5.5s.22.5.5.5zm0 2h5c.28 0 .5-.22.5-.5s-.22-.5-.5-.5h-5c-.28 0-.5.22-.5.5s.22.5.5.5z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <a
+        href="#/FormNoInput"
+      >
+         Form No Input Example
+      </a>
+    </h4>
+    <p>
+      A form that does not accept input, but uses form features such as showing extra content and having multiple panels.
+    </p>
+    <h4
+      class="bp3-heading"
+    >
+      <span
+        class="bp3-icon bp3-icon-application"
+        icon="application"
+      >
+        <svg
+          data-icon="application"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            application
+          </desc>
+          <path
+            d="M3.5 7h7c.28 0 .5-.22.5-.5s-.22-.5-.5-.5h-7c-.28 0-.5.22-.5.5s.22.5.5.5zM15 1H1c-.55 0-1 .45-1 1v12c0 .55.45 1 1 1h14c.55 0 1-.45 1-1V2c0-.55-.45-1-1-1zm-1 12H2V5h12v8zM3.5 9h4c.28 0 .5-.22.5-.5S7.78 8 7.5 8h-4c-.28 0-.5.22-.5.5s.22.5.5.5zm0 2h5c.28 0 .5-.22.5-.5s-.22-.5-.5-.5h-5c-.28 0-.5.22-.5.5s.22.5.5.5z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <a
+        href="#/FormSubmittable"
+      >
+         Form Example
+      </a>
+    </h4>
+    <p>
+      A form that accepts input.
+    </p>
+    <h4
+      class="bp3-heading"
+    >
+      <span
+        class="bp3-icon bp3-icon-panel-table"
+        icon="panel-table"
+      >
+        <svg
+          data-icon="panel-table"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            panel-table
+          </desc>
+          <path
+            d="M15 1H1c-.6 0-1 .4-1 1v11c0 .6.4 1 1 1h14c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1zM8 9H6V7h2v2zm0-3H6V4h2v2zm-6 6V3h3v9H2zm4 0v-2h2v2H6zm8 0H9v-2h5v2zm0-3H9V7h5v2zm0-3H9V4h5v2z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <a
+        href="#/Table"
+      >
+         Table Example
+      </a>
+    </h4>
+    <p>
+      Basic introduction to using the Table component.
+    </p>
+    <h4
+      class="bp3-heading"
+    >
+      <span
+        class="bp3-icon bp3-icon-time"
+        icon="time"
+      >
+        <svg
+          data-icon="time"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            time
+          </desc>
+          <path
+            d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm1-6.41V4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .28.11.53.29.71l2 2a1.003 1.003 0 001.42-1.42L9 7.59z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <a
+        href="#/TimePickerExample"
+      >
+         Time Picker Example
+      </a>
+    </h4>
+    <p>
+      Inputs date. Requires a valid date string
+    </p>
+    <h4
+      class="bp3-heading"
+    >
+      <span
+        class="bp3-icon bp3-icon-menu"
+        icon="menu"
+      >
+        <svg
+          data-icon="menu"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <desc>
+            menu
+          </desc>
+          <path
+            d="M1 4h14c.55 0 1-.45 1-1s-.45-1-1-1H1c-.55 0-1 .45-1 1s.45 1 1 1zm14 8H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1zm0-5H1c-.55 0-1 .45-1 1s.45 1 1 1h14c.55 0 1-.45 1-1s-.45-1-1-1z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <a
+        href="#/ToolbarExample"
+      >
+         Toolbar Example
+      </a>
+    </h4>
+    <p>
+      Resizeable toolbar that inteeligently handles overflow
+    </p>
+  </div>
+</div>
+`;

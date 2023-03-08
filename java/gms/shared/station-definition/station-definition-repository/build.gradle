@@ -1,0 +1,31 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+    api project(':station-definition-dao')
+    api project(':station-definition-api')
+
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    // JPA dependencies
+    implementation libs.org.hibernate.hibernate.core
+    implementation libs.org.hibernate.hibernate.c3p0
+    implementation libs.org.hibernate.hibernate.entitymanager
+    implementation libs.org.hibernate.hibernate.ehcache
+
+    implementation libs.com.google.guava.guava
+
+    implementation project(':metrics')
+    implementation project(':frameworks-utilities-jpa')
+    implementation project(':bridge-utilities')
+    implementation project(':spring-framework-utilities')
+    implementation libs.org.springframework.boot.spring.boot.starter.web
+    implementation libs.org.springframework.boot.spring.boot.starter.data.jpa
+
+    // Testing.
+    testImplementation project(':db-test-utils')
+    testImplementation libs.org.testcontainers.testcontainers
+    testImplementation libs.com.h2database.h2
+
+}

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Global Hot Key Listener subscription throws when calling isGlobalHotKeyCommandSatisfied after unsubscribing 1`] = `"Attempting to use global hotkey listener, but no listener exists. Call subscribeToGlobalHotkeyListener first."`;
+
+exports[`Global Hot Key Listener subscription throws when calling isKeyDown after unsubscribing 1`] = `"Attempting to use global hotkey listener, but no listener exists. Call subscribeToGlobalHotkeyListener first."`;
+
+exports[`Global Hot Key Listener useGlobalHotkeyListener unsubscribes when unmounting useGlobalHotkeyListener hook 1`] = `"Attempting to use global hotkey listener, but no listener exists. Call subscribeToGlobalHotkeyListener first."`;

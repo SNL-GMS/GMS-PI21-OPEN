@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`waveform slice exists exists 1`] = `
+Object {
+  "baseStationTime": 0,
+  "loadingState": Object {
+    "completed": 0,
+    "description": "Loading waveforms",
+    "isLoading": false,
+    "percent": 0,
+    "total": 0,
+  },
+  "maximumOffset": 0,
+  "minimumOffset": 0,
+  "shouldShowPredictedPhases": true,
+  "shouldShowTimeUncertainty": false,
+  "stationsVisibility": Object {},
+  "viewableInterval": null,
+  "zoomInterval": null,
+}
+`;

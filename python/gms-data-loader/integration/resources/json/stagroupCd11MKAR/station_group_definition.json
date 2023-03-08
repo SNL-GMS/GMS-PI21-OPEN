@@ -1,0 +1,9 @@
+[
+  {
+    "name": "CD1.1-update",
+    "description": "Test Station group definition. Only has MKAR",
+    "stationNames": [
+      "MKAR"
+    ]
+  }
+]

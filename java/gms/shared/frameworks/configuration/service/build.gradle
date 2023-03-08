@@ -1,0 +1,30 @@
+plugins {
+    id 'application'
+    alias(libs.plugins.com.palantir.docker)
+}
+
+mainClassName = 'gms.shared.frameworks.processing.configuration.service.ProcessingConfigurationServiceApplication'
+
+dependencies {
+    implementation project(':frameworks-system-config')
+    implementation project(':frameworks-configuration-commonobjects')
+    implementation project(':frameworks-configuration-api')
+    implementation project(':frameworks-configuration-repository')
+    implementation project(':frameworks-service-generator')
+    implementation project(':frameworks-osd-commonobjects')
+    implementation libs.com.fasterxml.jackson.core.jackson.databind
+    implementation libs.com.fasterxml.jackson.datatype.jackson.datatype.jdk8
+
+    implementation project(':frameworks-utilities')
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    runtimeOnly libs.ch.qos.logback.logback.classic
+    runtimeOnly libs.net.logstash.logback.logstash.logback.encoder
+
+    testImplementation libs.org.jmockit
+}
+
+test {
+    jvmArgs "-javaagent:${classpath.find { it.name.contains("jmockit") }.absolutePath}"
+}

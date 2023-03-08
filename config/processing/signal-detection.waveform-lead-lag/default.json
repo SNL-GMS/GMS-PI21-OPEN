@@ -1,0 +1,12 @@
+{
+  "name": "waveform-lead-lag-default",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "measuredWaveformLeadDuration": "PT1M",
+    "measuredWaveformLagDuration": "PT4M"
+  }
+}

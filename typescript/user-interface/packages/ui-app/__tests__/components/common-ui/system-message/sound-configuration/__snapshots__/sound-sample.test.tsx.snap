@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sound Sample Component matches snapshot 1`] = `<div />`;
+
+exports[`Sound Sample Component validates 'None' sound 1`] = `<div />`;

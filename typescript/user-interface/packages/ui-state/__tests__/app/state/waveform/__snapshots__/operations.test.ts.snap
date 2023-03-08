@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Waveform operations calculate zoom interval properties with base station time 1`] = `
+Object {
+  "diffEndTimeSecs": 8000,
+  "diffStartTimeSecs": -7998,
+  "endTimeDiff": 0,
+  "maxOffset": 0,
+  "minOffset": 0,
+  "prevZoomInterval": Object {
+    "endTimeSecs": 8000,
+    "startTimeSecs": 6000,
+  },
+  "startTimeDiff": -3999,
+  "viewableInterval": Object {
+    "endTimeSecs": 8000,
+    "startTimeSecs": 4000,
+  },
+}
+`;
+
+exports[`Waveform operations should have a function to set the zoom level 1`] = `"Cannot set a zoom interval if no viewable interval is set"`;

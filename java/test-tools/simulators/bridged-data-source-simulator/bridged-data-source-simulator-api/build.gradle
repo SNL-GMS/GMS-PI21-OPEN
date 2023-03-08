@@ -1,0 +1,17 @@
+plugins {
+    id 'java-library'
+    alias(libs.plugins.io.swagger.core.v3.swagger.gradle)
+}
+
+dependencies {
+    implementation 'gms:java-utilities:LATEST'
+    implementation 'gms:frameworks-service-interface-base:LATEST'
+    api 'gms:station-definition-dao:LATEST'
+    api 'gms:station-definition-coi:LATEST'
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+    implementation libs.org.apache.commons.commons.lang3
+    api libs.com.fasterxml.jackson.core.jackson.databind
+
+    testImplementation 'gms:frameworks-osd-testfixtures:LATEST'
+}

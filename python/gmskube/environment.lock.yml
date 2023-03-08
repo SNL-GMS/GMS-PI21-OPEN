@@ -1,0 +1,47 @@
+name: gmskube
+channels:
+  - conda-forge
+dependencies:
+  - _libgcc_mutex=0.1
+  - _openmp_mutex=4.5
+  - brotlipy=0.7.0
+  - bzip2=1.0.8
+  - ca-certificates=2022.9.14
+  - certifi=2022.9.14
+  - cffi=1.15.1
+  - charset-normalizer=2.0.12
+  - commonmark=0.9.1
+  - cryptography=37.0.4
+  - dataclasses=0.8
+  - future=0.18.2
+  - idna=3.4
+  - ld_impl_linux-64=2.36.1
+  - libffi=3.4.2
+  - libgcc-ng=12.1.0
+  - libgomp=12.1.0
+  - libnsl=2.0.0
+  - libsqlite=3.39.3
+  - libuuid=2.32.1
+  - libzlib=1.2.12
+  - ncurses=6.3
+  - openssl=1.1.1q
+  - pip=22.2.2
+  - pycparser=2.21
+  - pygments=2.13.0
+  - pyopenssl=22.0.0
+  - pysocks=1.7.1
+  - python=3.10.4
+  - python_abi=3.10
+  - pyyaml=6.0
+  - readline=8.1.2
+  - requests=2.27.1
+  - rich=12.5.1
+  - setuptools=65.3.0
+  - sqlite=3.39.3
+  - tk=8.6.12
+  - typing_extensions=4.3.0
+  - tzdata=2022c
+  - urllib3=1.26.11
+  - wheel=0.37.1
+  - xz=5.2.6
+  - yaml=0.2.5

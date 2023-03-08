@@ -1,0 +1,682 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Keyboard Shortcuts KeyboardShortcuts component matches a snapshot 1`] = `
+<aside
+  className="keyboard-shortcuts"
+>
+  <div
+    className="keyboard-shortcuts__search-container"
+  >
+    <div
+      className="bp4-input-group bp4-large keyboard-shortcuts__input"
+    >
+      <span
+        aria-hidden={true}
+        className="bp4-icon bp4-icon-search"
+        icon="search"
+        tabIndex={-1}
+      >
+        <svg
+          data-icon="search"
+          height={16}
+          viewBox="0 0 16 16"
+          width={16}
+        >
+          <path
+            d="M15.55 13.43l-2.67-2.68a6.94 6.94 0 001.11-3.76c0-3.87-3.13-7-7-7s-7 3.13-7 7 3.13 7 7 7c1.39 0 2.68-.42 3.76-1.11l2.68 2.67a1.498 1.498 0 102.12-2.12zm-8.56-1.44c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </span>
+      <input
+        autoFocus={true}
+        className="bp4-input"
+        dir="ltr"
+        onChange={[Function]}
+        placeholder="Search"
+        style={
+          Object {
+            "paddingLeft": undefined,
+            "paddingRight": undefined,
+          }
+        }
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="keyboard-shortcuts__shortcuts-container"
+  >
+    <section
+      className="keyboard-shortcuts__category"
+    >
+      <h5
+        className="bp4-heading keyboard-shortcuts__group-title"
+      >
+        App
+      </h5>
+      <div
+        className="keyboard-shortcuts__hotkey-entry"
+      >
+        <span
+          className="keyboard-shortcuts__description"
+        >
+          <div
+            aria-haspopup="true"
+            className="keyboard-shortcuts__help-text bp4-popover2-target"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <span
+              aria-hidden={true}
+              className="bp4-icon bp4-icon-info-sign"
+              icon="info-sign"
+              tabIndex={0}
+            >
+              <svg
+                data-icon="info-sign"
+                height={14}
+                viewBox="0 0 16 16"
+                width={14}
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM7 3h2v2H7V3zm3 10H6v-1h1V7H6V6h3v6h1v1z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          Command Palette
+          : 
+        </span>
+        <ul
+          className="keyboard-shortcuts__hotkey-list"
+        >
+          <span
+            className="keyboard-shortcuts__hotkey-combo"
+          >
+            <mark
+              className="key-mark"
+            >
+              ctrl
+            </mark>
+            <mark
+              className="key-mark"
+            >
+              shift
+            </mark>
+            <mark
+              className="key-mark"
+            >
+              x
+            </mark>
+          </span>
+        </ul>
+      </div>
+      <div
+        className="keyboard-shortcuts__hotkey-entry"
+      >
+        <span
+          className="keyboard-shortcuts__description"
+        >
+          <div
+            aria-haspopup="true"
+            className="keyboard-shortcuts__help-text bp4-popover2-target"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <span
+              aria-hidden={true}
+              className="bp4-icon bp4-icon-info-sign"
+              icon="info-sign"
+              tabIndex={0}
+            >
+              <svg
+                data-icon="info-sign"
+                height={14}
+                viewBox="0 0 16 16"
+                width={14}
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM7 3h2v2H7V3zm3 10H6v-1h1V7H6V6h3v6h1v1z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          Keyboard Shortcuts
+          : 
+        </span>
+        <ul
+          className="keyboard-shortcuts__hotkey-list"
+        >
+          <span
+            className="keyboard-shortcuts__hotkey-combo"
+          >
+            <mark
+              className="key-mark"
+            >
+              ctrl
+            </mark>
+            <mark
+              className="key-mark"
+            >
+              /
+            </mark>
+          </span>
+        </ul>
+      </div>
+    </section>
+    <section
+      className="keyboard-shortcuts__category"
+    >
+      <h5
+        className="bp4-heading keyboard-shortcuts__group-title"
+      >
+        Waveform Display
+      </h5>
+      <div
+        className="keyboard-shortcuts__hotkey-entry"
+      >
+        <span
+          className="keyboard-shortcuts__description"
+        >
+          <div
+            aria-haspopup="true"
+            className="keyboard-shortcuts__help-text bp4-popover2-target"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <span
+              aria-hidden={true}
+              className="bp4-icon bp4-icon-info-sign"
+              icon="info-sign"
+              tabIndex={0}
+            >
+              <svg
+                data-icon="info-sign"
+                height={14}
+                viewBox="0 0 16 16"
+                width={14}
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM7 3h2v2H7V3zm3 10H6v-1h1V7H6V6h3v6h1v1z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          Pan Left
+          : 
+        </span>
+        <ul
+          className="keyboard-shortcuts__hotkey-list"
+        >
+          <span
+            className="keyboard-shortcuts__hotkey-combo"
+          >
+            <mark
+              className="key-mark"
+            >
+              a
+            </mark>
+          </span>
+          <span
+            className="keyboard-shortcuts__conjunction-junction"
+          >
+             or 
+          </span>
+          <span
+            className="keyboard-shortcuts__hotkey-combo"
+          >
+            <mark
+              className="key-mark"
+            >
+              left
+            </mark>
+          </span>
+        </ul>
+      </div>
+      <div
+        className="keyboard-shortcuts__hotkey-entry"
+      >
+        <span
+          className="keyboard-shortcuts__description"
+        >
+          <div
+            aria-haspopup="true"
+            className="keyboard-shortcuts__help-text bp4-popover2-target"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <span
+              aria-hidden={true}
+              className="bp4-icon bp4-icon-info-sign"
+              icon="info-sign"
+              tabIndex={0}
+            >
+              <svg
+                data-icon="info-sign"
+                height={14}
+                viewBox="0 0 16 16"
+                width={14}
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM7 3h2v2H7V3zm3 10H6v-1h1V7H6V6h3v6h1v1z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          Pan Left & Load
+          : 
+        </span>
+        <ul
+          className="keyboard-shortcuts__hotkey-list"
+        >
+          <span
+            className="keyboard-shortcuts__hotkey-combo"
+          >
+            <mark
+              className="key-mark"
+            >
+              shift
+            </mark>
+            <mark
+              className="key-mark"
+            >
+              a
+            </mark>
+          </span>
+          <span
+            className="keyboard-shortcuts__conjunction-junction"
+          >
+             or 
+          </span>
+          <span
+            className="keyboard-shortcuts__hotkey-combo"
+          >
+            <mark
+              className="key-mark"
+            >
+              shift
+            </mark>
+            <mark
+              className="key-mark"
+            >
+              left
+            </mark>
+          </span>
+        </ul>
+      </div>
+      <div
+        className="keyboard-shortcuts__hotkey-entry"
+      >
+        <span
+          className="keyboard-shortcuts__description"
+        >
+          <div
+            aria-haspopup="true"
+            className="keyboard-shortcuts__help-text bp4-popover2-target"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <span
+              aria-hidden={true}
+              className="bp4-icon bp4-icon-info-sign"
+              icon="info-sign"
+              tabIndex={0}
+            >
+              <svg
+                data-icon="info-sign"
+                height={14}
+                viewBox="0 0 16 16"
+                width={14}
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM7 3h2v2H7V3zm3 10H6v-1h1V7H6V6h3v6h1v1z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          Pan Right
+          : 
+        </span>
+        <ul
+          className="keyboard-shortcuts__hotkey-list"
+        >
+          <span
+            className="keyboard-shortcuts__hotkey-combo"
+          >
+            <mark
+              className="key-mark"
+            >
+              d
+            </mark>
+          </span>
+          <span
+            className="keyboard-shortcuts__conjunction-junction"
+          >
+             or 
+          </span>
+          <span
+            className="keyboard-shortcuts__hotkey-combo"
+          >
+            <mark
+              className="key-mark"
+            >
+              right
+            </mark>
+          </span>
+        </ul>
+      </div>
+      <div
+        className="keyboard-shortcuts__hotkey-entry"
+      >
+        <span
+          className="keyboard-shortcuts__description"
+        >
+          <div
+            aria-haspopup="true"
+            className="keyboard-shortcuts__help-text bp4-popover2-target"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <span
+              aria-hidden={true}
+              className="bp4-icon bp4-icon-info-sign"
+              icon="info-sign"
+              tabIndex={0}
+            >
+              <svg
+                data-icon="info-sign"
+                height={14}
+                viewBox="0 0 16 16"
+                width={14}
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM7 3h2v2H7V3zm3 10H6v-1h1V7H6V6h3v6h1v1z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          Pan Right & Load
+          : 
+        </span>
+        <ul
+          className="keyboard-shortcuts__hotkey-list"
+        >
+          <span
+            className="keyboard-shortcuts__hotkey-combo"
+          >
+            <mark
+              className="key-mark"
+            >
+              shift
+            </mark>
+            <mark
+              className="key-mark"
+            >
+              d
+            </mark>
+          </span>
+          <span
+            className="keyboard-shortcuts__conjunction-junction"
+          >
+             or 
+          </span>
+          <span
+            className="keyboard-shortcuts__hotkey-combo"
+          >
+            <mark
+              className="key-mark"
+            >
+              shift
+            </mark>
+            <mark
+              className="key-mark"
+            >
+              right
+            </mark>
+          </span>
+        </ul>
+      </div>
+      <div
+        className="keyboard-shortcuts__hotkey-entry"
+      >
+        <span
+          className="keyboard-shortcuts__description"
+        >
+          <div
+            aria-haspopup="true"
+            className="keyboard-shortcuts__help-text bp4-popover2-target"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <span
+              aria-hidden={true}
+              className="bp4-icon bp4-icon-info-sign"
+              icon="info-sign"
+              tabIndex={0}
+            >
+              <svg
+                data-icon="info-sign"
+                height={14}
+                viewBox="0 0 16 16"
+                width={14}
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM7 3h2v2H7V3zm3 10H6v-1h1V7H6V6h3v6h1v1z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          Zoom — smooth
+          : 
+        </span>
+        <ul
+          className="keyboard-shortcuts__hotkey-list"
+        >
+          <span
+            className="keyboard-shortcuts__hotkey-combo"
+          >
+            <mark
+              className="key-mark"
+            >
+              ctrl
+            </mark>
+            <mark
+              className="key-mark"
+            >
+              mousewheel
+            </mark>
+          </span>
+        </ul>
+      </div>
+      <div
+        className="keyboard-shortcuts__hotkey-entry"
+      >
+        <span
+          className="keyboard-shortcuts__description"
+        >
+          <div
+            aria-haspopup="true"
+            className="keyboard-shortcuts__help-text bp4-popover2-target"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <span
+              aria-hidden={true}
+              className="bp4-icon bp4-icon-info-sign"
+              icon="info-sign"
+              tabIndex={0}
+            >
+              <svg
+                data-icon="info-sign"
+                height={14}
+                viewBox="0 0 16 16"
+                width={14}
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM7 3h2v2H7V3zm3 10H6v-1h1V7H6V6h3v6h1v1z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          Zoom in one step
+          : 
+        </span>
+        <ul
+          className="keyboard-shortcuts__hotkey-list"
+        >
+          <span
+            className="keyboard-shortcuts__hotkey-combo"
+          >
+            <mark
+              className="key-mark"
+            >
+              w
+            </mark>
+          </span>
+        </ul>
+      </div>
+      <div
+        className="keyboard-shortcuts__hotkey-entry"
+      >
+        <span
+          className="keyboard-shortcuts__description"
+        >
+          <div
+            aria-haspopup="true"
+            className="keyboard-shortcuts__help-text bp4-popover2-target"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <span
+              aria-hidden={true}
+              className="bp4-icon bp4-icon-info-sign"
+              icon="info-sign"
+              tabIndex={0}
+            >
+              <svg
+                data-icon="info-sign"
+                height={14}
+                viewBox="0 0 16 16"
+                width={14}
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM7 3h2v2H7V3zm3 10H6v-1h1V7H6V6h3v6h1v1z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          Zoom out one step
+          : 
+        </span>
+        <ul
+          className="keyboard-shortcuts__hotkey-list"
+        >
+          <span
+            className="keyboard-shortcuts__hotkey-combo"
+          >
+            <mark
+              className="key-mark"
+            >
+              s
+            </mark>
+          </span>
+        </ul>
+      </div>
+      <div
+        className="keyboard-shortcuts__hotkey-entry"
+      >
+        <span
+          className="keyboard-shortcuts__description"
+        >
+          <div
+            aria-haspopup="true"
+            className="keyboard-shortcuts__help-text bp4-popover2-target"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <span
+              aria-hidden={true}
+              className="bp4-icon bp4-icon-info-sign"
+              icon="info-sign"
+              tabIndex={0}
+            >
+              <svg
+                data-icon="info-sign"
+                height={14}
+                viewBox="0 0 16 16"
+                width={14}
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM7 3h2v2H7V3zm3 10H6v-1h1V7H6V6h3v6h1v1z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          Zoom to range
+          : 
+        </span>
+        <ul
+          className="keyboard-shortcuts__hotkey-list"
+        >
+          <span
+            className="keyboard-shortcuts__hotkey-combo"
+          >
+            <mark
+              className="key-mark"
+            >
+              ctrl
+            </mark>
+            <mark
+              className="key-mark"
+            >
+              drag
+            </mark>
+          </span>
+        </ul>
+      </div>
+    </section>
+  </div>
+</aside>
+`;

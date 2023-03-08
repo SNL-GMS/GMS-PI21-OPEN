@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`position util getMeasureWindowSelectionAreaFraction matches snapshot 1`] = `
+Object {
+  "endPercent": 83.33333333333334,
+  "startPercent": 16.666666666666664,
+}
+`;

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`qc-mask-menu should create menu items 1`] = `
+<Blueprint4.Menu>
+  <Blueprint4.MenuItem
+    active={false}
+    disabled={false}
+    multiline={false}
+    onClick={[Function]}
+    popoverProps={Object {}}
+    selected={false}
+    shouldDismissPopover={true}
+    text="Modify"
+  />
+  <Blueprint4.MenuItem
+    active={false}
+    disabled={false}
+    multiline={false}
+    onClick={[Function]}
+    popoverProps={Object {}}
+    selected={false}
+    shouldDismissPopover={true}
+    text="Reject"
+  />
+</Blueprint4.Menu>
+`;
+
+exports[`qc-mask-menu should create menu items for rejected 1`] = `
+<Blueprint4.Menu>
+  <Blueprint4.MenuItem
+    active={false}
+    disabled={false}
+    multiline={false}
+    onClick={[Function]}
+    popoverProps={Object {}}
+    selected={false}
+    shouldDismissPopover={true}
+    text="View"
+  />
+</Blueprint4.Menu>
+`;

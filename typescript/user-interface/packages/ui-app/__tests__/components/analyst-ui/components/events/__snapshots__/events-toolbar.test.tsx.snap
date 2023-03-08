@@ -1,0 +1,260 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`event list Toolbar matches snapshot 1`] = `
+<div>
+  <div
+    class="base-display "
+  >
+    <div
+      class="toolbar"
+      style="width: 1860px;"
+    >
+      <div
+        class="toolbar__left-group"
+      >
+        <div
+          class="toolbar-item toolbar-item__left"
+        >
+          <div
+            class="toolbar-label-value"
+            style="margin-right: 1em;"
+          >
+            <div
+              class="label-value-container"
+            >
+              <div
+                class="label-value__label"
+                data-cy="complete-label"
+              >
+                Complete: 
+              </div>
+              <div
+                class="label-value__value"
+                data-cy="complete-value"
+                style="color: rgb(255, 255, 255);"
+                title="Number of completed events"
+              >
+                <span
+                  class="monospace"
+                >
+                  0
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="toolbar-item toolbar-item__left"
+        >
+          <div
+            class="toolbar-label-value"
+            style="margin-right: 1em;"
+          >
+            <div
+              class="label-value-container"
+            >
+              <div
+                class="label-value__label"
+                data-cy="remaining-label"
+              >
+                Remaining: 
+              </div>
+              <div
+                class="label-value__value"
+                data-cy="remaining-value"
+                style="color: rgb(255, 255, 255);"
+                title="Number of remaining events"
+              >
+                <span
+                  class="monospace"
+                >
+                  0
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="toolbar-item toolbar-item__left"
+        >
+          <div
+            class="toolbar-label-value"
+            style="margin-right: 1em;"
+          >
+            <div
+              class="label-value-container"
+            >
+              <div
+                class="label-value__label"
+                data-cy="rejected-label"
+              >
+                Rejected: 
+              </div>
+              <div
+                class="label-value__value"
+                data-cy="rejected-value"
+                style="color: rgb(255, 255, 255);"
+                title="Number of rejected events"
+              >
+                <span
+                  class="monospace"
+                >
+                  0
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="toolbar-item toolbar-item__left"
+        >
+          <div
+            class="toolbar-label-value"
+            style="margin-right: 1em;"
+          >
+            <div
+              class="label-value-container"
+            >
+              <div
+                class="label-value__label"
+                data-cy="conflicts-label"
+              >
+                Conflicts: 
+              </div>
+              <div
+                class="label-value__value"
+                data-cy="conflicts-value"
+                title="Number of events with conflicts"
+              >
+                <span
+                  class="monospace"
+                >
+                  0
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar__center-group"
+      >
+        <div
+          class="toolbar__whitespace"
+          style="width: 1860px;"
+        />
+      </div>
+      <div
+        class="toolbar__right-group"
+      >
+        <div
+          class="toolbar-item
+                  "
+        >
+          <div>
+            <div
+              data-cy="filter-column"
+            >
+              <button
+                class="bp4-button bp4-align-left toolbar-button"
+                style="width: 150px;"
+                title="Set which columns are visible"
+                type="button"
+              >
+                <span
+                  class="bp4-button-text"
+                >
+                  <span>
+                    Show events
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    class="bp4-icon bp4-icon-chevron-down"
+                    icon="chevron-down"
+                  >
+                    <svg
+                      data-icon="chevron-down"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                    >
+                      <path
+                        d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="toolbar-item
+                  "
+        >
+          <div>
+            <div
+              data-cy="filter-column"
+            >
+              <button
+                class="bp4-button bp4-align-left toolbar-button"
+                style="width: 150px;"
+                title="Set which columns are visible"
+                type="button"
+              >
+                <span
+                  class="bp4-button-text"
+                >
+                  <span>
+                    Show columns
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    class="bp4-icon bp4-icon-chevron-down"
+                    icon="chevron-down"
+                  >
+                    <svg
+                      data-icon="chevron-down"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                    >
+                      <path
+                        d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="toolbar-item
+                  "
+        >
+          <div>
+            <button
+              class="bp4-button bp4-align-left toolbar-button"
+              data-cy="mark-open-complete"
+              style="width: 170px;"
+              title="Mark selected events complete"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span>
+                  Mark selected complete
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

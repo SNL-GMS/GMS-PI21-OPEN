@@ -1,0 +1,35 @@
+plugins {
+    id 'application'
+    alias(libs.plugins.com.palantir.docker)
+}
+
+mainClassName = 'gms.dataacquisition.stationreceiver.cd11.dataman.Cd11DataManService'
+
+dependencies {
+    // Project dependencies.
+    implementation project(':cd11-common')
+    implementation project(':cd11-parser')
+    implementation project(':frameworks-control')
+    implementation project(':frameworks-configuration-repository')
+    implementation project(':frameworks-service-interface-base')
+    implementation project(':kafka-utilities')
+    implementation project(':structured-logging')
+    implementation project(':reactor-utils')
+
+    // Third-party dependencies.
+    implementation libs.org.apache.commons.commons.math3
+    implementation libs.com.google.guava.guava
+    implementation libs.org.apache.kafka.kafka.clients
+    // Google AutoValue
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    // reactor dependencies
+    implementation 'io.projectreactor:reactor-core:3.4.22'
+    implementation 'io.projectreactor.addons:reactor-extra:3.4.8'
+    implementation 'io.projectreactor.kafka:reactor-kafka:1.3.12'
+    implementation 'io.projectreactor.netty:reactor-netty:1.0.22'
+
+    // Reactor and kafka test tools
+    testImplementation 'io.projectreactor:reactor-test:3.4.22'
+}

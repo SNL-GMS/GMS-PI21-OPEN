@@ -1,0 +1,25 @@
+{
+  "name": "station-a-rollup",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "StationName",
+      "operator": {
+        "type": "IN",
+        "negated": false
+      },
+      "value": [
+        "StationA"
+      ]
+    }
+  ],
+  "parameters": {
+    "sohMonitorsToChannelRollupOperator": {
+      "operatorType": "BEST_OF",
+      "sohMonitorTypeOperands": [
+        "MISSING",
+        "LAG"
+      ]
+    }
+  }
+}

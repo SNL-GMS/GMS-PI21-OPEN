@@ -1,0 +1,382 @@
+#!/usr/bin/env python3
+
+# ------------------------------------------------------------------------------
+# ian-sim-control
+#
+# The ian-sim-control script can be used to stop, start, or get status
+# from the 'bridged-data-source-simulator' augmentation for a given
+# IAN instance.
+# ------------------------------------------------------------------------------
+
+import argparse
+import enum
+import json
+import os
+import subprocess
+import sys
+import time
+from argparse import ArgumentParser, RawDescriptionHelpFormatter
+from datetime import datetime, timedelta
+from urllib.parse import urlparse
+
+import requests
+import yaml
+from termcolor import cprint
+
+NOT_RUNNING = 'NOT RUNNING'
+UNAVAILABLE = 'UNAVAILABLE'
+UNINITIALIZED = 'UNINITIALIZED'
+INITIALIZED = 'INITIALIZED'
+
+
+def main():
+    args, parser = get_args()
+
+    #-- verify KUBECONFIG is set
+    if not "KUBECONFIG" in os.environ:
+        print(
+            "ERROR: Variable 'KUBECONFIG' must be set "
+            "to the kubernetes configuration."
+        )
+        sys.exit(1)
+    try:
+        with open(os.environ["KUBECONFIG"]) as file:
+            kubeconfig = yaml.load(file, Loader=yaml.FullLoader)
+            if 'clusters' not in kubeconfig:
+                print(
+                    "ERROR: No clusters defined in file "
+                    f"'{ os.environ['KUBECONFIG'] }"
+                )
+                sys.exit(1)
+
+            cluster = kubeconfig['clusters'][0]  # use the first cluster
+
+            # derive the URL from our cluster name
+            rancher_url = urlparse(cluster['cluster']['server'])
+            hostname = '.'.join(rancher_url.netloc.split('.')[1:])
+
+    except FileNotFoundError as e:
+        print(
+            "ERROR: Failed to open KUBECONFIG file "
+            f"'{ os.environ['KUBECONFIG'] }': { e }"
+        )
+        sys.exit(1)
+    except AttributeError as e:
+        print(f"ERROR: { e.__class__.__name__ }: { e }")
+        print(
+            "Did you forget to activate the 'gms' conda "
+            "environment with 'conda activate gms'?"
+        )
+        sys.exit(1)
+    except Exception as e:
+        print(f"ERROR: { e.__class__.__name__ }: { e }")
+        sys.exit(1)
+
+    try:
+        if hasattr(args, 'command'):
+            sim_url = f"https://{args.name}.{hostname}/bridged-data-source-simulator"
+            tag = get_instance_tag(args.name)
+            print(f"Detected instance tag: {tag}")
+
+            if args.command == 'status':
+                print(get_sim_status(sim_url))
+
+            elif args.command == 'start':
+                status = get_sim_status(sim_url)
+                if status == NOT_RUNNING:
+                    run(
+                        f"gmskube augment apply --tag {tag} -n bridged-"
+                        "data-source-simulator --set env.GMS_CONFIG_BRIDGED_"
+                        "DATA_SOURCE_SIMULATOR__SIMULATION_SUFFIX"
+                        f"={args.suffix} {args.name}"
+                    )
+                    status = wait_for_status(
+                        sim_url,
+                        UNINITIALIZED
+                    )  # get to UNINITIALIZED (or exit)
+                if status == UNINITIALIZED:
+                    sim_initialize(sim_url)
+                    status = wait_for_status(
+                        sim_url,
+                        INITIALIZED
+                    )  # get to INITIALIZED (or exit)
+                if status == INITIALIZED:
+                    sim_start(sim_url)
+
+            elif args.command == 'stop':
+                status = get_sim_status(sim_url)
+                if status != NOT_RUNNING:
+                    run(
+                        f"gmskube augment delete --tag {tag} -n bridged-data-"
+                        f"source-simulator {args.name}"
+                    )
+                    cprint("bridged-data-source-simulator stopped", 'green')
+                else:
+                    cprint(
+                        "bridged-data-source-simulator not running",
+                        'green'
+                    )
+        else:
+            parser.print_help()
+
+    except Exception as ex:
+        print(f"ERROR: { ex }")
+        sys.exit(1)
+
+    sys.exit(0)
+
+
+def sim_initialize(sim_url):
+    """
+    Initialize the simulator.
+    """
+    start_time = (datetime.utcnow()
+                  - timedelta(hours=24)).strftime("%Y-%m-%dT%H:00:00Z")
+    cprint(
+        f'Initializing the simulator with a start time of {start_time}...',
+        'green'
+    )
+
+    request = {
+        "seedDataStartTime": "2019-01-05T00:00:00Z",
+        "seedDataEndTime": "2019-01-06T00:00:00Z",
+        "simulationStartTime": start_time,
+        "operationalTimePeriod": "PT168H",
+        "calibUpdateFrequency": "PT96H"
+    }
+
+    response = requests.post(
+        sim_url + '/initialize',
+        headers={
+            'Accept': 'application/json',
+            'Cache-Control': 'no-cache',
+            'Content-Type': 'application/json'
+        },
+        json=request
+    )
+
+    if response.status_code != 200:
+        print(f"ERROR [{response.status_code}] {response.reason}")
+        print(f"{response.content}")  # uncomment for more info
+        sys.exit(1)
+
+
+def sim_start(sim_url):
+    """
+    Start the simulator.
+    """
+    cprint('Starting simulator...', 'green')
+    response = requests.post(sim_url + '/start', data='""')
+    if response.status_code != 200:
+        print(f"ERROR [{response.status_code}] {response.reason}")
+        sys.exit(1)
+
+
+def get_sim_status(sim_url):
+    """
+    Return a string indicating the status of the simulator.
+    """
+    response = requests.post(sim_url + '/status', data='""')
+
+    # service unavailable?
+    if response.status_code == 502 or response.status_code == 503:
+        # print(f"ERROR [{response.status_code}] {response.reason}")
+        # print(f"{response.content}")  # uncomment for more info
+        return UNAVAILABLE
+
+    # service not running?
+    elif response.status_code == 404:
+        return NOT_RUNNING
+
+    # now what?!  if status is unexpected, then give up
+    elif response.status_code != 200:
+        print(f"ERROR [{response.status_code}] {response.reason}")
+        # print(f"{response.content}")  # uncomment for more info
+        sys.exit(1)
+
+    status = response.json()
+
+    if not status in ['UNINITIALIZED', 'INITIALIZED', 'STARTED']:
+        print("UNKNOWN STATUS: '{status}'")
+
+    return status
+
+
+def wait_for_status(sim_url, desired_status, max_time_to_wait=60):
+    """
+    Wait for the simulator to enter a desired state. If the simulator
+    is not in this state after some max time to wait, then exit.
+    Return the state we are in (which will always be the dir
+    """
+
+    started = False
+    time_waited = 1
+    while not started and time_waited < 60:
+        status = get_sim_status(sim_url)
+        if status != desired_status:
+            print(f"status: {status}  ...waiting for {desired_status}...")
+            time.sleep(5)
+            time_waited += 5
+        else:
+            started = True
+    if not started:
+        print(
+            f"ERROR: Augmentation failed to reach {desired_status} after "
+            f"{max_time_to_wait} seconds"
+        )
+        sys.exit(1)
+
+    cprint(f"status: {status}", 'green')
+    return status
+
+
+def kubectl_get_instance_labels(instance_name: str) -> dict:
+    """
+    Gets the gms labels for a single instance
+    :param instance_name: Name of the instance
+    :return: Dictionary with gms key value pairs representing the labels
+    """
+    rc, out = run(
+        f"kubectl get configmap --namespace {instance_name} --field-selector "
+        "metadata.name==gms "
+        "--show-labels --no-headers"
+    )
+
+    try:
+        labels = dict(item.split("=") for item in out.split()[3].split(","))
+    except Exception as ex:
+        print(
+            "WARNING: Error splitting labels for configmap gms in namespace "
+            f"{instance_name}: {ex}"
+        )
+        labels = {}
+
+    return labels
+
+
+def get_instance_tag(instance_name: str) -> str:
+    """
+    Gets the tag for the instance
+    :param instance_name: Name of the instance
+    :return: String with the tag
+    """
+    try:
+        return kubectl_get_instance_labels(instance_name)['gms/image-tag']
+    except Exception as ex:
+        print(
+            "ERROR: Unable to determine tag for instance "
+            f"{instance_name}: {ex}"
+        )
+        sys.exit(1)
+
+
+def get_args():
+    """
+    Get command-line arguments.
+    """
+
+    description = """
+description:
+  ian-sim-control provides a simple way to start, stop, or get status
+  on the 'bridged-data-source-simulator' augmentation within a running
+  ian instance.
+
+  When starting, the augmentation will be applied (with the specified
+  suffix), the simulator will first be initialized with a start time
+  of now-24h, and then the simulator will be started.
+
+examples:
+  Start the bridged data source simulator on ian-develop with
+    the iandevelop suffix
+    $ ian-sim-control start --suffix iandevelop ian-develop
+
+  Stop the bridged data source simulator on ian-develop
+    $ ian-sim-control stop ian-develop
+
+  View the status of the bridged data source simulator on ian-develop
+    $ ian-sim-control status ian-develop
+    """
+    parser = ArgumentParser(
+        description=description,
+        formatter_class=RawDescriptionHelpFormatter
+    )
+
+    parent_name_parser = argparse.ArgumentParser(add_help=False)
+    parent_name_parser.add_argument('name', help='Name of the ian instance')
+
+    subparsers = parser.add_subparsers(help='Available sub-commands:')
+    status_parser = subparsers.add_parser(
+        'status',
+        parents=[parent_name_parser],
+        help="Show status of Simulator on the specified ian instance"
+    )
+    status_parser.set_defaults(command='status')
+
+    start_parser = subparsers.add_parser(
+        'start',
+        parents=[parent_name_parser],
+        help="Start the simulator on the specified "
+        "ian instance (if one is not running)"
+    )
+    start_parser.add_argument(
+        '--suffix',
+        '-s',
+        required=True,
+        help="Suffix nameused when starting the bridged data source "
+        "simulator. MUST MATCH suffix used to stat the original ian instance."
+    )
+    start_parser.set_defaults(command='start')
+
+    stop_parser = subparsers.add_parser(
+        'stop',
+        parents=[parent_name_parser],
+        help="Start the simulator on the specified ian instance "
+        "(if one is running)"
+    )
+    stop_parser.set_defaults(command='stop')
+
+    args = parser.parse_args()
+
+    return args, parser
+
+
+def run(command, stdin=None):
+    """
+    Execute the specified command and return when the execution is complete.
+    The output of the command is printed as it is being run.
+    Returns the return code.
+    """
+    out = ''
+    print(command)
+    cmd = subprocess.Popen(
+        command,
+        shell=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        stdin=subprocess.PIPE
+    )
+    while True:
+        line = cmd.stdout.readline().decode('ascii')
+        if not line:
+            break
+        print(line.rstrip())
+        out += line
+
+    rc = cmd.wait()
+    if rc != 0:
+        print(f"ERROR: Failed to run '{command}'. RC: {cmd.returncode}")
+        while True:
+            err = cmd.stderr.readline().decode('ascii')
+            if err:
+                print(err.rstrip())
+            out = cmd.stdout.readline().decode('ascii')
+            if out:
+                print(out.rstrip())
+            if not err and not out:
+                break
+
+    return cmd.returncode, out
+
+
+if __name__ == "__main__":
+    main()

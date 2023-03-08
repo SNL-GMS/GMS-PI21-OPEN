@@ -1,0 +1,82 @@
+{
+    "name": "cascade-filter-1",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "name",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "Cascade Filter 1"
+            ]
+        }
+    ],
+    "parameters": {
+	    "type": "CascadeFilterDescription",
+        "comments": "Cascade Filter 1 comments",
+		"filterDescriptions":[
+            {
+				"$ref=global.filter-description": [{
+					"criterion": "name",
+					"value": "HAM FIR BP 0.70-2.00 Hz Description"
+				}]
+			},
+            {
+                "$ref=global.filter-description": [{
+					"criterion": "name",
+					"value": "HAM FIR BP 4.00-8.00 Hz Description"
+				}]
+            },
+			{
+				"$ref=global.filter-description": [{
+					"criterion": "name",
+					"value": "HAM FIR BP 0.40-3.50 Hz Description"
+				}]
+			},
+            {
+                "$ref=global.filter-description": [{
+					"criterion": "name",
+					"value": "HAM FIR BP 0.50-4.00 Hz Description"
+				}]
+            },
+			  {
+				"$ref=global.filter-description": [{
+					"criterion": "name",
+					"value": "HAM FIR BP 2.00-5.00 Hz Description"
+				}]
+			},
+            {
+                "$ref=global.filter-description": [{
+					"criterion": "name",
+					"value": "HAM FIR BP 1.50-3.00 Hz Description"
+				}]
+            },
+			{
+                "$ref=global.filter-description": [{
+					"criterion": "name",
+					"value": "HAM FIR BP 1.00-5.00 Hz Description"
+				}]
+            },
+			{
+                "$ref=global.filter-description": [{
+					"criterion": "name",
+					"value": "HAM FIR BP 0.50-2.50 Hz Description"
+				}]
+            },
+			{
+                "$ref=global.filter-description": [{
+					"criterion": "name",
+					"value": "HAM FIR BP 1.00-3.00 Hz Description"
+				}]
+            }
+			
+        ],
+		"parameters": {
+            "sampleRateHz": 20.0,
+			"sampleRateToleranceHz": 0.05,
+			"groupDelaySec": "PT1.2S"
+		}
+    }
+}

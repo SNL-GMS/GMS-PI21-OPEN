@@ -1,0 +1,14 @@
+plugins {
+    id 'java-library'
+    alias(libs.plugins.io.swagger.core.v3.swagger.gradle)
+}
+
+dependencies {
+    implementation project(':frameworks-service-interface-base')
+    implementation project(':frameworks-osd-commonobjects')
+
+    implementation libs.io.projectreactor.reactor.core
+
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+    api libs.com.google.auto.value.auto.value.annotations
+}

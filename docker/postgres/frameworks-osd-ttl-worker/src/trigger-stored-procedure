@@ -1,0 +1,77 @@
+#!/bin/bash
+
+set -eu
+
+# Default to a TTL period of 1 days if CAPABILITY_SOH_ROLLUP_TTL_IN_HOURS was not passed in.
+if [ -z ${CAPABILITY_SOH_ROLLUP_TTL_IN_HOURS+x} ]; then
+    CAPABILITY_SOH_ROLLUP_TTL_IN_HOURS=24
+fi
+
+# Default to a TTL period of 7 days if SYSTEM_MESSAGES_TTL_IN_HOURS was not passed in.
+if [ -z ${SYSTEM_MESSAGES_TTL_IN_HOURS+x} ]; then
+    SYSTEM_MESSAGES_TTL_IN_HOURS=168
+fi
+
+# Default to 730 hours (30 days) if $ACEI_TTL_IN_HOURS was not passed in.
+if [ -z ${ACEI_TTL_IN_HOURS+x} ]; then
+    ACEI_TTL_IN_HOURS=730
+fi
+
+# Default to 24 hours (1 days) if $RSDF_TTL_IN_HOURS was not passed in.
+if [ -z ${RSDF_TTL_IN_HOURS+x} ]; then
+    RSDF_TTL_IN_HOURS=24
+fi
+
+# Default to 730 hours (30 days) if $SSOH_TTL_IN_HOURS was not passed in.
+if [ -z ${SSOH_TTL_IN_HOURS+x} ]; then
+    SSOH_TTL_IN_HOURS=730
+fi
+
+if [ -z ${CSOH_TTL_IN_HOURS+x} ]; then
+    CSOH_TTL_IN_HOURS=730
+fi
+
+if [ -z ${STATION_AGGREGATE_TTL_IN_HOURS+x} ]; then
+    STATION_AGGREGATE_TTL_IN_HOURS=730
+fi
+
+if [ -z ${SSMVS_TTL_IN_HOURS+x} ]; then
+    SSMVS_TTL_IN_HOURS=730
+fi
+
+if [ -z ${CSMVS_TTL_IN_HOURS+x} ]; then
+    CSMVS_TTL_IN_HOURS=730
+fi
+
+if [ -z ${DATA_SOURCE_USER+x} ]; then
+    echo ERROR: The database username must be provided in the DATA_SOURCE_USER environment variable.
+    exit 1
+fi
+
+if [ -z ${DATA_SOURCE_PASS+x} ]; then
+    echo ERROR: The database password must be provided in the DATA_SOURCE_PASS environment variable.
+    exit 1
+fi
+
+if [ -z ${DATA_SOURCE_HOST+x} ]; then
+    DATA_SOURCE_HOST=postgresql-gms 
+fi
+
+# Default the loop frequency to 3600s (60 mins)
+if [ -z ${FREQUENCY_SECONDS+x} ]; then
+    FREQUENCY_SECONDS=3600
+fi
+
+PROCEDURE_CALL="call delete_stale_records(${ACEI_TTL_IN_HOURS}, ${RSDF_TTL_IN_HOURS}, ${SSOH_TTL_IN_HOURS}, ${CSMVS_TTL_IN_HOURS}, ${CAPABILITY_SOH_ROLLUP_TTL_IN_HOURS}, ${SYSTEM_MESSAGES_TTL_IN_HOURS});"
+echo $PROCEDURE_CALL > tmp.sql
+
+while true
+do
+    echo Waiting ${FREQUENCY_SECONDS} seconds for next run...
+    sleep ${FREQUENCY_SECONDS}
+    echo KICKING OFF TTL RUN AT `date`...
+
+    set -x
+    PGPASSWORD=${DATA_SOURCE_PASS} psql -h ${DATA_SOURCE_HOST} -U ${DATA_SOURCE_USER} gms -a -f tmp.sql
+    set +x
+done

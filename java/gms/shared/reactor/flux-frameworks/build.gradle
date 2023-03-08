@@ -1,0 +1,11 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+
+    implementation libs.com.google.guava.guava
+    implementation libs.org.apache.kafka.kafka.clients
+    implementation libs.io.projectreactor.reactor.core
+    implementation libs.io.projectreactor.kafka.reactor.kafka
+}

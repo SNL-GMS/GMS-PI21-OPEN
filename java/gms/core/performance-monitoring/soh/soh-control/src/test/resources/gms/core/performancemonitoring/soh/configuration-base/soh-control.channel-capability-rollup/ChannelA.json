@@ -1,0 +1,25 @@
+{
+  "name": "ChannelA-capability-rollup",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "ChannelName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "ChannelA"
+      ]
+    }
+  ],
+  "parameters": {
+    "sohMonitorsToChannelRollupOperator": {
+      "operatorType": "BEST_OF",
+      "sohMonitorTypeOperands": [
+        "MISSING",
+        "LAG"
+      ]
+    }
+  }
+}

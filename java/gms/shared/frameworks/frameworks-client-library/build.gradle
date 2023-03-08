@@ -1,0 +1,23 @@
+plugins {
+    id('java-library')
+}
+dependencies {
+    // Required to instantiate COI object mappers
+    implementation project(':frameworks-osd-commonobjects')
+    api project(':frameworks-configuration-commonobjects')
+    api project(':frameworks-shared-objects')
+
+    implementation libs.io.projectreactor.reactor.core
+
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    implementation libs.net.jodah.failsafe
+
+    testImplementation libs.com.google.auto.value.auto.value.annotations
+    testAnnotationProcessor libs.com.google.auto.value.auto.value.base
+
+    testImplementation libs.javax.xml.bind.jaxb.api
+    testImplementation libs.com.github.tomakehurst.wiremock.jre8
+    testImplementation libs.io.projectreactor.reactor.test
+}

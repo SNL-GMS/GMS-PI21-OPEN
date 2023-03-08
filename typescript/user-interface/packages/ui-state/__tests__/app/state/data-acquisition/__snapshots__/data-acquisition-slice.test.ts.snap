@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`state data acquisition slice initial state is correct 1`] = `
+Object {
+  "data": Object {
+    "sohStatus": Object {
+      "isStale": true,
+      "lastUpdated": 0,
+      "loading": true,
+      "stationAndStationGroupSoh": Object {
+        "isUpdateResponse": false,
+        "stationGroups": Array [],
+        "stationSoh": Array [],
+      },
+    },
+  },
+  "filtersToDisplay": Object {
+    "soh-environment-channel-statuses": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "soh-environment-monitor-statuses": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "soh-lag": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "soh-missing": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "soh-overview": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+      "NONE": true,
+    },
+    "soh-timeliness": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "station-statistics": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+      "NONE": true,
+    },
+  },
+  "selectedAceiType": null,
+  "selectedProcessingStation": null,
+  "stationStatisticsGroup": undefined,
+  "unmodifiedProcessingStation": null,
+}
+`;
+
+exports[`state data acquisition slice should return the initial state 1`] = `
+Object {
+  "data": Object {
+    "sohStatus": Object {
+      "isStale": true,
+      "lastUpdated": 0,
+      "loading": true,
+      "stationAndStationGroupSoh": Object {
+        "isUpdateResponse": false,
+        "stationGroups": Array [],
+        "stationSoh": Array [],
+      },
+    },
+  },
+  "filtersToDisplay": Object {
+    "soh-environment-channel-statuses": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "soh-environment-monitor-statuses": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "soh-lag": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "soh-missing": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "soh-overview": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+      "NONE": true,
+    },
+    "soh-timeliness": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "station-statistics": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+      "NONE": true,
+    },
+  },
+  "selectedAceiType": null,
+  "selectedProcessingStation": null,
+  "stationStatisticsGroup": undefined,
+  "unmodifiedProcessingStation": null,
+}
+`;
+
+exports[`state data acquisition slice should return the initial state 2`] = `
+Object {
+  "data": Object {
+    "sohStatus": Object {
+      "isStale": true,
+      "lastUpdated": 0,
+      "loading": true,
+      "stationAndStationGroupSoh": Object {
+        "isUpdateResponse": false,
+        "stationGroups": Array [],
+        "stationSoh": Array [],
+      },
+    },
+  },
+  "filtersToDisplay": Object {
+    "soh-environment-channel-statuses": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "soh-environment-monitor-statuses": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "soh-lag": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "soh-missing": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "soh-overview": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+      "NONE": true,
+    },
+    "soh-timeliness": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "station-statistics": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+      "NONE": true,
+    },
+  },
+  "selectedAceiType": null,
+  "selectedProcessingStation": null,
+  "stationStatisticsGroup": undefined,
+  "unmodifiedProcessingStation": null,
+}
+`;
+
+exports[`state data acquisition slice should return the initial state 3`] = `
+Object {
+  "data": Object {
+    "sohStatus": Object {
+      "isStale": true,
+      "lastUpdated": 0,
+      "loading": true,
+      "stationAndStationGroupSoh": Object {
+        "isUpdateResponse": false,
+        "stationGroups": Array [],
+        "stationSoh": Array [],
+      },
+    },
+  },
+  "filtersToDisplay": Object {
+    "soh-environment-channel-statuses": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "soh-environment-monitor-statuses": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "soh-lag": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "soh-missing": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "soh-overview": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+      "NONE": true,
+    },
+    "soh-timeliness": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+    },
+    "station-statistics": Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+      "NONE": true,
+    },
+  },
+  "selectedAceiType": null,
+  "selectedProcessingStation": null,
+  "stationStatisticsGroup": undefined,
+  "unmodifiedProcessingStation": null,
+}
+`;

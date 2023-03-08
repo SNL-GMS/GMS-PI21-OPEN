@@ -1,0 +1,54 @@
+plugins {
+    id('java')
+    alias(libs.plugins.org.springframework.boot)
+    alias(libs.plugins.com.palantir.docker)
+}
+
+// ------ Issue 19380
+// This is a workaround for including the 'java-test-fixtures' plugin, as without this
+// the build breaks since this combination somehow breaks the classpath built by gradle.
+// See issue https://web.archive.org/web/20211011144331/https://github.com/spring-projects/spring-boot/issues/19380
+bootJar {
+    archiveFileName = "workflow-manager-bootjar.jar"
+}
+
+jar {
+    enabled = true
+}
+// ------ Issue 19380
+
+// temporary configuration to get local config into build context
+docker {
+    files tasks.bootJar.outputs, 'src/main/resources'
+}
+
+dependencies {
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+
+    implementation project(':workflow-api')
+    implementation project(':workflow-coi')
+    implementation project(':workflow-accessor')
+    implementation project(':workflow-repository')
+    implementation project(':bridge-utilities')
+    implementation project(':frameworks-control')
+    implementation project(':frameworks-osd-api')
+    implementation project(':system-events')
+    implementation project(':spring-framework-utilities')
+    implementation project(':spring-persistence-oracle')
+
+    //Spring Dependencies
+    implementation libs.org.springframework.boot.spring.boot.starter.web
+    implementation libs.org.springdoc.springdoc.openapi.ui
+
+    //Retry
+    implementation libs.net.jodah.failsafe
+
+    // Kafka
+    implementation libs.org.apache.kafka.kafka.clients
+
+    testImplementation project(':test-utils')
+    testImplementation testFixtures(project(':workflow-coi'))
+    testImplementation libs.org.springframework.boot.spring.boot.starter.test
+    testImplementation project(':spring-framework-utilities').sourceSets.test.output
+}
+

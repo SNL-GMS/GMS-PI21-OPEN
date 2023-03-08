@@ -1,0 +1,13 @@
+{
+  "name": "feature-prediction-dziewonski-gilbert-ellipticity-corrector",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "correctionModelPluginNameByModelName": {
+      "Model1Name": "PluginForModel1Name"
+    }
+  }
+}

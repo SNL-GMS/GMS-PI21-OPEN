@@ -1,0 +1,9 @@
+apply plugin: "java-library"
+
+dependencies {
+    implementation project(':frameworks-system-config')
+    implementation project(':frameworks-osd-commonobjects')
+    implementation project(':frameworks-service-interface-base')
+
+    testImplementation project(':frameworks-osd-testfixtures')
+}

@@ -1,0 +1,584 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a component 1`] = `
+<div>
+  <div
+    class="bp4-dark"
+    style="height: 90%; width: 100%; padding: 0.5rem; color: rgb(171, 179, 191); display: flex; justify-content: center; align-items: center;"
+  >
+    <div
+      class="bp4-dark"
+      style="height: 100%; width: 100%;"
+    >
+      <div
+        style="height: 100%; width: 100%; display: flex; flex-direction: column;"
+      >
+        <div
+          style="display: block;"
+        >
+          <div
+            class="bp4-form-group bp4-inline"
+          >
+            <div
+              class="bp4-form-content"
+            >
+              <label
+                class="bp4-control bp4-checkbox"
+              >
+                <input
+                  checked=""
+                  type="checkbox"
+                />
+                <span
+                  class="bp4-control-indicator"
+                />
+                Use Typed Array
+              </label>
+              <label
+                class="bp4-label bp4-inline"
+              >
+                Number of Hours (1 - 1152 (48 days)):
+                <div
+                  class="bp4-control-group bp4-numeric-input bp4-inline"
+                >
+                  <div
+                    class="bp4-input-group"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="bp4-input"
+                      max="1152"
+                      min="1"
+                      placeholder="Enter a number"
+                      type="text"
+                      value="24"
+                    />
+                  </div>
+                  <div
+                    class="bp4-button-group bp4-vertical bp4-fixed"
+                  >
+                    <button
+                      aria-label="increment"
+                      class="bp4-button"
+                      type="button"
+                    >
+                      <span
+                        aria-hidden="true"
+                        class="bp4-icon bp4-icon-chevron-up"
+                        icon="chevron-up"
+                      >
+                        <svg
+                          data-icon="chevron-up"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                        >
+                          <path
+                            d="M12.71 9.29l-4-4C8.53 5.11 8.28 5 8 5s-.53.11-.71.29l-4 4a1.003 1.003 0 001.42 1.42L8 7.41l3.29 3.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <button
+                      aria-label="decrement"
+                      class="bp4-button"
+                      type="button"
+                    >
+                      <span
+                        aria-hidden="true"
+                        class="bp4-icon bp4-icon-chevron-down"
+                        icon="chevron-down"
+                      >
+                        <svg
+                          data-icon="chevron-down"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                        >
+                          <path
+                            d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </label>
+              <label
+                class="bp4-label bp4-inline"
+              >
+                Number of Lines (1 - 150):
+                <div
+                  class="bp4-control-group bp4-numeric-input bp4-inline"
+                >
+                  <div
+                    class="bp4-input-group"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="bp4-input"
+                      max="150"
+                      min="1"
+                      placeholder="Enter a number"
+                      type="text"
+                      value="10"
+                    />
+                  </div>
+                  <div
+                    class="bp4-button-group bp4-vertical bp4-fixed"
+                  >
+                    <button
+                      aria-label="increment"
+                      class="bp4-button"
+                      type="button"
+                    >
+                      <span
+                        aria-hidden="true"
+                        class="bp4-icon bp4-icon-chevron-up"
+                        icon="chevron-up"
+                      >
+                        <svg
+                          data-icon="chevron-up"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                        >
+                          <path
+                            d="M12.71 9.29l-4-4C8.53 5.11 8.28 5 8 5s-.53.11-.71.29l-4 4a1.003 1.003 0 001.42 1.42L8 7.41l3.29 3.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <button
+                      aria-label="decrement"
+                      class="bp4-button"
+                      type="button"
+                    >
+                      <span
+                        aria-hidden="true"
+                        class="bp4-icon bp4-icon-chevron-down"
+                        icon="chevron-down"
+                      >
+                        <svg
+                          data-icon="chevron-down"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                        >
+                          <path
+                            d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </label>
+              <label
+                class="bp4-label bp4-inline"
+              >
+                Time Offset Seconds (0 - 1800):
+                <div
+                  class="bp4-control-group bp4-numeric-input bp4-inline"
+                >
+                  <div
+                    class="bp4-input-group"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="bp4-input"
+                      max="1800"
+                      min="0"
+                      placeholder="Enter a number"
+                      type="text"
+                      value="0"
+                    />
+                  </div>
+                  <div
+                    class="bp4-button-group bp4-vertical bp4-fixed"
+                  >
+                    <button
+                      aria-label="increment"
+                      class="bp4-button"
+                      type="button"
+                    >
+                      <span
+                        aria-hidden="true"
+                        class="bp4-icon bp4-icon-chevron-up"
+                        icon="chevron-up"
+                      >
+                        <svg
+                          data-icon="chevron-up"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                        >
+                          <path
+                            d="M12.71 9.29l-4-4C8.53 5.11 8.28 5 8 5s-.53.11-.71.29l-4 4a1.003 1.003 0 001.42 1.42L8 7.41l3.29 3.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <button
+                      aria-label="decrement"
+                      class="bp4-button bp4-disabled"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <span
+                        aria-hidden="true"
+                        class="bp4-icon bp4-icon-chevron-down"
+                        icon="chevron-down"
+                      >
+                        <svg
+                          data-icon="chevron-down"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                        >
+                          <path
+                            d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </label>
+              <label
+                class="bp4-label bp4-inline"
+              >
+                Point Frequency (1 - 60):
+                <div
+                  class="bp4-control-group bp4-numeric-input bp4-inline"
+                >
+                  <div
+                    class="bp4-input-group"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="bp4-input"
+                      max="60"
+                      min="1"
+                      placeholder="Enter a number"
+                      type="text"
+                      value="10"
+                    />
+                  </div>
+                  <div
+                    class="bp4-button-group bp4-vertical bp4-fixed"
+                  >
+                    <button
+                      aria-label="increment"
+                      class="bp4-button"
+                      type="button"
+                    >
+                      <span
+                        aria-hidden="true"
+                        class="bp4-icon bp4-icon-chevron-up"
+                        icon="chevron-up"
+                      >
+                        <svg
+                          data-icon="chevron-up"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                        >
+                          <path
+                            d="M12.71 9.29l-4-4C8.53 5.11 8.28 5 8 5s-.53.11-.71.29l-4 4a1.003 1.003 0 001.42 1.42L8 7.41l3.29 3.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <button
+                      aria-label="decrement"
+                      class="bp4-button"
+                      type="button"
+                    >
+                      <span
+                        aria-hidden="true"
+                        class="bp4-icon bp4-icon-chevron-down"
+                        icon="chevron-down"
+                      >
+                        <svg
+                          data-icon="chevron-down"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                        >
+                          <path
+                            d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div>
+            Number of Points per line:
+             
+            8640
+          </div>
+          <div>
+            Total number of Points:
+             
+            86400
+          </div>
+        </div>
+        <div
+          style="flex: 1 1 auto; position: relative;"
+        >
+          <div
+            style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;"
+          >
+            <div
+              class="weavess"
+              data-cy="weavess-container"
+              data-end-time="1507680000"
+              data-start-time="1507593600"
+              style="--weavess-background-color: #182026;"
+            >
+              <div
+                class="horizontal-divider__bottom weavess-waveform-display"
+                data-cy="weavess-waveform-display"
+                style="height: 100%;"
+              >
+                <div
+                  class="weavess-zoom-handler"
+                  role="tab"
+                  tabindex="-1"
+                >
+                  <div
+                    class="weavess-wp"
+                    style="height: 100%; position: relative; width: 100%; box-sizing: content-box; --weavess-scrollbar-track-margin: 184px;"
+                  >
+                    <canvas
+                      class="weavess-wp-canvas"
+                      style="width: calc(100% - 194px); height: calc(100% - 35px); left: 184px;"
+                    />
+                    <div
+                      class="weavess-wp-container"
+                    >
+                      <div
+                        class="weavess-wp-container-1"
+                      >
+                        <div
+                          class="weavess-wp-container-2"
+                        >
+                          <div
+                            class="weavess-wp-container-3"
+                          >
+                            <aside
+                              style="width: 9007199254740991px; height: 1px; position: absolute; pointer-events: none; background: none;"
+                            />
+                            <div
+                              class="weavess-wp-container-viewport"
+                              tabindex="0"
+                            >
+                              <div
+                                class="weavess-wp-container-viewport-content"
+                              >
+                                <div
+                                  class="station"
+                                  style="height: 751px;"
+                                >
+                                  <div
+                                    class="channel"
+                                    data-cy="id-channel"
+                                    style="height: 750px; max-height: 750px;"
+                                    tabindex="0"
+                                  >
+                                    <div
+                                      class="channel-label-container"
+                                      data-cy="id-label"
+                                      style="height: 750px; width: 184px;"
+                                      tabindex="0"
+                                    >
+                                      <div
+                                        class="label"
+                                        tabindex="0"
+                                      >
+                                        <div
+                                          class="label-container"
+                                        >
+                                          <div
+                                            class="label-container-left-parent"
+                                          />
+                                          <div
+                                            class="label-container-content"
+                                          >
+                                            <div
+                                              class="label-container-content-label"
+                                              data-cy="channel-label-id"
+                                            >
+                                              <div
+                                                style="width: 150px; transform: rotate(270deg); transform-origin: left top 0;"
+                                              >
+                                                Example Line Chart
+                                              </div>
+                                            </div>
+                                            <div
+                                              data-cy-contains-amplitude-markers="true"
+                                              style="height: 100%;"
+                                            >
+                                              <div
+                                                class="y-axis"
+                                                data-cy="y-axis"
+                                                data-max="1"
+                                                data-min="-1"
+                                                style="height: calc(100% - 4px); margin: 2px 0px 2px 0px;"
+                                              >
+                                                <svg
+                                                  height="100%"
+                                                  width="50"
+                                                >
+                                                  <g
+                                                    class="y-axis__ordinate"
+                                                    height="100%"
+                                                    transform="translate(49,0)"
+                                                  />
+                                                </svg>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="channel-content-container"
+                                      style="height: 750px; width: calc(100% - 184px); left: 184px;"
+                                    >
+                                      <div
+                                        class="contentrenderer"
+                                        tabindex="0"
+                                      >
+                                        <div
+                                          class="contentrenderer-content contentrenderer-content--sticky"
+                                          style="width: calc(100% - 184);"
+                                        />
+                                        <div
+                                          class="contentrenderer-content"
+                                          data-cy-station-waveform="id"
+                                          style="left: 184px; width: calc(100% - 184px);"
+                                        >
+                                          <div
+                                            class="contentrenderer-content-drag-indicator"
+                                          />
+                                          <div
+                                            class="measure-window-selection measure-window-selection__container"
+                                            style="display: none; transform: translateX(-50%);"
+                                          >
+                                            <div
+                                              class="measure-window-selection__overlay"
+                                              data-cy="measure-window-selection"
+                                              draggable="true"
+                                              style="display: none; left: 50%; width: 0%;"
+                                            />
+                                          </div>
+                                          <div
+                                            class="contentrenderer-content-markers"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="weavess-wp-container-viewport-content-markers"
+                                  style="width: calc(100% - 194px); left: 184px;"
+                                />
+                              </div>
+                              <object
+                                class="resize-sensor"
+                                data="about:blank"
+                                style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; pointer-events: none; z-index: -1; opacity: 0;"
+                                tabindex="-1"
+                                type="text/html"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="weavess-wp-container-overlay"
+                          style="width: calc(100% - 194px);"
+                        >
+                          <div
+                            class="weavess-wp-container-overlay-cross-hair"
+                          />
+                          <div
+                            class="weavess-wp-container-overlay-selection-area"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="x-axis"
+                        data-cy="x-axis"
+                        data-end-time="1507680000"
+                        data-start-time="1507593600"
+                        style="height: 35px;"
+                      >
+                        <div
+                          style="width: 100%;"
+                        >
+                          <svg
+                            height="35"
+                            style="fill: #F6F7F9;"
+                            width="100%"
+                          >
+                            <g
+                              class="x-axis-axis"
+                              fill="none"
+                              font-family="sans-serif"
+                              font-size="10"
+                              text-anchor="middle"
+                            >
+                              <path
+                                class="domain"
+                                d="M184.5,7V0.5H-9.5V7"
+                                stroke="currentColor"
+                              />
+                            </g>
+                          </svg>
+                        </div>
+                        <div
+                          style="text-align: center;"
+                        >
+                          My Custom X-Axis Label
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="weavess-wp-time-range"
+                      style="left: 184px;"
+                    >
+                      <span>
+                        2017-10-10 00:00:00.000 + 1 day
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="Toastify"
+                id="Weavess-Toast-Container"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

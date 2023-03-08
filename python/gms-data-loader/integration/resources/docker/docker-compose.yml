@@ -1,0 +1,57 @@
+version: "3.3"
+
+services:
+
+  etcd:
+    image: "${CI_DOCKER_REGISTRY}/gms-common/etcd:${DOCKER_IMAGE_TAG}"
+
+  frameworks-osd-service:
+    image: "${CI_DOCKER_REGISTRY}/gms-common/frameworks-osd-service:${DOCKER_IMAGE_TAG}"
+    ports:
+      - 8080
+    environment:
+      GMS_CONFIG_SQL_URL: jdbc:postgresql://postgresql-gms:5432/gms
+      GMS_CONFIG_SQL_USER: gms_soh_application
+      GMS_CONFIG_OSD__C3P0_CONNECTION_POOL_SIZE: 100
+      GMS_CONFIG_OSD__HOST: "frameworks-osd-service"
+      GMS_CONFIG_PORT: 8080
+      GMS_CONFIG_IDLE_TIMEOUT: PT30S
+      GMS_CONFIG_MIN_THREADS: 10
+      GMS_CONFIG_MAX_THREADS: 100
+    depends_on:
+      - postgresql-gms
+
+  frameworks-configuration-service:
+    image: "${CI_DOCKER_REGISTRY}/gms-common/frameworks-configuration-service:${DOCKER_IMAGE_TAG}"
+    ports:
+      - 8080
+    environment:
+      GMS_CONFIG_SQL_URL: jdbc:postgresql://postgresql-gms:5432/gms
+      GMS_CONFIG_SQL_USER: gms_config_application
+      GMS_CONFIG_OSD__C3P0_CONNECTION_POOL_SIZE: 100
+      GMS_CONFIG_OSD__HOST: "frameworks-configuration-service"
+      GMS_CONFIG_PORT: 8080
+      GMS_CONFIG_IDLE_TIMEOUT: PT30S
+      GMS_CONFIG_MIN_THREADS: 10
+      GMS_CONFIG_MAX_THREADS: 100
+    depends_on:
+      - postgresql-gms
+
+  postgresql-gms:
+    image: "${CI_DOCKER_REGISTRY}/gms-common/postgres:${DOCKER_IMAGE_TAG}"
+    environment:
+      POSTGRES_DB: gms
+      POSTGRES_USER: gms_super_user
+    volumes:
+      - postgresql-gms:/var/lib/postgresql/data:rw
+    command: ["postgres", "-c", "max_connections=200"]
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready --username gms_super_user --dbname gms']
+      interval: 5s
+      timeout: 10s
+      retries: 10
+
+volumes:
+  postgresql-gms:
+    labels:
+      com.docker.ucp.access.label: ${COLLECTION}

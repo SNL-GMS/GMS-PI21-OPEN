@@ -1,0 +1,12 @@
+{
+  "name": "default-soh-monitor-timewindows",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "calculationInterval": "PT10M",
+    "backOffDuration": "PT5M"
+  }
+}

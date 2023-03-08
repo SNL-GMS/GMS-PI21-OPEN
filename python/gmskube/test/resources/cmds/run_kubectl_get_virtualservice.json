@@ -1,0 +1,1219 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "networking.istio.io/v1beta1",
+            "kind": "VirtualService",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "test",
+                    "meta.helm.sh/release-namespace": "test"
+                },
+                "creationTimestamp": "2022-03-31T17:51:20Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "managedFields": [
+                    {
+                        "apiVersion": "networking.istio.io/v1alpha3",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:meta.helm.sh/release-name": {},
+                                    "f:meta.helm.sh/release-namespace": {}
+                                },
+                                "f:labels": {
+                                    ".": {},
+                                    "f:app.kubernetes.io/managed-by": {}
+                                }
+                            },
+                            "f:spec": {
+                                ".": {},
+                                "f:gateways": {},
+                                "f:hosts": {},
+                                "f:http": {}
+                            }
+                        },
+                        "manager": "helm",
+                        "operation": "Update",
+                        "time": "2022-03-31T17:51:20Z"
+                    }
+                ],
+                "name": "cache-service",
+                "namespace": "test",
+                "resourceVersion": "69065711",
+                "uid": "91a9f90a-fbbb-42ac-b0b4-ddc5c55f5ece"
+            },
+            "spec": {
+                "gateways": [
+                    "istio-system/ingress-default-gateway"
+                ],
+                "hosts": [
+                    "test.cluster.com"
+                ],
+                "http": [
+                    {
+                        "match": [
+                            {
+                                "uri": {
+                                    "prefix": "/cache-service"
+                                }
+                            }
+                        ],
+                        "route": [
+                            {
+                                "destination": {
+                                    "host": "cache-service.test.svc.cluster.local",
+                                    "port": {
+                                        "number": 8080
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "networking.istio.io/v1beta1",
+            "kind": "VirtualService",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "test",
+                    "meta.helm.sh/release-namespace": "test"
+                },
+                "creationTimestamp": "2022-03-31T17:51:20Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "managedFields": [
+                    {
+                        "apiVersion": "networking.istio.io/v1alpha3",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:meta.helm.sh/release-name": {},
+                                    "f:meta.helm.sh/release-namespace": {}
+                                },
+                                "f:labels": {
+                                    ".": {},
+                                    "f:app.kubernetes.io/managed-by": {}
+                                }
+                            },
+                            "f:spec": {
+                                ".": {},
+                                "f:gateways": {},
+                                "f:hosts": {},
+                                "f:http": {}
+                            }
+                        },
+                        "manager": "helm",
+                        "operation": "Update",
+                        "time": "2022-03-31T17:51:20Z"
+                    }
+                ],
+                "name": "config-loader",
+                "namespace": "test",
+                "resourceVersion": "69065675",
+                "uid": "21e2c1f6-6ed1-4046-895e-6b0b8ac02bd4"
+            },
+            "spec": {
+                "gateways": [
+                    "istio-system/ingress-default-gateway"
+                ],
+                "hosts": [
+                    "test.cluster.com"
+                ],
+                "http": [
+                    {
+                        "match": [
+                            {
+                                "uri": {
+                                    "prefix": "/config-loader"
+                                }
+                            }
+                        ],
+                        "route": [
+                            {
+                                "destination": {
+                                    "host": "config-loader.test.svc.cluster.local",
+                                    "port": {
+                                        "number": 8080
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "networking.istio.io/v1beta1",
+            "kind": "VirtualService",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "test",
+                    "meta.helm.sh/release-namespace": "test"
+                },
+                "creationTimestamp": "2022-03-31T17:51:20Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "managedFields": [
+                    {
+                        "apiVersion": "networking.istio.io/v1alpha3",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:meta.helm.sh/release-name": {},
+                                    "f:meta.helm.sh/release-namespace": {}
+                                },
+                                "f:labels": {
+                                    ".": {},
+                                    "f:app.kubernetes.io/managed-by": {}
+                                }
+                            },
+                            "f:spec": {
+                                ".": {},
+                                "f:gateways": {},
+                                "f:hosts": {},
+                                "f:http": {}
+                            }
+                        },
+                        "manager": "helm",
+                        "operation": "Update",
+                        "time": "2022-03-31T17:51:20Z"
+                    }
+                ],
+                "name": "event-manager-service",
+                "namespace": "test",
+                "resourceVersion": "69065672",
+                "uid": "10b118b7-be69-4155-8519-f8635f1aa216"
+            },
+            "spec": {
+                "gateways": [
+                    "istio-system/ingress-default-gateway"
+                ],
+                "hosts": [
+                    "test.cluster.com"
+                ],
+                "http": [
+                    {
+                        "match": [
+                            {
+                                "uri": {
+                                    "prefix": "/event-manager-service"
+                                }
+                            }
+                        ],
+                        "route": [
+                            {
+                                "destination": {
+                                    "host": "event-manager-service.test.svc.cluster.local",
+                                    "port": {
+                                        "number": 8080
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "networking.istio.io/v1beta1",
+            "kind": "VirtualService",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "test",
+                    "meta.helm.sh/release-namespace": "test"
+                },
+                "creationTimestamp": "2022-03-31T17:51:20Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "managedFields": [
+                    {
+                        "apiVersion": "networking.istio.io/v1alpha3",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:meta.helm.sh/release-name": {},
+                                    "f:meta.helm.sh/release-namespace": {}
+                                },
+                                "f:labels": {
+                                    ".": {},
+                                    "f:app.kubernetes.io/managed-by": {}
+                                }
+                            },
+                            "f:spec": {
+                                ".": {},
+                                "f:gateways": {},
+                                "f:hosts": {},
+                                "f:http": {}
+                            }
+                        },
+                        "manager": "helm",
+                        "operation": "Update",
+                        "time": "2022-03-31T17:51:20Z"
+                    }
+                ],
+                "name": "feature-prediction-service",
+                "namespace": "test",
+                "resourceVersion": "69065671",
+                "uid": "41cca0cc-322e-420a-8169-eecd3d431b0e"
+            },
+            "spec": {
+                "gateways": [
+                    "istio-system/ingress-default-gateway"
+                ],
+                "hosts": [
+                    "test.cluster.com"
+                ],
+                "http": [
+                    {
+                        "match": [
+                            {
+                                "uri": {
+                                    "prefix": "/feature-prediction-service"
+                                }
+                            }
+                        ],
+                        "route": [
+                            {
+                                "destination": {
+                                    "host": "feature-prediction-service.test.svc.cluster.local",
+                                    "port": {
+                                        "number": 8080
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "networking.istio.io/v1beta1",
+            "kind": "VirtualService",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "test",
+                    "meta.helm.sh/release-namespace": "test"
+                },
+                "creationTimestamp": "2022-03-31T17:51:20Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "managedFields": [
+                    {
+                        "apiVersion": "networking.istio.io/v1alpha3",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:meta.helm.sh/release-name": {},
+                                    "f:meta.helm.sh/release-namespace": {}
+                                },
+                                "f:labels": {
+                                    ".": {},
+                                    "f:app.kubernetes.io/managed-by": {}
+                                }
+                            },
+                            "f:spec": {
+                                ".": {},
+                                "f:gateways": {},
+                                "f:hosts": {},
+                                "f:http": {}
+                            }
+                        },
+                        "manager": "helm",
+                        "operation": "Update",
+                        "time": "2022-03-31T17:51:20Z"
+                    }
+                ],
+                "name": "frameworks-configuration-service",
+                "namespace": "test",
+                "resourceVersion": "69065674",
+                "uid": "403bfef7-c9cc-408a-88a3-80f62615bc88"
+            },
+            "spec": {
+                "gateways": [
+                    "istio-system/ingress-default-gateway"
+                ],
+                "hosts": [
+                    "test.cluster.com"
+                ],
+                "http": [
+                    {
+                        "match": [
+                            {
+                                "uri": {
+                                    "prefix": "/frameworks-configuration-service"
+                                }
+                            }
+                        ],
+                        "route": [
+                            {
+                                "destination": {
+                                    "host": "frameworks-configuration-service.test.svc.cluster.local",
+                                    "port": {
+                                        "number": 8080
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "networking.istio.io/v1beta1",
+            "kind": "VirtualService",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "test",
+                    "meta.helm.sh/release-namespace": "test"
+                },
+                "creationTimestamp": "2022-03-31T17:51:20Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "managedFields": [
+                    {
+                        "apiVersion": "networking.istio.io/v1alpha3",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:meta.helm.sh/release-name": {},
+                                    "f:meta.helm.sh/release-namespace": {}
+                                },
+                                "f:labels": {
+                                    ".": {},
+                                    "f:app.kubernetes.io/managed-by": {}
+                                }
+                            },
+                            "f:spec": {
+                                ".": {},
+                                "f:gateways": {},
+                                "f:hosts": {},
+                                "f:http": {}
+                            }
+                        },
+                        "manager": "helm",
+                        "operation": "Update",
+                        "time": "2022-03-31T17:51:20Z"
+                    }
+                ],
+                "name": "frameworks-osd-service",
+                "namespace": "test",
+                "resourceVersion": "69065713",
+                "uid": "728c6fb1-199b-4997-a12c-28ac4f066ce5"
+            },
+            "spec": {
+                "gateways": [
+                    "istio-system/ingress-default-gateway"
+                ],
+                "hosts": [
+                    "test.cluster.com"
+                ],
+                "http": [
+                    {
+                        "match": [
+                            {
+                                "uri": {
+                                    "prefix": "/frameworks-osd-service"
+                                }
+                            }
+                        ],
+                        "route": [
+                            {
+                                "destination": {
+                                    "host": "frameworks-osd-service.test.svc.cluster.local",
+                                    "port": {
+                                        "number": 8080
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "networking.istio.io/v1beta1",
+            "kind": "VirtualService",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "test",
+                    "meta.helm.sh/release-namespace": "test"
+                },
+                "creationTimestamp": "2022-03-31T17:51:20Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "managedFields": [
+                    {
+                        "apiVersion": "networking.istio.io/v1alpha3",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:meta.helm.sh/release-name": {},
+                                    "f:meta.helm.sh/release-namespace": {}
+                                },
+                                "f:labels": {
+                                    ".": {},
+                                    "f:app.kubernetes.io/managed-by": {}
+                                }
+                            },
+                            "f:spec": {
+                                ".": {},
+                                "f:gateways": {},
+                                "f:hosts": {},
+                                "f:http": {}
+                            }
+                        },
+                        "manager": "helm",
+                        "operation": "Update",
+                        "time": "2022-03-31T17:51:20Z"
+                    }
+                ],
+                "name": "interactive-analysis-ui",
+                "namespace": "test",
+                "resourceVersion": "69065718",
+                "uid": "d8c3170e-9e63-4e7d-95f5-3606e36fc184"
+            },
+            "spec": {
+                "gateways": [
+                    "istio-system/ingress-default-gateway"
+                ],
+                "hosts": [
+                    "test.cluster.com"
+                ],
+                "http": [
+                    {
+                        "match": [
+                            {
+                                "uri": {
+                                    "prefix": "/interactive-analysis-ui"
+                                }
+                            }
+                        ],
+                        "route": [
+                            {
+                                "destination": {
+                                    "host": "interactive-analysis-ui.test.svc.cluster.local",
+                                    "port": {
+                                        "number": 8080
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "networking.istio.io/v1beta1",
+            "kind": "VirtualService",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "test",
+                    "meta.helm.sh/release-namespace": "test"
+                },
+                "creationTimestamp": "2022-03-31T17:51:20Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "managedFields": [
+                    {
+                        "apiVersion": "networking.istio.io/v1alpha3",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:meta.helm.sh/release-name": {},
+                                    "f:meta.helm.sh/release-namespace": {}
+                                },
+                                "f:labels": {
+                                    ".": {},
+                                    "f:app.kubernetes.io/managed-by": {}
+                                }
+                            },
+                            "f:spec": {
+                                ".": {},
+                                "f:gateways": {},
+                                "f:hosts": {},
+                                "f:http": {}
+                            }
+                        },
+                        "manager": "helm",
+                        "operation": "Update",
+                        "time": "2022-03-31T17:51:20Z"
+                    }
+                ],
+                "name": "prometheus",
+                "namespace": "test",
+                "resourceVersion": "69065720",
+                "uid": "2f29cfce-4a5e-4d1f-a7f1-490758964e26"
+            },
+            "spec": {
+                "gateways": [
+                    "istio-system/ingress-default-gateway"
+                ],
+                "hosts": [
+                    "prometheus-test.cluster.com"
+                ],
+                "http": [
+                    {
+                        "match": [
+                            {
+                                "uri": {
+                                    "prefix": "/"
+                                }
+                            }
+                        ],
+                        "route": [
+                            {
+                                "destination": {
+                                    "host": "prometheus.test.svc.cluster.local",
+                                    "port": {
+                                        "number": 9090
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "networking.istio.io/v1beta1",
+            "kind": "VirtualService",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "test",
+                    "meta.helm.sh/release-namespace": "test"
+                },
+                "creationTimestamp": "2022-03-31T17:51:20Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "managedFields": [
+                    {
+                        "apiVersion": "networking.istio.io/v1alpha3",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:meta.helm.sh/release-name": {},
+                                    "f:meta.helm.sh/release-namespace": {}
+                                },
+                                "f:labels": {
+                                    ".": {},
+                                    "f:app.kubernetes.io/managed-by": {}
+                                }
+                            },
+                            "f:spec": {
+                                ".": {},
+                                "f:gateways": {},
+                                "f:hosts": {},
+                                "f:http": {}
+                            }
+                        },
+                        "manager": "helm",
+                        "operation": "Update",
+                        "time": "2022-03-31T17:51:20Z"
+                    }
+                ],
+                "name": "reactive-interaction-gateway",
+                "namespace": "test",
+                "resourceVersion": "69065709",
+                "uid": "e76c3b4f-d27b-480c-aacc-b2428031557d"
+            },
+            "spec": {
+                "gateways": [
+                    "istio-system/ingress-default-gateway"
+                ],
+                "hosts": [
+                    "test.cluster.com"
+                ],
+                "http": [
+                    {
+                        "match": [
+                            {
+                                "uri": {
+                                    "prefix": "/reactive-interaction-gateway/api/"
+                                }
+                            }
+                        ],
+                        "rewrite": {
+                            "uri": "/"
+                        },
+                        "route": [
+                            {
+                                "destination": {
+                                    "host": "reactive-interaction-gateway.test.svc.cluster.local",
+                                    "port": {
+                                        "number": 4010
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "match": [
+                            {
+                                "uri": {
+                                    "exact": "/reactive-interaction-gateway/api"
+                                }
+                            }
+                        ],
+                        "rewrite": {
+                            "uri": "/"
+                        },
+                        "route": [
+                            {
+                                "destination": {
+                                    "host": "reactive-interaction-gateway.test.svc.cluster.local",
+                                    "port": {
+                                        "number": 4010
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "match": [
+                            {
+                                "uri": {
+                                    "prefix": "/reactive-interaction-gateway/rig/"
+                                }
+                            }
+                        ],
+                        "rewrite": {
+                            "uri": "/"
+                        },
+                        "route": [
+                            {
+                                "destination": {
+                                    "host": "reactive-interaction-gateway.test.svc.cluster.local",
+                                    "port": {
+                                        "number": 4000
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "match": [
+                            {
+                                "uri": {
+                                    "exact": "/reactive-interaction-gateway/rig"
+                                }
+                            }
+                        ],
+                        "rewrite": {
+                            "uri": "/"
+                        },
+                        "route": [
+                            {
+                                "destination": {
+                                    "host": "reactive-interaction-gateway.test.svc.cluster.local",
+                                    "port": {
+                                        "number": 4000
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "networking.istio.io/v1beta1",
+            "kind": "VirtualService",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "test",
+                    "meta.helm.sh/release-namespace": "test"
+                },
+                "creationTimestamp": "2022-03-31T17:51:20Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "managedFields": [
+                    {
+                        "apiVersion": "networking.istio.io/v1alpha3",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:meta.helm.sh/release-name": {},
+                                    "f:meta.helm.sh/release-namespace": {}
+                                },
+                                "f:labels": {
+                                    ".": {},
+                                    "f:app.kubernetes.io/managed-by": {}
+                                }
+                            },
+                            "f:spec": {
+                                ".": {},
+                                "f:gateways": {},
+                                "f:hosts": {},
+                                "f:http": {}
+                            }
+                        },
+                        "manager": "helm",
+                        "operation": "Update",
+                        "time": "2022-03-31T17:51:20Z"
+                    }
+                ],
+                "name": "signal-detection-manager-service",
+                "namespace": "test",
+                "resourceVersion": "69065723",
+                "uid": "bb2e641f-ef19-4bb8-ad0b-6d5fc9bb4f12"
+            },
+            "spec": {
+                "gateways": [
+                    "istio-system/ingress-default-gateway"
+                ],
+                "hosts": [
+                    "test.cluster.com"
+                ],
+                "http": [
+                    {
+                        "match": [
+                            {
+                                "uri": {
+                                    "prefix": "/signal-detection-manager-service"
+                                }
+                            }
+                        ],
+                        "route": [
+                            {
+                                "destination": {
+                                    "host": "signal-detection-manager-service.test.svc.cluster.local",
+                                    "port": {
+                                        "number": 8080
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "networking.istio.io/v1beta1",
+            "kind": "VirtualService",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "test",
+                    "meta.helm.sh/release-namespace": "test"
+                },
+                "creationTimestamp": "2022-03-31T17:51:20Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "managedFields": [
+                    {
+                        "apiVersion": "networking.istio.io/v1alpha3",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:meta.helm.sh/release-name": {},
+                                    "f:meta.helm.sh/release-namespace": {}
+                                },
+                                "f:labels": {
+                                    ".": {},
+                                    "f:app.kubernetes.io/managed-by": {}
+                                }
+                            },
+                            "f:spec": {
+                                ".": {},
+                                "f:gateways": {},
+                                "f:hosts": {},
+                                "f:http": {}
+                            }
+                        },
+                        "manager": "helm",
+                        "operation": "Update",
+                        "time": "2022-03-31T17:51:20Z"
+                    }
+                ],
+                "name": "station-definition-service",
+                "namespace": "test",
+                "resourceVersion": "69065673",
+                "uid": "f93ccd9f-d4d6-4b45-8a08-d46f73f6e273"
+            },
+            "spec": {
+                "gateways": [
+                    "istio-system/ingress-default-gateway"
+                ],
+                "hosts": [
+                    "test.cluster.com"
+                ],
+                "http": [
+                    {
+                        "match": [
+                            {
+                                "uri": {
+                                    "prefix": "/station-definition-service"
+                                }
+                            }
+                        ],
+                        "route": [
+                            {
+                                "destination": {
+                                    "host": "station-definition-service.test.svc.cluster.local",
+                                    "port": {
+                                        "number": 8080
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "networking.istio.io/v1beta1",
+            "kind": "VirtualService",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "test",
+                    "meta.helm.sh/release-namespace": "test"
+                },
+                "creationTimestamp": "2022-03-31T17:51:20Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "managedFields": [
+                    {
+                        "apiVersion": "networking.istio.io/v1alpha3",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:meta.helm.sh/release-name": {},
+                                    "f:meta.helm.sh/release-namespace": {}
+                                },
+                                "f:labels": {
+                                    ".": {},
+                                    "f:app.kubernetes.io/managed-by": {}
+                                }
+                            },
+                            "f:spec": {
+                                ".": {},
+                                "f:gateways": {},
+                                "f:hosts": {},
+                                "f:http": {}
+                            }
+                        },
+                        "manager": "helm",
+                        "operation": "Update",
+                        "time": "2022-03-31T17:51:20Z"
+                    }
+                ],
+                "name": "ui-processing-configuration-service",
+                "namespace": "test",
+                "resourceVersion": "69065715",
+                "uid": "8e68ef6a-eece-4858-b913-aa07cfc7b981"
+            },
+            "spec": {
+                "gateways": [
+                    "istio-system/ingress-default-gateway"
+                ],
+                "hosts": [
+                    "test.cluster.com"
+                ],
+                "http": [
+                    {
+                        "match": [
+                            {
+                                "uri": {
+                                    "prefix": "/ui-processing-configuration-service"
+                                }
+                            }
+                        ],
+                        "route": [
+                            {
+                                "destination": {
+                                    "host": "ui-processing-configuration-service.test.svc.cluster.local",
+                                    "port": {
+                                        "number": 8080
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "networking.istio.io/v1beta1",
+            "kind": "VirtualService",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "test",
+                    "meta.helm.sh/release-namespace": "test"
+                },
+                "creationTimestamp": "2022-03-31T17:51:20Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "managedFields": [
+                    {
+                        "apiVersion": "networking.istio.io/v1alpha3",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:meta.helm.sh/release-name": {},
+                                    "f:meta.helm.sh/release-namespace": {}
+                                },
+                                "f:labels": {
+                                    ".": {},
+                                    "f:app.kubernetes.io/managed-by": {}
+                                }
+                            },
+                            "f:spec": {
+                                ".": {},
+                                "f:gateways": {},
+                                "f:hosts": {},
+                                "f:http": {}
+                            }
+                        },
+                        "manager": "helm",
+                        "operation": "Update",
+                        "time": "2022-03-31T17:51:20Z"
+                    }
+                ],
+                "name": "user-manager-service",
+                "namespace": "test",
+                "resourceVersion": "69065719",
+                "uid": "11642493-be0d-4a9a-9681-de85495d5811"
+            },
+            "spec": {
+                "gateways": [
+                    "istio-system/ingress-default-gateway"
+                ],
+                "hosts": [
+                    "test.cluster.com"
+                ],
+                "http": [
+                    {
+                        "match": [
+                            {
+                                "uri": {
+                                    "prefix": "/user-manager-service"
+                                }
+                            }
+                        ],
+                        "route": [
+                            {
+                                "destination": {
+                                    "host": "user-manager-service.test.svc.cluster.local",
+                                    "port": {
+                                        "number": 8080
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "networking.istio.io/v1beta1",
+            "kind": "VirtualService",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "test",
+                    "meta.helm.sh/release-namespace": "test"
+                },
+                "creationTimestamp": "2022-03-31T17:51:20Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "managedFields": [
+                    {
+                        "apiVersion": "networking.istio.io/v1alpha3",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:meta.helm.sh/release-name": {},
+                                    "f:meta.helm.sh/release-namespace": {}
+                                },
+                                "f:labels": {
+                                    ".": {},
+                                    "f:app.kubernetes.io/managed-by": {}
+                                }
+                            },
+                            "f:spec": {
+                                ".": {},
+                                "f:gateways": {},
+                                "f:hosts": {},
+                                "f:http": {}
+                            }
+                        },
+                        "manager": "helm",
+                        "operation": "Update",
+                        "time": "2022-03-31T17:51:20Z"
+                    }
+                ],
+                "name": "waveform-manager-service",
+                "namespace": "test",
+                "resourceVersion": "69065717",
+                "uid": "f2c7cfce-635a-409e-825a-c259cabe32ae"
+            },
+            "spec": {
+                "gateways": [
+                    "istio-system/ingress-default-gateway"
+                ],
+                "hosts": [
+                    "test.cluster.com"
+                ],
+                "http": [
+                    {
+                        "match": [
+                            {
+                                "uri": {
+                                    "prefix": "/waveform-manager-service"
+                                }
+                            }
+                        ],
+                        "route": [
+                            {
+                                "destination": {
+                                    "host": "waveform-manager-service.test.svc.cluster.local",
+                                    "port": {
+                                        "number": 8080
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "networking.istio.io/v1beta1",
+            "kind": "VirtualService",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "test",
+                    "meta.helm.sh/release-namespace": "test"
+                },
+                "creationTimestamp": "2022-03-31T17:51:20Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "managedFields": [
+                    {
+                        "apiVersion": "networking.istio.io/v1alpha3",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:meta.helm.sh/release-name": {},
+                                    "f:meta.helm.sh/release-namespace": {}
+                                },
+                                "f:labels": {
+                                    ".": {},
+                                    "f:app.kubernetes.io/managed-by": {}
+                                }
+                            },
+                            "f:spec": {
+                                ".": {},
+                                "f:gateways": {},
+                                "f:hosts": {},
+                                "f:http": {}
+                            }
+                        },
+                        "manager": "helm",
+                        "operation": "Update",
+                        "time": "2022-03-31T17:51:20Z"
+                    }
+                ],
+                "name": "workflow-manager-service",
+                "namespace": "test",
+                "resourceVersion": "69065716",
+                "uid": "75abfd57-8c12-456d-8b48-aea68918adb6"
+            },
+            "spec": {
+                "gateways": [
+                    "istio-system/ingress-default-gateway"
+                ],
+                "hosts": [
+                    "test.cluster.com"
+                ],
+                "http": [
+                    {
+                        "match": [
+                            {
+                                "uri": {
+                                    "prefix": "/workflow-manager-service"
+                                }
+                            }
+                        ],
+                        "route": [
+                            {
+                                "destination": {
+                                    "host": "workflow-manager-service.test.svc.cluster.local",
+                                    "port": {
+                                        "number": 8080
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": "",
+        "selfLink": ""
+    }
+}

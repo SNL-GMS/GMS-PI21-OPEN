@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weavess Ruler Renderer renders 1`] = `
+<div>
+  <div
+    class="ruler__start-marker"
+    style="transform: translateX(-95px);"
+  />
+  <div
+    class="ruler__current-marker"
+    style="transform: translateX(NaNpx) translateY(NaNpx);"
+  />
+  <div
+    class="ruler__info"
+    style="transform: translateX(NaNpx) translateY(NaNpx);"
+  >
+    <div
+      class="ruler-tooltip"
+      data-cy="ruler-tooltip"
+    >
+      <div
+        class="weavess-label-value-container ruler-tooltip-container"
+      >
+        <div
+          class="weavess-label-value__label"
+          data-cy="date-label"
+        >
+          Date: 
+        </div>
+        <div
+          class="weavess-label-value__value"
+          data-cy="date-value"
+          title="Date"
+        >
+          1970-01-01
+        </div>
+      </div>
+      <div
+        class="weavess-label-value-container ruler-tooltip-container"
+      >
+        <div
+          class="weavess-label-value__label"
+          data-cy="time-label"
+        >
+          Time: 
+        </div>
+        <div
+          class="weavess-label-value__value"
+          data-cy="time-value"
+          title="Time"
+        >
+          00:01:40.000
+        </div>
+      </div>
+      <div
+        class="weavess-label-value-container ruler-tooltip-container"
+      >
+        <div
+          class="weavess-label-value__label"
+          data-cy="duration-label"
+        >
+          Duration: 
+        </div>
+        <div
+          class="weavess-label-value__value"
+          data-cy="duration-value"
+          title="Duration"
+        >
+          00:00:00.000
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

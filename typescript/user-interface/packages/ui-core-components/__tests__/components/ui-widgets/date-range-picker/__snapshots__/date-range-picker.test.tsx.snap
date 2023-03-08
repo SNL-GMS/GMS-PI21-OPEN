@@ -1,0 +1,773 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DateRangePicker matches the snapshot 1`] = `
+<DateRangePicker
+  durations={
+    Array [
+      Object {
+        "description": "one second",
+        "value": 1000,
+      },
+      Object {
+        "description": "two seconds",
+        "value": 2000,
+      },
+    ]
+  }
+  endTimeMs={1609506000000}
+  format="YYYY-MM-DD HH:mm"
+  onApply={[MockFunction]}
+  onNewInterval={[MockFunction]}
+  startTimeMs={1609505998000}
+>
+  <div
+    className="date-range-picker"
+    id="date-range-picker-id-1"
+  >
+    <Component
+      className="bp4-label bp4-inline date-range-picker__label"
+    >
+      <label
+        className="bp4-label bp4-label bp4-inline date-range-picker__label"
+      >
+        Time Range: 2021-01-01 12:59 to 2021-01-01 13:00
+      </label>
+    </Component>
+    <DateRangePopup
+      durations={
+        Array [
+          Object {
+            "description": "one second",
+            "value": 1000,
+          },
+          Object {
+            "description": "two seconds",
+            "value": 2000,
+          },
+        ]
+      }
+      endTimeMs={1609506000000}
+      format="YYYY-MM-DD HH:mm"
+      isOpen={false}
+      onApply={[Function]}
+      onClose={[Function]}
+      onNewInterval={[MockFunction]}
+      startTimeMs={1609505998000}
+      title="Choose Date Range?"
+    >
+      <Blueprint4.Dialog
+        canOutsideClickClose={true}
+        className="date-range-dialog dialog_parent dialog_parent--wide"
+        isOpen={false}
+        onClose={[Function]}
+        onOpened={[Function]}
+        title="Choose Date Range?"
+      >
+        <Blueprint4.Overlay
+          autoFocus={true}
+          backdropProps={Object {}}
+          canEscapeKeyClose={true}
+          canOutsideClickClose={true}
+          className="bp4-overlay-scroll-container"
+          enforceFocus={true}
+          hasBackdrop={true}
+          isOpen={false}
+          lazy={true}
+          onClose={[Function]}
+          onOpened={[Function]}
+          shouldReturnFocusOnClose={true}
+          title="Choose Date Range?"
+          transitionDuration={300}
+          transitionName="bp4-overlay"
+          usePortal={true}
+        />
+      </Blueprint4.Dialog>
+    </DateRangePopup>
+    <div>
+      <Blueprint4.Button
+        className="date-range-picker__apply-button"
+        data-cy="date-range-picker-edit"
+        onClick={[Function]}
+      >
+        <button
+          className="bp4-button date-range-picker__apply-button"
+          data-cy="date-range-picker-edit"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          type="button"
+        >
+          <Blueprint4.Icon
+            aria-hidden={true}
+            key="leftIcon"
+            tabIndex={-1}
+          />
+          <span
+            className="bp4-button-text"
+            key="text"
+          >
+            Edit
+          </span>
+          <Blueprint4.Icon
+            key="rightIcon"
+          />
+        </button>
+      </Blueprint4.Button>
+    </div>
+  </div>
+</DateRangePicker>
+`;
+
+exports[`DateRangePicker matches the snapshot 2`] = `
+<DateRangePicker
+  durations={
+    Array [
+      Object {
+        "description": "one second",
+        "value": 1000,
+      },
+      Object {
+        "description": "two seconds",
+        "value": 2000,
+      },
+    ]
+  }
+  endTimeMs={1609506000000}
+  format="YYYY-MM-DD HH:mm"
+  onApply={[MockFunction]}
+  onNewInterval={[MockFunction]}
+  startTimeMs={1609505997000}
+>
+  <div
+    className="date-range-picker"
+    id="date-range-picker-id-1"
+  >
+    <Component
+      className="bp4-label bp4-inline date-range-picker__label"
+    >
+      <label
+        className="bp4-label bp4-label bp4-inline date-range-picker__label"
+      >
+        Time Range: 2021-01-01 12:59 to 2021-01-01 13:00
+      </label>
+    </Component>
+    <DateRangePopup
+      durations={
+        Array [
+          Object {
+            "description": "one second",
+            "value": 1000,
+          },
+          Object {
+            "description": "two seconds",
+            "value": 2000,
+          },
+        ]
+      }
+      endTimeMs={1609506000000}
+      format="YYYY-MM-DD HH:mm"
+      isOpen={false}
+      onApply={[Function]}
+      onClose={[Function]}
+      onNewInterval={[MockFunction]}
+      startTimeMs={1609505998000}
+      title="Choose Date Range?"
+    >
+      <Blueprint4.Dialog
+        canOutsideClickClose={true}
+        className="date-range-dialog dialog_parent dialog_parent--wide"
+        isOpen={false}
+        onClose={[Function]}
+        onOpened={[Function]}
+        title="Choose Date Range?"
+      >
+        <Blueprint4.Overlay
+          autoFocus={true}
+          backdropProps={Object {}}
+          canEscapeKeyClose={true}
+          canOutsideClickClose={true}
+          className="bp4-overlay-scroll-container"
+          enforceFocus={true}
+          hasBackdrop={true}
+          isOpen={false}
+          lazy={true}
+          onClose={[Function]}
+          onOpened={[Function]}
+          shouldReturnFocusOnClose={true}
+          title="Choose Date Range?"
+          transitionDuration={300}
+          transitionName="bp4-overlay"
+          usePortal={true}
+        />
+      </Blueprint4.Dialog>
+    </DateRangePopup>
+    <div>
+      <Blueprint4.Button
+        className="date-range-picker__apply-button"
+        data-cy="date-range-picker-edit"
+        onClick={[Function]}
+      >
+        <button
+          className="bp4-button date-range-picker__apply-button"
+          data-cy="date-range-picker-edit"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          type="button"
+        >
+          <Blueprint4.Icon
+            aria-hidden={true}
+            key="leftIcon"
+            tabIndex={-1}
+          />
+          <span
+            className="bp4-button-text"
+            key="text"
+          >
+            Edit
+          </span>
+          <Blueprint4.Icon
+            key="rightIcon"
+          />
+        </button>
+      </Blueprint4.Button>
+    </div>
+  </div>
+</DateRangePicker>
+`;
+
+exports[`DateRangePicker matches the snapshot 3`] = `
+<DateRangePicker
+  durations={
+    Array [
+      Object {
+        "description": "one second",
+        "value": 1000,
+      },
+      Object {
+        "description": "two seconds",
+        "value": 2000,
+      },
+    ]
+  }
+  endTimeMs={1609506000000}
+  format="YYYY-MM-DD HH:mm"
+  onApply={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          undefined,
+          undefined,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  onNewInterval={[MockFunction]}
+  startTimeMs={1609505997000}
+>
+  <div
+    className="date-range-picker"
+    id="date-range-picker-id-1"
+  >
+    <Component
+      className="bp4-label bp4-inline date-range-picker__label"
+    >
+      <label
+        className="bp4-label bp4-label bp4-inline date-range-picker__label"
+      >
+        Time Range: 2021-01-01 12:59 to 2021-01-01 13:00
+      </label>
+    </Component>
+    <DateRangePopup
+      durations={
+        Array [
+          Object {
+            "description": "one second",
+            "value": 1000,
+          },
+          Object {
+            "description": "two seconds",
+            "value": 2000,
+          },
+        ]
+      }
+      endTimeMs={1609506000000}
+      format="YYYY-MM-DD HH:mm"
+      isOpen={false}
+      onApply={[Function]}
+      onClose={[Function]}
+      onNewInterval={[MockFunction]}
+      startTimeMs={1609505998000}
+      title="Choose Date Range?"
+    >
+      <Blueprint4.Dialog
+        canOutsideClickClose={true}
+        className="date-range-dialog dialog_parent dialog_parent--wide"
+        isOpen={false}
+        onClose={[Function]}
+        onOpened={[Function]}
+        title="Choose Date Range?"
+      >
+        <Blueprint4.Overlay
+          autoFocus={true}
+          backdropProps={Object {}}
+          canEscapeKeyClose={true}
+          canOutsideClickClose={true}
+          className="bp4-overlay-scroll-container"
+          enforceFocus={true}
+          hasBackdrop={true}
+          isOpen={false}
+          lazy={true}
+          onClose={[Function]}
+          onOpened={[Function]}
+          shouldReturnFocusOnClose={true}
+          title="Choose Date Range?"
+          transitionDuration={300}
+          transitionName="bp4-overlay"
+          usePortal={true}
+        />
+      </Blueprint4.Dialog>
+    </DateRangePopup>
+    <div>
+      <Blueprint4.Button
+        className="date-range-picker__apply-button"
+        data-cy="date-range-picker-edit"
+        onClick={[Function]}
+      >
+        <button
+          className="bp4-button date-range-picker__apply-button"
+          data-cy="date-range-picker-edit"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          type="button"
+        >
+          <Blueprint4.Icon
+            aria-hidden={true}
+            key="leftIcon"
+            tabIndex={-1}
+          />
+          <span
+            className="bp4-button-text"
+            key="text"
+          >
+            Edit
+          </span>
+          <Blueprint4.Icon
+            key="rightIcon"
+          />
+        </button>
+      </Blueprint4.Button>
+    </div>
+  </div>
+</DateRangePicker>
+`;
+
+exports[`DateRangePicker matches the snapshot 4`] = `
+<DateRangePicker
+  durations={
+    Array [
+      Object {
+        "description": "one second",
+        "value": 1000,
+      },
+      Object {
+        "description": "two seconds",
+        "value": 2000,
+      },
+    ]
+  }
+  endTimeMs={1609506000000}
+  format="YYYY-MM-DD HH:mm:ss.SSS"
+  onApply={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          undefined,
+          undefined,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  onNewInterval={[MockFunction]}
+  startTimeMs={1609505997000}
+>
+  <div
+    className="date-range-picker"
+    id="date-range-picker-id-1"
+  >
+    <Component
+      className="bp4-label bp4-inline date-range-picker__label"
+    >
+      <label
+        className="bp4-label bp4-label bp4-inline date-range-picker__label"
+      >
+        Time Range: Invalid date to Invalid date
+      </label>
+    </Component>
+    <DateRangePopup
+      durations={
+        Array [
+          Object {
+            "description": "one second",
+            "value": 1000,
+          },
+          Object {
+            "description": "two seconds",
+            "value": 2000,
+          },
+        ]
+      }
+      format="YYYY-MM-DD HH:mm:ss.SSS"
+      isOpen={false}
+      onApply={[Function]}
+      onClose={[Function]}
+      onNewInterval={[MockFunction]}
+      title="Choose Date Range?"
+    >
+      <Blueprint4.Dialog
+        canOutsideClickClose={true}
+        className="date-range-dialog dialog_parent dialog_parent--wide"
+        isOpen={false}
+        onClose={[Function]}
+        onOpened={[Function]}
+        title="Choose Date Range?"
+      >
+        <Blueprint4.Overlay
+          autoFocus={true}
+          backdropProps={Object {}}
+          canEscapeKeyClose={true}
+          canOutsideClickClose={true}
+          className="bp4-overlay-scroll-container"
+          enforceFocus={true}
+          hasBackdrop={true}
+          isOpen={false}
+          lazy={true}
+          onClose={[Function]}
+          onOpened={[Function]}
+          shouldReturnFocusOnClose={true}
+          title="Choose Date Range?"
+          transitionDuration={300}
+          transitionName="bp4-overlay"
+          usePortal={true}
+        />
+      </Blueprint4.Dialog>
+    </DateRangePopup>
+    <div>
+      <Blueprint4.Button
+        className="date-range-picker__apply-button"
+        data-cy="date-range-picker-edit"
+        onClick={[Function]}
+      >
+        <button
+          className="bp4-button date-range-picker__apply-button"
+          data-cy="date-range-picker-edit"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          type="button"
+        >
+          <Blueprint4.Icon
+            aria-hidden={true}
+            key="leftIcon"
+            tabIndex={-1}
+          />
+          <span
+            className="bp4-button-text"
+            key="text"
+          >
+            Edit
+          </span>
+          <Blueprint4.Icon
+            key="rightIcon"
+          />
+        </button>
+      </Blueprint4.Button>
+    </div>
+  </div>
+</DateRangePicker>
+`;
+
+exports[`DateRangePicker matches the snapshot 5`] = `
+<DateRangePicker
+  durations={
+    Array [
+      Object {
+        "description": "one second",
+        "value": 1000,
+      },
+      Object {
+        "description": "two seconds",
+        "value": 2000,
+      },
+    ]
+  }
+  endTimeMs={1609506000000}
+  format="YYYY-MM-DD HH:mm:ss"
+  onApply={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          undefined,
+          undefined,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  onNewInterval={[MockFunction]}
+  startTimeMs={1609505997000}
+>
+  <div
+    className="date-range-picker"
+    id="date-range-picker-id-1"
+  >
+    <Component
+      className="bp4-label bp4-inline date-range-picker__label"
+    >
+      <label
+        className="bp4-label bp4-label bp4-inline date-range-picker__label"
+      >
+        Time Range: Invalid date to Invalid date
+      </label>
+    </Component>
+    <DateRangePopup
+      durations={
+        Array [
+          Object {
+            "description": "one second",
+            "value": 1000,
+          },
+          Object {
+            "description": "two seconds",
+            "value": 2000,
+          },
+        ]
+      }
+      format="YYYY-MM-DD HH:mm:ss"
+      isOpen={false}
+      onApply={[Function]}
+      onClose={[Function]}
+      onNewInterval={[MockFunction]}
+      title="Choose Date Range?"
+    >
+      <Blueprint4.Dialog
+        canOutsideClickClose={true}
+        className="date-range-dialog dialog_parent dialog_parent--wide"
+        isOpen={false}
+        onClose={[Function]}
+        onOpened={[Function]}
+        title="Choose Date Range?"
+      >
+        <Blueprint4.Overlay
+          autoFocus={true}
+          backdropProps={Object {}}
+          canEscapeKeyClose={true}
+          canOutsideClickClose={true}
+          className="bp4-overlay-scroll-container"
+          enforceFocus={true}
+          hasBackdrop={true}
+          isOpen={false}
+          lazy={true}
+          onClose={[Function]}
+          onOpened={[Function]}
+          shouldReturnFocusOnClose={true}
+          title="Choose Date Range?"
+          transitionDuration={300}
+          transitionName="bp4-overlay"
+          usePortal={true}
+        />
+      </Blueprint4.Dialog>
+    </DateRangePopup>
+    <div>
+      <Blueprint4.Button
+        className="date-range-picker__apply-button"
+        data-cy="date-range-picker-edit"
+        onClick={[Function]}
+      >
+        <button
+          className="bp4-button date-range-picker__apply-button"
+          data-cy="date-range-picker-edit"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          type="button"
+        >
+          <Blueprint4.Icon
+            aria-hidden={true}
+            key="leftIcon"
+            tabIndex={-1}
+          />
+          <span
+            className="bp4-button-text"
+            key="text"
+          >
+            Edit
+          </span>
+          <Blueprint4.Icon
+            key="rightIcon"
+          />
+        </button>
+      </Blueprint4.Button>
+    </div>
+  </div>
+</DateRangePicker>
+`;
+
+exports[`DateRangePicker matches the snapshot 6`] = `
+<DateRangePicker
+  durations={
+    Array [
+      Object {
+        "description": "one second",
+        "value": 1000,
+      },
+      Object {
+        "description": "two seconds",
+        "value": 2000,
+      },
+    ]
+  }
+  endTimeMs={1609506000000}
+  format="YYYY-MM-DD"
+  maxEndTimeMs={1609506000000}
+  minStartTimeMs={1609505992000}
+  onApply={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          undefined,
+          undefined,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  onNewInterval={[MockFunction]}
+  startTimeMs={1609505997000}
+>
+  <div
+    className="date-range-picker"
+    id="date-range-picker-id-1"
+  >
+    <Component
+      className="bp4-label bp4-inline date-range-picker__label"
+    >
+      <label
+        className="bp4-label bp4-label bp4-inline date-range-picker__label"
+      >
+        Time Range: Invalid date to Invalid date
+      </label>
+    </Component>
+    <DateRangePopup
+      durations={
+        Array [
+          Object {
+            "description": "one second",
+            "value": 1000,
+          },
+          Object {
+            "description": "two seconds",
+            "value": 2000,
+          },
+        ]
+      }
+      format="YYYY-MM-DD"
+      isOpen={false}
+      maxEndTimeMs={1609506000000}
+      minStartTimeMs={1609505992000}
+      onApply={[Function]}
+      onClose={[Function]}
+      onNewInterval={[MockFunction]}
+      title="Choose Date Range?"
+    >
+      <Blueprint4.Dialog
+        canOutsideClickClose={true}
+        className="date-range-dialog dialog_parent dialog_parent--wide"
+        isOpen={false}
+        onClose={[Function]}
+        onOpened={[Function]}
+        title="Choose Date Range?"
+      >
+        <Blueprint4.Overlay
+          autoFocus={true}
+          backdropProps={Object {}}
+          canEscapeKeyClose={true}
+          canOutsideClickClose={true}
+          className="bp4-overlay-scroll-container"
+          enforceFocus={true}
+          hasBackdrop={true}
+          isOpen={false}
+          lazy={true}
+          onClose={[Function]}
+          onOpened={[Function]}
+          shouldReturnFocusOnClose={true}
+          title="Choose Date Range?"
+          transitionDuration={300}
+          transitionName="bp4-overlay"
+          usePortal={true}
+        />
+      </Blueprint4.Dialog>
+    </DateRangePopup>
+    <div>
+      <Blueprint4.Button
+        className="date-range-picker__apply-button"
+        data-cy="date-range-picker-edit"
+        onClick={[Function]}
+      >
+        <button
+          className="bp4-button date-range-picker__apply-button"
+          data-cy="date-range-picker-edit"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          type="button"
+        >
+          <Blueprint4.Icon
+            aria-hidden={true}
+            key="leftIcon"
+            tabIndex={-1}
+          />
+          <span
+            className="bp4-button-text"
+            key="text"
+          >
+            Edit
+          </span>
+          <Blueprint4.Icon
+            key="rightIcon"
+          />
+        </button>
+      </Blueprint4.Button>
+    </div>
+  </div>
+</DateRangePicker>
+`;

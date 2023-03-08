@@ -1,0 +1,12 @@
+{
+    "name": "dziewonski-gilbert-lookup-table",
+    "constraints": [
+        {
+            "constraintType": "DEFAULT"
+        }
+    ],
+    "parameters": {
+        "Ak135": "dziewonski-gilbert",
+        "Iaspei": "dziewonski-gilbert"
+    }
+}

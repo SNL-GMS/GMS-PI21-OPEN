@@ -1,0 +1,16 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation project(':station-definition-dao')
+
+    api libs.org.apache.commons.commons.lang3
+    implementation libs.org.hibernate.hibernate.core
+    implementation libs.org.hibernate.hibernate.c3p0
+    implementation libs.org.hibernate.hibernate.entitymanager
+    implementation libs.org.postgresql.postgresql
+    implementation libs.com.vladmihalcea.hibernate.types52
+    implementation libs.com.oracle.ojdbc.ojdbc8
+    implementation libs.com.google.guava.guava
+
+    implementation project(':bridge-utilities')
+}

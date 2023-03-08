@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingSpinnerToolbarItem LoadingSpinnerToolbarItem renders directly 1`] = `
+<div>
+  <div>
+    <div
+      class="loading-spinner__container"
+      style="min-width: undefinedpx;"
+    >
+      <span>
+        <div
+          class="bp4-spinner bp4-intent-primary"
+          role="progressbar"
+        >
+          <div
+            class="bp4-spinner-animation"
+          >
+            <svg
+              height="20"
+              stroke-width="16.00"
+              viewBox="-3.00 -3.00 106.00 106.00"
+              width="20"
+            >
+              <path
+                class="bp4-spinner-track"
+                d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+              />
+              <path
+                class="bp4-spinner-head"
+                d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+                pathLength="280"
+                stroke-dasharray="280 280"
+                stroke-dashoffset="210"
+              />
+            </svg>
+          </div>
+        </div>
+        <span>
+          Loading
+          ...
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LoadingSpinnerToolbarItem LoadingSpinnerToolbarItem renders with icon only 1`] = `
+<div>
+  <div>
+    <div
+      class="loading-spinner__container"
+      style="min-width: undefinedpx;"
+    >
+      <span>
+        <div
+          class="bp4-spinner bp4-intent-primary"
+          role="progressbar"
+        >
+          <div
+            class="bp4-spinner-animation"
+          >
+            <svg
+              height="20"
+              stroke-width="16.00"
+              viewBox="-3.00 -3.00 106.00 106.00"
+              width="20"
+            >
+              <path
+                class="bp4-spinner-track"
+                d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+              />
+              <path
+                class="bp4-spinner-head"
+                d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+                pathLength="280"
+                stroke-dasharray="280 280"
+                stroke-dashoffset="210"
+              />
+            </svg>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+</div>
+`;

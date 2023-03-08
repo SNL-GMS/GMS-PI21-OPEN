@@ -1,0 +1,21 @@
+plugins {
+    id 'java-library'
+    alias(libs.plugins.io.swagger.core.v3.swagger.gradle)
+}
+
+dependencies {
+    api project(':workflow-coi')
+    implementation project(':frameworks-service-interface-base')
+    implementation project(':java-utilities')
+    implementation project(':bridge-utilities')
+
+    api libs.net.jodah.failsafe
+
+    // Google AutoValue
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+    implementation libs.org.apache.commons.commons.lang3
+
+    // Testing.
+    testImplementation project(':test-utils')
+}

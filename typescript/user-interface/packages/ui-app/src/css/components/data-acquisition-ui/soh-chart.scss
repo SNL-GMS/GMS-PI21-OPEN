@@ -1,0 +1,54 @@
+.chart-bar--marginal {
+  fill: $marginal-color;
+}
+
+.chart-bar--bad {
+  fill: $bad-color;
+}
+
+.chart-bar--good {
+  fill: $good-color;
+}
+
+.chart-tooltip {
+  position: absolute;
+  width: 120px;
+  height: 40px;
+  font-size: 1.25em;
+  pointer-events: none;
+}
+
+.soh-chart {
+  background: var(--gms-prominent-background, $gms-prominent-background);
+  border-radius: 4px;
+  margin-top: 4px;
+  height: 100%;
+  min-height: 260px;
+  min-width: 400px;
+  &.full-width-height {
+    height: calc(100% - 4px);
+    width: 100%;
+  }
+}
+
+.chart-bar--marginal.cast-light-on-chart {
+  fill: lighten($marginal-color, 15%);
+}
+
+.chart-bar--bad.cast-light-on-chart {
+  fill: lighten($bad-color, 15%);
+}
+
+.chart-bar--good.cast-light-on-chart {
+  fill: lighten($good-color, 15%);
+}
+
+.marginal-threshold {
+  stroke: darken($marginal-color, 15%);
+  stroke-width: 2;
+}
+
+.bad-threshold {
+  stroke: lighten($bad-color, 15%);
+  stroke-width: 2;
+}

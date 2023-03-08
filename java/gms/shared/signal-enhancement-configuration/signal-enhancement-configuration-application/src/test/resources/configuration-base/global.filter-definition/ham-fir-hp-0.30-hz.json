@@ -1,0 +1,26 @@
+{
+    "name": "ham-fir-hp-0.30-hz",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "name",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "HAM FIR HP 0.30 Hz"
+            ]
+        }
+    ],
+    "parameters": {
+        "name": "HAM FIR HP 0.30 Hz",
+        "comments": "Filter 15 comments",
+        "filterDescription": {
+            "$ref=global.filter-description":[{
+                "criterion": "name",
+                "value": "HAM FIR HP 0.30 Hz Description"
+            }]
+        }
+    }
+}

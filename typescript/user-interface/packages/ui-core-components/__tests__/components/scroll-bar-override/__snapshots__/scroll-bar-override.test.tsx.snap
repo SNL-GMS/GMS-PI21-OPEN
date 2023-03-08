@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Scroll Bar Override component matches a snapshot 1`] = `
+<div>
+  <div
+    class="scroll-bar scroll-box--x"
+    data-cy="test-scroll-bar-parent-gutter-scrollbar-override"
+  >
+    <div
+      class="scroll-bar__bar scroll-box--x"
+      data-cy="test-scroll-bar-parent-scrollbar-override"
+      style="width: 0px; transform: translate(NaNpx, 0px);"
+    />
+  </div>
+</div>
+`;
+
+exports[`Scroll Bar Override component matches a snapshot with no parent 1`] = `
+<div>
+  <div
+    class="scroll-bar scroll-box--x"
+    data-cy="unknown-gutter-scrollbar-override"
+  >
+    <div
+      class="scroll-bar__bar scroll-box--x"
+      data-cy="unknown-scrollbar-override"
+      style="width: 0px; transform: translate(NaNpx, 0px);"
+    />
+  </div>
+</div>
+`;

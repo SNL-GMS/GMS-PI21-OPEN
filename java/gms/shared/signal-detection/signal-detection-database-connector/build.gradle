@@ -1,0 +1,51 @@
+apply plugin: 'java-library'
+
+dependencies {
+    api project(':station-definition-dao')
+    api project(':station-definition-repository')
+    api project(':signal-detection-dao')
+    api project(':signal-detection-coi')
+    api project(':workflow-coi')
+    api project(':spring-persistence-oracle')
+
+    // ignite
+    api libs.javax.cache.cache.api
+    api libs.org.apache.ignite.ignite.core
+    api libs.org.apache.ignite.ignite.slf4j
+
+    //Google autovalue
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    //Spring dependencies
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+    implementation libs.org.springframework.boot.spring.boot.starter.web
+
+    // JPA dependencies
+    implementation libs.org.hibernate.hibernate.core
+    implementation libs.org.hibernate.hibernate.c3p0
+    implementation libs.org.hibernate.hibernate.entitymanager
+    implementation libs.org.hibernate.hibernate.ehcache
+
+    implementation libs.com.google.guava.guava
+
+    implementation project(':metrics')
+    implementation project(':frameworks-utilities-jpa')
+    implementation project(':bridge-utilities')
+    implementation project(':caching-utils')
+    implementation project(':java-utilities')
+    implementation project(':frameworks-configuration-repository')
+
+    // Testing.
+    testImplementation project(':signal-detection-testfixtures')
+    testImplementation project(':station-definition-testfixtures')
+    testImplementation project(':db-test-utils')
+    testImplementation project(':frameworks-test-utilities')
+    testImplementation project(':test-utils')
+    testImplementation libs.org.testcontainers.testcontainers
+    testImplementation libs.org.junit.jupiter.junit.jupiter.api
+    testImplementation libs.com.h2database.h2
+}
+test {
+    useJUnitPlatform()
+}

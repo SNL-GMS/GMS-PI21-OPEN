@@ -1,0 +1,112 @@
+$input-background: rgba(16, 22, 26, 0.3);
+$dialog-background: var(
+  --core-popover-background,
+  var(--gms-popover-background, $core-popover-background)
+);
+$input-color: #f5f8fa;
+$border-color: var(--core-recessed, var(--gms-recessed, $core-recessed));
+$gap-between-rows: 0.75em;
+
+@mixin genericInputStyles {
+  font-size: 1em;
+  background-color: $input-background;
+  border-radius: 4px;
+  color: $input-color;
+  padding: 0.5em;
+  border: 1px solid $border-color;
+}
+
+.dialog {
+  font-size: 0.875rem; // increase or decrease this to scale the dialog
+  & > * + * {
+    margin-top: $gap-between-rows;
+  }
+  label {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    input {
+      min-width: 50%;
+      flex-grow: 1;
+      margin: $gap-between-rows;
+    }
+  }
+  input {
+    @include genericInputStyles;
+  }
+  hr {
+    margin-top: $gap-between-rows;
+    margin-bottom: $gap-between-rows;
+  }
+}
+
+.bp4-dialog.dialog_parent.dialog_parent--wide {
+  width: auto;
+}
+.dialog__container {
+  padding: 1em 1em 0.25em 1em;
+}
+
+.dialog__title {
+  font-size: 1.5em;
+}
+
+.dialog__entry {
+  padding: 0.5em 0;
+  &:hover,
+  &.selected:hover {
+    cursor: pointer;
+    background-color: rgba(lighten($core-table-selection, 10%), 0.9);
+  }
+}
+
+.dialog__controls {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-top: $gap-between-rows;
+  // Target any direct children
+  // & > * {
+  //   // Make them at least half the width of the container, allowing for a gap
+  //   min-width: calc(30% - #{$gap-between-rows});
+  //   flex-grow: 1;
+  // }
+  // Target any direct children that have a sibling
+  & > * + * {
+    margin-left: $gap-between-rows; // Put a gap between them
+  }
+}
+.dialog-actions {
+  display: flex;
+  margin-right: 24px;
+}
+
+.dialog-actions > button {
+  margin-right: 8px;
+}
+
+// If this is a Save/Open dialog, then style the available entries
+// accordingly
+.dialog--save-open .dialog__entries {
+  list-style: none;
+  margin-top: $gap-between-rows;
+  margin-bottom: $gap-between-rows;
+  padding: 0.5em;
+  @include genericInputStyles;
+}
+.dialog--save-open label input {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.dialog--save-open .selected {
+  background-color: $core-table-selection;
+}
+
+.dialog__entry--faded {
+  display: inline-block;
+  color: darken($input-color, 20%);
+  padding-left: 0.5em;
+}

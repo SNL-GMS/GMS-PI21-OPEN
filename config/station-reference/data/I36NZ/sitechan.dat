@@ -1,0 +1,12 @@
+I36H1  BDF       2004314     2587  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20051012 12:00:00
+I36H2  LWS       2004314     2598  2286324 n       0.0000   -1.0   -1.0 Wind_speed                                         20051012 12:00:00
+I36H2  LWD       2004314     2597  2286324 n       0.0000   -1.0   -1.0 Wind_Direction                                     20051012 12:00:00
+I36H2  LKO       2004314     2596  2286324 n       0.0000   -1.0   -1.0 External_temperature                               20051012 12:00:00
+I36H2  LDA       2004314     2595  2286324 n       0.0000   -1.0   -1.0 Absolute_Pressure                                  20051012 12:00:00
+I36H2  BDF       2004314     2588  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20051012 12:00:00
+I36H3  BDF       2004314     2589  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20051012 12:00:00
+I36H4  BDF       2004314     2590  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20051012 12:00:00
+I36L1  BDF       2004314     2591  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20051012 12:00:00
+I36L2  BDF       2004314     2592  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20051012 12:00:00
+I36L3  BDF       2004314     2593  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20051012 12:00:00
+I36L4  BDF       2004314     2594  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20051012 12:00:00

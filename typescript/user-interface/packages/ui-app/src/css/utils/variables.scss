@@ -1,0 +1,17 @@
+/// Variables
+$diagonal-texture-darken-percent: 7%;
+$diagonal-texture-distance: 8px;
+$display-padding: 20px;
+$rounded-rectangle-radius: 4px;
+$min-chart-height: 400px;
+$min-chart-width: 300px;
+$toolbar-height: 30px;
+$decipixel-padding: 10px;
+
+:export {
+  displayPadding: $display-padding;
+  roundedRectangleRadius: $rounded-rectangle-radius;
+  minChartHeight: $min-chart-height;
+  minChartWidth: $min-chart-width;
+  toolbarHeight: $toolbar-height;
+}

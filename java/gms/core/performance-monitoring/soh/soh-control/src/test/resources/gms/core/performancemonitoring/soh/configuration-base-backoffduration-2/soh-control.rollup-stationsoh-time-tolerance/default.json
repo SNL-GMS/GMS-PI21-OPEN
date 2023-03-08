@@ -1,0 +1,11 @@
+{
+  "name": "soh-control-rollup-stationsoh-time-tolerance",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "rollupStationSohTimeTolerance": "PT10M"
+  }
+}

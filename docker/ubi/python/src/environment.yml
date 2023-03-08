@@ -1,0 +1,17 @@
+# environment.yml
+#
+# This is the base environment for the python container. It should only contain the current approved
+# version of python for the project. Each downstream application/container should have their own
+# environment.yml file and update the base environment.
+#
+# After making any changes to this file, a clean gms-python environment needs to be created, and the lock file regenerated:
+# `conda env remove --name gms-python`
+# `conda env create --name gms-python --file environment.yml`
+# `conda env export --name gms-python --no-builds --channel conda-forge --override-channels | grep -v "prefix" > environment.lock.yml`
+#
+
+name: gms-python
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10.4

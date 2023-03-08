@@ -1,0 +1,18 @@
+.magnitude-configuration-popover {
+  padding: 4px 8px 4px 8px;
+}
+
+.magnitude-configuration-checkboxes {
+  background-color: var(--gms-prominent-background, $gms-prominent-background);
+  padding: 4px;
+  border: 1px solid var(--gms-background, $gms-background);
+  border-radius: 4px;
+}
+
+.magnitude-configuration-popover__label {
+  line-height: 28px;
+}
+
+.magnitude-configuration-popover__dropdown {
+  margin: 4px 0 2px 0;
+}

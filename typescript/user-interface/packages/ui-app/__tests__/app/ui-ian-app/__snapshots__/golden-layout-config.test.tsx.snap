@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Root IAN app matches a snapshot 1`] = `
+Object {
+  "config": Object {
+    "components": Object {
+      "events": Object {
+        "component": "events",
+        "title": "Events",
+        "type": "react-component",
+      },
+      "filters": Object {
+        "component": "filters",
+        "title": "Filters",
+        "type": "react-component",
+      },
+      "map": Object {
+        "component": "map",
+        "title": "Map",
+        "type": "react-component",
+      },
+      "signal-detections-list": Object {
+        "component": "signal-detections-list",
+        "title": "Signal Detections List",
+        "type": "react-component",
+      },
+      "station-properties": Object {
+        "component": "station-properties",
+        "title": "Station Properties",
+        "type": "react-component",
+      },
+      "system-messages": Object {
+        "component": "system-messages",
+        "title": "System Messages",
+        "type": "react-component",
+      },
+      "waveform": Object {
+        "component": "waveform",
+        "title": "Waveform",
+        "type": "react-component",
+      },
+      "workflow": Object {
+        "component": "workflow",
+        "title": "Workflow",
+        "type": "react-component",
+      },
+    },
+    "workspace": Object {
+      "content": Array [
+        Object {
+          "content": Array [
+            Object {
+              "content": Array [
+                Object {
+                  "content": Array [
+                    Object {
+                      "component": "workflow",
+                      "title": "Workflow",
+                      "type": "react-component",
+                    },
+                  ],
+                  "type": "column",
+                },
+              ],
+              "type": "row",
+            },
+            Object {
+              "content": Array [
+                Object {
+                  "content": Array [
+                    Object {
+                      "component": "map",
+                      "title": "Map",
+                      "type": "react-component",
+                    },
+                  ],
+                  "type": "column",
+                },
+              ],
+              "type": "row",
+            },
+            Object {
+              "content": Array [
+                Object {
+                  "content": Array [
+                    Object {
+                      "component": "signal-detections-list",
+                      "title": "Signal Detections List",
+                      "type": "react-component",
+                    },
+                  ],
+                  "type": "column",
+                },
+              ],
+              "type": "row",
+            },
+            Object {
+              "content": Array [
+                Object {
+                  "content": Array [
+                    Object {
+                      "component": "station-properties",
+                      "title": "Station Properties",
+                      "type": "react-component",
+                    },
+                  ],
+                  "type": "column",
+                },
+              ],
+              "type": "row",
+            },
+            Object {
+              "content": Array [
+                Object {
+                  "component": "waveform",
+                  "height": 70,
+                  "title": "Waveform",
+                  "type": "react-component",
+                },
+              ],
+              "type": "column",
+            },
+          ],
+          "type": "row",
+        },
+      ],
+      "dimensions": Object {
+        "borderWidth": 2,
+        "headerHeight": 30,
+        "minItemHeight": 30,
+        "minItemWidth": 30,
+      },
+      "settings": Object {
+        "showCloseIcon": true,
+        "showMaximiseIcon": true,
+        "showPopoutIcon": false,
+      },
+    },
+  },
+  "gl": undefined,
+  "glComponents": Map {
+    "Analyst Displays" => Map {
+      "events" => Object {
+        "id": Object {
+          "component": "events",
+          "title": "Events",
+          "type": "react-component",
+        },
+        "value": [Function],
+      },
+      "map" => Object {
+        "id": Object {
+          "component": "map",
+          "title": "Map",
+          "type": "react-component",
+        },
+        "value": [Function],
+      },
+      "signal-detections-list" => Object {
+        "id": Object {
+          "component": "signal-detections-list",
+          "title": "Signal Detections List",
+          "type": "react-component",
+        },
+        "value": [Function],
+      },
+      "station-properties" => Object {
+        "id": Object {
+          "component": "station-properties",
+          "title": "Station Properties",
+          "type": "react-component",
+        },
+        "value": [Function],
+      },
+      "waveform" => Object {
+        "id": Object {
+          "component": "waveform",
+          "title": "Waveform",
+          "type": "react-component",
+        },
+        "value": [Function],
+      },
+      "workflow" => Object {
+        "id": Object {
+          "component": "workflow",
+          "title": "Workflow",
+          "type": "react-component",
+        },
+        "value": [Function],
+      },
+      "filters" => Object {
+        "id": Object {
+          "component": "filters",
+          "title": "Filters",
+          "type": "react-component",
+        },
+        "value": [Function],
+      },
+    },
+  },
+  "glRef": undefined,
+  "supportedUserInterfaceMode": "IAN",
+}
+`;

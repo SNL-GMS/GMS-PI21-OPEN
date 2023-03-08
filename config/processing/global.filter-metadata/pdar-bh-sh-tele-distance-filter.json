@@ -1,0 +1,74 @@
+{
+    "name": "pdar-bh-sh-tele-distance-filter",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "station",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "PDAR"
+            ]
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "channelBand",
+            "operator": {
+                "type": "IN",
+                "negated": false
+            },
+            "value": [
+                "B",
+                "S"
+            ]
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "channelInstrument",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "H"
+            ]
+        },
+        {
+            "constraintType": "NUMERIC_RANGE",
+            "criterion": "distance",
+            "operator": {
+                "type": "IN",
+                "negated": false
+            },
+            "value": {
+                "min": 20.0,
+                "max": 100.0
+            }
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "filterName",
+            "operator": {
+                "type": "IN",
+                "negated": false
+            },
+            "value": [
+                "Detect",
+                "Onset",
+                "FK"
+            ]
+        }
+    ],
+    "parameters": {
+        "filterDefinitions": [
+            {
+                "$ref=global.filter-definition": [{
+                    "criterion": "name",
+                    "value": "2.0 4.0 4 BP causal"
+                }]
+            }
+        ]
+    }
+}

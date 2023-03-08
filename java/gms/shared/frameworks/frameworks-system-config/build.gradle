@@ -1,0 +1,17 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+    api project(':frameworks-shared-objects')
+    api project(':validation')
+
+    //Direct log4j dependency for legacy logger to set custom timing logs
+    implementation libs.org.apache.logging.log4j.log4j.core
+    implementation project(':frameworks-utilities')
+
+    api libs.io.etcd.jetcd.core
+    implementation libs.org.apache.commons.commons.text
+    implementation libs.org.apache.commons.commons.lang3
+    implementation libs.net.jodah.failsafe
+}

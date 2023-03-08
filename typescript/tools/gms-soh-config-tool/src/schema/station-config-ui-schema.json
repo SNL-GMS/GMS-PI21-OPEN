@@ -1,0 +1,74 @@
+{
+  "type": "VerticalLayout",
+  "elements": [
+    {
+      "type": "HorizontalLayout",
+      "elements": [
+        {
+          "type": "Control",
+          "label": "Durations",
+          "scope": "#/properties/stationDurations",
+          "options": {
+            "renderer": "station-durations",
+            "help": "",
+            "options": [
+              "PT1M",
+              "PT2M",
+              "PT3M",
+              "PT4M",
+              "PT5M",
+              "PT6M",
+              "PT7M",
+              "PT8M",
+              "PT9M",
+              "PT10M",
+              "PT20M",
+              "PT30M",
+              "PT40M",
+              "PT50M",
+              "PT60M",
+              "PT90M",
+              "PT1H",
+              "PT2H",
+              "PT3H",
+              "PT4H",
+              "PT5H",
+              "PT6H",
+              "PT7H",
+              "PT8H",
+              "PT9H",
+              "PT10H",
+              "PT11H",
+              "PT12H",
+              "PT18H",
+              "PT24H",
+              "PT36H",
+              "PT48H",
+              "PT72H",
+              "P1D",
+              "P2D",
+              "P3D",
+              "P4D",
+              "P5D",
+              "P6D",
+              "P7D"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "HorizontalLayout",
+      "elements": [
+        {
+          "type": "Control",
+          "label": "Monitor Type Rollup",
+          "scope": "#/properties/sohMonitorTypesForRollup",
+          "options": {
+            "renderer": "monitor-types-rollup"
+          }
+        }
+      ]
+    }
+  ]
+}

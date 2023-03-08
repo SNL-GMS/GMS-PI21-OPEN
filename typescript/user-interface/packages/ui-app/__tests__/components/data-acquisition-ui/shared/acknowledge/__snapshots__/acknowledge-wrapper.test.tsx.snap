@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Acknowledge Wrapper matches a snapshot 1`] = `
+<div>
+  <div>
+    Test acknowledge wrapper
+  </div>
+</div>
+`;
+
+exports[`Acknowledge Wrapper should log an error when mutation fails 1`] = `[MockFunction]`;

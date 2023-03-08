@@ -1,0 +1,27 @@
+.y-axis {
+  width: 50px;
+  position: absolute;
+  right: 0;
+  pointer-events: none;
+
+  &,
+  & * {
+    // set line height to 0 so that line size doesn't cause axis text to push things around at small sizes.
+    line-height: 0;
+  }
+
+  &__ordinate {
+    path,
+    line {
+      fill: none;
+      stroke: var(--weavess-text, rgb(167, 182, 194));
+      shape-rendering: crispEdges;
+    }
+
+    text {
+      font-family: sans-serif;
+      font-size: 11px;
+      fill: var(--weavess-text, #ddd);
+    }
+  }
+}

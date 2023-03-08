@@ -1,0 +1,11 @@
+I03H1  BDA       2018249     8602  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20180906 12:00:00
+I03H1  BDF       2018249     8603  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20180906 12:00:00
+I03H2  BDF       2018249     8604  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20180906 12:00:00
+I03H3  BDF       2018249     8605  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20180906 12:00:00
+I03H4  BDF       2018249     8606  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20180906 12:00:00
+I03H5  BDF       2018249     8607  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20180906 12:00:00
+I03H6  BDF       2018249     8608  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20180906 12:00:00
+I03H7  BDF       2018249     8609  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20180906 12:00:00
+I03M1  BKO       2018249     8610  2286324 n       0.0000   -1.0   -1.0 Temperature                                        20180906 12:00:00
+I03M1  BWD       2018249     8611  2286324 n       0.0000   -1.0   -1.0 Wind_Sensor_Direction                              20180906 12:00:00
+I03M1  BWS       2018249     8612  2286324 n       0.0000   -1.0   -1.0 Wind_Sensor_Speed                                  20180906 12:00:00

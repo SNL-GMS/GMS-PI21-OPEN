@@ -1,0 +1,45 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "typeRoots": ["@types", "./@types", "./node_modules/@types", "../../node_modules/@types"],
+    "baseUrl": ".",
+    "noEmit": true,
+    "outDir": "./lib",
+    "paths": {
+      "@gms/common-model": ["../common-model/src/ts/common-model.ts"],
+      "@gms/common-model/lib/*": ["../common-model/src/ts/*"],
+      "@gms/common-util": ["../common-util/src/ts/common-util.ts"],
+      "@gms/common-util/lib/*": ["../common-util/src/ts/*"],
+      "@gms/ui-util": ["../ui-util/src/ts/ui-util.ts"],
+      "@gms/ui-util/lib/*": ["../ui-util/src/ts/*"],
+      "@gms/ui-workers": ["../ui-workers/src/ts/ui-workers.ts"],
+      "@gms/ui-workers/lib/*": ["../ui-workers/src/ts/*"],
+      "@gms/ui-wasm": ["../ui-wasm/src/ts/ui-wasm.ts"],
+      "@gms/ui-wasm/lib/*": ["../ui-wasm/src/ts/*"],
+      "@gms/weavess-core": ["../weavess-core/src/ts/weavess-core.ts"],
+      "@gms/weavess-core/lib/*": ["../weavess-core/src/ts/*"]
+    },
+    "lib": ["ES2020", "DOM", "DOM.Iterable", "ScriptHost", "webworker"]
+  },
+  "references": [
+    {
+      "path": "../common-model/tsconfig-build.json"
+    },
+    {
+      "path": "../common-util/tsconfig-build.json"
+    },
+    {
+      "path": "../ui-workers/tsconfig-build.json"
+    },
+    {
+      "path": "../ui-util/tsconfig-build.json"
+    },
+    {
+      "path": "../ui-wasm/tsconfig-build.json"
+    },
+    {
+      "path": "../weavess-core/tsconfig-build.json"
+    }
+  ],
+  "include": ["src/**/*", "__tests__/**/*", "__mocks__/**/*"]
+}

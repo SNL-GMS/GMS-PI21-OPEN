@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "typeRoots": ["@types", "./@types", "./node_modules/@types", "../../node_modules/@types"],
+    "baseUrl": ".",
+    "noEmit": true,
+    "outDir": "./lib",
+    "paths": {
+      "@gms/common-model": ["../common-model/src/ts/common-model.ts"],
+      "@gms/common-model/lib/*": ["../common-model/src/ts/*"]
+    }
+  },
+  "references": [
+    {
+      "path": "../common-model/tsconfig-build.json"
+    }
+  ],
+  "include": ["src/**/*", "__tests__/**/*", "__mocks__/**/*"]
+}

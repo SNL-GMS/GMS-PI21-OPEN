@@ -1,0 +1,86 @@
+{
+  "name": "channels-by-monitor-type-default",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "LAG": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    },
+    "MISSING": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    },
+    "TIMELINESS": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    },
+    "ENV_ZEROED_DATA": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    },
+    "ENV_DIGITIZER_ANALOG_INPUT_SHORTED": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    },
+    "ENV_EQUIPMENT_HOUSING_OPEN": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    },
+    "ENV_GPS_RECEIVER_UNLOCKED": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    },
+    "ENV_VAULT_DOOR_OPENED": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    },
+    "ENV_GPS_RECEIVER_OFF": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    },
+    "ENV_EQUIPMENT_MOVED": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    },
+    "ENV_DIGITIZING_EQUIPMENT_OPEN": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    },
+    "ENV_AUTHENTICATION_SEAL_BROKEN": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    },
+    "ENV_CALIBRATION_UNDERWAY": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    },
+    "ENV_DIGITIZER_CALIBRATION_LOOP_BACK": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    },
+    "ENV_CLOCK_DIFFERENTIAL_TOO_LARGE": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    },
+    "ENV_BACKUP_POWER_UNSTABLE": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    },
+    "ENV_CLIPPED": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    },
+    "ENV_MAIN_POWER_FAILURE": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    },
+    "ENV_DEAD_SENSOR_CHANNEL": {
+      "channelsMode": "USE_ALL",
+      "channels": []
+    }
+  }
+}

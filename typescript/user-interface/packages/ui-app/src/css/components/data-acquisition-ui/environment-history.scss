@@ -1,0 +1,14 @@
+.environment-history-display {
+  &__chart-container {
+    height: auto;
+    width: 100%;
+    overflow-x: auto;
+  }
+  .external-axis {
+    min-height: 50px;
+    background-color: var(--gms-prominent-background, $gms-prominent-background);
+    border-radius: $rounded-rectangle-radius;
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+}

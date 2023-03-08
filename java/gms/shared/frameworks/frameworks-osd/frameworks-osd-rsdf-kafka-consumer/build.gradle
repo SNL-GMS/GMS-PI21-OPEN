@@ -1,0 +1,19 @@
+plugins {
+    id 'application'
+    alias(libs.plugins.com.palantir.docker)
+}
+
+application {
+    mainClass = 'gms.shared.frameworks.osd.rsdf.consumer.RsdfStorageConsumer'
+}
+
+dependencies {
+    implementation project(':frameworks-osd-api')
+    implementation project(':frameworks-osd-commonobjects')
+    implementation project(':frameworks-osd-repository')
+    implementation project(':frameworks-system-config')
+    implementation project(':kafka-consumer-frameworks')
+
+    runtimeOnly libs.ch.qos.logback.logback.classic
+    runtimeOnly libs.net.logstash.logback.logstash.logback.encoder
+}

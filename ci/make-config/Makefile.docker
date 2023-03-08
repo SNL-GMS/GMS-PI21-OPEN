@@ -1,0 +1,89 @@
+# Use 'Dockerfile' if variable is not defined
+build:  DOCKER_FILENAME=$(or $(DOCKERFILE), Dockerfile)
+build:
+	ci-docker-build --name $(NAME) --file $(DOCKER_FILENAME) $(PULL_TAG) $(PULL) $(PUSH) $(DEBUG) $(BUILD_ARGS)
+
+tag:
+	ci-docker-tag --name $(NAME) --source '$(SOURCE_IMAGE):$(SOURCE_TAG)' $(PUSH)
+
+pull:	export PULL = --pull
+pull:	build
+
+push:	export PUSH = --push
+push:	build
+
+tagsource:
+ifneq ($(and $(SOURCE_IMAGE),$(SOURCE_TAG)),)
+	ci-docker-tag-source --source '$(SOURCE_IMAGE):$(SOURCE_TAG)' --push
+endif
+
+# if no subdirs, default 'build' target if no other target is defined
+all: 	$(or $(SUBDIRS), $(or $(filter-out all, $(MAKECMDGOALS)), build))
+
+# make targets locally first (defaulting to 'build')
+$(SUBDIRS): $(or $(filter-out all, $(MAKECMDGOALS)), build)
+	@echo "------------------------------------------------------------------------------"
+	@echo "    MAKING $(NAME)/$@"
+	@echo "------------------------------------------------------------------------------"
+	$(MAKE) -C $@ $(MAKECMDGOALS)
+
+clean:
+	$(or $(CLEAN), @echo "clean: no prepped files to remove")
+	ci-docker-clean --name $(NAME)
+
+help:
+	@echo "Docker Container Builder"
+	@echo ""
+	@echo "description:"
+	@echo "  This Makefile captures arguments for running the 'ci-docker-build' script"
+	@echo "  to perform a 'docker build' in the local directory."
+	@echo ""
+	@echo "  The CI_DOCKER_REGISTRY environment variable must be set to indicate where"
+	@echo "  source docker images are to be pulled from (and resulting docker images"
+	@echo "  would be optionally pushed to)."
+	@echo ""
+	@echo "  Example:"
+	@echo "    $$ export CI_DOCKER_REGISTRY=gms-docker-registry.mydomain.com"
+	@echo ""
+	@echo "  By default, any needed third-party dependent software or configuration"
+	@echo "  files are pulled from the internet. These may be cached on a local server"
+	@echo "  as indicated by the CI_REMOTE_REPOSITORY_URL."
+	@echo ""
+	@echo "  Example:"
+	@echo "    $$ export CI_REMOTE_REPOSITORY_URL=https://gms-artifactory.mydomain.com/artifactory"
+	@echo ""
+	@echo "examples:"
+	@echo "  To build a docker image in the local directory:"
+	@echo "    $$ make"
+	@echo ""
+	@echo "  To force pull the latest copy of source images when building:"
+	@echo "    $$ make pull"
+	@echo ""
+	@echo "  To push to a remote repository after building:"
+	@echo "    $$ make push"
+	@echo ""
+	@echo "  Build this and any subdirectories:"
+	@echo "    $$ make all"
+	@echo ""
+	@echo "  Build this and any subdirectories, pushing the results after building:"
+	@echo "    $$ make push all"
+	@echo ""
+	@echo "  Clean up any intermediate files or directories created by the docker-prep script:"
+	@echo "    $$ make clean"
+	@echo ""
+	@echo "  Pull upstream source images and retag for the local repository with a postfix:"
+	@echo "    $$ make all tagsource"
+	@echo ""
+	@echo "notes: "
+	@echo "   Other environment settings are gathered by default from this repository via"
+	@echo "   git but can be explicitly set as environment variables if desired:"
+	@echo ""
+	@echo "    CI_PROJECT_NAME:    Name of the project 'gms-common'."
+	@echo "    CI_COMMIT_SHA:      This commit revision for this build."
+	@echo "    CI_COMMIT_REF_NAME: The branch or tag name for this build."
+	@echo "    CI_COMMIT_REF_SLUG: URL-friendly version of CI_COMMIT_REF_NAME"
+	@echo ""
+
+# ignore directories named 'build'
+.PHONY: build
+

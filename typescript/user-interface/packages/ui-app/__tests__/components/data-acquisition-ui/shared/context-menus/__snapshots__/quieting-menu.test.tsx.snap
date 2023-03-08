@@ -1,0 +1,373 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`quieting menu CancelMenuItem can be created 1`] = `
+<div>
+  <li
+    class=""
+  >
+    <a
+      class="bp4-menu-item bp4-disabled"
+      data-cy="quiet-cancel"
+      tabindex="-1"
+    >
+      <div
+        class="bp4-fill bp4-text-overflow-ellipsis"
+      >
+        Cancel quiet period
+      </div>
+    </a>
+  </li>
+</div>
+`;
+
+exports[`quieting menu QuiteMenuItem can be created 1`] = `
+<div>
+  <li
+    class="bp4-submenu"
+  >
+    <span
+      class="bp4-popover-wrapper"
+    >
+      <span
+        aria-haspopup="true"
+        class="bp4-popover-target"
+      >
+        <a
+          class="bp4-menu-item"
+          data-cy="quiet-without-comment"
+          tabindex="0"
+        >
+          <div
+            class="bp4-fill bp4-text-overflow-ellipsis"
+          >
+            Quiet for...
+          </div>
+          <span
+            class="bp4-icon bp4-icon-caret-right bp4-submenu-icon"
+            icon="caret-right"
+          >
+            <svg
+              data-icon="caret-right"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+            >
+              <desc>
+                Open sub menu
+              </desc>
+              <path
+                d="M11 8c0-.15-.07-.28-.17-.37l-4-3.5A.495.495 0 006 4.5v7a.495.495 0 00.83.37l4-3.5c.1-.09.17-.22.17-.37z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </a>
+      </span>
+    </span>
+  </li>
+</div>
+`;
+
+exports[`quieting menu QuiteWithCommentDialog can be created 1`] = `
+<div>
+  <div>
+    <div
+      class="form"
+    >
+      <h6
+        class="bp4-heading form__header"
+      >
+        <div>
+          Quiet
+        </div>
+      </h6>
+      <div
+        class="form__panel-selector"
+      />
+      <div
+        class="form-body"
+      >
+        <div
+          class="form-label"
+        >
+          Station:
+        </div>
+        <div
+          class="form-value form-value--uneditable"
+          title=""
+        />
+        <div
+          class="form-label"
+        >
+          Channel:
+        </div>
+        <div
+          class="form-value form-value--uneditable"
+          title="name"
+        >
+          name
+        </div>
+        <div
+          class="form-label"
+        >
+          Monitor:
+        </div>
+        <div
+          class="form-value form-value--uneditable"
+          title="MISSING"
+        >
+          Missing
+        </div>
+        <div
+          class="form-label"
+        >
+          Quiet for:
+        </div>
+        <div
+          class="form-value"
+        >
+          <div
+            class="dropdown-container"
+          >
+            <span
+              class="dropdown-selector"
+              data-cy="-dropdown"
+            >
+              <div
+                class="bp4-html-select"
+              >
+                <select
+                  title="Select the duration to quiet"
+                >
+                  <option
+                    value="300000"
+                  >
+                    5 minutes
+                  </option>
+                  <option
+                    value="900000"
+                  >
+                    15 minutes
+                  </option>
+                  <option
+                    value="3600000"
+                  >
+                    1 hour
+                  </option>
+                  <option
+                    value="86400000"
+                  >
+                    1 day
+                  </option>
+                  <option
+                    value="604800000"
+                  >
+                    7 days
+                  </option>
+                </select>
+                <span
+                  class="bp4-icon bp4-icon-double-caret-vertical"
+                  icon="double-caret-vertical"
+                >
+                  <svg
+                    data-icon="double-caret-vertical"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <desc>
+                      Open dropdown
+                    </desc>
+                    <path
+                      d="M5 7h6a1.003 1.003 0 00.71-1.71l-3-3C8.53 2.11 8.28 2 8 2s-.53.11-.71.29l-3 3A1.003 1.003 0 005 7zm6 2H5a1.003 1.003 0 00-.71 1.71l3 3c.18.18.43.29.71.29s.53-.11.71-.29l3-3A1.003 1.003 0 0011 9z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </span>
+          </div>
+        </div>
+        <div
+          class="form-label"
+        >
+          Comment:
+        </div>
+        <div
+          class="form-value"
+        >
+          <div>
+            <textarea
+              class="form__text-input"
+              data-cy="quiet-comment-textarea"
+              maxlength="1024"
+              rows="4"
+              title="Enter the comment"
+            />
+            <p
+              class="form__character-count"
+            >
+              Characters remaining: 
+              1024
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="form__buttons"
+      >
+        <div
+          class="form__buttons--right"
+        >
+          <button
+            class="bp4-button bp4-disabled form__button"
+            data-cy="submit-quiet"
+            disabled=""
+            tabindex="-1"
+            title="Must modify a field to save"
+            type="button"
+          >
+            <span
+              class="bp4-button-text"
+            >
+              Quiet
+            </span>
+          </button>
+          <button
+            class="bp4-button form__button"
+            data-cy="cancel-quiet"
+            type="button"
+          >
+            <span
+              class="bp4-button-text"
+            >
+              Cancel
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`quieting menu QuiteWithCommentMenuItem can be created 1`] = `
+<div>
+  <li
+    class=""
+  >
+    <a
+      class="bp4-menu-item bp4-popover-dismiss"
+      data-cy="quiet-with-comment"
+      tabindex="0"
+    >
+      <div
+        class="bp4-fill bp4-text-overflow-ellipsis"
+      >
+        Quiet with comment...
+      </div>
+    </a>
+  </li>
+</div>
+`;
+
+exports[`quieting menu should call the contextmenu.show function with menu 1`] = `
+Array [
+  <Provider
+    store={
+      Object {
+        "@@observable": [Function],
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  >
+    <Blueprint4.Menu>
+      <QuiteMenuItem
+        channelMonitorPairs={
+          Array [
+            Object {
+              "channelName": "name",
+              "monitorType": "MISSING",
+            },
+          ]
+        }
+        position={
+          Object {
+            "left": 10,
+            "top": 10,
+          }
+        }
+        quietingDurationSelections={
+          Array [
+            300000,
+            900000,
+            3600000,
+            86400000,
+            604800000,
+          ]
+        }
+        stationName=""
+      />
+      <QuiteWithCommentMenuItem
+        channelMonitorPairs={
+          Array [
+            Object {
+              "channelName": "name",
+              "monitorType": "MISSING",
+            },
+          ]
+        }
+        position={
+          Object {
+            "left": 10,
+            "top": 10,
+          }
+        }
+        quietingDurationSelections={
+          Array [
+            300000,
+            900000,
+            3600000,
+            86400000,
+            604800000,
+          ]
+        }
+        stationName=""
+      />
+      <CancelMenuItem
+        channelMonitorPairs={
+          Array [
+            Object {
+              "channelName": "name",
+              "monitorType": "MISSING",
+            },
+          ]
+        }
+        position={
+          Object {
+            "left": 10,
+            "top": 10,
+          }
+        }
+        quietingDurationSelections={
+          Array [
+            300000,
+            900000,
+            3600000,
+            86400000,
+            604800000,
+          ]
+        }
+        stationName=""
+      />
+    </Blueprint4.Menu>
+  </Provider>,
+  Object {
+    "left": 10,
+    "top": 10,
+  },
+]
+`;

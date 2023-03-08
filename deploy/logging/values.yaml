@@ -1,0 +1,583 @@
+global:
+  # baseDomain specifies the domain name suffix applied to all Ingress hostnames. Set by gmskube.
+  baseDomain: "cluster.example.com"
+
+  # env specifies environment variables that will be added to all applications
+  # unless `useGlobalEnv: false` for that application
+  env:
+
+  # imagePullPolicy is the policy used for all images ('Always', 'IfNotPresent', 'Never').
+  imagePullPolicy: "Always"
+
+  # imageRegistry is the Docker image registry URL where all images will be retrieved. Set by gmskube.
+  imageRegistry: "docker-registry.example.com"
+
+  # imageTag is the Docker image tag used when retrieving all CI-built images. Set by gmskube.
+  imageTag: "develop"
+
+  # Whether or not to use istio. Set by gmskube.
+  istio: false
+
+  # Default PersistentVolumeClaim storage class.
+  # Note that kafka's storageClass is configured independently, but it uses the default storage class
+  # Empty uses the cluster's default storage class
+  storageClassName:
+
+  # Username of the user installing or upgrading the instance. Set by gmskube.
+  user: "UNKNOWN"
+
+# List of GMS standard apps. These are apps that use the common gms app templates.
+# Note: an app definition must also be added in the section below for each standard app.
+standardApps:
+  - "elasticsearch-config"
+  - "ldap-proxy"
+
+# Secrets to copy from other namespaces
+copySecrets:
+  ingress-default-cert:
+    namespace: "gms"
+  ldap-bindpass:
+    namespace: "gms"
+
+# Configmaps to copy from other namespaces
+copyConfigMaps:
+  ldap-ca-cert:
+    namespace: "gms"
+  logging-ldap-config:
+    namespace: "gms"
+
+
+#
+# App definitions
+#
+ldap-proxy:
+  imageName: "gms-common/ldap_proxy"
+  ldapCertFile: "sec-ldap.crt"
+  env:
+    ATTRIBUTE:
+      key: "attribute"
+      name: "logging-ldap-config"
+      type: "fromConfigMap"
+    BASE_DN:
+      key: "base_dn"
+      name: "logging-ldap-config"
+      type: "fromConfigMap"
+    BIND_DN:
+      key: "bind_dn"
+      name: "logging-ldap-config"
+      type: "fromConfigMap"
+    BIND_PASS:
+      key: "bindpass"
+      name: "ldap-bindpass"
+      type: "fromSecret"
+    FILTER:
+      key: "filter"
+      name: "logging-ldap-config"
+      type: "fromConfigMap"
+    LDAP_CA_PEM_FILE:
+      key: "ldap_ca_pem_file"
+      name: "logging-ldap-config"
+      type: "fromConfigMap"
+    LDAP_HOST:
+      key: "ldap_host"
+      name: "logging-ldap-config"
+      type: "fromConfigMap"
+    LDAP_PORT:
+      key: "ldap_port"
+      name: "logging-ldap-config"
+      type: "fromConfigMap"
+    LDAP_USE_TLS: "1"
+    LOG_LEVEL: "debug"
+    PROXIED_URL:
+      key: "proxied_url"
+      name: "logging-ldap-config"
+      type: "fromConfigMap"
+    SCOPE:
+      key: "scope"
+      name: "logging-ldap-config"
+      type: "fromConfigMap"
+  network:
+    ingress:
+      8080:
+        path: "/"
+      host: "kibana.{{ .Values.global.baseDomain }}"
+    service:
+      8080:
+        name: "http-web"
+  volume:
+    config-map-volume:
+      configMapName: "ldap-ca-cert"
+      mountPath: "/etc/config"
+      type: "configMap"
+
+elasticsearch:
+  #image: "logging-elasticsearch"
+  image: ""
+  imageTag: ""
+  imagePullPolicy: "Always"
+
+  podAnnotations:
+    sidecar.istio.io/inject: "false"
+
+  replicas: 3
+  minimumMasterNodes: 2
+
+  clusterHealthCheckParams: "wait_for_status=green&timeout=1s"
+
+  rbac:
+    create: true
+
+  podSecurityPolicy:
+    create: true
+
+  volumeClaimTemplate:
+    accessModes: [ "ReadWriteOnce" ]
+    resources:
+      requests:
+        storage: 300Gi
+
+  persistence:
+    enabled: true
+    labels:
+      # Add default labels for the volumeClaimTemplate fo the StatefulSet
+      enabled: true
+    annotations: {}
+
+  # Hard means that by default pods will only be scheduled if there are enough nodes for them
+  # and that they will never end up on the same node. Setting this to soft will do this "best effort"
+  # ***************************** REMOVE THIS AFTER LOGGING NODES GO LIVE ***************************
+  antiAffinity: "soft"
+  # ***************************** REMOVE THIS AFTER LOGGING NODES GO LIVE ***************************
+
+  # Prefer nodes with label dedicated=elasticsearch
+  nodeAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: "dedicated"
+            operator: "In"
+            values:
+            - "elasticsearch"
+
+  # Tolerate nodes with taint dedicated=elasticsearch:NoSchedule
+  tolerations:
+    - key: "dedicated"
+      operator: "Equal"
+      value: "elasticsearch"
+      effect: "NoSchedule"
+
+  # Enabling this will publically expose your Elasticsearch instance.
+  # # Only enable this if you have security enabled on your cluster
+  ingress:
+    enabled: true
+    annotations: {}
+      # kubernetes.io/ingress.class: nginx
+      #     # kubernetes.io/tls-acme: "true"
+    path: /
+    hosts:
+      - elasticsearch.some.domain.com
+    tls:
+      - secretName: ingress-default-cert
+        hosts:
+          - elasticsearch.some.domain.com
+
+  esJavaOpts: "-Xmx16g -Xms16g"
+  resources:
+    requests:
+      cpu: "4000m"
+      memory: "32Gi"
+    limits:
+      cpu: "4000m"
+      memory: "32Gi"
+
+elasticsearch-config:
+  backoffLimit: 3
+  command:
+    - "/bin/bash"
+    - "-c"
+    - |
+      #!/usr/bin/env bash
+
+      # Define some common variables
+      # Elastic search URL             - ES_URL
+      # Default fluentd index          - FB_DEFAULT_INDEX
+      # Rollover fluentd seed index    - FB_ROLLOVER_SEED_INDEX
+      # Elasticsearch ILM policy       - ES_FB_ILM_POLICY
+      # Elasticsearch index template   - ES_FB_INDEX_TEMPLATE
+      # Elasticsearch fluentd alias    - ES_FB_INDEX_ALIAS
+      # ----------------------------------------------------------------------------------------------
+
+      ES_URL="http://elasticsearch-master:9200"
+      FB_DEFAULT_INDEX="fluentd"
+      FB_ROLLOVER_SEED_INDEX="fluentd-000001"
+      ES_FB_ILM_POLICY="fluentd-policy"
+      ES_FB_INDEX_TEMPLATE="fluentd-template"
+      ES_FB_INDEX_ALIAS="fluentd"
+
+      # Curl the elasticsearch URL and save the response
+      curl_cmd="curl -s -o /dev/null -w '%{http_code}\n' $ES_URL/_cat/indices?v"
+      #echo "curl_cmd:  $curl_cmd"
+      RESP=$(eval "$curl_cmd")
+
+      # If the response is NOT 200, then loop until it is 200
+      if [[ "$RESP" != "200" ]]; then
+          while [[ "$RESP" != "200" ]]; do
+            echo "waiting for elastic search"
+            sleep 1
+            echo "curl_cmd:  $curl_cmd"
+            RESP=$(eval "$curl_cmd")
+          done
+      else
+          echo "elasticsearch is UP"
+      fi
+
+      # Check for the existence of an index named "fluentd" (only check for an index
+      # with this name - NOT an alias).  This would be the default index generated by
+      # fluentd (note, does NOT have a numeric suffix).  If this index exists,
+      # we want to delete it (so we can create one with a numeric suffix)
+      curl_cmd="curl -s $ES_URL/_cluster/state?filter_path=metadata.indices.$FB_DEFAULT_INDEX"
+      echo "curl_cmd:  $curl_cmd"
+      RESP=$(eval "$curl_cmd")
+      echo "RESP:  $RESP"
+
+      if [[ "$RESP" != "{}" ]]; then
+          echo "$FB_DEFAULT_INDEX exists ... Delete it"
+          curl_cmd="curl -s -o /dev/null -w '%{http_code}' -XDELETE $ES_URL/$FB_DEFAULT_INDEX"
+          echo "curl_cmd:  $curl_cmd"
+          RESP=$(eval "$curl_cmd")
+          echo "RESP: $RESP"
+
+          # Checking for RESP=200 is unreliable so we are just going to run the index
+          # command again
+          curl_cmd="curl -s $ES_URL/_cluster/state?filter_path=metadata.indices.$FB_DEFAULT_INDEX"
+          echo "curl_cmd:  $curl_cmd"
+          RESP=$(eval "$curl_cmd")
+          echo "RESP:  $RESP"
+
+          if [[ "$RESP" != "{}" ]]; then
+            echo "ERROR:  The default fluentd index:  $FB_DEFAULT_INDEX exists but cannot be DELETED ... exiting"
+            exit 1
+          else
+            echo "The default fluentd index:  $FB_DEFAULT_INDEX was SUCCESSFULLY DELETED"
+          fi
+      else
+          echo "$FB_DEFAULT_INDEX does NOT exist ... continuing"
+      fi
+
+      # Check for the existence of the ILM (index lifecycle management) policy named "fluentd-policy".
+      # If this index already exists, do nothing otherwise create it
+      curl_cmd="curl -s -o /dev/null -w '%{http_code}' $ES_URL/_ilm/policy/$ES_FB_ILM_POLICY"
+      echo "curl_cmd:  $curl_cmd"
+      RESP=$(eval "$curl_cmd")
+      echo "RESP:  $RESP"
+
+      if [[ "$RESP" != "200" ]]; then
+          # Create the policy
+          echo "$ES_FB_ILM_POLICY does NOT exist ... Create it"
+          curl_cmd="curl -s -o /dev/null -w '%{http_code}' -XPUT $ES_URL/_ilm/policy/$ES_FB_ILM_POLICY -H 'Content-Type: application/json' -d'{\"policy\": {\"phases\": {\"hot\": {\"min_age\": \"${HOT_PHASE_MIN_AGE}\", \"actions\": {\"rollover\": {\"max_size\": \"${HOT_PHASE_ACTIONS_ROLLOVER_MAX_SIZE}\", \"max_age\": \"${HOT_PHASE_ACTIONS_ROLLOVER_MAX_AGE}\"}, \"set_priority\": {\"priority\": ${HOT_PHASE_SET_PRIORITY_PRIORITY}}}},\"delete\": {\"min_age\": \"${DELETE_PHASE_MIN_AGE}\", \"actions\": {\"delete\": {\"delete_searchable_snapshot\": ${DELETE_PHASE_ACTIONS_DELETE_DELETE_SEARCHABLE_SNAPSHOT}}}}}}}'"
+          echo "curl_cmd:  $curl_cmd"
+          RESP=$(eval "$curl_cmd")
+          echo "RESP:  $RESP"
+
+          # Checking the response code from the PUT is unreliable so re-run the GET
+          # to check for successful creation
+          curl_cmd="curl -s -o /dev/null -w '%{http_code}' $ES_URL/_ilm/policy/$ES_FB_ILM_POLICY"
+          echo "curl_cmd:  $curl_cmd"
+          RESP=$(eval "$curl_cmd")
+          echo "RESP:  $RESP"
+
+          if [[ "$RESP" != "200" ]]; then
+            echo "ERROR:  Unable to create the Index Lifecycle Management Policy:  $ES_FB_ILM_POLICY ... exiting"
+            exit 1
+          else
+            echo "The ILM Policy:  $ES_FB_ILM_POLICY was SUCCESSFULLY CREATED"
+          fi
+      else
+          echo "$ES_FB_ILM_POLICY ALREADY EXISTS ... continuing"
+      fi
+
+      # Check for the existence of the index template named "fluentd-template".
+      # If this index already exists, do nothing otherwise create it
+      curl_cmd="curl -s -o /dev/null -w '%{http_code}' $ES_URL/_index_template/$ES_FB_INDEX_TEMPLATE"
+      echo "curl_cmd:  $curl_cmd"
+      RESP=$(eval "$curl_cmd")
+      echo "RESP:  $RESP"
+
+      if [[ "$RESP" != "200" ]]; then
+          # Create the template
+          echo "$ES_FB_INDEX_TEMPLATE does NOT exist ... Create it"
+          curl_cmd="curl -s -o /dev/null -w '%{http_code}' -XPUT $ES_URL/_index_template/$ES_FB_INDEX_TEMPLATE -H 'Content-Type: application/json' -d'{\"index_patterns\" : [\"fluentd-*\"], \"template\" : {\"settings\" : {\"index.mapping.total_fields.limit\" : 2000, \"number_of_shards\" : 3, \"number_of_replicas\" : 1, \"index.lifecycle.name\" : \"fluentd-policy\", \"index.lifecycle.rollover_alias\" : \"fluentd\", \"index.routing.rebalance.enable\" : \"all\", \"index.refresh_interval\" : \"10s\"}}}'"
+          echo "curl_cmd:  $curl_cmd"
+          RESP=$(eval "$curl_cmd")
+          echo "RESP:  $RESP"
+
+          # Checking the response code from the PUT is unreliable so re-run the GET
+          # to check for successful creation
+          curl_cmd="curl -s -o /dev/null -w '%{http_code}' $ES_URL/_index_template/$ES_FB_INDEX_TEMPLATE"
+          echo "curl_cmd:  $curl_cmd"
+          RESP=$(eval "$curl_cmd")
+          echo "RESP:  $RESP"
+
+          if [[ "$RESP" != "200" ]]; then
+            echo "ERROR:  Unable to create the Elasticsearch Index Template:  $ES_FB_INDEX_TEMPLATE ... exiting"
+            exit 1
+          else
+            echo "The Index Template:  $ES_FB_INDEX_TEMPLATE was SUCCESSFULLY CREATED"
+          fi
+      else
+          echo "$ES_FB_INDEX_TEMPLATE ALREADY EXISTS ... continuing"
+      fi
+
+      # Check for the existence of an index with a suffix such as "fluentd-000001"
+      # If this index already exists, do nothing otherwise create it.  Use reg-ex
+      # to figure out if the index exists and if so what it's name is
+      curl_cmd="curl -s $ES_URL/$ES_FB_INDEX_ALIAS"
+      echo "curl_cmd:  $curl_cmd"
+      RESP=$(eval "$curl_cmd")
+      echo "RESP:  $RESP"
+
+      # Define regular exprssion that looks for a certain response to indicate there is
+      # an suffixed index configured.
+      # We need a pattern that will find "{"fluentd-00000n":{"aliases":{"fluentd":{"is_write_index":true}}
+      # somewhere in the response (either at the beginning or somewhere buried in the response
+      pattern="\{.*\"(fluentd-[0-9]+)\":\{\"aliases\":\{\"fluentd\":\{\"is_write_index\":true\}"
+
+      # Check for a match on pattern
+      if [[ $RESP =~ $pattern ]]
+      then
+          index_name="${BASH_REMATCH[1]}"
+          echo "Rollover index_name:  $index_name exists ... continuing"
+      else
+          # Create the rollover suffixed index
+          echo "$FB_ROLLOVER_SEED_INDEX does NOT exist ... Create it"
+          curl_cmd="curl -s -o /dev/null -w '%{http_code}' -XPUT $ES_URL/$FB_ROLLOVER_SEED_INDEX -H 'Content-Type: application/json' -d'{\"aliases\" : {\"fluentd\" : {\"is_write_index\" : true}}}'"
+          echo "curl_cmd:  $curl_cmd"
+          RESP=$(eval "$curl_cmd")
+          echo "RESP:  $RESP"
+
+          # Checking the response code from the PUT is unreliable so run a GET
+          # to check for successful creation of the seed index
+          curl_cmd="curl -s -o /dev/null -w '%{http_code}' $ES_URL/$FB_ROLLOVER_SEED_INDEX"
+          echo "curl_cmd:  $curl_cmd"
+          RESP=$(eval "$curl_cmd")
+          echo "RESP:  $RESP"
+
+          if [[ "$RESP" != "200" ]]; then
+            echo "ERROR:  Unable to create the Elasticsearch fluentd Rollover Index:  $FB_ROLLOVER_SEED_INDEX ... exiting"
+            exit 1
+          else
+            echo "The Elasticsearch fluentd Rollover Index:  $FB_ROLLOEVER_SEED_INDEX was SUCCESSFULLY CREATED"
+          fi
+      fi
+
+      echo
+      echo "elasticsearch has been SUCCESSFULLY initialized for fluentd ... start fluentd now"
+  env:
+    HOT_PHASE_MIN_AGE: "1d"
+    HOT_PHASE_ACTIONS_ROLLOVER_MAX_AGE: "1d"
+    HOT_PHASE_ACTIONS_ROLLOVER_MAX_SIZE: "30gb"
+    HOT_PHASE_SET_PRIORITY_PRIORITY: "100"
+    DELETE_PHASE_MIN_AGE: "7d"
+    DELETE_PHASE_ACTIONS_DELETE_DELETE_SEARCHABLE_SNAPSHOT: "true"
+  imageName: "gms-common/ubi"
+  jobAnnotations:
+    helm.sh/hook: "post-install,post-upgrade"
+    helm.sh/hook-delete-policy: "before-hook-creation"
+  kind: "job"
+  restartPolicy: "OnFailure"
+  terminationGracePeriodSeconds: 0
+
+fluentd:
+  image:
+    repository: ""
+    pullPolicy: "Always"
+    tag: ""
+
+  podAnnotations:
+    sidecar.istio.io/inject: "false"
+
+  podSecurityContext:
+    runAsNonRoot: true
+
+  securityContext:
+    runAsNonRoot: false
+    runAsUser: 0
+    allowPrivilegeEscalation: false
+
+  volumes:
+  - name: varlog
+    hostPath:
+      path: /var/log
+  - name: varlibdockercontainers
+    hostPath:
+      path: /var/lib/docker/containers
+  - name: datadockercontainers
+    hostPath:
+      path: /data/docker/containers
+  - name: outputdir
+    hostPath:
+      path: /data
+  - name: etcfluentd-main
+    configMap:
+      name: fluentd-main
+      defaultMode: 0777
+  - name: etcfluentd-config
+    configMap:
+      name: fluentd-config
+      defaultMode: 0777
+
+  volumeMounts:
+  - name: varlog
+    mountPath: /var/log
+  - name: varlibdockercontainers
+    mountPath: /var/lib/docker/containers
+    readOnly: true
+  - name: datadockercontainers
+    mountPath: /data/docker/containers
+  - name: outputdir
+    mountPath: /data
+  - name: etcfluentd-main
+    mountPath: /etc/fluent
+  - name: etcfluentd-config
+    mountPath: /etc/fluent/config.d/
+
+  ## Fluentd configurations:
+  ##
+  fileConfigs:
+    01_sources.conf: |-
+      <source>
+        @type tail
+        @id in_tail_container_logs
+        @label @KUBERNETES
+        path /var/log/containers/*.log
+        pos_file /var/log/fluentd-containers.log.pos
+        tag kubernetes.*
+        exclude_path ["/var/log/containers/fluent*"]
+        read_from_head true
+        <parse>
+          @type multi_format
+          <pattern>
+            format json
+            time_key time
+            time_type string
+            time_format "%Y-%m-%dT%H:%M:%S.%NZ"
+            keep_time_key true
+          </pattern>
+          <pattern>
+            format regexp
+            expression /^(?<time>.+) (?<stream>stdout|stderr)( (.))? (?<log>.*)$/
+            time_format '%Y-%m-%dT%H:%M:%S.%NZ'
+            keep_time_key true
+          </pattern>
+          <pattern>
+            format none
+          </pattern>
+        </parse>
+        emit_unmatched_lines true
+      </source>
+
+    02_filters.conf: |-
+      <label @KUBERNETES>
+        <match kubernetes.var.log.containers.fluentd**>
+          @type relabel
+          @label @FLUENT_LOG
+        </match>
+
+        # This filter renames the "log" key to "appLog"
+        # This filter renames the "log" key to "appLog"
+        <filter kubernetes.**>
+          @type parser
+          key_name log
+          reserve_data true
+          reserve_time true
+          hash_value_field appLog
+          remove_key_name_field true
+          replace_invalid_sequence true
+          emit_invalid_record_to_error false
+          <parse>
+            @type json
+          </parse>
+        </filter>
+
+        <filter kubernetes.**>
+          @type kubernetes_metadata
+          @id filter_kube_metadata
+          skip_labels false
+          skip_container_metadata false
+          skip_namespace_metadata true
+          skip_master_url true
+        </filter>
+
+        <match **>
+          @type relabel
+          @label @DISPATCH
+        </match>
+      </label>
+
+    04_outputs.conf: |-
+      <label @OUTPUT>
+        # This match was just for testing by sending the logs
+        # to files in the fluentd container for execing in
+        # and looking at the scraped logs manually before
+        # forwarding them to fluentd
+        #<match **>
+        # @type file
+        # path /data/FLUENTD-scraped-logs
+        #</match>
+        <match **>
+          @type elasticsearch
+          host "elasticsearch-master"
+          port 9200
+          logstash_format false
+          index_name fluentd
+          type_name fluentd
+          include_timestamp true
+          #<buffer>
+          #  @type file
+          #  path /fluentd/log/elastic-buffer
+          #  flush_thread_count 16
+          #  flush_interval 1s
+          #  chunk_limit_size 512M
+          #  flush_mode interval
+          #  retry_forever true
+          #  total_limit_size 256G
+          #</buffer>
+          <buffer>
+            @type file
+            path '/var/lib/fluentd/default'
+            flush_mode interval
+            flush_interval 5s
+            flush_thread_count 3
+            retry_type periodic
+            retry_wait 1s
+            retry_max_interval 300s
+            retry_timeout 60m
+            total_limit_size 32m
+            chunk_limit_size 8m
+            overflow_action throw_exception
+          </buffer>
+        </match>
+      </label>
+
+
+kibana:
+  image: ""
+  imageTag: ""
+  imagePullPolicy: "Always"
+
+  ingress:
+    # we use the ldap-proxy in front of kibana, so ingress is disabled
+    enabled: false
+
+  kibanaConfig:
+    kibana.yml: |
+      telemetry.enabled: false
+
+  resources:
+    requests:
+      cpu: "2000m"
+      memory: "8Gi"
+    limits:
+      cpu: "2000m"
+      memory: "8Gi"

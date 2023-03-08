@@ -1,0 +1,47 @@
+.weavess-line-chart.container {
+  display: flex;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  justify-content: center;
+  align-items: center;
+
+  .weavess-wp
+    .weavess-wp-container
+    .weavess-wp-container-1
+    .weavess-wp-container-2
+    .weavess-wp-container-3
+    .weavess-wp-container-viewport {
+    overflow-y: hidden;
+  }
+
+  .weavess-line-chart.inner {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .weavess-line-chart.chart {
+      flex: 1 1 auto;
+      position: relative;
+
+      .weavess-wp-container {
+        // these affect x- and y-axis in weavess
+        font-family: $core-sans;
+        color: var(--core-prominent, var(--gms-prominent, $core-prominent));
+
+        .chart__axis {
+          .inner {
+            position: absolute;
+            top: 50%;
+            left: 0.5em;
+          }
+
+          .rotate {
+            white-space: nowrap;
+            transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+          }
+        }
+      }
+    }
+  }
+}

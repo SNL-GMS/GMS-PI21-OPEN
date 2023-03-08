@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Acknowledge Form matches a snapshot 1`] = `
+<div>
+  <div
+    class="acknowledge-form test-class"
+  >
+    <div
+      class="form"
+    >
+      <h6
+        class="bp4-heading form__header"
+      >
+        <div>
+          Acknowledge
+        </div>
+      </h6>
+      <div
+        class="form__panel-selector"
+      />
+      <div
+        class="form-body"
+      >
+        <div
+          class="form-label"
+        >
+          Stations:
+        </div>
+        <div
+          class="form-value form-value--uneditable"
+          title="TEST"
+        >
+          TEST
+        </div>
+        <div
+          class="form-label"
+        >
+          Comment:
+        </div>
+        <div
+          class="form-value"
+        >
+          <div>
+            <textarea
+              class="form__text-input"
+              data-cy="acknowledge-comment-textarea"
+              maxlength="1024"
+              rows="4"
+              title="Enter the comment"
+            />
+            <p
+              class="form__character-count"
+            >
+              Characters remaining: 
+              1024
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="form__buttons"
+      >
+        <div
+          class="form__buttons--right"
+        >
+          <button
+            class="bp4-button bp4-disabled form__button"
+            data-cy="submit-acknowledge"
+            disabled=""
+            tabindex="-1"
+            title="Must modify a field to save"
+            type="button"
+          >
+            <span
+              class="bp4-button-text"
+            >
+              Acknowledge
+            </span>
+          </button>
+          <button
+            class="bp4-button form__button"
+            data-cy="cancel-acknowledge"
+            type="button"
+          >
+            <span
+              class="bp4-button-text"
+            >
+              Cancel
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

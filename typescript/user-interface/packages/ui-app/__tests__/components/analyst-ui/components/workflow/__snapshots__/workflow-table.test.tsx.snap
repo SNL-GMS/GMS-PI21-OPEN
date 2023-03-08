@@ -1,0 +1,1007 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Workflow Table lifecycle methods mounts successfully if it finds virtualized container 1`] = `
+<div
+  className="workflow-table"
+  style={
+    Object {
+      "height": "430px",
+    }
+  }
+>
+  <div
+    className="workflow-table-container"
+  >
+    <div
+      className="workflow-table__curtain-left"
+      style={
+        Object {
+          "height": "48px",
+        }
+      }
+    />
+    <div
+      className="workflow-table__buttons"
+    >
+      <div
+        className="workflow-button"
+        data-cy="workflow-expand-AL1"
+      >
+        <div
+          className="workflow-button__expand_collapse"
+        >
+          <button
+            className="bp4-button stage-row__expand-button"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            type="button"
+          >
+            <span
+              aria-hidden={true}
+              className="bp4-icon bp4-icon-small-plus"
+              icon="small-plus"
+            >
+              <svg
+                data-icon="small-plus"
+                height={16}
+                viewBox="0 0 16 16"
+                width={16}
+              >
+                <path
+                  d="M11 7H9V5c0-.55-.45-1-1-1s-1 .45-1 1v2H5c-.55 0-1 .45-1 1s.45 1 1 1h2v2c0 .55.45 1 1 1s1-.45 1-1V9h2c.55 0 1-.45 1-1s-.45-1-1-1z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        className="workflow-button"
+        data-cy="workflow-expand-Auto Network"
+      >
+        <div
+          className="workflow-button__expand_collapse"
+        >
+          <button
+            className="bp4-button stage-row__expand-button"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            type="button"
+          >
+            <span
+              aria-hidden={true}
+              className="bp4-icon bp4-icon-small-plus"
+              icon="small-plus"
+            >
+              <svg
+                data-icon="small-plus"
+                height={16}
+                viewBox="0 0 16 16"
+                width={16}
+              >
+                <path
+                  d="M11 7H9V5c0-.55-.45-1-1-1s-1 .45-1 1v2H5c-.55 0-1 .45-1 1s.45 1 1 1h2v2c0 .55.45 1 1 1s1-.45 1-1V9h2c.55 0 1-.45 1-1s-.45-1-1-1z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        className="workflow-day-boundary-container"
+        style={
+          Object {
+            "height": 48,
+            "width": 12000,
+          }
+        }
+      >
+        <div
+          className="workflow-day-divider"
+          style={
+            Object {
+              "height": "100%",
+              "left": "0px",
+            }
+          }
+        />
+        <div
+          className="workflow-day-divider"
+          style={
+            Object {
+              "height": "100%",
+              "left": "2880px",
+            }
+          }
+        />
+        <div
+          className="workflow-day-divider"
+          style={
+            Object {
+              "height": "100%",
+              "left": "5760px",
+            }
+          }
+        />
+        <div
+          className="workflow-day-divider"
+          style={
+            Object {
+              "height": "100%",
+              "left": "8640px",
+            }
+          }
+        />
+        <div
+          className="workflow-day-divider"
+          style={
+            Object {
+              "height": "100%",
+              "left": "11520px",
+            }
+          }
+        />
+      </div>
+      <div
+        data-cy="workflow-table__container"
+        onMouseDown={[Function]}
+        onMouseMove={[Function]}
+        onMouseUp={[Function]}
+        onWheel={[Function]}
+        role="presentation"
+        style={
+          Object {
+            "height": 48,
+          }
+        }
+      >
+        <div
+          aria-label="grid"
+          className="ReactVirtualized__Collection"
+          onScroll={[Function]}
+          role="grid"
+          style={
+            Object {
+              "WebkitOverflowScrolling": "touch",
+              "boxSizing": "border-box",
+              "direction": "ltr",
+              "height": 48,
+              "overflowX": "auto",
+              "overflowY": "hidden",
+              "position": "relative",
+              "width": 293,
+              "willChange": "transform",
+            }
+          }
+          tabIndex={0}
+        >
+          <div
+            className="ReactVirtualized__Collection__innerScrollContainer"
+            style={
+              Object {
+                "height": 48,
+                "maxHeight": 48,
+                "maxWidth": 54068572.9,
+                "overflow": "hidden",
+                "pointerEvents": "",
+                "width": 54068572.9,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "height": 24,
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "width": 4,
+                }
+              }
+            />
+            <div
+              style={
+                Object {
+                  "height": 24,
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 24,
+                  "width": 4,
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="workflow-table__labels"
+      style={
+        Object {
+          "height": "48px",
+        }
+      }
+    >
+      <div
+        className="workflow-table-label"
+        data-cy="workflow-table-label-AL1"
+      >
+        <div>
+          AL1
+        </div>
+      </div>
+      <div
+        className="workflow-table-label"
+        data-cy="workflow-table-label-Auto Network"
+      >
+        <div>
+          Auto Network
+        </div>
+      </div>
+    </div>
+    <div
+      className="workflow-table__curtain-right"
+      style={
+        Object {
+          "height": "48px",
+        }
+      }
+    />
+  </div>
+  <div
+    className="workflow-table__time-axis"
+  >
+    <div
+      className="scroll-bar-override"
+      style={
+        Object {
+          "width": "293px",
+        }
+      }
+    >
+      <div
+        className="scroll-bar scroll-box--x"
+        data-cy="unknown-gutter-scrollbar-override"
+        onClick={[Function]}
+      >
+        <div
+          className="scroll-bar__bar scroll-box--x"
+          data-cy="unknown-scrollbar-override"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          style={
+            Object {
+              "transform": "translate(NaNpx, 0px)",
+              "width": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="time-axis-wrapper"
+      style={
+        Object {
+          "width": "293px",
+        }
+      }
+    >
+      <div
+        className="time-axis"
+      />
+    </div>
+    <div
+      className="workflow-time-range"
+    >
+      <span
+        className="time-range-left"
+      >
+        1970-01-01
+      </span>
+      <span
+        className="time-range-right"
+      >
+        1970-01-05
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Workflow Table matches snapshot 1`] = `
+<div
+  className="workflow-table"
+  style={
+    Object {
+      "height": "430px",
+    }
+  }
+>
+  <div
+    className="workflow-table-container"
+  >
+    <div
+      className="workflow-table__curtain-left"
+      style={
+        Object {
+          "height": "48px",
+        }
+      }
+    />
+    <div
+      className="workflow-table__buttons"
+    >
+      <div
+        className="workflow-button"
+        data-cy="workflow-expand-AL1"
+        key="expand AL1"
+      >
+        <div
+          className="workflow-button__expand_collapse"
+          key="main row AL1"
+        >
+          <Memo(StageExpansionButtonComponent)
+            disabled={false}
+            isExpanded={false}
+            stageName="AL1"
+            toggle={[Function]}
+          >
+            <button
+              className="bp4-button stage-row__expand-button"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="bp4-icon bp4-icon-small-plus"
+                icon="small-plus"
+              >
+                <svg
+                  data-icon="small-plus"
+                  height={16}
+                  viewBox="0 0 16 16"
+                  width={16}
+                >
+                  <path
+                    d="M11 7H9V5c0-.55-.45-1-1-1s-1 .45-1 1v2H5c-.55 0-1 .45-1 1s.45 1 1 1h2v2c0 .55.45 1 1 1s1-.45 1-1V9h2c.55 0 1-.45 1-1s-.45-1-1-1z"
+                    fillRule="evenodd"
+                    key="0"
+                  />
+                </svg>
+              </span>
+            </button>
+          </Memo(StageExpansionButtonComponent)>
+        </div>
+      </div>
+      <div
+        className="workflow-button"
+        data-cy="workflow-expand-Auto Network"
+        key="expand Auto Network"
+      >
+        <div
+          className="workflow-button__expand_collapse"
+          key="main row Auto Network"
+        >
+          <Memo(StageExpansionButtonComponent)
+            disabled={false}
+            isExpanded={false}
+            stageName="Auto Network"
+            toggle={[Function]}
+          >
+            <button
+              className="bp4-button stage-row__expand-button"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="bp4-icon bp4-icon-small-plus"
+                icon="small-plus"
+              >
+                <svg
+                  data-icon="small-plus"
+                  height={16}
+                  viewBox="0 0 16 16"
+                  width={16}
+                >
+                  <path
+                    d="M11 7H9V5c0-.55-.45-1-1-1s-1 .45-1 1v2H5c-.55 0-1 .45-1 1s.45 1 1 1h2v2c0 .55.45 1 1 1s1-.45 1-1V9h2c.55 0 1-.45 1-1s-.45-1-1-1z"
+                    fillRule="evenodd"
+                    key="0"
+                  />
+                </svg>
+              </span>
+            </button>
+          </Memo(StageExpansionButtonComponent)>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        className="workflow-day-boundary-container"
+        style={
+          Object {
+            "height": 48,
+            "width": 12000,
+          }
+        }
+      >
+        <div
+          className="workflow-day-divider"
+          key="0"
+          style={
+            Object {
+              "height": "100%",
+              "left": "0px",
+            }
+          }
+        />
+        <div
+          className="workflow-day-divider"
+          key="86400000"
+          style={
+            Object {
+              "height": "100%",
+              "left": "2880px",
+            }
+          }
+        />
+        <div
+          className="workflow-day-divider"
+          key="172800000"
+          style={
+            Object {
+              "height": "100%",
+              "left": "5760px",
+            }
+          }
+        />
+        <div
+          className="workflow-day-divider"
+          key="259200000"
+          style={
+            Object {
+              "height": "100%",
+              "left": "8640px",
+            }
+          }
+        />
+        <div
+          className="workflow-day-divider"
+          key="345600000"
+          style={
+            Object {
+              "height": "100%",
+              "left": "11520px",
+            }
+          }
+        />
+      </div>
+      <div
+        data-cy="workflow-table__container"
+        onMouseDown={[Function]}
+        onMouseMove={[Function]}
+        onMouseUp={[Function]}
+        onWheel={[Function]}
+        role="presentation"
+        style={
+          Object {
+            "height": 48,
+          }
+        }
+      >
+        <div
+          aria-label="grid"
+          className="ReactVirtualized__Collection"
+          onScroll={[Function]}
+          role="grid"
+          style={
+            Object {
+              "WebkitOverflowScrolling": "touch",
+              "boxSizing": "border-box",
+              "direction": "ltr",
+              "height": 48,
+              "overflowX": "auto",
+              "overflowY": "hidden",
+              "position": "relative",
+              "width": 293,
+              "willChange": "transform",
+            }
+          }
+          tabIndex={0}
+        >
+          <div
+            className="ReactVirtualized__Collection__innerScrollContainer"
+            style={
+              Object {
+                "height": 48,
+                "maxHeight": 48,
+                "maxWidth": 54068572.9,
+                "overflow": "hidden",
+                "pointerEvents": "",
+                "width": 54068572.9,
+              }
+            }
+          >
+            <div
+              key="0"
+              style={
+                Object {
+                  "height": 24,
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "width": 4,
+                }
+              }
+            />
+            <div
+              key="3"
+              style={
+                Object {
+                  "height": 24,
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 24,
+                  "width": 4,
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="workflow-table__labels"
+      style={
+        Object {
+          "height": "48px",
+        }
+      }
+    >
+      <div
+        className="workflow-table-label"
+        data-cy="workflow-table-label-AL1"
+        key="AL1"
+      >
+        <div>
+          AL1
+        </div>
+      </div>
+      <div
+        className="workflow-table-label"
+        data-cy="workflow-table-label-Auto Network"
+        key="Auto Network"
+      >
+        <div>
+          Auto Network
+        </div>
+      </div>
+    </div>
+    <div
+      className="workflow-table__curtain-right"
+      style={
+        Object {
+          "height": "48px",
+        }
+      }
+    />
+  </div>
+  <div
+    className="workflow-table__time-axis"
+  >
+    <div
+      className="scroll-bar-override"
+      style={
+        Object {
+          "width": "293px",
+        }
+      }
+    >
+      <div
+        className="scroll-bar scroll-box--x"
+        data-cy="unknown-gutter-scrollbar-override"
+        onClick={[Function]}
+      >
+        <div
+          className="scroll-bar__bar scroll-box--x"
+          data-cy="unknown-scrollbar-override"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          style={
+            Object {
+              "transform": "translate(NaNpx, 0px)",
+              "width": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="time-axis-wrapper"
+      style={
+        Object {
+          "width": "293px",
+        }
+      }
+    >
+      <div
+        className="time-axis"
+      />
+    </div>
+    <div
+      className="workflow-time-range"
+    >
+      <span
+        className="time-range-left"
+      >
+        1970-01-01
+      </span>
+      <span
+        className="time-range-right"
+      >
+        1970-01-05
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Workflow Table matches snapshot 2`] = `
+<div
+  className="workflow-table"
+  style={
+    Object {
+      "height": "440px",
+    }
+  }
+>
+  <div
+    className="workflow-table-container"
+  >
+    <div
+      className="workflow-table__curtain-left"
+      style={
+        Object {
+          "height": "48px",
+        }
+      }
+    />
+    <div
+      className="workflow-table__buttons"
+    >
+      <div
+        className="workflow-button"
+        data-cy="workflow-expand-AL1"
+        key="expand AL1"
+      >
+        <div
+          className="workflow-button__expand_collapse"
+          key="main row AL1"
+        >
+          <Memo(StageExpansionButtonComponent)
+            disabled={false}
+            isExpanded={false}
+            stageName="AL1"
+            toggle={[Function]}
+          >
+            <button
+              className="bp4-button stage-row__expand-button"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="bp4-icon bp4-icon-small-plus"
+                icon="small-plus"
+              >
+                <svg
+                  data-icon="small-plus"
+                  height={16}
+                  viewBox="0 0 16 16"
+                  width={16}
+                >
+                  <path
+                    d="M11 7H9V5c0-.55-.45-1-1-1s-1 .45-1 1v2H5c-.55 0-1 .45-1 1s.45 1 1 1h2v2c0 .55.45 1 1 1s1-.45 1-1V9h2c.55 0 1-.45 1-1s-.45-1-1-1z"
+                    fillRule="evenodd"
+                    key="0"
+                  />
+                </svg>
+              </span>
+            </button>
+          </Memo(StageExpansionButtonComponent)>
+        </div>
+      </div>
+      <div
+        className="workflow-button"
+        data-cy="workflow-expand-Auto Network"
+        key="expand Auto Network"
+      >
+        <div
+          className="workflow-button__expand_collapse"
+          key="main row Auto Network"
+        >
+          <Memo(StageExpansionButtonComponent)
+            disabled={false}
+            isExpanded={false}
+            stageName="Auto Network"
+            toggle={[Function]}
+          >
+            <button
+              className="bp4-button stage-row__expand-button"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="bp4-icon bp4-icon-small-plus"
+                icon="small-plus"
+              >
+                <svg
+                  data-icon="small-plus"
+                  height={16}
+                  viewBox="0 0 16 16"
+                  width={16}
+                >
+                  <path
+                    d="M11 7H9V5c0-.55-.45-1-1-1s-1 .45-1 1v2H5c-.55 0-1 .45-1 1s.45 1 1 1h2v2c0 .55.45 1 1 1s1-.45 1-1V9h2c.55 0 1-.45 1-1s-.45-1-1-1z"
+                    fillRule="evenodd"
+                    key="0"
+                  />
+                </svg>
+              </span>
+            </button>
+          </Memo(StageExpansionButtonComponent)>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        className="workflow-day-boundary-container"
+        style={
+          Object {
+            "height": 48,
+            "width": 12000.033333333333,
+          }
+        }
+      >
+        <div
+          className="workflow-day-divider"
+          key="0"
+          style={
+            Object {
+              "height": "100%",
+              "left": "0px",
+            }
+          }
+        />
+        <div
+          className="workflow-day-divider"
+          key="86400000"
+          style={
+            Object {
+              "height": "100%",
+              "left": "2879.9999999999995px",
+            }
+          }
+        />
+        <div
+          className="workflow-day-divider"
+          key="172800000"
+          style={
+            Object {
+              "height": "100%",
+              "left": "5759.999999999999px",
+            }
+          }
+        />
+        <div
+          className="workflow-day-divider"
+          key="259200000"
+          style={
+            Object {
+              "height": "100%",
+              "left": "8640px",
+            }
+          }
+        />
+        <div
+          className="workflow-day-divider"
+          key="345600000"
+          style={
+            Object {
+              "height": "100%",
+              "left": "11519.999999999998px",
+            }
+          }
+        />
+      </div>
+      <div
+        data-cy="workflow-table__container"
+        onMouseDown={[Function]}
+        onMouseMove={[Function]}
+        onMouseUp={[Function]}
+        onWheel={[Function]}
+        role="presentation"
+        style={
+          Object {
+            "height": 48,
+          }
+        }
+      >
+        <div
+          aria-label="grid"
+          className="ReactVirtualized__Collection"
+          onScroll={[Function]}
+          role="grid"
+          style={
+            Object {
+              "WebkitOverflowScrolling": "touch",
+              "boxSizing": "border-box",
+              "direction": "ltr",
+              "height": 48,
+              "overflowX": "auto",
+              "overflowY": "hidden",
+              "position": "relative",
+              "width": 303,
+              "willChange": "transform",
+            }
+          }
+          tabIndex={0}
+        >
+          <div
+            className="ReactVirtualized__Collection__innerScrollContainer"
+            style={
+              Object {
+                "height": 48,
+                "maxHeight": 48,
+                "maxWidth": 54068572.9,
+                "overflow": "hidden",
+                "pointerEvents": "",
+                "width": 54068572.9,
+              }
+            }
+          >
+            <div
+              key="0"
+              style={
+                Object {
+                  "height": 24,
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "width": 4,
+                }
+              }
+            />
+            <div
+              key="3"
+              style={
+                Object {
+                  "height": 24,
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 24,
+                  "width": 4,
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="workflow-table__labels"
+      style={
+        Object {
+          "height": "48px",
+        }
+      }
+    >
+      <div
+        className="workflow-table-label"
+        data-cy="workflow-table-label-AL1"
+        key="AL1"
+      >
+        <div>
+          AL1
+        </div>
+      </div>
+      <div
+        className="workflow-table-label"
+        data-cy="workflow-table-label-Auto Network"
+        key="Auto Network"
+      >
+        <div>
+          Auto Network
+        </div>
+      </div>
+    </div>
+    <div
+      className="workflow-table__curtain-right"
+      style={
+        Object {
+          "height": "48px",
+        }
+      }
+    />
+  </div>
+  <div
+    className="workflow-table__time-axis"
+  >
+    <div
+      className="scroll-bar-override"
+      style={
+        Object {
+          "width": "303px",
+        }
+      }
+    >
+      <div
+        className="scroll-bar scroll-box--x"
+        data-cy="unknown-gutter-scrollbar-override"
+        onClick={[Function]}
+      >
+        <div
+          className="scroll-bar__bar scroll-box--x"
+          data-cy="unknown-scrollbar-override"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          style={
+            Object {
+              "transform": "translate(NaNpx, 0px)",
+              "width": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="time-axis-wrapper"
+      style={
+        Object {
+          "width": "303px",
+        }
+      }
+    >
+      <div
+        className="time-axis"
+      />
+    </div>
+    <div
+      className="workflow-time-range"
+    >
+      <span
+        className="time-range-left"
+      >
+        1970-01-01
+      </span>
+      <span
+        className="time-range-right"
+      >
+        1970-01-05
+      </span>
+    </div>
+  </div>
+</div>
+`;

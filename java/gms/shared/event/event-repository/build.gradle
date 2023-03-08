@@ -1,0 +1,43 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+    implementation libs.org.hibernate.hibernate.core
+    implementation libs.org.hibernate.hibernate.c3p0
+    implementation libs.org.hibernate.hibernate.entitymanager
+    implementation libs.com.vladmihalcea.hibernate.types52
+    implementation libs.com.oracle.ojdbc.ojdbc8
+    api libs.org.apache.commons.commons.lang3
+
+    implementation project(':bridge-utilities')
+    implementation project(':caching-utils')
+    implementation project(':event-dao')
+    implementation project(':event-api')
+    implementation project(':event-coi')
+    implementation project(':frameworks-control')
+    implementation project(':java-utilities')
+    implementation project(':spring-framework-utilities')
+    api project(':signal-detection-coi')
+    implementation project(':signal-detection-dao')
+    implementation project(':signal-detection-accessor')
+    implementation project(':signal-detection-database-connector')
+
+    implementation libs.org.springframework.boot.spring.boot.starter.web
+    implementation libs.org.springframework.boot.spring.boot.starter.data.jpa
+
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    testImplementation project(':db-test-utils')
+    testImplementation project(':signal-detection-testfixtures')
+    testImplementation libs.org.testcontainers.testcontainers
+    testImplementation libs.com.h2database.h2
+    testImplementation project(':test-utils')
+    testImplementation libs.org.springframework.boot.spring.boot.starter.test
+    testImplementation libs.org.mockito.mockito.inline
+    testImplementation libs.org.mockito.mockito.core
+
+    testImplementation(testFixtures(project(':event-coi')))
+}

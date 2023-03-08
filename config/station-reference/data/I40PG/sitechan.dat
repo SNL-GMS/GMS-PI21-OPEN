@@ -1,0 +1,15 @@
+I40H1  BDA       2014342     5817  2286324 n       0.0000   -1.0   -1.0 Absolute_barometric_pressure                       20141215 12:00:00
+I40H1  BDF       2014342     5818  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20141215 12:00:00
+I40H1  BKO       2016083     8269  2286324 n       0.0000   -1.0   -1.0 External_temperature                               20170207 12:00:00
+I40H1  BWD       2016083     8270  2286324 n       0.0000   -1.0   -1.0 Wind_direction                                     20170207 12:00:00
+I40H1  BWS       2016083     8271  2286324 n       0.0000   -1.0   -1.0 Wind_speed                                         20170207 12:00:00
+I40H1  LKO       2014342     5819  2016082 n       0.0000   -1.0   -1.0 External_temperature                               20170207 12:00:00
+I40H1  LWD       2014342     5820  2016082 n       0.0000   -1.0   -1.0 Wind_direction                                     20170207 12:00:00
+I40H1  LWS       2014342     5821  2016082 n       0.0000   -1.0   -1.0 Wind_speed                                         20170207 12:00:00
+I40H2  BDF       2014342     5822  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20141215 12:00:00
+I40H3  BDF       2014342     5823  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20141215 12:00:00
+I40H4  BDF       2014342     5824  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20141215 12:00:00
+I40H5  BDF       2014342     5825  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20141215 12:00:00
+I40H6  BDF       2014342     5826  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20141215 12:00:00
+I40H7  BDF       2014342     5827  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20141215 12:00:00
+I40H8  BDF       2014342     5828  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20141215 12:00:00

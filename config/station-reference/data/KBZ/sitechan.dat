@@ -1,0 +1,12 @@
+KBZ    sz        1993351      690  2000366 n       0.0750   -1.0    0.0 short-period_vertical                              20090401 12:00:00
+KBZ    sn        1993351      689  2000366 n       0.0750    0.0   90.0 short-period_north                                 20090401 12:00:00
+KBZ    se        1993351      691  2000366 n       0.0750   90.0   90.0 short-period_east                                  20090401 12:00:00
+KBZ    mz        1993351      688  2000366 n       0.0750   -1.0    0.0 medium-period_vertical                             20090401 12:00:00
+KBZ    mn        1993351      692  2000366 n       0.0750    0.0   90.0 medium-period_north                                20090401 12:00:00
+KBZ    me        1993351      687  2000366 n       0.0750   90.0   90.0 medium-period_east                                 20090401 12:00:00
+KBZ    lz        1993351      693  2000366 n       0.0750   -1.0    0.0 long-period_vertical                               20090401 12:00:00
+KBZ    ln        1993351      694  2000366 n       0.0750    0.0   90.0 long-period_north                                  20090401 12:00:00
+KBZ    le        1993351      686  2000366 n       0.0750   90.0   90.0 long-period_east                                   20090401 12:00:00
+KBZ    BHZ       2008282     5158  2286324 n       0.0600   -1.0    0.0 broad_band_vertical                                20090401 12:00:00
+KBZ    BH2       2008282     5160  2286324 n       0.0600   56.0   90.0 broad_band_two                                     20090401 12:00:00
+KBZ    BH1       2008282     5159  2286324 n       0.0600  326.0   90.0 broad_band_one                                     20090401 12:00:00

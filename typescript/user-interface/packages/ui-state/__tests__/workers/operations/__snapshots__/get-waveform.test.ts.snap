@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getWaveform get Position Buffer should return empty buffer 1`] = `Float32Array []`;
+
+exports[`getWaveform get Position Buffer should return partial buffer 1`] = `
+Float32Array [
+  0,
+  100,
+  25,
+  102,
+]
+`;

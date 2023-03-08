@@ -1,0 +1,13 @@
+.scroll-box {
+  height: 100%;
+  flex-grow: 1;
+  overflow: auto;
+  &--y {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  &--x {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}

@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Environment history panel render weavess display 1`] = `
+<div>
+  <div
+    class="weavess-container"
+    tabindex="0"
+  >
+    <div
+      class="weavess-container__wrapper"
+    >
+      <div
+        class="weavess"
+        data-cy="weavess-container"
+        data-end-time="1"
+        data-start-time="0.5"
+        style="--weavess-background-color: #182026;"
+      >
+        <div
+          class="horizontal-divider__bottom weavess-waveform-display"
+          data-cy="weavess-waveform-display"
+          style="height: 100%;"
+        >
+          <div
+            class="weavess-zoom-handler"
+            role="tab"
+            tabindex="-1"
+          >
+            <div
+              class="weavess-wp"
+              style="height: 100%; position: relative; width: 100%; box-sizing: content-box; --weavess-scrollbar-track-margin: 180px;"
+            >
+              <canvas
+                class="weavess-wp-canvas"
+                style="width: calc(100% - 190px); height: calc(100% - 35px); left: 180px;"
+              />
+              <div
+                class="weavess-wp-container"
+              >
+                <div
+                  class="weavess-wp-container-1"
+                >
+                  <div
+                    class="weavess-wp-container-2"
+                  >
+                    <div
+                      class="weavess-wp-container-3"
+                    >
+                      <aside
+                        style="width: 9007199254740991px; height: 1px; position: absolute; pointer-events: none; background: none;"
+                      />
+                      <div
+                        class="weavess-wp-container-viewport"
+                        tabindex="0"
+                      >
+                        <div
+                          class="weavess-wp-container-viewport-content"
+                        >
+                          <div
+                            class="station"
+                            style="height: 61px;"
+                          >
+                            <div
+                              class="channel"
+                              data-cy="AAA111-channel"
+                              style="height: 60px; max-height: 60px;"
+                              tabindex="0"
+                            >
+                              <div
+                                class="channel-label-container"
+                                data-cy="AAA111-label"
+                                style="height: 60px; width: 180px;"
+                                tabindex="0"
+                              >
+                                <div
+                                  class="label"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="label-container"
+                                  >
+                                    <div
+                                      class="label-container-left-parent"
+                                    />
+                                    <div
+                                      class="label-container-content"
+                                    >
+                                      <div
+                                        class="label-container-content-label"
+                                        data-cy="channel-label-AAA111"
+                                      >
+                                        <div>
+                                          <span
+                                            class="weavess-tooltip__target label-container-content"
+                                          >
+                                            <span
+                                              aria-haspopup="true"
+                                              class="weavess-tooltip bp4-popover2-target"
+                                            >
+                                              <span
+                                                class=""
+                                                tabindex="0"
+                                              >
+                                                AAA111
+                                              </span>
+                                            </span>
+                                            <div
+                                              class="distance-azimuth"
+                                            >
+                                              <p>
+                                                <span
+                                                  class="label-container-content-mask-indicator"
+                                                />
+                                              </p>
+                                            </div>
+                                          </span>
+                                        </div>
+                                      </div>
+                                      <div
+                                        data-cy-contains-amplitude-markers="true"
+                                        style="height: 100%;"
+                                      >
+                                        <div
+                                          class="y-axis"
+                                          data-cy="y-axis"
+                                          data-max="1"
+                                          data-min="-1"
+                                          style="height: calc(100% - 4px); margin: 2px 0px 2px 0px;"
+                                        >
+                                          <svg
+                                            height="100%"
+                                            width="50"
+                                          >
+                                            <g
+                                              class="y-axis__ordinate"
+                                              height="100%"
+                                              transform="translate(49,0)"
+                                            />
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="channel-content-container"
+                                style="height: 60px; width: calc(100% - 180px); left: 180px;"
+                              >
+                                <div
+                                  class="contentrenderer"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="contentrenderer-content contentrenderer-content--sticky"
+                                    style="width: calc(100% - 180);"
+                                  />
+                                  <div
+                                    class="contentrenderer-content"
+                                    data-cy-station-waveform="AAA111"
+                                    style="left: 180px; width: calc(100% - 180px);"
+                                  >
+                                    <div
+                                      class="contentrenderer-content-drag-indicator"
+                                    />
+                                    <div
+                                      class="measure-window-selection measure-window-selection__container"
+                                      style="display: none; transform: translateX(-50%);"
+                                    >
+                                      <div
+                                        class="measure-window-selection__overlay"
+                                        data-cy="measure-window-selection"
+                                        draggable="true"
+                                        style="display: none; left: 50%; width: 0%;"
+                                      />
+                                    </div>
+                                    <div
+                                      class="contentrenderer-content-markers"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="weavess-wp-container-viewport-content-markers"
+                            style="width: calc(100% - 190px); left: 180px;"
+                          />
+                        </div>
+                        <object
+                          class="resize-sensor"
+                          data="about:blank"
+                          style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; pointer-events: none; z-index: -1; opacity: 0;"
+                          tabindex="-1"
+                          type="text/html"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="weavess-wp-container-overlay"
+                    style="width: calc(100% - 190px);"
+                  >
+                    <div
+                      class="weavess-wp-container-overlay-cross-hair"
+                    />
+                    <div
+                      class="weavess-wp-container-overlay-selection-area"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="x-axis"
+                  data-cy="x-axis"
+                  data-end-time="1"
+                  data-start-time="0.5"
+                  style="height: 35px;"
+                >
+                  <div
+                    style="width: 100%;"
+                  >
+                    <svg
+                      height="35"
+                      style="fill: #F6F7F9;"
+                      width="100%"
+                    >
+                      <g
+                        class="x-axis-axis"
+                        fill="none"
+                        font-family="sans-serif"
+                        font-size="10"
+                        text-anchor="middle"
+                      >
+                        <path
+                          class="domain"
+                          d="M180.5,7V0.5H-9.5V7"
+                          stroke="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                  <div
+                    style="text-align: center;"
+                  />
+                </div>
+              </div>
+              <div
+                class="weavess-wp-time-range"
+                style="left: 180px;"
+              >
+                <span>
+                  1970-01-01 00:00:00.500 + 0.5 seconds
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="Toastify"
+          id="Weavess-Toast-Container"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

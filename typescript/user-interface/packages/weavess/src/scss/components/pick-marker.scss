@@ -1,0 +1,83 @@
+/* Offset used to space top or bottom label and vertical marker */
+$labelAndVerticalOffset: 5%;
+$selectedOpacity: 1;
+$unSelectedOpacity: 0.5;
+
+.pick-marker {
+  z-index: 2;
+  min-width: 1.5px;
+  .contentrenderer--selected & {
+    opacity: $unSelectedOpacity;
+  }
+  cursor: auto;
+  &__vertical {
+    position: absolute;
+    height: 90%;
+    top: $labelAndVerticalOffset;
+  }
+
+  &__label {
+    color: var(--pick-marker-color, white);
+    position: absolute;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 11px;
+    padding: 1px;
+    z-index: 1;
+    --label-background-color: rgba(25, 32, 37, 0.75);
+    text-shadow: var(--gms-recessed, --label-background-color) 0px 0px 2px,
+      var(--gms-recessed, --label-background-color) 1px 1px 3px,
+      var(--gms-recessed, --label-background-color) 1px 1px 10px;
+
+    &--top {
+      top: $labelAndVerticalOffset;
+      bottom: initial;
+    }
+    &--bottom {
+      top: initial;
+      bottom: $labelAndVerticalOffset;
+    }
+  }
+
+  &--selectable:hover {
+    z-index: 4;
+    .pick-marker__vertical {
+      box-shadow: 0px 0px 10px 1px var(--pick-marker-color, white);
+    }
+    .pick-marker__label {
+      font-weight: bold;
+    }
+  }
+
+  .contentrenderer--selected &:hover {
+    opacity: $selectedOpacity;
+  }
+
+  .contentrenderer--selected &--selected {
+    opacity: $selectedOpacity;
+    z-index: 3;
+    .pick-marker__vertical {
+      box-shadow: 0px 0px 10px 1px var(--pick-marker-color, white);
+    }
+    .pick-marker__label {
+      font-weight: bold;
+    }
+  }
+
+  &__conflict {
+    margin-left: 2px;
+  }
+}
+
+.pick-marker__vertical::after {
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-width: 1.5px;
+  height: 100%;
+  position: absolute;
+  background-color: var(--pick-marker-color, white);
+  z-index: 3;
+}

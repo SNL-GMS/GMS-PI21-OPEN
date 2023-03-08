@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GMSTheme has values 1`] = `
+Object {
+  "axis": Object {
+    "style": Object {
+      "axis": Object {
+        "offset": 14,
+        "stroke": "var(--core-prominent)",
+        "strokeWidth": 1,
+      },
+      "grid": Object {
+        "fill": "none",
+        "pointerEvents": "painted",
+        "stroke": "none",
+      },
+    },
+  },
+  "bar": Object {
+    "style": Object {
+      "data": Object {
+        "padding": 8,
+        "strokeWidth": 0,
+      },
+      "labels": Object {
+        "fill": "var(--core-prominent)",
+        "fontFamily": "var(--core-sans)",
+        "fontSize": 14,
+        "letterSpacing": "normal",
+        "padding": 14,
+        "stroke": "transparent",
+      },
+    },
+  },
+  "dependentAxis": Object {
+    "style": Object {
+      "axis": Object {
+        "offsetInlineStart": 16,
+        "stroke": "var(--core-soft)",
+        "strokeWidth": 1,
+      },
+      "grid": Object {
+        "stroke": "none",
+      },
+      "tickLabels": Object {
+        "fill": "var(--core-main)",
+        "fontFamily": "var(--core-sans)",
+        "fontSize": 14,
+        "letterSpacing": "normal",
+        "padding": 10,
+        "stroke": "transparent",
+      },
+      "ticks": Object {
+        "size": 4,
+        "stroke": "var(--core-main)",
+        "strokeWidth": 1,
+      },
+    },
+  },
+  "independentAxis": Object {
+    "style": Object {
+      "axis": Object {
+        "offsetInlineStart": 16,
+        "stroke": "var(--core-soft)",
+        "strokeWidth": 1,
+      },
+      "grid": Object {
+        "stroke": "none",
+      },
+      "tickLabels": Object {
+        "fill": "var(--core-main)",
+        "fontFamily": "var(--core-sans)",
+        "fontSize": 14,
+        "letterSpacing": "normal",
+        "padding": 10,
+        "stroke": "transparent",
+      },
+      "ticks": Object {
+        "size": 4,
+        "stroke": "var(--core-main)",
+        "strokeWidth": 1,
+      },
+    },
+  },
+}
+`;

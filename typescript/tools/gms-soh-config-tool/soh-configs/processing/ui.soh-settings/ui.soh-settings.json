@@ -1,0 +1,24 @@
+{
+    "name": "ui-soh-settings",
+    "constraints": [
+        {
+            "constraintType": "DEFAULT"
+        }
+    ],
+    "parameters": {
+        "redisplayPeriod": "PT5S",
+        "acknowledgementQuietDuration": "PT5M",
+        "availableQuietDurations": [
+            "PT5M",
+            "PT15M",
+            "PT1H",
+            "PT24H",
+            "PT168H"
+        ],
+        "sohStationStaleDuration": "PT5M",
+        "sohHistoricalDurations": ["PT6H", "PT12H", "PT24H", "PT168H", "PT720H"],
+        "samplesPerChannel": 50000,
+        "maxQueryIntervalSize": 432000000
+    }
+}
+

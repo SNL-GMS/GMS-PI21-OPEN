@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CopyContents with all the optional props matches a snapshot 1`] = `
+<div>
+  <span
+    aria-haspopup="true"
+    class="bp4-popover2-target"
+  >
+    <div
+      class="copy-contents test-class"
+      role="button"
+      tabindex="-1"
+    >
+      Click me
+    </div>
+  </span>
+</div>
+`;
+
+exports[`CopyContents without all the optional props matches a snapshot 1`] = `
+<div>
+  <span
+    aria-haspopup="true"
+    class="bp4-popover2-target"
+  >
+    <div
+      class="copy-contents test-class"
+      role="button"
+      tabindex="-1"
+    >
+      The text to copy
+    </div>
+  </span>
+</div>
+`;

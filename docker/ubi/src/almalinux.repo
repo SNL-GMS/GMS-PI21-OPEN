@@ -1,0 +1,23 @@
+# almalinux.repo
+#
+# AlmaLinux AppStream and BaseOS contain packages that are not available in UBI
+# AlmaLinux was chosen because it matches the released RHEL/UBI and is freely redistributable
+#
+# These repos have a lower priority than the ubi repos (higher number)
+#
+
+[almalinux-appstream]
+name = AlmaLinux - AppStream
+baseurl = #ALMALINUX_RPM_URL#/$releasever/AppStream/$basearch/os/
+enabled = 1
+gpgkey = #ALMALINUX_RPM_URL#/RPM-GPG-KEY-AlmaLinux
+gpgcheck = 1
+priority = 30
+
+[almalinux-baseos]
+name = AlmaLinux - BaseOS
+baseurl = #ALMALINUX_RPM_URL#/$releasever/BaseOS/$basearch/os/
+enabled = 1
+gpgkey = #ALMALINUX_RPM_URL#/RPM-GPG-KEY-AlmaLinux
+gpgcheck = 1
+priority = 30

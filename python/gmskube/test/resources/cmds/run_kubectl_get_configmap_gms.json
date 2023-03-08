@@ -1,0 +1,60 @@
+{
+    "apiVersion": "v1",
+    "kind": "ConfigMap",
+    "metadata": {
+        "annotations": {
+            "meta.helm.sh/release-name": "test",
+            "meta.helm.sh/release-namespace": "test"
+        },
+        "creationTimestamp": "2021-12-21T16:11:07Z",
+        "labels": {
+            "app.kubernetes.io/managed-by": "Helm",
+            "gms/cd11-connman-port": "8041",
+            "gms/cd11-dataman-port-end": "8449",
+            "gms/cd11-dataman-port-start": "8100",
+            "gms/cd11-live-data": "false",
+            "gms/image-tag": "test",
+            "gms/name": "test",
+            "gms/namespace": "test",
+            "gms/type": "soh",
+            "gms/update-time": "2021-12-21T181206Z",
+            "gms/user": "testuser"
+        },
+        "managedFields": [
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:metadata": {
+                        "f:annotations": {
+                            ".": {},
+                            "f:meta.helm.sh/release-name": {},
+                            "f:meta.helm.sh/release-namespace": {}
+                        },
+                        "f:labels": {
+                            ".": {},
+                            "f:app.kubernetes.io/managed-by": {},
+                            "f:gms/cd11-connman-port": {},
+                            "f:gms/cd11-dataman-port-end": {},
+                            "f:gms/cd11-dataman-port-start": {},
+                            "f:gms/cd11-live-data": {},
+                            "f:gms/image-tag": {},
+                            "f:gms/name": {},
+                            "f:gms/namespace": {},
+                            "f:gms/type": {},
+                            "f:gms/update-time": {},
+                            "f:gms/user": {}
+                        }
+                    }
+                },
+                "manager": "helm",
+                "operation": "Update",
+                "time": "2021-12-21T16:11:07Z"
+            }
+        ],
+        "name": "gms",
+        "namespace": "test",
+        "resourceVersion": "34775967",
+        "uid": "da316f3b-c687-4549-b48e-435cab5e88e7"
+    }
+}

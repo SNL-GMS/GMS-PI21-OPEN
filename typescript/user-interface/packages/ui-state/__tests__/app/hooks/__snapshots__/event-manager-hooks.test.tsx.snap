@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Event Manager API Slice event status hook does not query with no stage name 1`] = `"null"`;
+
+exports[`Event Manager API Slice hook queries for find event status 1`] = `"null"`;
+
+exports[`Event Manager API Slice useGetChannelSegmentsByChannels returns an object with loading values 1`] = `
+Object {
+  "data": Array [],
+  "fulfilled": 0,
+  "isError": false,
+  "isLoading": false,
+  "pending": 0,
+  "rejected": 0,
+}
+`;

@@ -1,0 +1,17 @@
+KDAK   BH1       2014243     5743  2017355 n       0.0880    0.0   90.0 broad-band_one                                     20180905 12:00:00
+KDAK   BH2       2014243     5744  2017355 n       0.0880   90.0   90.0 broad-band_two                                     20180905 12:00:00
+KDAK   BHE       2003013     1847  2014243 n       0.0880   90.0   90.0 broad-band_east                                    20140912 12:00:00
+KDAK   BHE       2017356     8594  2019136 n       0.0880   90.0   90.0 broad-band_east                                    20190520 12:00:00
+KDAK   BHE       2019137     8762  2286324 n       0.0874  245.3   90.0 Broad_band_east                                    20190520 12:00:00
+KDAK   BHN       2003013     1846  2014243 n       0.0880    0.0   90.0 broad-band_north                                   20140912 12:00:00
+KDAK   BHN       2017356     8593  2019136 n       0.0880    0.0   90.0 broad-band_north                                   20190520 12:00:00
+KDAK   BHN       2019137     8761  2286324 n       0.0874  155.3   90.0 Broad_band_north                                   20190520 12:00:00
+KDAK   BHZ       2003013     1845  2017355 n       0.0880   -1.0    0.0 broad-band_vertical                                20180905 12:00:00
+KDAK   BHZ       2017356     8592  2019136 n       0.0880   -1.0    0.0 broad-band_vertical                                20190520 12:00:00
+KDAK   BHZ       2019137     8760  2286324 n       0.0874   -1.0    0.0 Broad_band_vertical                                20190520 12:00:00
+KDAK   be        1997160      823  2003013 n       0.0880   90.0   90.0 broad-band_east                                    19990312 12:00:00
+KDAK   bn        1997160      824  2003013 n       0.0880    0.0   90.0 broad-band_north                                   19990312 12:00:00
+KDAK   bz        1997160      825  2003013 n       0.0880   -1.0    0.0 broad-band_vertical                                19990312 12:00:00
+KDAK   se        1997160      826  2003013 n       0.0880   90.0   90.0 short-period_east                                  19990312 12:00:00
+KDAK   sn        1997160      827  2003013 n       0.0880    0.0   90.0 short-period_north                                 19990312 12:00:00
+KDAK   sz        1997160      828  2003013 n       0.0880   -1.0   90.0 short-period_vertical                              19990312 12:00:00

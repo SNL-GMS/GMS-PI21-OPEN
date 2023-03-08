@@ -1,0 +1,30 @@
+{
+   "model": "ak135",
+   "phase": "SKKSac_B",
+   "depthUnits": "kilometers",
+   "distanceUnits": "degrees",
+   "travelTimeUnits": "seconds",
+   "depths": [
+      0.0,
+      700.0
+   ],
+   "distances": [
+      84.0,
+      180.0
+   ],
+   "travelTimes": [
+      [
+         "PT2283.1418S",
+         "PT1970.1995S"
+      ],
+      [
+         "PT2139.1785S",
+         "PT1828.8542S"
+      ]
+   ],
+   "modelingErrorDepths": [],
+   "modelingErrorDistances": [],
+   "modelingErrors": [
+      []
+   ]
+}

@@ -1,0 +1,14 @@
+apply plugin: 'java-library'
+
+dependencies {
+
+    api project(':user-preferences-dao')
+    api project(':user-preferences-api')
+
+    implementation project(':user-preferences-coi')
+    implementation project(':frameworks-utilities-jpa')
+    implementation project(':frameworks-osd-commonobjects')
+
+    // Utility (dependency is api as apache commons classes are publicly exposed).
+    api libs.org.apache.commons.commons.lang3
+}

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Activity Interval Cell matches snapshot 1`] = `
+<div>
+  <div
+    class="interval-cell interval-cell--in-progress interval-cell--activity-cell interval-cell--clickable"
+    data-activity-interval="Event Review"
+    data-cy="1622053587-Event Review"
+    data-start-time="1622053587"
+  >
+    <span
+      class="workflow-ellipsis"
+    >
+      larry + 2
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Activity Interval Cell shallow mounts 1`] = `
+<div>
+  <div
+    class="interval-cell interval-cell--in-progress interval-cell--activity-cell interval-cell--clickable"
+    data-activity-interval="Event Review"
+    data-cy="1622053587-Event Review"
+    data-start-time="1622053587"
+  >
+    <span
+      class="workflow-ellipsis"
+    >
+      larry + 2
+    </span>
+  </div>
+</div>
+`;

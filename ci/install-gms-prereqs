@@ -1,0 +1,33 @@
+#!/bin/bash
+
+#
+# This script installs the prerequisites required to build the GMS PI 17 open
+# source release.  It's intended to be run on a CentOS/RHEL 7 system.
+#
+
+set -eux
+
+if [ -z "${1:-}" ]; then
+    TARGET_USER=${USER}
+else
+    TARGET_USER=${1}
+fi
+
+# enable ip_forward for docker
+if [[ "$(sudo sysctl net.ipv4.ip_forward)" != "net.ipv4.ip_forward = 1" ]]; then
+  echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf
+  sudo sysctl -p
+  sudo systemctl restart network
+fi
+
+# Base tools
+sudo yum install -y git unzip vim yum-utils
+
+# Docker CE
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install -y docker-ce
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod --groups docker --append ${TARGET_USER}
+
+echo "Prerequisites installed! Be sure to logout and login to ensure environment is updated."

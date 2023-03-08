@@ -1,0 +1,11 @@
+{
+  "name": "feature-prediction-service",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "pluginByFeatureMeasurementType": "BAD_STRING"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "name": "stage-accounts-default",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "databaseAccountsByStage": [
+      {
+        "workflowDefinitionId": {
+          "name": "Auto Network"
+        },
+        "databaseAccount": "soccpro",
+        "hasPreviousStage": false
+      },
+      {
+        "workflowDefinitionId": {
+          "name": "AL1"
+        },
+        "databaseAccount": "al1",
+        "hasPreviousStage": true
+      },
+      {
+        "workflowDefinitionId": {
+          "name": "Auto Post-AL1"
+        },
+        "databaseAccount": "al1",
+        "hasPreviousStage": false
+      },
+      {
+        "workflowDefinitionId": {
+          "name": "AL2"
+        },
+        "databaseAccount": "al2",
+        "hasPreviousStage": true
+      },
+      {
+        "workflowDefinitionId": {
+          "name": "Auto Post-AL2"
+        },
+        "databaseAccount": "al2",
+        "hasPreviousStage": false
+      }
+    ]
+  }
+}

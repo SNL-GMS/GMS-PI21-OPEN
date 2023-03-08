@@ -1,0 +1,11 @@
+apply plugin: 'java-library'
+dependencies {
+    // Project dependencies.
+    implementation 'gms:frameworks-osd-commonobjects:LATEST'
+    implementation 'gms:waveman:LATEST'
+
+    // Third-party dependencies.
+    api libs.com.google.guava.guava
+    implementation libs.com.github.ffpojo.ffpojo
+    implementation libs.org.apache.commons.commons.lang3
+}

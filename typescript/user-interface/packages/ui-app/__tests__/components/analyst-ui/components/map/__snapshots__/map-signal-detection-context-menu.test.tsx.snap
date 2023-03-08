@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MapSignalDetectionContextMenu matches snapshot 1`] = `
+<ul
+  className="bp4-menu"
+>
+  <li
+    className=""
+  >
+    <a
+      className="bp4-menu-item menu-item-sd-details"
+      label="(Alt + click)"
+      onClick={[Function]}
+      tabIndex={0}
+    >
+      <div
+        className="bp4-fill bp4-text-overflow-ellipsis"
+      >
+        Open signal detection details
+      </div>
+      <span
+        className="bp4-menu-item-label"
+      >
+        (Alt + click)
+      </span>
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`MapSignalDetectionContextMenu renders with undefined values 1`] = `
+<ul
+  className="bp4-menu"
+>
+  <li
+    className=""
+  >
+    <a
+      className="bp4-menu-item menu-item-sd-details"
+      label="(Alt + click)"
+      onClick={[Function]}
+      tabIndex={0}
+    >
+      <div
+        className="bp4-fill bp4-text-overflow-ellipsis"
+      >
+        Open signal detection details
+      </div>
+      <span
+        className="bp4-menu-item-label"
+      >
+        (Alt + click)
+      </span>
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`MapSignalDetectionContextMenu showMapSdDetailsPopover matches snapshot 1`] = `undefined`;

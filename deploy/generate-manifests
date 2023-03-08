@@ -1,0 +1,122 @@
+#!/bin/bash
+
+OUTPUT_DIR="$1"
+if [[ -z "${OUTPUT_DIR}" ]]; then
+    echo "\
+    This script runs several different 'gmskube install --dry-run' scenarios to
+    generate the Kubernetes YAML manifests that will be sent to the cluster, removes
+    strings that are expected to change from the output (timestamps, randomly
+    generated UUIDs/passwords, and images tags), and stores the results in text
+    files within the specified output directory.  The intention is for this to
+    be run twice -- once on 'develop' and then again on a feature branch -- and
+    then for those two output directories to be compared with 'diff -r' to look
+    for any unexpected changes in the Kuerbentes manifests.
+
+    Example usage:
+
+      git checkout develop
+      $0 kube-develop
+      git checkout my-branch
+      $0 kube-my-branch
+      diff -r kube-develop kube-my-branch"
+    exit 1
+fi
+
+# Replace values that are known to change from run to run with fixed strings so
+# that we can easily compare the results from multiple runs with diff.
+SANITIZER="sed '/Pulling from gms-common\/gmskube/,/^$/d' |
+           perl -pe 's#^(\s*(LAST DEPLOYED:|gms/update-time:)) .*#\$1 <<TIMESTAMP>>#;
+                     s#^(\s*(password:|access_key:|secret_key:)) .*#\$1 <<PASSWORD>>#;
+                     s#[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}#<<UUID>>#;
+                     s#^(\s*(checksum/.+:)) .*#\$1 <<CHECKSUM>>#;
+                     s#^(\s*(image:.+:))[^\"\n]+#\$1<<TAG>>\$3#;
+                     s#^(\s*(imageTag:|tag:|gms/image-tag:|app\.kubernetes\.io/version:)) .*#\$1 <<TAG>>#;
+                     s#^(\s*(Image tag:\s+))[^\"\n]+#\$1<<TAG>>#'"
+
+# Use 'gsed' on Mac if its available
+if [[ -z "${SED}" ]]; then
+    if command -v gsed > /dev/null; then
+        SED=gsed
+    else
+        SED=sed
+    fi
+fi
+
+#
+# The following commands all use the local charts (e.g., '--chart soh'), but
+# run with the version of 'gmskube' from the develop branch ('--tag develop')
+# by default, unless overridden with TAG=
+#
+if [[ -z "${TAG}" ]]; then
+  TAG="develop"
+fi
+echo "Using TAG=${TAG}"
+
+set -eu
+
+filter_output () {
+    base_filename="$1"
+    cat ${base_filename} | ${SED} '/^HOOKS:/,/^NOTES:/{//!d}' > ${base_filename}.values
+    cat ${base_filename} | ${SED} -n '/^HOOKS:/,/^NOTES:/{ /^NOTES:/!p }' > ${base_filename}.manifest
+    cat ${base_filename}.manifest | yq -P 'sort_keys(..)' > ${base_filename}.manifest.normalized
+}
+
+mkdir -p ${OUTPUT_DIR}
+
+# augmentations are applied to instances such that each augmentation is applied at least once in istio and non-isto
+
+echo Generating Kubernetes YAML manifest for soh...
+eval "gmskube install --dry-run --chart soh --tag ${TAG} --augment bastion-soh --augment data-preloader --augment javadoc --augment swagger --augment test-cypress name | ${SANITIZER} > ${OUTPUT_DIR}/soh"
+filter_output "${OUTPUT_DIR}/soh"
+
+echo Generating Kubernetes YAML manifest for soh-no-istio...
+eval "gmskube install --dry-run --chart soh --tag ${TAG} --no-istio --augment bastion-soh --augment data-preloader --augment javadoc --augment swagger --augment test-cypress name | ${SANITIZER} > ${OUTPUT_DIR}/soh-no-istio"
+filter_output "${OUTPUT_DIR}/soh-no-istio"
+
+echo Generating Kubernetes YAML manifest for soh-injector...
+eval "gmskube install --dry-run --chart soh --tag ${TAG} --injector --augment cd11-injector --set global.injector=True name | ${SANITIZER} > ${OUTPUT_DIR}/soh-injector"
+filter_output "${OUTPUT_DIR}/soh-injector"
+
+echo Generating Kubernetes YAML manifest for soh-no-istio-injector...
+eval "gmskube install --dry-run --chart soh --tag ${TAG} --no-istio --injector --augment cd11-injector --set global.injector=True name | ${SANITIZER} > ${OUTPUT_DIR}/soh-no-istio-injector"
+filter_output "${OUTPUT_DIR}/soh-no-istio-injector"
+
+echo Generating Kubernetes YAML manifest for soh-livedata...
+eval "gmskube install --dry-run --chart soh --tag ${TAG} --livedata --connman-port 8041 --dataman-ports 8090-8439 --connman-data-manager-ip 132.175.81.33 --connman-data-provider-ip 198.47.88.177 name | ${SANITIZER} > ${OUTPUT_DIR}/soh-livedata"
+filter_output "${OUTPUT_DIR}/soh-livedata"
+
+echo Generating Kubernetes YAML manifest for soh-no-istio-livedata...
+eval "gmskube install --dry-run --chart soh --tag ${TAG} --no-istio --livedata --connman-port 8041 --dataman-ports 8090-8439 --connman-data-manager-ip 132.175.81.33 --connman-data-provider-ip 198.47.88.177 name | ${SANITIZER} > ${OUTPUT_DIR}/soh-no-istio-livedata"
+filter_output "${OUTPUT_DIR}/soh-no-istio-livedata"
+
+echo Generating Kubernetes YAML manifest for ian...
+eval "gmskube install --dry-run --chart ian --tag ${TAG} --augment bastion-ian --augment bridged-data-source-simulator --augment cache-service --augment jupyter --augment mock-data-server --augment mock-waveform-service --augment oracle --augment test-cypress name | ${SANITIZER} > ${OUTPUT_DIR}/ian"
+filter_output "${OUTPUT_DIR}/ian"
+
+echo Generating Kubernetes YAML manifest for ian-no-istio...
+eval "gmskube install --dry-run --chart ian --tag ${TAG} --no-istio --augment bastion-ian --augment bridged-data-source-simulator --augment cache-service --augment jupyter --augment mock-data-server --augment mock-waveform-service --augment oracle --augment test-cypress name | ${SANITIZER} > ${OUTPUT_DIR}/ian-no-istio"
+filter_output "${OUTPUT_DIR}/ian-no-istio"
+
+echo Generating Kubernetes YAML manifest for sb...
+eval "gmskube install --dry-run --chart sb --tag ${TAG} --augment bastion-sb --augment minio-test-reports --augment test-sb-jest name | ${SANITIZER} > ${OUTPUT_DIR}/sb"
+filter_output "${OUTPUT_DIR}/sb"
+
+echo Generating Kubernetes YAML manifest for sb-no-istio...
+eval "gmskube install --dry-run --chart sb --tag ${TAG} --no-istio --augment bastion-sb --augment minio-test-reports --augment test-sb-jest name | ${SANITIZER} > ${OUTPUT_DIR}/sb-no-istio"
+filter_output "${OUTPUT_DIR}/sb-no-istio"
+
+echo Generating Kubernetes YAML manifest for logging...
+eval "gmskube install --dry-run --chart logging --tag ${TAG} --set elasticsearch.podSecurityPolicy.create=false --set elasticsearch.healthNameOverride=health name | ${SANITIZER} > ${OUTPUT_DIR}/logging"
+filter_output "${OUTPUT_DIR}/logging"
+
+echo Generating Kubernetes YAML manifest for logging-no-istio...
+eval "gmskube install --dry-run --chart logging --tag ${TAG} --no-istio --set elasticsearch.podSecurityPolicy.create=false --set elasticsearch.healthNameOverride=health name | ${SANITIZER} > ${OUTPUT_DIR}/logging-no-istio"
+filter_output "${OUTPUT_DIR}/logging-no-istio"
+
+echo Generating Kubernetes YAML manifest for config...
+eval "gmskube install --dry-run --chart config --tag ${TAG} name | ${SANITIZER} > ${OUTPUT_DIR}/config"
+filter_output "${OUTPUT_DIR}/config"
+
+echo Generating Kubernetes YAML manifest for config-no-istio...
+eval "gmskube install --dry-run --chart config --tag ${TAG} --no-istio name | ${SANITIZER} > ${OUTPUT_DIR}/config-no-istio"
+filter_output "${OUTPUT_DIR}/config-no-istio"

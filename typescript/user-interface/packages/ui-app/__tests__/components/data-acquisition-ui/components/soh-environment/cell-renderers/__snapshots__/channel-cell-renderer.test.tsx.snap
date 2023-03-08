@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`channel cell renderer's should match snapshot 1`] = `
+<div>
+  <div
+    data-cy="channel-cell"
+  >
+    <div
+      class=""
+    >
+      <div
+        class="table-cell soh-cell table-cell__value--numeric"
+        data-cell-status="good"
+        data-cy="soh-cell"
+        data-received-status="received"
+        style="height: 36px;"
+        title=""
+      >
+        <div
+          class="percent-bar"
+          style="width: 100%; transform: translateX(-90%);"
+        />
+        <div
+          class="table-cell__value table-cell__value--numeric"
+          data-cy="environment-cell"
+        >
+          <span
+            aria-hidden="true"
+            class="bp4-icon bp4-icon-symbol-circle env-dirty-dot"
+            data-cy="environment-dirty-dot"
+            icon="symbol-circle"
+          >
+            <svg
+              data-icon="symbol-circle"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+            >
+              <path
+                d="M8 3.01a5 5 0 100 10 5 5 0 100-10z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+          <span>
+            10.00
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`channel cell renderer's should match snapshot with bad data 1`] = `
+<div>
+  <div
+    data-cy="channel-cell"
+  >
+    <div
+      class=""
+    >
+      <div
+        class="table-cell soh-cell table-cell__value--numeric"
+        data-cell-status="good"
+        data-cy="soh-cell"
+        data-received-status="received"
+        style="height: 36px;"
+        title=""
+      >
+        <div
+          class="percent-bar"
+          style="width: 100%; transform: translateX(-90%);"
+        />
+        <div
+          class="table-cell__value table-cell__value--numeric"
+          data-cy="environment-cell"
+        >
+          <span
+            aria-hidden="true"
+            class="bp4-icon bp4-icon-symbol-circle env-dirty-dot"
+            data-cy="environment-dirty-dot"
+            icon="symbol-circle"
+          >
+            <svg
+              data-icon="symbol-circle"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+            >
+              <path
+                d="M8 3.01a5 5 0 100 10 5 5 0 100-10z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+          <span>
+            10.00
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

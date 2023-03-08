@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dom util should be able to render the text width 1`] = `
+<div>
+  <div
+    style="font: 8px 8px;"
+  >
+    15
+  </div>
+</div>
+`;
+
+exports[`Dom util should be able to render the text width 2`] = `
+<div>
+  <div>
+    15
+  </div>
+</div>
+`;

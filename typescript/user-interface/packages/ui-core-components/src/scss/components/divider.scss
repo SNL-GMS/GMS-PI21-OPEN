@@ -1,0 +1,64 @@
+@import '@blueprintjs/core/lib/scss/variables.scss';
+
+$expanded-touch-target: -0.25em;
+
+.divider-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.bottom-component {
+  flex-grow: 100;
+}
+
+.horizontal-divider {
+  position: relative;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+  display: flex;
+  width: 100%;
+  height: auto;
+  cursor: row-resize;
+  flex: 0 0 auto;
+  align-items: center;
+  margin: 0;
+  &__spacer {
+    position: relative;
+    width: 50%;
+    margin: 0;
+    border-top: 2px dashed var(--core-soft, var(--gms-soft, \$core-soft));
+  }
+  &__target {
+    position: absolute;
+    top: $expanded-touch-target;
+    bottom: $expanded-touch-target;
+    width: 100%;
+    z-index: 1;
+  }
+  &--hint {
+    .resize-handle {
+      fill: var(--core-prominent, var(--gms-prominent, $core-prominent));
+    }
+    .horizontal-divider__spacer {
+      border-color: var(--core-prominent, var(--gms-prominent, $core-prominent));
+    }
+  }
+  &--highlighted {
+    background-clip: content-box;
+    background-color: $core-table-selection;
+    .horizontal-divider__spacer {
+      border-color: var(--core-prominent, var(--gms-prominent, $core-prominent));
+    }
+    .resize-handle {
+      fill: var(--core-main, var(--gms-main, $core-main));
+    }
+  }
+}
+
+.resize-handle {
+  fill: var(--core-prominent, var(--gms-prominent, $core-prominent));
+  margin: 0 0.5em;
+}

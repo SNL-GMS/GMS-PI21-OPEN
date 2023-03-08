@@ -1,0 +1,211 @@
+.filters-display-window {
+  height: 100%;
+  flex-grow: 1;
+}
+
+@mixin listReset {
+  list-style: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
+
+@mixin selectedAndActive {
+  background-color: var(--gms-selection, $gms-selection);
+  filter: brightness(1.2);
+  color: var(--gms-main, $gms-main);
+}
+
+@mixin listEntry($selectable: true) {
+  background-color: var(--gms-prominent-background, $gms-prominent-background);
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 0.5em;
+  transition: background-color 0.2s ease;
+  @if ($selectable) {
+    &--selected,
+    &--selected.bp4-selected.bp4-menu-item,
+    .filter-list-entry--selected & {
+      background-color: var(--gms-selection, $gms-selection);
+      color: var(--gms-main, $gms-main);
+      &:hover,
+      &:active,
+      &.bp4-active,
+      &.bp4-active.bp4-menu-item {
+        @include selectedAndActive;
+      }
+    }
+    .filter-list-entry--selected.filter-list-entry--active & {
+      @include selectedAndActive;
+    }
+    .filter-list-entry--active & {
+      background-color: rgba(45, 114, 210, 0.2); // light mode: rgba(45, 114, 210, 0.1);
+      color: var(--active-text-color, $gms-main); // light mode: #215db0
+    }
+  }
+  &:hover {
+    background-color: var(--gms-button, $gms-button);
+  }
+}
+
+@mixin listRow($lineHeight: 1) {
+  line-height: $lineHeight;
+  margin: 2px 0;
+}
+
+.filter-list-picker {
+  &__container {
+    @include listReset;
+    width: 100%;
+  }
+  &__option {
+    @include listEntry;
+    @include listRow(auto);
+  }
+}
+
+.filter-list {
+  @include listReset;
+  &__container {
+    &--scrollable {
+      position: relative;
+      margin-top: 0.25em;
+      flex-grow: 1;
+      overflow-y: auto;
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+    & &__header {
+      font-size: 1.125rem;
+    }
+  }
+  &__button {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+.filter-list-entry {
+  @include listRow;
+  display: flex;
+  gap: 2px;
+  &__icon {
+    @include listEntry(false);
+    background-color: transparent;
+    padding: 0;
+  }
+  &__button {
+    @include listEntry(false);
+    align-items: center;
+    // Compatible with target browsers
+    aspect-ratio: 1 / 1;
+    display: flex;
+    background-color: transparent;
+    &--hidden {
+      opacity: 0;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  &__info {
+    right: 0;
+    margin-left: auto;
+    opacity: 0;
+    padding: 0.5em;
+    position: sticky;
+    top: 0;
+    transition: opacity 0.3s ease;
+    // Negative margins allow us to use sticky positioning
+    // and still make our info button be the same size as the row.
+    margin-bottom: -0.5em;
+    margin-right: -2em;
+    margin-top: -0.5em;
+    background-color: inherit;
+    & .bp4-icon {
+      opacity: 0;
+    }
+    .filter-list-entry:hover & {
+      opacity: 1;
+      &:hover {
+        & .bp4-icon {
+          opacity: 1;
+        }
+      }
+      & .bp4-icon {
+        opacity: 0.5;
+      }
+    }
+  }
+  &__title {
+    @include listEntry;
+    display: flex;
+    flex-grow: 1;
+    padding-right: 2em;
+    position: relative;
+    white-space: nowrap;
+  }
+  &__tooltip-wrapper {
+    flex-grow: 1;
+  }
+}
+
+.filter-tooltip-content {
+  .bp4-heading {
+    margin-top: 0;
+    margin-left: 0;
+    font-weight: bold;
+    &:last-child {
+      // in case there is no content below
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+  }
+}
+
+.filter-list-tooltip {
+  &__container {
+    display: grid;
+    background-color: rgba(255, 255, 255, 50%);
+    padding: 0 0.5em;
+    grid-template-columns: 16ch auto;
+    & .label-value__label {
+      font-weight: 500;
+      margin-right: 1em;
+    }
+  }
+  &__group {
+    gap: 2px;
+    display: flex;
+    flex-direction: column;
+    & .label-value__label {
+      padding-left: 1em;
+      position: relative;
+
+      /// Make a circular bullet to the left of the indented label using after pseudoelement
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        line-height: 0.25em;
+        top: 50%;
+        left: 0.25em;
+        transform: translate3D(0, -50%, 0);
+        border-radius: 1rem;
+        width: 0.25rem;
+        aspect-ratio: 1/1;
+        background-color: var(--gms-main-inverted, $gms-main-inverted);
+      }
+    }
+  }
+}
+
+.filter-tooltip-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 60ch;
+  gap: 2px;
+  font-size: 0.875em;
+}

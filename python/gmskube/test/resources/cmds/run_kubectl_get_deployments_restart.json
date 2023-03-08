@@ -1,0 +1,73 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/revision": "4",
+                    "meta.helm.sh/release-name": "test",
+                    "meta.helm.sh/release-namespace": "test"
+                },
+                "creationTimestamp": "2021-12-21T16:11:08Z",
+                "generation": 11,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm",
+                    "restartAfterReconfig": "true"
+                },
+                "name": "acei-merge-processor",
+                "namespace": "test",
+                "resourceVersion": "34777763",
+                "uid": "93e5916c-0c13-4e01-abd7-08bf6ccce5e8"
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/revision": "4",
+                    "meta.helm.sh/release-name": "test",
+                    "meta.helm.sh/release-namespace": "test"
+                },
+                "creationTimestamp": "2021-12-21T16:11:08Z",
+                "generation": 11,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm",
+                    "restartAfterReconfig": "true"
+                },
+                "name": "cd11-rsdf-processor",
+                "namespace": "test",
+                "resourceVersion": "34777035",
+                "uid": "db2452e0-5b1a-497a-aa87-a174d82f850c"
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/revision": "4",
+                    "meta.helm.sh/release-name": "test",
+                    "meta.helm.sh/release-namespace": "test"
+                },
+                "creationTimestamp": "2021-12-21T16:11:08Z",
+                "generation": 11,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm",
+                    "restartAfterReconfig": "true"
+                },
+                "name": "da-connman",
+                "namespace": "test",
+                "resourceVersion": "34777846",
+                "uid": "133226c1-a369-406e-8120-864ad7ca9741"
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": "",
+        "selfLink": ""
+    }
+}

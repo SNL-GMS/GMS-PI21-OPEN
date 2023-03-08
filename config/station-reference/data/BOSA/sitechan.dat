@@ -1,0 +1,11 @@
+BOSA   sz        1995100      346  2002191 n       0.0000   -1.0    0.0 short_period_vertical_GS21                         20020816 12:00:00
+BOSA   lz        1995100      179  2002191 n       0.0000   -1.0    0.0 long_period_vertical_54000                         20020816 12:00:00
+BOSA   ln        1995100      133  2002191 n       0.0000    0.0   90.0 long_period_north_54000                            20020816 12:00:00
+BOSA   le        1995100       87  2002191 n       0.0000   90.0   90.0 long_period_east_54000                             20020816 12:00:00
+BOSA   bz        1995100       45  2002191 n       0.0000   -1.0    0.0 broadband_vertical_54000                           20020816 12:00:00
+BOSA   bn        1995100       24  2002191 n       0.0000    0.0   90.0 broadband_north_54000                              20020816 12:00:00
+BOSA   be        1995100        3  2002191 n       0.0000   90.0   90.0 broadband_east_54000                               20020816 12:00:00
+BOSA1  SHZ       2002201     1641  2286324 n       0.0320   -1.0    0.0 short_period_vertical_GS21                         20040629 12:00:00
+BOSAB  BHZ       2002200     1638  2286324 n       0.0939   -1.0    0.0 broadband_vertical_KS54000                         20040629 12:00:00
+BOSAB  BHN       2002200     1639  2286324 n       0.0939    0.0   90.0 broadband_north_KS54000                            20040629 12:00:00
+BOSAB  BHE       2002200     1640  2286324 n       0.0939   90.0   90.0 broadband_east_KS54000                             20040629 12:00:00

@@ -1,0 +1,46 @@
+{
+    "name": "ims-2.0-waveform",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "protocol",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "IMS_WAVEFORM"
+            ]
+        }
+    ],
+    "parameters": {
+        "channelIdsByPacketName": {
+            ".AAK.BHE": "AAK.AAK.BHE",
+            ".AAK.BHN": "AAK.AAK.BHN",
+            ".AAK.BHZ": "AAK.AAK.BHZ",
+            "KURK.KUR01.BHZ": "KURK.KUR01.BHZ",
+            "KURK.KUR02.BHZ": "KURK.KUR02.BHZ",
+            "KURK.KUR03.BHZ": "KURK.KUR03.BHZ",
+            "KURK.KUR04.BHZ": "KURK.KUR04.BHZ",
+            "KURK.KUR05.BHZ": "KURK.KUR05.BHZ",
+            "KURK.KUR06.BHZ": "KURK.KUR06.BHZ",
+            "KURK.KUR07.BHZ": "KURK.KUR07.BHZ",
+            "KURK.KUR08.BHZ": "KURK.KUR08.BHZ",
+            "KURK.KUR09.BHZ": "KURK.KUR09.BHZ",
+            "KURK.KUR10.BHZ": "KURK.KUR10.BHZ",
+            "KURK.KUR11.BHZ": "KURK.KUR11.BHZ",
+            "KURK.KUR12.BHZ": "KURK.KUR12.BHZ",
+            "KURK.KUR13.BHZ": "KURK.KUR13.BHZ",
+            "KURK.KUR14.BHZ": "KURK.KUR14.BHZ",
+            "KURK.KUR15.BHZ": "KURK.KUR15.BHZ",
+            "KURK.KUR16.BHZ": "KURK.KUR16.BHZ",
+            "KURK.KUR17.BHZ": "KURK.KUR17.BHZ",
+            "KURK.KUR18.BHZ": "KURK.KUR18.BHZ",
+            "KURK.KUR19.BHZ": "KURK.KUR19.BHZ",
+            "KURK.KUR20.BHZ": "KURK.KUR20.BHZ",
+            "KURK.KURBB.BH1": "KURK.KURBB.BH1",
+            "KURK.KURBB.BH2": "KURK.KURBB.BH2",
+            "KURK.KURBB.BHZ": "KURK.KURBB.BHZ"
+        }
+    }
+}

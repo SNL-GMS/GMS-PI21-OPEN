@@ -1,0 +1,17 @@
+{
+  "name": "workflow-definition-default",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "name": "GMS",
+    "stageNames": [
+      "StageOne",
+      "StageTwo",
+      "StageThree",
+      "StageFour"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+.stacked-counts {
+  @include flexColumn;
+  @include centerChildren;
+  &__entry {
+    padding: 0;
+    margin: 0;
+    line-height: 1em;
+    padding-right: 0.25rem;
+    margin-left: -0.25rem;
+    font-weight: 400;
+    opacity: 0.8;
+    font-size: 0.875em;
+    & + & {
+      margin-top: 0.125rem;
+    }
+  }
+}
+
+// Color the marginal capability count yellow if it is inside of a red cell
+[data-cell-status='bad'] .stacked-counts__entry[data-capability-status='marginal'] {
+  color: $marginal-color;
+}

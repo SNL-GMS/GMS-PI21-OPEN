@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LabelValueToolbarItem LabelValueToolbarItem renders directly 1`] = `
+<div>
+  <div
+    class="toolbar-label-value"
+  >
+    <div
+      class="label-value-container"
+    >
+      <div
+        class="label-value__label"
+        data-cy="label-label"
+      >
+        label: 
+      </div>
+      <div
+        class="label-value__value"
+        data-cy="label-value"
+        title="Hello label"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LabelValueToolbarItem LabelValueToolbarItem renders with issue and tooltip 1`] = `
+<div>
+  <div
+    class="toolbar-label-value"
+  >
+    <div
+      class="label-value-container"
+    >
+      <div
+        class="label-value__label"
+        data-cy="label-label"
+      >
+        label: 
+      </div>
+      <div
+        class="label-value__value"
+        data-cy="label-value"
+        title="Issue tooltip"
+      />
+    </div>
+  </div>
+</div>
+`;

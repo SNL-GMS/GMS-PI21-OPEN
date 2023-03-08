@@ -1,0 +1,11 @@
+.channel {
+  width: 100%;
+  border-bottom: 1px solid;
+  display: flex;
+  contain: strict; // Performance boost. Depends on height being set inline.
+  .channel-label-container {
+    position: sticky;
+    left: 0;
+    z-index: 4;
+  }
+}

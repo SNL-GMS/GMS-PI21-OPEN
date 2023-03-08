@@ -1,0 +1,123 @@
+@import '@blueprintjs/core/lib/scss/variables.scss';
+$icons-path: '@ag-grid-community/all-modules/dist/styles/ag-theme-balham/icons';
+
+// Alphabetized
+
+$border-color: $gray5;
+$background-color: $dark-gray2; // Not actually the background color, changes color within only table
+
+$cell-horizontal-border: none; // The vertical border between columns
+
+$editor-background-color: $dark-gray1;
+
+$header-background-color: $dark-gray5;
+$hover-color: none;
+
+$icon-color: white; // Responsible for icon color
+
+$odd-row-background-color: $dark-gray1;
+
+$panel-background-color: $dark-gray1; // Color of the ag-grid table background not the container
+$primary-color: white; // Responsible for icon color
+
+$row-group-indent-size: 25px; // Determines row child on expand indent
+
+$selected-color: $blue1;
+
+$value-change-value-highlight-background-color: $forest2;
+$value-change-delta-up-color: $forest2;
+
+@import 'ag-grid-community/dist/styles/ag-grid.scss';
+$ag-suppress-ag-theme-dark-deprecation-warning: true;
+@import 'ag-grid-community/dist/styles/ag-theme-dark/sass/ag-theme-dark.scss';
+
+/**
+  * Begin of non-variable overrideable manual overrides 
+ */
+
+// Background to the
+.ag-theme-dark {
+  background-color: $dark-gray1;
+}
+.ag-theme-dark .ag-root {
+  border: 1px solid #182026;
+}
+.ag-theme-dark .ag-root-wrapper {
+  border: none;
+}
+.ag-theme-dark .ag-cell {
+  padding-left: 2px;
+  color: #ccc;
+  border: none;
+}
+.ag-theme-dark .ag-header {
+  border-bottom: 1px solid #182026;
+}
+.ag-theme-dark .ag-header-cell,
+.ag-theme-dark .ag-header-group-cell {
+  border-bottom: 0 solid #182026;
+  border-right: 0 solid #182026;
+  border-color: #182026;
+  border-style: solid;
+  border-width: 0 1px 0px 0;
+}
+
+.ag-theme-dark .ag-header-cell {
+  padding: 2px;
+}
+
+.ag-theme-dark .ag-cell-not-inline-editing {
+  padding: 2px;
+  // compensate for the transparent borders;
+  padding-left: 1px;
+}
+
+// Currently the actual css that is changing the icon color
+.ag-theme-dark .ag-icon {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+.ag-theme-dark .ag-horizontal-left-spacer {
+  border-right: 1px solid #808080;
+}
+
+.ag-theme-dark .ag-ltr .ag-cell:not(.ag-cell-focus).ag-cell-last-left-pinned,
+.ag-theme-dark .ag-ltr .ag-row.ag-cell-last-left-pinned {
+  border-right: 1px solid #808080;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: #808080;
+  padding-right: 4px;
+}
+.ag-theme-dark select {
+  background-color: #394b59;
+  color: #ccc;
+  border: none;
+  font-size: 14px;
+}
+
+.ag-theme-dark .ag-header-cell::after,
+.ag-theme-dark .ag-header-group-cell::after {
+  background-color: var(--core-background, var(--gms-background, $core-background));
+}
+
+// ag-grid seems to start row count at zero which is considered even
+.ag-theme-dark .ag-row-even {
+  background-color: var(
+    --core-prominent-background,
+    var(--gms-prominent-background, $core-prominent-background)
+  );
+}
+
+.ag-theme-dark .ag-row-odd {
+  background-color: var(
+    --core-popover-background,
+    var(--gms-popover-background, $core-popover-background)
+  );
+}
+
+.ag-theme-dark .ag-ltr .ag-cell {
+  border-right-style: solid;
+  border-right-color: #182026;
+  border-right-width: 2px;
+}

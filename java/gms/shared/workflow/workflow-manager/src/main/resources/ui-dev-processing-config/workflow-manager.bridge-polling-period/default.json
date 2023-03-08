@@ -1,0 +1,11 @@
+{
+  "name": "workflow-bridge-polling-period-default",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "bridgePollingPeriod": "PT10S"
+  }
+}

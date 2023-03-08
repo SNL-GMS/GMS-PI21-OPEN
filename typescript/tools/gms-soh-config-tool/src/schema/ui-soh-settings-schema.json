@@ -1,0 +1,86 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "constraintType": {
+            "type": "string",
+            "enum": [
+              "BOOLEAN",
+              "DEFAULT",
+              "NUMERIC_RANGE",
+              "NUMERIC_SCALAR",
+              "PHASE",
+              "STRING",
+              "TIME_OF_DAY_RANGE",
+              "TIME_OF_YEAR_RANGE",
+              "WILDCARD"
+            ]
+          }
+        }
+      }
+    },
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "redisplayPeriod": {
+          "type": "string",
+          "minLength": 1
+        },
+        "acknowledgementQuietDuration": {
+          "type": "string",
+          "minLength": 1
+        },
+        "availableQuietDurations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "sohStationStaleDuration": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sohHistoricalDurations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "samplesPerChannel": {
+          "type": "number",
+          "minimum": 1,
+          "default": 50000
+        },
+        "maxQueryIntervalSize": {
+          "type": "number",
+          "minimum": 1,
+          "default": 432000000
+        }
+      },
+      "required": [
+        "redisplayPeriod",
+        "acknowledgementQuietDuration",
+        "availableQuietDurations",
+        "sohStationStaleDuration",
+        "sohHistoricalDurations",
+        "samplesPerChannel",
+        "maxQueryIntervalSize"
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "constraints",
+    "parameters"
+  ]
+}

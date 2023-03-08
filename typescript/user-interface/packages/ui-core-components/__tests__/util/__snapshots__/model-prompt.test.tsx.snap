@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`modal prompt tests renders 1`] = `<div />`;
+
+exports[`modal prompt tests renders children 1`] = `<div />`;
+
+exports[`modal prompt tests we pass in basic props 1`] = `
+Object {
+  "actionCallback": [MockFunction],
+  "actionText": "Accept",
+  "actionTooltipText": "Accept the prompt",
+  "cancelButtonCallback": [MockFunction],
+  "cancelText": "Reject",
+  "cancelTooltipText": "Reject the prompt",
+  "isOpen": true,
+  "onCloseCallback": [MockFunction],
+  "title": "Example Title",
+}
+`;

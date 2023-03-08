@@ -1,0 +1,12 @@
+{
+  "providerInputMode":"file",
+
+  "fileConfig": {
+    "dataLocation": "/rsdf/cd11/LBTBfor5min",
+    "referenceTime": "2019-11-27T20:05:00.00Z",
+    "initialDelaySeconds": 10
+  },
+
+  "connectionFrameCreator": "DATAPROV",
+  "connectionFrameDestination": "CONNMAN"
+}

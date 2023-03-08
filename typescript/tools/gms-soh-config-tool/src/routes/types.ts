@@ -1,0 +1,19 @@
+export enum AppSections {
+  GROUP = 'Group',
+  STATION_CAPABILITY = 'Station Capability',
+  CHANNEL_CAPABILITY = 'Channel Capability',
+}
+
+export enum StationCapabilityErrorTypes {
+  NO_CHANNELS = 'NO_CHANNELS',
+  NO_ROLLUPS = 'NO_ROLLUPS',
+  MARGINAL_EXCEEDS_GOOD = 'MARGINAL_EXCEEDS_GOOD',
+  THRESHOLD_EXCEEDS_MAX = 'THRESHOLD_EXCEEDS_MAX',
+}
+
+export enum ChannelCapabilityErrorTypes {
+  NO_MONITORS = 'NO_MONITORS',
+  NO_ROLLUPS = 'NO_ROLLUPS',
+  MARGINAL_EXCEEDS_GOOD = 'MARGINAL_EXCEEDS_GOOD',
+  THRESHOLD_EXCEEDS_MAX = 'THRESHOLD_EXCEEDS_MAX',
+}

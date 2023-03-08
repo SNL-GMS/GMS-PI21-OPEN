@@ -1,0 +1,36 @@
+plugins {
+    id('application')
+    alias(libs.plugins.com.palantir.docker)
+}
+
+mainClassName = 'gms.tools.stationrefbuilder.StationMetaDataManipulator'
+
+jar {
+    manifest {
+        attributes "Main-Class": "$mainClassName"
+        duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+dependencies {
+
+    implementation libs.com.fasterxml.jackson.core.jackson.databind
+    implementation libs.com.fasterxml.jackson.datatype.jackson.datatype.jdk8
+    implementation libs.com.fasterxml.jackson.datatype.jackson.datatype.jsr310
+    implementation libs.com.fasterxml.jackson.datatype.jackson.datatype.guava
+    implementation libs.args4j.args4j
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+}
+
+run {
+    jvmArgs "-Xmx4g"
+    if (System.getProperty("exec.args") != null) {
+        args System.getProperty("exec.args").split()
+    }
+    systemProperties System.properties
+}

@@ -1,0 +1,31 @@
+plugins {
+    id('application')
+    alias(libs.plugins.com.palantir.docker)
+}
+
+mainClassName = 'gms.dataacquisition.stationreceiver.cd11.dataprovider.Cd11DataProvider'
+
+docker {
+    files tasks.installDist.outputs, 'resources'
+}
+
+dependencies {
+    implementation 'gms:coi-data-injector:LATEST'
+
+    implementation 'gms:structured-logging:LATEST'
+    implementation 'gms:frameworks-osd-commonobjects:LATEST'
+    implementation 'gms:cd11-common:LATEST'
+    implementation 'gms:frameworks-system-config:LATEST'
+    implementation 'gms:frameworks-configuration-commonobjects:LATEST'
+
+    implementation libs.io.projectreactor.reactor.core
+    implementation libs.io.projectreactor.kafka.reactor.kafka
+    implementation libs.io.projectreactor.netty.reactor.netty
+    implementation libs.net.jodah.failsafe
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    testImplementation libs.io.projectreactor.reactor.test
+
+    implementation libs.io.projectreactor.tools.blockhound
+}

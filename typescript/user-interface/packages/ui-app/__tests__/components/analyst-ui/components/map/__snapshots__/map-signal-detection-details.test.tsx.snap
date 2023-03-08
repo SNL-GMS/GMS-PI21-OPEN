@@ -1,0 +1,287 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MapSignalDetectionDetails matches snapshot 1`] = `
+<div
+  className="map-signal-detection-details__container"
+>
+  <div
+    className="form"
+  >
+    <h6
+      className="bp4-heading form__header"
+    >
+      <div>
+        Signal Detection Details
+      </div>
+      <div
+        className="form__header-decoration"
+      >
+        <div>
+          <span
+            aria-haspopup="true"
+            className="bp4-popover2-target"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <div
+              className="signal-detection-swatch"
+              style={
+                Object {
+                  "backgroundColor": "#FFFFFF33",
+                }
+              }
+              tabIndex={0}
+            />
+          </span>
+          <span
+            className="signal-detection-swatch-label"
+          >
+            Associated to other event
+          </span>
+        </div>
+      </div>
+    </h6>
+    <div
+      className="form__panel-selector"
+    />
+    <div
+      className="form-body"
+    >
+      <div
+        className="form-label"
+      >
+        Phase:
+      </div>
+      <div
+        className="form-value form-value--uneditable"
+        title=""
+      >
+        N
+      </div>
+      <div
+        className="form-label"
+      >
+        Station:
+      </div>
+      <div
+        className="form-value form-value--uneditable"
+        title=""
+      >
+        AAA
+      </div>
+      <div
+        className="form-label"
+      >
+        Detection time:
+      </div>
+      <div
+        className="form-value form-value--uneditable form-value--time"
+        title=""
+      >
+        Unknown ± Unknown
+      </div>
+      <div
+        className="form-label"
+      >
+        Azimuth (°):
+      </div>
+      <div
+        className="form-value form-value--uneditable"
+        title=""
+      >
+        Unknown ± Unknown
+      </div>
+      <div
+        className="form-label"
+      >
+        Slowness (s/°):
+      </div>
+      <div
+        className="form-value form-value--uneditable"
+        title=""
+      >
+        Unknown ± Unknown
+      </div>
+      <div
+        className="form-label"
+      >
+        Associated event time:
+      </div>
+      <div
+        className="form-value form-value--uneditable form-value--time"
+        title=""
+      >
+        2022-05-19 05:10:00.000
+      </div>
+    </div>
+    <div
+      className="form__buttons"
+    >
+      <div
+        className="form__buttons--right"
+      >
+        <button
+          className="bp4-button form__button"
+          data-cy="cancel-signal-detection details"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          type="button"
+        >
+          <span
+            className="bp4-button-text"
+          >
+            Close
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MapSignalDetectionDetails renders with undefined values 1`] = `
+<div
+  className="map-signal-detection-details__container"
+>
+  <div
+    className="form"
+  >
+    <h6
+      className="bp4-heading form__header"
+    >
+      <div>
+        Signal Detection Details
+      </div>
+      <div
+        className="form__header-decoration"
+      >
+        <div>
+          <span
+            aria-haspopup="true"
+            className="bp4-popover2-target"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <div
+              className="signal-detection-swatch"
+              style={
+                Object {
+                  "backgroundColor": "#FFFFFF33",
+                }
+              }
+              tabIndex={0}
+            />
+          </span>
+          <span
+            className="signal-detection-swatch-label"
+          >
+            Associated to other event
+          </span>
+        </div>
+      </div>
+    </h6>
+    <div
+      className="form__panel-selector"
+    />
+    <div
+      className="form-body"
+    >
+      <div
+        className="form-label"
+      >
+        Phase:
+      </div>
+      <div
+        className="form-value form-value--uneditable"
+        title=""
+      >
+        Unknown
+      </div>
+      <div
+        className="form-label"
+      >
+        Station:
+      </div>
+      <div
+        className="form-value form-value--uneditable"
+        title=""
+      />
+      <div
+        className="form-label"
+      >
+        Detection time:
+      </div>
+      <div
+        className="form-value form-value--uneditable form-value--time"
+        title=""
+      >
+        Unknown ± Unknown
+      </div>
+      <div
+        className="form-label"
+      >
+        Azimuth (°):
+      </div>
+      <div
+        className="form-value form-value--uneditable"
+        title=""
+      >
+        Unknown ± Unknown
+      </div>
+      <div
+        className="form-label"
+      >
+        Slowness (s/°):
+      </div>
+      <div
+        className="form-value form-value--uneditable"
+        title=""
+      >
+        Unknown ± Unknown
+      </div>
+      <div
+        className="form-label"
+      >
+        Associated event time:
+      </div>
+      <div
+        className="form-value form-value--uneditable form-value--time"
+        title=""
+      >
+        2022-05-19 05:10:00.000
+      </div>
+    </div>
+    <div
+      className="form__buttons"
+    >
+      <div
+        className="form__buttons--right"
+      >
+        <button
+          className="bp4-button form__button"
+          data-cy="cancel-signal-detection details"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          type="button"
+        >
+          <span
+            className="bp4-button-text"
+          >
+            Close
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

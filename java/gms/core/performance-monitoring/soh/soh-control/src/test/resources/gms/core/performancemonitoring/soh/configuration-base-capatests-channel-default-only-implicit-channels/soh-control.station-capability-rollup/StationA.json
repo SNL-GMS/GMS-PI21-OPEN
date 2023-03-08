@@ -1,0 +1,32 @@
+{
+  "name": "StationA-capability-rollup",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "StationName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "StationA"
+      ]
+    },
+    {
+      "constraintType": "STRING",
+      "criterion": "StationGroupName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "GroupA"
+      ]
+    }
+  ],
+  "parameters": {
+    "channelsToStationRollupOperator": {
+      "operatorType": "BEST_OF"
+    }
+  }
+}

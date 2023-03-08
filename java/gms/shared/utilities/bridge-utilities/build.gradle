@@ -1,0 +1,17 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+    implementation project(':frameworks-configuration-api')
+    implementation project(':validation')
+
+    // Google AutoValue
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    api libs.org.hibernate.hibernate.entitymanager
+    implementation libs.net.logstash.logback.logstash.logback.encoder
+    implementation libs.org.apache.commons.commons.lang3
+    implementation libs.com.google.guava.guava
+}

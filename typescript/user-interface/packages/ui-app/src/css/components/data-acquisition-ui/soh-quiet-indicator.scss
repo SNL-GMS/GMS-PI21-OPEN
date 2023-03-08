@@ -1,0 +1,121 @@
+// bar chart data tags
+$good-timer: '[data-timer-status="good"]';
+$marginal-timer: '[data-timer-status="marginal"]';
+$bad-timer: '[data-timer-status="bad"]';
+
+.hidden-indicator {
+  visibility: hidden;
+}
+
+@mixin createQuietIndicator($pie-slice-color, $circle-color) {
+  fill: $circle-color;
+  stroke: $circle-color;
+  .quiet-indicator__pie-slice {
+    stroke: $pie-slice-color;
+  }
+  &.quiet-indicator__pie-slice {
+    fill: none;
+    stroke: $pie-slice-color;
+  }
+}
+
+.quiet-indicator {
+  padding: 2px;
+  opacity: 0.8;
+  overflow: visible;
+  border-radius: 100%;
+  // default
+  @include createQuietIndicator(
+    var(--gms-background, $gms-background),
+    var(--gms-prominent, $gms-prominent)
+  );
+
+  &:hover {
+    @include brighten;
+    @include addBoxShadow('md');
+    opacity: 0.8;
+  }
+
+  // separate styles for bar chart quiet indicators inside of bars...
+  &--inside {
+    & #{$good-timer} {
+      @include createQuietIndicator($good-color, var(--gms-background, $gms-background));
+    }
+    & #{$marginal-timer} {
+      @include createQuietIndicator($marginal-color, var(--gms-background, $gms-background));
+    }
+    & #{$bad-timer} {
+      @include createQuietIndicator($bad-color, var(--gms-background, $gms-background));
+    }
+  }
+
+  // ...and for quiet indicators above bars
+  &--above {
+    opacity: 1;
+    & #{$good-timer} {
+      @include createQuietIndicator(var(--gms-background, $gms-background), $good-color);
+    }
+    & #{$marginal-timer} {
+      @include createQuietIndicator(var(--gms-background, $gms-background), $marginal-color);
+    }
+    & #{$bad-timer} {
+      @include createQuietIndicator(var(--gms-background, $gms-background), $bad-color);
+    }
+  }
+
+  #{$good-cell} & {
+    @include createQuietIndicator($good-color, var(--gms-prominent, $gms-prominent));
+  }
+  #{$marginal-cell} & {
+    @include createQuietIndicator($marginal-color, var(--gms-background, $gms-background));
+  }
+  #{$bad-cell} & {
+    @include createQuietIndicator($bad-color, var(--gms-background, $gms-background));
+  }
+  #{$non-contributing-cell} & {
+    @include createQuietIndicator(
+      var(--gms-prominent-background, $gms-prominent-background),
+      var(--gms-prominent, $gms-prominent)
+    );
+  }
+  &__expired {
+    pointer-events: none;
+    &--invert {
+      pointer-events: none;
+      stroke: var(--gms-prominent-background, $gms-prominent-background);
+      opacity: 0.5;
+    }
+  }
+  &--hidden {
+    display: none;
+  }
+}
+
+@mixin createD3QuietIndicator($expired-slice-color, $base-color) {
+  &.quiet-indicator__base--inside-bar {
+    fill: $base-color;
+    opacity: 0.7;
+  }
+  &.quiet-indicator__expired {
+    fill: $expired-slice-color;
+  }
+}
+
+// for drill downs
+.quiet-indicator-container {
+  .chart-bar--good {
+    @include createD3QuietIndicator($good-color, var(--gms-background, $gms-background));
+  }
+  .chart-bar--marginal {
+    @include createD3QuietIndicator($marginal-color, var(--gms-background, $gms-background));
+  }
+  .chart-bar--bad {
+    @include createD3QuietIndicator($bad-color, var(--gms-background, $gms-background));
+  }
+}
+
+.quiet-indicator-tooltip {
+  & &__target {
+    @include centerChildren;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "groupa-capability-rollup",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "StationGroupName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "GroupA"
+      ]
+    }
+  ],
+  "parameters": {
+    "stationsToGroupRollupOperator": {
+      "operatorType": "MIN_GOOD_OF",
+      "stationOperands": [
+        "StationA"
+      ],
+      "goodThreshold": 2,
+      "marginalThreshold": 1
+    }
+  }
+}

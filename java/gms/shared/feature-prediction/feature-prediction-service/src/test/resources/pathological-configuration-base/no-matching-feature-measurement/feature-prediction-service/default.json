@@ -1,0 +1,13 @@
+{
+  "name": "feature-prediction-service",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "pluginByFeatureMeasurementType": {
+      "NON-FEATURE-MEASUREMENT": "BicubicSplineFeaturePredictor"
+    }
+  }
+}

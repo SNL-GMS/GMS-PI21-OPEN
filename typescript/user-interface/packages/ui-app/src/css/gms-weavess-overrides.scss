@@ -1,0 +1,71 @@
+.label {
+  background-color: var(--gms-prominent-background, $gms-prominent-background);
+}
+.x-axis {
+  background-color: var(--gms-prominent-background, $gms-prominent-background);
+  border-top: 1px solid var(--gms-soft, $gms-soft);
+
+  .x-axis-axis {
+    path,
+    line {
+      fill: none;
+      stroke: var(--gms-main, $gms-main);
+      shape-rendering: crispEdges;
+    }
+    text {
+      font-family: $gms-mono;
+      font-size: 11px;
+      fill: var(--gms-main, $gms-main);
+    }
+  }
+}
+
+.y-axis {
+  &__ordinate {
+    path,
+    line {
+      stroke: var(--gms-soft, $gms-soft);
+    }
+    text {
+      font-size: 10px;
+      font-family: $gms-mono;
+    }
+  }
+}
+
+.contentrenderer {
+  border: none;
+}
+.channel {
+  border-bottom: 1px solid $gms-weavess-borders;
+}
+
+.weavess {
+  outline: none;
+  .weavess-wp-container {
+    outline: 0px solid $gms-weavess-borders;
+    border-top: 0px solid var(--gms-soft, $gms-soft);
+  }
+  .weavess-wp-time-range {
+    color: var(--weavess-text, var(--gms-soft, $gms-soft));
+  }
+}
+
+.weavess-wp ::-webkit-scrollbar-track,
+::-webkit-scrollbar-track {
+  background-color: var(--gms-prominent-background, $gms-prominent-background);
+}
+.weavess-wp ::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+  background-color: var(--gms-scrollbar, $gms-scrollbar);
+}
+.weavess-wp ::-webkit-scrollbar-corner,
+::-webkit-scrollbar-corner {
+  background-color: var(--gms-prominent-background, $gms-prominent-background);
+}
+
+.weavess .weavess-measure-window {
+  width: 100%;
+  flex: 0 0 auto;
+  border-bottom: 0.25rem solid var(--gms-recessed, $gms-recessed);
+}

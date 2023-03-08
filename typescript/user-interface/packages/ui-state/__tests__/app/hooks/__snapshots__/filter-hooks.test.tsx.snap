@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter Hooks usePreferredFilterListForActivity calls the query and gets a result 1`] = `null`;
+
+exports[`Filter Hooks usePreferredFilterListForActivity returns the preferred list with the correct data 1`] = `"test"`;
+
+exports[`Filter Hooks useSelectedFilterList returns filter list from state 1`] = `"{\\"defaultFilterIndex\\":0,\\"name\\":\\"test\\",\\"filters\\":[{\\"withinHotKeyCycle\\":true,\\"unfiltered\\":true,\\"namedFilter\\":null,\\"filterDefinition\\":null},{\\"withinHotKeyCycle\\":false,\\"unfiltered\\":null,\\"namedFilter\\":\\"Test Filter should appear in snapshot\\",\\"filterDefinition\\":null}],\\"description\\":\\"foo\\"}"`;
+
+exports[`Filter Hooks useSelectedFilterList returns null with initial state 1`] = `"{\\"defaultFilterIndex\\":0,\\"name\\":\\"test\\",\\"filters\\":[{\\"withinHotKeyCycle\\":true,\\"unfiltered\\":true,\\"namedFilter\\":null,\\"filterDefinition\\":null},{\\"withinHotKeyCycle\\":false,\\"unfiltered\\":null,\\"namedFilter\\":\\"Test Filter should appear in snapshot\\",\\"filterDefinition\\":null}],\\"description\\":\\"foo\\"}"`;

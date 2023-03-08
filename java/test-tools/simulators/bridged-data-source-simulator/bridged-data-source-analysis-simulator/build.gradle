@@ -1,0 +1,23 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation project(':bridged-data-source-simulator-api')
+    implementation project(':bridged-data-source-simulator-jpa')
+
+    implementation 'gms:station-definition-repository:LATEST'
+    implementation 'gms:station-definition-dao:LATEST'
+    implementation 'gms:bridge-utilities:LATEST'
+    implementation 'gms:signal-detection-dao:LATEST'
+    implementation 'gms:signal-detection-database-connector:LATEST'
+    implementation 'gms:event-repository:LATEST'
+    implementation 'gms:event-coi:LATEST'
+    implementation 'gms:event-dao:LATEST'
+    implementation libs.org.apache.commons.commons.lang3
+    implementation libs.com.google.guava.guava
+    implementation libs.io.projectreactor.reactor.core
+
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    testImplementation 'gms:station-definition-testfixtures:LATEST'
+}

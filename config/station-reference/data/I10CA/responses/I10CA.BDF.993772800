@@ -1,0 +1,42 @@
+# Instrument response: channel I10CA_BDF
+#
+# MB2000 INFRASONIC MICROBAROMETER SENSOR
+#
+# MB2000 microbarometer sensor response based on information 
+# provided by  DASE.
+# Response in poles and zeros for  the bandpass-filtered 
+# (0.01 to 27 Hz)output from the MB2000 sensor.
+#
+#   Ncalib = 0.00011924  Pa/count     Ncalper = 1.0 sec
+#
+#
+#     source  	sequence   description  type   	 source of
+#               number				information
+#
+# The value of A0 listed normalizes the response to unity. Response 
+# should be multiplied by 0.02 to give MB2000 response in Volts/Pa.
+#A0
+# Number of poles
+#    Real 	     Im	           Real Error	   Im Error
+# Number of zeros
+#    Real 	     Im	    	   Real Error	    Im Error
+#
+#
+#############################################################################
+#
+# GD2	Geophysical Digitizer
+#	
+#	Conversion factor    		419430.4 counts/volt
+#
+#       Conversion factor varies by less than 0.1%
+#
+############################################################################
+    theoretical    1 	 microbarometer paz        DASE
+1.3162E+07
+4
+-1.77700000E+02	-1.77700000E+02    0.00000000E+00  0.00000000E+00
+-1.77700000E+02	+1.77700000E+02    0.00000000E+00  0.00000000E+00
+-6.28000000E-02	 0.00000000E+00    0.00000000E+00  0.00000000E+00
+-2.07345000E+02	 0.00000000E+00	   0.00000000E+00  0.00000000E+00
+1
+0.00000000E+00  0.00000000E+00     0.00000000E+00   0.00000000E+00

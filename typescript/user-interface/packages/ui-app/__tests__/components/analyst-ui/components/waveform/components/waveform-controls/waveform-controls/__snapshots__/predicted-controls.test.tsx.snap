@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`build predicted dropdown Has menu label Hide predicted phases when passed param as false and no currentOpenEventId 1`] = `
+<SwitchToolbarItem
+  cyData="Predicted Phases"
+  disabled={true}
+  label="Predicted Phases"
+  menuLabel="Show predicted phases"
+  onChange={[Function]}
+  switchValue={false}
+  tooltip="Show/Hide predicted phases"
+/>
+`;

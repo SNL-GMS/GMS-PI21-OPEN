@@ -1,0 +1,70 @@
+{{/*
+Ignite dummy service is used for pod-to-pod discovery of nodes by ignite. It selects any pod
+with the label "ignite=ignite" and includes it in this service. Ignite then uses
+the service to find pod IP addresses.
+*/}}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    {{- include "gms.common.labels.standard" . | trim | nindent 4 }}
+  annotations:
+    networking.istio.io/exportTo: ".,istio-system"
+  name: ignite
+spec:
+  type: ClusterIP
+  ports:
+    - name: tcp-ignite
+      port: 47500
+      protocol: TCP
+      targetPort: 47500
+  selector:
+    ignite: ignite
+
+
+{{/*
+This configures Istio to allow pod-to-pod communication on ports 47100 and 47500 for any destination IP.
+The DestinationRule uses a dummy host name to configure the mTLS mode. The ServiceEntry uses
+the same dummy host name to match the DestinationRule and then allow mesh-internal communication
+to ignite ports 47100 and 47500.
+*/}}
+{{- if .Values.global.istio }}
+---
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: "ignite"
+  labels:
+    {{- include "gms.common.labels.standard" . | trim | nindent 4 }}
+spec:
+  exportTo:
+    - "."
+    - "istio-system"
+  host: "{{ .Release.Namespace }}.svc.cluster.local"
+  trafficPolicy:
+    tls:
+      mode: "ISTIO_MUTUAL"
+---
+apiVersion: networking.istio.io/v1beta1
+kind: ServiceEntry
+metadata:
+  name: "ignite"
+  labels:
+    {{- include "gms.common.labels.standard" . | trim | nindent 4 }}
+spec:
+  exportTo:
+    - "."
+    - "istio-system"
+  hosts:
+    - "{{ .Release.Namespace }}.svc.cluster.local"
+  location: "MESH_INTERNAL"
+  resolution: "NONE"
+  ports:
+    - number: 47500
+      name: "tcp-discovery"
+      protocol: "TCP"
+    - number: 47100
+      name: "tcp-communication"
+      protocol: "TCP"
+{{- end }}

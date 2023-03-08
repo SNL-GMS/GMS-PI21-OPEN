@@ -1,0 +1,42 @@
+{
+  "name": "lag-stationC-channelF",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "MonitorType",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "LAG"
+      ]
+    },
+    {
+      "constraintType": "STRING",
+      "criterion": "StationName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "StationC"
+      ]
+    },
+    {
+      "constraintType": "STRING",
+      "criterion": "ChannelName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "ChannelF"
+      ]
+    }
+  ],
+  "parameters": {
+    "goodThreshold": "PT20S",
+    "marginalThreshold": "PT30S"
+  }
+}

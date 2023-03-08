@@ -1,0 +1,4 @@
+parserOptions:
+  project: './tsconfig-test.json'
+extends:
+  - '.eslintrc-config.yaml'

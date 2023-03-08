@@ -1,0 +1,11 @@
+// Apply Gradle plugins here, if you need extra ones for your builds
+apply plugin: "java-library"
+
+dependencies {
+    implementation project(':frameworks-osd-commonobjects')
+    implementation project(':frameworks-configuration-commonobjects')
+    implementation project(':frameworks-utilities')
+
+    api project(':frameworks-system-config')
+    api project(':frameworks-service-generator')
+}

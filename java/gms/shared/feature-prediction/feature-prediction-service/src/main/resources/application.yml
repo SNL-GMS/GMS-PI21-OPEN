@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: feature-prediction
+  processing:
+    configuration-names: feature-prediction
+  main:
+    allow-circular-references: true
+
+server:
+  servlet:
+    context-path: /feature-prediction-service
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true

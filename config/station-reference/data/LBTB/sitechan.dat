@@ -1,0 +1,13 @@
+LBTB   sz        1995100      517  2002183 n       0.0000   -1.0    0.0 short_period_vertical_GS21                         20020816 12:00:00
+LBTB   lz        1995100      213  2002183 n       0.0000   -1.0    0.0 long_period_vertical_54000                         20020816 12:00:00
+LBTB   ln        1995100      167  2002183 n       0.0000    0.0   90.0 long_period_north_54000                            20020816 12:00:00
+LBTB   le        1995100      121  2002183 n       0.0000   90.0   90.0 long_period_east_54000                             20020816 12:00:00
+LBTB   bz        1995100       58  2002183 n       0.0000   -1.0    0.0 broadband_vertical_54000                           20020816 12:00:00
+LBTB   bn        1995100       36  2002183 n       0.0000    0.0   90.0 broadband_north_54000                              20020816 12:00:00
+LBTB   be        1995100       15  2002183 n       0.0000   90.0   90.0 broadband_east_54000                               20020816 12:00:00
+LBTBB  BHN       2002186     1647  2011258 n       0.0256  350.0   90.0 broadband_north_KS54000                            20110926 12:00:00
+LBTBB  BHE       2002186     1648  2011258 n       0.0256   80.0   90.0 broadband_east_KS54000                             20110926 12:00:00
+LBTB1  SHZ       2002188     1649  2286324 n       0.0247   -1.0    0.0 short_period_vertical_GS21                         20040629 12:00:00
+LBTBB  BHZ       2002186     1646  2286324 n       0.0256   -1.0    0.0 broadband_vertical_KS54000                         20040629 12:00:00
+LBTBB  BHN       2011258     1647  2286324 n       0.0256    0.0   90.0 broadband_north_KS54000                            20110926 12:00:00
+LBTBB  BHE       2011258     1648  2286324 n       0.0256   90.0   90.0 broadband_east_KS54000                             20110926 12:00:00

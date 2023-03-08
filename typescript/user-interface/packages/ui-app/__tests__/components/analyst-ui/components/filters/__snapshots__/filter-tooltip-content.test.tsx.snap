@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterTooltipContent matches a snapshot with all props 1`] = `
+<div
+  className="filter-tooltip-content"
+>
+  <h6
+    className="bp4-heading"
+  >
+    Test
+  </h6>
+  <div
+    className="label-value-container filter-list-tooltip__container"
+  >
+    <div
+      className="label-value__label"
+      data-cy="type-label"
+    >
+      Type: 
+    </div>
+    <div
+      className="label-value__value"
+      data-cy="type-value"
+      style={
+        Object {
+          "color": "",
+        }
+      }
+      title="CASCADE"
+    >
+      <span
+        className="monospace"
+      >
+        CASCADE
+      </span>
+    </div>
+  </div>
+  <div
+    className="label-value-container filter-list-tooltip__container"
+  >
+    <div
+      className="label-value__label"
+      data-cy="comments-label"
+    >
+      Comments: 
+    </div>
+    <div
+      className="label-value__value"
+      data-cy="comments-value"
+      style={
+        Object {
+          "color": "",
+        }
+      }
+      title="Test comments"
+    >
+      <span
+        className=""
+      >
+        Test comments
+      </span>
+    </div>
+  </div>
+  <section
+    className="filter-list-tooltip__group"
+  >
+    <div
+      className="label-value-container filter-list-tooltip__container"
+    >
+      <div
+        className="label-value__label"
+        data-cy="filter-1-label"
+      >
+        Filter 1: 
+      </div>
+      <div
+        className="label-value__value"
+        data-cy="filter-1-value"
+        style={
+          Object {
+            "color": "",
+          }
+        }
+        title="Cascade 1"
+      >
+        <span
+          className=""
+        >
+          Cascade 1
+        </span>
+      </div>
+    </div>
+    <div
+      className="label-value-container filter-list-tooltip__container"
+    >
+      <div
+        className="label-value__label"
+        data-cy="filter-2-label"
+      >
+        Filter 2: 
+      </div>
+      <div
+        className="label-value__value"
+        data-cy="filter-2-value"
+        style={
+          Object {
+            "color": "",
+          }
+        }
+        title="Cascade 2"
+      >
+        <span
+          className=""
+        >
+          Cascade 2
+        </span>
+      </div>
+    </div>
+  </section>
+  <div
+    className="label-value-container filter-list-tooltip__container"
+  >
+    <div
+      className="label-value__label"
+      data-cy="causal-label"
+    >
+      Causal: 
+    </div>
+    <div
+      className="label-value__value"
+      data-cy="causal-value"
+      style={
+        Object {
+          "color": "",
+        }
+      }
+      title="true"
+    >
+      <span
+        className="monospace"
+      >
+        true
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FilterTooltipContent matches a snapshot with only required props 1`] = `
+<div
+  className="filter-tooltip-content"
+>
+  <h6
+    className="bp4-heading"
+  >
+    Test with less
+  </h6>
+</div>
+`;

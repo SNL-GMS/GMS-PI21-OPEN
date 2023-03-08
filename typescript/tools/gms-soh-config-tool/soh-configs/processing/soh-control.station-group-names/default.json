@@ -1,0 +1,23 @@
+{
+  "name": "default-station-group-names",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "stationGroupNames": [
+      "ALL",
+      "CD1.1",
+      "CD1.0",
+      "MiniSD",
+      "GSE",
+      "Primary",
+      "Secondary",
+      "Auxiliary",
+      "SEISMIC",
+      "INFRA",
+      "HYDRO"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "database-accounts-by-stage",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "StageOne": "account_one",
+    "StageTwo": "account_two",
+    "StageThree": "account_three",
+    "StageFour": "account_four"
+  }
+}

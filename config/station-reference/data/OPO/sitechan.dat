@@ -1,0 +1,6 @@
+OPO    SHZ       2001247     5329  2286324 n       0.0000   -1.0    0.0 short_period_vertical                              20090622 12:00:00
+OPO    SHN       2001247     5330  2286324 n       0.0000    0.0   90.0 short_period_north                                 20090622 12:00:00
+OPO    SHE       2001247     5331  2286324 n       0.0000   90.0   90.0 short_period_east                                  20090622 12:00:00
+OPO    MHZ       2001247     5326  2286324 n       0.0000   -1.0    0.0 mid_period_vertical                                20090622 12:00:00
+OPO    MHN       2001247     5327  2286324 n       0.0000    0.0   90.0 mid_period_north                                   20090622 12:00:00
+OPO    MHE       2001247     5328  2286324 n       0.0000   90.0   90.0 mid_period_east                                    20090622 12:00:00

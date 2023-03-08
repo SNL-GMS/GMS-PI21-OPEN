@@ -1,0 +1,551 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Workflow Toolbar matches default value snapshot 1`] = `
+<div>
+  <div
+    class="base-display "
+  >
+    <div
+      class="toolbar"
+      style="width: 1860px;"
+    >
+      <div
+        class="toolbar__left-group"
+      >
+        <div
+          class="toolbar-item toolbar-item__left"
+        >
+          <div
+            class="toolbar-label-value"
+          >
+            <div
+              class="ian-label-value-container"
+            >
+              <div
+                class="ian-label-value__label"
+                data-cy="open-time-range-label"
+              >
+                Open time range: 
+              </div>
+              <div
+                class="ian-label-value__value"
+                data-cy="open-time-range-value"
+                title="The opened time range"
+              >
+                <span
+                  class="monospace"
+                >
+                  2020-12-01 09:24:00
+                </span>
+                  to  
+                <span
+                  class="monospace"
+                >
+                  2020-12-01 10:24:00
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="toolbar-item toolbar-item__left"
+        >
+          <div
+            class="toolbar-label-value"
+            style="margin-left: 8em;"
+          >
+            <div
+              class="ian-label-value-container"
+            >
+              <div
+                class="ian-label-value__label"
+                data-cy="processing-stage-label"
+              >
+                Processing stage: 
+              </div>
+              <div
+                class="ian-label-value__value"
+                data-cy="processing-stage-value"
+                title="The opened processing stage"
+              >
+                Al1
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar__center-group"
+      >
+        <div
+          class="toolbar__whitespace"
+          style="width: 1860px;"
+        />
+      </div>
+      <div
+        class="toolbar__right-group"
+      >
+        <div
+          class="toolbar-item
+                  "
+        >
+          <div>
+            <button
+              class="bp4-button toolbar-button--icon-only"
+              data-cy="workflow-doubleLeftArrowItem"
+              style="width: 20px;"
+              title="Pan the workflow to the left by 7 days (Shift + ←)"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-double-chevron-left"
+                  icon="double-chevron-left"
+                >
+                  <svg
+                    data-icon="double-chevron-left"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M4.41 8L7.7 4.71c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71l-4 4C2.11 7.47 2 7.72 2 8c0 .28.11.53.29.71l4 4a1.003 1.003 0 001.42-1.42L4.41 8zm5 0l3.29-3.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71l-4 4C7.11 7.47 7 7.72 7 8c0 .28.11.53.29.71l4 4a1.003 1.003 0 001.42-1.42L9.41 8z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="toolbar-item
+                  "
+        >
+          <div>
+            <button
+              class="bp4-button toolbar-button--icon-only"
+              data-cy="workflow-singleLeftArrowItem"
+              style="width: 20px;"
+              title="Pan the workflow to the left by 1 day (←)"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-chevron-left"
+                  icon="chevron-left"
+                >
+                  <svg
+                    data-icon="chevron-left"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M7.41 8l3.29-3.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71l-4 4C5.11 7.47 5 7.72 5 8c0 .28.11.53.29.71l4 4a1.003 1.003 0 001.42-1.42L7.41 8z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="toolbar-item
+                  "
+        >
+          <div>
+            <button
+              class="bp4-button toolbar-button--icon-only"
+              data-cy="workflow-singleRightArrowItem"
+              style="width: 20px;"
+              title="Pan the workflow to the right by 1 day (→)"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-chevron-right"
+                  icon="chevron-right"
+                >
+                  <svg
+                    data-icon="chevron-right"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M10.71 7.29l-4-4a1.003 1.003 0 00-1.42 1.42L8.59 8 5.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71l4-4c.18-.18.29-.43.29-.71 0-.28-.11-.53-.29-.71z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="toolbar-item
+                  "
+        >
+          <div>
+            <button
+              class="bp4-button toolbar-button--icon-only"
+              data-cy="workflow-doubleRightArrowItem"
+              style="width: 20px;"
+              title="Pan the workflow to the right by 7 days (Shift + →)"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-double-chevron-right"
+                  icon="double-chevron-right"
+                >
+                  <svg
+                    data-icon="double-chevron-right"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M9 8c0-.28-.11-.53-.29-.71l-4-4a1.003 1.003 0 00-1.42 1.42L6.59 8 3.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71l4-4C8.89 8.53 9 8.28 9 8zm4.71-.71l-4-4a1.003 1.003 0 00-1.42 1.42L11.59 8 8.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71l4-4c.18-.18.29-.43.29-.71 0-.28-.11-.53-.29-.71z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="toolbar-item
+                  "
+        >
+          <div>
+            <button
+              class="bp4-button bp4-align-left toolbar-button"
+              data-cy="workflow-openAnythingButtonItem"
+              style="width: 160px;"
+              title="Open anything"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span />
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-search-template"
+                  icon="search-template"
+                >
+                  <svg
+                    data-icon="search-template"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M15.55 13.43l-2.67-2.67c.7-1.09 1.11-2.38 1.11-3.77 0-3.87-3.13-7-7-7s-7 3.13-7 7 3.13 7 7 7c1.39 0 2.68-.41 3.77-1.11l2.67 2.67a1.498 1.498 0 102.12-2.12zm-8.56-1.44c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm2.5-6h-5c-.28 0-.5.22-.5.5s.22.5.5.5h5c.28 0 .5-.22.5-.5s-.22-.5-.5-.5zm0-2h-5c-.28 0-.5.22-.5.5s.22.5.5.5h5c.28 0 .5-.22.5-.5s-.22-.5-.5-.5zm0 4h-5c-.28 0-.5.22-.5.5s.22.5.5.5h5c.28 0 .5-.22.5-.5s-.22-.5-.5-.5z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span>
+                  Open anything...
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Workflow Toolbar matches snapshot 1`] = `
+<div>
+  <div
+    class="base-display "
+  >
+    <div
+      class="toolbar"
+      style="width: 1860px;"
+    >
+      <div
+        class="toolbar__left-group"
+      >
+        <div
+          class="toolbar-item toolbar-item__left"
+        >
+          <div
+            class="toolbar-label-value"
+          >
+            <div
+              class="ian-label-value-container"
+            >
+              <div
+                class="ian-label-value__label"
+                data-cy="open-time-range-label"
+              >
+                Open time range: 
+              </div>
+              <div
+                class="ian-label-value__value"
+                data-cy="open-time-range-value"
+                title="The opened time range"
+              >
+                <span
+                  class="monospace"
+                >
+                  2020-12-01 09:24:00
+                </span>
+                  to  
+                <span
+                  class="monospace"
+                >
+                  2020-12-01 10:24:00
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="toolbar-item toolbar-item__left"
+        >
+          <div
+            class="toolbar-label-value"
+            style="margin-left: 8em;"
+          >
+            <div
+              class="ian-label-value-container"
+            >
+              <div
+                class="ian-label-value__label"
+                data-cy="processing-stage-label"
+              >
+                Processing stage: 
+              </div>
+              <div
+                class="ian-label-value__value"
+                data-cy="processing-stage-value"
+                title="The opened processing stage"
+              >
+                Al1
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar__center-group"
+      >
+        <div
+          class="toolbar__whitespace"
+          style="width: 1860px;"
+        />
+      </div>
+      <div
+        class="toolbar__right-group"
+      >
+        <div
+          class="toolbar-item
+                  "
+        >
+          <div>
+            <button
+              class="bp4-button toolbar-button--icon-only"
+              data-cy="workflow-doubleLeftArrowItem"
+              style="width: 20px;"
+              title="Pan the workflow to the left by 7 days (Shift + ←)"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-double-chevron-left"
+                  icon="double-chevron-left"
+                >
+                  <svg
+                    data-icon="double-chevron-left"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M4.41 8L7.7 4.71c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71l-4 4C2.11 7.47 2 7.72 2 8c0 .28.11.53.29.71l4 4a1.003 1.003 0 001.42-1.42L4.41 8zm5 0l3.29-3.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71l-4 4C7.11 7.47 7 7.72 7 8c0 .28.11.53.29.71l4 4a1.003 1.003 0 001.42-1.42L9.41 8z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="toolbar-item
+                  "
+        >
+          <div>
+            <button
+              class="bp4-button toolbar-button--icon-only"
+              data-cy="workflow-singleLeftArrowItem"
+              style="width: 20px;"
+              title="Pan the workflow to the left by 1 day (←)"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-chevron-left"
+                  icon="chevron-left"
+                >
+                  <svg
+                    data-icon="chevron-left"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M7.41 8l3.29-3.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71l-4 4C5.11 7.47 5 7.72 5 8c0 .28.11.53.29.71l4 4a1.003 1.003 0 001.42-1.42L7.41 8z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="toolbar-item
+                  "
+        >
+          <div>
+            <button
+              class="bp4-button toolbar-button--icon-only"
+              data-cy="workflow-singleRightArrowItem"
+              style="width: 20px;"
+              title="Pan the workflow to the right by 1 day (→)"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-chevron-right"
+                  icon="chevron-right"
+                >
+                  <svg
+                    data-icon="chevron-right"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M10.71 7.29l-4-4a1.003 1.003 0 00-1.42 1.42L8.59 8 5.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71l4-4c.18-.18.29-.43.29-.71 0-.28-.11-.53-.29-.71z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="toolbar-item
+                  "
+        >
+          <div>
+            <button
+              class="bp4-button toolbar-button--icon-only"
+              data-cy="workflow-doubleRightArrowItem"
+              style="width: 20px;"
+              title="Pan the workflow to the right by 7 days (Shift + →)"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-double-chevron-right"
+                  icon="double-chevron-right"
+                >
+                  <svg
+                    data-icon="double-chevron-right"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M9 8c0-.28-.11-.53-.29-.71l-4-4a1.003 1.003 0 00-1.42 1.42L6.59 8 3.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71l4-4C8.89 8.53 9 8.28 9 8zm4.71-.71l-4-4a1.003 1.003 0 00-1.42 1.42L11.59 8 8.3 11.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71l4-4c.18-.18.29-.43.29-.71 0-.28-.11-.53-.29-.71z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="toolbar-item
+                  "
+        >
+          <div>
+            <button
+              class="bp4-button bp4-align-left toolbar-button"
+              data-cy="workflow-openAnythingButtonItem"
+              style="width: 160px;"
+              title="Open anything"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span />
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-search-template"
+                  icon="search-template"
+                >
+                  <svg
+                    data-icon="search-template"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M15.55 13.43l-2.67-2.67c.7-1.09 1.11-2.38 1.11-3.77 0-3.87-3.13-7-7-7s-7 3.13-7 7 3.13 7 7 7c1.39 0 2.68-.41 3.77-1.11l2.67 2.67a1.498 1.498 0 102.12-2.12zm-8.56-1.44c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm2.5-6h-5c-.28 0-.5.22-.5.5s.22.5.5.5h5c.28 0 .5-.22.5-.5s-.22-.5-.5-.5zm0-2h-5c-.28 0-.5.22-.5.5s.22.5.5.5h5c.28 0 .5-.22.5-.5s-.22-.5-.5-.5zm0 4h-5c-.28 0-.5.22-.5.5s.22.5.5.5h5c.28 0 .5-.22.5-.5s-.22-.5-.5-.5z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span>
+                  Open anything...
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

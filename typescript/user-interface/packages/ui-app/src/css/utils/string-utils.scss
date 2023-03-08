@@ -1,0 +1,14 @@
+/// Replace substring with another string.
+/// credits: https://css-tricks.com/snippets/sass/str-replace-function/
+/// @param {String} $string the string on which to operate
+/// @param {String} $search the string for which we should search
+/// @param {String} $replace the string with which to replace the found string. If not provided, remove the found string.
+/// @return {String} the string with the found substring replaced
+@function strReplace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      strReplace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}

@@ -1,0 +1,21 @@
+plugins {
+    id 'java-library'
+    alias(libs.plugins.io.swagger.core.v3.swagger.gradle)
+}
+
+dependencies {
+    implementation project(':frameworks-service-interface-base')
+    api project(':frameworks-osd-commonobjects')
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+    implementation libs.org.apache.commons.commons.lang3
+
+    implementation libs.org.hibernate.hibernate.core
+    implementation libs.org.hibernate.hibernate.c3p0
+    implementation libs.org.hibernate.hibernate.entitymanager
+    implementation libs.org.postgresql.postgresql
+    implementation libs.javax.persistence.javax.persistence.api
+
+    testImplementation project(':frameworks-osd-testfixtures')
+
+}

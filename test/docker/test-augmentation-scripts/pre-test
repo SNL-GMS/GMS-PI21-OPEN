@@ -1,0 +1,7 @@
+#!/bin/bash
+
+RESULTS_PATH="$1"
+rm -rf ${RESULTS_PATH}
+mkdir ${RESULTS_PATH}
+TESTRUN_OUTPUT="${RESULTS_PATH}/testrun.txt"
+

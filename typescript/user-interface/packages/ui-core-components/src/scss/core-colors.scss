@@ -1,0 +1,102 @@
+@import '@blueprintjs/core/lib/scss/variables.scss';
+@import './core-variables.scss';
+/**
+  These are the top-level colors for the application
+
+  These colors will eventually be customizable via themes.
+
+  Please place all colors used into this files, and be judicious in 
+  defining new colors.
+*/
+/*
+  Colors used for essential UI text and chrome.
+
+  For now, their names refer to particular shades,
+  but as usage patterns develop they will be renamed by usage
+  "core-heavy-border" / "core-default" etc.
+*/
+
+// Main text color used for UI elements and high-contrast text
+$core-main: $light-gray5;
+// Color that is recessed from the background. Notable used as a table border
+$core-recessed: $black;
+// Main text color used against inverted (light) backgrounds
+$core-main-inverted: $black;
+// A prominent color used for important borders and text. Lower contrast than core-main
+$core-prominent: $gray5;
+// A softer color used for secondary borders and text. Lower contrast than core-prominent
+$core-soft: $gray2;
+// The color of panel backgrounds
+$core-background: $dark-gray1;
+// The color of more prominent backgrounds
+$core-prominent-background: $dark-gray2;
+// A color for things between background and popovers
+$core-middle-ground: $dark-gray3;
+// The color of popover backgrounds
+$core-popover-background: $dark-gray4;
+$core-scrollbar: $gray1;
+
+$core-transparent: rgba(0, 0, 0, 0);
+
+$core-table-header-background: $dark-gray5;
+
+// Highlight colors for inputs
+$core-input-highlight: $blue2;
+
+// Hover color for buttons
+$core-button: $dark-gray5;
+$core-button-hover: $dark-gray4;
+
+// Grid table background
+$core-grid-background: rgba(255, 255, 255, 0.05);
+
+// Highlight for odd-indexed table cell
+$core-table-highlight-odd-row: $gray1;
+// Highlight for even-indexed table cell
+$core-table-highlight-even-row: $gray2;
+// Highlight for odd-indexed table cell that requires review
+$core-table-requires-review-odd-row: $gold4;
+// Highlight for even-indexed table cell that requires review
+$core-table-requires-review-even-row: $gold5;
+// Highlights for a selected table row
+$core-table-selection: $blue1;
+
+$core-warning: $gold4;
+$core-strong-warning: $red1;
+$core-good: $forest1;
+$core-input-highlight: $blue2;
+$core-non-contributing: $dark-gray1;
+
+:root {
+  --core-main: #{$core-main};
+  --core-recessed: #{$core-recessed};
+  --core-prominent: #{$core-prominent};
+  --core-soft: #{$core-soft};
+  --core-background: #{$core-background};
+  --core-prominent-background: #{$core-prominent-background};
+  --core-good: #{$core-good};
+  --core-warning: #{$core-warning};
+  --core-strong-warning: #{$core-strong-warning};
+  --core-input-highlight: #{$core-input-highlight};
+  --core-table-selection: #{$core-table-selection};
+  --core-popover-background: #{$core-popover-background};
+}
+// the :export directive tells webpack to handle these appropriately when imported
+// i.e. `import * as variables from 'variables.scss'`;
+// then you can access `core-main` by variables['core-main']
+:export {
+  coreMain: $core-main;
+  coreRecessed: $core-recessed;
+  coreProminent: $core-prominent;
+  coreSoft: $core-soft;
+  coreBackground: $core-background;
+  coreProminentBackground: $core-prominent-background;
+
+  coreOk: $core-good;
+  coreWarning: $core-warning;
+  coreStrongWarning: $core-strong-warning;
+
+  coreInputHighlight: $core-input-highlight;
+  coreTableSelection: $core-table-selection;
+  corePopoverBackground: $core-popover-background;
+}

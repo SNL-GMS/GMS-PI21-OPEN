@@ -1,0 +1,11 @@
+plugins {
+    id('java-library')
+}
+dependencies {
+    // Required to instantiate COI object mappers
+    implementation project(':frameworks-client-library')
+    implementation project(':frameworks-utilities')
+    implementation project(':frameworks-system-config')
+
+    testImplementation libs.io.projectreactor.reactor.core
+}

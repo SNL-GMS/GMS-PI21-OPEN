@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weavess Moveable Marker renders 1`] = `
+<div>
+  <div
+    class="moveable-marker"
+    style="left: 80%; border: .5px dashed #ff0000;"
+  />
+</div>
+`;

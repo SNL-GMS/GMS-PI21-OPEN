@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SOH App matches a snapshot 1`] = `
+<div>
+  <div
+    class="popout-component"
+    data-gms-ui-mode="soh"
+    style="width: 100%; height: 100%; background-color: rgb(37, 42, 49);"
+  >
+    <div
+      class="gms-theme-provider bp4-dark"
+      style="--open-associated-text-color: #10161a; --complete-associated-text-color: #10161a; --other-associated-text-color: #10161a; --unassociated-text-color: #f5f8fa; --table-selection-text-color: #000000;"
+    >
+      <div
+        class="workspace-container"
+        data-cy="workspace"
+        data-gms-ui-mode="soh"
+        tabindex="0"
+      >
+        <div
+          class="bp4-non-ideal-state"
+        >
+          <h4
+            class="bp4-heading"
+          >
+            Loading Default Layout
+          </h4>
+          <div>
+            Retrieving default layout for user...
+          </div>
+          <div
+            class="bp4-spinner bp4-intent-primary"
+            role="progressbar"
+          >
+            <div
+              class="bp4-spinner-animation"
+            >
+              <svg
+                height="50"
+                stroke-width="8.00"
+                viewBox="1.00 1.00 98.00 98.00"
+                width="50"
+              >
+                <path
+                  class="bp4-spinner-track"
+                  d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+                />
+                <path
+                  class="bp4-spinner-head"
+                  d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+                  pathLength="280"
+                  stroke-dasharray="280 280"
+                  stroke-dashoffset="210"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="Toastify"
+      />
+    </div>
+  </div>
+</div>
+`;

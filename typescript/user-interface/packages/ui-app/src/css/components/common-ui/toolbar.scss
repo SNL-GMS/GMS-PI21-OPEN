@@ -1,0 +1,12 @@
+.toolbar {
+  margin-bottom: 0;
+}
+.toolbar + * {
+  margin-top: 0.5rem;
+}
+
+.toolbar + .display-title {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}

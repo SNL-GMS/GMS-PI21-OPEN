@@ -1,0 +1,1655 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toolbar component Toolbar builds and overflows left side 1`] = `
+<div>
+  <div
+    class="toolbar"
+    style="width: 10px;"
+  >
+    <div
+      class="toolbar__left-group"
+    >
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div>
+          <button
+            class="bp4-button bp4-align-left toolbar-button"
+            style="width: 50px;"
+            title="Button Hello"
+            type="button"
+          >
+            <span
+              class="bp4-button-text"
+            >
+              <span />
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div
+          class="toolbar-button-group"
+        >
+          <div>
+            <button
+              class="bp4-button toolbar-button--icon-only"
+              style="width: 30px;"
+              title="Pan waveforms to the left"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-arrow-left"
+                  icon="arrow-left"
+                >
+                  <svg
+                    data-icon="arrow-left"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M13.99 6.99H4.41L7.7 3.7a1.003 1.003 0 00-1.42-1.42l-5 5a1.014 1.014 0 000 1.42l5 5a1.003 1.003 0 001.42-1.42L4.41 8.99H14c.55 0 1-.45 1-1s-.46-1-1.01-1z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div>
+          <div>
+            <button
+              class="bp4-button bp4-align-left toolbar-button"
+              style="width: 50px;"
+              title="Hello CheckboxDropdown"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span />
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-chevron-down"
+                  icon="chevron-down"
+                >
+                  <svg
+                    data-icon="chevron-down"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div
+          class="toolbar-button--capsule"
+        >
+          <div
+            class="date-range-picker"
+            id="date-range-picker-id-1"
+          >
+            <label
+              class="bp4-label bp4-label bp4-inline date-range-picker__label"
+            >
+              Time Range: 1970-01-01 00:00 to 1970-01-01 00:00
+            </label>
+            <div>
+              <button
+                class="bp4-button date-range-picker__apply-button"
+                data-cy="date-range-picker-edit"
+                type="button"
+              >
+                <span
+                  class="bp4-button-text"
+                >
+                  Edit
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div>
+          <div
+            class="dropdown-container"
+          >
+            <span
+              class="dropdown-selector"
+              data-cy="-dropdown"
+            >
+              <div
+                class="bp4-html-select"
+              >
+                <select
+                  style="min-width: 50px; width: 50px;"
+                  title="Hello Dropdown"
+                />
+                <span
+                  class="bp4-icon bp4-icon-double-caret-vertical"
+                  icon="double-caret-vertical"
+                >
+                  <svg
+                    data-icon="double-caret-vertical"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <desc>
+                      Open dropdown
+                    </desc>
+                    <path
+                      d="M5 7h6a1.003 1.003 0 00.71-1.71l-3-3C8.53 2.11 8.28 2 8 2s-.53.11-.71.29l-3 3A1.003 1.003 0 005 7zm6 2H5a1.003 1.003 0 00-.71 1.71l3 3c.18.18.43.29.71.29s.53-.11.71-.29l3-3A1.003 1.003 0 0011 9z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div
+          class="toolbar-button--capsule"
+        >
+          <div
+            class="interval-picker"
+          >
+            <div
+              class="interval-picker__input-row"
+            >
+              <div
+                class="interval-picker__input interval-picker__input--flat"
+              >
+                <div
+                  class="interval-picker__time-picker-label"
+                >
+                  Start Time:
+                </div>
+                <div
+                  class="time-picker"
+                >
+                  <textarea
+                    class="time-picker__input"
+                    cols="27"
+                    rows="1"
+                    style="width: 240px;"
+                  >
+                    1970-01-01T00:00:00.100
+                  </textarea>
+                  <button
+                    class="bp4-button time-picker__date-picker-button"
+                    type="button"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="bp4-icon bp4-icon-calendar"
+                      icon="calendar"
+                    >
+                      <svg
+                        data-icon="calendar"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                      >
+                        <path
+                          d="M11 3c.6 0 1-.5 1-1V1c0-.6-.4-1-1-1s-1 .4-1 1v1c0 .5.4 1 1 1zm3-2h-1v1c0 1.1-.9 2-2 2s-2-.9-2-2V1H6v1c0 1.1-.9 2-2 2s-2-.9-2-2V1H1c-.6 0-1 .5-1 1v12c0 .6.4 1 1 1h13c.6 0 1-.4 1-1V2c0-.6-.5-1-1-1zM5 13H2v-3h3v3zm0-4H2V6h3v3zm4 4H6v-3h3v3zm0-4H6V6h3v3zm4 4h-3v-3h3v3zm0-4h-3V6h3v3zM4 3c.6 0 1-.5 1-1V1c0-.6-.4-1-1-1S3 .4 3 1v1c0 .5.4 1 1 1z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="interval-picker__input interval-picker__input--right"
+              >
+                <div
+                  class="interval-picker__time-picker-label"
+                >
+                  End Time:
+                </div>
+                <div
+                  class="time-picker"
+                >
+                  <textarea
+                    class="time-picker__input"
+                    cols="27"
+                    rows="1"
+                    style="width: 240px;"
+                  >
+                    1970-01-01T00:00:01.000
+                  </textarea>
+                  <button
+                    class="bp4-button time-picker__date-picker-button"
+                    type="button"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="bp4-icon bp4-icon-calendar"
+                      icon="calendar"
+                    >
+                      <svg
+                        data-icon="calendar"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                      >
+                        <path
+                          d="M11 3c.6 0 1-.5 1-1V1c0-.6-.4-1-1-1s-1 .4-1 1v1c0 .5.4 1 1 1zm3-2h-1v1c0 1.1-.9 2-2 2s-2-.9-2-2V1H6v1c0 1.1-.9 2-2 2s-2-.9-2-2V1H1c-.6 0-1 .5-1 1v12c0 .6.4 1 1 1h13c.6 0 1-.4 1-1V2c0-.6-.5-1-1-1zM5 13H2v-3h3v3zm0-4H2V6h3v3zm4 4H6v-3h3v3zm0-4H6V6h3v3zm4 4h-3v-3h3v3zm0-4h-3V6h3v3zM4 3c.6 0 1-.5 1-1V1c0-.6-.4-1-1-1S3 .4 3 1v1c0 .5.4 1 1 1z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="interval-picker__enter-button interval-picker__enter-button--flat"
+              >
+                <button
+                  class="bp4-button"
+                  type="button"
+                >
+                  <span
+                    class="bp4-button-text"
+                  >
+                    Apply
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div
+          class="toolbar-label-value"
+        >
+          <div
+            class="label-value-container"
+          >
+            <div
+              class="label-value__label"
+              data-cy="label-label"
+            >
+              label: 
+            </div>
+            <div
+              class="label-value__value"
+              data-cy="label-value"
+              title="Hello label"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div>
+          <div
+            class="loading-spinner__container"
+            style="min-width: 50px;"
+          >
+            <span>
+              <div
+                class="bp4-spinner bp4-intent-primary"
+                role="progressbar"
+              >
+                <div
+                  class="bp4-spinner-animation"
+                >
+                  <svg
+                    height="20"
+                    stroke-width="16.00"
+                    viewBox="-3.00 -3.00 106.00 106.00"
+                    width="20"
+                  >
+                    <path
+                      class="bp4-spinner-track"
+                      d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+                    />
+                    <path
+                      class="bp4-spinner-head"
+                      d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+                      pathLength="280"
+                      stroke-dasharray="280 280"
+                      stroke-dashoffset="210"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <span>
+                Loading
+                ...
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div>
+          <div
+            class="numeric-input__wrapper"
+            style="width: 50px;"
+          >
+            <div
+              class="bp4-control-group bp4-fill bp4-numeric-input numeric-input"
+            >
+              <div
+                class="bp4-input-group"
+              >
+                <input
+                  autocomplete="off"
+                  class="bp4-input"
+                  max="43"
+                  min="41"
+                  placeholder="Enter a number..."
+                  title="Hello Numeric"
+                  type="text"
+                  value="42"
+                  width="50"
+                />
+              </div>
+              <div
+                class="bp4-button-group bp4-vertical bp4-fixed"
+              >
+                <button
+                  aria-label="increment"
+                  class="bp4-button"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="bp4-icon bp4-icon-chevron-up"
+                    icon="chevron-up"
+                  >
+                    <svg
+                      data-icon="chevron-up"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                    >
+                      <path
+                        d="M12.71 9.29l-4-4C8.53 5.11 8.28 5 8 5s-.53.11-.71.29l-4 4a1.003 1.003 0 001.42 1.42L8 7.41l3.29 3.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <button
+                  aria-label="decrement"
+                  class="bp4-button"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="bp4-icon bp4-icon-chevron-down"
+                    icon="chevron-down"
+                  >
+                    <svg
+                      data-icon="chevron-down"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                    >
+                      <path
+                        d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div>
+          <div>
+            <button
+              class="bp4-button bp4-align-left toolbar-button"
+              style="width: 50px;"
+              title="Hello Popover"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span />
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-chevron-down"
+                  icon="chevron-down"
+                >
+                  <svg
+                    data-icon="chevron-down"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div
+          class="toolbar-switch"
+        >
+          <label
+            class="bp4-control bp4-switch bp4-large toolbar-switch__blueprint undefined"
+          >
+            <input
+              checked=""
+              type="checkbox"
+            />
+            <span
+              class="bp4-control-indicator"
+            />
+          </label>
+        </div>
+      </div>
+    </div>
+    <div
+      class="toolbar__center-group"
+    >
+      <div
+        class="toolbar__whitespace"
+        style="width: 10px;"
+      />
+    </div>
+    <div
+      class="toolbar__right-group"
+    />
+  </div>
+</div>
+`;
+
+exports[`Toolbar component Toolbar builds and overflows right side 1`] = `
+<div>
+  <div
+    class="toolbar"
+    style="width: 10px;"
+  >
+    <div
+      class="toolbar__left-group"
+    />
+    <div
+      class="toolbar__center-group"
+    >
+      <div
+        class="toolbar__whitespace"
+        style="width: 10px;"
+      />
+    </div>
+    <div
+      class="toolbar__right-group"
+    >
+      <div
+        class="toolbar-item
+                  "
+      >
+        <div>
+          <button
+            class="bp4-button bp4-align-left toolbar-button"
+            style="width: 50px;"
+            title="Button Hello"
+            type="button"
+          >
+            <span
+              class="bp4-button-text"
+            >
+              <span />
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="toolbar-item
+                  "
+      >
+        <div
+          class="toolbar-button-group"
+        >
+          <div>
+            <button
+              class="bp4-button toolbar-button--icon-only"
+              style="width: 30px;"
+              title="Pan waveforms to the left"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-arrow-left"
+                  icon="arrow-left"
+                >
+                  <svg
+                    data-icon="arrow-left"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M13.99 6.99H4.41L7.7 3.7a1.003 1.003 0 00-1.42-1.42l-5 5a1.014 1.014 0 000 1.42l5 5a1.003 1.003 0 001.42-1.42L4.41 8.99H14c.55 0 1-.45 1-1s-.46-1-1.01-1z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item
+                  "
+      >
+        <div>
+          <div>
+            <button
+              class="bp4-button bp4-align-left toolbar-button"
+              style="width: 50px;"
+              title="Hello CheckboxDropdown"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span />
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-chevron-down"
+                  icon="chevron-down"
+                >
+                  <svg
+                    data-icon="chevron-down"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item
+                  "
+      >
+        <div
+          class="toolbar-button--capsule"
+        >
+          <div
+            class="date-range-picker"
+            id="date-range-picker-id-2"
+          >
+            <label
+              class="bp4-label bp4-label bp4-inline date-range-picker__label"
+            >
+              Time Range: 1970-01-01 00:00 to 1970-01-01 00:00
+            </label>
+            <div>
+              <button
+                class="bp4-button date-range-picker__apply-button"
+                data-cy="date-range-picker-edit"
+                type="button"
+              >
+                <span
+                  class="bp4-button-text"
+                >
+                  Edit
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item
+                  "
+      >
+        <div>
+          <div
+            class="dropdown-container"
+          >
+            <span
+              class="dropdown-selector"
+              data-cy="-dropdown"
+            >
+              <div
+                class="bp4-html-select"
+              >
+                <select
+                  style="min-width: 50px; width: 50px;"
+                  title="Hello Dropdown"
+                />
+                <span
+                  class="bp4-icon bp4-icon-double-caret-vertical"
+                  icon="double-caret-vertical"
+                >
+                  <svg
+                    data-icon="double-caret-vertical"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <desc>
+                      Open dropdown
+                    </desc>
+                    <path
+                      d="M5 7h6a1.003 1.003 0 00.71-1.71l-3-3C8.53 2.11 8.28 2 8 2s-.53.11-.71.29l-3 3A1.003 1.003 0 005 7zm6 2H5a1.003 1.003 0 00-.71 1.71l3 3c.18.18.43.29.71.29s.53-.11.71-.29l3-3A1.003 1.003 0 0011 9z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item
+                  "
+      >
+        <div
+          class="toolbar-button--capsule"
+        >
+          <div
+            class="interval-picker"
+          >
+            <div
+              class="interval-picker__input-row"
+            >
+              <div
+                class="interval-picker__input interval-picker__input--flat"
+              >
+                <div
+                  class="interval-picker__time-picker-label"
+                >
+                  Start Time:
+                </div>
+                <div
+                  class="time-picker"
+                >
+                  <textarea
+                    class="time-picker__input"
+                    cols="27"
+                    rows="1"
+                    style="width: 240px;"
+                  >
+                    1970-01-01T00:00:00.100
+                  </textarea>
+                  <button
+                    class="bp4-button time-picker__date-picker-button"
+                    type="button"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="bp4-icon bp4-icon-calendar"
+                      icon="calendar"
+                    >
+                      <svg
+                        data-icon="calendar"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                      >
+                        <path
+                          d="M11 3c.6 0 1-.5 1-1V1c0-.6-.4-1-1-1s-1 .4-1 1v1c0 .5.4 1 1 1zm3-2h-1v1c0 1.1-.9 2-2 2s-2-.9-2-2V1H6v1c0 1.1-.9 2-2 2s-2-.9-2-2V1H1c-.6 0-1 .5-1 1v12c0 .6.4 1 1 1h13c.6 0 1-.4 1-1V2c0-.6-.5-1-1-1zM5 13H2v-3h3v3zm0-4H2V6h3v3zm4 4H6v-3h3v3zm0-4H6V6h3v3zm4 4h-3v-3h3v3zm0-4h-3V6h3v3zM4 3c.6 0 1-.5 1-1V1c0-.6-.4-1-1-1S3 .4 3 1v1c0 .5.4 1 1 1z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="interval-picker__input interval-picker__input--right"
+              >
+                <div
+                  class="interval-picker__time-picker-label"
+                >
+                  End Time:
+                </div>
+                <div
+                  class="time-picker"
+                >
+                  <textarea
+                    class="time-picker__input"
+                    cols="27"
+                    rows="1"
+                    style="width: 240px;"
+                  >
+                    1970-01-01T00:00:01.000
+                  </textarea>
+                  <button
+                    class="bp4-button time-picker__date-picker-button"
+                    type="button"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="bp4-icon bp4-icon-calendar"
+                      icon="calendar"
+                    >
+                      <svg
+                        data-icon="calendar"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                      >
+                        <path
+                          d="M11 3c.6 0 1-.5 1-1V1c0-.6-.4-1-1-1s-1 .4-1 1v1c0 .5.4 1 1 1zm3-2h-1v1c0 1.1-.9 2-2 2s-2-.9-2-2V1H6v1c0 1.1-.9 2-2 2s-2-.9-2-2V1H1c-.6 0-1 .5-1 1v12c0 .6.4 1 1 1h13c.6 0 1-.4 1-1V2c0-.6-.5-1-1-1zM5 13H2v-3h3v3zm0-4H2V6h3v3zm4 4H6v-3h3v3zm0-4H6V6h3v3zm4 4h-3v-3h3v3zm0-4h-3V6h3v3zM4 3c.6 0 1-.5 1-1V1c0-.6-.4-1-1-1S3 .4 3 1v1c0 .5.4 1 1 1z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="interval-picker__enter-button interval-picker__enter-button--flat"
+              >
+                <button
+                  class="bp4-button"
+                  type="button"
+                >
+                  <span
+                    class="bp4-button-text"
+                  >
+                    Apply
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item
+                  "
+      >
+        <div
+          class="toolbar-label-value"
+        >
+          <div
+            class="label-value-container"
+          >
+            <div
+              class="label-value__label"
+              data-cy="label-label"
+            >
+              label: 
+            </div>
+            <div
+              class="label-value__value"
+              data-cy="label-value"
+              title="Hello label"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item
+                  "
+      >
+        <div>
+          <div
+            class="loading-spinner__container"
+            style="min-width: 50px;"
+          >
+            <span>
+              <div
+                class="bp4-spinner bp4-intent-primary"
+                role="progressbar"
+              >
+                <div
+                  class="bp4-spinner-animation"
+                >
+                  <svg
+                    height="20"
+                    stroke-width="16.00"
+                    viewBox="-3.00 -3.00 106.00 106.00"
+                    width="20"
+                  >
+                    <path
+                      class="bp4-spinner-track"
+                      d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+                    />
+                    <path
+                      class="bp4-spinner-head"
+                      d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+                      pathLength="280"
+                      stroke-dasharray="280 280"
+                      stroke-dashoffset="210"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <span>
+                Loading
+                ...
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item
+                  "
+      >
+        <div>
+          <div
+            class="numeric-input__wrapper"
+            style="width: 50px;"
+          >
+            <div
+              class="bp4-control-group bp4-fill bp4-numeric-input numeric-input"
+            >
+              <div
+                class="bp4-input-group"
+              >
+                <input
+                  autocomplete="off"
+                  class="bp4-input"
+                  max="43"
+                  min="41"
+                  placeholder="Enter a number..."
+                  title="Hello Numeric"
+                  type="text"
+                  value="42"
+                  width="50"
+                />
+              </div>
+              <div
+                class="bp4-button-group bp4-vertical bp4-fixed"
+              >
+                <button
+                  aria-label="increment"
+                  class="bp4-button"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="bp4-icon bp4-icon-chevron-up"
+                    icon="chevron-up"
+                  >
+                    <svg
+                      data-icon="chevron-up"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                    >
+                      <path
+                        d="M12.71 9.29l-4-4C8.53 5.11 8.28 5 8 5s-.53.11-.71.29l-4 4a1.003 1.003 0 001.42 1.42L8 7.41l3.29 3.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <button
+                  aria-label="decrement"
+                  class="bp4-button"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="bp4-icon bp4-icon-chevron-down"
+                    icon="chevron-down"
+                  >
+                    <svg
+                      data-icon="chevron-down"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                    >
+                      <path
+                        d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item
+                  "
+      >
+        <div>
+          <div>
+            <button
+              class="bp4-button bp4-align-left toolbar-button"
+              style="width: 50px;"
+              title="Hello Popover"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span />
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-chevron-down"
+                  icon="chevron-down"
+                >
+                  <svg
+                    data-icon="chevron-down"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item
+                  "
+      >
+        <div
+          class="toolbar-switch"
+        >
+          <label
+            class="bp4-control bp4-switch bp4-large toolbar-switch__blueprint undefined"
+          >
+            <input
+              checked=""
+              type="checkbox"
+            />
+            <span
+              class="bp4-control-indicator"
+            />
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toolbar component Toolbar builds empty 1`] = `
+<div>
+  <div
+    class="toolbar"
+    style="width: 100px;"
+  >
+    <div
+      class="toolbar__left-group"
+    />
+    <div
+      class="toolbar__center-group"
+    >
+      <div
+        class="toolbar__whitespace"
+        style="width: 100px;"
+      />
+    </div>
+    <div
+      class="toolbar__right-group"
+    />
+  </div>
+</div>
+`;
+
+exports[`Toolbar component Toolbar builds left and right, no overflow 1`] = `
+<div>
+  <div
+    class="toolbar"
+    style="width: 1000px;"
+  >
+    <div
+      class="toolbar__left-group"
+    >
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div>
+          <button
+            class="bp4-button bp4-align-left toolbar-button"
+            title="Button Hello"
+            type="button"
+          >
+            <span
+              class="bp4-button-text"
+            >
+              <span />
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="toolbar__center-group"
+    >
+      <div
+        class="toolbar__whitespace"
+        style="width: 1000px;"
+      />
+    </div>
+    <div
+      class="toolbar__right-group"
+    >
+      <div
+        class="toolbar-item
+                  "
+      >
+        <div
+          class="toolbar-button-group"
+        >
+          <div>
+            <button
+              class="bp4-button toolbar-button--icon-only"
+              style="width: 30px;"
+              title="Pan waveforms to the left"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-arrow-left"
+                  icon="arrow-left"
+                >
+                  <svg
+                    data-icon="arrow-left"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M13.99 6.99H4.41L7.7 3.7a1.003 1.003 0 00-1.42-1.42l-5 5a1.014 1.014 0 000 1.42l5 5a1.003 1.003 0 001.42-1.42L4.41 8.99H14c.55 0 1-.45 1-1s-.46-1-1.01-1z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toolbar component Toolbar builds left and right, overflow both sides 1`] = `
+<div>
+  <div
+    class="toolbar"
+    style="width: 10px;"
+  >
+    <div
+      class="toolbar__left-group"
+    >
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div>
+          <button
+            class="bp4-button bp4-align-left toolbar-button"
+            style="width: 50px;"
+            title="Button Hello"
+            type="button"
+          >
+            <span
+              class="bp4-button-text"
+            >
+              <span />
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div
+          class="toolbar-button-group"
+        >
+          <div>
+            <button
+              class="bp4-button toolbar-button--icon-only"
+              style="width: 30px;"
+              title="Pan waveforms to the left"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-arrow-left"
+                  icon="arrow-left"
+                >
+                  <svg
+                    data-icon="arrow-left"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M13.99 6.99H4.41L7.7 3.7a1.003 1.003 0 00-1.42-1.42l-5 5a1.014 1.014 0 000 1.42l5 5a1.003 1.003 0 001.42-1.42L4.41 8.99H14c.55 0 1-.45 1-1s-.46-1-1.01-1z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div>
+          <div>
+            <button
+              class="bp4-button bp4-align-left toolbar-button"
+              style="width: 50px;"
+              title="Hello CheckboxDropdown"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span />
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-chevron-down"
+                  icon="chevron-down"
+                >
+                  <svg
+                    data-icon="chevron-down"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div
+          class="toolbar-button--capsule"
+        >
+          <div
+            class="date-range-picker"
+            id="date-range-picker-id-3"
+          >
+            <label
+              class="bp4-label bp4-label bp4-inline date-range-picker__label"
+            >
+              Time Range: 1970-01-01 00:00 to 1970-01-01 00:00
+            </label>
+            <div>
+              <button
+                class="bp4-button date-range-picker__apply-button"
+                data-cy="date-range-picker-edit"
+                type="button"
+              >
+                <span
+                  class="bp4-button-text"
+                >
+                  Edit
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div>
+          <div
+            class="dropdown-container"
+          >
+            <span
+              class="dropdown-selector"
+              data-cy="-dropdown"
+            >
+              <div
+                class="bp4-html-select"
+              >
+                <select
+                  style="min-width: 50px; width: 50px;"
+                  title="Hello Dropdown"
+                />
+                <span
+                  class="bp4-icon bp4-icon-double-caret-vertical"
+                  icon="double-caret-vertical"
+                >
+                  <svg
+                    data-icon="double-caret-vertical"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <desc>
+                      Open dropdown
+                    </desc>
+                    <path
+                      d="M5 7h6a1.003 1.003 0 00.71-1.71l-3-3C8.53 2.11 8.28 2 8 2s-.53.11-.71.29l-3 3A1.003 1.003 0 005 7zm6 2H5a1.003 1.003 0 00-.71 1.71l3 3c.18.18.43.29.71.29s.53-.11.71-.29l3-3A1.003 1.003 0 0011 9z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="toolbar__center-group"
+    >
+      <div
+        class="toolbar__whitespace"
+        style="width: 10px;"
+      />
+    </div>
+    <div
+      class="toolbar__right-group"
+    >
+      <div
+        class="toolbar-item
+                  "
+      >
+        <div
+          class="toolbar-button--capsule"
+        >
+          <div
+            class="interval-picker"
+          >
+            <div
+              class="interval-picker__input-row"
+            >
+              <div
+                class="interval-picker__input interval-picker__input--flat"
+              >
+                <div
+                  class="interval-picker__time-picker-label"
+                >
+                  Start Time:
+                </div>
+                <div
+                  class="time-picker"
+                >
+                  <textarea
+                    class="time-picker__input"
+                    cols="27"
+                    rows="1"
+                    style="width: 240px;"
+                  >
+                    1970-01-01T00:00:00.100
+                  </textarea>
+                  <button
+                    class="bp4-button time-picker__date-picker-button"
+                    type="button"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="bp4-icon bp4-icon-calendar"
+                      icon="calendar"
+                    >
+                      <svg
+                        data-icon="calendar"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                      >
+                        <path
+                          d="M11 3c.6 0 1-.5 1-1V1c0-.6-.4-1-1-1s-1 .4-1 1v1c0 .5.4 1 1 1zm3-2h-1v1c0 1.1-.9 2-2 2s-2-.9-2-2V1H6v1c0 1.1-.9 2-2 2s-2-.9-2-2V1H1c-.6 0-1 .5-1 1v12c0 .6.4 1 1 1h13c.6 0 1-.4 1-1V2c0-.6-.5-1-1-1zM5 13H2v-3h3v3zm0-4H2V6h3v3zm4 4H6v-3h3v3zm0-4H6V6h3v3zm4 4h-3v-3h3v3zm0-4h-3V6h3v3zM4 3c.6 0 1-.5 1-1V1c0-.6-.4-1-1-1S3 .4 3 1v1c0 .5.4 1 1 1z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="interval-picker__input interval-picker__input--right"
+              >
+                <div
+                  class="interval-picker__time-picker-label"
+                >
+                  End Time:
+                </div>
+                <div
+                  class="time-picker"
+                >
+                  <textarea
+                    class="time-picker__input"
+                    cols="27"
+                    rows="1"
+                    style="width: 240px;"
+                  >
+                    1970-01-01T00:00:01.000
+                  </textarea>
+                  <button
+                    class="bp4-button time-picker__date-picker-button"
+                    type="button"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="bp4-icon bp4-icon-calendar"
+                      icon="calendar"
+                    >
+                      <svg
+                        data-icon="calendar"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                      >
+                        <path
+                          d="M11 3c.6 0 1-.5 1-1V1c0-.6-.4-1-1-1s-1 .4-1 1v1c0 .5.4 1 1 1zm3-2h-1v1c0 1.1-.9 2-2 2s-2-.9-2-2V1H6v1c0 1.1-.9 2-2 2s-2-.9-2-2V1H1c-.6 0-1 .5-1 1v12c0 .6.4 1 1 1h13c.6 0 1-.4 1-1V2c0-.6-.5-1-1-1zM5 13H2v-3h3v3zm0-4H2V6h3v3zm4 4H6v-3h3v3zm0-4H6V6h3v3zm4 4h-3v-3h3v3zm0-4h-3V6h3v3zM4 3c.6 0 1-.5 1-1V1c0-.6-.4-1-1-1S3 .4 3 1v1c0 .5.4 1 1 1z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="interval-picker__enter-button interval-picker__enter-button--flat"
+              >
+                <button
+                  class="bp4-button"
+                  type="button"
+                >
+                  <span
+                    class="bp4-button-text"
+                  >
+                    Apply
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item
+                  "
+      >
+        <div
+          class="toolbar-label-value"
+        >
+          <div
+            class="label-value-container"
+          >
+            <div
+              class="label-value__label"
+              data-cy="label-label"
+            >
+              label: 
+            </div>
+            <div
+              class="label-value__value"
+              data-cy="label-value"
+              title="Hello label"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item
+                  "
+      >
+        <div>
+          <div
+            class="loading-spinner__container"
+            style="min-width: 50px;"
+          >
+            <span>
+              <div
+                class="bp4-spinner bp4-intent-primary"
+                role="progressbar"
+              >
+                <div
+                  class="bp4-spinner-animation"
+                >
+                  <svg
+                    height="20"
+                    stroke-width="16.00"
+                    viewBox="-3.00 -3.00 106.00 106.00"
+                    width="20"
+                  >
+                    <path
+                      class="bp4-spinner-track"
+                      d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+                    />
+                    <path
+                      class="bp4-spinner-head"
+                      d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+                      pathLength="280"
+                      stroke-dasharray="280 280"
+                      stroke-dashoffset="210"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <span>
+                Loading
+                ...
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item
+                  "
+      >
+        <div>
+          <div
+            class="numeric-input__wrapper"
+            style="width: 50px;"
+          >
+            <div
+              class="bp4-control-group bp4-fill bp4-numeric-input numeric-input"
+            >
+              <div
+                class="bp4-input-group"
+              >
+                <input
+                  autocomplete="off"
+                  class="bp4-input"
+                  max="43"
+                  min="41"
+                  placeholder="Enter a number..."
+                  title="Hello Numeric"
+                  type="text"
+                  value="42"
+                  width="50"
+                />
+              </div>
+              <div
+                class="bp4-button-group bp4-vertical bp4-fixed"
+              >
+                <button
+                  aria-label="increment"
+                  class="bp4-button"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="bp4-icon bp4-icon-chevron-up"
+                    icon="chevron-up"
+                  >
+                    <svg
+                      data-icon="chevron-up"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                    >
+                      <path
+                        d="M12.71 9.29l-4-4C8.53 5.11 8.28 5 8 5s-.53.11-.71.29l-4 4a1.003 1.003 0 001.42 1.42L8 7.41l3.29 3.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <button
+                  aria-label="decrement"
+                  class="bp4-button"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="bp4-icon bp4-icon-chevron-down"
+                    icon="chevron-down"
+                  >
+                    <svg
+                      data-icon="chevron-down"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                    >
+                      <path
+                        d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item
+                  "
+      >
+        <div>
+          <div>
+            <button
+              class="bp4-button bp4-align-left toolbar-button"
+              style="width: 50px;"
+              title="Hello Popover"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span />
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-chevron-down"
+                  icon="chevron-down"
+                >
+                  <svg
+                    data-icon="chevron-down"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item
+                  "
+      >
+        <div
+          class="toolbar-switch"
+        >
+          <label
+            class="bp4-control bp4-switch bp4-large toolbar-switch__blueprint undefined"
+          >
+            <input
+              checked=""
+              type="checkbox"
+            />
+            <span
+              class="bp4-control-indicator"
+            />
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

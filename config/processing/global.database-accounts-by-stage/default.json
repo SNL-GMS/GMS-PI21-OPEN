@@ -1,0 +1,13 @@
+{
+  "name": "database-accounts-by-stage",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "Auto Network": "GMS_SOCCPRO",
+    "AL1": "GMS_AL1",
+    "AL2": "GMS_AL2"
+  }
+}

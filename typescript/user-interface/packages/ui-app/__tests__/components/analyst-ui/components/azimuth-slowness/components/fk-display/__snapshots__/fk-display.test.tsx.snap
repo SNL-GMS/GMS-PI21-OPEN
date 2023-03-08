@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FkDisplay renders & matches snapshot 1`] = `
+<div
+  style={
+    Object {
+      "border": "1px solid #111",
+      "height": "700px",
+      "overflow": "auto",
+      "resize": "both",
+      "width": "1000px",
+    }
+  }
+>
+  <div
+    className="bp4-non-ideal-state"
+  >
+    <div
+      className="bp4-non-ideal-state-visual"
+    >
+      <span
+        aria-hidden={true}
+        className="bp4-icon bp4-icon-multi-select"
+        icon="multi-select"
+        tabIndex={-1}
+      >
+        <svg
+          data-icon="multi-select"
+          height={60}
+          viewBox="0 0 20 20"
+          width={60}
+        >
+          <path
+            d="M19 3H7c-.55 0-1 .45-1 1v1h12v6h1c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zm-6 6H1c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1zm-1 6H2v-4h10v4zm4-9H4c-.55 0-1 .45-1 1v1h12v6h1c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </span>
+    </div>
+    <h4
+      className="bp4-heading"
+    >
+      Multiple FKs Selected
+    </h4>
+  </div>
+</div>
+`;

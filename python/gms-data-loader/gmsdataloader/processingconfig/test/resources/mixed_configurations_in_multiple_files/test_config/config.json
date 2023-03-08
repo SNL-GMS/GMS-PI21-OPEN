@@ -1,0 +1,11 @@
+{
+  "name": "test_constraint",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "defaultNetwork": "demo"
+  }
+}

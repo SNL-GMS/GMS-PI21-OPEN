@@ -1,0 +1,60 @@
+[
+  {
+    "name": "SEISMIC-AUXDELAY-soh-monitor-timewindows",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "StationName",
+        "operator": {
+          "type": "IN",
+          "negated": false
+        },
+        "value": [
+          "APG",
+          "ARTI",
+          "ATD",
+          "BELG",
+          "BJT",
+          "CTA",
+          "DAVOX",
+          "GNI",
+          "JAY",
+          "JCJ",
+          "JTS",
+          "KAPI",
+          "KLR",
+          "KIRV",
+          "KURK",
+          "KVAR",
+          "MA2",
+          "MLR",
+          "MDP",
+          "MMAI",
+          "OBN",
+          "OPO",
+          "PALK",
+          "RCBR",
+          "RPN",
+          "RPZ",
+          "SDV",
+          "SEY",
+          "SIV",
+          "SNAA",
+          "SUR",
+          "TIXI",
+          "TLY",
+          "URZ",
+          "VRAC",
+          "YAK"
+        ]
+      }
+    ],
+    "parameters": {
+      "calculationInterval": "PT60M",
+      "backOffDuration": "PT90M"
+    }
+  }
+]

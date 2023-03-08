@@ -1,0 +1,38 @@
+[
+  {
+    "name": "MK01.SHZ",
+    "active": true,
+    "locationCode": "",
+    "systemTime": "2004-10-15T00:00:00Z",
+    "informationSource": {
+      "originatingOrganization": "External",
+      "informationTime": "2004-10-15T00:00:00Z",
+      "reference": "OffDate: 2286-11-20T00:00:00Z, Loaded from CSS file"
+    },
+    "depth": 0.03,
+    "entityId": "4633776c-8956-30e9-99c9-0fb7fb4b8129",
+    "bandType": "SHORT_PERIOD",
+    "instrumentType": "HIGH_GAIN_SEISMOMETER",
+    "orientationType": "VERTICAL",
+    "orientationCode": "Z",
+    "latitude": 46.76897,
+    "longitude": 82.30066,
+    "elevation": 0.608,
+    "dataType": "SEISMIC",
+    "actualTime": "2004-10-15T00:00:00Z",
+    "verticalAngle": 0.0,
+    "horizontalAngle": -1.0,
+    "nominalSampleRate": 40.0,
+    "position": {
+      "northDisplacementKm": 0.0,
+      "eastDisplacementKm": 0.0,
+      "verticalDisplacementKm": 0.0
+    },
+    "versionId": "f2ad7b12-3aa0-396e-9c63-15e2b87e6564",
+    "comment": "Channel is associated with site MK01",
+    "aliases": [
+
+    ],
+    "units": "COUNTS_PER_NANOMETER"
+  }
+]

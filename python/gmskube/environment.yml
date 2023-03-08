@@ -1,0 +1,17 @@
+# gmskube specific environment
+# Any dependencies added here should also be added to the combined environment file in python/gms-test-environment.yml
+#
+# After making any changes to this file, a clean gmskube environment needs to be created, and the lock file regenerated:
+# `conda env remove --name gmskube`
+# `conda env create --name gmskube --file environment.yml`
+# `conda env export --name gmskube --no-builds --channel conda-forge --override-channels | grep -v "prefix" > environment.lock.yml`
+#
+
+name: gmskube
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10.4
+  - pyyaml=6.0
+  - requests=2.27.1
+  - rich=12.5.1

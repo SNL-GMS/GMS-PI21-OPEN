@@ -1,0 +1,38 @@
+plugins {
+  id('java-library')
+}
+
+dependencies {
+
+  implementation project(':feature-prediction-plugins-api')
+  implementation project(':feature-prediction-utilities')
+  implementation project(':file-store-utility')
+  implementation project(':frameworks-configuration-repository')
+  implementation project(':frameworks-configuration-commonobjects')
+  implementation project(':frameworks-configuration-api')
+  implementation project(':java-utilities')
+  implementation project(':plugin-spring')
+  implementation project(':signal-detection-coi')
+  implementation project(':station-definition-coi')
+  implementation project(':event-coi')
+    
+  // Apache
+  implementation libs.org.apache.commons.commons.lang3
+
+  // Google AutoValue
+  api libs.com.google.guava.guava
+  implementation libs.com.google.auto.value.auto.value.annotations
+  annotationProcessor libs.com.google.auto.value.auto.value.base
+
+  // JSON Serialization
+  api libs.com.fasterxml.jackson.core.jackson.databind
+  api libs.com.fasterxml.jackson.datatype.jackson.datatype.jdk8
+  api libs.com.fasterxml.jackson.datatype.jackson.datatype.jsr310
+
+  // Spring
+  implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+  implementation libs.org.springframework.boot.spring.boot.starter.web
+
+  // GMS Test Utilities
+  testImplementation project(':test-utils')
+}

@@ -1,0 +1,12 @@
+VNDA   sz        1995100      593  2002340 n       0.0000   -1.0    0.0 short_period_vertical_GS21                         19990312 12:00:00
+VNDA   lz        1995100      220  2002340 n       0.0000   -1.0    0.0 long_period_vertical_54000                         19990312 12:00:00
+VNDA   ln        1995100      174  2002340 n       0.0000    0.0   90.0 long_period_north_54000                            19990312 12:00:00
+VNDA   le        1995100      128  2002340 n       0.0000   90.0   90.0 long_period_east_54000                             19990312 12:00:00
+VNDA   bz        1995100       64  2002340 n       0.0000   -1.0    0.0 broadband_vertical_54000                           19990312 12:00:00
+VNDA   bn        1995100       42  2002340 n       0.0000    0.0   90.0 broadband_north_54000                              19990312 12:00:00
+VNDA   be        1995100       21  2002340 n       0.0000   90.0   90.0 broadband_east_54000                               19990312 12:00:00
+VNDA1  SHZ       2002352     1653  2008339 n       0.0305   -1.0    0.0 short_period_vertical_GS21                         20081211 12:00:00
+VNDA1  SHZ       2008339     1653  2286324 n       0.0229   -1.0    0.0 short_period_vertical_GS21                         20081211 12:00:00
+VNDAB  BHZ       2002352     1650  2286324 n       0.0914   -1.0    0.0 broadband_vertical_KS54000                         20041108 12:00:00
+VNDAB  BHN       2002352     1651  2286324 n       0.0914    0.0   90.0 broadband_north_KS54000                            20041108 12:00:00
+VNDAB  BHE       2002352     1652  2286324 n       0.0914   90.0   90.0 broadband_east_KS54000                             20041108 12:00:00

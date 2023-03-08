@@ -1,0 +1,15 @@
+LPAZ   sz        1995129      518  2002084 n       0.0000   -1.0    0.0 short period vertical_GS21                         20111115 12:00:00
+LPAZ   lz        1995129      214  2002084 n       0.0000   -1.0    0.0 long period vertical__54000                        20111115 12:00:00
+LPAZ   ln        1995129      168  2002084 n       0.0000    0.0   90.0 long period north__54000                           20111115 12:00:00
+LPAZ   le        1995129      122  2002084 n       0.0000   90.0   90.0 long period east__54000                            20111115 12:00:00
+LPAZ   bz        1995129       59  2002084 n       0.0000   -1.0    0.0 broadband vertical__54000                          20111115 12:00:00
+LPAZ   bn        1995129       37  2002084 n       0.0000    0.0   90.0 broadband north__54000                             20111115 12:00:00
+LPAZ   be        1995129       16  2002084 n       0.0000   90.0   90.0 broadband east_54000                               20111115 12:00:00
+LPAZ01 SHZ       2002086     1341  2002238 n       0.0296   -1.0    0.0 short_period_vertical_GS21                         20111115 12:00:00
+LPAZ31 BHZ       2002086     1338  2002238 n       0.1000   -1.0    0.0 broadband_vertical_KS54000                         20111115 12:00:00
+LPAZ31 BHN       2002086     1339  2002238 n       0.1000    0.0   90.0 broadband_north_KS54000                            20111115 12:00:00
+LPAZ31 BHE       2002086     1340  2002238 n       0.1000   90.0   90.0 broadband_east_KS54000                             20111115 12:00:00
+LPAZ1  SHZ       2002238     1695  2286324 n       0.0296   -1.0    0.0 short_period_vertical_GS21                         20040921 12:00:00
+LPAZB  BHZ       2002238     1692  2286324 n       0.1000   -1.0    0.0 broadband_vertical_KS54000                         20040921 12:00:00
+LPAZB  BHN       2002238     1693  2286324 n       0.1000    0.0   90.0 broadband_north_KS54000                            20040921 12:00:00
+LPAZB  BHE       2002238     1694  2286324 n       0.1000   90.0   90.0 broadband_east_KS54000                             20040921 12:00:00

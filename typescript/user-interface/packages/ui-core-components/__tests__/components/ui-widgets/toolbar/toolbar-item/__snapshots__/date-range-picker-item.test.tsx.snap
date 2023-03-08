@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DateRangePickerToolbarItem DateRangePickerToolbarItem renders directly 1`] = `
+<div>
+  <div
+    class="toolbar-button--capsule"
+  >
+    <div
+      class="date-range-picker"
+      id="date-range-picker-id-1"
+    >
+      <label
+        class="bp4-label bp4-label bp4-inline date-range-picker__label"
+      >
+        Time Range: 1970-01-01 00:00 to 1970-01-01 00:00
+      </label>
+      <div>
+        <button
+          class="bp4-button date-range-picker__apply-button"
+          data-cy="date-range-picker-edit"
+          type="button"
+        >
+          <span
+            class="bp4-button-text"
+          >
+            Edit
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

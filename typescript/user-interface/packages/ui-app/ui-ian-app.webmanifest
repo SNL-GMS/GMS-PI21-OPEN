@@ -1,0 +1,28 @@
+{
+  "short_name": "GMS",
+  "name": "GMS: Interactive Analysis",
+  "icons": [
+    {
+      "src": "./resources/images/GMSAppIconRect.svg",
+      "type": "image/svg+xml",
+      "sizes": "150x150"
+    },
+    {
+      "src": "./resources/images/GMSAppIconRect-192w.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./resources/images/GMSAppIconRect-512w.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "background_color": "#182026",
+  "display": "minimal-ui",
+  "scope": ".",
+  "theme_color": "#1c2127",
+  "description": "Geophysical Monitoring System"
+}

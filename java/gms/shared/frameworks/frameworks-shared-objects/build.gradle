@@ -1,0 +1,7 @@
+apply plugin: 'java-library'
+dependencies {
+    implementation libs.org.apache.commons.commons.lang3
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+}
+

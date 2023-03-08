@@ -1,0 +1,39 @@
+{
+  "name": "default-env",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "MonitorType",
+      "operator": {
+        "type": "IN",
+        "negated": false
+      },
+      "value": [
+        "ENV_GPS_RECEIVER_UNLOCKED",
+        "ENV_DIGITIZER_CALIBRATION_LOOP_BACK",
+        "ENV_CALIBRATION_UNDERWAY",
+        "ENV_EQUIPMENT_MOVED",
+        "ENV_BACKUP_POWER_UNSTABLE",
+        "ENV_CLOCK_DIFFERENTIAL_IN_MICROSECONDS",
+        "ENV_VAULT_DOOR_OPENED",
+        "ENV_CLOCK_DIFFERENTIAL_TOO_LARGE",
+        "ENV_AUTHENTICATION_SEAL_BROKEN",
+        "ENV_DEAD_SENSOR_CHANNEL",
+        "ENV_DIGITIZING_EQUIPMENT_OPEN",
+        "ENV_MAIN_POWER_FAILURE",
+        "ENV_CLIPPED",
+        "ENV_GPS_RECEIVER_OFF",
+        "ENV_EQUIPMENT_HOUSING_OPEN",
+        "ENV_DIGITIZER_ANALOG_INPUT_SHORTED",
+        "ENV_ZEROED_DATA"
+      ]
+    },
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "goodThreshold": 85.222,
+    "marginalThreshold": 90.111
+  }
+}

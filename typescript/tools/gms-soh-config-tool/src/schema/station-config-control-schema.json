@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "stationName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "channelNames": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": ["stationName"]
+}

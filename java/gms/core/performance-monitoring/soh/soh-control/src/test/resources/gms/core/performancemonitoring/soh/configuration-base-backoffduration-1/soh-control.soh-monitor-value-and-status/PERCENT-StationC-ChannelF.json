@@ -1,0 +1,41 @@
+{
+  "name": "percent-stationA-channelC",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "SohValueType",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "PERCENT"
+      ]
+    },
+    {
+      "constraintType": "STRING",
+      "criterion": "StationName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "StationC"
+      ]
+    },
+    {
+      "constraintType": "STRING",
+      "criterion": "ChannelName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "ChannelF"
+      ]
+    }
+  ],
+  "parameters": {
+    "backOffDuration": "PT30S"
+  }
+}

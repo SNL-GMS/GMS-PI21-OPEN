@@ -1,0 +1,47 @@
+@import '@gms/ui-core-components/src/scss/core-colors.scss';
+
+.ian-signal-detections-gl-container,
+.signal-detection-table-wrapper {
+  height: 100%;
+}
+
+.signalDetectionPanel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.edge-SD-row .table-cell {
+  background-color: var(--gms-background, $gms-background);
+  filter: brightness(0.5);
+}
+
+.sd-cell {
+  &--open-associated .table-cell {
+    background-color: var(--analyst-open-event, $analyst-open-event);
+  }
+  &--open-associated > .table-cell .table-cell__value {
+    color: var(--open-associated-text-color, var(--gms-main-inverted, $gms-main-inverted));
+  }
+
+  &--complete-associated .table-cell {
+    background-color: var(--analyst-complete, $analyst-complete);
+  }
+  &--complete-associated > .table-cell .table-cell__value {
+    color: var(--complete-associated-text-color, var(--gms-main-inverted, $gms-main-inverted));
+  }
+
+  &--other-associated .table-cell {
+    background-color: var(--analyst-other, $analyst-other);
+  }
+  &--other-associated > .table-cell .table-cell__value {
+    color: var(--other-associated-text-color, var(--gms-main-inverted, $gms-main-inverted));
+  }
+
+  &--unassociated .table-cell {
+    background-color: var(--analyst-unassociated, $analyst-unassociated);
+  }
+  &--unassociated > .table-cell .table-cell__value {
+    color: var(--unassociated-text-color, var(--gms-main-inverted, $gms-main-inverted));
+  }
+}

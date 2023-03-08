@@ -1,0 +1,24 @@
+apply plugin: "java-library"
+
+dependencies {
+    implementation project(':ssam-control-api')
+    implementation project(':frameworks-control')
+    implementation project(':frameworks-system-config')
+    implementation project(':soh-control')
+    implementation project(':frameworks-osd-api')
+    implementation project(':ui-materialized-view')
+    implementation project(':java-utilities')
+    implementation project(':reactor-utils')
+
+    implementation libs.io.projectreactor.reactor.core
+    implementation libs.io.projectreactor.kafka.reactor.kafka
+    // Google AutoValue
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+    implementation project(':frameworks-osd-repository')
+
+    //Direct log4j dependency for legacy logger to set custom timing logs
+    implementation libs.org.apache.logging.log4j.log4j.core
+
+    testImplementation libs.io.projectreactor.reactor.test
+}

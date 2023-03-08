@@ -1,0 +1,25 @@
+{
+  "name": "DEFAULT_DURATION",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "SohValueType",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "DURATION"
+      ]
+    },
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "goodThreshold": "PT1S",
+    "marginalThreshold": "PT2S",
+    "calculationInterval": "PT3S",
+    "backOffDuration": "PT40S"
+  }
+}

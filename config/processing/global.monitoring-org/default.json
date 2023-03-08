@@ -1,0 +1,11 @@
+{
+  "name": "monitoring-org-default",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "monitoringOrganization": "GMS"
+  }
+}

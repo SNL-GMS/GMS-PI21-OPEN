@@ -1,0 +1,34 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+
+    implementation project(':file-store-utility')
+    implementation project(':frameworks-configuration-repository')
+    implementation project(':frameworks-configuration-commonobjects')
+    implementation project(':frameworks-configuration-api')
+    implementation project(':frameworks-osd-testfixtures')
+    implementation project(':station-definition-coi')
+    implementation project(':signal-detection-coi')
+    implementation project(":event-coi")
+    api 'com.fasterxml.jackson.core:jackson-databind'
+    implementation project(':java-utilities')
+    implementation project(':plugin-spring')
+    implementation libs.org.apache.commons.commons.math3
+
+    // MinIO
+    implementation libs.io.minio.minio
+
+    // Spring
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+    implementation libs.org.springframework.boot.spring.boot.starter.web
+    // -- WebClient
+    implementation libs.org.springframework.spring.webflux
+
+    // Google AutoValue
+    api libs.com.google.guava.guava
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+}

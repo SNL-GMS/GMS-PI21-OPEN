@@ -1,0 +1,13 @@
+{
+  "name": "bridged-data-source-config",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "default_schema": "GMS_GLOBAL",
+    "simulation_schema": "GMS_SIMULATION_GLOBAL",
+    "calib_delta": 5
+  }
+}

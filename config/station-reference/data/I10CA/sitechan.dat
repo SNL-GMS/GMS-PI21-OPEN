@@ -1,0 +1,9 @@
+I10H1  LWS       1999124     1973  2286324 n       0.0000   -1.0   -1.0 Wind_speed                                         20060120 12:00:00
+I10H1  LWD       2000137     1972  2286324 n       0.0000   -1.0   -1.0 Wind_direction                                     20060120 12:00:00
+I10H1  LKO       1999124     1971  2286324 n       0.0000   -1.0   -1.0 Temperature                                        20060120 12:00:00
+I10H1  LIO       1999124     1970  2286324 n       0.0000   -1.0   -1.0 Relative_humidity                                  20060120 12:00:00
+I10H1  LDA       1999124     1969  2286324 n       0.0000   -1.0   -1.0 Absolute_barometric_pressure                       20060120 12:00:00
+I10H1  BDF       1999124     1965  2286324 n       0.0000   -1.0   -1.0 0.01_to_5_Hz_infrasound_micropressure              20060120 12:00:00
+I10H2  BDF       1999124     1966  2286324 n       0.0000   -1.0   -1.0 0.01_to_5_Hz_infrasound_micropressure              20060120 12:00:00
+I10H3  BDF       1999124     1967  2286324 n       0.0000   -1.0   -1.0 0.01_to_5_Hz_infrasound_micropressure              20060120 12:00:00
+I10H4  BDF       1999124     1968  2286324 n       0.0000   -1.0   -1.0 0.01_to_5_Hz_infrasound_micropressure              20060120 12:00:00

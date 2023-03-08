@@ -1,0 +1,39 @@
+{
+    "name": "cascade-filter-2",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "name",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "Cascade Filter 2"
+            ]
+        }
+    ],
+    "parameters": {
+	    "type": "CascadeFilterDescription",
+        "comments": "Cascade Filter 2 comments",
+		"filterDescriptions": [
+            {
+				"$ref=global.filter-description": [{
+					"criterion": "name",
+					"value": "1.0 5.0 3 BP causal Description"
+				}]
+            },
+            {
+				"$ref=global.filter-description": [{
+                    "criterion": "name",
+                    "value": "2.0 4.0 4 BP causal Description"
+				}]
+            }
+        ],
+		"parameters": {
+            "sampleRateHz": 20.0,
+			"sampleRateToleranceHz": 0.05,
+			"groupDelaySec": "PT1.2S"
+		}
+    }
+}

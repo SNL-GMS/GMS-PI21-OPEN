@@ -1,0 +1,30 @@
+{
+  "name": "duration",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "StationName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "StationA","StationB","StationC"
+      ]
+    },
+    {
+      "constraintType": "STRING",
+      "criterion": "MonitorType",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "ENV_CALIBRATION_UNDERWAY"
+      ]
+    }
+  ],
+  "parameters": {
+    "backOffDuration": "PT20S"
+  }
+}

@@ -1,0 +1,47 @@
+$resizer-thickness: 0.25rem;
+
+.resizer {
+  position: relative;
+  transition: height linear 50ms;
+  min-height: 100%;
+  &__handle {
+    position: absolute;
+    display: block;
+    margin: 0;
+    border-radius: 0 0 $rounded-rectangle-radius $rounded-rectangle-radius;
+    background-color: transparent;
+    &--height {
+      width: 100%;
+      height: $resizer-thickness;
+      left: 0;
+      right: 0;
+    }
+    &--width {
+      width: $resizer-thickness;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+    }
+    &--bottom {
+      bottom: 0;
+    }
+    &--hint {
+      background-color: var(--core-scrollbar, var(--gms-scrollbar, $core-scrollbar));
+    }
+    &--highlighted {
+      background-color: $core-input-highlight;
+    }
+  }
+  &__sensor {
+    position: absolute;
+    width: 100%;
+    height: $resizer-thickness;
+    padding: 0.5rem;
+    background-color: transparent;
+    cursor: row-resize;
+    &--bottom {
+      bottom: 0;
+      transform: translateY(50%);
+    }
+  }
+}

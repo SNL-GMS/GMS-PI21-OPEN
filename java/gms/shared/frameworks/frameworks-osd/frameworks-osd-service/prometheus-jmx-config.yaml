@@ -1,0 +1,10 @@
+---
+# This YAML file is intentionally left blank which represents the basic default
+# configurations for the JMX Prometheus Exporter. A config file must exist in
+# order for JMX to run.
+#
+# This is where you can white/black list certain metrics and select using
+# patterns, among other things. A full list of valid configurations are
+# located here:
+#
+# https://github.com/prometheus/jmx_exporter#configuration

@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    alias(libs.plugins.org.springframework.boot)
+    alias(libs.plugins.com.palantir.docker)
+}
+
+dependencies {
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+
+    // Frameworks configuration and services
+    implementation project(':frameworks-service-generator')
+    implementation project(':frameworks-configuration-repository')
+    implementation project(':frameworks-control')
+    implementation project(':frameworks-osd-commonobjects')
+    implementation project(':signal-detection-coi')
+    implementation project(':signal-enhancement-configuration-coi')
+    implementation (project(':workflow-manager')) {
+        exclude module: 'spring-persistence-oracle'
+    }
+    implementation project(':workflow-coi')
+    implementation project(':spring-framework-utilities')
+
+    // Spring and hibernate dependencies
+    implementation libs.org.hibernate.hibernate.entitymanager
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+    implementation libs.org.springframework.boot.spring.boot.starter.web
+    implementation libs.org.springdoc.springdoc.openapi.ui
+
+    // Spring web and spring doc dependencies
+    implementation 'org.msgpack:msgpack-core:0.9.0'
+    implementation 'org.msgpack:jackson-dataformat-msgpack:0.9.0'
+
+    // unit testing dependencies
+    testImplementation libs.org.springframework.boot.spring.boot.starter.test
+    testImplementation libs.org.junit.jupiter.junit.jupiter.api
+    testImplementation project(':spring-framework-utilities').sourceSets.test.output
+
+    testImplementation 'org.mockito:mockito-core'
+    testImplementation 'org.mockito:mockito-junit-jupiter'
+}

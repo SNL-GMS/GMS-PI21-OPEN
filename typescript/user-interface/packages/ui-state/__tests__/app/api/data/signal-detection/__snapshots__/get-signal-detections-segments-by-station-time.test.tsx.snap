@@ -1,0 +1,333 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Get Signal Detection by Station build a builder using getSignalDetectionsAndSegmentsByStationReducers 1`] = `
+Map {
+  "signalDetection/getSignalDetectionsAndSegmentsByStationAndTime/pending" => [Function],
+  "signalDetection/getSignalDetectionsAndSegmentsByStationAndTime/fulfilled" => [Function],
+  "signalDetection/getSignalDetectionsAndSegmentsByStationAndTime/rejected" => [Function],
+}
+`;
+
+exports[`Get Signal Detection by Station build a builder using getSignalDetectionsAndSegmentsByStationReducers 2`] = `
+Object {
+  "queries": Object {
+    "getSignalDetectionWithSegmentsByStationAndTime": Object {
+      "stationName": Object {
+        "12345": Object {
+          "arg": Object {
+            "station": Object {
+              "name": "stationName",
+            },
+          },
+          "error": undefined,
+          "status": "pending",
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Get Signal Detection by Station build a builder using getSignalDetectionsAndSegmentsByStationReducers 3`] = `
+Object {
+  "queries": Object {
+    "getSignalDetectionWithSegmentsByStationAndTime": Object {
+      "stationName": Object {
+        "12345": Object {
+          "arg": Object {
+            "station": Object {
+              "name": "stationName",
+            },
+          },
+          "error": undefined,
+          "status": "fulfilled",
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Get Signal Detection by Station build a builder using getSignalDetectionsAndSegmentsByStationReducers 4`] = `
+Object {
+  "queries": Object {
+    "getSignalDetectionWithSegmentsByStationAndTime": Object {
+      "stationName": Object {
+        "12345": Object {
+          "arg": Object {
+            "station": Object {
+              "name": "stationName",
+            },
+          },
+          "error": undefined,
+          "status": "rejected",
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Get Signal Detection by Station will not execute query if the current interval is not defined 2`] = `
+Object {
+  "analyst": Object {
+    "alignWaveformsOn": "Time",
+    "channelFilters": Object {},
+    "defaultSignalDetectionPhase": "P",
+    "effectiveNowTime": null,
+    "eventListOpenEventTriggered": false,
+    "historyActionInProgress": 0,
+    "hotkeyCycleOverrides": Object {},
+    "location": Object {
+      "selectedLocationSolutionId": null,
+      "selectedLocationSolutionSetId": null,
+      "selectedPreferredLocationSolutionId": null,
+      "selectedPreferredLocationSolutionSetId": null,
+    },
+    "mapOpenEventTriggered": false,
+    "measurementMode": Object {
+      "entries": Object {},
+      "mode": "Default",
+    },
+    "openEventId": null,
+    "openLayoutName": null,
+    "phaseToAlignOn": null,
+    "sdIdsToShowFk": Array [],
+    "selectedEventIds": Array [],
+    "selectedFilterIndex": null,
+    "selectedFilterList": null,
+    "selectedSdIds": Array [],
+    "selectedSortType": "Station: A-Z",
+  },
+  "common": Object {
+    "commandPaletteIsVisible": false,
+    "glLayoutState": Object {},
+    "keyPressActionQueue": Object {},
+    "keyboardShortcutsVisibility": false,
+    "selectedStationIds": Array [],
+  },
+  "dataAcquisition": Object {
+    "data": Object {
+      "sohStatus": Object {
+        "isStale": true,
+        "lastUpdated": 0,
+        "loading": true,
+        "stationAndStationGroupSoh": Object {
+          "isUpdateResponse": false,
+          "stationGroups": Array [],
+          "stationSoh": Array [],
+        },
+      },
+    },
+    "filtersToDisplay": Object {
+      "soh-environment-channel-statuses": Object {
+        "BAD": true,
+        "GOOD": true,
+        "MARGINAL": true,
+      },
+      "soh-environment-monitor-statuses": Object {
+        "BAD": true,
+        "GOOD": true,
+        "MARGINAL": true,
+      },
+      "soh-lag": Object {
+        "BAD": true,
+        "GOOD": true,
+        "MARGINAL": true,
+      },
+      "soh-missing": Object {
+        "BAD": true,
+        "GOOD": true,
+        "MARGINAL": true,
+      },
+      "soh-overview": Object {
+        "BAD": true,
+        "GOOD": true,
+        "MARGINAL": true,
+        "NONE": true,
+      },
+      "soh-timeliness": Object {
+        "BAD": true,
+        "GOOD": true,
+        "MARGINAL": true,
+      },
+      "station-statistics": Object {
+        "BAD": true,
+        "GOOD": true,
+        "MARGINAL": true,
+        "NONE": true,
+      },
+    },
+    "selectedAceiType": null,
+    "selectedProcessingStation": null,
+    "stationStatisticsGroup": undefined,
+    "unmodifiedProcessingStation": null,
+  },
+  "events": Object {
+    "edgeEvents": Object {
+      "Edge events after interval": true,
+      "Edge events before interval": true,
+    },
+    "eventsColumns": Object {
+      "activeAnalysts": true,
+      "confidenceSemiMajorAxis": false,
+      "confidenceSemiMinorAxis": false,
+      "conflict": true,
+      "coverageSemiMajorAxis": false,
+      "coverageSemiMinorAxis": false,
+      "depthKm": true,
+      "latitudeDegrees": true,
+      "longitudeDegrees": true,
+      "magnitudeMb": true,
+      "magnitudeMl": false,
+      "magnitudeMs": false,
+      "preferred": true,
+      "region": true,
+      "rejected": true,
+      "status": true,
+      "time": true,
+    },
+    "stationsAssociatedWithCurrentOpenEvent": Array [],
+  },
+  "map": Object {
+    "isSyncedWithWaveformZoom": false,
+    "layerVisibility": Object {
+      "associatedCompleteDetection": true,
+      "associatedOpenDetection": true,
+      "associatedOtherDetection": true,
+      "confidenceEllipse": true,
+      "coverageEllipse": true,
+      "edgeDetectionAfter": true,
+      "edgeDetectionBefore": true,
+      "edgeEventsAfterInterval": true,
+      "edgeEventsBeforeInterval": true,
+      "events": true,
+      "nonPreferredLocationSolution": false,
+      "preferredLocationSolution": true,
+      "signalDetections": true,
+      "sites": false,
+      "stations": true,
+      "unassociatedDetection": true,
+    },
+  },
+  "signalDetections": Object {
+    "displayedSignalDetectionConfiguration": Object {
+      "signalDetectionAfterInterval": true,
+      "signalDetectionAssociatedToCompletedEvent": true,
+      "signalDetectionAssociatedToOpenEvent": true,
+      "signalDetectionAssociatedToOtherEvent": true,
+      "signalDetectionBeforeInterval": true,
+      "signalDetectionUnassociated": true,
+      "syncWaveform": false,
+    },
+    "signalDetectionsColumns": Object {
+      "amplitude": true,
+      "assocStatus": true,
+      "azimuth": true,
+      "azimuthStandardDeviation": true,
+      "channel": true,
+      "conflict": true,
+      "emergenceAngle": false,
+      "longPeriodFirstMotion": false,
+      "period": true,
+      "phase": true,
+      "phaseConfidence": false,
+      "rectilinearity": false,
+      "rejected": true,
+      "sNR": true,
+      "shortPeriodFirstMotion": false,
+      "slowness": true,
+      "slownessStandardDeviation": true,
+      "station": true,
+      "time": true,
+      "timeStandardDeviation": true,
+      "unsavedChanges": true,
+    },
+  },
+  "stationPropertiesConfiguration": Object {
+    "channelConfigurationColumns": Object {
+      "calibrationEffectiveAt": true,
+      "calibrationFactor": true,
+      "calibrationPeriod": true,
+      "calibrationResponseId": true,
+      "calibrationStandardDeviation": true,
+      "calibrationTimeShift": true,
+      "channelBandType": false,
+      "channelDataType": false,
+      "channelInstrumentType": false,
+      "channelOrientationCode": false,
+      "channelOrientationType": false,
+      "depthKm": true,
+      "description": true,
+      "eastDisplacementKm": true,
+      "effectiveAt": true,
+      "effectiveUntil": true,
+      "elevationKm": true,
+      "fapResponseId": true,
+      "latitudeDegrees": true,
+      "longitudeDegrees": true,
+      "name": true,
+      "nominalSampleRateHz": true,
+      "northDisplacementKm": true,
+      "orientationHorizontalDegrees": true,
+      "orientationVerticalDegrees": true,
+      "units": true,
+      "verticalDisplacementKm": true,
+    },
+    "channelGroupConfigurationColumns": Object {
+      "depthKm": true,
+      "description": true,
+      "effectiveAt": true,
+      "effectiveUntil": true,
+      "elevationKm": true,
+      "latitudeDegrees": true,
+      "longitudeDegrees": true,
+      "name": true,
+      "type": true,
+    },
+    "selectedEffectiveAtIndex": 0,
+  },
+  "systemMessage": Object {
+    "isSoundEnabled": true,
+    "lastUpdated": null,
+    "latestSystemMessages": null,
+    "systemMessages": null,
+  },
+  "userSession": Object {
+    "authenticationStatus": Object {
+      "authenticated": false,
+      "authenticationCheckComplete": false,
+      "failedToConnect": false,
+      "userName": null,
+    },
+    "connected": true,
+  },
+  "waveform": Object {
+    "baseStationTime": 0,
+    "loadingState": Object {
+      "completed": 0,
+      "description": "Loading waveforms",
+      "isLoading": false,
+      "percent": 0,
+      "total": 0,
+    },
+    "maximumOffset": 0,
+    "minimumOffset": 0,
+    "shouldShowPredictedPhases": true,
+    "shouldShowTimeUncertainty": false,
+    "stationsVisibility": Object {},
+    "viewableInterval": null,
+    "zoomInterval": null,
+  },
+  "workflow": Object {
+    "analysisMode": null,
+    "openActivityNames": Array [],
+    "openIntervalName": null,
+    "stationGroup": null,
+    "timeRange": Object {
+      "endTimeSecs": null,
+      "startTimeSecs": null,
+    },
+  },
+}
+`;

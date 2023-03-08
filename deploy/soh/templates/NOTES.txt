@@ -1,0 +1,9 @@
+Type:               {{ .Chart.Name }}
+Instance name:      {{ .Release.Name }}
+Namespace:          {{ .Release.Namespace }}
+Base domain:        {{ .Values.global.baseDomain }}
+User:               {{ .Values.global.user }}
+Image registry:     {{ .Values.global.imageRegistry }}
+Image tag:          {{ .Values.global.imageTag }}
+Run Injector:       {{ .Values.global.injector }}
+Live Data:          {{ .Values.global.liveData }}

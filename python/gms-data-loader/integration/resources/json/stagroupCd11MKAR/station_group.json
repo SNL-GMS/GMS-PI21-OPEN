@@ -1,0 +1,935 @@
+[
+  {
+    "name": "CD1.1",
+    "description": "Test Station group. Only has MKAR",
+    "stations": [
+      {
+        "name": "MKAR",
+        "type": "SEISMIC_ARRAY",
+        "description": "Makanchi_Array,_Kazakhstan,_IMS",
+        "relativePositionsByChannel": {
+          "MKAR.MK07.SHZ": {
+            "northDisplacementKm": -4.477,
+            "eastDisplacementKm": 1.919,
+            "verticalDisplacementKm": 0.0
+          },
+          "MKAR.MK31.BHN": {
+            "northDisplacementKm": 0.0,
+            "eastDisplacementKm": 0.0,
+            "verticalDisplacementKm": 0.0
+          },
+          "MKAR.MK01.SHZ": {
+            "northDisplacementKm": -2.749,
+            "eastDisplacementKm": 0.771,
+            "verticalDisplacementKm": 0.0
+          },
+          "MKAR.MK02.SHZ": {
+            "northDisplacementKm": -2.626,
+            "eastDisplacementKm": 1.376,
+            "verticalDisplacementKm": 0.0
+          },
+          "MKAR.MK03.SHZ": {
+            "northDisplacementKm": -3.101,
+            "eastDisplacementKm": 0.818,
+            "verticalDisplacementKm": 0.0
+          },
+          "MKAR.MK31.BHZ": {
+            "northDisplacementKm": 0.0,
+            "eastDisplacementKm": 0.0,
+            "verticalDisplacementKm": 0.0
+          },
+          "MKAR.MK08.SHZ": {
+            "northDisplacementKm": -4.268,
+            "eastDisplacementKm": -0.59,
+            "verticalDisplacementKm": 0.0
+          },
+          "MKAR.MK05.SHZ": {
+            "northDisplacementKm": 0.03,
+            "eastDisplacementKm": 0.041,
+            "verticalDisplacementKm": 0.0
+          },
+          "MKAR.MK06.SHZ": {
+            "northDisplacementKm": -2.081,
+            "eastDisplacementKm": 1.727,
+            "verticalDisplacementKm": 0.0
+          },
+          "MKAR.MK04.SHZ": {
+            "northDisplacementKm": -2.484,
+            "eastDisplacementKm": 0.353,
+            "verticalDisplacementKm": 0.0
+          },
+          "MKAR.MK31.BHE": {
+            "northDisplacementKm": 0.0,
+            "eastDisplacementKm": 0.0,
+            "verticalDisplacementKm": 0.0
+          },
+          "MKAR.MK09.SHZ": {
+            "northDisplacementKm": -2.131,
+            "eastDisplacementKm": -1.075,
+            "verticalDisplacementKm": 0.0
+          }
+        },
+        "location": {
+          "latitudeDegrees": 46.79368,
+          "longitudeDegrees": 82.29057,
+          "depthKm": 0.0,
+          "elevationKm": 0.618
+        },
+        "channelGroups": [
+          {
+            "name": "MK07",
+            "description": "Makanchi_Array,_Kazakhstan,_IMS",
+            "location": {
+              "latitudeDegrees": 46.75343,
+              "longitudeDegrees": 82.31566,
+              "depthKm": 0.0,
+              "elevationKm": 0.64
+            },
+            "type": "SITE_GROUP",
+            "channels": [
+              {
+                "name": "MKAR.MK07.SHZ",
+                "canonicalName": "MKAR.MK07.SHZ",
+                "description": "Raw Channel created from ReferenceChannel f4f524bd-3350-314e-8209-4d854a95e55d with version b62fb314-dd55-39e6-9c04-39886024f377",
+                "station": "MKAR",
+                "channelDataType": "SEISMIC",
+                "channelBandType": "SHORT_PERIOD",
+                "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+                "channelOrientationType": "VERTICAL",
+                "channelOrientationCode": "Z",
+                "units": "COUNTS_PER_NANOMETER",
+                "nominalSampleRateHz": 40.0,
+                "location": {
+                  "latitudeDegrees": 46.75343,
+                  "longitudeDegrees": 82.31566,
+                  "depthKm": 0.03,
+                  "elevationKm": 0.64
+                },
+                "orientationAngles": {
+                  "horizontalAngleDeg": -1.0,
+                  "verticalAngleDeg": 0.0
+                },
+                "configuredInputs": [
+                ],
+                "processingDefinition": {
+                },
+                "processingMetadata": {
+                  "CHANNEL_GROUP": "MK07"
+                }
+              }
+            ]
+          },
+          {
+            "name": "MK02",
+            "description": "Makanchi_Array,_Kazakhstan,_IMS",
+            "location": {
+              "latitudeDegrees": 46.77007,
+              "longitudeDegrees": 82.30857,
+              "depthKm": 0.0,
+              "elevationKm": 0.636
+            },
+            "type": "SITE_GROUP",
+            "channels": [
+              {
+                "name": "MKAR.MK02.SHZ",
+                "canonicalName": "MKAR.MK02.SHZ",
+                "description": "Raw Channel created from ReferenceChannel 1e60b651-ed8d-30fa-8d8c-cd92788e6176 with version b6204a5d-8afd-34a7-aaa7-e661e271328e",
+                "station": "MKAR",
+                "channelDataType": "SEISMIC",
+                "channelBandType": "SHORT_PERIOD",
+                "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+                "channelOrientationType": "VERTICAL",
+                "channelOrientationCode": "Z",
+                "units": "COUNTS_PER_NANOMETER",
+                "nominalSampleRateHz": 40.0,
+                "location": {
+                  "latitudeDegrees": 46.77007,
+                  "longitudeDegrees": 82.30857,
+                  "depthKm": 0.03,
+                  "elevationKm": 0.636
+                },
+                "orientationAngles": {
+                  "horizontalAngleDeg": -1.0,
+                  "verticalAngleDeg": 0.0
+                },
+                "configuredInputs": [
+                ],
+                "processingDefinition": {
+                },
+                "processingMetadata": {
+                  "CHANNEL_GROUP": "MK02"
+                }
+              }
+            ]
+          },
+          {
+            "name": "MK04",
+            "description": "Makanchi_Array,_Kazakhstan,_IMS",
+            "location": {
+              "latitudeDegrees": 46.77136,
+              "longitudeDegrees": 82.29518,
+              "depthKm": 0.0,
+              "elevationKm": 0.598
+            },
+            "type": "SITE_GROUP",
+            "channels": [
+              {
+                "name": "MKAR.MK04.SHZ",
+                "canonicalName": "MKAR.MK04.SHZ",
+                "description": "Raw Channel created from ReferenceChannel be9cfc63-4e8c-30ec-8b05-8f9bacf2d2bf with version 3070b046-2895-3a91-abfb-c611bf339693",
+                "station": "MKAR",
+                "channelDataType": "SEISMIC",
+                "channelBandType": "SHORT_PERIOD",
+                "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+                "channelOrientationType": "VERTICAL",
+                "channelOrientationCode": "Z",
+                "units": "COUNTS_PER_NANOMETER",
+                "nominalSampleRateHz": 40.0,
+                "location": {
+                  "latitudeDegrees": 46.77136,
+                  "longitudeDegrees": 82.29518,
+                  "depthKm": 0.03,
+                  "elevationKm": 0.598
+                },
+                "orientationAngles": {
+                  "horizontalAngleDeg": -1.0,
+                  "verticalAngleDeg": 0.0
+                },
+                "configuredInputs": [
+                ],
+                "processingDefinition": {
+                },
+                "processingMetadata": {
+                  "CHANNEL_GROUP": "MK04"
+                }
+              }
+            ]
+          },
+          {
+            "name": "MK03",
+            "description": "Makanchi_Array,_Kazakhstan,_IMS",
+            "location": {
+              "latitudeDegrees": 46.7658,
+              "longitudeDegrees": 82.30127,
+              "depthKm": 0.0,
+              "elevationKm": 0.629
+            },
+            "type": "SITE_GROUP",
+            "channels": [
+              {
+                "name": "MKAR.MK03.SHZ",
+                "canonicalName": "MKAR.MK03.SHZ",
+                "description": "Raw Channel created from ReferenceChannel 3a12437e-1445-3035-b19e-f9fb065b6aa5 with version fbbe0642-cc50-379d-acd3-30b2404366be",
+                "station": "MKAR",
+                "channelDataType": "SEISMIC",
+                "channelBandType": "SHORT_PERIOD",
+                "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+                "channelOrientationType": "VERTICAL",
+                "channelOrientationCode": "Z",
+                "units": "COUNTS_PER_NANOMETER",
+                "nominalSampleRateHz": 40.0,
+                "location": {
+                  "latitudeDegrees": 46.7658,
+                  "longitudeDegrees": 82.30127,
+                  "depthKm": 0.03,
+                  "elevationKm": 0.629
+                },
+                "orientationAngles": {
+                  "horizontalAngleDeg": -1.0,
+                  "verticalAngleDeg": 0.0
+                },
+                "configuredInputs": [
+                ],
+                "processingDefinition": {
+                },
+                "processingMetadata": {
+                  "CHANNEL_GROUP": "MK03"
+                }
+              }
+            ]
+          },
+          {
+            "name": "MK01",
+            "description": "Makanchi_Array,_Kazakhstan,_IMS",
+            "location": {
+              "latitudeDegrees": 46.76897,
+              "longitudeDegrees": 82.30066,
+              "depthKm": 0.0,
+              "elevationKm": 0.608
+            },
+            "type": "SITE_GROUP",
+            "channels": [
+              {
+                "name": "MKAR.MK01.SHZ",
+                "canonicalName": "MKAR.MK01.SHZ",
+                "description": "Raw Channel created from ReferenceChannel 4633776c-8956-30e9-99c9-0fb7fb4b8129 with version f2ad7b12-3aa0-396e-9c63-15e2b87e6564",
+                "station": "MKAR",
+                "channelDataType": "SEISMIC",
+                "channelBandType": "SHORT_PERIOD",
+                "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+                "channelOrientationType": "VERTICAL",
+                "channelOrientationCode": "Z",
+                "units": "COUNTS_PER_NANOMETER",
+                "nominalSampleRateHz": 40.0,
+                "location": {
+                  "latitudeDegrees": 46.76897,
+                  "longitudeDegrees": 82.30066,
+                  "depthKm": 0.03,
+                  "elevationKm": 0.608
+                },
+                "orientationAngles": {
+                  "horizontalAngleDeg": -1.0,
+                  "verticalAngleDeg": 0.0
+                },
+                "configuredInputs": [
+                ],
+                "processingDefinition": {
+                },
+                "processingMetadata": {
+                  "CHANNEL_GROUP": "MK01"
+                }
+              }
+            ]
+          },
+          {
+            "name": "MK06",
+            "description": "Makanchi_Array,_Kazakhstan,_IMS",
+            "location": {
+              "latitudeDegrees": 46.77497,
+              "longitudeDegrees": 82.31317,
+              "depthKm": 0.0,
+              "elevationKm": 0.643
+            },
+            "type": "SITE_GROUP",
+            "channels": [
+              {
+                "name": "MKAR.MK06.SHZ",
+                "canonicalName": "MKAR.MK06.SHZ",
+                "description": "Raw Channel created from ReferenceChannel 7bb39c8d-8168-363e-97b7-2054836c82f2 with version 80e02963-c0e2-33d0-ac11-2b2cdaa4a696",
+                "station": "MKAR",
+                "channelDataType": "SEISMIC",
+                "channelBandType": "SHORT_PERIOD",
+                "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+                "channelOrientationType": "VERTICAL",
+                "channelOrientationCode": "Z",
+                "units": "COUNTS_PER_NANOMETER",
+                "nominalSampleRateHz": 40.0,
+                "location": {
+                  "latitudeDegrees": 46.77497,
+                  "longitudeDegrees": 82.31317,
+                  "depthKm": 0.03,
+                  "elevationKm": 0.643
+                },
+                "orientationAngles": {
+                  "horizontalAngleDeg": -1.0,
+                  "verticalAngleDeg": 0.0
+                },
+                "configuredInputs": [
+                ],
+                "processingDefinition": {
+                },
+                "processingMetadata": {
+                  "CHANNEL_GROUP": "MK06"
+                }
+              }
+            ]
+          },
+          {
+            "name": "MK08",
+            "description": "Makanchi_Array,_Kazakhstan,_IMS",
+            "location": {
+              "latitudeDegrees": 46.75531,
+              "longitudeDegrees": 82.28285,
+              "depthKm": 0.0,
+              "elevationKm": 0.621
+            },
+            "type": "SITE_GROUP",
+            "channels": [
+              {
+                "name": "MKAR.MK08.SHZ",
+                "canonicalName": "MKAR.MK08.SHZ",
+                "description": "Raw Channel created from ReferenceChannel b7799e79-0e5e-3ce9-bac7-4c5e6b184260 with version c821953f-db90-3567-b72c-114da3c2086e",
+                "station": "MKAR",
+                "channelDataType": "SEISMIC",
+                "channelBandType": "SHORT_PERIOD",
+                "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+                "channelOrientationType": "VERTICAL",
+                "channelOrientationCode": "Z",
+                "units": "COUNTS_PER_NANOMETER",
+                "nominalSampleRateHz": 40.0,
+                "location": {
+                  "latitudeDegrees": 46.75531,
+                  "longitudeDegrees": 82.28285,
+                  "depthKm": 0.03,
+                  "elevationKm": 0.621
+                },
+                "orientationAngles": {
+                  "horizontalAngleDeg": -1.0,
+                  "verticalAngleDeg": 0.0
+                },
+                "configuredInputs": [
+                ],
+                "processingDefinition": {
+                },
+                "processingMetadata": {
+                  "CHANNEL_GROUP": "MK08"
+                }
+              }
+            ]
+          },
+          {
+            "name": "MK09",
+            "description": "Makanchi_Array,_Kazakhstan,_IMS",
+            "location": {
+              "latitudeDegrees": 46.77453,
+              "longitudeDegrees": 82.2765,
+              "depthKm": 0.0,
+              "elevationKm": 0.577
+            },
+            "type": "SITE_GROUP",
+            "channels": [
+              {
+                "name": "MKAR.MK09.SHZ",
+                "canonicalName": "MKAR.MK09.SHZ",
+                "description": "Raw Channel created from ReferenceChannel 17a38227-2b3e-30a9-867b-dc36ad2041de with version 9fda8370-7d00-396c-b8f4-55498dba7f72",
+                "station": "MKAR",
+                "channelDataType": "SEISMIC",
+                "channelBandType": "SHORT_PERIOD",
+                "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+                "channelOrientationType": "VERTICAL",
+                "channelOrientationCode": "Z",
+                "units": "COUNTS_PER_NANOMETER",
+                "nominalSampleRateHz": 40.0,
+                "location": {
+                  "latitudeDegrees": 46.77453,
+                  "longitudeDegrees": 82.2765,
+                  "depthKm": 0.03,
+                  "elevationKm": 0.577
+                },
+                "orientationAngles": {
+                  "horizontalAngleDeg": -1.0,
+                  "verticalAngleDeg": 0.0
+                },
+                "configuredInputs": [
+                ],
+                "processingDefinition": {
+                },
+                "processingMetadata": {
+                  "CHANNEL_GROUP": "MK09"
+                }
+              }
+            ]
+          },
+          {
+            "name": "MK05",
+            "description": "Makanchi_Array,_Kazakhstan,_IMS",
+            "location": {
+              "latitudeDegrees": 46.79395,
+              "longitudeDegrees": 82.2911,
+              "depthKm": 0.0,
+              "elevationKm": 0.605
+            },
+            "type": "SITE_GROUP",
+            "channels": [
+              {
+                "name": "MKAR.MK05.SHZ",
+                "canonicalName": "MKAR.MK05.SHZ",
+                "description": "Raw Channel created from ReferenceChannel f01d439a-1d3e-38e7-85f7-fb9d322e6e6c with version 84a61ecb-a85a-37bf-97c3-cfd821a08450",
+                "station": "MKAR",
+                "channelDataType": "SEISMIC",
+                "channelBandType": "SHORT_PERIOD",
+                "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+                "channelOrientationType": "VERTICAL",
+                "channelOrientationCode": "Z",
+                "units": "COUNTS_PER_NANOMETER",
+                "nominalSampleRateHz": 40.0,
+                "location": {
+                  "latitudeDegrees": 46.79395,
+                  "longitudeDegrees": 82.2911,
+                  "depthKm": 0.03,
+                  "elevationKm": 0.605
+                },
+                "orientationAngles": {
+                  "horizontalAngleDeg": -1.0,
+                  "verticalAngleDeg": 0.0
+                },
+                "configuredInputs": [
+                ],
+                "processingDefinition": {
+                },
+                "processingMetadata": {
+                  "CHANNEL_GROUP": "MK05"
+                }
+              }
+            ]
+          },
+          {
+            "name": "MK31",
+            "description": "Makanchi_Array,_Kazakhstan,_IMS",
+            "location": {
+              "latitudeDegrees": 46.79368,
+              "longitudeDegrees": 82.29057,
+              "depthKm": 0.0,
+              "elevationKm": 0.618
+            },
+            "type": "SITE_GROUP",
+            "channels": [
+              {
+                "name": "MKAR.MK31.BHE",
+                "canonicalName": "MKAR.MK31.BHE",
+                "description": "Raw Channel created from ReferenceChannel 6aaad788-1bca-3a56-bc87-3b62c0981e30 with version 5c047c08-4963-3f50-8217-9aefe7b4825d",
+                "station": "MKAR",
+                "channelDataType": "SEISMIC",
+                "channelBandType": "BROADBAND",
+                "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+                "channelOrientationType": "EAST_WEST",
+                "channelOrientationCode": "E",
+                "units": "COUNTS_PER_NANOMETER",
+                "nominalSampleRateHz": 40.0,
+                "location": {
+                  "latitudeDegrees": 46.79368,
+                  "longitudeDegrees": 82.29057,
+                  "depthKm": 0.03,
+                  "elevationKm": 0.618
+                },
+                "orientationAngles": {
+                  "horizontalAngleDeg": 90.0,
+                  "verticalAngleDeg": 90.0
+                },
+                "configuredInputs": [
+                ],
+                "processingDefinition": {
+                },
+                "processingMetadata": {
+                  "CHANNEL_GROUP": "MK31"
+                }
+              },
+              {
+                "name": "MKAR.MK31.BHN",
+                "canonicalName": "MKAR.MK31.BHN",
+                "description": "Raw Channel created from ReferenceChannel 1744f0d9-f434-3a03-996e-d42e2b0150ec with version 3c822b17-3229-3840-8a1f-4f980c963f31",
+                "station": "MKAR",
+                "channelDataType": "SEISMIC",
+                "channelBandType": "BROADBAND",
+                "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+                "channelOrientationType": "NORTH_SOUTH",
+                "channelOrientationCode": "N",
+                "units": "COUNTS_PER_NANOMETER",
+                "nominalSampleRateHz": 40.0,
+                "location": {
+                  "latitudeDegrees": 46.79368,
+                  "longitudeDegrees": 82.29057,
+                  "depthKm": 0.03,
+                  "elevationKm": 0.618
+                },
+                "orientationAngles": {
+                  "horizontalAngleDeg": 0.0,
+                  "verticalAngleDeg": 90.0
+                },
+                "configuredInputs": [
+                ],
+                "processingDefinition": {
+                },
+                "processingMetadata": {
+                  "CHANNEL_GROUP": "MK31"
+                }
+              },
+              {
+                "name": "MKAR.MK31.BHZ",
+                "canonicalName": "MKAR.MK31.BHZ",
+                "description": "Raw Channel created from ReferenceChannel 9889f7b9-fd72-3c47-92dd-637651ad4b4f with version 2f6fea13-e9d8-3ab6-a49b-2bbb4cf7e629",
+                "station": "MKAR",
+                "channelDataType": "SEISMIC",
+                "channelBandType": "BROADBAND",
+                "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+                "channelOrientationType": "VERTICAL",
+                "channelOrientationCode": "Z",
+                "units": "COUNTS_PER_NANOMETER",
+                "nominalSampleRateHz": 40.0,
+                "location": {
+                  "latitudeDegrees": 46.79368,
+                  "longitudeDegrees": 82.29057,
+                  "depthKm": 0.03,
+                  "elevationKm": 0.618
+                },
+                "orientationAngles": {
+                  "horizontalAngleDeg": -1.0,
+                  "verticalAngleDeg": 0.0
+                },
+                "configuredInputs": [
+                ],
+                "processingDefinition": {
+                },
+                "processingMetadata": {
+                  "CHANNEL_GROUP": "MK31"
+                }
+              }
+            ]
+          }
+        ],
+        "channels": [
+          {
+            "name": "MKAR.MK07.SHZ",
+            "canonicalName": "MKAR.MK07.SHZ",
+            "description": "Raw Channel created from ReferenceChannel f4f524bd-3350-314e-8209-4d854a95e55d with version b62fb314-dd55-39e6-9c04-39886024f377",
+            "station": "MKAR",
+            "channelDataType": "SEISMIC",
+            "channelBandType": "SHORT_PERIOD",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationType": "VERTICAL",
+            "channelOrientationCode": "Z",
+            "units": "COUNTS_PER_NANOMETER",
+            "nominalSampleRateHz": 40.0,
+            "location": {
+              "latitudeDegrees": 46.75343,
+              "longitudeDegrees": 82.31566,
+              "depthKm": 0.03,
+              "elevationKm": 0.64
+            },
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "configuredInputs": [
+            ],
+            "processingDefinition": {
+            },
+            "processingMetadata": {
+              "CHANNEL_GROUP": "MK07"
+            }
+          },
+          {
+            "name": "MKAR.MK02.SHZ",
+            "canonicalName": "MKAR.MK02.SHZ",
+            "description": "Raw Channel created from ReferenceChannel 1e60b651-ed8d-30fa-8d8c-cd92788e6176 with version b6204a5d-8afd-34a7-aaa7-e661e271328e",
+            "station": "MKAR",
+            "channelDataType": "SEISMIC",
+            "channelBandType": "SHORT_PERIOD",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationType": "VERTICAL",
+            "channelOrientationCode": "Z",
+            "units": "COUNTS_PER_NANOMETER",
+            "nominalSampleRateHz": 40.0,
+            "location": {
+              "latitudeDegrees": 46.77007,
+              "longitudeDegrees": 82.30857,
+              "depthKm": 0.03,
+              "elevationKm": 0.636
+            },
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "configuredInputs": [
+            ],
+            "processingDefinition": {
+            },
+            "processingMetadata": {
+              "CHANNEL_GROUP": "MK02"
+            }
+          },
+          {
+            "name": "MKAR.MK04.SHZ",
+            "canonicalName": "MKAR.MK04.SHZ",
+            "description": "Raw Channel created from ReferenceChannel be9cfc63-4e8c-30ec-8b05-8f9bacf2d2bf with version 3070b046-2895-3a91-abfb-c611bf339693",
+            "station": "MKAR",
+            "channelDataType": "SEISMIC",
+            "channelBandType": "SHORT_PERIOD",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationType": "VERTICAL",
+            "channelOrientationCode": "Z",
+            "units": "COUNTS_PER_NANOMETER",
+            "nominalSampleRateHz": 40.0,
+            "location": {
+              "latitudeDegrees": 46.77136,
+              "longitudeDegrees": 82.29518,
+              "depthKm": 0.03,
+              "elevationKm": 0.598
+            },
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "configuredInputs": [
+            ],
+            "processingDefinition": {
+            },
+            "processingMetadata": {
+              "CHANNEL_GROUP": "MK04"
+            }
+          },
+          {
+            "name": "MKAR.MK03.SHZ",
+            "canonicalName": "MKAR.MK03.SHZ",
+            "description": "Raw Channel created from ReferenceChannel 3a12437e-1445-3035-b19e-f9fb065b6aa5 with version fbbe0642-cc50-379d-acd3-30b2404366be",
+            "station": "MKAR",
+            "channelDataType": "SEISMIC",
+            "channelBandType": "SHORT_PERIOD",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationType": "VERTICAL",
+            "channelOrientationCode": "Z",
+            "units": "COUNTS_PER_NANOMETER",
+            "nominalSampleRateHz": 40.0,
+            "location": {
+              "latitudeDegrees": 46.7658,
+              "longitudeDegrees": 82.30127,
+              "depthKm": 0.03,
+              "elevationKm": 0.629
+            },
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "configuredInputs": [
+            ],
+            "processingDefinition": {
+            },
+            "processingMetadata": {
+              "CHANNEL_GROUP": "MK03"
+            }
+          },
+          {
+            "name": "MKAR.MK01.SHZ",
+            "canonicalName": "MKAR.MK01.SHZ",
+            "description": "Raw Channel created from ReferenceChannel 4633776c-8956-30e9-99c9-0fb7fb4b8129 with version f2ad7b12-3aa0-396e-9c63-15e2b87e6564",
+            "station": "MKAR",
+            "channelDataType": "SEISMIC",
+            "channelBandType": "SHORT_PERIOD",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationType": "VERTICAL",
+            "channelOrientationCode": "Z",
+            "units": "COUNTS_PER_NANOMETER",
+            "nominalSampleRateHz": 40.0,
+            "location": {
+              "latitudeDegrees": 46.76897,
+              "longitudeDegrees": 82.30066,
+              "depthKm": 0.03,
+              "elevationKm": 0.608
+            },
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "configuredInputs": [
+            ],
+            "processingDefinition": {
+            },
+            "processingMetadata": {
+              "CHANNEL_GROUP": "MK01"
+            }
+          },
+          {
+            "name": "MKAR.MK06.SHZ",
+            "canonicalName": "MKAR.MK06.SHZ",
+            "description": "Raw Channel created from ReferenceChannel 7bb39c8d-8168-363e-97b7-2054836c82f2 with version 80e02963-c0e2-33d0-ac11-2b2cdaa4a696",
+            "station": "MKAR",
+            "channelDataType": "SEISMIC",
+            "channelBandType": "SHORT_PERIOD",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationType": "VERTICAL",
+            "channelOrientationCode": "Z",
+            "units": "COUNTS_PER_NANOMETER",
+            "nominalSampleRateHz": 40.0,
+            "location": {
+              "latitudeDegrees": 46.77497,
+              "longitudeDegrees": 82.31317,
+              "depthKm": 0.03,
+              "elevationKm": 0.643
+            },
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "configuredInputs": [
+            ],
+            "processingDefinition": {
+            },
+            "processingMetadata": {
+              "CHANNEL_GROUP": "MK06"
+            }
+          },
+          {
+            "name": "MKAR.MK08.SHZ",
+            "canonicalName": "MKAR.MK08.SHZ",
+            "description": "Raw Channel created from ReferenceChannel b7799e79-0e5e-3ce9-bac7-4c5e6b184260 with version c821953f-db90-3567-b72c-114da3c2086e",
+            "station": "MKAR",
+            "channelDataType": "SEISMIC",
+            "channelBandType": "SHORT_PERIOD",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationType": "VERTICAL",
+            "channelOrientationCode": "Z",
+            "units": "COUNTS_PER_NANOMETER",
+            "nominalSampleRateHz": 40.0,
+            "location": {
+              "latitudeDegrees": 46.75531,
+              "longitudeDegrees": 82.28285,
+              "depthKm": 0.03,
+              "elevationKm": 0.621
+            },
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "configuredInputs": [
+            ],
+            "processingDefinition": {
+            },
+            "processingMetadata": {
+              "CHANNEL_GROUP": "MK08"
+            }
+          },
+          {
+            "name": "MKAR.MK09.SHZ",
+            "canonicalName": "MKAR.MK09.SHZ",
+            "description": "Raw Channel created from ReferenceChannel 17a38227-2b3e-30a9-867b-dc36ad2041de with version 9fda8370-7d00-396c-b8f4-55498dba7f72",
+            "station": "MKAR",
+            "channelDataType": "SEISMIC",
+            "channelBandType": "SHORT_PERIOD",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationType": "VERTICAL",
+            "channelOrientationCode": "Z",
+            "units": "COUNTS_PER_NANOMETER",
+            "nominalSampleRateHz": 40.0,
+            "location": {
+              "latitudeDegrees": 46.77453,
+              "longitudeDegrees": 82.2765,
+              "depthKm": 0.03,
+              "elevationKm": 0.577
+            },
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "configuredInputs": [
+            ],
+            "processingDefinition": {
+            },
+            "processingMetadata": {
+              "CHANNEL_GROUP": "MK09"
+            }
+          },
+          {
+            "name": "MKAR.MK05.SHZ",
+            "canonicalName": "MKAR.MK05.SHZ",
+            "description": "Raw Channel created from ReferenceChannel f01d439a-1d3e-38e7-85f7-fb9d322e6e6c with version 84a61ecb-a85a-37bf-97c3-cfd821a08450",
+            "station": "MKAR",
+            "channelDataType": "SEISMIC",
+            "channelBandType": "SHORT_PERIOD",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationType": "VERTICAL",
+            "channelOrientationCode": "Z",
+            "units": "COUNTS_PER_NANOMETER",
+            "nominalSampleRateHz": 40.0,
+            "location": {
+              "latitudeDegrees": 46.79395,
+              "longitudeDegrees": 82.2911,
+              "depthKm": 0.03,
+              "elevationKm": 0.605
+            },
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "configuredInputs": [
+            ],
+            "processingDefinition": {
+            },
+            "processingMetadata": {
+              "CHANNEL_GROUP": "MK05"
+            }
+          },
+          {
+            "name": "MKAR.MK31.BHE",
+            "canonicalName": "MKAR.MK31.BHE",
+            "description": "Raw Channel created from ReferenceChannel 6aaad788-1bca-3a56-bc87-3b62c0981e30 with version 5c047c08-4963-3f50-8217-9aefe7b4825d",
+            "station": "MKAR",
+            "channelDataType": "SEISMIC",
+            "channelBandType": "BROADBAND",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationType": "EAST_WEST",
+            "channelOrientationCode": "E",
+            "units": "COUNTS_PER_NANOMETER",
+            "nominalSampleRateHz": 40.0,
+            "location": {
+              "latitudeDegrees": 46.79368,
+              "longitudeDegrees": 82.29057,
+              "depthKm": 0.03,
+              "elevationKm": 0.618
+            },
+            "orientationAngles": {
+              "horizontalAngleDeg": 90.0,
+              "verticalAngleDeg": 90.0
+            },
+            "configuredInputs": [
+            ],
+            "processingDefinition": {
+            },
+            "processingMetadata": {
+              "CHANNEL_GROUP": "MK31"
+            }
+          },
+          {
+            "name": "MKAR.MK31.BHN",
+            "canonicalName": "MKAR.MK31.BHN",
+            "description": "Raw Channel created from ReferenceChannel 1744f0d9-f434-3a03-996e-d42e2b0150ec with version 3c822b17-3229-3840-8a1f-4f980c963f31",
+            "station": "MKAR",
+            "channelDataType": "SEISMIC",
+            "channelBandType": "BROADBAND",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationType": "NORTH_SOUTH",
+            "channelOrientationCode": "N",
+            "units": "COUNTS_PER_NANOMETER",
+            "nominalSampleRateHz": 40.0,
+            "location": {
+              "latitudeDegrees": 46.79368,
+              "longitudeDegrees": 82.29057,
+              "depthKm": 0.03,
+              "elevationKm": 0.618
+            },
+            "orientationAngles": {
+              "horizontalAngleDeg": 0.0,
+              "verticalAngleDeg": 90.0
+            },
+            "configuredInputs": [
+            ],
+            "processingDefinition": {
+            },
+            "processingMetadata": {
+              "CHANNEL_GROUP": "MK31"
+            }
+          },
+          {
+            "name": "MKAR.MK31.BHZ",
+            "canonicalName": "MKAR.MK31.BHZ",
+            "description": "Raw Channel created from ReferenceChannel 9889f7b9-fd72-3c47-92dd-637651ad4b4f with version 2f6fea13-e9d8-3ab6-a49b-2bbb4cf7e629",
+            "station": "MKAR",
+            "channelDataType": "SEISMIC",
+            "channelBandType": "BROADBAND",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationType": "VERTICAL",
+            "channelOrientationCode": "Z",
+            "units": "COUNTS_PER_NANOMETER",
+            "nominalSampleRateHz": 40.0,
+            "location": {
+              "latitudeDegrees": 46.79368,
+              "longitudeDegrees": 82.29057,
+              "depthKm": 0.03,
+              "elevationKm": 0.618
+            },
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "configuredInputs": [
+            ],
+            "processingDefinition": {
+            },
+            "processingMetadata": {
+              "CHANNEL_GROUP": "MK31"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

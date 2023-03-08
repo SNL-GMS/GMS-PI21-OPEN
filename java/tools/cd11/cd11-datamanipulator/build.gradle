@@ -1,0 +1,32 @@
+apply plugin: 'application'
+apply plugin: 'java-library'
+
+mainClassName = 'gms.dataacquisition.stationreceiver.cd11.datamanipulator.DataManipulator'
+
+
+run {
+    if (System.getProperty("exec.args") != null) {
+        args System.getProperty("exec.args").split()
+    }
+    systemProperties System.properties
+}
+
+dependencies {
+    // Project dependencies.
+    implementation 'gms:java-utilities:LATEST'
+    implementation 'gms:cd11-common:LATEST'
+    implementation 'gms:cd11-parser:LATEST'
+    implementation 'gms:cd11-rsdf-processor:LATEST'
+
+    // Google AutoValue
+    api libs.com.google.guava.guava
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    // Third-party dependencies.
+    implementation libs.com.google.guava.guava
+    implementation libs.org.apache.commons.commons.lang3
+    implementation libs.args4j.args4j
+    testImplementation libs.org.junit.jupiter.junit.jupiter.api
+}
+

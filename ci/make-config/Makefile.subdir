@@ -1,0 +1,16 @@
+all: $(SUBDIRS)
+
+$(SUBDIRS):
+	@echo "------------------------------------------------------------------------------"
+	@echo "    MAKING $(NAME)/$@"
+	@echo "------------------------------------------------------------------------------"
+	$(MAKE) -C $@ $(MAKECMDGOALS)
+
+clean:
+	$(or $(CLEAN), @echo "clean: no action required")
+
+push:
+local:
+tagsource:
+
+.PHONY: $(SUBDIRS) 

@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Horizontal Divider renders 1`] = `
+<div>
+  <div
+    class="divider-container"
+  >
+    <div
+      class="top-component"
+      style="height: 100px; min-height: 100px;"
+    >
+      <h1
+        class="bp4-heading"
+      >
+        Hello
+      </h1>
+    </div>
+    <div
+      class="horizontal-divider"
+    >
+      <div
+        class="horizontal-divider__target"
+      />
+      <div
+        class="horizontal-divider__spacer"
+      />
+      <svg
+        class="resize-handle"
+        height="7"
+        viewBox="0 0 18 7"
+        width="18"
+      >
+        <title>
+          Resize
+        </title>
+        <g
+          class="resize-handle-group"
+          data-name="resize-handle-group"
+        >
+          <rect
+            height="7"
+            rx="1"
+            width="2"
+          />
+          <rect
+            height="7"
+            rx="1"
+            width="2"
+            x="4"
+          />
+          <rect
+            height="7"
+            rx="1"
+            width="2"
+            x="8"
+          />
+          <rect
+            height="7"
+            rx="1"
+            width="2"
+            x="12"
+          />
+          <rect
+            height="7"
+            rx="1"
+            width="2"
+            x="16"
+          />
+        </g>
+      </svg>
+      <div
+        class="horizontal-divider__spacer"
+      />
+    </div>
+    <div
+      class="bottom-component"
+      style="height: 1px; min-height: 100px;"
+    >
+      <h1
+        class="bp4-heading"
+      >
+        World
+      </h1>
+    </div>
+  </div>
+</div>
+`;

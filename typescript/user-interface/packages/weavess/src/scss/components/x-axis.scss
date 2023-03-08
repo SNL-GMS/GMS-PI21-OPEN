@@ -1,0 +1,25 @@
+$foreground-color: #ddd;
+
+.x-axis {
+  background-color: var(--weavess-background, #202b33);
+  border-top: 1px solid;
+  pointer-events: none;
+  contain: strict; // Performance optimization to speed up render step
+
+  .x-axis-axis {
+    path,
+    line {
+      fill: none;
+      stroke: var(--weavess-text, $foreground-color);
+      shape-rendering: crispEdges;
+    }
+    text {
+      font-family: sans-serif;
+      font-size: 11px;
+      fill: var(--weavess-text, $foreground-color);
+    }
+  }
+}
+.x-axis.no-border {
+  border-top: none;
+}

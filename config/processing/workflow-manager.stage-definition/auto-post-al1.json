@@ -1,0 +1,55 @@
+{
+    "name": "auto-post-al1",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "name",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "Auto Post-AL1"
+            ]
+        }
+    ],
+    "parameters": {
+        "name": "Auto Post-AL1",
+        "duration": "PT1H",
+        "mode": "AUTOMATIC",
+        "sequences": [
+            {
+                "name": "Auto Post-AL1 Seq",
+                "steps": [
+                    {
+                        "name": "Origin Beam SP"
+                    },
+                    {
+                        "name": "Origin Beam LP"
+                    },
+                    {
+                        "name": "Recall"
+                    },
+                    {
+                        "name": "Arrival Beam SP"
+                    },
+                    {
+                        "name": "Detection LP"
+                    },
+                    {
+                        "name": "Recall LP"
+                    },
+                    {
+                        "name": "Magnitude"
+                    },
+                    {
+                        "name": "Hydro EDP"
+                    },
+                    {
+                        "name": "HAE"
+                    }
+                ]
+            }
+        ]
+    }
+}

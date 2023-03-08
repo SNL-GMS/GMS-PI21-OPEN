@@ -1,0 +1,13 @@
+{
+  "providerInputMode":"kafka",
+
+  "kafkaConfig": {
+    "applicationId": "repeater",
+    "sourceTopic": "soh.rsdf",
+    "autoOffsetResetConfig": "latest"
+  },
+
+  "connectionFrameCreator": "DATAPROV",
+  "connectionFrameDestination": "CONNMAN"
+}
+

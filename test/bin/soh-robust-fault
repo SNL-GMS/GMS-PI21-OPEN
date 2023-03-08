@@ -1,0 +1,558 @@
+#!/usr/bin/env python3
+
+# ------------------------------------------------------------------------------
+# soh-robust-fault test script
+#
+# The soh-robust-fault script allows a tester to perform the
+# I&T SOH Performance Robustness Fault tests.
+# ------------------------------------------------------------------------------
+
+import argparse
+import datetime
+import json
+import os
+import re
+import shlex
+import subprocess
+import sys
+import yaml
+import time
+import concurrent.futures
+
+from collections import defaultdict
+from argparse import ArgumentParser
+from argparse import RawDescriptionHelpFormatter
+
+from concurrent.futures import ThreadPoolExecutor
+
+# termcolors
+class tc:
+    BOLD = '\033[1m'
+    RED = '\033[31m'
+    GREEN = '\033[32m'
+    YELLOW = '\033[33m'
+    MAGENTA = '\033[35m'
+    CYAN = '\033[36m'
+    ENDC = '\033[0m'
+
+# ------------------------------------------------------------------------------
+# Transcript - direct log output to a file, in addition to terminal
+# ------------------------------------------------------------------------------
+class Transcript(object):
+
+    def __init__(self, filename):
+        self.terminal = sys.stdout
+        self.logfile = open(filename, "w")
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.logfile.write(message)
+
+    def flush(self):
+        # this flush method is needed for python 3 compatibility
+        # this handles the flush command by doing nothing
+        pass
+
+
+# ------------------------------------------------------------------------------
+# These are the available pods to test
+# ------------------------------------------------------------------------------
+stateful_brokers = [
+    'kafka',
+    'zookeeper']
+
+# ------------------------------------------------------------------------------
+# These are the containers we will review for kafka errors
+# ------------------------------------------------------------------------------
+kafka_containers = [
+    'da-connman',
+    'da-dataman',
+    'frameworks-osd-station-soh-kafka-consumer',
+    'frameworks-osd-rsdf-kafka-consumer',
+    'frameworks-osd-ttl-worker',
+    'frameworks-configuration-service',
+    'ssam-control']
+
+
+def main():
+
+    brokernum = 0
+
+    #-- verify kubectl is available
+    if not which('kubectl'):
+        print("ERROR: 'kubectl' executable not found in PATH. Please install kubectl.")
+        sys.exit(1)
+
+    #-- verify helm is available
+    if not which('gmskube'):
+        print("ERROR: 'gmskube' executable not found in PATH. Please install gmskube.")
+        sys.exit(1)
+    
+    #-- verify KUBECONFIG is set
+    if not "KUBECONFIG" in os.environ:
+        print("ERROR: Variable 'KUBECONFIG' must be set to the kubernetes configuration.")
+        sys.exit(1)
+
+    try:
+        with open(os.environ["KUBECONFIG"]) as file:
+            kubeconfig = yaml.load(file, Loader=yaml.FullLoader)
+            if 'clusters' not in kubeconfig:
+                print(f"ERROR: No clusters defined in file '{ os.environ['KUBECONFIG'] }")
+                sys.exit(1)
+
+            cluster = kubeconfig['clusters'][0]  # use the first cluster
+    except:
+        print(f"ERROR: Failed to open KUBECONFIG file '{ os.environ['KUBECONFIG'] }'")
+        sys.exit(1)
+
+    # -- get command line arguments
+    args = get_args()
+
+    # -- verify that the pod is kafka or zookeeper
+    if args.broker not in stateful_brokers:
+        print("ERROR: Invalid Robustness Fault test specified - must be either kafka or zookeeper.")
+        sys.exit(1)
+
+    # -- collect the pod information for the instance
+    print_color(tc.GREEN, "Getting instance " + args.name + " pod information.")
+    pods = get_pod_info(args.name)
+    print_color(tc.GREEN, "Number of pods in " + args.name + ":  " + str(len(pods)) + '\n')
+    if len(pods) == 0:
+        print_color(tc.RED, "It does not appear that your instance is running correctly. Please verify that it is running, and try again.")
+        sys.exit(1)
+    else:
+        # -- verify the pod that we will be exercising is available
+        brokernum = verify_broker(pods, args.broker)
+        if brokernum < 3:
+            print_color(tc.RED, "Appropriate number of " + args.broker + " broker pods not found in pod list - Exiting Robustness Fault test\n")
+            sys.exit(1)
+
+    #-- set baseline vars
+    podlable = args.broker
+    pods_down = 0
+    pods_notdown = 0
+    pods_up = 0
+    pods_notup = 0
+
+    # -- work the pod that has been specified
+    podwork = ''
+    while podwork.upper() != 'Y':
+        podwork = input("\nWould you like to SCALE DOWN pod: " + podlable + " (Y/N)? ")
+        if podwork.upper()=='Y':
+            print_color(tc.CYAN, "Starting to scale down pod(s): " + podlable + "\n")
+
+            status = scale_down_pod(args.name, podlable)
+            if status != 0:
+                print_color(tc.RED, "\nTHERE WAS A SYSTEM ERROR WHILE TRYING TO SCALE DOWN THE POD\n" +
+                         "PROGRAM WILL EXIT\n")
+                sys.exit(1)
+
+            verif = ''
+            while verif.upper() != 'Y':
+                verif = input("\nPlease verify on your watch list -- Did the pod(s) scale down appropriately (Y/N)? ")
+                if verif.upper() == 'Y':
+                    print_color(tc.GREEN, "STATUS: Pod(s): " + podlable + " successfully scaled down\n")
+                    pods_down = 3
+                elif verif.upper() == 'N':
+                    print_color(tc.RED, "STATUS: Pod(s): " + podlable + " did not scale down successfully\n")
+                    pods_notdown = 3
+                    verif2 = ''
+                    while verif2.upper() != 'Y':
+                        verif2 = input("Would you like to continue with the Robustness Fault test (Y/N)? ")
+                        if verif2.upper() == 'Y':
+                            print_color(tc.GREEN, "Continuing with the " + podlable + " Robustness Fault test.\n")
+                        elif verif2.upper() == 'N':
+                            print_color(tc.RED, "\nExiting the " + podlable + " Robustness Fault test.\n")
+                            print_summary(brokernum, pods_down, pods_notdown, pods_up, pods_notup)
+                            sys.exit(1)
+                        else:
+                            print("\nI don't understand that choice, please try again.\n")
+                    break
+                else:
+                    print("\nI don't understand that choice, please try again.\n")
+
+            if podlable == 'kafka':
+                kcont = ''
+                while kcont.upper() != 'Y':
+                    kcont = input(
+                        "\nWould you like to continue and review the kafka associated pod logs to verify the appropriate output (Y/N)? ")
+                    # -- view the associated logs for errors associated with kafka
+                    if kcont.upper() == 'Y':
+                        verify_kafka_logs(pods, args.name)
+                    elif kcont.upper() == 'N':
+                        print_color(tc.RED, "WARNING: You continuing WITHOUT reviewing the associated pod logs!\n")
+                        break
+                    else:
+                        print("\nI don't understand that choice, please try again.\n")
+
+            cont = ''
+            while cont.upper() != 'Y':
+                cont =  input("Would you like to continue and RESTART pod(s): " + podlable + " (Y/N)? ")
+                if cont.upper()=='Y':
+                    print_color(tc.CYAN, "Restarting pod(s): " + podlable + "\n")
+                    status = restart_pod(args.name, podlable)
+                    if status != 0:
+                        print_color(tc.RED,
+                                    "\nTHERE WAS A SYSTEM ERROR WHILE TRYING TO RESTART THE POD\n" +
+                                    "PROGRAM WILL EXIT\n")
+                        sys.exit(1)
+
+                    cont2 = ''
+                    while cont2.upper() != 'Y':
+                        cont2 = input("\nDid the pod(s) restart appropriately? Is the UI updating as expected (Y/N)? ")
+                        if cont2.upper()=='Y':
+                            print_color(tc.GREEN, "STATUS: Pod(s): " + podlable + " successfully restarted\n")
+                            pods_up = 3
+                        elif cont2.upper()=='N':
+                            print_color(tc.RED, "STATUS: Pod(s): " + podlable + " did not restart successfully\n")
+                            pods_notup = 3
+                            kcont2 = ''
+                            while kcont2.upper() != 'Y':
+                                kcont2 = input('\nAt this point, to get everything back in sync, you can restart the '
+                                               + args.name + ' instance, which will take several minutes ' +
+                                               'and will rebuild the UI' +
+                                               '\nWould you like to restart the ' + args.name + " instance (Y/N)? " )
+                                if kcont2.upper()=='Y':
+                                    restart_instance(args.name)
+                                    kcont3 = ''
+                                    while kcont3.upper() != 'Y':
+                                        print_color(tc.RED, "\nPLEASE WAIT FOR THE INSTANCE AND UI TO FULLY RESTORE\n")
+                                        kcont3 = input('\nDid the instance restart appropriately? Did the UI rebuild and is it now updating as expected (Y/N)? ')
+                                        if kcont3.upper() == 'Y':
+                                            print_color(tc.GREEN, "STATUS: Instance: " + args.name + " successfully restarted\n")
+                                            pods_up = 3
+                                            pods_notup = 0
+                                        elif kcont3.upper() == 'N':
+                                            print_color(tc.RED, "STATUS: Instance: " + args.name + " did not restart correctly\n")
+                                            break
+                                        else:
+                                            print("\nI don't understand that choice, please try again.\n")
+                                elif kcont2.upper()=='N':
+                                    print_color(tc.RED, "STATUS: Instance: " + args.name + " will not be restarted and " +
+                                                "the instance may not function correctly\n")
+                                    break
+                                else:
+                                    print("\nI don't understand that choice, please try again.\n")
+                            break
+                        else:
+                            print("\nI don't understand that choice, please try again.\n")
+
+                elif cont.upper()=='N':
+                    print_color(tc.RED, "WARNING: You are NOT restarting pod(s): " + podlable + "\n")
+                    verif3 = ''
+                    while verif3.upper() != 'Y':
+                        verif3 = input("Would you like to continue with the Robustness Fault test (Y/N)? ")
+                        if verif3.upper() == 'Y':
+                            print_color(tc.GREEN, "Continuing with the " + podlable + " Robustness Fault test.\n")
+                        elif verif3.upper() == 'N':
+                            print_color(tc.RED, "\nExiting the " + podlable + " Robustness Fault test.\n")
+                            print_summary(brokernum, pods_down, pods_notdown, pods_up, pods_notup)
+                            sys.exit(1)
+                        else:
+                            print("\nI don't understand that choice, please try again.\n")
+                    break
+                else:
+                    print("\nI don't understand that choice, please try again.\n")
+
+            # uninstall instance
+            uninstallStat = uninstall_instance(args.name)
+            if uninstallStat != 0:
+                print_color(tc.RED, "\nTHERE WAS A SYSTEM ERROR WHILE TRYING TO UNINSTALL THE INSTANCE\n" +
+                            "YOU MAY NEED TO UNINSTALL THE INSTANCE MANUALLY\n")
+        elif podwork.upper()=='N':
+            print_color(tc.RED, "NOTICE: Not performing work on pod: " + podlable + "\n")
+            break
+        else:
+            print("\nI don't understand that choice, please try again.\n")
+
+    print_color(tc.GREEN, "\nAll work complete - exiting the " + podlable + " Robustness Fault test.\n")
+    print_summary(brokernum, pods_down, pods_notdown, pods_up, pods_notup)
+    sys.exit(0)
+
+        
+def get_args():
+    'Get command-line arguments.'
+    
+    description = """
+description:
+  The soh-robust-fault script allows a tester to perform a fault-based
+  I&T SOH Performance Robustness test on the GMS system.
+
+    """
+    parser = ArgumentParser(description=description,
+                            formatter_class=RawDescriptionHelpFormatter)
+    
+    parser.add_argument('--name', '-n', required=True, help="Name of the instance to checkout")
+
+    parser.add_argument('--broker', '-b', required=True, help="The brokers to test (kafka, zookeeper)")
+
+    args = parser.parse_args()
+
+    
+    return args
+    
+
+def verify_broker(pods, broker):
+    """
+    Verify that the broker that we will be working is in the list.
+    """
+    val = 0
+    for deployment_name in pods:
+        for p in pods[deployment_name]:
+            if p["name"].startswith(broker):
+                if broker == 'kafka' and len(p["name"]) > 7:
+                    break
+                else:
+                    val += 1
+    
+    return val
+
+def filestart(filename):
+    """Start transcript, appending print output to given filename"""
+    sys.stdout = Transcript(filename)
+
+def filestop():
+    """Stop transcript and return print functionality to normal"""
+    sys.stdout.logfile.close()
+    sys.stdout = sys.stdout.terminal
+
+def verify_kafka_logs(pods, name):
+    """
+    Scan through the kafka associated pod logs to check for potential kafka errors.
+    """
+
+    # allow printing of log output to file as well as screen
+    logFileStr = ''
+    outputtype = ''
+    while outputtype.upper() != 'Y':
+        outputtype = input("Would you like to print the log output to also be captured in a file (Y/N)? ")
+        if outputtype.upper() == 'Y':
+            dt = datetime.datetime.now()
+            dateTimeStr = dt.strftime("%d%b%Y-%H%M%S")
+            logFileStr = "logfile_" + dateTimeStr + ".log"
+            print_color(tc.CYAN, "Output will print to screen and file:  " + logFileStr + "\n")
+            filestart(logFileStr)
+        elif outputtype.upper() == 'N':
+            print_color(tc.RED, "Output will print to screen only\n")
+            break
+        else:
+            print("\nI don't understand that choice, please try again.\n")
+
+    for pod in kafka_containers:
+        for deployment_name in pods:
+            for p in pods[deployment_name]:
+                if pod in p["deployment_name"]:
+                    #if p['status'] == 'Running':  # -- TTL logs are never "Running"
+                    print_color(tc.YELLOW, "Inspecting service logs in pod:  " + p['name'] + "\n")
+                    print_color(tc.YELLOW, f"kubectl logs -n {name} {p['name']} --tail=25 --since=30m | grep -i error")
+                    rc, out, err = run(f"kubectl logs -n {name} {p['name']} --tail=25 --since=30m | grep -i error")
+
+                    print(out + "\n\n")
+
+    # close output file if it was opened
+    if outputtype.upper() == 'Y':
+        filestop()
+        print_color(tc.CYAN, "Output written to file:  " + logFileStr + "\n")
+
+
+def scale_down_pod(name, pod):
+    """
+    Scale down a running pod.
+    """
+
+    print_color(tc.YELLOW, f"Issuing command:   kubectl -n {name} scale statefulsets {pod} --replicas=0")
+    rc, out, err = run(f"kubectl -n {name} scale statefulsets {pod} --replicas=0")
+
+    if rc != 0:
+        print_color(tc.RED, err)
+        return 1
+
+    return 0
+
+
+def restart_pod(name, pod):
+    """
+    Restart a stopped pod.
+    """
+
+    print_color(tc.YELLOW, f"Issuing command:   kubectl -n {name} scale statefulsets {pod} --replicas=3")
+    rc, out, err = run(f"kubectl -n {name} scale statefulsets {pod} --replicas=3")
+
+    if rc != 0:
+        print_color(tc.RED, err)
+        return 1
+
+    return 0
+
+
+def restart_instance(name):
+    """
+    Restart a potentially damaged instance.
+    """
+
+    # restart the kafka and zookeeper containers
+    print_color(tc.YELLOW, f"Issuing command:   kubectl rollout restart statefulset -n {name}")
+    rc, out, err = run(f"kubectl rollout restart statefulset -n {name}")
+
+    if rc != 0:
+        print_color(tc.RED, err)
+        return 1
+
+    time.sleep(120)
+
+    # restart all other containers
+    print_color(tc.YELLOW, f"Issuing command:   kubectl rollout restart deployment -n { name }")
+    rc, out, err = run(f"kubectl rollout restart deployment -n { name }")
+
+    if rc != 0:
+        print_color(tc.RED, err)
+        return 1
+
+    return 0
+
+def uninstall_instance(name):
+    """
+    Uninstall the instance.
+    """
+
+    removeInst = ''
+    while removeInst.upper() != 'Y':
+        removeInst = input(
+            "\nWould you like to uninstall the \'" + name + "\' instance that was used for this test (Y/N)? ")
+        if removeInst.upper() == 'Y':
+            print_color(tc.RED, "Uninstalling instance:  " + name + "\n")
+
+            print_color(tc.YELLOW, f"Issuing command:   gmskube uninstall {name}")
+            rc, out, err = run(f"gmskube uninstall {name}")
+
+            if rc != 0:
+                print_color(tc.RED, err)
+                return 1
+            else:
+                print_color(tc.GREEN, "Instance " + name + " uninstalled successfully!\n")
+
+        elif removeInst.upper() == 'N':
+            print_color(tc.RED, "The " + name + " instance will NOT be uninstalled\n")
+            break
+        else:
+            print("\nI don't understand that choice, please try again.\n")
+
+    return 0
+
+
+def print_summary(total_pods, pods_down, pods_notdown, pods_up, pods_notup):
+    """
+    Print the summary of the current run.
+    """
+
+    print_color(tc.GREEN, "\n************************* SUMMARY *************************")
+    print_color(tc.GREEN, "Total number of Robustness Fault pods: " + str(total_pods) + "\n")
+    print_color(tc.GREEN, "Of " + str(total_pods) + " pods: " + str(pods_down) + " spun down successfully, and "
+                + str(pods_notdown) + " did not\n")
+    print_color(tc.GREEN, "Of " + str(total_pods) + " pods: " + str(pods_up) + " restarted successfully, and "
+                + str(pods_notup) + " did not\n")
+
+    return 0
+
+
+def get_pod_info(name):
+    """
+    Gather a dictionary of running pods for the given instance name.
+    """
+
+    rc, out, err = run(f"kubectl get pods -n { name } --no-headers")
+    podnum = 0
+
+    pods = defaultdict(list)
+    for line in out.splitlines():
+        columns = line.split()
+        deployment_name = columns[0].rsplit('-', 2)[0]
+        if pods[deployment_name]:
+            podnum+=1
+            deployment_name = deployment_name + "_" + str(podnum)
+        else:
+            podnum=0
+        pod = {}
+        pod['deployment_name'] = deployment_name
+        pod['name'] = columns[0]
+        pod['ready'] = columns[1]
+        pod['status'] = columns[2]
+        pod['restarts'] = columns[3]
+        pod['age'] = columns[4]
+
+        pods[deployment_name].append(pod)
+
+    return pods
+
+
+def run(cmd, print_output=False, num_tries=1):
+    """
+    Execute the specified command and return when the command execution is completed.
+    :param print_output: Enable printing of stdout and stderr immediately
+    :param num_tries: Retry this number of times if command fails
+    Returns the return code, stdout, and stderr of the command.
+    """
+
+    while True:
+        # cmd = subprocess.Popen(command.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+
+        if "|" in cmd:
+            cmd_parts = cmd.split('|')
+        else:
+            cmd_parts = []
+            cmd_parts.append(cmd)
+        i = 0
+        p = {}
+        for cmd_part in cmd_parts:
+            cmd_part = cmd_part.strip()
+            if i == 0:
+                p[i] = subprocess.Popen(shlex.split(cmd_part), stdin=None, stdout=subprocess.PIPE,
+                                        stderr=subprocess.PIPE)
+            else:
+                p[i] = subprocess.Popen(shlex.split(cmd_part), stdin=p[i - 1].stdout, stdout=subprocess.PIPE,
+                                        stderr=subprocess.PIPE)
+            i += 1
+
+        out, err = p[i - 1].communicate()
+        out = out.decode()
+        err = err.decode()
+
+        if print_output:
+            print(out)
+            if len(err) > 0:
+                print_color(tc.YELLOW, err)
+
+        if p[i - 1].returncode == 0 or num_tries == 0:
+            break
+        else:
+            num_tries = num_tries - 1
+
+    return p[i - 1].returncode, out, err
+
+
+def print_color(termcolor, message, bold=False):
+    """
+    Prints a message with the specified termcolor
+    :param termcolor: Color to print the message in
+    :param message: Message string to print
+    :param bold: Bold text
+    """
+    print_str = f'{termcolor}{message}{tc.ENDC}'
+    if bold:
+        print_str = f'{tc.BOLD}{print_str}'
+    print(print_str)
+
+
+def which(program):
+    """
+    Search PATH for a given program.
+    """
+    for path in os.environ["PATH"].split(os.pathsep):
+        fpath = os.path.join(path, program)
+        if os.path.exists(fpath) and os.path.isfile(fpath) and os.access(fpath, os.X_OK):
+            return fpath
+
+    return None        
+    
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,32 @@
+.soh-scroller {
+  overflow-x: auto;
+  overflow-y: auto;
+  &.full-width-height {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.top-level-container {
+  .lag-wrapper,
+  .missing-wrapper {
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    & > * {
+      flex-grow: 1;
+    }
+  }
+}
+
+.lag-display,
+.missing-display {
+  .top-wrapper {
+    min-height: clamp($min-chart-height, 50%, 50%);
+  }
+
+  .collapse-button__target--open {
+    margin-top: 1rem;
+  }
+}

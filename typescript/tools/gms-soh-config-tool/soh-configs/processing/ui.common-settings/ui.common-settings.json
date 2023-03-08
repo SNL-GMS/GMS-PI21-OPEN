@@ -1,0 +1,12 @@
+{
+    "name": "ui-common-settings",
+    "constraints": [
+        {
+            "constraintType": "DEFAULT"
+        }
+    ],
+    "parameters": {
+        "systemMessageLimit": 50000
+    }
+}
+

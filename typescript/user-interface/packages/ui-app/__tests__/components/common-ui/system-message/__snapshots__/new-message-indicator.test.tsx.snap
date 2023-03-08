@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`New Messages Indicator matches its snapshot 1`] = `
+<div>
+  <button
+    class="bp4-button bp4-intent-primary system-message-table__button system-message-table__button--floating"
+    data-cy="new-messages-button"
+    type="button"
+  >
+    <span
+      aria-hidden="true"
+      class="bp4-icon bp4-icon-arrow-down"
+      icon="arrow-down"
+      tabindex="-1"
+    >
+      <svg
+        data-icon="arrow-down"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+      >
+        <path
+          d="M13 8c-.3 0-.5.1-.7.3L9 11.6V2c0-.5-.4-1-1-1s-1 .5-1 1v9.6L3.7 8.3C3.5 8.1 3.3 8 3 8c-.5 0-1 .5-1 1 0 .3.1.5.3.7l5 5c.2.2.4.3.7.3s.5-.1.7-.3l5-5c.2-.2.3-.4.3-.7 0-.6-.4-1-1-1z"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </span>
+    <span
+      class="bp4-button-text"
+    >
+      New messages
+    </span>
+  </button>
+</div>
+`;

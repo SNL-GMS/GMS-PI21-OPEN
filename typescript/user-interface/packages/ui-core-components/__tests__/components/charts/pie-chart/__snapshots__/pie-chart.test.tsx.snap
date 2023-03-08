@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pie Chart Pie Chart renders 1`] = `
+<div>
+  <svg
+    class="pie-chart string"
+    height="110px"
+    width="110px"
+  >
+    <g
+      class="pie-chart__container"
+    >
+      <circle
+        class="
+            pie-chart
+            string"
+        cx="50"
+        cy="50"
+        r="55"
+      />
+      <circle
+        class="pie-chart__pie-slice string"
+        cx="50"
+        cy="50"
+        r="25"
+        stroke-dasharray="6283.185307179587 157.07963267948966 "
+        stroke-width="50"
+      />
+    </g>
+  </svg>
+</div>
+`;

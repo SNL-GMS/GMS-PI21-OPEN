@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Station cell context menu DisabledStationSohContextMenu can be created 1`] = `
+<DisabledStationSohContextMenu
+  acknowledgeCallback={[MockFunction]}
+  stationNames={
+    Array [
+      "test",
+      "test2",
+    ]
+  }
+>
+  <Blueprint4.Menu>
+    <ul
+      className="bp4-menu"
+    >
+      <AcknowledgeMenuItem
+        acknowledgeCallback={[MockFunction]}
+        disabled={true}
+        stationNames={
+          Array [
+            "test",
+            "test2",
+          ]
+        }
+      >
+        <Blueprint4.MenuItem
+          active={false}
+          className="acknowledge-soh-status"
+          data-cy="acknowledge-without-comment"
+          disabled={true}
+          multiline={false}
+          onClick={[Function]}
+          popoverProps={Object {}}
+          selected={false}
+          shouldDismissPopover={true}
+          text="Acknowledge 2 stations"
+        >
+          <li
+            className=""
+          >
+            <a
+              className="bp4-menu-item bp4-disabled acknowledge-soh-status"
+              data-cy="acknowledge-without-comment"
+              tabIndex={-1}
+            >
+              <Blueprint4.Text
+                className="bp4-fill"
+                ellipsize={true}
+              >
+                <div
+                  className="bp4-fill bp4-text-overflow-ellipsis"
+                >
+                  Acknowledge 2 stations
+                </div>
+              </Blueprint4.Text>
+            </a>
+          </li>
+        </Blueprint4.MenuItem>
+      </AcknowledgeMenuItem>
+      <AcknowledgeWithCommentMenuItem
+        acknowledgeCallback={[MockFunction]}
+        disabled={true}
+        stationNames={
+          Array [
+            "test",
+            "test2",
+          ]
+        }
+      >
+        <Blueprint4.MenuItem
+          active={false}
+          className="acknowledge-soh-status"
+          data-cy="acknowledge-with-comment"
+          disabled={true}
+          multiline={false}
+          onClick={[Function]}
+          popoverProps={Object {}}
+          selected={false}
+          shouldDismissPopover={true}
+          text="Acknowledge 2 stations with comment..."
+        >
+          <li
+            className=""
+          >
+            <a
+              className="bp4-menu-item bp4-disabled acknowledge-soh-status"
+              data-cy="acknowledge-with-comment"
+              tabIndex={-1}
+            >
+              <Blueprint4.Text
+                className="bp4-fill"
+                ellipsize={true}
+              >
+                <div
+                  className="bp4-fill bp4-text-overflow-ellipsis"
+                >
+                  Acknowledge 2 stations with comment...
+                </div>
+              </Blueprint4.Text>
+            </a>
+          </li>
+        </Blueprint4.MenuItem>
+      </AcknowledgeWithCommentMenuItem>
+    </ul>
+  </Blueprint4.Menu>
+</DisabledStationSohContextMenu>
+`;
+
+exports[`Station cell context menu StationSohContextMenu can be created 1`] = `
+<StationSohContextMenu
+  acknowledgeCallback={[MockFunction]}
+  stationNames={
+    Array [
+      "test",
+      "test2",
+    ]
+  }
+>
+  <Blueprint4.Menu>
+    <ul
+      className="bp4-menu"
+    >
+      <AcknowledgeMenuItem
+        acknowledgeCallback={[MockFunction]}
+        disabled={false}
+        stationNames={
+          Array [
+            "test",
+            "test2",
+          ]
+        }
+      >
+        <Blueprint4.MenuItem
+          active={false}
+          className="acknowledge-soh-status"
+          data-cy="acknowledge-without-comment"
+          disabled={false}
+          multiline={false}
+          onClick={[Function]}
+          popoverProps={Object {}}
+          selected={false}
+          shouldDismissPopover={true}
+          text="Acknowledge 2 stations"
+        >
+          <li
+            className=""
+          >
+            <a
+              className="bp4-menu-item bp4-popover-dismiss acknowledge-soh-status"
+              data-cy="acknowledge-without-comment"
+              onClick={[Function]}
+              tabIndex={0}
+            >
+              <Blueprint4.Text
+                className="bp4-fill"
+                ellipsize={true}
+              >
+                <div
+                  className="bp4-fill bp4-text-overflow-ellipsis"
+                >
+                  Acknowledge 2 stations
+                </div>
+              </Blueprint4.Text>
+            </a>
+          </li>
+        </Blueprint4.MenuItem>
+      </AcknowledgeMenuItem>
+      <AcknowledgeWithCommentMenuItem
+        acknowledgeCallback={[MockFunction]}
+        disabled={false}
+        stationNames={
+          Array [
+            "test",
+            "test2",
+          ]
+        }
+      >
+        <Blueprint4.MenuItem
+          active={false}
+          className="acknowledge-soh-status"
+          data-cy="acknowledge-with-comment"
+          disabled={false}
+          multiline={false}
+          onClick={[Function]}
+          popoverProps={Object {}}
+          selected={false}
+          shouldDismissPopover={true}
+          text="Acknowledge 2 stations with comment..."
+        >
+          <li
+            className=""
+          >
+            <a
+              className="bp4-menu-item bp4-popover-dismiss acknowledge-soh-status"
+              data-cy="acknowledge-with-comment"
+              onClick={[Function]}
+              tabIndex={0}
+            >
+              <Blueprint4.Text
+                className="bp4-fill"
+                ellipsize={true}
+              >
+                <div
+                  className="bp4-fill bp4-text-overflow-ellipsis"
+                >
+                  Acknowledge 2 stations with comment...
+                </div>
+              </Blueprint4.Text>
+            </a>
+          </li>
+        </Blueprint4.MenuItem>
+      </AcknowledgeWithCommentMenuItem>
+    </ul>
+  </Blueprint4.Menu>
+</StationSohContextMenu>
+`;

@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`state signal detections slice should return the initial state 1`] = `
+Object {
+  "displayedSignalDetectionConfiguration": Object {
+    "signalDetectionAfterInterval": true,
+    "signalDetectionAssociatedToCompletedEvent": true,
+    "signalDetectionAssociatedToOpenEvent": true,
+    "signalDetectionAssociatedToOtherEvent": true,
+    "signalDetectionBeforeInterval": true,
+    "signalDetectionUnassociated": true,
+    "syncWaveform": false,
+  },
+  "signalDetectionsColumns": Object {
+    "amplitude": true,
+    "assocStatus": true,
+    "azimuth": true,
+    "azimuthStandardDeviation": true,
+    "channel": true,
+    "conflict": true,
+    "emergenceAngle": false,
+    "longPeriodFirstMotion": false,
+    "period": true,
+    "phase": true,
+    "phaseConfidence": false,
+    "rectilinearity": false,
+    "rejected": true,
+    "sNR": true,
+    "shortPeriodFirstMotion": false,
+    "slowness": true,
+    "slownessStandardDeviation": true,
+    "station": true,
+    "time": true,
+    "timeStandardDeviation": true,
+    "unsavedChanges": true,
+  },
+}
+`;
+
+exports[`state signal detections slice should return the initial state 2`] = `
+Object {
+  "displayedSignalDetectionConfiguration": Object {
+    "signalDetectionAfterInterval": true,
+    "signalDetectionAssociatedToCompletedEvent": true,
+    "signalDetectionAssociatedToOpenEvent": true,
+    "signalDetectionAssociatedToOtherEvent": true,
+    "signalDetectionBeforeInterval": true,
+    "signalDetectionUnassociated": true,
+    "syncWaveform": false,
+  },
+  "signalDetectionsColumns": Object {
+    "amplitude": true,
+    "assocStatus": true,
+    "azimuth": true,
+    "azimuthStandardDeviation": true,
+    "channel": true,
+    "conflict": true,
+    "emergenceAngle": false,
+    "longPeriodFirstMotion": false,
+    "period": true,
+    "phase": true,
+    "phaseConfidence": false,
+    "rectilinearity": false,
+    "rejected": true,
+    "sNR": true,
+    "shortPeriodFirstMotion": false,
+    "slowness": true,
+    "slownessStandardDeviation": true,
+    "station": true,
+    "time": true,
+    "timeStandardDeviation": true,
+    "unsavedChanges": true,
+  },
+}
+`;
+
+exports[`state signal detections slice should return the initial state 3`] = `
+Object {
+  "displayedSignalDetectionConfiguration": Object {
+    "signalDetectionAfterInterval": true,
+    "signalDetectionAssociatedToCompletedEvent": true,
+    "signalDetectionAssociatedToOpenEvent": true,
+    "signalDetectionAssociatedToOtherEvent": true,
+    "signalDetectionBeforeInterval": true,
+    "signalDetectionUnassociated": true,
+    "syncWaveform": false,
+  },
+  "signalDetectionsColumns": Object {
+    "amplitude": true,
+    "assocStatus": true,
+    "azimuth": true,
+    "azimuthStandardDeviation": true,
+    "channel": true,
+    "conflict": true,
+    "emergenceAngle": false,
+    "longPeriodFirstMotion": false,
+    "period": true,
+    "phase": true,
+    "phaseConfidence": false,
+    "rectilinearity": false,
+    "rejected": true,
+    "sNR": true,
+    "shortPeriodFirstMotion": false,
+    "slowness": true,
+    "slownessStandardDeviation": true,
+    "station": true,
+    "time": true,
+    "timeStandardDeviation": true,
+    "unsavedChanges": true,
+  },
+}
+`;
+
+exports[`state signal detections slice should return the initial state 4`] = `
+Object {
+  "displayedSignalDetectionConfiguration": Object {
+    "signalDetectionAfterInterval": true,
+    "signalDetectionAssociatedToCompletedEvent": true,
+    "signalDetectionAssociatedToOpenEvent": true,
+    "signalDetectionAssociatedToOtherEvent": true,
+    "signalDetectionBeforeInterval": true,
+    "signalDetectionUnassociated": true,
+    "syncWaveform": false,
+  },
+  "signalDetectionsColumns": Object {
+    "amplitude": true,
+    "assocStatus": true,
+    "azimuth": true,
+    "azimuthStandardDeviation": true,
+    "channel": true,
+    "conflict": true,
+    "emergenceAngle": false,
+    "longPeriodFirstMotion": false,
+    "period": true,
+    "phase": true,
+    "phaseConfidence": false,
+    "rectilinearity": false,
+    "rejected": true,
+    "sNR": true,
+    "shortPeriodFirstMotion": false,
+    "slowness": true,
+    "slownessStandardDeviation": true,
+    "station": true,
+    "time": true,
+    "timeStandardDeviation": true,
+    "unsavedChanges": true,
+  },
+}
+`;

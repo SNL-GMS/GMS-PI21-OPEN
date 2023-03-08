@@ -1,0 +1,27 @@
+{
+    "name": "1.0-5.0-3-bp-causal-description",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "name",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "1.0 5.0 3 BP causal Description"
+            ]
+        }
+    ],
+    "parameters": {
+		"type": "LinearFilterDescription",
+		"comments": "1.0 5.0 3 BP causal",
+		"causal": true,
+		"filterType": "IIR_BUTTERWORTH",
+		"lowFrequency": 1.0,
+		"highFrequency": 5.0,
+		"order": 3,
+		"zeroPhase": false,
+		"passBandType": "BAND_PASS"
+    }
+}

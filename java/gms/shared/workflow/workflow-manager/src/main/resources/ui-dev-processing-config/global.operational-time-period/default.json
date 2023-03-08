@@ -1,0 +1,12 @@
+{
+  "name": "cache-config-default",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "operationalPeriodStart": "PT48H",
+    "operationalPeriodEnd": "PT0S"
+  }
+}

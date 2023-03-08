@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User Preferences Config is config defined 1`] = `"{\\"colors\\":{\\"ok\\":\\"#fff\\",\\"warning\\":\\"#fff\\",\\"strongWarning\\":\\"#fff\\"},\\"overviewMinContainerRange\\":{\\"minimumTopHeightPx\\":145,\\"minimumBottomHeightPx\\":110},\\"stationStatisticsMinContainerRange\\":{\\"minimumTopHeightPx\\":145,\\"minimumBottomHeightPx\\":110},\\"sohStatusUpdateTime\\":60000,\\"transferredFilesGapsUpdateTime\\":600000,\\"tableRowHeightPx\\":36,\\"defaultOverviewGroupHeight\\":360}"`;

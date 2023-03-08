@@ -1,0 +1,13 @@
+{
+  "name": "default-station-capability-rollup",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "channelsToStationRollupOperator": {
+      "operatorType": "BEST_OF"
+    }
+  }
+}

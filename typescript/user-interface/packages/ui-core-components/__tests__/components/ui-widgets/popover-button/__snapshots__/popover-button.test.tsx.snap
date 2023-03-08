@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PopoverButton PopoverButton props and state menu item 1`] = `
+<PopoverButtonComponent
+  cyData="my-test-popover-button"
+  disabled={false}
+  icon="airplane"
+  label="my label"
+  onClick={[MockFunction]}
+  onPopoverDismissed={[MockFunction]}
+  onlyShowIcon={false}
+  popupContent={
+    <div>
+      <p>
+        Pop Up Content
+      </p>
+    </div>
+  }
+  renderAsMenuItem={true}
+  tooltip="my tool tip"
+  widthPx={150}
+>
+  <div
+    data-cy="my-test-popover-button"
+  >
+    <Blueprint4.MenuItem
+      active={false}
+      disabled={false}
+      icon="menu-open"
+      label="opens dialog"
+      multiline={false}
+      onClick={[Function]}
+      popoverProps={Object {}}
+      selected={false}
+      shouldDismissPopover={true}
+      text="my label"
+    >
+      <li
+        className=""
+      >
+        <a
+          className="bp4-menu-item bp4-popover-dismiss"
+          label="opens dialog"
+          onClick={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="bp4-menu-item-icon"
+          >
+            <Blueprint4.Icon
+              aria-hidden={true}
+              icon="menu-open"
+              tabIndex={-1}
+            >
+              <span
+                aria-hidden={true}
+                className="bp4-icon bp4-icon-menu-open"
+                icon="menu-open"
+                tabIndex={-1}
+              >
+                <svg
+                  data-icon="menu-open"
+                  height={16}
+                  viewBox="0 0 16 16"
+                  width={16}
+                >
+                  <path
+                    d="M9.99 11.99h-9c-.55 0-1 .45-1 1s.45 1 1 1h9c.55 0 1-.45 1-1s-.45-1-1-1zm0-5h-9c-.55 0-1 .45-1 1s.45 1 1 1h9c.55 0 1-.45 1-1s-.45-1-1-1zm0-5h-9c-.55 0-1 .45-1 1s.45 1 1 1h9c.55 0 1-.45 1-1s-.45-1-1-1zm5.71 5.3l-2-2a1.003 1.003 0 00-1.71.71v4a1.003 1.003 0 001.71.71l2-2c.18-.18.29-.43.29-.71s-.11-.53-.29-.71z"
+                    fillRule="evenodd"
+                    key="0"
+                  />
+                </svg>
+              </span>
+            </Blueprint4.Icon>
+          </span>
+          <Blueprint4.Text
+            className="bp4-fill"
+            ellipsize={true}
+          >
+            <div
+              className="bp4-fill bp4-text-overflow-ellipsis"
+            >
+              my label
+            </div>
+          </Blueprint4.Text>
+          <span
+            className="bp4-menu-item-label"
+          >
+            opens dialog
+          </span>
+        </a>
+      </li>
+    </Blueprint4.MenuItem>
+  </div>
+</PopoverButtonComponent>
+`;
+
+exports[`PopoverButton PopoverButton renders 1`] = `
+<div>
+  <div
+    data-cy="my-test-popover-button"
+  >
+    <button
+      class="bp4-button bp4-align-left toolbar-button"
+      style="width: 150px;"
+      title="my tool tip"
+      type="button"
+    >
+      <span
+        class="bp4-button-text"
+      >
+        <span>
+          my label
+        </span>
+        <span
+          aria-hidden="true"
+          class="bp4-icon bp4-icon-airplane"
+          icon="airplane"
+        >
+          <svg
+            data-icon="airplane"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+          >
+            <path
+              d="M16 1.5A1.498 1.498 0 0013.44.44L9.91 3.97 2 1 1 3l5.93 3.95L3.88 10H1l-1 1 3 2 2 3 1-1v-2.88l3.05-3.05L13 15l2-1-2.97-7.91 3.53-3.53c.27-.27.44-.65.44-1.06z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+      </span>
+    </button>
+  </div>
+</div>
+`;

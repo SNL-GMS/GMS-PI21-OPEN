@@ -1,0 +1,15 @@
+{
+  "name": "dziewonski-gilbert-ellipticity-corrector",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+
+  "parameters": {
+    "correctionModelPluginNameByModelName": {
+      "Ak135": "dziewonskiGilbertLookupTable",
+      "Iaspei": "dziewonskiGilbertLookupTable"
+    }
+  }
+}

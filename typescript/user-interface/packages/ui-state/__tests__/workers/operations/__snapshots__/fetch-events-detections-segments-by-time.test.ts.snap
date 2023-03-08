@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Events Query fetchEventsAndDetectionsWithSegments returns events, signalDetection, and channelSegments 1`] = `[Error: Cannot make a request on the worker without a baseUrl in the config]`;

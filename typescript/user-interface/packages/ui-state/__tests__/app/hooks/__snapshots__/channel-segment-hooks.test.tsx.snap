@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`channel segment hooks hook query for channel segments 1`] = `
+Array [
+  "{}",
+  "{}",
+]
+`;
+
+exports[`channel segment hooks hook query for channel segments 2`] = `
+Array [
+  "{}",
+  "{}",
+]
+`;
+
+exports[`channel segment hooks useGetChannelSegmentsByChannels resturns an object with loading values 1`] = `
+Object {
+  "data": Object {
+    "PDAR.BHZ": Object {
+      "unfiltered": Array [
+        Object {
+          "channelSegment": Object {
+            "channelName": "AAK.AAK.BHZ",
+            "channelSegmentBoundaries": Object {
+              "bottomMax": 154.606635,
+              "channelAvg": 230.31431241288792,
+              "channelSegmentId": "unfiltered",
+              "offset": 307.306593,
+              "samplesCount": 179980,
+              "topMax": 307.306593,
+            },
+            "dataSegments": Array [
+              Object {
+                "color": "#4580e6",
+                "data": Object {
+                  "endTimeSecs": 1274399099.975,
+                  "sampleRate": 40,
+                  "startTimeSecs": 1274391900,
+                  "values": Array [
+                    -12.501736640930176,
+                    233.5541229248047,
+                    -12.501389503479004,
+                    237.58853149414062,
+                    -12.501041412353516,
+                    249.02859497070312,
+                    -12.500694274902344,
+                    240.24130249023438,
+                    -12.500347137451172,
+                    227.83409118652344,
+                  ],
+                },
+                "displayType": Array [
+                  "LINE",
+                ],
+                "pointSize": 1,
+              },
+              Object {
+                "color": "#4580e6",
+                "data": Object {
+                  "endTimeSecs": 1274400898.975,
+                  "sampleRate": 40,
+                  "startTimeSecs": 1274399100,
+                  "values": Array [
+                    87.51215362548828,
+                    226.728759765625,
+                    87.51250457763672,
+                    228.63543701171875,
+                    87.51284790039062,
+                    228.13804626464844,
+                    87.51319885253906,
+                    222.72198486328125,
+                    87.51354217529297,
+                    232.2830047607422,
+                  ],
+                },
+                "displayType": Array [
+                  "LINE",
+                ],
+                "pointSize": 1,
+              },
+            ],
+            "description": "unfiltered",
+            "descriptionLabelColor": "#f5f8fa",
+            "isSelected": false,
+            "wfFilterId": "unfiltered",
+          },
+          "channelSegmentDescriptor": Object {
+            "channel": Object {
+              "effectiveAt": 1274391900,
+              "name": "AAK.AAK.BHZ",
+            },
+            "creationTime": 1274391900,
+            "endTime": 1274399099,
+            "startTime": 1274391900,
+          },
+        },
+      ],
+    },
+  },
+  "fulfilled": 0,
+  "isError": false,
+  "isLoading": false,
+  "pending": 0,
+  "rejected": 0,
+}
+`;

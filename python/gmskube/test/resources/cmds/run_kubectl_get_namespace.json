@@ -1,0 +1,59 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+        "annotations": {
+            "cattle.io/status": "{\"Conditions\":[{\"Type\":\"ResourceQuotaInit\",\"Status\":\"True\",\"Message\":\"\",\"LastUpdateTime\":\"2021-12-16T22:55:07Z\"},{\"Type\":\"InitialRolesPopulated\",\"Status\":\"True\",\"Message\":\"\",\"LastUpdateTime\":\"2021-12-16T22:55:07Z\"}]}",
+            "lifecycle.cattle.io/create.namespace-auth": "true"
+        },
+        "creationTimestamp": "2021-12-16T22:55:06Z",
+        "finalizers": [
+            "controller.cattle.io/namespace-auth"
+        ],
+        "managedFields": [
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:status": {
+                        "f:phase": {}
+                    }
+                },
+                "manager": "kubectl-create",
+                "operation": "Update",
+                "time": "2021-12-16T22:55:06Z"
+            },
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:metadata": {
+                        "f:annotations": {
+                            ".": {},
+                            "f:cattle.io/status": {},
+                            "f:lifecycle.cattle.io/create.namespace-auth": {}
+                        },
+                        "f:finalizers": {
+                            ".": {},
+                            "v:\"controller.cattle.io/namespace-auth\"": {}
+                        }
+                    }
+                },
+                "manager": "rancher",
+                "operation": "Update",
+                "time": "2021-12-16T22:55:06Z"
+            }
+        ],
+        "name": "test",
+        "resourceVersion": "28440209",
+        "uid": "39a447b7-16bb-4dd4-9d72-cf88c867ad32"
+    },
+    "spec": {
+        "finalizers": [
+            "kubernetes"
+        ]
+    },
+    "status": {
+        "phase": "Active"
+    }
+}

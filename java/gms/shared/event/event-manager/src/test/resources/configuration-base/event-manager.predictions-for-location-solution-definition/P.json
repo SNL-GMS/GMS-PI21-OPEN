@@ -1,0 +1,27 @@
+{
+  "name": "predictions-for-location-solution-definition",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "phaseType",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "P"
+      ]
+    }
+  ],
+  "parameters": {
+    "featurePredictionsDefinitions": [
+      {
+        "earthModel": "Iaspei",
+        "predictionTypes": [
+          "SLOWNESS"
+        ],
+        "correctionDefinitions": []
+      }
+    ]
+  }
+}

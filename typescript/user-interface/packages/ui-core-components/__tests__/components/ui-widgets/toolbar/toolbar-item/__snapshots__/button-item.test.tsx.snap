@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonToolbarItem ButtonToolbarItem renders 1`] = `
+<div>
+  <div>
+    <button
+      class="bp4-button bp4-align-left toolbar-button"
+      title="Button Hello"
+      type="button"
+    >
+      <span
+        class="bp4-button-text"
+      >
+        <span />
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`ButtonToolbarItem ButtonToolbarItem renders with marginRight and labelRight 1`] = `
+<div>
+  <div>
+    <button
+      class="bp4-button bp4-align-left toolbar-button"
+      style="margin-right: 5px;"
+      title="Button Hello"
+      type="button"
+    >
+      <span
+        class="bp4-button-text"
+      >
+        <span />
+        <span>
+          Button Right Label
+        </span>
+      </span>
+    </button>
+  </div>
+</div>
+`;

@@ -1,0 +1,12 @@
+YAK    BHE       2009301     5608  2013304 n       0.0100   90.0   90.0 Broad-band_east                                    20131105 12:00:00
+YAK    BHE       2013305     5608  2286324 n       0.0140   90.0   90.0 Broad-band_east                                    20131105 12:00:00
+YAK    BHN       2009301     5607  2013304 n       0.0100    0.0   90.0 Broad-band_north                                   20131105 12:00:00
+YAK    BHN       2013305     5607  2286324 n       0.0140    0.0   90.0 Broad-band_north                                   20131105 12:00:00
+YAK    BHZ       2009301     5606  2013304 n       0.0100   -1.0    0.0 Broad-band_vertical                                20131105 12:00:00
+YAK    BHZ       2013305     5606  2286324 n       0.0140   -1.0    0.0 Broad-band_vertical                                20131105 12:00:00
+YAK    SHE       2009301     5605  2013304 n       0.0100   90.0   90.0 Short-period_east                                  20131105 12:00:00
+YAK    SHE       2013305     5605  2017334 n       0.0140   90.0   90.0 Short-period_east                                  20171205 12:00:00
+YAK    SHN       2009301     5604  2013304 n       0.0100    0.0   90.0 Short-period_north                                 20131105 12:00:00
+YAK    SHN       2013305     5604  2017334 n       0.0140    0.0   90.0 Short-period_north                                 20171205 12:00:00
+YAK    SHZ       2009301     5603  2013304 n       0.0100   -1.0    0.0 Short-period_vertical                              20131105 12:00:00
+YAK    SHZ       2013305     5603  2017334 n       0.0140   -1.0    0.0 Short-period_vertical                              20171205 12:00:00

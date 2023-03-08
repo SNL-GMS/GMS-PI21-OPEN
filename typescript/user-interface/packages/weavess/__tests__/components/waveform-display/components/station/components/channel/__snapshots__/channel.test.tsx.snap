@@ -1,0 +1,980 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weavess Channel call getMousePosition 1`] = `
+Object {
+  "clientX": 0,
+  "clientY": 0,
+}
+`;
+
+exports[`Weavess Channel can get min/max amplitudes 1`] = `
+Object {
+  "maxAmplitude": 307.306593,
+  "minAmplitude": 154.606635,
+}
+`;
+
+exports[`Weavess Channel can get min/max amplitudes 2`] = `
+Object {
+  "maxAmplitude": -Infinity,
+  "minAmplitude": Infinity,
+}
+`;
+
+exports[`Weavess Channel channel wrapper to match snapshot 1`] = `
+<div>
+  <div
+    class="channel"
+    data-cy="channel-channel"
+    style="height: 800px; max-height: 800px;"
+    tabindex="0"
+  >
+    <div
+      class="channel-label-container"
+      data-cy="channel-label"
+      style="height: 800px; width: 184px;"
+      tabindex="0"
+    >
+      <div
+        class="label label--actionable"
+        tabindex="0"
+      >
+        <div
+          class="label-container"
+        >
+          <div
+            class="label-container-left-parent"
+          >
+            <div
+              class="label-container-left-parent-expansion-button"
+              data-cy="weavess-expand-parent"
+              data-cy-channel-name="channel"
+            >
+              -
+            </div>
+          </div>
+          <div
+            class="label-container-content"
+          >
+            <div
+              class="label-container-content-label"
+              data-cy="channel-label-channel"
+            >
+              <div>
+                <span
+                  class="weavess-tooltip__target label-container-content"
+                >
+                  <span
+                    aria-haspopup="true"
+                    class="weavess-tooltip bp4-popover2-target"
+                  >
+                    <span
+                      class=""
+                      tabindex="0"
+                    >
+                      channel
+                    </span>
+                  </span>
+                  <div
+                    class="distance-azimuth"
+                  >
+                    <p>
+                      <span
+                        aria-haspopup="true"
+                        class="label-tooltip-wrapper__value bp4-popover2-target"
+                      >
+                        <span
+                          class=""
+                          tabindex="0"
+                        >
+                          4.00
+                           km
+                        </span>
+                      </span>
+                      /
+                      <span
+                        aria-haspopup="true"
+                        class="label-tooltip-wrapper__value bp4-popover2-target"
+                      >
+                        <span
+                          class=""
+                          tabindex="0"
+                        >
+                          9.0°
+                        </span>
+                      </span>
+                      <span
+                        class="label-container-content-mask-indicator"
+                      >
+                        M
+                      </span>
+                    </p>
+                  </div>
+                </span>
+              </div>
+            </div>
+            <div
+              data-cy-contains-amplitude-markers="true"
+              style="height: 100%;"
+            >
+              <div
+                class="y-axis"
+                data-cy="y-axis"
+                data-max="1"
+                data-min="-1"
+                style="height: calc(50% - 4px); margin: 2px 0px 2px 0px;"
+              >
+                <svg
+                  height="100%"
+                  width="50"
+                >
+                  <g
+                    class="y-axis__ordinate"
+                    height="50%"
+                    transform="translate(49,0)"
+                  />
+                </svg>
+              </div>
+              <div
+                class="y-axis"
+                data-cy="y-axis"
+                data-max="1"
+                data-min="-1"
+                style="height: calc(50% - 4px); margin: 2px 0px 2px 0px;"
+              >
+                <svg
+                  height="100%"
+                  width="50"
+                >
+                  <g
+                    class="y-axis__ordinate"
+                    height="50%"
+                    transform="translate(49,0)"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="channel-content-container"
+      style="height: 400px; width: calc(100% - 184px); left: 184px;"
+    >
+      <div
+        class="contentrenderer contentrenderer--selected"
+        tabindex="0"
+      >
+        <div
+          class="contentrenderer-content contentrenderer-content--sticky"
+          style="width: calc(100% - 184);"
+        />
+        <div
+          class="contentrenderer-content"
+          data-cy-station-waveform="channel"
+          style="left: 184px; width: calc(100% - 184px);"
+        >
+          <div
+            class="contentrenderer-content-drag-indicator"
+          />
+          <div
+            class="measure-window-selection measure-window-selection__container"
+            style="display: none; transform: translateX(-50%);"
+          >
+            <div
+              class="measure-window-selection__overlay"
+              data-cy="measure-window-selection"
+              draggable="true"
+              style="display: none; left: 50%; width: 0%;"
+            />
+          </div>
+          <div
+            class="contentrenderer-content-markers"
+          />
+          <div
+            class="signal-detection__pick"
+          >
+            <div
+              class="uncertainty-marker"
+            >
+              <div
+                class="uncertainty-marker--vertical"
+                style="border-left: 1.5px solid red; left: 99.7%; box-shadow: initial;"
+              />
+              <div
+                class="uncertainty-marker--horizontal"
+                style="border-top: 1.5px solid red; left: 99.7%; width: 0.29999999999999716%; box-shadow: initial;"
+              />
+            </div>
+            <div
+              class="pick-marker pick-marker--selected pick-marker--selectable"
+              style="--pick-marker-color: red;"
+            >
+              <div
+                class="pick-marker__vertical"
+                data-cy-predicted="pick-marker-pick-predicted-false"
+                style="left: 100%; filter: brightness(1);"
+              />
+              <div
+                class="pick-marker__label pick-marker__label--top"
+                data-cy="pick-marker-sd"
+                data-cy-color="pick-marker-red"
+                data-cy-is-predicted-phase="false"
+                data-cy-phase="P"
+                data-cy-style-left="100"
+                style="left: calc(4px + 100%); filter: brightness(1); cursor: pointer;"
+              >
+                P
+              </div>
+            </div>
+            <div
+              class="uncertainty-marker"
+            >
+              <div
+                class="uncertainty-marker--vertical"
+                style="border-left: 1.5px solid red; left: 100.29999999999998%; box-shadow: initial;"
+              />
+              <div
+                class="uncertainty-marker--horizontal"
+                style="border-top: 1.5px solid red; left: 100%; width: 0.29999999999998295%; box-shadow: initial;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="channel-content-container"
+      style="height: 400px; width: calc(100% - 184px); left: 184px; top: 800px; border-top: 1px solid;"
+    >
+      <div
+        class="contentrenderer"
+        tabindex="0"
+      >
+        <div
+          class="contentrenderer-content contentrenderer-content--sticky"
+          style="width: calc(100% - 184);"
+        >
+          <div
+            class="contentrenderer-content-description-label"
+            data-cy="filtered-channel-label"
+            data-cy-color="black"
+            style="color: black;"
+          >
+            <span
+              class="contentrenderer-content__description"
+            >
+              test spectogram data
+            </span>
+          </div>
+        </div>
+        <div
+          class="contentrenderer-content"
+          data-cy-station-waveform="channel"
+          style="left: 184px; width: calc(100% - 184px);"
+        >
+          <div
+            class="contentrenderer-content-drag-indicator"
+          />
+          <div
+            class="contentrenderer-content-markers"
+          >
+            <div
+              class="vertical-marker"
+              data-cy="weavess-static-vertical-marker"
+              data-cy-color="lime"
+              data-cy-left="1"
+              style="left: calc(1% - 1px); border: 1px dashed lime;"
+            />
+            <div
+              class="moveable-marker"
+              style="left: 10%; border: .5px dashed red;"
+            />
+            <div
+              class="selection-window"
+            >
+              <div
+                class="selection-window-selection"
+                style="background-color: rgba(200, 0, 0, 0.2); left: 40%; right: 20%; cursor: move;"
+              />
+              <div
+                class="moveable-marker"
+                style="left: 40%; border: .5px dashed purple;"
+              />
+              <div
+                class="moveable-marker"
+                style="left: 80%; border: .5px dashed purple;"
+              />
+            </div>
+          </div>
+          <div
+            class="signal-detection__pick"
+          >
+            <div
+              class="pick-marker pick-marker--selectable"
+              style="--pick-marker-color: red;"
+            >
+              <div
+                class="pick-marker__vertical"
+                data-cy-predicted="pick-marker-pick-predicted-false"
+                style="left: 100%; filter: brightness(1);"
+              />
+              <div
+                class="pick-marker__label pick-marker__label--top"
+                data-cy="pick-marker-sd"
+                data-cy-color="pick-marker-red"
+                data-cy-is-predicted-phase="false"
+                data-cy-phase="P"
+                data-cy-style-left="100"
+                style="left: calc(4px + 100%); filter: brightness(1); cursor: pointer;"
+              >
+                P
+              </div>
+            </div>
+          </div>
+          <div
+            class="pick-marker pick-marker--selected"
+            style="--pick-marker-color: red;"
+          >
+            <div
+              class="pick-marker__vertical"
+              data-cy-predicted="pick-marker-pick-predicted-true"
+              style="left: 103%; filter: opacity(.6);"
+            />
+            <div
+              class="pick-marker__label pick-marker__label--bottom"
+              data-cy="pick-marker-predictive"
+              data-cy-color="pick-marker-red"
+              data-cy-is-predicted-phase="true"
+              data-cy-phase="P"
+              data-cy-style-left="103"
+              style="left: calc(4px + 103%); filter: opacity(.6); cursor: pointer;"
+            >
+              P
+            </div>
+          </div>
+          <div
+            class="theoretical-phase-window"
+          >
+            <div
+              class="theoretical-phase-window-selection"
+              style="background-color: red; left: 12%; right: 76%;"
+            />
+            <div
+              class="theoretical-phase-window-label"
+              style="color: red; left: 12%; right: 76%;"
+            >
+              TP
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Weavess Channel with no waveform can mount channel where the props.events are undefined 1`] = `
+<div>
+  <div
+    class="channel"
+    data-cy="channel-channel"
+    style="height: 800px; max-height: 800px;"
+    tabindex="0"
+  >
+    <div
+      class="channel-label-container"
+      data-cy="channel-label"
+      style="height: 800px; width: 184px;"
+      tabindex="0"
+    >
+      <div
+        class="label label--actionable"
+        tabindex="0"
+      >
+        <div
+          class="label-container"
+        >
+          <div
+            class="label-container-left-parent"
+          >
+            <div
+              class="label-container-left-parent-expansion-button"
+              data-cy="weavess-expand-parent"
+              data-cy-channel-name="channel"
+            >
+              -
+            </div>
+          </div>
+          <div
+            class="label-container-content"
+          >
+            <div
+              class="label-container-content-label"
+              data-cy="channel-label-channel"
+            >
+              <div>
+                <span
+                  class="weavess-tooltip__target label-container-content"
+                >
+                  <span
+                    aria-haspopup="true"
+                    class="weavess-tooltip bp4-popover2-target"
+                  >
+                    <span
+                      class=""
+                      tabindex="0"
+                    >
+                      channel
+                    </span>
+                  </span>
+                  <div
+                    class="distance-azimuth"
+                  >
+                    <p>
+                      <span
+                        aria-haspopup="true"
+                        class="label-tooltip-wrapper__value bp4-popover2-target"
+                      >
+                        <span
+                          class=""
+                          tabindex="0"
+                        >
+                          4.00
+                           km
+                        </span>
+                      </span>
+                      /
+                      <span
+                        aria-haspopup="true"
+                        class="label-tooltip-wrapper__value bp4-popover2-target"
+                      >
+                        <span
+                          class=""
+                          tabindex="0"
+                        >
+                          9.0°
+                        </span>
+                      </span>
+                      <span
+                        class="label-container-content-mask-indicator"
+                      >
+                        M
+                      </span>
+                    </p>
+                  </div>
+                </span>
+              </div>
+            </div>
+            <div
+              data-cy-contains-amplitude-markers="true"
+              style="height: 100%;"
+            >
+              <div
+                class="y-axis"
+                data-cy="y-axis"
+                data-max="1"
+                data-min="-1"
+                style="height: calc(50% - 4px); margin: 2px 0px 2px 0px;"
+              >
+                <svg
+                  height="100%"
+                  width="50"
+                >
+                  <g
+                    class="y-axis__ordinate"
+                    height="50%"
+                    transform="translate(49,0)"
+                  />
+                </svg>
+              </div>
+              <div
+                class="y-axis"
+                data-cy="y-axis"
+                data-max="1"
+                data-min="-1"
+                style="height: calc(50% - 4px); margin: 2px 0px 2px 0px;"
+              >
+                <svg
+                  height="100%"
+                  width="50"
+                >
+                  <g
+                    class="y-axis__ordinate"
+                    height="50%"
+                    transform="translate(49,0)"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="channel-content-container"
+      style="height: 400px; width: calc(100% - 184px); left: 184px;"
+    >
+      <div
+        class="contentrenderer contentrenderer--selected"
+        tabindex="0"
+      >
+        <div
+          class="contentrenderer-content contentrenderer-content--sticky"
+          style="width: calc(100% - 184);"
+        />
+        <div
+          class="contentrenderer-content"
+          data-cy-station-waveform="channel"
+          style="left: 184px; width: calc(100% - 184px);"
+        >
+          <div
+            class="contentrenderer-content-drag-indicator"
+          />
+          <div
+            class="measure-window-selection measure-window-selection__container"
+            style="display: none; transform: translateX(-50%);"
+          >
+            <div
+              class="measure-window-selection__overlay"
+              data-cy="measure-window-selection"
+              draggable="true"
+              style="display: none; left: 50%; width: 0%;"
+            />
+          </div>
+          <div
+            class="contentrenderer-content-markers"
+          />
+          <div
+            class="signal-detection__pick"
+          >
+            <div
+              class="uncertainty-marker"
+            >
+              <div
+                class="uncertainty-marker--vertical"
+                style="border-left: 1.5px solid red; left: 99.7%; box-shadow: initial;"
+              />
+              <div
+                class="uncertainty-marker--horizontal"
+                style="border-top: 1.5px solid red; left: 99.7%; width: 0.29999999999999716%; box-shadow: initial;"
+              />
+            </div>
+            <div
+              class="pick-marker pick-marker--selected pick-marker--selectable"
+              style="--pick-marker-color: red;"
+            >
+              <div
+                class="pick-marker__vertical"
+                data-cy-predicted="pick-marker-pick-predicted-false"
+                style="left: 100%; filter: brightness(1);"
+              />
+              <div
+                class="pick-marker__label pick-marker__label--top"
+                data-cy="pick-marker-sd"
+                data-cy-color="pick-marker-red"
+                data-cy-is-predicted-phase="false"
+                data-cy-phase="P"
+                data-cy-style-left="100"
+                style="left: calc(4px + 100%); filter: brightness(1); cursor: auto;"
+              >
+                P
+              </div>
+            </div>
+            <div
+              class="uncertainty-marker"
+            >
+              <div
+                class="uncertainty-marker--vertical"
+                style="border-left: 1.5px solid red; left: 100.29999999999998%; box-shadow: initial;"
+              />
+              <div
+                class="uncertainty-marker--horizontal"
+                style="border-top: 1.5px solid red; left: 100%; width: 0.29999999999998295%; box-shadow: initial;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="channel-content-container"
+      style="height: 400px; width: calc(100% - 184px); left: 184px; top: 800px; border-top: 1px solid;"
+    >
+      <div
+        class="contentrenderer"
+        tabindex="0"
+      >
+        <div
+          class="contentrenderer-content contentrenderer-content--sticky"
+          style="width: calc(100% - 184);"
+        >
+          <div
+            class="contentrenderer-content-description-label"
+            data-cy="filtered-channel-label"
+            data-cy-color="black"
+            style="color: black;"
+          >
+            <span
+              class="contentrenderer-content__description"
+            >
+              test spectogram data
+            </span>
+          </div>
+        </div>
+        <div
+          class="contentrenderer-content"
+          data-cy-station-waveform="channel"
+          style="left: 184px; width: calc(100% - 184px);"
+        >
+          <div
+            class="contentrenderer-content-drag-indicator"
+          />
+          <div
+            class="contentrenderer-content-markers"
+          >
+            <div
+              class="vertical-marker"
+              data-cy="weavess-static-vertical-marker"
+              data-cy-color="lime"
+              data-cy-left="1"
+              style="left: calc(1% - 1px); border: 1px dashed lime;"
+            />
+            <div
+              class="moveable-marker"
+              style="left: 10%; border: .5px dashed red;"
+            />
+            <div
+              class="selection-window"
+            >
+              <div
+                class="selection-window-selection"
+                style="background-color: rgba(200, 0, 0, 0.2); left: 40%; right: 20%; cursor: move;"
+              />
+              <div
+                class="moveable-marker"
+                style="left: 40%; border: .5px dashed purple;"
+              />
+              <div
+                class="moveable-marker"
+                style="left: 80%; border: .5px dashed purple;"
+              />
+            </div>
+          </div>
+          <div
+            class="signal-detection__pick"
+          >
+            <div
+              class="pick-marker pick-marker--selectable"
+              style="--pick-marker-color: red;"
+            >
+              <div
+                class="pick-marker__vertical"
+                data-cy-predicted="pick-marker-pick-predicted-false"
+                style="left: 100%; filter: brightness(1);"
+              />
+              <div
+                class="pick-marker__label pick-marker__label--top"
+                data-cy="pick-marker-sd"
+                data-cy-color="pick-marker-red"
+                data-cy-is-predicted-phase="false"
+                data-cy-phase="P"
+                data-cy-style-left="100"
+                style="left: calc(4px + 100%); filter: brightness(1); cursor: auto;"
+              >
+                P
+              </div>
+            </div>
+          </div>
+          <div
+            class="pick-marker pick-marker--selected"
+            style="--pick-marker-color: red;"
+          >
+            <div
+              class="pick-marker__vertical"
+              data-cy-predicted="pick-marker-pick-predicted-true"
+              style="left: 103%; filter: opacity(.6);"
+            />
+            <div
+              class="pick-marker__label pick-marker__label--bottom"
+              data-cy="pick-marker-predictive"
+              data-cy-color="pick-marker-red"
+              data-cy-is-predicted-phase="true"
+              data-cy-phase="P"
+              data-cy-style-left="103"
+              style="left: calc(4px + 103%); filter: opacity(.6); cursor: auto;"
+            >
+              P
+            </div>
+          </div>
+          <div
+            class="theoretical-phase-window"
+          >
+            <div
+              class="theoretical-phase-window-selection"
+              style="background-color: red; left: 12%; right: 76%;"
+            />
+            <div
+              class="theoretical-phase-window-label"
+              style="color: red; left: 12%; right: 76%;"
+            >
+              TP
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Weavess Channel with no waveform channel wrapper to match snapshot undefined waveform 1`] = `
+<div>
+  <div
+    class="channel"
+    data-cy="channel-channel"
+    style="height: 800px; max-height: 800px;"
+    tabindex="0"
+  >
+    <div
+      class="channel-label-container"
+      data-cy="channel-label"
+      style="height: 800px; width: 184px;"
+      tabindex="0"
+    >
+      <div
+        class="label label--actionable"
+        tabindex="0"
+      >
+        <div
+          class="label-container"
+        >
+          <div
+            class="label-container-left-parent"
+          >
+            <div
+              class="label-container-left-parent-expansion-button"
+              data-cy="weavess-expand-parent"
+              data-cy-channel-name="channel"
+            >
+              -
+            </div>
+          </div>
+          <div
+            class="label-container-content"
+          >
+            <div
+              class="label-container-content-label"
+              data-cy="channel-label-channel"
+            >
+              <div>
+                <span
+                  class="weavess-tooltip__target label-container-content"
+                >
+                  <span
+                    aria-haspopup="true"
+                    class="weavess-tooltip bp4-popover2-target"
+                  >
+                    <span
+                      class=""
+                      tabindex="0"
+                    >
+                      channel
+                    </span>
+                  </span>
+                  <div
+                    class="distance-azimuth"
+                  >
+                    <p>
+                      <span
+                        aria-haspopup="true"
+                        class="label-tooltip-wrapper__value bp4-popover2-target"
+                      >
+                        <span
+                          class=""
+                          tabindex="0"
+                        >
+                          4.00
+                           km
+                        </span>
+                      </span>
+                      /
+                      <span
+                        aria-haspopup="true"
+                        class="label-tooltip-wrapper__value bp4-popover2-target"
+                      >
+                        <span
+                          class=""
+                          tabindex="0"
+                        >
+                          9.0°
+                        </span>
+                      </span>
+                      <span
+                        class="label-container-content-mask-indicator"
+                      >
+                        M
+                      </span>
+                    </p>
+                  </div>
+                </span>
+              </div>
+            </div>
+            <div
+              data-cy-contains-amplitude-markers="true"
+              style="height: 100%;"
+            >
+              <div
+                class="y-axis"
+                data-cy="y-axis"
+                data-max="1"
+                data-min="-1"
+                style="height: calc(100% - 4px); margin: 2px 0px 2px 0px;"
+              >
+                <svg
+                  height="100%"
+                  width="50"
+                >
+                  <g
+                    class="y-axis__ordinate"
+                    height="100%"
+                    transform="translate(49,0)"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="channel-content-container"
+      style="height: 800px; width: calc(100% - 184px); left: 184px; top: 0px;"
+    >
+      <div
+        class="contentrenderer"
+        tabindex="0"
+      >
+        <div
+          class="contentrenderer-content contentrenderer-content--sticky"
+          style="width: calc(100% - 184);"
+        >
+          <div
+            class="contentrenderer-content-description-label"
+            data-cy="filtered-channel-label"
+            data-cy-color="black"
+            style="color: black;"
+          >
+            <span
+              class="contentrenderer-content__description"
+            >
+              test spectogram data
+            </span>
+          </div>
+        </div>
+        <div
+          class="contentrenderer-content"
+          data-cy-station-waveform="channel"
+          style="left: 184px; width: calc(100% - 184px);"
+        >
+          <div
+            class="contentrenderer-content-drag-indicator"
+          />
+          <div
+            class="contentrenderer-content-markers"
+          >
+            <div
+              class="vertical-marker"
+              data-cy="weavess-static-vertical-marker"
+              data-cy-color="lime"
+              data-cy-left="1"
+              style="left: calc(1% - 1px); border: 1px dashed lime;"
+            />
+            <div
+              class="moveable-marker"
+              style="left: 10%; border: .5px dashed red;"
+            />
+            <div
+              class="selection-window"
+            >
+              <div
+                class="selection-window-selection"
+                style="background-color: rgba(200, 0, 0, 0.2); left: 40%; right: 20%; cursor: move;"
+              />
+              <div
+                class="moveable-marker"
+                style="left: 40%; border: .5px dashed purple;"
+              />
+              <div
+                class="moveable-marker"
+                style="left: 80%; border: .5px dashed purple;"
+              />
+            </div>
+          </div>
+          <div
+            class="signal-detection__pick"
+          >
+            <div
+              class="pick-marker pick-marker--selectable"
+              style="--pick-marker-color: red;"
+            >
+              <div
+                class="pick-marker__vertical"
+                data-cy-predicted="pick-marker-pick-predicted-false"
+                style="left: 100%; filter: brightness(1);"
+              />
+              <div
+                class="pick-marker__label pick-marker__label--top"
+                data-cy="pick-marker-sd"
+                data-cy-color="pick-marker-red"
+                data-cy-is-predicted-phase="false"
+                data-cy-phase="P"
+                data-cy-style-left="100"
+                style="left: calc(4px + 100%); filter: brightness(1); cursor: pointer;"
+              >
+                P
+              </div>
+            </div>
+          </div>
+          <div
+            class="pick-marker pick-marker--selected"
+            style="--pick-marker-color: red;"
+          >
+            <div
+              class="pick-marker__vertical"
+              data-cy-predicted="pick-marker-pick-predicted-true"
+              style="left: 103%; filter: opacity(.6);"
+            />
+            <div
+              class="pick-marker__label pick-marker__label--bottom"
+              data-cy="pick-marker-predictive"
+              data-cy-color="pick-marker-red"
+              data-cy-is-predicted-phase="true"
+              data-cy-phase="P"
+              data-cy-style-left="103"
+              style="left: calc(4px + 103%); filter: opacity(.6); cursor: pointer;"
+            >
+              P
+            </div>
+          </div>
+          <div
+            class="theoretical-phase-window"
+          >
+            <div
+              class="theoretical-phase-window-selection"
+              style="background-color: red; left: 12%; right: 76%;"
+            />
+            <div
+              class="theoretical-phase-window-label"
+              style="color: red; left: 12%; right: 76%;"
+            >
+              TP
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

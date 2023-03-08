@@ -1,0 +1,14 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation project(':bridged-data-source-simulator-api')
+    implementation project(':bridged-data-source-simulator-jpa')
+
+    implementation 'gms:station-definition-repository:LATEST'
+    implementation 'gms:bridge-utilities:LATEST'
+
+    implementation libs.org.apache.commons.commons.lang3
+    implementation libs.com.google.guava.guava
+
+    testImplementation 'gms:station-definition-testfixtures:LATEST'
+}

@@ -1,0 +1,12 @@
+.scroll-bar {
+  height: 12px;
+  width: 100%;
+  background: var(--core-scrollbar-override-background, var(--gms-scrollbar-background, #202b33));
+  display: block;
+}
+
+.scroll-bar__bar {
+  height: 10px;
+  border-radius: 3px;
+  background: var(--core-scrollbar-override, var(--gms-scrollbar, #5c7080));
+}

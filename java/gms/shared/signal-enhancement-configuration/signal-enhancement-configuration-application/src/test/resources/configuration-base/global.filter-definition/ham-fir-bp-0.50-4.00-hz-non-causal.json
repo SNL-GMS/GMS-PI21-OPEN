@@ -1,0 +1,26 @@
+{
+    "name": "ham-fir-bp-0.50-4.00-hz-non-causal",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "name",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "HAM FIR BP 0.50-4.00 HZ non causal"
+            ]
+        }
+    ],
+    "parameters": {
+        "name": "HAM FIR BP 0.50-4.00 HZ non causal",
+        "comments": "Filter 5 comments",
+        "filterDescription": {
+            "$ref=global.filter-description":[{
+                "criterion": "name",
+                "value": "HAM FIR BP 0.50-4.00 HZ non causal Description"
+            }]
+        }
+    }
+}

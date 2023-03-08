@@ -1,0 +1,142 @@
+/// Alphabetical list of util mixins with accompanying SASS-Doc
+
+/// Add a drop shadow using material shadows
+/// @param {*} $amount a string value of xs, sm, md, lg, xl
+@mixin addBoxShadow($amount) {
+  @if $amount == 'xs' {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  } @else if $amount == 'sm' {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  } @else if $amount == 'md' {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  } @else if $amount == 'lg' {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  } @else if $amount == 'xl' {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  }
+}
+
+/// Creates a faint gradient and top-border over an element to create
+/// the appearance of having light cast upon it.
+/// The element is covered with a ::before pseudoelement
+@mixin castLightOn {
+  &::before {
+    @include fillAllSpaceAbsolutely();
+    content: ' ';
+    border-top: 1px solid rgba(245, 248, 250, 0.25);
+    position: absolute;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(326deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.06) 100%);
+    pointer-events: none;
+  }
+}
+
+/// Returns a boolean telling whether two colors meet AA color contrast accessibility. Used to
+/// generate accessible colors against a particular background color.
+/// Based on the Medium article here:
+/// https://medium.com/@jonnykates/automating-colour-contrast-ratios-with-sass-e201f3b52797
+///
+/// @returns the string "true" or "false" depending on the result.
+@function colorDifference($foreground, $background) {
+  $r: (max(red($foreground), red($background))) - (min(red($foreground), red($background)));
+  $g: (max(green($foreground), green($background))) - (min(green($foreground), green($background)));
+  $b: (max(blue($foreground), blue($background))) - (min(blue($foreground), blue($background)));
+  $sum-rgb: $r + $g + $b;
+
+  @if $sum-rgb < 500 {
+    @return 'false';
+  } @else {
+    @return 'true';
+  }
+}
+
+/// Creates a background striped texture using the two colors and size provided.
+@mixin diagonalStripedBackground($color1, $color2, $distance) {
+  background: repeating-linear-gradient(
+    45deg,
+    $color1,
+    $color1 $distance,
+    $color2 $distance,
+    $color2 $distance * 2
+  );
+}
+
+/// Uses absolute positioning and sets top, right, bottom and left to 0 to
+/// fill the parent element. The parent element should have position absolute,
+/// relative, or fixed.
+@mixin fillAllSpaceAbsolutely {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/// Add gpu acceleration to an element by making it
+/// use 3D rendering.
+@mixin gpuAccelerated {
+  transform: translateZ(0);
+}
+
+/// Adds a gap between child elements.
+/// @param {*} $top
+/// @param {*} $right
+/// @param {*} $bottom
+/// @param {*} $left
+@mixin hasSpaceBetweenChildren($top, $right, $bottom, $left) {
+  & > * + * {
+    margin: $top $right $bottom $left;
+  }
+}
+
+/// Creates a hash alternating between the colors provided
+/// @param {color} $color
+@mixin disabledBackground($color: $core-non-contributing) {
+  color: var(--core-main, var(--gms-main, $core-main));
+  @include diagonalStripedBackground(
+    $color,
+    darken($color, $diagonal-texture-darken-percent),
+    $diagonal-texture-distance
+  );
+}
+
+/// Centers this within its parent, parent must create an absolute positioning context
+/// For example: with position relative
+/// Default centers all
+/// @param {*} $orientation one of the following: 'vertical', 'horizontal', 'all'
+@mixin centerWithinParent($orientation: 'all') {
+  position: absolute;
+  @if $orientation == 'horizontal' {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @if $orientation == 'vertical' {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @if $orientation == 'all' {
+    top: 50%;
+    left: 50%;
+    transform: translate3D(-50%, -50%, 0);
+  }
+}
+
+/// Centers the contents of the parent container using flexbox
+/// Default centers all
+/// @param {*} $orientation one of the following: 'vertical', 'horizontal', 'all'
+@mixin centerChildren($orientation: 'all') {
+  display: flex;
+  @if $orientation == 'vertical' or $orientation == 'all' {
+    align-items: center;
+  }
+  @if $orientation == 'horizontal' or $orientation == 'all' {
+    justify-content: center;
+  }
+}
+
+/// Flex column that fills its parent vertically
+@mixin flexColumn {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

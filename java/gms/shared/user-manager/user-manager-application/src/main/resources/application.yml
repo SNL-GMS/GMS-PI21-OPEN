@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: user-manager
+  processing:
+    configuration-names: user-manager
+
+server:
+  compression:
+    enabled: true
+    mime-types: "text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json,application/msgpack"
+    min-response-size: 1024
+  servlet:
+    context-path: /user-manager-service
+
+persistenceUnitName: gms_user_manager
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true

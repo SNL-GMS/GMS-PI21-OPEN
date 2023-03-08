@@ -1,0 +1,13 @@
+{
+  "name": "default-soh-monitor-types-for-rollup-station",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "sohMonitorTypesForRollup": [
+      "TIMELINESS"
+    ]
+  }
+}

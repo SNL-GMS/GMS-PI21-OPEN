@@ -1,0 +1,23 @@
+plugins {
+    id 'application'
+    alias(libs.plugins.com.palantir.docker)
+}
+
+mainClassName = 'gms.shared.cacheservice.CacheService'
+
+docker {
+    files tasks.installDist.outputs, 'src/main/resources'
+}
+
+dependencies {
+    implementation project(':caching-utils')
+    implementation project(':frameworks-system-config')
+    implementation libs.org.apache.ignite.ignite.visor.console
+
+    constraints {
+        implementation('org.springframework:spring-context:4.3.30.RELEASE') {
+            because 'blackduck short term upgrade recommendation'
+        }
+    }
+}
+

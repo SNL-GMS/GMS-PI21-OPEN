@@ -1,0 +1,16 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+    implementation project(':frameworks-system-config')
+    implementation project(':java-utilities')
+    implementation libs.org.postgresql.postgresql
+
+    implementation libs.org.springframework.boot.spring.boot.starter.data.jpa
+    implementation libs.org.hibernate.hibernate.c3p0
+}
+configurations {
+    all {
+        exclude group: 'org.apache.logging.log4j', module: 'log4j-slf4j-impl'
+    }
+}

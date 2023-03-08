@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`System Message Table should match a snapshot 1`] = `
+<div
+  className="system-message-table"
+  data-cy="system-message-table"
+  id="system-message-table"
+>
+  <Component>
+    <InfiniteTable
+      alwaysShowVerticalScroll={true}
+      columnDefs={
+        Array [
+          Object {
+            "colId": "id",
+            "field": "id",
+            "headerName": "ID",
+            "headerTooltip": "ID",
+            "hide": true,
+            "width": 10,
+          },
+          Object {
+            "cellRendererFramework": [Function],
+            "colId": "time",
+            "headerName": "Timestamp",
+            "headerTooltip": "Timestamp",
+            "sort": "asc",
+            "valueGetter": [Function],
+            "width": 200,
+          },
+          Object {
+            "cellRendererFramework": [Function],
+            "colId": "category",
+            "comparator": [Function],
+            "headerName": "Category",
+            "headerTooltip": "Category",
+            "valueGetter": [Function],
+            "width": 110,
+          },
+          Object {
+            "cellRendererFramework": [Function],
+            "colId": "subCategory",
+            "comparator": [Function],
+            "headerName": "Subcategory",
+            "headerTooltip": "Subcategory",
+            "valueGetter": [Function],
+            "width": 150,
+          },
+          Object {
+            "cellRendererFramework": [Function],
+            "colId": "severity",
+            "comparator": [Function],
+            "headerName": "Severity",
+            "headerTooltip": "Severity",
+            "valueGetter": [Function],
+            "width": 105,
+          },
+          Object {
+            "cellRendererFramework": [Function],
+            "colId": "message",
+            "comparator": [Function],
+            "flex": 1,
+            "headerName": "Message",
+            "headerTooltip": "Message",
+            "minWidth": 200,
+            "valueGetter": [Function],
+          },
+        ]
+      }
+      debug={false}
+      defaultColDef={
+        Object {
+          "cellRendererFramework": [Function],
+          "disableStaticMarkupForCellRendererFramework": true,
+          "disableStaticMarkupForHeaderComponentFramework": true,
+          "filter": false,
+          "headerComponentParams": Object {
+            "template": "
+  <div class=\\"ag-cell-label-container\\" role=\\"presentation\\">
+      <span ref=\\"eMenu\\" class=\\"ag-header-icon ag-header-cell-menu-button\\"></span>
+      <div ref=\\"eLabel\\" class=\\"ag-header-cell-label\\" role=\\"presentation\\">
+          <span ref=\\"eText\\" class=\\"ag-header-cell-text\\" role=\\"columnheader\\"></span>
+          <span ref=\\"eFilter\\" class=\\"ag-header-icon ag-filter-icon\\"></span>
+          <!-- <span ref=\\"eSortOrder\\" class=\\"ag-header-icon ag-sort-order\\"></span> -->
+          <span ref=\\"eSortAsc\\" class=\\"ag-header-icon ag-sort-ascending-icon\\"></span>
+          <span ref=\\"eSortDesc\\" class=\\"ag-header-icon ag-sort-descending-icon\\"></span>
+          <span ref=\\"eSortNone\\" class=\\"ag-header-icon ag-sort-none-icon\\"></span>
+      </div>
+  </div>
+",
+          },
+          "sortable": true,
+        }
+      }
+      headerHeight={48}
+      onBodyScroll={[Function]}
+      onCellClicked={[Function]}
+      onCellContextMenu={[Function]}
+      onGridReady={[Function]}
+      onSortChanged={[Function]}
+      overlayNoRowsTemplate="No System Messages"
+      pagination={false}
+      rowData={
+        Array [
+          Object {
+            "category": "SOH",
+            "id": "mock1",
+            "message": "mock message text",
+            "severity": "CRITICAL",
+            "subCategory": "STATION",
+            "time": 1593030714074,
+            "type": "STATION_NEEDS_ATTENTION",
+          },
+          Object {
+            "category": "SOH",
+            "id": "mock2",
+            "message": "mock message text",
+            "severity": "CRITICAL",
+            "subCategory": "STATION",
+            "time": 1593030714075,
+            "type": "STATION_NEEDS_ATTENTION",
+          },
+        ]
+      }
+      rowHeight={40}
+      suppressCellFocus={true}
+      suppressScrollOnNewData={true}
+    />
+  </Component>
+  <NewMessageIndicator
+    handleNewMessageIndicatorClick={[Function]}
+    isVisible={false}
+  />
+</div>
+`;

@@ -1,0 +1,78 @@
+/// Add a drop shadow using material shadows
+/// @param {*} $amount a string value of xs, sm, md, lg, xl
+@mixin addBoxShadow($amount) {
+  @if $amount == 'xs' {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  } @else if $amount == 'sm' {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  } @else if $amount == 'md' {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  } @else if $amount == 'lg' {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  } @else if $amount == 'xl' {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  }
+}
+
+@mixin brighten {
+  filter: brightness(1.2);
+}
+
+/// Creates a faint gradient and top-border over an element to create
+/// the appearance of having light cast upon it.
+/// The element is covered with a ::before pseudoelement
+@mixin castLightOn {
+  &::before {
+    @include fillAllSpaceAbsolutely();
+    content: ' ';
+    border-top: 1px solid rgba(245, 248, 250, 0.25);
+    position: absolute;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(326deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.06) 100%);
+    pointer-events: none;
+  }
+}
+
+/// Creates a background striped texture using the two colors and size provided.
+/// @param {Color} $color1
+/// @param {Color} $color2
+/// @param {Number} $size the size of the color stripes
+@mixin diagonalStripedBackground($color1, $color2, $size) {
+  background: repeating-linear-gradient(
+    45deg,
+    $color1,
+    $color1 $size,
+    $color2 $size,
+    $color2 $size * 2
+  );
+}
+
+/// Add gpu acceleration to an element by making it
+/// use 3D rendering.
+@mixin gpuAccelerated {
+  transform: translateZ(0);
+}
+
+/// Creates a gradient to fade out text that overflows in tabs.
+/// Uses an ::after pseudo-element to float it on top with
+/// minimal changes to the markup. Background is at z-index 1.
+/// Parent should create a stacking context (ie: with position: relative)
+/// @param {Color} $color a SASS color (like a hex number or hsl color)
+/// @param {Number} $offset the distance to make the gradient
+@mixin tabFade($color, $offset) {
+  @include fillAllSpaceAbsolutely;
+  content: '';
+  width: 50px;
+  left: auto;
+  bottom: 3px;
+  background: linear-gradient(to left, $color, $color $offset, transparent);
+  border-radius: 0 $rounded-rectangle-radius 0 0;
+  z-index: 1;
+}
+
+/// Ellipsis on overflow
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

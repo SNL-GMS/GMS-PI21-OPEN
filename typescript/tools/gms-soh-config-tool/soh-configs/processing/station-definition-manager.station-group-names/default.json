@@ -1,0 +1,31 @@
+{
+  "name": "station-group-names-default",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "stationGroupNames": [
+      "ALL_1",
+      "ALL_2",
+      "A_TO_H",
+      "I_TO_Z",
+      "EurAsia",
+      "OthCont",
+      "IMS_Sta",
+      "CD1.1",
+      "CD1.0",
+      "MiniSD",
+      "GSE",
+      "Primary",
+      "Second",
+      "AuxFast",
+      "AuxDel",
+      "SEISMIC",
+      "INFRA",
+      "HYDRO"
+    ]
+  }
+}
+

@@ -1,0 +1,27 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+    implementation project(':frameworks-control')
+    implementation project(':java-utilities')
+    implementation project(':frameworks-osd-commonobjects')
+    implementation project(':frameworks-utilities')
+
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    implementation libs.net.logstash.logback.logstash.logback.encoder
+    implementation libs.org.springframework.boot.spring.boot.starter.web
+    implementation libs.org.springframework.retry.spring.retry
+    implementation libs.org.msgpack.msgpack.core
+    implementation libs.org.msgpack.jackson.dataformat.msgpack
+    implementation libs.org.springframework.boot.spring.boot.starter.aop
+    implementation libs.org.springdoc.springdoc.openapi.ui
+
+    testImplementation libs.org.springframework.boot.spring.boot.starter.test
+}
+configurations {
+    all {
+        exclude group: 'org.apache.logging.log4j', module: 'log4j-slf4j-impl'
+    }
+}

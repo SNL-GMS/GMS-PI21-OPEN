@@ -1,0 +1,29 @@
+@mixin quadraGrid($minHeight, $minWidth, $withSnap: false) {
+  .quadra-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($minWidth, 1fr));
+    grid-gap: 1em;
+    overflow-y: auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @if ($withSnap) {
+      scroll-snap-type: y mandatory;
+    }
+    .quadra-grid-cell {
+      display: flex;
+      @if ($withSnap) {
+        scroll-snap-align: start;
+      }
+    }
+    .horizontal-divider {
+      margin: 0;
+      width: 100%;
+    }
+  }
+}
+
+// the base instance of the quadra grid with default values.
+$quadra-grid-min-height: 360px;
+$quadra-grid-min-width: 400px;
+@include quadraGrid($quadra-grid-min-height, $quadra-grid-min-width, true);

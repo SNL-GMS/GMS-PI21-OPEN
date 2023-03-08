@@ -1,0 +1,33 @@
+# Common global values - These are common values required to be present/set in the parent chart.
+# Due to how helm prioritizes global values, we cannot set common values here (in the sub-chart) and have
+# them available in the parent chart. (Global values only flow down to sub-chart, never up to parent)
+#
+# The global values are listed here for reference, they will have not have any effect in the parent charts.
+# They should be copy-pasted verbatim into the parent chart `values.yaml` file.
+#
+global:
+  # baseDomain specifies the domain name suffix applied to all Ingress hostnames. Set by gmskube.
+  baseDomain: "cluster.example.com"
+
+  # env specifies environment variables that will be added to all applications.
+  env:
+
+  # imagePullPolicy is the policy used for all images ('Always', 'IfNotPresent', 'Never').
+  imagePullPolicy: "Always"
+
+  # imageRegistry is the Docker image registry URL where all images will be retrieved. Set by gmskube.
+  imageRegistry: "docker-registry.example.com"
+
+  # imageTag is the Docker image tag used when retrieving all CI-built images. Set by gmskube.
+  imageTag: "develop"
+
+  # Whether or not to use istio. Set by gmskube.
+  istio: false
+
+  # Default PersistentVolumeClaim storage class.
+  # Note that kafka's storageClass is configured independently, but it uses the default storage class
+  # Empty uses the cluster's default storage class
+  storageClassName:
+
+  # Username of the user installing or upgrading the instance. Set by gmskube.
+  user: "UNKNOWN"

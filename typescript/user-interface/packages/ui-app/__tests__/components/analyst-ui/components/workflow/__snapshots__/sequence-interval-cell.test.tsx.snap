@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sequence Interval Cell matches snapshot 1`] = `
+<div>
+  <div
+    class="interval-cell interval-cell--in-progress"
+  >
+    <div
+      class="percent-bar"
+      style="width: 100%; transform: translateX(-66.66666666666667%);"
+    />
+  </div>
+</div>
+`;
+
+exports[`Sequence Interval Cell shallow mounts 1`] = `
+<div>
+  <div
+    class="interval-cell interval-cell--in-progress"
+  >
+    <div
+      class="percent-bar"
+      style="width: 100%; transform: translateX(-66.66666666666667%);"
+    />
+  </div>
+</div>
+`;

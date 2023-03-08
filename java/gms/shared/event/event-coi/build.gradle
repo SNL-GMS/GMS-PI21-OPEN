@@ -1,0 +1,45 @@
+plugins {
+    id('java-library')
+    id('java-test-fixtures')
+}
+
+dependencies {
+
+    constraints {
+        testFixturesImplementation libs.org.apache.commons.commons.lang3
+        testFixturesImplementation libs.com.google.guava.guava
+        testFixturesImplementation libs.com.fasterxml.jackson.core.jackson.databind
+        testFixturesImplementation libs.com.fasterxml.jackson.datatype.jackson.datatype.guava
+        testFixturesImplementation libs.com.fasterxml.jackson.datatype.jackson.datatype.jdk8
+        testFixturesImplementation libs.com.fasterxml.jackson.datatype.jackson.datatype.jsr310
+        testFixturesImplementation libs.org.apache.kafka.kafka.clients
+        testFixturesImplementation libs.org.hibernate.hibernate.entitymanager
+    }
+
+    // GMS Dependencies
+    api project(':workflow-coi')
+    api project(':signal-detection-coi')
+
+    implementation project(':bridge-utilities')
+    implementation project(':java-utilities')
+
+    // Google AutoValue
+    api libs.com.google.guava.guava
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    // JSON Serialization
+    api libs.com.fasterxml.jackson.core.jackson.databind
+    api libs.com.fasterxml.jackson.datatype.jackson.datatype.jdk8
+    api libs.com.fasterxml.jackson.datatype.jackson.datatype.jsr310
+    api libs.com.fasterxml.jackson.datatype.jackson.datatype.guava
+
+    // Testing
+    testImplementation project(':test-utils')
+    testImplementation project(':signal-detection-testfixtures')
+
+    // Test Fixture Dependencies
+    testFixturesImplementation project(':event-dao')
+    testFixturesImplementation project(':signal-detection-dao')
+    testFixturesImplementation project(':signal-detection-testfixtures')
+}

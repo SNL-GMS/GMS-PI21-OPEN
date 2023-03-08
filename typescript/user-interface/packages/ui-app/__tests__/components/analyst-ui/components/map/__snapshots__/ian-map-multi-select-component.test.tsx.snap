@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`map multi select component can handle an undefined viewer 1`] = `<div />`;
+
+exports[`map multi select component takes populated viewer 1`] = `
+<IanMapMultiSelectComponent
+  viewer={
+    Object {
+      "scene": Object {
+        "pickPosition": [MockFunction],
+      },
+    }
+  }
+>
+  <ForwardRef(ScreenSpaceEventHandler)>
+    <ScreenSpaceEvent
+      modifier={2}
+      type="MOUSE_MOVE"
+    />
+    <ScreenSpaceEvent
+      modifier={2}
+    />
+    <ScreenSpaceEvent
+      modifier={2}
+    />
+    <ScreenSpaceEvent
+      action={[Function]}
+    />
+  </ForwardRef(ScreenSpaceEventHandler)>
+  <ForwardRef(Entity)
+    id="selectionEntity"
+    show={false}
+  />
+</IanMapMultiSelectComponent>
+`;

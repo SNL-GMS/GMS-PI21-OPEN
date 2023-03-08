@@ -1,0 +1,259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Workflow Panel shallow mounts 1`] = `
+<div
+  className="base-display "
+>
+  <ContextProvider
+    value={
+      Object {
+        "glContainer": Object {
+          "close": [MockFunction],
+          "emit": [MockFunction],
+          "extendState": [MockFunction],
+          "getElement": [MockFunction],
+          "getState": [MockFunction],
+          "height": 1200,
+          "hide": [MockFunction],
+          "isHidden": false,
+          "layoutManager": undefined,
+          "off": [MockFunction],
+          "on": [MockFunction],
+          "parent": undefined,
+          "setSize": [MockFunction],
+          "setState": [MockFunction],
+          "setTitle": [MockFunction],
+          "show": [MockFunction],
+          "tab": undefined,
+          "title": "workflow",
+          "trigger": [MockFunction],
+          "unbind": [MockFunction],
+          "width": 1900,
+        },
+        "heightPx": 1200,
+        "widthPx": 1900,
+      }
+    }
+  >
+    <Provider
+      store={
+        Object {
+          "@@observable": [Function],
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        }
+      }
+    >
+      <WorkflowPanel
+        cleanupWorkflowIntervalQuery={[MockFunction]}
+        glContainer={
+          Object {
+            "close": [MockFunction],
+            "emit": [MockFunction],
+            "extendState": [MockFunction],
+            "getElement": [MockFunction],
+            "getState": [MockFunction],
+            "height": 1200,
+            "hide": [MockFunction],
+            "isHidden": false,
+            "layoutManager": undefined,
+            "off": [MockFunction],
+            "on": [MockFunction],
+            "parent": undefined,
+            "setSize": [MockFunction],
+            "setState": [MockFunction],
+            "setTitle": [MockFunction],
+            "show": [MockFunction],
+            "tab": undefined,
+            "title": "workflow",
+            "trigger": [MockFunction],
+            "unbind": [MockFunction],
+            "width": 1900,
+          }
+        }
+        operationalTimePeriodConfigurationQuery={
+          Object {
+            "currentData": undefined,
+            "data": Object {
+              "operationalPeriodEnd": 0,
+              "operationalPeriodStart": 3888000,
+            },
+            "endpointName": undefined,
+            "error": undefined,
+            "fulfilledTimeStamp": undefined,
+            "isError": false,
+            "isFetching": false,
+            "isLoading": false,
+            "isSuccess": true,
+            "isUninitialized": true,
+            "originalArgs": undefined,
+            "requestId": undefined,
+            "startedTimeStamp": undefined,
+            "status": undefined,
+          }
+        }
+        processingAnalystConfigurationQuery={
+          Object {
+            "currentData": undefined,
+            "data": undefined,
+            "endpointName": undefined,
+            "error": undefined,
+            "fulfilledTimeStamp": undefined,
+            "isError": false,
+            "isFetching": false,
+            "isLoading": false,
+            "isSuccess": true,
+            "isUninitialized": true,
+            "originalArgs": undefined,
+            "requestId": undefined,
+            "startedTimeStamp": undefined,
+            "status": undefined,
+          }
+        }
+        timeRange={
+          Object {
+            "endTimeSecs": 1609506000,
+            "startTimeSecs": 1609500000,
+          }
+        }
+        workflowIntervalQuery={
+          Object {
+            "currentData": undefined,
+            "data": Array [
+              Object {
+                "name": "AL1",
+                "value": Array [
+                  Object {
+                    "activityIntervals": Array [
+                      Object {
+                        "activeAnalysts": Array [
+                          "larry",
+                          "moe",
+                          "curly",
+                        ],
+                        "comment": "interval example",
+                        "endTime": 1622057187,
+                        "intervalId": Object {
+                          "definitionId": Object {
+                            "name": "AL1",
+                          },
+                          "startTime": 1622053587,
+                        },
+                        "modificationTime": 1622057667,
+                        "name": "Event Review",
+                        "percentAvailable": 100,
+                        "processingEndTime": 1622057547,
+                        "processingStartTime": 1622057487,
+                        "stageName": "AL1",
+                        "startTime": 1622053587,
+                        "status": "IN_PROGRESS",
+                        "storageTime": 1622057607,
+                      },
+                    ],
+                    "comment": "interval example",
+                    "endTime": 1622057187,
+                    "intervalId": Object {
+                      "definitionId": Object {
+                        "name": "AL1",
+                      },
+                      "startTime": 1622053587,
+                    },
+                    "modificationTime": 1622057667,
+                    "name": "AL1",
+                    "percentAvailable": 100,
+                    "processingEndTime": 1622057547,
+                    "processingStartTime": 1622057487,
+                    "stageMetrics": Object {
+                      "associatedSignalDetectionCount": 34,
+                      "eventCount": 21,
+                      "maxMagnitude": 8,
+                      "unassociatedSignalDetectionCount": 55,
+                    },
+                    "stageMode": "INTERACTIVE",
+                    "startTime": 1622053587,
+                    "status": "IN_PROGRESS",
+                    "storageTime": 1622057607,
+                  },
+                ],
+              },
+            ],
+            "endpointName": undefined,
+            "error": undefined,
+            "fulfilledTimeStamp": undefined,
+            "isError": false,
+            "isFetching": false,
+            "isLoading": false,
+            "isSuccess": true,
+            "isUninitialized": true,
+            "originalArgs": undefined,
+            "requestId": undefined,
+            "startedTimeStamp": undefined,
+            "status": undefined,
+          }
+        }
+        workflowQuery={
+          Object {
+            "currentData": undefined,
+            "data": Object {
+              "name": "gms",
+              "stages": Array [
+                Object {
+                  "activities": Array [
+                    Object {
+                      "analysisMode": "EVENT_REVIEW",
+                      "name": "Event Review",
+                      "stationGroup": Object {
+                        "description": "station group",
+                        "effectiveAt": 1622048927,
+                        "name": "station-group",
+                      },
+                    },
+                  ],
+                  "duration": 3600,
+                  "mode": "INTERACTIVE",
+                  "name": "AL1",
+                },
+                Object {
+                  "duration": 3600,
+                  "mode": "AUTOMATIC",
+                  "name": "Auto Network",
+                  "sequences": Array [
+                    Object {
+                      "name": "Auto Post-AL1 Seq",
+                      "steps": Array [
+                        Object {
+                          "name": "AAA",
+                        },
+                        Object {
+                          "name": "last-step",
+                        },
+                        Object {
+                          "name": "CCC",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+            "endpointName": undefined,
+            "error": undefined,
+            "fulfilledTimeStamp": undefined,
+            "isError": false,
+            "isFetching": false,
+            "isLoading": false,
+            "isSuccess": true,
+            "isUninitialized": true,
+            "originalArgs": undefined,
+            "requestId": undefined,
+            "startedTimeStamp": undefined,
+            "status": undefined,
+          }
+        }
+      />
+    </Provider>
+  </ContextProvider>
+</div>
+`;

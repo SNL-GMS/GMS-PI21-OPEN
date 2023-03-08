@@ -1,0 +1,254 @@
+// Variable declarations
+$associated-color: $analyst-open-event;
+$undo-background: var(--gms-prominent-background, $gms-prominent-background);
+$undo-color: var(--gms-main, $gms-main);
+$redo-background: var(--gms-recessed, $gms-recessed);
+$redo-color: var(--gms-main, $gms-main);
+$orphaned-color: $analyst-unassociated;
+$completed-color: $analyst-complete;
+$indicator-color: var(--gms-soft, $gms-soft);
+$indicator-line-style: 1px solid $indicator-color;
+
+/// Generates the styles to highlight history entries when they will be affected by
+/// an undo/redo action.
+/// @param $used-foreground-color the foreground color that is currently applied to the entry
+/// @param $used-background-color the background color that is currently applied to the entry
+@mixin generateAffectedStyles($used-foreground-color, $used-background-color) {
+  &.is-affected {
+    color: $used-foreground-color;
+    border: 1px solid $used-foreground-color;
+    &:hover {
+      color: $used-background-color;
+      background-color: $used-foreground-color;
+    }
+  }
+}
+
+/// Generates the styles to highlight orphaned history entries (no associated event)
+/// @param $used-background-color the background color that is currently applied to the entry
+@mixin generateOrphanedStyles($used-background-color) {
+  &.is-orphaned {
+    color: $orphaned-color;
+    &.is-affected {
+      border: 1px solid $orphaned-color;
+      &:hover {
+        color: $used-background-color;
+        background-color: $orphaned-color;
+      }
+    }
+  }
+}
+
+/// History panel component
+.history-panel {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  padding: 0.5em 0.5em 0.5em calc(0.5em - 14px);
+  font-size: 1rem; //14 / 16 * 1rem;
+}
+
+/// Modifying .list from base.scss to create specific styles for history lists
+.list--history {
+  height: 100%;
+  overflow-y: scroll;
+  background-color: var(--gms-background, $gms-background);
+  border-bottom: 1px solid var(--gms-soft, $gms-soft);
+  margin-left: 0.5em;
+  @include hasSpaceBetweenChildren(2px, 0, 0, 0);
+  .list__row {
+    transition: all ease-in-out 0.25s;
+    margin-right: 0.5em;
+    &.entry-row {
+      display: grid;
+      grid-template-columns: 3.5ch 1fr;
+      border-bottom: 1px solid var(--gms-background, $gms-background);
+      border-top: 1px solid var(--gms-background, $gms-background);
+      &.action-indicator-bottom {
+        border-bottom: $indicator-line-style;
+      }
+      &.action-indicator-top {
+        border-top: $indicator-line-style;
+      }
+      &:last-child {
+        margin-bottom: 1em;
+      }
+    }
+  }
+  .list__icon--empty {
+    opacity: 0.5;
+  }
+  .list__column--meta-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: flex-start;
+    color: $indicator-color;
+    font-size: 10px;
+    &.bottom {
+      justify-content: flex-start;
+    }
+    &.move-up {
+      margin-top: -2px;
+    }
+    &.mixed {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+  .bp4-non-ideal-state {
+    height: inherit;
+    background-color: var(--gms-background, $gms-background);
+    pointer-events: none;
+    padding: 1em;
+  }
+}
+
+.history-row--multi {
+  display: grid;
+  grid-template:
+    'entry'
+    'childContainer'
+    'toggleButton' 1em / 1fr;
+  column-gap: 2px;
+  background-color: var(--gms-recessed, $gms-recessed);
+  .toggle-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gms-recessed, $gms-recessed);
+    height: 100%;
+    &:hover {
+      @include castLightOn();
+      cursor: pointer;
+    }
+    &--undo:hover {
+      background-color: var(--gms-table-selection, $gms-table-selection);
+    }
+    &--undo:hover {
+      background-color: var(--gms-table-selection, $gms-table-selection);
+    }
+    .bp4-icon {
+      transition: transform 180ms ease-in-out;
+    }
+    .is-inverted {
+      transform: rotateZ(180deg);
+    }
+  }
+  &__child-container {
+    display: grid;
+    height: 0;
+    transition: height 180ms ease-in-out;
+    &.is-expanded {
+      height: auto;
+    }
+  }
+}
+
+/// History-entry element in the list
+.history-entry {
+  position: relative;
+  display: grid;
+  grid-template: 'description' auto / 1fr;
+  grid-auto-columns: repeat(1em);
+  grid-auto-flow: column;
+  column-gap: 0.5em;
+  width: 100%;
+  padding: 0.33em 1em;
+  border: 1px solid transparent;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+  &:hover {
+    &:not(.is-child) {
+      @include castLightOn();
+    }
+  }
+  &__description {
+    grid-area: description;
+    pointer-events: none;
+  }
+  &__icon {
+    align-self: center;
+  }
+  &--undo {
+    color: $undo-color;
+    background-color: $undo-background;
+    opacity: 1;
+    @include generateAffectedStyles($undo-color, $undo-background);
+    @include generateOrphanedStyles($undo-background);
+  }
+  &--redo {
+    color: $redo-color;
+    background-color: $redo-background;
+    opacity: 0.5;
+    @include generateAffectedStyles($redo-color, $redo-background);
+    &.is-affected {
+      opacity: 0.75;
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+    @include generateOrphanedStyles($redo-background);
+  }
+  &--hidden {
+    pointer-events: none;
+    visibility: hidden;
+  }
+  &.is-associated {
+    color: $associated-color;
+    &.is-affected {
+      border: 1px solid $associated-color;
+      &:hover {
+        color: var(--gms-main-inverted, $gms-main-inverted);
+        background-color: $associated-color;
+      }
+    }
+  }
+  &.is-child {
+    &:hover {
+      cursor: default;
+    }
+    background-color: var(--gms-recessed, $gms-recessed);
+  }
+  &.is-event-reset {
+    @include diagonalStripedBackground(
+      $undo-background,
+      // see: https://stackoverflow.com/questions/55329996/how-to-create-color-shades-using-css-variables-similar-to-darken-of-sass.
+      // use capital letters to get past scss, which has its own hsl function
+      HSL($undo-background, calc(100% - #{$diagonal-texture-darken-percent})),
+      $diagonal-texture-distance
+    );
+    &:hover {
+      @include diagonalStripedBackground(
+        $associated-color,
+        HSL($associated-color, calc(100% - #{$diagonal-texture-darken-percent})),
+        $diagonal-texture-distance
+      );
+    }
+  }
+  &.is-completed {
+    color: $completed-color;
+    &.is-affected {
+      border-color: $completed-color;
+      &:hover {
+        background: $completed-color;
+      }
+    }
+  }
+}
+
+.decoration-row {
+  display: flex;
+  color: $indicator-color;
+  &__label {
+    padding-left: calc(1em + 1px);
+  }
+  &__indicator {
+    height: 1px;
+    width: 100%;
+    margin: 10px 0 0 1em;
+    border-top: $indicator-line-style;
+  }
+}

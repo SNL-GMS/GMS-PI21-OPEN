@@ -1,0 +1,41 @@
+{
+  "type": "VerticalLayout",
+  "elements": [
+    {
+      "type": "Control",
+      "label": "Station Configuration",
+      "scope": "#/properties/about",
+      "options": {
+        "renderer": "markdown",
+        "description": "Any configuration modified here will be written as an override for that station only.\nIt will not modify the default settings, nor will it affect the configuration for other stations."
+      }
+    },
+    {
+      "type": "Control",
+      "label": "Station Name",
+      "scope": "#/properties/stationName",
+      "options": {
+        "renderer": "station-name",
+        "description": "The name of the station"
+      }
+    },
+    {
+      "type": "Control",
+      "label": "Station Groups",
+      "scope": "#/properties/stationGroups",
+      "options": {
+        "renderer": "station-groups-checklist",
+        "description": "Determine desired station groups for selected station"
+      }
+    },
+    {
+      "type": "Control",
+      "label": "Enable/Disable Channels",
+      "scope": "#/properties/channelNames",
+      "options": {
+        "renderer": "channel-checklist",
+        "description": "Choose which channels to include. Unchecked channels will be removed from all monitor types."
+      }
+    }
+  ]
+}

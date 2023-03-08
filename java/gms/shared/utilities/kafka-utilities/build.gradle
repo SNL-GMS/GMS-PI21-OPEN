@@ -1,0 +1,22 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+    api project(':frameworks-system-config')
+    api project(':frameworks-osd-commonobjects')
+
+    //failsafe retry
+    implementation libs.net.jodah.failsafe
+
+    // Kafka reactor
+    implementation libs.io.projectreactor.kafka.reactor.kafka
+
+    // Google AutoValue
+    implementation libs.com.google.guava.guava
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    implementation libs.com.fasterxml.jackson.core.jackson.databind
+    implementation libs.org.apache.commons.commons.lang3
+}

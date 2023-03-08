@@ -1,0 +1,23 @@
+.measure-window-selection {
+  &__container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+  }
+  &__overlay {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    display: none;
+    background-color: rgba(255, 183, 51, 0.3);
+    left: 0px;
+    right: 0px;
+    &:hover {
+      cursor: move;
+      background-color: rgba(255, 183, 51, 0.4);
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+    "name": "1.5-3.5-3-bp-noncausal-description",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "name",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "1.5 3.5 3 BP non-causal Description"
+            ]
+        }
+    ],
+    "parameters": {
+		"type": "LinearFilterDescription",
+		"comments": "1.5 3.5 3 BP non-causal",
+		"causal": false,
+		"filterType": "IIR_BUTTERWORTH",
+		"lowFrequency": 1.5,
+		"highFrequency": 3.5,
+		"order": 3,
+		"zeroPhase": false,
+		"passBandType": "BAND_PASS"
+    }
+}

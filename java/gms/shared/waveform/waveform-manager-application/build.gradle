@@ -1,0 +1,39 @@
+plugins {
+    id('java')
+    alias(libs.plugins.org.springframework.boot)
+    alias(libs.plugins.com.palantir.docker)
+}
+
+dependencies {
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+
+    implementation project(':waveform-api')
+    implementation project(':waveform-accessor')
+    implementation project(':waveform-converter')
+    implementation project(':waveform-bridge-repository')
+    implementation project(':waveform-testfixtures')
+    implementation project(':station-definition-repository')
+    implementation project(':station-definition-accessor')
+    implementation project(':station-definition-converter')
+    implementation project(':station-definition-coi')
+    implementation project(':bridge-utilities')
+    implementation project(':spring-framework-utilities')
+    implementation project(':spring-persistence-oracle')
+    implementation project(':caching-utils')
+
+    implementation libs.org.apache.ignite.ignite.core
+    implementation libs.org.apache.ignite.ignite.slf4j
+
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    implementation libs.org.springframework.boot.spring.boot.starter.web
+    implementation libs.org.msgpack.msgpack.core
+    implementation libs.org.msgpack.jackson.dataformat.msgpack
+    implementation libs.org.springdoc.springdoc.openapi.ui
+
+    testImplementation libs.org.springframework.boot.spring.boot.starter.test
+    testImplementation libs.org.junit.jupiter.junit.jupiter.api
+    testImplementation libs.com.h2database.h2
+    testImplementation project(':spring-framework-utilities').sourceSets.test.output
+}

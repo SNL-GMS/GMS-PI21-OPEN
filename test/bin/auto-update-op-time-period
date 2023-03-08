@@ -1,0 +1,86 @@
+#!/usr/bin/env python3
+
+# ----------------------------------------------------------------------------
+# This Python script was developed to auto update the operational time period
+# in config so that the 2019 static data set can be used with the interval
+# table in the Workflow Display.
+# ----------------------------------------------------------------------------
+import json
+import os
+import pathlib
+from datetime import datetime
+
+import numpy as np
+
+
+# Update operational time period function
+def main():
+    # Get the relateive path
+    relative_path = pathlib.Path(__file__).parent.resolve()
+
+    # Create filepath to config file
+    workflow_configfile = os.path.abspath(
+        str(relative_path.parent) + "/config/ian/workflow-display-"
+        + "test/processing/global.operational-time-period/default.json"
+    )
+    waveform_configfile = os.path.abspath(
+        str(relative_path.parent) + "/config/ian/waveforms-display-"
+        + "test/processing/global.operational-time-period/default.json"
+    )
+
+    # If config files do not exist, exit
+    if not os.path.isfile(workflow_configfile):
+        print("File {} does not exist.\nExiting\n".format(workflow_configfile))
+        exit()
+
+    elif not os.path.isfile(waveform_configfile):
+        print("File {} does not exist.\nExiting\n".format(waveform_configfile))
+        exit()
+
+    else:
+        # Update operational time period
+        updateOTP(workflow_configfile)
+        updateOTP(waveform_configfile)
+
+    # Confirm write
+    print("Operational time period updated.")
+
+
+def updateOTP(infile):
+    '''
+    This function is used to update the operational time period in config.
+    operationalPeriodStart and operationalPeriod end in
+    config/processing/global.operational-time-period/default.json will be
+    updated to reflect the number of elapsed hours since 2019-01-05 and
+    2019-01-06, respectively.
+
+    :param infile: file path + name of config file to be adjusted
+    :return: no returns, but does overwrite the config file
+    '''
+
+    # Calculate opStart (operational time period start) and opEnd
+    # (operational time period end) to be the number of elapsed hours
+    # since 2019-01-05 and 2019-01-06, respectively
+    opStart = np.floor(
+        (datetime.now() - datetime(2019, 1, 5)).total_seconds() / 3600
+    ) # yapf: disable
+    opEnd = np.floor(
+        (datetime.now() - datetime(2019, 1, 6)).total_seconds() / 3600
+    ) # yapf: disable
+
+    # Read in global.operational-time-period/default.json
+    f = open(infile)
+    data = json.load(f)
+
+    # Add calculated elapsed time to config file
+    parameters = data["parameters"]
+    parameters["operationalPeriodStart"] = "PT{}H".format(round(opStart))
+    parameters["operationalPeriodEnd"] = "PT{}H".format(round(opEnd))
+
+    # Write out config file with new values
+    with open(infile, "w") as outfile:
+        json.dump(data, outfile, indent=2)
+
+
+if __name__ == "__main__":
+    main()

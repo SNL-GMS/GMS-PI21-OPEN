@@ -1,0 +1,17 @@
+plugins {
+    id('java')
+}
+
+dependencies {
+    implementation project(':java-utilities')
+
+    implementation libs.org.junit.jupiter.junit.jupiter.api
+    implementation libs.org.assertj.assertj.core
+
+    implementation libs.com.fasterxml.jackson.core.jackson.databind
+    implementation libs.com.fasterxml.jackson.datatype.jackson.datatype.jdk8
+    implementation libs.com.fasterxml.jackson.datatype.jackson.datatype.jsr310
+    implementation libs.com.fasterxml.jackson.datatype.jackson.datatype.guava
+    implementation libs.org.msgpack.jackson.dataformat.msgpack
+    implementation libs.com.fasterxml.jackson.dataformat.jackson.dataformat.yaml
+}

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Version info matches a snapshot 1`] = `
+<div>
+  <span
+    aria-haspopup="true"
+    class="bp4-popover2-target"
+  >
+    <div
+      class="copy-contents version-info"
+      role="button"
+      tabindex="-1"
+    >
+      Unknown version — 
+      Unknown commit
+    </div>
+  </span>
+</div>
+`;

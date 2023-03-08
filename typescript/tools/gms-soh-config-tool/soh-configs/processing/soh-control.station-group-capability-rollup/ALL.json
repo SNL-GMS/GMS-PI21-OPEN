@@ -1,0 +1,25 @@
+[
+  {
+    "name": "ALL-station-group-capability-rollup",
+    "constraints": [
+      {
+        "constraintType": "STRING",
+        "criterion": "StationGroupName",
+        "operator": {
+          "type": "IN",
+          "negated": false
+        },
+        "value": [
+          "ALL"
+        ]
+      }
+    ],
+    "parameters": {
+      "stationsToGroupRollupOperator": {
+        "operatorType": "MIN_GOOD_OF",
+        "goodThreshold": 150,
+        "marginalThreshold": 100
+      }
+    }
+  }
+]

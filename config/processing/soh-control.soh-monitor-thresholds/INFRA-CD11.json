@@ -1,0 +1,75 @@
+[
+  {
+    "name": "INFRA-CD1.1-soh-monitor-thresholds-MISSING",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "StationName",
+        "operator": {
+          "type": "IN",
+          "negated": false
+        },
+        "value": [
+          "I02AR",
+          "I03AU",
+          "I04AU",
+          "I05AU",
+          "I06AU",
+          "I07AU",
+          "I09BR",
+          "I11CV",
+          "I13CL",
+          "I18DK",
+          "I19DJ",
+          "I20EC",
+          "I24FR",
+          "I26DE",
+          "I27DE",
+          "I30JP",
+          "I31KZ",
+          "I35NA",
+          "I36NZ",
+          "I37NO",
+          "I39PW",
+          "I40PG",
+          "I41PY",
+          "I42PT",
+          "I43RU",
+          "I44RU",
+          "I45RU",
+          "I46RU",
+          "I47ZA",
+          "I48TN",
+          "I50GB",
+          "I51GB",
+          "I52GB",
+          "I53US",
+          "I55US",
+          "I56US",
+          "I57US",
+          "I58US",
+          "I59US",
+          "I60US"
+        ]
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "MISSING"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 5.01,
+      "marginalThreshold": 10
+    }
+  }
+]

@@ -1,0 +1,21 @@
+plugins {
+    id('java-library')
+}
+
+
+dependencies {
+    // Logback for Structured Logging
+    api libs.ch.qos.logback.logback.classic
+    api libs.net.logstash.logback.logstash.logback.encoder
+    implementation libs.org.apache.commons.commons.lang3
+    implementation project(':frameworks-utilities')
+
+    // Guava annotations
+    implementation libs.com.google.guava.guava
+
+    // unit testing dependencies
+    testImplementation project(':frameworks-test-utilities')
+    testImplementation project(':station-definition-testfixtures')
+    testImplementation libs.org.assertj.assertj.core
+}
+

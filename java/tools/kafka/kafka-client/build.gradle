@@ -1,0 +1,12 @@
+plugins {
+    id('application')
+    alias(libs.plugins.com.palantir.docker)
+}
+
+mainClassName = 'gms.dataacquisition.kafka.client.RunClient'
+
+dependencies {
+    // Third-party dependencies.
+    implementation libs.org.apache.kafka.kafka.clients
+    implementation libs.commons.cli.commons.cli
+}

@@ -1,0 +1,31 @@
+.horizontal-divider__handle {
+  position: relative;
+  height: 0.5rem;
+  width: 100%;
+  flex: 0 0 auto;
+  .horizontal-divider__target {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1rem;
+    cursor: row-resize;
+    transform: translateY(-50%);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 0.2rem;
+      left: 0px;
+      right: 0px;
+      transition: background-color ease 0s;
+      transition-delay: 0.05s;
+      pointer-events: none;
+    }
+    &:hover::after {
+      background-color: #106ba3;
+    }
+  }
+}

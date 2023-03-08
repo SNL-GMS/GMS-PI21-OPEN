@@ -1,0 +1,16 @@
+plugins {
+    id('java-library')
+}
+dependencies {
+    implementation project(':frameworks-http-service-library')
+    api project(':frameworks-system-config')
+    implementation project(':frameworks-utilities')
+
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    testImplementation libs.com.google.auto.value.auto.value.annotations
+    testAnnotationProcessor libs.com.google.auto.value.auto.value.base
+    testImplementation libs.org.mockito.mockito.inline
+    testImplementation libs.io.projectreactor.reactor.core
+}

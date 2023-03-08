@@ -1,0 +1,5 @@
+java/build.gradle 's/^(\\s*)version\\s\\x27.*\\x27/$1version\\x20\\x27$ENV{version}\\x27/'
+nifi/pom.xml 's/^(\\s*)<revision>.*<\\/revision>/$1<revision>$ENV{version}<\\/revision>/'
+python/master-coi-data-client/setup.py 's/^VERSION\\x20=\\x20\\x27([0-9]\\.)+.*\\x27.*$/VERSION\\x20=\\x20\\x27$ENV{version}\\x27/'
+typescript/user-interface/package.json 's/^(\\s*)\\"version\\"\\:\\s\\"([0-9]\\.)+.*\\",$/$1\\"version\\":\\x20\\"$ENV{version}\\",/'
+typescript/user-interface/package-lock.json 's/^(\\s*)\\"version\\"\\:\\s\\"([0-9]\\.)+.*\\",$/$1\\"version\\":\\x20\\"$ENV{version}\\",/'

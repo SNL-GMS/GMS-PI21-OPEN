@@ -1,0 +1,44 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+
+    api project(':signal-detection-api')
+    implementation project(':signal-detection-coi')
+    implementation project(':signal-detection-dao')
+    implementation project(':signal-detection-database-connector')
+    implementation project(':station-definition-api')
+    implementation project(':station-definition-accessor')
+    implementation project(':waveform-accessor')
+    implementation project(':waveform-bridge-repository')
+    implementation project(':bridge-utilities')
+    implementation project(':caching-utils')
+    implementation project(':waveform-api')
+    implementation project(':spring-framework-utilities')
+
+    // Google AutoValue
+    api libs.com.google.guava.guava
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    implementation 'org.hibernate:hibernate-entitymanager'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'com.oracle.ojdbc:ojdbc8'
+
+    implementation project(':frameworks-configuration-commonobjects')
+    implementation project(':frameworks-control')
+    implementation project(':workflow-coi')
+
+
+    testImplementation libs.org.testcontainers.testcontainers
+    testImplementation libs.org.testcontainers.junit.jupiter
+    testImplementation libs.org.mockito.mockito.inline
+    testImplementation libs.org.mockito.mockito.core
+    testImplementation libs.org.mockito.mockito.junit.jupiter
+    testImplementation project(':test-utils')
+    testImplementation project(':frameworks-test-utilities')
+    testImplementation project(':station-definition-testfixtures')
+    testImplementation project(':signal-detection-testfixtures')
+    testImplementation project(':waveform-testfixtures')
+
+}

@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CollapseButton CollapseButton renders 1`] = `
+<div>
+  <button
+    class="bp4-button collapse-button--closed button--full-width"
+    type="button"
+  >
+    <span
+      class="bp4-button-text"
+    >
+      collapse-button
+    </span>
+    <span
+      aria-hidden="true"
+      class="bp4-icon bp4-icon-caret-down"
+      icon="caret-down"
+    >
+      <svg
+        data-icon="caret-down"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+      >
+        <path
+          d="M12 6.5c0-.28-.22-.5-.5-.5h-7a.495.495 0 00-.37.83l3.5 4c.09.1.22.17.37.17s.28-.07.37-.17l3.5-4c.08-.09.13-.2.13-.33z"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </span>
+  </button>
+  <div
+    class="bp4-collapse collapse-button__target--closed button--full-width"
+  >
+    <div
+      aria-hidden="false"
+      class="bp4-collapse-body"
+      style="transform: translateY(-undefinedpx);"
+    />
+  </div>
+</div>
+`;

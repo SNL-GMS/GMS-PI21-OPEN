@@ -1,0 +1,14 @@
+USA0   SHZ       2008287     5116  2286324 n       0.0550   -1.0    0.0 short_period_vertical                              20081217 12:00:00
+USA0B  BH1       2008287     5126  2017219 n       0.0550  235.0   90.0 broadband_horizontal_one                           20170830 12:00:00
+USA0B  BH1       2017220     5126  2286324 n       0.0550  241.3   90.0 broadband_horizontal_1                             20170830 12:00:00
+USA0B  BH2       2008287     5127  2017219 n       0.0550  325.0   90.0 broadband_horizontal_two                           20170830 12:00:00
+USA0B  BH2       2017220     5127  2286324 n       0.0550  331.3   90.0 broadband_horizontal_2                             20170830 12:00:00
+USA0B  BHZ       2008287     5125  2286324 n       0.0550   -1.0    0.0 broadband_vertical                                 20081217 12:00:00
+USA1   SHZ       2008287     5117  2286324 n       0.0550   -1.0    0.0 short_period_vertical                              20081217 12:00:00
+USA2   SHZ       2008287     5118  2286324 n       0.0550   -1.0    0.0 short_period_vertical                              20081217 12:00:00
+USA3   SHZ       2008287     5119  2286324 n       0.0550   -1.0    0.0 short_period_vertical                              20081217 12:00:00
+USB1   SHZ       2008287     5120  2286324 n       0.0550   -1.0    0.0 short_period_vertical                              20081217 12:00:00
+USB2   SHZ       2008287     5121  2286324 n       0.0550   -1.0    0.0 short_period_vertical                              20081217 12:00:00
+USB3   SHZ       2008287     5122  2286324 n       0.0550   -1.0    0.0 short_period_vertical                              20081217 12:00:00
+USB4   SHZ       2008287     5123  2286324 n       0.0550   -1.0    0.0 short_period_vertical                              20081217 12:00:00
+USB5   SHZ       2008287     5124  2286324 n       0.0550   -1.0    0.0 short_period_vertical                              20081217 12:00:00

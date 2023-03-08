@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ian map utils applyEventMultiSelectionLogic 1`] = `undefined`;
+
+exports[`Ian map utils applyEventMultiSelectionLogic 2`] = `undefined`;
+
+exports[`Ian map utils applySdMultiSelectionLogic 1`] = `undefined`;
+
+exports[`Ian map utils applySdMultiSelectionLogic 2`] = `undefined`;
+
+exports[`Ian map utils applyStationMultiSelectionLogic 1`] = `undefined`;
+
+exports[`Ian map utils applyStationMultiSelectionLogic 2`] = `undefined`;
+
+exports[`Ian map utils builds a map event correctly 1`] = `
+Object {
+  "activeAnalysts": Array [
+    "user1",
+    "user2",
+  ],
+  "confidenceSemiMajorAxis": 0,
+  "confidenceSemiMajorAxisTrend": 0,
+  "confidenceSemiMinorAxis": 0,
+  "conflict": false,
+  "coverageSemiMajorAxis": undefined,
+  "coverageSemiMajorAxisTrend": undefined,
+  "coverageSemiMinorAxis": undefined,
+  "depthKm": 1.1,
+  "edgeEventType": "Interval",
+  "id": "82ca9908-4272-4738-802b-f3d8f3099767",
+  "isOpen": false,
+  "latitudeDegrees": 1.1,
+  "longitudeDegrees": 1.1,
+  "magnitudeMb": 1.1,
+  "magnitudeMl": undefined,
+  "magnitudeMs": undefined,
+  "preferred": "TBD",
+  "region": "TBD",
+  "rejected": "False",
+  "status": "IN_PROGRESS",
+  "time": 0,
+}
+`;
+
+exports[`Ian map utils selectEntitiesInBox match snapshot 1`] = `Array []`;

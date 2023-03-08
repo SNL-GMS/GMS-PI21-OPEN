@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`station control StationControls matches a snapshot when given basic props 1`] = `
+<div>
+  <span
+    class="bp4-popover-wrapper"
+  >
+    <span
+      aria-haspopup="true"
+      class="bp4-popover-target"
+    >
+      <button
+        class="bp4-button bp4-align-left"
+        data-cy="stations-dropdown"
+        style="width: 94px;"
+        title="Select stations to be shown"
+        type="button"
+        value="Stations"
+      >
+        <span
+          class="bp4-button-text"
+        >
+          Stations
+        </span>
+        <span
+          aria-hidden="true"
+          class="bp4-icon bp4-icon-caret-down"
+          icon="caret-down"
+        >
+          <svg
+            data-icon="caret-down"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+          >
+            <path
+              d="M12 6.5c0-.28-.22-.5-.5-.5h-7a.495.495 0 00-.37.83l3.5 4c.09.1.22.17.37.17s.28-.07.37-.17l3.5-4c.08-.09.13-.2.13-.33z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+      </button>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`station control buildStationsDropdown matches a snapshot 1`] = `
+<CustomToolbarItem
+  element={
+    <StationControls
+      checkboxItems={
+        Array [
+          Object {
+            "checked": true,
+            "id": "id1",
+            "name": "id1",
+          },
+          Object {
+            "checked": false,
+            "id": "id2",
+            "name": "id2",
+          },
+        ]
+      }
+      setCheckboxItems={[MockFunction]}
+    />
+  }
+  label="Select stations"
+  tooltip="Check a station to display"
+/>
+`;
+
+exports[`station control buildUpdatedList matches a snapshot 1`] = `
+Array [
+  Object {
+    "checked": false,
+    "id": "id1",
+    "name": "id1",
+  },
+  Object {
+    "checked": false,
+    "id": "id2",
+    "name": "id2",
+  },
+]
+`;
+
+exports[`station control useStationsDropdownControl matches a snapshot 1`] = `
+<div>
+  <span
+    class="bp4-popover-wrapper"
+  >
+    <span
+      aria-haspopup="true"
+      class="bp4-popover-target"
+    >
+      <button
+        class="bp4-button bp4-align-left"
+        data-cy="stations-dropdown"
+        style="width: 94px;"
+        title="Select stations to be shown"
+        type="button"
+        value="Stations"
+      >
+        <span
+          class="bp4-button-text"
+        >
+          Stations
+        </span>
+        <span
+          aria-hidden="true"
+          class="bp4-icon bp4-icon-caret-down"
+          icon="caret-down"
+        >
+          <svg
+            data-icon="caret-down"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+          >
+            <path
+              d="M12 6.5c0-.28-.22-.5-.5-.5h-7a.495.495 0 00-.37.83l3.5 4c.09.1.22.17.37.17s.28-.07.37-.17l3.5-4c.08-.09.13-.2.13-.33z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+      </button>
+    </span>
+  </span>
+</div>
+`;

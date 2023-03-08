@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Percent Bar renders 1`] = `
+<div>
+  <div
+    class="percent-bar percent-bar-half"
+    style="width: 100%; transform: translateX(-50%);"
+  />
+</div>
+`;

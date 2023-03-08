@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weavess Empty Renderer renders 1`] = `
+<div>
+  <div
+    class="theoretical-phase-window"
+  >
+    <div
+      class="theoretical-phase-window-selection"
+      style="background-color: rgb(255, 0, 0); left: 0%; right: 4%;"
+    />
+    <div
+      class="theoretical-phase-window-label"
+      style="color: rgb(255, 0, 0); left: 0%; right: 4%;"
+    >
+      my label
+    </div>
+  </div>
+</div>
+`;

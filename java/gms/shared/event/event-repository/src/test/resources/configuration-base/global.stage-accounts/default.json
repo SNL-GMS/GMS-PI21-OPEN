@@ -1,0 +1,40 @@
+{
+  "name": "stage-accounts-default",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "databaseAccountsByStage": [
+      {
+        "workflowDefinitionId": {
+          "name": "StageOne"
+        },
+        "databaseAccount": "account_one",
+        "hasPreviousStage": false
+      },
+      {
+        "workflowDefinitionId": {
+          "name": "StageTwo"
+        },
+        "databaseAccount": "account_two",
+        "hasPreviousStage": true
+      },
+      {
+        "workflowDefinitionId": {
+          "name": "StageThree"
+        },
+        "databaseAccount": "account_three",
+        "hasPreviousStage": true
+      },
+      {
+        "workflowDefinitionId": {
+          "name": "StageFour"
+        },
+        "databaseAccount": "account_four",
+        "hasPreviousStage": true
+      }
+    ]
+  }
+}

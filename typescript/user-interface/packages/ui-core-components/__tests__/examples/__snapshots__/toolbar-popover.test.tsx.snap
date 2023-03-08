@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a component 1`] = `
+<div>
+  <div
+    class="big-purple-rectangle"
+  >
+    <span
+      style="color: black;"
+    >
+      This popover displays whatever it wants
+    </span>
+    <label
+      class="bp4-control bp4-switch"
+    >
+      <input
+        type="checkbox"
+      />
+      <span
+        class="bp4-control-indicator"
+      />
+    </label>
+    <span
+      style="color: black;"
+    >
+      Changes made are not sent to the state until the popover is closed [ but you could do it differently ]
+    </span>
+  </div>
+</div>
+`;

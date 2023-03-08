@@ -1,0 +1,6 @@
+[docker-ce-stable]
+name=Docker CE Stable $releasever - $basearch
+baseurl=#DOCKER_YUM_URL#/linux/centos/$releasever/$basearch/stable
+enabled=1
+gpgcheck=1
+gpgkey=#DOCKER_YUM_URL#/linux/centos/gpg

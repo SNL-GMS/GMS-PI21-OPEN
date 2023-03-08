@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "processingStationGroupFilePath": {
+      "type": "string",
+      "minLength": 1
+    },
+    "supportedMonitorTypesFilePath": {
+      "type": "string",
+      "minLength": 1
+    },
+    "targetDir": {
+      "type": "string",
+      "minLength": 1
+    },
+    "serviceURL": {
+      "type": "string"
+    }
+  },
+  "required": ["processingStationGroupFilePath", "targetDir", "serviceURL"]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "filter1-3",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "name",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+          "filter1-3"
+      ]
+    }
+  ],
+  "parameters": {
+    "min_freq_hz": 1,
+    "max_freq_hz": 3,
+    "order": 3,
+    "name": "butterworth"
+  }
+}

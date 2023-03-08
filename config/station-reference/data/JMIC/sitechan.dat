@@ -1,0 +1,6 @@
+JMIC   BHE       2003283     4230  2014129 n       0.0000   90.0   90.0 broad-band_east                                    21040718 12:00:00
+JMIC   BHN       2003283     4229  2014129 n       0.0000    0.0   90.0 broad-band_north                                   21040718 12:00:00
+JMIC   BHZ       2003283     4228  2014129 n       0.0000   -1.0    0.0 broad-band_vertical                                21040718 12:00:00
+JMIC   HHE       2014129     5027  2286324 n       0.0000   90.0   90.0 high-broad-band_east                               21040718 12:00:00
+JMIC   HHN       2014129     5026  2286324 n       0.0000    0.0   90.0 high-broad-band_north                              21040718 12:00:00
+JMIC   HHZ       2014129     5025  2286324 n       0.0000   -1.0    0.0 high-broad-band_vertical                           21040718 12:00:00

@@ -1,0 +1,222 @@
+[
+  {
+    "name": "SESMIC-AUX-soh-monitor-thresholds-TIMELINESS",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "StationName",
+        "operator": {
+          "type": "IN",
+          "negated": false
+        },
+        "value": [
+          "AAK",
+          "AFI",
+          "AKTO",
+          "ANMO",
+          "ASF",
+          "ATAH",
+          "BATI",
+          "BBB",
+          "BBTS",
+          "BORG",
+          "BRDH",
+          "CFA",
+          "CMIG",
+          "DAV",
+          "DLBC",
+          "DZM",
+          "EIL",
+          "EKA",
+          "ELK",
+          "FITZ",
+          "FRB",
+          "FURI",
+          "GUMO",
+          "HFS",
+          "HNR",
+          "IDI",
+          "INK",
+          "JHJ",
+          "JKA",
+          "JMIC",
+          "JNU",
+          "JOW",
+          "KDAK",
+          "KOWA",
+          "KRVT",
+          "LBTB",
+          "LEM",
+          "LPIG",
+          "LSZ",
+          "LVC",
+          "MATP",
+          "MBAR",
+          "MDT",
+          "MSKU",
+          "MSVF",
+          "NEW",
+          "NNA",
+          "NWAO",
+          "OPO",
+          "PALK",
+          "PCRV",
+          "PFO",
+          "PMG",
+          "PMSA",
+          "PSI",
+          "PTGA",
+          "QSPA",
+          "RAO",
+          "RES",	
+          "RAR",
+          "SADO",
+          "SFJD",
+          "SHEM",
+          "SIJI",
+          "SIV",
+          "SJG",
+          "SPITS",
+          "SUR",
+          "TEIG",
+          "TGY",
+          "TKL",
+          "TSUM",
+          "USHA",
+          "VAE",
+          "VRAC",
+          "WSAR",
+          "YBH"
+        ]
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "IN",
+          "negated": false
+        },
+        "value": [
+          "TIMELINESS"	
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": "PT45M",
+      "marginalThreshold": "PT75M"
+    }
+  },
+  {
+    "name": "SESMIC-AUX-soh-monitor-thresholds-LAG",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "StationName",
+        "operator": {
+          "type": "IN",
+          "negated": false
+        },
+        "value": [
+          "AAK",
+          "AFI",
+          "AKTO",
+          "ANMO",
+          "ASF",
+          "ATAH",
+          "BATI",
+          "BBB",
+          "BBTS",
+          "BORG",
+          "BRDH",
+          "CFA",
+          "CMIG",
+          "DAV",
+          "DLBC",
+          "DZM",
+          "EIL",
+          "EKA",
+          "ELK",
+          "FITZ",
+          "FRB",
+          "FURI",
+          "GUMO",
+          "HFS",
+          "HNR",
+          "IDI",
+          "INK",
+          "JHJ",
+          "JKA",
+          "JMIC",
+          "JNU",
+          "JOW",
+          "KDAK",
+          "KOWA",
+          "KRVT",
+          "LBTB",
+          "LEM",
+          "LPIG",
+          "LSZ",
+          "LVC",
+          "MATP",
+          "MBAR",
+          "MDT",
+          "MSKU",
+          "MSVF",
+          "NEW",
+          "NNA",
+          "NWAO",
+          "OPO",
+          "PALK",
+          "PCRV",
+          "PFO",
+          "PMG",
+          "PMSA",
+          "PSI",
+          "PTGA",
+          "QSPA",
+          "RAO",
+          "RES",	
+          "RAR",
+          "SADO",
+          "SFJD",
+          "SHEM",
+          "SIJI",
+          "SIV",
+          "SJG",
+          "SPITS",
+          "SUR",
+          "TEIG",
+          "TGY",
+          "TKL",
+          "TSUM",
+          "USHA",
+          "VAE",
+          "VRAC",
+          "WSAR",
+          "YBH"
+        ]
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "IN",
+          "negated": false
+        },
+        "value": [
+          "LAG"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": "PT45M",
+      "marginalThreshold": "PT75M"
+    }
+  }
+]

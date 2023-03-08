@@ -1,0 +1,14 @@
+I37H0  BDF       2013319     4749  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20131218 12:00:00
+I37H1  BDF       2013319     4750  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20131218 12:00:00
+I37H1  LDA       2013319     4759  2286324 n       0.0000   -1.0   -1.0 Absolute_barometric_pressure                       20131218 12:00:00
+I37H1  LKO       2013319     4760  2286324 n       0.0000   -1.0   -1.0 External_temperature                               20131218 12:00:00
+I37H1  LWD       2013319     4761  2286324 n       0.0000   -1.0   -1.0 Wind_direction                                     20131218 12:00:00
+I37H1  LWS       2013319     4762  2286324 n       0.0000   -1.0   -1.0 Wind_speed                                         20131218 12:00:00
+I37H2  BDF       2013319     4751  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20131218 12:00:00
+I37H3  BDF       2013319     4752  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20131218 12:00:00
+I37H4  BDF       2013319     4753  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20131218 12:00:00
+I37H5  BDF       2013319     4754  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20131218 12:00:00
+I37H6  BDF       2013319     4755  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20131218 12:00:00
+I37H7  BDF       2013319     4756  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20131218 12:00:00
+I37H8  BDF       2013319     4757  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20131218 12:00:00
+I37H9  BDF       2013319     4758  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20131218 12:00:00

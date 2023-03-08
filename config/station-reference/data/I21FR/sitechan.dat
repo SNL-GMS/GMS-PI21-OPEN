@@ -1,0 +1,8 @@
+I21H1  LWS       2005088     2762  2286324 n       0.0000   -1.0   -1.0 Wind_speed                                         20090116 12:00:00
+I21H1  LWD       2005088     2761  2286324 n       0.0000   -1.0   -1.0 Wind_Direction                                     20090116 12:00:00
+I21H1  LKO       2005088     2760  2286324 n       0.0000   -1.0   -1.0 External_temperature                               20090116 12:00:00
+I21H1  LDA       2005088     2759  2286324 n       0.0000   -1.0   -1.0 Absolute_Pressure                                  20090116 12:00:00
+I21H1  BDF       2005088     2755  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090116 12:00:00
+I21H2  BDF       2005088     2756  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090116 12:00:00
+I21H3  BDF       2005088     2757  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090116 12:00:00
+I21H4  BDF       2005088     2758  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090116 12:00:00

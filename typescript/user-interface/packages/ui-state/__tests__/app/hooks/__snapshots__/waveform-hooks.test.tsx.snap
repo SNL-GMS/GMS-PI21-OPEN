@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI State Waveform Hooks Use Hook for Waveform Query returns the use waveform query for current channels value and a setter 1`] = `
+Object {
+  "all": Array [
+    Object {
+      "data": Object {},
+      "fulfilled": 0,
+      "isError": false,
+      "isLoading": false,
+      "pending": 0,
+      "rejected": 0,
+    },
+  ],
+  "current": Object {
+    "data": Object {},
+    "fulfilled": 0,
+    "isError": false,
+    "isLoading": false,
+    "pending": 0,
+    "rejected": 0,
+  },
+  "error": undefined,
+}
+`;

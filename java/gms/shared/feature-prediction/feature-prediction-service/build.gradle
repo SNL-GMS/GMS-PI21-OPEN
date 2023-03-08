@@ -1,0 +1,40 @@
+plugins {
+    id('java')
+    alias(libs.plugins.org.springframework.boot)
+    alias(libs.plugins.com.palantir.docker)
+}
+
+dependencies {
+
+    implementation project(':event-coi')
+    implementation project(':ellipticity-correction')
+    implementation project(':feature-prediction-api')
+    implementation project(':feature-prediction-plugins-api')
+    implementation project(':feature-prediction-utilities')
+    implementation project(':feature-predictor')
+    implementation project(':file-store-utility')
+    implementation project(':frameworks-configuration-api')
+    implementation project(':frameworks-configuration-repository')
+    implementation project(':frameworks-configuration-commonobjects')
+    implementation project(':frameworks-utilities')
+    implementation project(':plugin-spring')
+    implementation project(':signal-detection-coi')
+    implementation project(':spring-framework-utilities')
+    implementation project(':java-utilities')
+
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+    implementation libs.org.springdoc.springdoc.openapi.ui
+    implementation libs.org.springframework.boot.spring.boot.starter.web
+
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    implementation libs.io.minio.minio
+
+    testImplementation libs.org.springframework.boot.spring.boot.starter.test
+    testImplementation(testFixtures(project(':event-coi')))
+    testImplementation project(':spring-framework-utilities').sourceSets.test.output
+    testImplementation project(':test-utils')
+    testImplementation libs.org.springframework.boot.spring.boot.starter.test
+    testImplementation libs.org.junit.jupiter.junit.jupiter.api
+}

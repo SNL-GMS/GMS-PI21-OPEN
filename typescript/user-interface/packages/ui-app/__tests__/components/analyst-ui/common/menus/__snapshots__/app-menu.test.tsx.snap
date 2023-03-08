@@ -1,0 +1,776 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`about-menu should have a consistent snapshot on mount 1`] = `<div />`;
+
+exports[`about-menu should have basic props built on render 1`] = `
+Object {
+  "children": <AboutMenu
+    commitSHA="FCDA123"
+    logo={<img />}
+    versionNumber="9.0.1-Snapshot"
+  />,
+  "store": Object {
+    "@@observable": [Function],
+    "dispatch": [Function],
+    "getState": [Function],
+    "replaceReducer": [Function],
+    "subscribe": [Function],
+  },
+}
+`;
+
+exports[`app-menu should have a consistent snapshot on mount 1`] = `
+<div>
+  <ul
+    class="bp4-menu user-menu"
+    data-cy="user-menu"
+  >
+    <li
+      class=""
+    >
+      <a
+        class="bp4-menu-item bp4-popover-dismiss app-menu__about"
+        data-cy="app-menu__about"
+        tabindex="0"
+        title="Shows GMS system version info"
+      >
+        <span
+          class="bp4-menu-item-icon"
+        >
+          <span
+            aria-hidden="true"
+            class="bp4-icon bp4-icon-info-sign"
+            icon="info-sign"
+            tabindex="-1"
+          >
+            <svg
+              data-icon="info-sign"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+            >
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM7 3h2v2H7V3zm3 10H6v-1h1V7H6V6h3v6h1v1z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+        <div
+          class="bp4-fill bp4-text-overflow-ellipsis"
+        >
+          About
+        </div>
+      </a>
+    </li>
+    <li
+      class=""
+    >
+      <a
+        class="bp4-menu-item bp4-popover-dismiss app-menu__keyboard-shortcuts"
+        data-cy="app-menu__keyboard-shortcuts"
+        tabindex="0"
+        title="Shows GMS keyboard shortcuts (hotkeys)"
+      >
+        <span
+          class="bp4-menu-item-icon"
+        >
+          <span
+            aria-hidden="true"
+            class="bp4-icon bp4-icon-key"
+            icon="key"
+            tabindex="-1"
+          >
+            <svg
+              data-icon="key"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+            >
+              <path
+                d="M11 0C8.24 0 6 2.24 6 5c0 1.02.31 1.96.83 2.75L.29 14.29a1.003 1.003 0 001.42 1.42L3 14.41l1.29 1.29c.18.19.43.3.71.3s.53-.11.71-.29l2-2c.18-.18.29-.43.29-.71 0-.28-.11-.53-.29-.71L6.41 11l1.83-1.83c.8.52 1.74.83 2.76.83 2.76 0 5-2.24 5-5s-2.24-5-5-5zm0 8c-.23 0-.45-.03-.66-.08-.01 0-.02-.01-.03-.01-.21-.05-.41-.12-.6-.21a3.014 3.014 0 01-1.62-2c0-.01-.01-.02-.01-.03C8.03 5.45 8 5.23 8 5c0-1.66 1.34-3 3-3s3 1.34 3 3-1.34 3-3 3z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+        <div
+          class="bp4-fill bp4-text-overflow-ellipsis"
+        >
+          Keyboard Shortcuts
+        </div>
+        <span
+          class="bp4-menu-item-label"
+        >
+          ctrl + /
+        </span>
+      </a>
+    </li>
+    <li
+      class="bp4-menu-header menu-title"
+    >
+      <h6
+        class="bp4-heading"
+      >
+        Workspace
+      </h6>
+    </li>
+    <li
+      class="bp4-submenu"
+    >
+      <span
+        class="bp4-popover-wrapper"
+      >
+        <span
+          aria-haspopup="true"
+          class="bp4-popover-target"
+        >
+          <a
+            class="bp4-menu-item app-menu__open-workspace"
+            data-cy="open-workspace-button"
+            tabindex="0"
+            title="Opens a previously saved workspace"
+          >
+            <span
+              class="bp4-menu-item-icon"
+            >
+              <span
+                aria-hidden="true"
+                class="bp4-icon bp4-icon-folder-open"
+                icon="folder-open"
+                tabindex="-1"
+              >
+                <svg
+                  data-icon="folder-open"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <path
+                    d="M2.06 6.69c.14-.4.5-.69.94-.69h11V5c0-.55-.45-1-1-1H6.41l-1.7-1.71A.997.997 0 004 2H1c-.55 0-1 .45-1 1v9.84l2.05-6.15h.01zM16 8c0-.55-.45-1-1-1H4a.99.99 0 00-.94.69l-2 6c-.04.09-.06.2-.06.31 0 .55.45 1 1 1h11c.44 0 .81-.29.94-.69l2-6c.04-.09.06-.2.06-.31z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </span>
+            <div
+              class="bp4-fill bp4-text-overflow-ellipsis"
+            >
+              Open Workspace
+            </div>
+            <span
+              class="bp4-icon bp4-icon-caret-right bp4-submenu-icon"
+              icon="caret-right"
+            >
+              <svg
+                data-icon="caret-right"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <desc>
+                  Open sub menu
+                </desc>
+                <path
+                  d="M11 8c0-.15-.07-.28-.17-.37l-4-3.5A.495.495 0 006 4.5v7a.495.495 0 00.83.37l4-3.5c.1-.09.17-.22.17-.37z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </a>
+        </span>
+      </span>
+    </li>
+    <li
+      class=""
+    >
+      <a
+        class="bp4-menu-item bp4-popover-dismiss app-menu__save-as"
+        data-cy="save-workspace-as-button"
+        tabindex="0"
+        title="Save your current workspace layout as a new layout"
+      >
+        <span
+          class="bp4-menu-item-icon"
+        >
+          <span
+            aria-hidden="true"
+            class="bp4-icon bp4-icon-floppy-disk"
+            icon="floppy-disk"
+            tabindex="-1"
+          >
+            <svg
+              data-icon="floppy-disk"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+            >
+              <path
+                d="M15.71 2.29l-2-2A.997.997 0 0013 0h-1v6H4V0H1C.45 0 0 .45 0 1v14c0 .55.45 1 1 1h14c.55 0 1-.45 1-1V3c0-.28-.11-.53-.29-.71zM14 15H2V9c0-.55.45-1 1-1h10c.55 0 1 .45 1 1v6zM11 1H9v4h2V1z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+        <div
+          class="bp4-fill bp4-text-overflow-ellipsis"
+        >
+          Save Workspace As
+        </div>
+      </a>
+    </li>
+    <li
+      class="bp4-submenu"
+    >
+      <span
+        class="bp4-popover-wrapper"
+      >
+        <span
+          aria-haspopup="true"
+          class="bp4-popover-target"
+        >
+          <a
+            class="bp4-menu-item app-menu__save-as"
+            data-cy="app-menu__choose-theme"
+            tabindex="0"
+            title="Choose a UI Theme"
+          >
+            <span
+              class="bp4-menu-item-icon"
+            >
+              <span
+                aria-hidden="true"
+                class="bp4-icon bp4-icon-tint"
+                icon="tint"
+                tabindex="-1"
+              >
+                <svg
+                  data-icon="tint"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <path
+                    d="M7.88 1s-4.9 6.28-4.9 8.9c.01 2.82 2.34 5.1 4.99 5.1 2.65-.01 5.03-2.3 5.03-5.13C12.99 7.17 7.88 1 7.88 1z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </span>
+            <div
+              class="bp4-fill bp4-text-overflow-ellipsis"
+            >
+              UI Themes
+            </div>
+            <span
+              class="bp4-icon bp4-icon-caret-right bp4-submenu-icon"
+              icon="caret-right"
+            >
+              <svg
+                data-icon="caret-right"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <desc>
+                  Open sub menu
+                </desc>
+                <path
+                  d="M11 8c0-.15-.07-.28-.17-.37l-4-3.5A.495.495 0 006 4.5v7a.495.495 0 00.83.37l4-3.5c.1-.09.17-.22.17-.37z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </a>
+        </span>
+      </span>
+    </li>
+    <li
+      class="bp4-menu-header menu-title"
+    >
+      <h6
+        class="bp4-heading"
+      >
+        Displays
+      </h6>
+    </li>
+    <li
+      class="bp4-submenu"
+    >
+      <span
+        class="bp4-popover-wrapper"
+      >
+        <span
+          aria-haspopup="true"
+          class="bp4-popover-target"
+        >
+          <a
+            class="bp4-menu-item"
+            data-cy="app-menu__displays"
+            tabindex="0"
+          >
+            <span
+              class="bp4-menu-item-icon"
+            >
+              <span
+                aria-hidden="true"
+                class="bp4-icon bp4-icon-desktop"
+                icon="desktop"
+                tabindex="-1"
+              >
+                <svg
+                  data-icon="desktop"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <path
+                    d="M15 0H1C.45 0 0 .45 0 1v10c0 .55.45 1 1 1h4.75l-.5 2H4c-.55 0-1 .45-1 1s.45 1 1 1h8c.55 0 1-.45 1-1s-.45-1-1-1h-1.25l-.5-2H15c.55 0 1-.45 1-1V1c0-.55-.45-1-1-1zm-1 10H2V2h12v8z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </span>
+            <div
+              class="bp4-fill bp4-text-overflow-ellipsis"
+            >
+              Analyst
+            </div>
+            <span
+              class="bp4-icon bp4-icon-caret-right bp4-submenu-icon"
+              icon="caret-right"
+            >
+              <svg
+                data-icon="caret-right"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <desc>
+                  Open sub menu
+                </desc>
+                <path
+                  d="M11 8c0-.15-.07-.28-.17-.37l-4-3.5A.495.495 0 006 4.5v7a.495.495 0 00.83.37l4-3.5c.1-.09.17-.22.17-.37z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </a>
+        </span>
+      </span>
+    </li>
+    <li
+      class="bp4-submenu"
+    >
+      <span
+        class="bp4-popover-wrapper"
+      >
+        <span
+          aria-haspopup="true"
+          class="bp4-popover-target"
+        >
+          <a
+            class="bp4-menu-item"
+            data-cy="app-menu__displays"
+            tabindex="0"
+          >
+            <span
+              class="bp4-menu-item-icon"
+            >
+              <span
+                aria-hidden="true"
+                class="bp4-icon bp4-icon-desktop"
+                icon="desktop"
+                tabindex="-1"
+              >
+                <svg
+                  data-icon="desktop"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <path
+                    d="M15 0H1C.45 0 0 .45 0 1v10c0 .55.45 1 1 1h4.75l-.5 2H4c-.55 0-1 .45-1 1s.45 1 1 1h8c.55 0 1-.45 1-1s-.45-1-1-1h-1.25l-.5-2H15c.55 0 1-.45 1-1V1c0-.55-.45-1-1-1zm-1 10H2V2h12v8z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </span>
+            <div
+              class="bp4-fill bp4-text-overflow-ellipsis"
+            >
+              Data Acquisition
+            </div>
+            <span
+              class="bp4-icon bp4-icon-caret-right bp4-submenu-icon"
+              icon="caret-right"
+            >
+              <svg
+                data-icon="caret-right"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <desc>
+                  Open sub menu
+                </desc>
+                <path
+                  d="M11 8c0-.15-.07-.28-.17-.37l-4-3.5A.495.495 0 006 4.5v7a.495.495 0 00.83.37l4-3.5c.1-.09.17-.22.17-.37z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </a>
+        </span>
+      </span>
+    </li>
+    <li
+      class="bp4-menu-divider"
+    />
+    <li
+      class="bp4-submenu"
+    >
+      <span
+        class="bp4-popover-wrapper"
+      >
+        <span
+          aria-haspopup="true"
+          class="bp4-popover-target"
+        >
+          <a
+            class="bp4-menu-item"
+            data-cy="app-menu__devtools"
+            tabindex="0"
+            title="Shows advanced debugging tools"
+          >
+            <span
+              class="bp4-menu-item-icon"
+            >
+              <span
+                aria-hidden="true"
+                class="bp4-icon bp4-icon-wrench"
+                icon="wrench"
+                tabindex="-1"
+              >
+                <svg
+                  data-icon="wrench"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <path
+                    d="M15.83 3.7l-3.06 3.05-2.84-.7-.7-2.83L12.29.17a5.004 5.004 0 00-4.83 1.29 4.967 4.967 0 00-1.12 5.36L.58 12.58c-.36.36-.58.86-.58 1.41 0 1.1.9 2 2 2 .55 0 1.05-.22 1.41-.59l5.77-5.77c1.79.69 3.91.33 5.35-1.12 1.32-1.3 1.74-3.15 1.3-4.81z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </span>
+            <div
+              class="bp4-fill bp4-text-overflow-ellipsis"
+            >
+              Developer Tools
+            </div>
+            <span
+              class="bp4-icon bp4-icon-caret-right bp4-submenu-icon"
+              icon="caret-right"
+            >
+              <svg
+                data-icon="caret-right"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <desc>
+                  Open sub menu
+                </desc>
+                <path
+                  d="M11 8c0-.15-.07-.28-.17-.37l-4-3.5A.495.495 0 006 4.5v7a.495.495 0 00.83.37l4-3.5c.1-.09.17-.22.17-.37z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </a>
+        </span>
+      </span>
+    </li>
+    <li
+      class="bp4-menu-divider"
+    />
+    <li
+      class=""
+    >
+      <a
+        class="bp4-menu-item bp4-popover-dismiss app-menu__logout"
+        data-cy="app-menu__logout"
+        tabindex="0"
+      >
+        <span
+          class="bp4-menu-item-icon"
+        >
+          <span
+            aria-hidden="true"
+            class="bp4-icon bp4-icon-log-out"
+            icon="log-out"
+            tabindex="-1"
+          >
+            <svg
+              data-icon="log-out"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+            >
+              <path
+                d="M7 14H2V2h5c.55 0 1-.45 1-1s-.45-1-1-1H1C.45 0 0 .45 0 1v14c0 .55.45 1 1 1h6c.55 0 1-.45 1-1s-.45-1-1-1zm8.71-6.71l-3-3a1.003 1.003 0 00-1.42 1.42L12.59 7H6c-.55 0-1 .45-1 1s.45 1 1 1h6.59l-1.29 1.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71l3-3c.18-.18.29-.43.29-.71 0-.28-.11-.53-.29-.71z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+        <div
+          class="bp4-fill bp4-text-overflow-ellipsis"
+        >
+          Log out
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`app-menu should have basic props built on render 1`] = `
+Object {
+  "children": <Provider
+    store={
+      Object {
+        "@@observable": [Function],
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  >
+    <AppMenu
+      clearLayout={[MockFunction]}
+      components={
+        Map {
+          "Analyst" => Map {
+            "waveform-display" => Object {
+              "id": Object {
+                "component": "waveform-display",
+                "title": "Waveforms",
+                "type": "react-component",
+              },
+              "value": undefined,
+            },
+          },
+          "Data Acquisition" => Map {
+            "soh-overview" => Object {
+              "id": Object {
+                "component": "soh-overview",
+                "title": "SOH Overview",
+                "type": "react-component",
+              },
+              "value": undefined,
+            },
+          },
+        }
+      }
+      getOpenDisplays={[Function]}
+      logout={[MockFunction]}
+      openDisplay={[MockFunction]}
+      openLayoutName=""
+      openWorkspace={[MockFunction]}
+      saveWorkspaceAs={[MockFunction]}
+      showAboutDialog={[MockFunction]}
+      showLogs={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              "this should be in the snapshot, which indicates that the function was plumbed into the right place.",
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
+      userProfile={
+        Object {
+          "audibleNotifications": Array [],
+          "currentTheme": "GMS Dark Theme",
+          "defaultAnalystLayoutName": "default",
+          "defaultSohLayoutName": "default",
+          "userId": "1",
+          "workspaceLayouts": Array [
+            Object {
+              "layoutConfiguration": "test",
+              "name": "default",
+              "supportedUserInterfaceModes": Array [
+                "IAN",
+              ],
+            },
+          ],
+        }
+      }
+    />
+  </Provider>,
+  "store": Object {
+    "@@observable": [Function],
+    "dispatch": [Function],
+    "getState": [Function],
+    "replaceReducer": [Function],
+    "subscribe": [Function],
+  },
+}
+`;
+
+exports[`app-toolbar should have a consistent snapshot on mount 1`] = `<div />`;
+
+exports[`app-toolbar should have basic props built on render 1`] = `
+Object {
+  "children": <DeprecatedToolbar
+    clearLayout={[Function]}
+    components={
+      Map {
+        "Analyst" => Map {
+          "waveform-display" => Object {
+            "id": Object {
+              "component": "waveform-display",
+              "title": "Waveforms",
+              "type": "react-component",
+            },
+            "value": undefined,
+          },
+        },
+        "Data Acquisition" => Map {
+          "soh-overview" => Object {
+            "id": Object {
+              "component": "soh-overview",
+              "title": "SOH Overview",
+              "type": "react-component",
+            },
+            "value": undefined,
+          },
+        },
+      }
+    }
+    getOpenDisplays={[Function]}
+    isAboutDialogOpen={true}
+    isSaveWorkspaceAsDialogOpen={false}
+    logo={<img />}
+    logout={[Function]}
+    openDisplay={[Function]}
+    openLayoutName=""
+    openWorkspace={[Function]}
+    showAboutDialog={[Function]}
+    showLogPopup={[Function]}
+    userName="Test User"
+    userProfile={
+      Object {
+        "audibleNotifications": Array [],
+        "currentTheme": "GMS Dark Theme",
+        "defaultAnalystLayoutName": "default",
+        "defaultSohLayoutName": "default",
+        "userId": "1",
+        "workspaceLayouts": Array [
+          Object {
+            "layoutConfiguration": "test",
+            "name": "default",
+            "supportedUserInterfaceModes": Array [
+              "IAN",
+            ],
+          },
+        ],
+      }
+    }
+    versionInfo={
+      Object {
+        "commitSHA": "2",
+        "versionNumber": "1",
+      }
+    }
+  />,
+  "store": Object {
+    "@@observable": [Function],
+    "dispatch": [Function],
+    "getState": [Function],
+    "replaceReducer": [Function],
+    "subscribe": [Function],
+  },
+}
+`;
+
+exports[`ui theme menu matches snapshot 1`] = `
+<div>
+  <li
+    class="bp4-submenu"
+  >
+    <span
+      class="bp4-popover-wrapper"
+    >
+      <span
+        aria-haspopup="true"
+        class="bp4-popover-target"
+      >
+        <a
+          class="bp4-menu-item app-menu__save-as"
+          data-cy="app-menu__choose-theme"
+          tabindex="0"
+          title="Choose a UI Theme"
+        >
+          <span
+            class="bp4-menu-item-icon"
+          >
+            <span
+              aria-hidden="true"
+              class="bp4-icon bp4-icon-tint"
+              icon="tint"
+              tabindex="-1"
+            >
+              <svg
+                data-icon="tint"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M7.88 1s-4.9 6.28-4.9 8.9c.01 2.82 2.34 5.1 4.99 5.1 2.65-.01 5.03-2.3 5.03-5.13C12.99 7.17 7.88 1 7.88 1z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="bp4-fill bp4-text-overflow-ellipsis"
+          >
+            UI Themes
+          </div>
+          <span
+            class="bp4-icon bp4-icon-caret-right bp4-submenu-icon"
+            icon="caret-right"
+          >
+            <svg
+              data-icon="caret-right"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+            >
+              <desc>
+                Open sub menu
+              </desc>
+              <path
+                d="M11 8c0-.15-.07-.28-.17-.37l-4-3.5A.495.495 0 006 4.5v7a.495.495 0 00.83.37l4-3.5c.1-.09.17-.22.17-.37z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </a>
+      </span>
+    </span>
+  </li>
+</div>
+`;

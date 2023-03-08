@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "tsBuildInfoFile": "./.tsbuildinfo",
+    "rootDir": "src/ts"
+  },
+  "references": [
+    {
+      "path": "../common-model/tsconfig-build.json"
+    },
+    {
+      "path": "../common-util/tsconfig-build.json"
+    },
+    {
+      "path": "../weavess-core/tsconfig-build.json"
+    }
+  ],
+  "include": ["src/**/*"]
+}

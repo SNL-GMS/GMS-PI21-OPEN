@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LineChartWeavess gets custom ticks if the values provided are valid 1`] = `
+Object {
+  "defaultRange": Object {
+    "max": 102,
+    "min": -2,
+  },
+  "yAxisTicks": Array [
+    0,
+    11.11111111111111,
+    22.22222222222222,
+    33.33333333333333,
+    44.44444444444444,
+    55.55555555555556,
+    66.66666666666666,
+    77.77777777777777,
+    88.88888888888889,
+    100,
+  ],
+}
+`;
+
+exports[`LineChartWeavess gets default ticks if the values provided are equal 1`] = `
+Object {
+  "defaultRange": Object {
+    "max": 1.104,
+    "min": 0.896,
+  },
+  "yAxisTicks": Array [
+    0.9,
+    1,
+    1.1,
+  ],
+}
+`;
+
+exports[`LineChartWeavess gets default ticks if the values provided are invalid 1`] = `
+Object {
+  "defaultRange": Object {
+    "max": 10.4,
+    "min": -10.4,
+  },
+  "yAxisTicks": Array [
+    -10,
+    -6,
+    -2,
+    2,
+    6,
+    10,
+  ],
+}
+`;
+
+exports[`LineChartWeavess renders LineChartWeavess empty data 1`] = `
+<div>
+  <div
+    class="core-chart "
+  >
+    <div
+      class="weavess-line-chart container"
+      style="height: 100px; width: 100px;"
+    >
+      <div
+        class="weavess-line-chart inner"
+      >
+        <div
+          class="weavess-line-chart chart"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LineChartWeavess renders LineChartWeavess multiple lines 1`] = `
+<div>
+  <div
+    class="core-chart "
+  >
+    <div
+      class="weavess-line-chart container"
+      style="height: 100px; width: 100px;"
+    >
+      <div
+        class="weavess-line-chart inner"
+      >
+        <div
+          class="weavess-line-chart chart"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LineChartWeavess renders LineChartWeavess single line 1`] = `
+<div>
+  <div
+    class="core-chart "
+  >
+    <div
+      class="weavess-line-chart container"
+      style="height: 100px; width: 100px;"
+    >
+      <div
+        class="weavess-line-chart inner"
+      >
+        <div
+          class="weavess-line-chart chart"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LineChartWeavess renders LineChartWeavess undefined data 1`] = `
+<div>
+  <div
+    class="core-chart "
+  >
+    <div
+      class="weavess-line-chart container"
+      style="height: 100px; width: 100px;"
+    >
+      <div
+        class="weavess-line-chart inner"
+      >
+        <div
+          class="weavess-line-chart chart"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LineChartWeavess renders custom line y-axis label 1`] = `
+<div>
+  <div
+    class="chart__axis"
+  >
+    <div
+      class="inner rotate"
+    >
+      My custom label
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,16 @@
+# ak135 travel-time table for phase: pPKiKP
+ 2   Number of depth samples at the following depths (km):
+    0.00 700.00
+ 2   Number of distance samples at the following distances (deg):
+    0.00 155.00
+# Travel time at depth =   0.00 km.
+    994.8231
+   1203.6256
+# Travel time at depth = 700.00 km.
+   1074.5189
+   1282.0922
+# Modelling error(s)
+   1   1
+#
+   0.700
+#@(#)        ak135.pPKiKP     2.1     06 Jun 1996

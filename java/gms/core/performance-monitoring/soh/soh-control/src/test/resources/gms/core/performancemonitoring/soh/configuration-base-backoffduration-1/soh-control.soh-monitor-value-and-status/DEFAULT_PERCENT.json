@@ -1,0 +1,25 @@
+{
+  "name": "DEFAULT_PERCENT",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "SohValueType",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "PERCENT"
+      ]
+    },
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "goodThreshold": 85.222,
+    "marginalThreshold": 90.111,
+    "calculationInterval": "PT30M",
+    "backOffDuration": "PT40S"
+  }
+}

@@ -1,0 +1,1093 @@
+{
+  "Auto Network": [
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T21:00:00.000Z",
+          "endTime": "2019-01-02T21:05:00.000Z",
+          "processingStartTime": "2019-01-02T21:00:00.000Z",
+          "processingEndTime": "2019-01-02T21:05:00.000Z",
+          "storageTime": "2019-01-02T21:05:00.000Z",
+          "modificationTime": "2019-01-02T21:05:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T21:00:00.000Z",
+      "endTime": "2019-01-02T21:05:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T21:05:00.000Z",
+      "modificationTime": "2019-01-02T21:05:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T21:00:00.000Z",
+      "processingEndTime": "2019-01-02T21:05:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T21:05:00.000Z",
+          "endTime": "2019-01-02T21:10:00.000Z",
+          "processingStartTime": "2019-01-02T21:05:00.000Z",
+          "processingEndTime": "2019-01-02T21:10:00.000Z",
+          "storageTime": "2019-01-02T21:10:00.000Z",
+          "modificationTime": "2019-01-02T21:10:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T21:05:00.000Z",
+      "endTime": "2019-01-02T21:10:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T21:10:00.000Z",
+      "modificationTime": "2019-01-02T21:10:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T21:00:00.000Z",
+      "processingEndTime": "2019-01-02T21:10:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T21:10:00.000Z",
+          "endTime": "2019-01-02T21:15:00.000Z",
+          "processingStartTime": "2019-01-02T21:10:00.000Z",
+          "processingEndTime": "2019-01-02T21:15:00.000Z",
+          "storageTime": "2019-01-02T21:15:00.000Z",
+          "modificationTime": "2019-01-02T21:15:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T21:10:00.000Z",
+      "endTime": "2019-01-02T21:15:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T21:15:00.000Z",
+      "modificationTime": "2019-01-02T21:15:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T21:00:00.000Z",
+      "processingEndTime": "2019-01-02T21:15:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T21:15:00.000Z",
+          "endTime": "2019-01-02T21:20:00.000Z",
+          "processingStartTime": "2019-01-02T21:15:00.000Z",
+          "processingEndTime": "2019-01-02T21:20:00.000Z",
+          "storageTime": "2019-01-02T21:20:00.000Z",
+          "modificationTime": "2019-01-02T21:20:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T21:15:00.000Z",
+      "endTime": "2019-01-02T21:20:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T21:20:00.000Z",
+      "modificationTime": "2019-01-02T21:20:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T21:00:00.000Z",
+      "processingEndTime": "2019-01-02T21:20:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T21:20:00.000Z",
+          "endTime": "2019-01-02T21:25:00.000Z",
+          "processingStartTime": "2019-01-02T21:20:00.000Z",
+          "processingEndTime": "2019-01-02T21:25:00.000Z",
+          "storageTime": "2019-01-02T21:25:00.000Z",
+          "modificationTime": "2019-01-02T21:25:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T21:20:00.000Z",
+      "endTime": "2019-01-02T21:25:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T21:25:00.000Z",
+      "modificationTime": "2019-01-02T21:25:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T21:00:00.000Z",
+      "processingEndTime": "2019-01-02T21:25:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T21:25:00.000Z",
+          "endTime": "2019-01-02T21:30:00.000Z",
+          "processingStartTime": "2019-01-02T21:25:00.000Z",
+          "processingEndTime": "2019-01-02T21:30:00.000Z",
+          "storageTime": "2019-01-02T21:30:00.000Z",
+          "modificationTime": "2019-01-02T21:30:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T21:25:00.000Z",
+      "endTime": "2019-01-02T21:30:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T21:30:00.000Z",
+      "modificationTime": "2019-01-02T21:30:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T21:00:00.000Z",
+      "processingEndTime": "2019-01-02T21:30:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T21:30:00.000Z",
+          "endTime": "2019-01-02T21:35:00.000Z",
+          "processingStartTime": "2019-01-02T21:30:00.000Z",
+          "processingEndTime": "2019-01-02T21:35:00.000Z",
+          "storageTime": "2019-01-02T21:35:00.000Z",
+          "modificationTime": "2019-01-02T21:35:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T21:30:00.000Z",
+      "endTime": "2019-01-02T21:35:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T21:35:00.000Z",
+      "modificationTime": "2019-01-02T21:35:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T21:00:00.000Z",
+      "processingEndTime": "2019-01-02T21:35:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T21:35:00.000Z",
+          "endTime": "2019-01-02T21:40:00.000Z",
+          "processingStartTime": "2019-01-02T21:35:00.000Z",
+          "processingEndTime": "2019-01-02T21:40:00.000Z",
+          "storageTime": "2019-01-02T21:40:00.000Z",
+          "modificationTime": "2019-01-02T21:40:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T21:35:00.000Z",
+      "endTime": "2019-01-02T21:40:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T21:40:00.000Z",
+      "modificationTime": "2019-01-02T21:40:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T21:00:00.000Z",
+      "processingEndTime": "2019-01-02T21:40:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T21:40:00.000Z",
+          "endTime": "2019-01-02T21:45:00.000Z",
+          "processingStartTime": "2019-01-02T21:40:00.000Z",
+          "processingEndTime": "2019-01-02T21:45:00.000Z",
+          "storageTime": "2019-01-02T21:45:00.000Z",
+          "modificationTime": "2019-01-02T21:45:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T21:40:00.000Z",
+      "endTime": "2019-01-02T21:45:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T21:45:00.000Z",
+      "modificationTime": "2019-01-02T21:45:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T21:00:00.000Z",
+      "processingEndTime": "2019-01-02T21:45:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T21:45:00.000Z",
+          "endTime": "2019-01-02T21:50:00.000Z",
+          "processingStartTime": "2019-01-02T21:45:00.000Z",
+          "processingEndTime": "2019-01-02T21:50:00.000Z",
+          "storageTime": "2019-01-02T21:50:00.000Z",
+          "modificationTime": "2019-01-02T21:50:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T21:45:00.000Z",
+      "endTime": "2019-01-02T21:50:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T21:50:00.000Z",
+      "modificationTime": "2019-01-02T21:50:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T21:00:00.000Z",
+      "processingEndTime": "2019-01-02T21:50:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T21:50:00.000Z",
+          "endTime": "2019-01-02T21:55:00.000Z",
+          "processingStartTime": "2019-01-02T21:50:00.000Z",
+          "processingEndTime": "2019-01-02T21:55:00.000Z",
+          "storageTime": "2019-01-02T21:55:00.000Z",
+          "modificationTime": "2019-01-02T21:55:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T21:50:00.000Z",
+      "endTime": "2019-01-02T21:55:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T21:55:00.000Z",
+      "modificationTime": "2019-01-02T21:55:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T21:00:00.000Z",
+      "processingEndTime": "2019-01-02T21:55:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T21:55:00.000Z",
+          "endTime": "2019-01-02T22:00:00.000Z",
+          "processingStartTime": "2019-01-02T21:55:00.000Z",
+          "processingEndTime": "2019-01-02T22:00:00.000Z",
+          "storageTime": "2019-01-02T22:00:00.000Z",
+          "modificationTime": "2019-01-02T22:00:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T21:55:00.000Z",
+      "endTime": "2019-01-02T22:00:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T22:00:00.000Z",
+      "modificationTime": "2019-01-02T22:00:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T21:00:00.000Z",
+      "processingEndTime": "2019-01-02T22:00:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T22:00:00.000Z",
+          "endTime": "2019-01-02T22:05:00.000Z",
+          "processingStartTime": "2019-01-02T22:00:00.000Z",
+          "processingEndTime": "2019-01-02T22:05:00.000Z",
+          "storageTime": "2019-01-02T22:05:00.000Z",
+          "modificationTime": "2019-01-02T22:05:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T22:00:00.000Z",
+      "endTime": "2019-01-02T22:05:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T22:05:00.000Z",
+      "modificationTime": "2019-01-02T22:05:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T22:00:00.000Z",
+      "processingEndTime": "2019-01-02T22:05:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T22:05:00.000Z",
+          "endTime": "2019-01-02T22:10:00.000Z",
+          "processingStartTime": "2019-01-02T22:05:00.000Z",
+          "processingEndTime": "2019-01-02T22:10:00.000Z",
+          "storageTime": "2019-01-02T22:10:00.000Z",
+          "modificationTime": "2019-01-02T22:10:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T22:05:00.000Z",
+      "endTime": "2019-01-02T22:10:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T22:10:00.000Z",
+      "modificationTime": "2019-01-02T22:10:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T22:00:00.000Z",
+      "processingEndTime": "2019-01-02T22:10:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T22:10:00.000Z",
+          "endTime": "2019-01-02T22:15:00.000Z",
+          "processingStartTime": "2019-01-02T22:10:00.000Z",
+          "processingEndTime": "2019-01-02T22:15:00.000Z",
+          "storageTime": "2019-01-02T22:15:00.000Z",
+          "modificationTime": "2019-01-02T22:15:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T22:10:00.000Z",
+      "endTime": "2019-01-02T22:15:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T22:15:00.000Z",
+      "modificationTime": "2019-01-02T22:15:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T22:00:00.000Z",
+      "processingEndTime": "2019-01-02T22:15:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T22:15:00.000Z",
+          "endTime": "2019-01-02T22:20:00.000Z",
+          "processingStartTime": "2019-01-02T22:15:00.000Z",
+          "processingEndTime": "2019-01-02T22:20:00.000Z",
+          "storageTime": "2019-01-02T22:20:00.000Z",
+          "modificationTime": "2019-01-02T22:20:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T22:15:00.000Z",
+      "endTime": "2019-01-02T22:20:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T22:20:00.000Z",
+      "modificationTime": "2019-01-02T22:20:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T22:00:00.000Z",
+      "processingEndTime": "2019-01-02T22:20:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T22:20:00.000Z",
+          "endTime": "2019-01-02T22:25:00.000Z",
+          "processingStartTime": "2019-01-02T22:20:00.000Z",
+          "processingEndTime": "2019-01-02T22:25:00.000Z",
+          "storageTime": "2019-01-02T22:25:00.000Z",
+          "modificationTime": "2019-01-02T22:25:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T22:20:00.000Z",
+      "endTime": "2019-01-02T22:25:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T22:25:00.000Z",
+      "modificationTime": "2019-01-02T22:25:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T22:00:00.000Z",
+      "processingEndTime": "2019-01-02T22:25:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T22:25:00.000Z",
+          "endTime": "2019-01-02T22:30:00.000Z",
+          "processingStartTime": "2019-01-02T22:25:00.000Z",
+          "processingEndTime": "2019-01-02T22:30:00.000Z",
+          "storageTime": "2019-01-02T22:30:00.000Z",
+          "modificationTime": "2019-01-02T22:30:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T22:25:00.000Z",
+      "endTime": "2019-01-02T22:30:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T22:30:00.000Z",
+      "modificationTime": "2019-01-02T22:30:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T22:00:00.000Z",
+      "processingEndTime": "2019-01-02T22:30:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T22:30:00.000Z",
+          "endTime": "2019-01-02T22:35:00.000Z",
+          "processingStartTime": "2019-01-02T22:30:00.000Z",
+          "processingEndTime": "2019-01-02T22:35:00.000Z",
+          "storageTime": "2019-01-02T22:35:00.000Z",
+          "modificationTime": "2019-01-02T22:35:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T22:30:00.000Z",
+      "endTime": "2019-01-02T22:35:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T22:35:00.000Z",
+      "modificationTime": "2019-01-02T22:35:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T22:00:00.000Z",
+      "processingEndTime": "2019-01-02T22:35:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T22:35:00.000Z",
+          "endTime": "2019-01-02T22:40:00.000Z",
+          "processingStartTime": "2019-01-02T22:35:00.000Z",
+          "processingEndTime": "2019-01-02T22:40:00.000Z",
+          "storageTime": "2019-01-02T22:40:00.000Z",
+          "modificationTime": "2019-01-02T22:40:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T22:35:00.000Z",
+      "endTime": "2019-01-02T22:40:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T22:40:00.000Z",
+      "modificationTime": "2019-01-02T22:40:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T22:00:00.000Z",
+      "processingEndTime": "2019-01-02T22:40:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T22:40:00.000Z",
+          "endTime": "2019-01-02T22:45:00.000Z",
+          "processingStartTime": "2019-01-02T22:40:00.000Z",
+          "processingEndTime": "2019-01-02T22:45:00.000Z",
+          "storageTime": "2019-01-02T22:45:00.000Z",
+          "modificationTime": "2019-01-02T22:45:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T22:40:00.000Z",
+      "endTime": "2019-01-02T22:45:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T22:45:00.000Z",
+      "modificationTime": "2019-01-02T22:45:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T22:00:00.000Z",
+      "processingEndTime": "2019-01-02T22:45:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T22:45:00.000Z",
+          "endTime": "2019-01-02T22:50:00.000Z",
+          "processingStartTime": "2019-01-02T22:45:00.000Z",
+          "processingEndTime": "2019-01-02T22:50:00.000Z",
+          "storageTime": "2019-01-02T22:50:00.000Z",
+          "modificationTime": "2019-01-02T22:50:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T22:45:00.000Z",
+      "endTime": "2019-01-02T22:50:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T22:50:00.000Z",
+      "modificationTime": "2019-01-02T22:50:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T22:00:00.000Z",
+      "processingEndTime": "2019-01-02T22:50:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T22:50:00.000Z",
+          "endTime": "2019-01-02T22:55:00.000Z",
+          "processingStartTime": "2019-01-02T22:50:00.000Z",
+          "processingEndTime": "2019-01-02T22:55:00.000Z",
+          "storageTime": "2019-01-02T22:55:00.000Z",
+          "modificationTime": "2019-01-02T22:55:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T22:50:00.000Z",
+      "endTime": "2019-01-02T22:55:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T22:55:00.000Z",
+      "modificationTime": "2019-01-02T22:55:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T22:00:00.000Z",
+      "processingEndTime": "2019-01-02T22:55:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Network Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T22:55:00.000Z",
+          "endTime": "2019-01-02T23:00:00.000Z",
+          "processingStartTime": "2019-01-02T22:55:00.000Z",
+          "processingEndTime": "2019-01-02T23:00:00.000Z",
+          "storageTime": "2019-01-02T23:00:00.000Z",
+          "modificationTime": "2019-01-02T23:00:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Network",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Network",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T22:55:00.000Z",
+      "endTime": "2019-01-02T23:00:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T23:00:00.000Z",
+      "modificationTime": "2019-01-02T23:00:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T22:00:00.000Z",
+      "processingEndTime": "2019-01-02T23:00:00.000Z"
+    }
+  ],
+  "Auto Post-AL1": [
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Post-AL1 Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T21:00:00.000Z",
+          "endTime": "2019-01-02T22:00:00.000Z",
+          "processingStartTime": "2019-01-02T21:00:00.000Z",
+          "processingEndTime": "2019-01-02T22:00:00.000Z",
+          "storageTime": "2019-01-02T22:00:00.000Z",
+          "modificationTime": "2019-01-02T21:00:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Post-AL1",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Post-AL1",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T21:00:00.000Z",
+      "endTime": "2019-01-02T22:00:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T22:00:00.000Z",
+      "modificationTime": "2019-01-02T22:00:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T21:00:00.000Z",
+      "processingEndTime": "2019-01-02T22:00:00.000Z"
+    },
+    {
+      "sequenceIntervals": [
+        {
+          "name": "Auto Post-AL1 Seq",
+          "status": "COMPLETE",
+          "startTime": "2019-01-02T22:00:00.000Z",
+          "endTime": "2019-01-02T23:00:00.000Z",
+          "processingStartTime": "2019-01-02T22:00:00.000Z",
+          "processingEndTime": "2019-01-02T23:00:00.000Z",
+          "storageTime": "2019-01-02T23:00:00.000Z",
+          "modificationTime": "2019-01-02T22:00:00.000Z",
+          "percentAvailable": 100,
+          "comment": "This is a comment",
+          "stageName": "Auto Post-AL1",
+          "percentComplete": 100,
+          "lastExecutedStepName": "test"
+        }
+      ],
+      "stageMode": "AUTOMATIC",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "Auto Post-AL1",
+      "comment": "This is a comment",
+      "startTime": "2019-01-02T22:00:00.000Z",
+      "endTime": "2019-01-02T23:00:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T23:00:00.000Z",
+      "modificationTime": "2019-01-02T23:00:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T22:00:00.000Z",
+      "processingEndTime": "2019-01-02T23:00:00.000Z"
+    }
+  ],
+  "AL1": [
+    {
+      "activityIntervals": [
+        {
+          "stageName": "AL1",
+          "activeAnalysts":  ["Tom"],
+          "name": "Event Review",
+          "comment": "A comment",
+          "startTime": "2019-01-02T21:00:00.000Z",
+          "endTime": "2019-01-02T22:00:00.000Z",
+          "status": "COMPLETE",
+          "storageTime": "2019-01-02T22:00:00.000Z",
+          "modificationTime": "2019-01-02T22:00:00.000Z",
+          "percentAvailable": 100,
+          "processingStartTime": "2019-01-02T21:00:00.000Z",
+          "processingEndTime": "2019-01-02T22:00:00.000Z"
+        },
+        {
+          "stageName": "AL1",
+          "activeAnalysts":  ["Tom"],
+          "name": "Scan",
+          "comment": "A comment",
+          "startTime": "2019-01-02T21:00:00.000Z",
+          "endTime": "2019-01-02T22:00:00.000Z",
+          "status": "COMPLETE",
+          "storageTime": "2019-01-02T22:00:00.000Z",
+          "modificationTime": "2019-01-02T22:00:00.000Z",
+          "percentAvailable": 100,
+          "processingStartTime": "2019-01-02T21:00:00.000Z",
+          "processingEndTime": "2019-01-02T22:00:00.000Z"
+        }
+      ],
+      "stageMode": "INTERACTIVE",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "AL1",
+      "comment": "A comment",
+      "startTime": "2019-01-02T21:00:00.000Z",
+      "endTime": "2019-01-02T22:00:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T22:00:00.000Z",
+      "modificationTime": "2019-01-02T22:00:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T21:00:00.000Z",
+      "processingEndTime": "2019-01-02T22:00:00.000Z"
+    },
+    {
+      "activityIntervals": [
+        {
+          "stageName": "AL1",
+          "activeAnalysts":  ["Tom"],
+          "name": "Event Review",
+          "comment": "A comment",
+          "startTime": "2019-01-02T22:00:00.000Z",
+          "endTime": "2019-01-02T23:00:00.000Z",
+          "status": "COMPLETE",
+          "storageTime": "2019-01-02T23:00:00.000Z",
+          "modificationTime": "2019-01-02T23:00:00.000Z",
+          "percentAvailable": 100,
+          "processingStartTime": "2019-01-02T22:00:00.000Z",
+          "processingEndTime": "2019-01-02T23:00:00.000Z"
+        },
+        {
+          "stageName": "AL1",
+          "activeAnalysts":  ["Tom"],
+          "name": "Scan",
+          "comment": "A comment",
+          "startTime": "2019-01-02T22:00:00.000Z",
+          "endTime": "2019-01-02T23:00:00.000Z",
+          "status": "COMPLETE",
+          "storageTime": "2019-01-02T23:00:00.000Z",
+          "modificationTime": "2019-01-02T23:00:00.000Z",
+          "percentAvailable": 100,
+          "processingStartTime": "2019-01-02T22:00:00.000Z",
+          "processingEndTime": "2019-01-02T23:00:00.000Z"
+        }
+      ],
+      "stageMode": "INTERACTIVE",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "AL1",
+      "comment": "A comment",
+      "startTime": "2019-01-02T22:00:00.000Z",
+      "endTime": "2019-01-02T23:00:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T23:00:00.000Z",
+      "modificationTime": "2019-01-02T23:00:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T22:00:00.000Z",
+      "processingEndTime": "2019-01-02T23:00:00.000Z"
+    }
+  ],
+  "AL2": [
+    {
+      "activityIntervals": [
+        {
+          "stageName": "AL2",
+          "activeAnalysts":  ["Tom"],
+          "name": "Event Review",
+          "comment": "A comment",
+          "startTime": "2019-01-02T21:00:00.000Z",
+          "endTime": "2019-01-02T23:00:00.000Z",
+          "status": "COMPLETE",
+          "storageTime": "2019-01-02T23:00:00.000Z",
+          "modificationTime": "2019-01-02T23:00:00.000Z",
+          "percentAvailable": 100,
+          "processingStartTime": "2019-01-02T21:00:00.000Z",
+          "processingEndTime": "2019-01-02T23:00:00.000Z"
+        },
+        {
+          "stageName": "AL2",
+          "activeAnalysts":  ["Tom"],
+          "name": "Scan",
+          "comment": "A comment",
+          "startTime": "2019-01-02T21:00:00.000Z",
+          "endTime": "2019-01-02T23:00:00.000Z",
+          "status": "COMPLETE",
+          "storageTime": "2019-01-02T23:00:00.000Z",
+          "modificationTime": "2019-01-02T23:00:00.000Z",
+          "percentAvailable": 100,
+          "processingStartTime": "2019-01-02T21:00:00.000Z",
+          "processingEndTime": "2019-01-02T23:00:00.000Z"
+        }
+      ],
+      "stageMode": "INTERACTIVE",
+      "stageMetrics": {
+        "eventCount": 3,
+        "associatedSignalDetectionCount": 3,
+        "unassociatedSignalDetectionCount": 1,
+        "maxMagnitude": 4.4
+      },
+      "name": "AL2",
+      "comment": "A comment",
+      "startTime": "2019-01-02T21:00:00.000Z",
+      "endTime": "2019-01-02T23:00:00.000Z",
+      "status": "COMPLETE",
+      "storageTime": "2019-01-02T23:00:00.000Z",
+      "modificationTime": "2019-01-02T23:00:00.000Z",
+      "percentAvailable": 100,
+      "processingStartTime": "2019-01-02T21:00:00.000Z",
+      "processingEndTime": "2019-01-02T23:00:00.000Z"
+    }
+  ]
+}

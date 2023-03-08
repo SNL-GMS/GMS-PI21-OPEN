@@ -1,0 +1,41 @@
+{
+    "apiVersion": "v1",
+    "data": {
+        "base_domain": "test.gms.domain.com",
+        "istio_port": "8443",
+        "nginx_port": "443"
+    },
+    "kind": "ConfigMap",
+    "metadata": {
+        "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"data\":{\"istio_port\":\"8443\",\"nginx_port\":\"443\"},\"kind\":\"ConfigMap\",\"metadata\":{\"annotations\":{},\"name\":\"ingress-ports-config\",\"namespace\":\"gms\"}}\n"
+        },
+        "creationTimestamp": "2021-11-18T14:12:33Z",
+        "managedFields": [
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:data": {
+                        ".": {},
+                        "f:istio_port": {},
+                        "f:nginx_port": {}
+                    },
+                    "f:metadata": {
+                        "f:annotations": {
+                            ".": {},
+                            "f:kubectl.kubernetes.io/last-applied-configuration": {}
+                        }
+                    }
+                },
+                "manager": "kubectl-client-side-apply",
+                "operation": "Update",
+                "time": "2021-11-18T14:12:33Z"
+            }
+        ],
+        "name": "ingress-ports-config",
+        "namespace": "gms",
+        "resourceVersion": "1582",
+        "uid": "a68444f7-3765-471b-b7c3-23124770abf6"
+    }
+}

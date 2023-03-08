@@ -1,0 +1,126 @@
+#!/usr/bin/env python3
+
+# ------------------------------------------------------------------------------
+# soh-get-stations test script
+#
+# The soh-get-stations script queries the elasticsearch interface to
+# determine for a given instance which stations have been received
+# (and published) by dataman in a given timeframe.
+# ------------------------------------------------------------------------------
+
+import argparse
+import os
+import subprocess
+import sys
+import yaml
+
+from argparse import ArgumentParser
+from argparse import RawDescriptionHelpFormatter
+
+def main():
+    
+    args = get_args()
+
+    #-- verify KUBECONFIG is set
+    if not "KUBECONFIG" in os.environ:
+        print("ERROR: Variable 'KUBECONFIG' must be set to the kubernetes configuration.")
+        sys.exit(1)
+    try:
+        with open(os.environ["KUBECONFIG"]) as file:
+            kubeconfig = yaml.load(file, Loader=yaml.FullLoader)
+            if 'clusters' not in kubeconfig:
+                print(f"ERROR: No clusters defined in file '{ os.environ['KUBECONFIG'] }")
+                sys.exit(1)
+
+            cluster = kubeconfig['clusters'][0]  # use the first cluster
+    except FileNotFoundError as e:
+        print(f"ERROR: Failed to open KUBECONFIG file '{ os.environ['KUBECONFIG'] }': { e }")
+        sys.exit(1)
+    except AttributeError as e:
+        print(f"ERROR: { e.__class__.__name__ }: { e }")
+        print(f"Did you forget to activate the 'gms' conda environment with 'conda activate gms'?")
+        sys.exit(1)
+    except Exception as e:
+        print(f"ERROR: { e.__class__.__name__ }: { e }")
+        sys.exit(1)
+    
+    print(f"[ { args.name }/{ cluster['name'].upper() } ] STATION REPORT from '{ args.after }' to '{ args.before }':")
+
+    rc, received_stations, err = run(f"gms-logs -n { args.name } -c da-dataman -m 'Published ' -m ' Data Frames' --agg 'appLog.station' --sort --count -a { args.after } -b { args.before }")
+
+    if rc != 0:
+        print("ERROR: failed to identified received stations")
+        print(err)
+        sys.exit(1)
+
+    print(f"- { len(received_stations.splitlines()) } stations received")
+    if args.verbose:
+        for station in received_stations.splitlines():
+            print(f"  - {station}")
+
+
+        
+    sys.exit(0)
+    
+
+def get_args():
+    'Get command-line arguments.'
+    
+    description = """
+description:
+  soh-get-stations queries dataman logs for a specified instance
+  to determine which stations have been reported as being published. 
+  Published frames are (obviouslly) also received frames.   There is 
+  no capability that would show frames received but not published.
+
+
+  By default, the last 24 hours of log messages will be considered.
+  The --after and --before arguments can be used to change this 
+  time range. Times specified can be relative to the current wallclock
+  time of 'now'. For example 'now-1d' is 1 day prior to the current
+  time.  Explicit times can also be specified (e.g. '2021-03-03T09:20:05')
+    
+examples:
+  Count received and published stations in soh-develop:
+    $ soh-get-stations -n soh-develop
+    
+  Print received and published station names (and number of times seen) in soh-develop:
+    $ soh-get-stations -n soh-develop -v
+    
+  Count received and published stations between 2 hours and 3 hours ago:
+    $ soh-get-stations -n soh-develop -a now-3h -b now-2h
+    """
+    parser = ArgumentParser(description=description,
+                            formatter_class=RawDescriptionHelpFormatter)
+    
+    parser.add_argument('--name', '-n', required=True, help="Name of the SOH instance to scan")
+
+    parser.add_argument('--after', '-a', default="now-1d", help="Only consider logs after this time.")
+    parser.add_argument('--before', '-b', default="now", help="Only consider logs before this time.")
+
+    parser.add_argument('--verbose', '-v', default=False, action='store_true', help="Print station names.")
+    
+    args = parser.parse_args()
+
+    return args
+
+
+def run(command, print_output=False, stdin=None):
+    """
+    Execute the specified command and return when the execution is complete.
+    Returns the return code, stdout, and stderr of the command.
+    """
+    cmd = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+    out, err = cmd.communicate(input=stdin)
+    out = out.decode()
+    err = err.decode()
+
+    if print_output:
+        print(out)
+        if len(err) > 0:
+            print(err)
+
+    return cmd.returncode, out, err
+
+if __name__ == "__main__":
+    main()

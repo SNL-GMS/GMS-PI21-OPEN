@@ -1,0 +1,28 @@
+.overlay {
+  transition: opacity ease $animation-duration;
+  &--hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  &__backdrop {
+    &--hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+  &__contents {
+    @include centerWithinParent('horizontal');
+    @include flexColumn;
+    display: flex;
+    top: 4rem;
+    height: auto;
+    background: var(
+      --core-popover-background,
+      var(--gms-popover-background, $core-popover-background)
+    );
+    border-radius: $rounded-rectangle-radius;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    z-index: 21;
+  }
+}

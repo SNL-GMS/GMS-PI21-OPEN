@@ -1,0 +1,33 @@
+plugins {
+    id('application')
+    alias(libs.plugins.com.palantir.docker)
+}
+
+docker {
+    files tasks.installDist.outputs, 'resources'
+}
+
+mainClassName = 'gms.dataacquisition.data.preloader.DataGenerationManager'
+
+dependencies {
+    implementation project(':coi-data-injector')
+
+    implementation 'gms:frameworks-client-generator:LATEST'
+    implementation 'gms:frameworks-osd-commonobjects:LATEST'
+    implementation 'gms:frameworks-osd-daos:LATEST'
+    implementation 'gms:frameworks-osd-repository:LATEST'
+
+    implementation libs.io.projectreactor.reactor.core
+    implementation libs.commons.cli.commons.cli
+    implementation libs.org.apache.commons.commons.math3
+    implementation libs.org.postgresql.postgresql
+    implementation libs.org.hibernate.hibernate.entitymanager
+    implementation libs.org.postgresql.postgresql
+    implementation libs.net.jodah.failsafe
+
+    // Google AutoValue
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    testImplementation 'gms:frameworks-osd-testfixtures:LATEST'
+}

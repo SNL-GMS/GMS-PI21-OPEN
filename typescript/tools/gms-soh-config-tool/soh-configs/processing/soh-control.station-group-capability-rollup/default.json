@@ -1,0 +1,13 @@
+{
+  "name": "default-station-group-capability-rollup",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "stationsToGroupRollupOperator": {
+      "operatorType": "BEST_OF"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "lag-stationA-channelA",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "MonitorType",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "LAG"
+      ]
+    },
+    {
+      "constraintType": "STRING",
+      "criterion": "StationName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "StationA"
+      ]
+    },
+    {
+      "constraintType": "STRING",
+      "criterion": "ChannelName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "ChannelA"
+      ]
+    }
+  ],
+  "parameters": {
+    "marginalThreshold": "PT5S"
+  }
+}

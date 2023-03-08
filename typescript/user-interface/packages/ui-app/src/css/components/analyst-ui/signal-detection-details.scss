@@ -1,0 +1,61 @@
+// TODO these are prepivot styles, if they aren't used we should clean them up
+.signal-detection-details__container {
+  max-width: 700px;
+  min-width: 500px;
+}
+
+.signal-detection-details {
+  & tr {
+    padding-bottom: 0.25rem;
+  }
+  & td {
+    // Aligns multi line text, both by first line instead of center
+    vertical-align: top;
+    padding-right: 0.25rem;
+    & span {
+      color: var(--gms-prominent, $gms-prominent);
+      white-space: nowrap;
+      user-select: none;
+    }
+  }
+}
+
+.signal-detection-details__divider {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.signal-detection-details-versions {
+  & h6 {
+    color: var(--gms-prominent, $gms-prominent);
+    white-space: nowrap;
+    user-select: none;
+  }
+}
+
+.signal-detection-details-versions-table {
+  height: 100%;
+  width: 100%;
+  padding: 0.5rem 0rem 0rem 0rem;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  position: relative;
+  min-height: 150px;
+  .ag-cell-value {
+    padding-left: 10px;
+  }
+}
+
+.signal-detection-swatch {
+  display: inline-block;
+  height: 10px;
+  width: 20px;
+}
+// TODO end prepivot styling
+
+.signal-detection-swatch-label {
+  margin-left: 0.5rem;
+}

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Waveform Query fetchWaveForms returns the expected result with valid args 1`] = `
+Array [
+  Object {
+    "channelSegment": Object {
+      "channelName": "AAK.AAK.BH1",
+      "channelSegmentBoundaries": undefined,
+      "dataSegments": Array [
+        Object {
+          "color": "tomato",
+          "data": Object {
+            "domainTimeRange": Object {
+              "endTimeSecs": 1614727857.376,
+              "startTimeSecs": 1614706257.376,
+            },
+            "endTimeSecs": 1614727857.376,
+            "id": "{\\"domain\\":{\\"startTimeSecs\\":1614706257.376,\\"endTimeSecs\\":1614727857.376},\\"id\\":{\\"channel\\":{\\"name\\":\\"AAK.AAK.BH1\\",\\"effectiveAt\\":1614706257.376},\\"startTime\\":1614706257.376,\\"endTime\\":1614706257.376,\\"creationTime\\":1614706257.376},\\"type\\":\\"WAVEFORM\\",\\"waveform\\":{\\"type\\":\\"WAVEFORM\\",\\"startTime\\":1614706257.376,\\"endTime\\":1614727857.376,\\"sampleCount\\":16,\\"sampleRateHz\\":40}}",
+            "sampleRate": 40,
+            "startTimeSecs": 1614706257.376,
+            "values": undefined,
+          },
+          "displayType": Array [
+            "LINE",
+          ],
+          "pointSize": 1,
+        },
+      ],
+      "description": "unfiltered",
+      "descriptionLabelColor": "bisque",
+      "isSelected": false,
+      "wfFilterId": "unfiltered",
+    },
+    "channelSegmentDescriptor": Object {
+      "channel": Object {
+        "effectiveAt": 1614706257.376,
+        "name": "AAK.AAK.BH1",
+      },
+      "creationTime": 1614706257.376,
+      "endTime": 1614706257.376,
+      "startTime": 1614706257.376,
+    },
+  },
+]
+`;

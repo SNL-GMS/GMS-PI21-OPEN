@@ -1,0 +1,35 @@
+# Global values are set by the parent chart
+global: {}
+
+standardAugmentationApps:
+  - "bastion-ian"
+
+testString: "testString"
+
+#
+# Augmentations
+#
+aug1:
+  imageName: "mytestimage"
+  metadata:
+    description: "my awesome augmentation"
+    type: "harness"
+    labels:
+      - "ian"
+      - "sb"
+      - "database"
+    wait: "wait-for-something"
+
+aug-missing-labels:
+  metadata:
+    type: "harness"
+    wait: "wait-for-something"
+
+aug-missing-type:
+  metadata:
+    labels:
+      - "ian"
+    wait: "wait-for-something"
+
+not-an-aug:
+  imageName: "test"

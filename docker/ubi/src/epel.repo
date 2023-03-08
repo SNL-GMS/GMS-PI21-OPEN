@@ -1,0 +1,13 @@
+# epel.repo
+#
+# Redhat Extras repo
+#
+# These repos are have a lower priority than the ubi repos (higher number)
+
+[epel]
+name=Extra Packages for Enterprise Linux $releasever - $basearch
+baseurl=#EPEL_YUM_URL#/$releasever/Everything/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=#EPEL_YUM_URL#/RPM-GPG-KEY-EPEL-$releasever
+priority=20

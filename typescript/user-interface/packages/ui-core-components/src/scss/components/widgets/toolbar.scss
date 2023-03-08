@@ -1,0 +1,185 @@
+.toolbar {
+  display: flex;
+  align-content: flex-end;
+  justify-content: space-between;
+  flex-direction: row;
+  button.toolbar-overflow-menu-button.toolbar-overflow-menu-button--issue {
+    background-color: $core-strong-warning;
+    &:hover {
+      background-color: lighten($core-strong-warning, 15%);
+    }
+  }
+  .toolbar-item.toolbar-item--issue {
+    color: lighten($core-strong-warning, 15%);
+  }
+}
+.toolbar-item {
+  padding-left: 8px;
+  white-space: nowrap;
+}
+.toolbar-item:first-of-type {
+  padding-left: 0px;
+}
+.toolbar-item:last-of-type {
+  padding-right: 8px;
+}
+.toolbar-item.toolbar-item__left {
+  padding-right: 8px;
+  padding-left: 0px;
+}
+.toolbar-item.toolbar-item__left:last-child {
+  padding-right: 0px;
+}
+.toolbar-switch {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.toolbar-switch__blueprint {
+  margin-bottom: 0px;
+}
+.bp4-control {
+  margin-bottom: 0px;
+}
+.bp4-dark .bp4-control.bp4-switch .bp4-control-indicator {
+  background: #394b59;
+  margin-left: 4px;
+}
+.bp4-dark .bp4-control.bp4-switch .bp4-control-indicator::before {
+  background: rgb(216, 225, 232);
+}
+.bp4-dark .bp4-control.bp4-switch:hover .bp4-control-indicator {
+  background: rgba(255, 255, 255, 0.3);
+}
+.toolbar-numeric-input {
+  height: 30px;
+  font-size: 14px;
+  border: 1px solid #656fa0;
+  border-radius: 4px;
+  padding-left: 8px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+}
+.toolbar-numeric-input.disabled {
+  height: 30px;
+  font-size: 14px;
+  border: 1px solid rgb(156, 156, 156);
+  border-radius: 4px;
+  padding-left: 8px;
+  color: darkgray;
+  background-color: rgba(0, 0, 0, 0);
+}
+.toolbar-button {
+  width: 142px;
+}
+.toolbar-button--icon-only {
+  width: 30px;
+}
+.bp4-button .toolbar-button__icon {
+  margin-left: 8px !important;
+  margin-right: 0px !important;
+}
+.toolbar-button--capsule {
+  padding: 0px 0px 0px 4px;
+  background-color: rgba(230, 230, 255, 0.2);
+  border-radius: 4px;
+}
+.toolbar-numeric__label {
+  margin-left: 4px;
+}
+.toolbar-numeric__label.toolbar-numeric__label-left {
+  margin-right: 4px;
+}
+.toolbar-button .bp4-icon:first-child:last-child,
+.bp4-button .bp4-spinner + .bp4-icon:last-child {
+  margin: 0 8px;
+}
+span.bp4-button-text {
+  justify-content: space-between;
+  display: flex;
+}
+
+.toolbar__center-group {
+  display: flex;
+  align-content: flex-end;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.toolbar__left-group {
+  display: flex;
+  align-content: flex-end;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+.toolbar__right-group {
+  display: flex;
+  align-content: flex-end;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+.label-value-container {
+  display: flex;
+  line-height: 30px;
+  font-size: 1.125em;
+  align-items: baseline;
+}
+.label-value__label {
+  margin-right: 4px;
+}
+
+.toolbar-button-group {
+  display: flex;
+}
+
+.toolbar-switch-label {
+  margin-right: 4px;
+}
+
+.bp4-menu-item.bp4-popover-dismiss.toolbar-item--issue {
+  color: lighten($core-strong-warning, 10%);
+  &:hover {
+    color: lighten($core-strong-warning, 20%);
+  }
+}
+
+.toolbar label.bp4-label {
+  margin-bottom: 0;
+}
+
+.dropdown-label {
+  font-size: 1.125em;
+  font-weight: 600;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+/*************************************************************
+ *     IAN specific styling                                  *
+ *************************************************************/
+
+.ian-label-value-container {
+  display: flex;
+  line-height: 30px;
+  font-size: 1.125em;
+  align-items: baseline;
+}
+.ian-label-value__label {
+  font-weight: 600;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.ian-label-value__value {
+  font-weight: 250;
+  margin-left: 0;
+  margin-right: 5px;
+  user-select: text;
+  * {
+    // with more complicated html structure, also use the default text selection
+    user-select: text;
+  }
+}
+
+/*************************************************************
+ *    END IAN specific styling                               *
+ *************************************************************/

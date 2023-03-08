@@ -1,0 +1,22 @@
+[
+  {
+    "name": "MKAR",
+    "active": true,
+    "source": {
+      "originatingOrganization": "External",
+      "informationTime": "2019-02-28T00:00:00Z",
+      "reference": "OffDate: 2286-11-20T00:00:00Z, Loaded from CSS file"
+    },
+    "latitude": 46.79368,
+    "longitude": 82.29057,
+    "elevation": 0.618,
+    "actualChangeTime": "2000-04-01T00:00:00Z",
+    "systemChangeTime": "2000-04-01T00:00:00Z",
+    "stationType": "SEISMIC_ARRAY",
+    "description": "Makanchi_Array,_Kazakhstan,_IMS",
+    "comment": "Loaded from site file.",
+    "aliases": [
+
+    ]
+  }
+]

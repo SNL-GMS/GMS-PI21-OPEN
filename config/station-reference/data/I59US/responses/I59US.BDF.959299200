@@ -1,0 +1,40 @@
+# UNCLASSIFIED
+#	
+# Response info for I59US infrasound channels.
+#				
+# Effective: 29	July 2003
+# File name: I59US_rsp.txt
+#			
+# Source: James	Neely (CTI)
+# System equipment: Chaparral 5 microbarometer sensor and AIM24 digitizer.
+#
+# The response file was	derived	from equations of state.
+# Pressure response normalized to 1.0 at 0.5 Hz.
+#
+# The Ncalib value of channel I59H1_BDF is 0.000017730 Pa/count at 2.0 sec.
+# The Ncalib value of channel I59H2_BDF is 0.000014656 Pa/count at 2.0 sec.
+# The Ncalib value of channel I59H3_BDF is 0.000013223 Pa/count at 2.0 sec.
+# The Ncalib value of channel I59H4_BDF is 0.000013795 Pa/count at 2.0 sec.
+#
+# Freq(Hz)     Amp(cnts/Pa)     Phase(deg)   Error(amp)  Error(phase)
+#
+   theoretical   0   instrument   fap
+18
+0.000001	0.000000034	179.95675	0.0	0.0
+0.010000	0.520439623	74.53396	0.0	0.0
+0.020000	0.802426896	45.75069	0.0	0.0
+0.080000	0.984852439	12.51057	0.0	0.0
+0.100000	0.990389471	10.03242	0.0	0.0
+0.200000	0.997880129	5.03233		0.0	0.0
+0.400000	0.999772396	2.51819		0.0	0.0
+0.500000	1.000000000	2.01475		0.0	0.0
+0.800000	1.000246701	1.25365		0.0	0.0
+1.000000	1.000303651	1.00180		0.0	0.0
+2.000000	0.999179140	0.49227		0.0	0.0
+4.000000	0.997497427	0.22899		0.0	0.0
+5.000000	0.995799018	0.17291		0.0	0.0
+6.000000	0.995200009	0.13352		0.0	0.0
+7.000000	0.992899825	0.10384		0.0	0.0
+8.000000	0.802723632	0.08014		0.0	0.0
+9.000000	0.001300525	0.06035		0.0	0.0
+10.00000	0.000010004	0.04345		0.0	0.0

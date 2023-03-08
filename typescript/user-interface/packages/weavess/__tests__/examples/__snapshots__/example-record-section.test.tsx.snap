@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a component 1`] = `
+<div>
+  <div
+    class="bp4-dark"
+    style="height: 80%; width: 100%; padding: 0.5rem; color: rgb(171, 179, 191); display: flex; justify-content: center; align-items: center;"
+  >
+    <div
+      style="height: 100%; width: 100%; display: flex; flex-direction: column;"
+    >
+      <div
+        style="flex: 1 1 auto; position: relative;"
+      >
+        <div
+          style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;"
+        >
+          <div
+            class="record-section-container"
+            style="height: 100%; position: relative; width: 100%;"
+          >
+            <canvas
+              style="height: 100%; position: absolute; width: 100%; z-index: 0;"
+            />
+            <div
+              class="y-axis-container"
+              style="border-left: solid; border-width: 3px; height: 100%; position: absolute; width: 100%;"
+            />
+            <div
+              class="record-section"
+              style="align-items: center; font-family: sans-serif; font-size: large; height: 100%; justify-content: center; width: 100%;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

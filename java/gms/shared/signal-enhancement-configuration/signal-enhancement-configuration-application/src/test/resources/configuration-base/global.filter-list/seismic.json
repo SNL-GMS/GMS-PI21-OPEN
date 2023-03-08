@@ -1,0 +1,112 @@
+{
+    "name": "seismic",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "name",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "Seismic"
+            ]
+        }
+    ],
+    "parameters": {
+        "name": "Seismic",
+        "defaultFilterIndex": 0,
+         "filters": [
+            {
+                "withinHotKeyCycle": true,
+                "unfiltered": true
+            },
+            {
+                "withinHotKeyCycle": true,
+                "namedFilter": "DETECTION"
+            },
+			{
+                "withinHotKeyCycle": true,
+                "namedFilter": "FK"
+            },
+			{
+                "withinHotKeyCycle": true,
+                "namedFilter": "ONSET"
+            },
+			{
+                "withinHotKeyCycle": true,
+                "filterDefinition": {
+				    "$ref=global.filter-definition": [
+                        {
+                            "criterion": "name",
+                            "value": "HAM FIR BP 0.70-2.00 Hz"
+                        }
+				    ]
+				}
+            },
+			{
+                "withinHotKeyCycle": true,
+                "filterDefinition": {
+				    "$ref=global.filter-definition": [
+                        {
+                            "criterion": "name",
+                            "value": "HAM FIR BP 1.00-3.00 Hz"
+                        }
+				    ]
+				}
+            },
+			{
+                "withinHotKeyCycle": true,
+                "filterDefinition": {
+				    "$ref=global.filter-definition": [
+                        {
+                            "criterion": "name",
+                            "value": "HAM FIR BP 4.00-8.00 Hz"
+                        }
+				    ]
+				}
+            },
+	        {   "withinHotKeyCycle": true,
+                "filterDefinition": {
+                    "name": "Cascade Filter 1",
+                    "comments": "Cascade Filter 1 comments",
+                    "filterDescription": {
+                        "$ref=global.filter-cascade": [
+                            {
+                                "criterion": "name",
+                                "value": "Cascade Filter 1"
+                            }]
+                    }
+                }
+            },
+            {
+                "withinHotKeyCycle": true,
+                "filterDefinition": {
+                    "name": "Cascade Filter 2",
+                    "comments": "Cascade Filter 2 comments",
+                    "filterDescription": {
+                        "$ref=global.filter-cascade": [
+                            {
+                                "criterion": "name",
+                                "value": "Cascade Filter 2"
+                            }]
+                    }
+                }
+            },
+			{
+                "withinHotKeyCycle": true,
+                "filterDefinition": {
+                    "name": "Cascade Filter 3",
+                    "comments": "Cascade Filter 3 comments",
+                    "filterDescription": {
+                        "$ref=global.filter-cascade": [
+                            {
+                              "criterion": "name",
+                              "value": "Cascade Filter 3"
+                            }]
+                    }
+				}
+            }
+		]
+    }
+}

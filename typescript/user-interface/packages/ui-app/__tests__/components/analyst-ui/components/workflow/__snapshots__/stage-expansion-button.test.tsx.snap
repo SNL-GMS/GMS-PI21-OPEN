@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stage Expansion Button matches snapshot 1`] = `
+<Memo(StageExpansionButtonComponent)
+  disabled={true}
+  isExpanded={false}
+  stageName="stage"
+  toggle={[MockFunction]}
+/>
+`;
+
+exports[`Stage Expansion Button shallow mounts 1`] = `""`;

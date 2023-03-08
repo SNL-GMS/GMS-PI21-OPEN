@@ -1,0 +1,24 @@
+{
+  "name": "default-lag-timeliness",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "MonitorType",
+      "operator": {
+        "type": "IN",
+        "negated": false
+      },
+      "value": [
+        "LAG",
+        "TIMELINESS"
+      ]
+    },
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "goodThreshold": "PT1S",
+    "marginalThreshold": "PT2S"
+  }
+}

@@ -1,0 +1,51 @@
+# Directories
+docs/
+node_modules/
+build/
+dist/
+coverage/
+artifacts/
+.scannerwork/
+.cache/
+.jest-cache/
+.nyc_output/
+# Ignore cypress in the root directory only
+/cypress/
+
+# File types
+*.map
+*.log
+*.swp
+*.out
+**/.DS_STORE
+
+# Specific files
+.eslintcache
+.eslintcache-test
+eslint-report.json
+.tsbuildinfo
+.tsbuildinfo-test
+settings.json
+packages/mock-data-server/mock-data-server.log
+junit.xml
+
+# Whitelist files from .vscode
+!.vscode/all.code-workspace
+!.vscode/cSpell.json
+!.vscode/gateway.code-workspace
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/ui.code-workspace
+!.vscode/integration.code-workspace
+
+# Allow the .vscode directory but ban all non-whitelisted files
+!.vscode/
+.vscode/*
+
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

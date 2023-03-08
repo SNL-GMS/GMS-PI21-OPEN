@@ -1,0 +1,24 @@
+{
+  "name": "KMBO",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "StationName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "StationA"
+      ]
+    }
+  ],
+  "parameters": {
+    "LAG": {
+      "channelsMode": "USE_LISTED",
+      "channels": [
+        "ChannelA"
+      ]
+    }
+  }
+}

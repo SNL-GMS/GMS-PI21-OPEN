@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`History List History List renders 1`] = `
+<div>
+  <div>
+    <ul
+      class="bp4-menu"
+    >
+      <li
+        class=""
+      >
+        <a
+          class="bp4-menu-item bp4-popover-dismiss"
+          tabindex="0"
+        >
+          <div
+            class="bp4-fill bp4-text-overflow-ellipsis"
+          >
+            item
+          </div>
+        </a>
+      </li>
+      <li
+        class="bp4-menu-divider"
+      />
+      <li
+        class=""
+      >
+        <a
+          class="bp4-menu-item bp4-popover-dismiss"
+          tabindex="0"
+        >
+          <div
+            class="bp4-fill bp4-text-overflow-ellipsis"
+          >
+            item
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`History List History List renders with other props 1`] = `
+<div>
+  <div>
+    <ul
+      class="bp4-menu"
+    >
+      <li
+        class=""
+      >
+        <a
+          class="bp4-menu-item bp4-popover-dismiss"
+          tabindex="0"
+        >
+          <div
+            class="bp4-fill bp4-text-overflow-ellipsis"
+          >
+            item
+          </div>
+        </a>
+      </li>
+      <li
+        class="bp4-menu-divider"
+      />
+      <li
+        class=""
+      >
+        <a
+          class="bp4-menu-item bp4-popover-dismiss"
+          tabindex="0"
+        >
+          <div
+            class="bp4-fill bp4-text-overflow-ellipsis"
+          >
+            item
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

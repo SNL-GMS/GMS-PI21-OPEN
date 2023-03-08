@@ -1,0 +1,19 @@
+{
+  "name": "predictions-for-location-solution-definition",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "featurePredictionsDefinitions": [
+      {
+        "earthModel": "Iaspei",
+        "predictionTypes": [
+          "ARRIVAL_TIME"
+        ],
+        "correctionDefinitions": []
+      }
+    ]
+  }
+}

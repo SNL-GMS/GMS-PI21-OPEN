@@ -1,0 +1,27 @@
+{
+    "name": "2.0-4.0-4-bp-causal-description",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "name",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "2.0 4.0 4 BP causal Description"
+            ]
+        }
+    ],
+    "parameters": {
+		"type": "LinearFilterDescription",
+		"comments": "2.0 4.0 4 BP causal",
+		"causal": true,
+		"filterType": "IIR_BUTTERWORTH",
+		"lowFrequency": 2.0,
+		"highFrequency": 4.0,
+		"order": 4,
+		"zeroPhase": false,
+		"passBandType": "BAND_PASS"
+    }
+}

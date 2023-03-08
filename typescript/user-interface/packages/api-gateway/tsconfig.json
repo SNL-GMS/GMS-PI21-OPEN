@@ -1,0 +1,30 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "typeRoots": ["@types", "./@types", "./node_modules/@types", "../../node_modules/@types"],
+    "baseUrl": ".",
+    "noEmit": true,
+    "outDir": "./lib",
+    "paths": {
+      "@gms/common-model": ["../common-model/src/ts/common-model.ts"],
+      "@gms/common-model/lib/*": ["../common-model/src/ts/*"],
+      "@gms/common-util": ["../common-util/src/ts/common-util.ts"],
+      "@gms/common-util/lib/*": ["../common-util/src/ts/*"],
+      "@gms/webpack-config": ["../webpack-config/src/ts/webpack-config.ts"],
+      "@gms/webpack-config/lib/*": ["../webpack-config/src/ts/*"]
+    }
+  },
+  "references": [
+    {
+      "path": "../common-model/tsconfig-build.json"
+    },
+    {
+      "path": "../common-util/tsconfig-build.json"
+    },
+    {
+      "path": "../webpack-config"
+    }
+  ],
+  "include": ["src/**/*", "__tests__/**/*", "__mocks__/**/*"]
+}

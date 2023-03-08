@@ -1,0 +1,54 @@
+{
+    "name": "seedlink",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "protocol",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "SEEDLINK"
+            ]
+        }
+    ],
+    "parameters": {
+        "channelIdsByPacketName": {
+            "IM.PD01.SHZ.": "PDAR.PD01.SHZ",
+            "IM.PD02.SHZ.": "PDAR.PD02.SHZ",
+            "IM.PD03.SHZ.": "PDAR.PD03.SHZ",
+            "IM.PD04.SHZ.": "PDAR.PD04.SHZ",
+            "IM.PD05.SHZ.": "PDAR.PD05.SHZ",
+            "IM.PD06.SHZ.": "PDAR.PD06.SHZ",
+            "IM.PD07.SHZ.": "PDAR.PD07.SHZ",
+            "IM.PD08.SHZ.": "PDAR.PD08.SHZ",
+            "IM.PD09.SHZ.": "PDAR.PD09.SHZ",
+            "IM.PD10.SHZ.": "PDAR.PD10.SHZ",
+            "IM.PD11.SHZ.": "PDAR.PD11.SHZ",
+            "IM.PD12.SHZ.": "PDAR.PD12.SHZ",
+            "IM.PD13.SHZ.": "PDAR.PD13.SHZ",
+            "IM.PD31.BHE.": "PDAR.PD31.BHE",
+            "IM.PD31.BHN.": "PDAR.PD31.BHN",
+            "IM.PD31.BHZ.": "PDAR.PD31.BHZ",
+            "IM.PD32.SHE.": "PDAR.PD32.SHE",
+            "IM.PD32.SHN.": "PDAR.PD32.SHN",
+            "IM.PD32.SHZ.": "PDAR.PD32.SHZ",
+            "IM.TX01.SHZ.": "TXAR.TX01.SHZ",
+            "IM.TX02.SHZ.": "TXAR.TX02.SHZ",
+            "IM.TX03.SHZ.": "TXAR.TX03.SHZ",
+            "IM.TX04.SHZ.": "TXAR.TX04.SHZ",
+            "IM.TX06.SHZ.": "TXAR.TX06.SHZ",
+            "IM.TX07.SHZ.": "TXAR.TX07.SHZ",
+            "IM.TX08.SHZ.": "TXAR.TX08.SHZ",
+            "IM.TX09.SHZ.": "TXAR.TX09.SHZ",
+            "IM.TX10.SHZ.": "TXAR.TX10.SHZ",
+            "IM.TX31.BHE.": "TXAR.TX31.BHE",
+            "IM.TX31.BHN.": "TXAR.TX31.BHN",
+            "IM.TX31.BHZ.": "TXAR.TX31.BHZ",
+            "IM.TX32.BHE.": "TXAR.TX32.BHE",
+            "IM.TX32.BHN.": "TXAR.TX32.BHN",
+            "IM.TX32.BHZ.": "TXAR.TX32.BHZ"
+        }
+    }
+}

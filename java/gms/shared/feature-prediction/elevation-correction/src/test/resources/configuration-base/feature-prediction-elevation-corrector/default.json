@@ -1,0 +1,13 @@
+{
+  "name": "feature-prediction-elevation-corrector",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "mediumVelocityEarthModelPluginNameByModelName": {
+      "Model1Name": "PluginForModel1Name"
+    }
+  }
+}

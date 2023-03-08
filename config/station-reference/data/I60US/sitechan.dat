@@ -1,0 +1,12 @@
+I60H1  BDF       2016298     5910  2286324 n       0.0000   -1.0    0.0 Infrasonic_Micropressure_data                      20161101 12:00:00
+I60H1  LKO       2016298     5918  2286324 n       0.0000   -1.0    0.0 Temperature                                        20161101 12:00:00
+I60H1  LWD       2016298     5919  2286324 n       0.0000   -1.0    0.0 Wind Sensor_Direction                              20161101 12:00:00
+I60H1  LWS       2016298     5920  2286324 n       0.0000   -1.0    0.0 Wind Sensor_Speed                                  20161101 12:00:00
+I60H2  BDF       2016298     5911  2286324 n       0.0000   -1.0    0.0 Infrasonic_Micropressure_data                      20161101 12:00:00
+I60H2  LDA       2016298     5921  2286324 n       0.0000   -1.0    0.0 Infrasonic_pressure_data                           20161101 12:00:00
+I60H3  BDF       2016298     5912  2286324 n       0.0000   -1.0    0.0 Infrasonic_Micropressure_data                      20161101 12:00:00
+I60H4  BDF       2016298     5913  2286324 n       0.0000   -1.0    0.0 Infrasonic_Micropressure_data                      20161101 12:00:00
+I60H5  BDF       2016298     5914  2286324 n       0.0000   -1.0    0.0 Infrasonic_Micropressure_data                      20161101 12:00:00
+I60H6  BDF       2016298     5915  2286324 n       0.0000   -1.0    0.0 Infrasonic_Micropressure_data                      20161101 12:00:00
+I60H7  BDF       2016298     5916  2286324 n       0.0000   -1.0    0.0 Infrasonic_Micropressure_data                      20161101 12:00:00
+I60H8  BDF       2016298     5917  2286324 n       0.0000   -1.0    0.0 Infrasonic_Micropressure_data                      20161101 12:00:00

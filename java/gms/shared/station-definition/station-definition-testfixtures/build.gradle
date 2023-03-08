@@ -1,0 +1,11 @@
+apply plugin: 'java-library'
+
+dependencies {
+    api project(':station-definition-coi')
+    api project(':station-definition-dao')
+    api project(':workflow-dao')
+    api project(':station-definition-api')
+    implementation project(':java-utilities')
+    implementation project(':bridge-utilities')
+    implementation project(':signal-detection-dao')
+}

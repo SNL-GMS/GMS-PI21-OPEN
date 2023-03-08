@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Redux wrapper can create a rendered wrapper 1`] = `
+<div>
+  <h1
+    class="bp4-heading"
+  >
+    Hello
+  </h1>
+</div>
+`;

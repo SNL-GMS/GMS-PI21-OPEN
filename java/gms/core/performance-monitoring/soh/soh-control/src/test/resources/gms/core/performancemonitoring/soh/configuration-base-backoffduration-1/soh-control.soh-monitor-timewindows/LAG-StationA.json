@@ -1,0 +1,31 @@
+{
+  "name": "timewindow-lag-StationA",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "StationName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "StationA"
+      ]
+    },
+    {
+      "constraintType": "STRING",
+      "criterion": "MonitorType",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "LAG"
+      ]
+    }
+  ],
+  "parameters": {
+    "calculationInterval": "PT15M",
+    "backOffDuration": "PT40S"
+  }
+}

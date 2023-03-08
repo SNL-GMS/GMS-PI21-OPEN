@@ -1,0 +1,284 @@
+{
+  "id": "50a58441-2104-4073-b06e-177f93546c0f",
+  "time": "2020-03-26T17:43:45.492968Z",
+  "stationName": "I37NO",
+  "allStationAggregates": [
+    {
+      "value": 1.53,
+      "valuePresent": true,
+      "aggregateType": "LAG"
+    },
+    {
+      "value": 2.96,
+      "valuePresent": true,
+      "aggregateType": "TIMELINESS"
+    },
+    {
+      "value": 25.79,
+      "valuePresent": true,
+      "aggregateType": "ENVIRONMENTAL_ISSUES"
+    },
+    {
+      "value": 10.81,
+      "valuePresent": true,
+      "aggregateType": "MISSING"
+    }
+  ],
+  "stationSohStatus": {
+    "sohStatus": "GOOD",
+    "monitorsInRollup": []
+  },
+  "sohMonitorValueAndStatuses": [
+    {
+      "sohValueType": "PERCENT",
+      "value": 53.174270816606004,
+      "status": "GOOD",
+      "monitorType": "ENV_CALIBRATION_UNDERWAY"
+    },
+    {
+      "sohValueType": "PERCENT",
+      "value": 20.354238431283566,
+      "status": "GOOD",
+      "monitorType": "ENV_CLOCK_DIFFERENTIAL_TOO_LARGE"
+    },
+    {
+      "sohValueType": "PERCENT",
+      "value": 2.8461523085822393,
+      "status": "GOOD",
+      "monitorType": "ENV_DIGITIZER_ANALOG_INPUT_SHORTED"
+    },
+    {
+      "sohValueType": "PERCENT",
+      "value": 16.795536926825093,
+      "status": "GOOD",
+      "monitorType": "ENV_GPS_RECEIVER_UNLOCKED"
+    },
+    {
+      "sohValueType": "PERCENT",
+      "value": 65.68535807973392,
+      "status": "GOOD",
+      "monitorType": "ENV_EQUIPMENT_HOUSING_OPEN"
+    },
+    {
+      "sohValueType": "PERCENT",
+      "value": 74.98003832610783,
+      "status": "MARGINAL",
+      "monitorType": "ENV_DEAD_SENSOR_CHANNEL"
+    },
+    {
+      "sohValueType": "PERCENT",
+      "value": 24.92774470586462,
+      "status": "GOOD",
+      "monitorType": "ENV_MAIN_POWER_FAILURE"
+    },
+    {
+      "sohValueType": "PERCENT",
+      "value": 44.65296189504927,
+      "status": "GOOD",
+      "monitorType": "ENV_VAULT_DOOR_OPENED"
+    },
+    {
+      "sohValueType": "PERCENT",
+      "value": 74.70777844325596,
+      "status": "MARGINAL",
+      "monitorType": "ENV_EQUIPMENT_MOVED"
+    },
+    {
+      "sohValueType": "PERCENT",
+      "value": 50,
+      "status": "GOOD",
+      "monitorType": "MISSING"
+    },
+    {
+      "sohValueType": "PERCENT",
+      "value": 51.69832350093739,
+      "status": "GOOD",
+      "monitorType": "ENV_BACKUP_POWER_UNSTABLE"
+    },
+    {
+      "sohValueType": "DURATION",
+      "value": "PT2S",
+      "status": "GOOD",
+      "monitorType": "LAG"
+    },
+    {
+      "sohValueType": "DURATION",
+      "value": "PT3S",
+      "status": "GOOD",
+      "monitorType": "TIMELINESS"
+    },
+    {
+      "sohValueType": "PERCENT",
+      "value": 21.732590318582478,
+      "status": "GOOD",
+      "monitorType": "ENV_CLOCK_DIFFERENTIAL_IN_MICROSECONDS"
+    },
+    {
+      "sohValueType": "PERCENT",
+      "value": 56.754604072026495,
+      "status": "GOOD",
+      "monitorType": "ENV_DIGITIZER_CALIBRATION_LOOP_BACK"
+    },
+    {
+      "sohValueType": "PERCENT",
+      "value": 98.51411675301709,
+      "status": "BAD",
+      "monitorType": "ENV_AUTHENTICATION_SEAL_BROKEN"
+    },
+    {
+      "sohValueType": "PERCENT",
+      "value": 24.032503757529888,
+      "status": "GOOD",
+      "monitorType": "ENV_CLIPPED"
+    },
+    {
+      "sohValueType": "PERCENT",
+      "value": 1.2020108399435014,
+      "status": "GOOD",
+      "monitorType": "ENV_GPS_RECEIVER_OFF"
+    },
+    {
+      "sohValueType": "PERCENT",
+      "value": 40.168635077952395,
+      "status": "GOOD",
+      "monitorType": "ENV_DIGITIZING_EQUIPMENT_OPEN"
+    },
+    {
+      "sohValueType": "PERCENT",
+      "value": 58.40370215802335,
+      "status": "GOOD",
+      "monitorType": "ENV_ZEROED_DATA"
+    }
+  ],
+  "channelSohs": [
+    {
+      "channelName": "MOCK.MTO",
+      "channelSohStatus": {
+        "sohStatus": "GOOD",
+        "monitorsInRollup": []
+      },
+      "allSohMonitorValueAndStatuses": [
+        {
+          "sohValueType": "PERCENT",
+          "value": 45.81424969535958,
+          "status": "GOOD",
+          "monitorType": "ENV_DIGITIZING_EQUIPMENT_OPEN"
+        },
+        {
+          "sohValueType": "PERCENT",
+          "value": 21.76142831354256,
+          "status": "GOOD",
+          "monitorType": "ENV_CLOCK_DIFFERENTIAL_TOO_LARGE"
+        },
+        {
+          "sohValueType": "PERCENT",
+          "value": 35.45044269415884,
+          "status": "GOOD",
+          "monitorType": "ENV_CALIBRATION_UNDERWAY"
+        },
+        {
+          "sohValueType": "PERCENT",
+          "value": 39.1848373738703,
+          "status": "GOOD",
+          "monitorType": "ENV_GPS_RECEIVER_OFF"
+        },
+        {
+          "sohValueType": "PERCENT",
+          "value": 24.551883347410783,
+          "status": "GOOD",
+          "monitorType": "ENV_ZEROED_DATA"
+        },
+        {
+          "sohValueType": "PERCENT",
+          "value": 19.275844135066823,
+          "status": "GOOD",
+          "monitorType": "ENV_AUTHENTICATION_SEAL_BROKEN"
+        },
+        {
+          "sohValueType": "PERCENT",
+          "value": 20.530526209551706,
+          "status": "GOOD",
+          "monitorType": "ENV_GPS_RECEIVER_UNLOCKED"
+        },
+        {
+          "sohValueType": "DURATION",
+          "value": "PT1.222S",
+          "status": "GOOD",
+          "monitorType": "LAG"
+        },
+        {
+          "sohValueType": "DURATION",
+          "value": "PT2.222S",
+          "status": "GOOD",
+          "monitorType": "TIMELINESS"
+        },
+        {
+          "sohValueType": "PERCENT",
+          "value": 13.937206365120225,
+          "status": "GOOD",
+          "monitorType": "ENV_MAIN_POWER_FAILURE"
+        },
+        {
+          "sohValueType": "PERCENT",
+          "value": 0.32020927869321536,
+          "status": "GOOD",
+          "monitorType": "ENV_VAULT_DOOR_OPENED"
+        },
+        {
+          "sohValueType": "PERCENT",
+          "value": 66.29822026636438,
+          "status": "GOOD",
+          "monitorType": "ENV_EQUIPMENT_HOUSING_OPEN"
+        },
+        {
+          "sohValueType": "PERCENT",
+          "value": 45.17498833260283,
+          "status": "GOOD",
+          "monitorType": "ENV_DIGITIZER_ANALOG_INPUT_SHORTED"
+        },
+        {
+          "sohValueType": "PERCENT",
+          "value": 0.1578365936328061,
+          "status": "GOOD",
+          "monitorType": "ENV_DEAD_SENSOR_CHANNEL"
+        },
+        {
+          "sohValueType": "PERCENT",
+          "value": 18.670671021090868,
+          "status": "GOOD",
+          "monitorType": "ENV_BACKUP_POWER_UNSTABLE"
+        },
+        {
+          "sohValueType": "PERCENT",
+          "value": 38.82819490127616,
+          "status": "GOOD",
+          "monitorType": "ENV_EQUIPMENT_MOVED"
+        },
+        {
+          "sohValueType": "PERCENT",
+          "value": 32.12998430484403,
+          "status": "GOOD",
+          "monitorType": "ENV_CLIPPED"
+        },
+        {
+          "sohValueType": "PERCENT",
+          "value": 34.56845594615514,
+          "status": "GOOD",
+          "monitorType": "ENV_CLOCK_DIFFERENTIAL_IN_MICROSECONDS"
+        },
+        {
+          "sohValueType": "PERCENT",
+          "value": 19.512536226449807,
+          "status": "GOOD",
+          "monitorType": "MISSING"
+        },
+        {
+          "sohValueType": "PERCENT",
+          "value": 13.478605467637937,
+          "status": "GOOD",
+          "monitorType": "ENV_DIGITIZER_CALIBRATION_LOOP_BACK"
+        }
+      ]
+    }
+  ]
+}

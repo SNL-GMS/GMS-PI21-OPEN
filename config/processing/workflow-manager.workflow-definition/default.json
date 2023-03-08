@@ -1,0 +1,17 @@
+{
+    "name": "workflow-definition-default",
+    "constraints": [
+        {
+            "constraintType": "DEFAULT"
+        }
+    ],
+    "parameters": {
+        "name": "GMS",
+        "stageNames": [
+            "Auto Network",
+            "AL1",
+            "Auto Post-AL1",
+            "AL2"
+        ]
+    }
+}

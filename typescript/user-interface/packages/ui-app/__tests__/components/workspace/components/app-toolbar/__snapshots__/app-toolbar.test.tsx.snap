@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Toolbar matches snapshot with basic props 1`] = `
+Object {
+  "children": <DeprecatedToolbar
+    clearLayout={[Function]}
+    components={null}
+    getOpenDisplays={[Function]}
+    isAboutDialogOpen={false}
+    isSaveWorkspaceAsDialogOpen={false}
+    logo="test_logo"
+    logout={[Function]}
+    openDisplay={[Function]}
+    openLayoutName="default_layout_name"
+    openWorkspace={[Function]}
+    saveDialog={null}
+    setLayout={null}
+    setOpenLayoutName={[Function]}
+    showAboutDialog={[Function]}
+    showLogPopup={[Function]}
+    toggleSaveWorkspaceAsDialog={[Function]}
+    userName="test_name"
+    userProfile={
+      Object {
+        "audibleNotifications": Array [],
+        "currentTheme": "GMS Dark Theme",
+        "defaultAnalystLayoutName": "default_layout_name",
+        "defaultSohLayoutName": "default_soh_name",
+        "userId": "userId",
+        "workspaceLayouts": Array [
+          Object {
+            "layoutConfiguration": "asdf",
+            "name": "default_layout_name",
+            "supportedUserInterfaceModes": Array [
+              "IAN",
+            ],
+          },
+        ],
+      }
+    }
+    versionInfo={
+      Object {
+        "commitSHA": "string",
+        "versionNumber": "string",
+      }
+    }
+  />,
+  "store": Object {
+    "@@observable": [Function],
+    "dispatch": [Function],
+    "getState": [Function],
+    "replaceReducer": [Function],
+    "subscribe": [Function],
+  },
+}
+`;
+
+exports[`App Toolbar renders a component 1`] = `<div />`;

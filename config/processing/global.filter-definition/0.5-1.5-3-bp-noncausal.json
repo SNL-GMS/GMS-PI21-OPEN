@@ -1,0 +1,26 @@
+{
+    "name": "0.5-1.5-3-bp-noncausal",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "name",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "0.5 1.5 3 BP non-causal"
+            ]
+        }
+    ],
+    "parameters": {
+        "name": "0.5 1.5 3 BP non-causal",
+        "comments": "Butterworth IIR band-pass, 0.5-1.5 Hz, order 3, non-causal",
+		"filterDescription": {
+			"$ref=global.filter-description":[{ 
+				"criterion": "name",
+				"value": "0.5 1.5 3 BP non-causal Description"
+			}]
+		}
+    }
+}

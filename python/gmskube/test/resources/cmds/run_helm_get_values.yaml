@@ -1,0 +1,277 @@
+COMPUTED VALUES:
+COMPUTED VALUES: null
+acei-merge-processor:
+  imageName: gms-common/acei-merge-processor
+  replicas: 2
+  restartAfterReconfig: "true"
+baseDomain: cluster.test.com
+capability-soh-rollup-kafka-consumer:
+  imageName: gms-common/capability-soh-rollup-kafka-consumer
+  replicas: 1
+cd11-injector:
+  env:
+    CD11_INJECTOR_CONFIG_NAME: test
+    GMS_CONFIG_CD11_DATA_PROVIDER__CONSUMER_ID: '{{ .Release.Name }}'
+    GMS_CONFIG_CD11_DATA_PROVIDER__REPEATER_SERVERS: '{{ .Values.baseDomain }}:9094,{{ .Values.baseDomain }}:9095,{{ .Values.baseDomain }}:9096'
+    GMS_CONFIG_CONNMAN_ADDRESS: da-connman
+    GMS_CONFIG_CONNMAN_PORT: 8041
+  imageName: gms-common/cd11-data-provider
+  replicas: 1
+cd11-rsdf-processor:
+  imageName: gms-common/cd11-rsdf-processor
+  replicas: 1
+  restartAfterReconfig: "true"
+config-loader:
+  deploymentStrategy: Recreate
+  imageName: gms-common/config-loader
+  replicas: 1
+  storageSize: 100Mi
+cpuDefault: 2
+cpuMax: 4
+cpuMin: 100m
+cpuRequest: 100m
+da-connman:
+  connPort: 8041
+  deploymentStrategy: Recreate
+  env:
+    GMS_CONFIG_CD11_DATACONSUMER_BASEPORT: '{{ get (get .Values "da-dataman") "dataPortStart" }}'
+    GMS_CONFIG_CONNMAN__CONNECTION_MANAGER_WELL_KNOWN_PORT: '{{ get (get .Values "da-connman") "connPort" }}'
+    GMS_CONFIG_CONNMAN__DATA_MANAGER_IP_ADDRESS: da-dataman
+  imageName: gms-common/cd11-connman
+  replicas: 1
+  restartAfterReconfig: "true"
+da-dataman:
+  dataPortEnd: 8449
+  dataPortStart: 8100
+  deploymentStrategy: Recreate
+  env:
+    GMS_CONFIG_CD11_DATACONSUMER_BASEPORT: '{{ get (get .Values "da-dataman") "dataPortStart" }}'
+  imageName: gms-common/cd11-dataman
+  replicas: 1
+  restartAfterReconfig: "true"
+  storageSize: 10Gi
+elasticsearch:
+  image: docker-registry.test.com/gms-common/logging-elasticsearch
+  imageTag: test
+  ingress:
+    hosts:
+    - elasticsearch.cluster.test.com
+    tls:
+    - hosts:
+      - elasticsearch.cluster.test.com
+      secretName: ingress-default-cert
+env: {}
+etcd:
+  imageName: gms-common/etcd
+  replicas: 1
+fluent-bit:
+  image:
+    repository: docker-registry.test.com/gms-common/logging-fluent-bit
+    tag: test
+  imageRegistry: docker-registry.test.com
+  testFramework:
+    image:
+      repository: docker-registry.test.com/gms-common/ubi
+      tag: test
+frameworks-configuration-service:
+  imageName: gms-common/frameworks-configuration-service
+  replicas: 1
+frameworks-osd-rsdf-kafka-consumer:
+  imageName: gms-common/frameworks-osd-rsdf-kafka-consumer
+  replicas: 1
+frameworks-osd-service:
+  imageName: gms-common/frameworks-osd-service
+  replicas: 1
+frameworks-osd-station-soh-kafka-consumer:
+  imageName: gms-common/frameworks-osd-station-soh-kafka-consumer
+  replicas: 1
+frameworks-osd-systemmessage-kafka-consumer:
+  imageName: gms-common/frameworks-osd-systemmessage-kafka-consumer
+  replicas: 1
+frameworks-osd-ttl-worker:
+  cronSchedule: 0 * * * *
+  env:
+    ACEI_TTL_IN_HOURS: "720"
+    DATA_SOURCE_HOST: postgresql-gms
+    RSDF_TTL_IN_HOURS: "720"
+    SSOH_TTL_IN_HOURS: "720"
+  imageName: gms-common/frameworks-osd-ttl-worker
+  replicas: 1
+global:
+  baseDomain: cluster.test.com
+  imageRegistry: docker-registry.test.com
+  imageTag: test
+globalConstrainCpu: false
+globalConstrainMemory: false
+grafana:
+  image:
+    repository: docker-registry.test.com/gms-common/monitoring-grafana
+    tag: test
+  initChownData:
+    image:
+      repository: docker-registry.test.com/gms-common/ubi
+      tag: test
+imagePullPolicy: Always
+imageRegistry: docker-registry.test.com
+imageTag: test
+injector: true
+interactive-analysis-api-gateway:
+  env:
+    APP_NAME: '{{ .appName }}'
+    GMS_CONFIG_SQL_DB_NAME: gms
+    GMS_CONFIG_SQL_HOST: postgresql-gms
+    GMS_CONFIG_SQL_PORT: "5432"
+    GMS_UI_MODE: soh
+    NODE_CONFIG_ENV: deployed
+    NODE_ENV: production
+  imageName: gms-common/interactive-analysis-api-gateway
+  replicas: 1
+  restartAfterReconfig: "true"
+  startupDelay: 600
+interactive-analysis-ui:
+  env:
+    GMS_UI_MODE: soh
+    NODE_ENV: development
+    URL_PATH: '{{ .appName }}'
+  imageName: gms-common/interactive-analysis-ui
+  replicas: 1
+  restartAfterReconfig: "true"
+istio: false
+istioIngress: false
+kafka:
+  autoCreateTopicsEnable: true
+  defaultReplicationFactor: 3
+  fullnameOverride: kafka
+  image:
+    pullPolicy: Always
+    registry: docker-registry.test.com
+    repository: gms-common/bitnami-kafka
+    tag: test
+  logRetentionHours: 6
+  metrics:
+    jmx:
+      enabled: false
+      image:
+        registry: docker-registry.test.com
+        repository: gms-common/bitnami-jmx-exporter
+        tag: test
+    kafka:
+      enabled: false
+      image:
+        registry: docker-registry.test.com
+        repository: gms-common/bitnami-kafka-exporter
+        tag: test
+  numPartitions: 6
+  offsetsTopicReplicationFactor: 3
+  persistence:
+    accessModes:
+    - ReadWriteOnce
+    annotations: {}
+    enabled: true
+    existingClaim: ""
+    mountPath: /bitnami/kafka
+    selector: {}
+    size: 8Gi
+    storageClass: local-path
+  replicaCount: 3
+  transactionStateLogMinIsr: 2
+  transactionStateLogReplicationFactor: 3
+  zookeeper:
+    fullnameOverride: zookeeper
+    image:
+      pullPolicy: Always
+      registry: docker-registry.test.com
+      repository: gms-common/bitnami-zookeeper
+      tag: test
+    listenOnAllIPs: true
+    persistence:
+      accessModes:
+      - ReadWriteOnce
+      annotations: {}
+      dataLogDir:
+        existingClaim: ""
+        selector: {}
+        size: 8Gi
+      enabled: true
+      existingClaim: ""
+      selector: {}
+      size: 8Gi
+      storageClass: local-path
+    replicaCount: 3
+kibana:
+  image: docker-registry.test.com/gms-common/logging-kibana
+  imageTag: test
+ldap-proxy:
+  baseDomain: cluster.test.com
+  imageName: gms-common/ldap_proxy
+  imageRegistry: docker-registry.test.com
+  imageTag: test
+liveData: false
+memoryDefault: 1Gi
+memoryRequest: 256Mi
+postgresql-exporter:
+  env:
+    DATA_SOURCE_URI: postgresql-gms:5432/gms?sslmode=disable
+  imageName: gms-common/postgres-exporter
+  replicas: 1
+postgresql-gms:
+  deploymentStrategy: Recreate
+  env:
+    POSTGRES_DB: gms
+  imageName: gms-common/postgres
+  node: node1
+  replicas: 1
+  storageSize: 10Gi
+prometheus:
+  deploymentStrategy: Recreate
+  env:
+    G_ADMIN_PASS: someString
+    G_HOST: grafana.grafana
+    G_PORT: "80"
+    G_SLEEP: 10m
+    G_WAIT: "360"
+    PROM_CONFIG_FILE: /etc/prometheus/prometheus.yml
+    PROM_LOG_LEVEL: info
+    PROM_NAME: prometheus.{{ .Release.Name }}
+    PROM_URL: prometheus.{{ .Release.Name }}
+  extraArgs:
+    storage.tsdb.retention.time: 30d
+  imageName: gms-common/instance-prometheus
+  replicas: 1
+  storageSize: 10Gi
+smds-service:
+  env:
+    GMS_CONFIG_LOG_LEVEL: INFO
+  imageName: gms-common/smds-application
+  replicas: 1
+  restartAfterReconfig: "true"
+soh-control:
+  cpuLimit: 2
+  cpuRequest: 1
+  env:
+    GMS_CONFIG_LOG_LEVEL: INFO
+  imageName: gms-common/soh-application
+  replicas: 1
+  restartAfterReconfig: "true"
+soh-quieted-list-kafka-consumer:
+  imageName: gms-common/soh-quieted-list-kafka-consumer
+  replicas: 1
+soh-status-change-kafka-consumer:
+  imageName: gms-common/soh-status-change-kafka-consumer
+  replicas: 1
+ssam-control:
+  env:
+    GMS_CONFIG_LOG_LEVEL: INFO
+  imageName: gms-common/ssam-application
+  replicas: 1
+  restartAfterReconfig: "true"
+  startupDelay: 60
+storageClassName: local-path
+ui-processing-configuration-service:
+  imageName: gms-common/ui-processing-configuration-service
+  replicas: 1
+  restartAfterReconfig: "true"
+user: gitlab-runner
+user-manager-service:
+  imageName: gms-common/user-manager-application
+  replicas: 1

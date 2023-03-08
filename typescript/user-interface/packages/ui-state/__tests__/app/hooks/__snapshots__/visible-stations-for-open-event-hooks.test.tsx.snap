@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Update station visibility for currently open event calls useUpdateVisibleStationsForCloseEvent 1`] = `[Function]`;
+
+exports[`Update station visibility for currently open event calls useUpdateVisibleStationsForOpenEvent to update station visibility for open event without first closing previously opened event 1`] = `[Function]`;
+
+exports[`Update station visibility for currently open event calls useUpdateVisibleStationsForOpenEvent to update visibility for a station added due to association with the current open event 1`] = `[Function]`;
+
+exports[`Update station visibility for currently open event calls useUpdateVisibleStationsForOpenEvent to update visibility for an existing station 1`] = `[Function]`;

@@ -1,0 +1,23 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation project(':bridged-data-source-simulator-api')
+    implementation project(':bridged-data-source-simulator-jpa')
+
+    implementation 'gms:bridge-utilities:LATEST'
+    implementation 'gms:station-definition-repository:LATEST'
+    implementation 'gms:workflow-dao:LATEST'
+    implementation 'gms:workflow-repository:LATEST'
+    implementation libs.org.apache.commons.commons.lang3
+    implementation libs.com.google.guava.guava
+
+    implementation libs.org.hibernate.hibernate.entitymanager
+
+    implementation libs.io.projectreactor.reactor.core
+
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    testImplementation libs.io.projectreactor.reactor.test
+    testImplementation 'gms:station-definition-testfixtures:LATEST'
+}

@@ -1,0 +1,21 @@
+plugins {
+    id 'application'
+    alias(libs.plugins.com.palantir.docker)
+}
+
+application {
+    mainClass = 'gms.shared.frameworks.osd.systemmessage.consumer.SystemMessageStorageConsumer'
+}
+
+dependencies {
+    // Gradle sub-project dependencies.
+    implementation project(':kafka-consumer-frameworks')
+    implementation project(':flux-frameworks')
+    implementation project(':frameworks-service-generator')
+    implementation project(':frameworks-osd-commonobjects')
+    implementation project(':frameworks-osd-api')
+    implementation project(':frameworks-osd-repository')
+
+    runtimeOnly libs.ch.qos.logback.logback.classic
+    runtimeOnly libs.net.logstash.logback.logstash.logback.encoder
+}

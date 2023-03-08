@@ -1,0 +1,27 @@
+{
+    "name": "default-local-distance-filter",
+    "constraints": [
+        {
+            "constraintType": "NUMERIC_RANGE",
+            "criterion": "distance",
+            "operator": {
+                "type": "IN",
+                "negated": false
+            },
+            "value": {
+                "min": 0.0,
+                "max": 3.0
+            }
+        }
+    ],
+    "parameters": {
+        "filterDefinitions": [
+            {
+                "$ref=global.filter-definition": [{
+                    "criterion": "name",
+                    "value": "HAM FIR BP 2.00-5.00 Hz"
+                }]
+            }
+        ]
+    }
+}

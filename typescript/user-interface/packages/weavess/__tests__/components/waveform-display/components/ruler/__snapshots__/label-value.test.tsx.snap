@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weavess LabelValue Renderer renders 1`] = `
+<div>
+  <div
+    class="weavess-label-value-container"
+  >
+    <div
+      class="weavess-label-value__label"
+      data-cy="test-label"
+    >
+      test: 
+    </div>
+    <div
+      class="weavess-label-value__value"
+      data-cy="test-value"
+      style="color: rgb(0, 0, 0);"
+      title="test-tip"
+    >
+      10
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Weavess LabelValue Renderer renders with label with 0 length 1`] = `
+<div>
+  <div
+    class="weavess-label-value-container"
+  >
+    <div
+      class="weavess-label-value__label"
+      data-cy="test-label"
+    >
+      test: 
+    </div>
+    <div
+      class="weavess-label-value__value"
+      data-cy="test-value"
+      title="test-tip"
+    />
+  </div>
+</div>
+`;

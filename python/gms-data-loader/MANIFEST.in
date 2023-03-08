@@ -1,0 +1,3 @@
+include gmsdataloader/stationprocessing/resources/config/config.ini
+include gmsdataloader/userpreferences/resources/config/config.ini
+include gmsdataloader/stationreference/resources/config/config.ini

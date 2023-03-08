@@ -1,0 +1,15 @@
+plugins {
+    id('java-library')
+}
+dependencies {
+    api project(':frameworks-shared-objects')
+
+    api libs.javax.ws.rs.javax.ws.rs.api
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+    implementation libs.org.apache.commons.commons.lang3
+    implementation libs.org.apache.commons.commons.math3
+    implementation libs.org.owasp.encoder.encoder
+
+    implementation libs.io.projectreactor.reactor.core
+}

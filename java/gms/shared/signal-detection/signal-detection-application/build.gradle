@@ -1,0 +1,52 @@
+plugins {
+    id 'java'
+    alias(libs.plugins.org.springframework.boot)
+    alias(libs.plugins.com.palantir.docker)
+}
+
+dependencies {
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+
+    // Google AutoValue
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+    implementation project(':frameworks-service-generator')
+    implementation project(':frameworks-configuration-repository')
+    implementation project(':frameworks-configuration-commonobjects')
+    implementation project(':frameworks-control')
+    implementation project(':signal-detection-api')
+    implementation project(':signal-detection-accessor')
+    implementation project(':signal-detection-database-connector')
+    implementation project(':spring-framework-utilities')
+    implementation project(':signal-detection-database-connector')
+    implementation project(':spring-persistence-oracle')
+
+    implementation project(':waveform-accessor')
+    implementation project(':waveform-bridge-repository')
+
+    implementation project(':bridge-utilities')
+
+    implementation project(':station-definition-api')
+    implementation project(':station-definition-repository')
+    implementation project(':station-definition-accessor')
+    implementation project(':station-definition-converter')
+    implementation project(':caching-utils')
+
+    //db and oracle
+    implementation libs.org.springframework.boot.spring.boot.starter.data.jpa
+    implementation libs.com.oracle.ojdbc.ojdbc8
+    implementation libs.org.hibernate.hibernate.c3p0
+
+    // unit testing dependencies
+    testImplementation libs.org.springframework.boot.spring.boot.starter.test
+    testImplementation libs.org.junit.jupiter.junit.jupiter.api
+    testImplementation project(':spring-framework-utilities').sourceSets.test.output
+
+    testImplementation 'org.mockito:mockito-core'
+    testImplementation 'org.mockito:mockito-junit-jupiter'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.msgpack:msgpack-core:0.9.0'
+    implementation 'org.msgpack:jackson-dataformat-msgpack:0.9.0'
+    implementation 'org.springdoc:springdoc-openapi-ui:+'
+}

@@ -1,0 +1,835 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signal Detection Query fetchSignalDetection fetchSignalDetection returns the expected result with valid args 1`] = `
+Object {
+  "signalDetections": Array [
+    Object {
+      "id": "012de1b9-8ae3-3fd4-800d-58665c3152cc",
+      "monitoringOrganization": "GMS",
+      "signalDetectionHypotheses": Array [
+        Object {
+          "featureMeasurements": Array [
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "LONG_PERIOD_FIRST_MOTION",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "confidence": null,
+                "referenceTime": 1636503404,
+                "value": "INDETERMINATE",
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "ARRIVAL_TIME",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "arrivalTime": Object {
+                  "standardDeviation": 1.162,
+                  "value": 1636503404,
+                },
+                "travelTime": null,
+              },
+              "snr": Object {
+                "standardDeviation": null,
+                "units": "DECIBELS",
+                "value": 8.9939442,
+              },
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "PHASE",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "confidence": 50,
+                "referenceTime": 1636503404,
+                "value": "P",
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "SHORT_PERIOD_FIRST_MOTION",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "confidence": null,
+                "referenceTime": 1636503404,
+                "value": "INDETERMINATE",
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "RECEIVER_TO_SOURCE_AZIMUTH",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "measuredValue": Object {
+                  "standardDeviation": 2.2089042,
+                  "units": "DEGREES",
+                  "value": 90.142121,
+                },
+                "referenceTime": null,
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "EMERGENCE_ANGLE",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "measuredValue": Object {
+                  "standardDeviation": null,
+                  "units": "DEGREES",
+                  "value": -1,
+                },
+                "referenceTime": null,
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "SLOWNESS",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "measuredValue": Object {
+                  "standardDeviation": 0.27,
+                  "units": "SECONDS_PER_DEGREE",
+                  "value": 7.1219535,
+                },
+                "referenceTime": null,
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "RECTILINEARITY",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "measuredValue": Object {
+                  "standardDeviation": null,
+                  "units": "UNITLESS",
+                  "value": -1,
+                },
+                "referenceTime": null,
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "AMPLITUDE_A5_OVER_2",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "amplitude": Object {
+                  "standardDeviation": 0.5,
+                  "units": "MAGNITUDE",
+                  "value": 5,
+                },
+                "period": 0.25,
+                "startTime": 1636503404,
+              },
+              "snr": Object {
+                "standardDeviation": null,
+                "units": "DECIBELS",
+                "value": 8.9939442,
+              },
+            },
+          ],
+          "id": Object {
+            "id": "20cc9505-efe3-3068-b7d5-59196f37992c",
+            "signalDetectionId": "012de1b9-8ae3-3fd4-800d-58665c3152cc",
+          },
+          "monitoringOrganization": "GMS",
+          "parentSignalDetectionHypothesis": null,
+          "rejected": false,
+        },
+      ],
+      "station": Object {
+        "effectiveAt": null,
+        "name": "ASAR",
+      },
+    },
+    Object {
+      "id": "012de1b9-8ae3-3fd4-800d-58123c3152cc",
+      "monitoringOrganization": "GMS",
+      "signalDetectionHypotheses": Array [
+        Object {
+          "featureMeasurements": Array [
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "LONG_PERIOD_FIRST_MOTION",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "confidence": null,
+                "referenceTime": 1636503404,
+                "value": "INDETERMINATE",
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "ARRIVAL_TIME",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "arrivalTime": Object {
+                  "standardDeviation": null,
+                  "value": 1636503420,
+                },
+                "travelTime": null,
+              },
+              "snr": Object {
+                "standardDeviation": null,
+                "units": "DECIBELS",
+                "value": 8.9939442,
+              },
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "PHASE",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "confidence": 50,
+                "referenceTime": 1636503404,
+                "value": "P",
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "SHORT_PERIOD_FIRST_MOTION",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "confidence": null,
+                "referenceTime": 1636503404,
+                "value": "INDETERMINATE",
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "RECEIVER_TO_SOURCE_AZIMUTH",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "measuredValue": Object {
+                  "standardDeviation": 2.2089042,
+                  "units": "DEGREES",
+                  "value": 90.142121,
+                },
+                "referenceTime": null,
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "EMERGENCE_ANGLE",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "measuredValue": Object {
+                  "standardDeviation": null,
+                  "units": "DEGREES",
+                  "value": -1,
+                },
+                "referenceTime": null,
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "SLOWNESS",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "measuredValue": Object {
+                  "standardDeviation": 0.27,
+                  "units": "SECONDS_PER_DEGREE",
+                  "value": 7.1219535,
+                },
+                "referenceTime": null,
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "RECTILINEARITY",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "measuredValue": Object {
+                  "standardDeviation": null,
+                  "units": "UNITLESS",
+                  "value": -1,
+                },
+                "referenceTime": null,
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "AMPLITUDE_A5_OVER_2",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.BHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "amplitude": Object {
+                  "standardDeviation": 0.5,
+                  "units": "MAGNITUDE",
+                  "value": 5,
+                },
+                "period": 0.75,
+                "startTime": 1636503422,
+              },
+              "snr": Object {
+                "standardDeviation": null,
+                "units": "DECIBELS",
+                "value": 8.9939442,
+              },
+            },
+          ],
+          "id": Object {
+            "id": "20cc9505-efe3-3068-b7d5-59196f37992d",
+            "signalDetectionId": "012de1b9-8ae3-3fd4-800d-58123c3152cc",
+          },
+          "monitoringOrganization": "GMS",
+          "parentSignalDetectionHypothesis": null,
+          "rejected": false,
+        },
+      ],
+      "station": Object {
+        "effectiveAt": null,
+        "name": "ASAR",
+      },
+    },
+    Object {
+      "id": "012de1b9-8ae3-3fd4-800d-58165c3152cc",
+      "monitoringOrganization": "GMS",
+      "signalDetectionHypotheses": Array [
+        Object {
+          "featureMeasurements": Array [
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "LONG_PERIOD_FIRST_MOTION",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "confidence": null,
+                "referenceTime": 1636503404,
+                "value": "INDETERMINATE",
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "ARRIVAL_TIME",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "arrivalTime": null,
+                "travelTime": null,
+              },
+              "snr": Object {
+                "standardDeviation": null,
+                "units": "DECIBELS",
+                "value": 8.9939442,
+              },
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "PHASE",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "confidence": 50,
+                "referenceTime": 1636503404,
+                "value": "P",
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "SHORT_PERIOD_FIRST_MOTION",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "confidence": null,
+                "referenceTime": 1636503404,
+                "value": "INDETERMINATE",
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "RECEIVER_TO_SOURCE_AZIMUTH",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "measuredValue": Object {
+                  "standardDeviation": 2.2089042,
+                  "units": "DEGREES",
+                  "value": 90.142121,
+                },
+                "referenceTime": null,
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "EMERGENCE_ANGLE",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "measuredValue": Object {
+                  "standardDeviation": null,
+                  "units": "DEGREES",
+                  "value": -1,
+                },
+                "referenceTime": null,
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "SLOWNESS",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "measuredValue": Object {
+                  "standardDeviation": 0.27,
+                  "units": "SECONDS_PER_DEGREE",
+                  "value": 7.1219535,
+                },
+                "referenceTime": null,
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "RECTILINEARITY",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "measuredValue": Object {
+                  "standardDeviation": null,
+                  "units": "UNITLESS",
+                  "value": -1,
+                },
+                "referenceTime": null,
+              },
+              "snr": null,
+            },
+            Object {
+              "channel": Object {
+                "effectiveAt": 1636503404,
+                "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+              },
+              "featureMeasurementType": "AMPLITUDE_A5_OVER_2",
+              "measuredChannelSegment": Object {
+                "id": Object {
+                  "channel": Object {
+                    "effectiveAt": 1636503404,
+                    "name": "ASAR.beam.BHN/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+                  },
+                  "creationTime": 1636503404,
+                  "endTime": 1636503704,
+                  "startTime": 1636503404,
+                },
+              },
+              "measurementValue": Object {
+                "amplitude": Object {
+                  "standardDeviation": 0.5,
+                  "units": "MAGNITUDE",
+                  "value": 5,
+                },
+                "period": 1,
+                "startTime": 1636503404,
+              },
+              "snr": Object {
+                "standardDeviation": null,
+                "units": "DECIBELS",
+                "value": 8.9939442,
+              },
+            },
+          ],
+          "id": Object {
+            "id": "20cc9505-efe3-3068-b7d5-59196f37992e",
+            "signalDetectionId": "012de1b9-8ae3-3fd4-800d-58165c3152cc",
+          },
+          "monitoringOrganization": "GMS",
+          "parentSignalDetectionHypothesis": null,
+          "rejected": false,
+        },
+      ],
+      "station": Object {
+        "effectiveAt": null,
+        "name": "ASAR",
+      },
+    },
+  ],
+  "uiChannelSegments": Array [
+    Object {
+      "channelSegment": Object {
+        "channelName": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+        "channelSegmentBoundaries": undefined,
+        "dataSegments": Array [
+          Object {
+            "color": "tomato",
+            "data": Object {
+              "domainTimeRange": Object {
+                "endTimeSecs": 1606818240,
+                "startTimeSecs": 1606814640,
+              },
+              "endTimeSecs": 1638298200,
+              "id": "{\\"domain\\":{\\"startTimeSecs\\":1606814640,\\"endTimeSecs\\":1606818240},\\"id\\":{\\"channel\\":{\\"name\\":\\"ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4\\",\\"effectiveAt\\":1636503404},\\"startTime\\":1636503404,\\"endTime\\":1636503704,\\"creationTime\\":1636503404},\\"type\\":\\"WAVEFORM\\",\\"waveform\\":{\\"type\\":\\"WAVEFORM\\",\\"startTime\\":1638297900,\\"endTime\\":1638298200,\\"sampleCount\\":6000,\\"sampleRateHz\\":20}}",
+              "sampleRate": 20,
+              "startTimeSecs": 1638297900,
+              "values": undefined,
+            },
+            "displayType": Array [
+              "LINE",
+            ],
+            "pointSize": 1,
+          },
+        ],
+        "description": "unfiltered",
+        "descriptionLabelColor": "bisque",
+        "isSelected": false,
+        "wfFilterId": "unfiltered",
+      },
+      "channelSegmentDescriptor": Object {
+        "channel": Object {
+          "effectiveAt": 1636503404,
+          "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+        },
+        "creationTime": 1636503404,
+        "endTime": 1636503704,
+        "startTime": 1636503404,
+      },
+    },
+  ],
+}
+`;

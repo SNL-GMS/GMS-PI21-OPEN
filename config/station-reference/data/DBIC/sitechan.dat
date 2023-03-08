@@ -1,0 +1,17 @@
+DBIC   be        1995100        8  2002171 n       0.0000   90.0   90.0 broadband_east_54000                               20020711 12:00:00
+DBIC   bn        1995100       29  2002171 n       0.0000    0.0   90.0 broadband_north_54000                              20020711 12:00:00
+DBIC   bz        1995100       50  2002171 n       0.0000   -1.0    0.0 broadband_vertical_54000                           20020711 12:00:00
+DBIC   le        1995100      101  2002171 n       0.0000   90.0   90.0 long_period_east_54000                             20020711 12:00:00
+DBIC   ln        1995100      147  2002171 n       0.0000    0.0   90.0 long_period_north_54000                            20020711 12:00:00
+DBIC   lz        1995100      193  2002171 n       0.0000   -1.0    0.0 long_period_vertical_54000                         20020711 12:00:00
+DBIC   sz        1995100      393  2002171 n       0.0000   -1.0    0.0 short_period_vertical_GS21                         20020711 12:00:00
+DBIC01 SHZ       2002174     1632  2002246 n       0.0299   -1.0    0.0 short_period_vertical_GS21                         20020711 12:00:00
+DBIC1  SHZ       2002246     1699  2286324 n       0.0299   -1.0    0.0 short_period_vertical_GS21                         20040629 12:00:00
+DBIC31 BHE       2002175     1631  2002246 n       0.0939   90.0   90.0 broadband_east_KS54000                             20020711 12:00:00
+DBIC31 BHN       2002175     1630  2002246 n       0.0939    0.0   90.0 broadband_north_KS54000                            20020711 12:00:00
+DBIC31 BHZ       2002175     1629  2002246 n       0.0939   -1.0    0.0 broadband_vertical_KS54000                         20020711 12:00:00
+DBICB  BHE       2002246     1698  2015182 n       0.0939  105.0   90.0 broadband_east_KS54000                             20150813 12:00:00
+DBICB  BHE       2015182     1698  2286324 n       0.0939   90.0   90.0 broadband_east_KS54000                             20150813 12:00:00
+DBICB  BHN       2002246     1697  2015182 n       0.0939   15.0   90.0 broadband_north_KS54000                            20150813 12:00:00
+DBICB  BHN       2015182     1697  2286324 n       0.0939    0.0   90.0 broadband_north_KS54000                            20150813 12:00:00
+DBICB  BHZ       2002246     1696  2286324 n       0.0939   -1.0    0.0 broadband_vertical_KS54000                         20040629 12:00:00

@@ -1,0 +1,33 @@
+apply plugin: "java-library"
+
+dependencies {
+
+    implementation project(':frameworks-osd-api')
+    implementation project(':frameworks-control')
+    implementation project(':frameworks-osd-commonobjects')
+    implementation project(':frameworks-osd-repository')
+    implementation project(':frameworks-utilities')
+    implementation project(':soh-control-api')
+
+    //Direct log4j dependency for legacy logger to set custom timing logs
+    implementation libs.org.apache.logging.log4j.log4j.core
+
+    //logback and logstash dependencies to support usage of structured arguments
+    implementation libs.ch.qos.logback.logback.classic
+    implementation libs.net.logstash.logback.logstash.logback.encoder
+
+    // Google AutoValue
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    // Kafka
+    implementation libs.org.apache.kafka.kafka.clients
+
+    implementation libs.io.projectreactor.reactor.core
+    implementation libs.io.projectreactor.kafka.reactor.kafka
+    implementation libs.org.apache.commons.commons.math3
+
+    testImplementation libs.io.projectreactor.reactor.test
+    testImplementation project(':frameworks-osd-testfixtures')
+
+}

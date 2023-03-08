@@ -1,0 +1,264 @@
+#!/bin/bash
+
+#
+# This script builds the GMS open source release after the
+# prerequisites have been installed.
+#
+#
+
+set -x
+
+if [ -z "${REPO_PATH:-}" ]; then
+    REPO_PATH="$(cd "$( dirname "${BASH_SOURCE[0]}" )/.." > /dev/null && pwd)"
+fi
+
+if [ -z "${CI_DOCKER_REGISTRY:-}" ]; then
+    export CI_DOCKER_REGISTRY=local
+fi
+
+if [ -z "${CI_THIRD_PARTY_DOCKER_REGISTRY:-}" ]; then
+    export CI_THIRD_PARTY_DOCKER_REGISTRY=docker.io
+fi
+
+if [ -z "${CI_PROJECT_NAME:-}" ]; then
+    export CI_PROJECT_NAME=gms-common
+fi
+
+# check if there is a .git directory for the branch/tag name
+if [ ! -d "${REPO_PATH}/.git" ] && [ -z "${CI_COMMIT_REF_NAME:-}" ] && [ -z "${CI_COMMIT_SHA:-}" ]; then
+    if [ -z "${DOCKER_IMAGE_TAG:-}" ]; then
+        set +x
+        echo ""
+        echo "Git repo not present, unable to automatically determine the branch/tag name."
+        echo "Set DOCKER_IMAGE_TAG to the branch/tag being built, for example:"
+        echo "   export DOCKER_IMAGE_TAG=my-tag-name"
+        exit 1
+    else
+        export CI_COMMIT_REF_NAME=${DOCKER_IMAGE_TAG}
+        export CI_COMMIT_SHA=${DOCKER_IMAGE_TAG}
+    fi
+fi
+
+# run replace artifactory script if it exists and is executable
+if [ -x "${REPO_PATH}/ci/gms-replace-artifactory" ]; then
+    ${REPO_PATH}/ci/gms-replace-artifactory
+fi
+
+gradle_proxy_args=()
+docker_proxy_args=()
+if [ -n "${CI_USE_PROXY:-}" ]; then
+    # build gradle proxy args because it doesn't use system environment variables
+    pattern='^(([[:alnum:]]+)://)?(([[:alnum:]]+)@)?([^:^@]+)(:([[:digit:]]+))?$'
+    if [[ "${http_proxy}" =~ $pattern ]]; then
+        gradle_proxy_args+=("-Dhttp.proxyHost=${BASH_REMATCH[5]}")
+        gradle_proxy_args+=("-Dhttp.proxyPort=${BASH_REMATCH[7]}")
+    fi
+
+    if [[ "${https_proxy}" =~ $pattern ]]; then
+        gradle_proxy_args+=("-Dhttps.proxyHost=${BASH_REMATCH[5]}")
+        gradle_proxy_args+=("-Dhttps.proxyPort=${BASH_REMATCH[7]}")
+    fi
+    gradle_proxy_args+=("-Dhttp.nonProxyHosts=${no_proxy//,/|}")
+    gradle_proxy_args+=("-Dhttps.nonProxyHosts=${no_proxy//,/|}")
+
+    # build docker run args
+    docker_proxy_args+=("-e" "CI_USE_PROXY" "-e" "http_proxy" "-e" "https_proxy" "-e" "no_proxy")
+fi
+
+source ${REPO_PATH}/.bash_env
+source ${REPO_PATH}/ci/ci.env
+
+# export these values so subshells can see them
+export DOCKER_IMAGE_TAG
+export CI_BUILD_DATETIME
+export CI_COMMIT_REF_NAME
+export CI_COMMIT_REF_SLUG
+export CI_COMMIT_SHA
+
+# function to build GMS inside the docker builder container
+build_gms_inside() {
+    docker run --rm -it \
+    -v ${REPO_PATH}:/gms-common \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -e CI_DOCKER_REGISTRY \
+    -e CI_REMOTE_REPOSITORY_URL \
+    -e CI_THIRD_PARTY_DOCKER_REGISTRY \
+    -e CI_COMMIT_REF_NAME \
+    -e CI_COMMIT_SHA \
+    -e CI_DEBUG \
+    -e DOCKER_IMAGE_TAG \
+    -e UID=$(id -u) \
+    -e GID=$(id -g) \
+    ${docker_proxy_args[@]} \
+    ${CI_DOCKER_REGISTRY}/${CI_PROJECT_NAME}/builder:${DOCKER_IMAGE_TAG} /gms-common/ci/build-gms $1
+}
+
+# function to chown all the files after building
+chown_build_files() {
+    # chown all build files as the external user
+    chown -R $UID:$GID ${REPO_PATH}
+}
+
+build_docker() {
+   cd ${REPO_PATH}/docker
+   time make all
+}
+
+build_python() {
+   build_gms_inside "python_inside"
+}
+
+build_python_inside() {
+    # export CI=1 to make the station-ref-converter work properly inside a container
+    export CI=1
+    cd ${REPO_PATH}/python
+
+    {
+        time make all
+    }; chown_build_files
+}
+
+build_java() {
+    build_gms_inside "java_inside"
+}
+
+build_java_inside() {
+    cd ${REPO_PATH}/java
+
+    {
+        # compile
+        time gradle -p gms -Dorg.gradle.jvmargs=-Xmx8g ${gradle_proxy_args[@]} compileJava alljavadoc resolve -x test && \
+        time gradle -p test-tools -Dorg.gradle.jvmargs=-Xmx8g ${gradle_proxy_args[@]} compileJava -x test && \
+        time gradle -p tools -Dorg.gradle.jvmargs=-Xmx8g ${gradle_proxy_args[@]} compileJava -x test && \
+        # java docker images - limit to 4 workers to prevent overwhelming the docker daemon
+        time gradle -p gms -Dorg.gradle.jvmargs=-Xmx8g ${gradle_proxy_args[@]} --max-workers 4 docker dockerTagCiCommitRefSlug dockerTagCiCommitSha -x test && \
+        time gradle -p test-tools -Dorg.gradle.jvmargs=-Xmx8g ${gradle_proxy_args[@]} --max-workers 4 docker dockerTagCiCommitRefSlug dockerTagCiCommitSha -x test && \
+        time gradle -p tools -Dorg.gradle.jvmargs=-Xmx8g ${gradle_proxy_args[@]} --max-workers 4 docker dockerTagCiCommitRefSlug dockerTagCiCommitSha -x test && \
+        # Prepare to build swagger image
+        mkdir -p ${REPO_PATH}/java/spec && \
+        cp $(find . -regex '.*build/swagger/.*\.json') spec && \
+        # Create the javadoc container image
+        cd ${REPO_PATH}/java/javadoc_server && \
+        time make && \
+        # Create the swagger container image
+        cd ${REPO_PATH}/java/openapi && \
+        time make
+    }; chown_build_files
+}
+
+build_cpp() {
+    build_gms_inside "cpp_inside"
+}
+
+build_cpp_inside() {
+    source /opt/rh/gcc-toolset-10/enable
+    mkdir -p ${REPO_PATH}/cpp/cmake-build
+    cd ${REPO_PATH}/cpp/cmake-build
+
+    {
+        time cmake .. && \
+        time make -j4
+    }; chown_build_files
+}
+
+build_wasm() {
+    build_gms_inside "wasm_inside"
+}
+
+build_wasm_inside() {
+    source /${EMSDK}/emsdk_env.sh
+    cd ${REPO_PATH}/cpp
+
+    {
+        time ./build-wasm.sh
+    }; chown_build_files
+}
+
+build_typescript() {
+    build_gms_inside "typescript_inside"
+}
+
+build_typescript_inside() {
+    cd ${REPO_PATH}/typescript/user-interface
+
+    # set the electron download proxy
+    if [ -n "${CI_USE_PROXY:-}" ]; then
+        export ELECTRON_GET_USE_PROXY=1
+    fi
+
+    export GMS_DISABLE_REDUX_IMMUTABLE_CHECK="true"
+    export GMS_DISABLE_REDUX_SERIALIZABLE_CHECK="true"
+    export DISABLE_TYPESCRIPT_CHECKER="true"
+
+    {
+        # build
+        time yarn install --network-timeout=30000 && \
+        time yarn build && \
+        # bundle - note we use build:webpack instead of bundle to build both ian and soh
+        time GMS_UI_MODE=ian GMS_SW=true yarn lerna run build:webpack --scope @gms/ui-app --stream && \
+        time GMS_UI_MODE=soh yarn lerna run build:webpack --scope @gms/ui-app --stream && \
+        time yarn lerna run bundle:prod --scope @gms/api-gateway --stream && \
+        # docker build
+        time make all
+    }; chown_build_files
+}
+
+push_docker() {
+    curImageList=`docker image ls | grep "\b${CI_DOCKER_REGISTRY}\b" | grep "\b${DOCKER_IMAGE_TAG}\b" | awk '{print $1":"$2}'`
+
+    for image in ${curImageList}; do
+        docker push ${image}
+    done
+}
+
+case "$1" in
+  docker)
+    build_docker
+    ;;
+  push_docker)
+    push_docker
+    ;;
+  java)
+    build_java
+    ;;
+  java_inside)
+    build_java_inside
+    ;;
+  python)
+    build_python
+    ;;
+  python_inside)
+    build_python_inside
+    ;;
+  cpp)
+    build_cpp
+    ;;
+  cpp_inside)
+    build_cpp_inside
+    ;;
+  wasm)
+    build_wasm
+    ;;
+  wasm_inside)
+    build_wasm_inside
+    ;;
+  typescript)
+    build_typescript
+    ;;
+  typescript_inside)
+    build_typescript_inside
+    ;;
+  all)
+    build_docker
+    build_java
+    build_python
+    build_cpp
+    build_wasm
+    build_typescript
+    ;;
+  *)
+    echo "Unknown option: $1"
+    echo "Valid options are: docker, push_docker, java, python, cpp, wasm, typescript, all"
+    ;;
+esac
+

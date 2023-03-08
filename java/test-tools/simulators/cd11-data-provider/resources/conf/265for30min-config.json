@@ -1,0 +1,12 @@
+{
+  "providerInputMode":"file",
+
+  "fileConfig": {
+    "dataLocation": "/rsdf/cd11/265for30min",
+    "referenceTime": "2021-01-15T16:15:00Z",
+    "initialDelaySeconds": 10
+  },
+
+  "connectionFrameCreator": "DATAPROV",
+  "connectionFrameDestination": "CONNMAN"
+}

@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`soh-status-buffer tests check state with data added 1`] = `
+Object {
+  "isUpdateResponse": false,
+  "stationGroups": Array [],
+  "stationSoh": Array [
+    Object {
+      "allStationAggregates": Array [],
+      "channelSohs": Array [
+        Object {
+          "allSohMonitorValueAndStatuses": Array [
+            Object {
+              "contributing": false,
+              "hasUnacknowledgedChanges": false,
+              "monitorType": "LAG",
+              "quietUntilMs": 1,
+              "status": "GOOD",
+              "thresholdBad": 3,
+              "thresholdMarginal": 3,
+              "value": 10,
+              "valuePresent": true,
+            },
+            Object {
+              "contributing": false,
+              "hasUnacknowledgedChanges": false,
+              "monitorType": "LAG",
+              "quietUntilMs": 1,
+              "status": "GOOD",
+              "thresholdBad": 3,
+              "thresholdMarginal": 3,
+              "value": 11,
+              "valuePresent": true,
+            },
+          ],
+          "channelName": "adsf",
+          "channelSohStatus": undefined,
+        },
+      ],
+      "id": "ABC",
+      "needsAcknowledgement": false,
+      "needsAttention": false,
+      "sohStatusSummary": undefined,
+      "stationGroups": Array [],
+      "stationName": "ABC",
+      "statusContributors": Array [],
+      "time": undefined,
+      "uuid": "ABC",
+    },
+  ],
+}
+`;

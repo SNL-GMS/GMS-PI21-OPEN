@@ -1,0 +1,168 @@
+@import '@blueprintjs/core/lib/scss/variables.scss';
+@import '@gms/ui-core-components/src/scss/core-colors.scss';
+
+/**
+  These are the top-level colors for the application
+
+  These colors will eventually be customizable via themes.
+
+  Please place all colors used into this files, and be judicious in
+  defining new colors.
+*/
+/*
+  Colors used for essential UI text and chrome.
+
+  For now, their names refer to particular shades,
+  but as usage patterns develop they will be renamed by usage
+  "gms-heavy-border" / "gms-default" etc.
+*/
+
+// Main text color used for UI elements and high-contrast text
+$gms-main: $core-main;
+// Color that is recessed from the background. Notably used as a table border
+$gms-recessed: $core-recessed;
+// Color that is prominent on light backgrounds
+$gms-main-inverted: $core-main-inverted;
+// A prominent color used for important borders and text. Lower contrast than gms-main
+$gms-prominent: $core-prominent;
+// A softer color used for secondary borders and text. Lower contrast than gms-prominent
+$gms-soft: $core-soft;
+// The color of panel backgrounds
+$gms-background: $core-background;
+// The color of more prominent backgrounds
+$gms-prominent-background: $core-prominent-background;
+// The color of popover backgrounds
+$gms-popover-background: $core-popover-background;
+$gms-dialog-background: $gms-prominent-background;
+$gms-scrollbar: $core-scrollbar;
+$gms-scrollbar-background: rgba(0, 0, 0, 0.15);
+
+$gms-transparent: rgba(0, 0, 0, 0);
+
+$gms-grid-background: $core-grid-background;
+
+$gms-table-header-background: $core-table-header-background;
+// Highlight colors for inputs
+$gms-input-highlight: $core-input-highlight;
+// Hover color for buttons
+$gms-button: $core-button;
+$gms-button-hover: $core-button-hover;
+
+// label fill color for chart x tick tables when they are disabled or null
+$gms-chart-tick-label-disabled: $gray4;
+
+// Highlight for odd-indexed table cell
+$gms-table-highlight-odd-row: $core-table-highlight-odd-row;
+// Highlight for even-indexed table cell
+$gms-table-highlight-even-row: $core-table-highlight-even-row;
+// Highlight for odd-indexed table cell that requires review
+$gms-table-requires-review-odd-row: $core-table-requires-review-odd-row;
+// Highlight for even-indexed table cell that requires review
+$gms-table-requires-review-even-row: $core-table-requires-review-even-row;
+// Warning color for odd table rows
+$gms-table-warning-odd-row: $red2;
+// Warning color for even table rows
+$gms-table-warning-even-row: $red1;
+// Highlights for a selected table row
+$gms-table-selection: $core-table-selection;
+// Marks as requiring urgent attention or as being in conflict
+
+// Intent colors that span workspaces
+$gms-warning: $core-warning;
+$gms-strong-warning: $core-strong-warning;
+$gms-good: $core-good;
+$gms-input-highlight: $core-input-highlight;
+$gms-input-highlight-border: lighten($gms-input-highlight, 10%);
+$gms-non-contributing: $core-non-contributing;
+$gms-good-count: $core-prominent;
+
+// System message colors
+$system-message-critical-color: #5c363d;
+$system-message-warning-color: #615e3a;
+$system-message-info-color: $gms-popover-background;
+
+// Semantic Colors
+// Analyst Workspace
+$analyst-open-event: $orange3;
+$analyst-unassociated: $red3;
+$analyst-to-work: $blue4;
+$analyst-complete: $forest5;
+$analyst-requires-review: $gold5;
+$analyst-other: $white;
+
+//    Workflow
+$interval-in-progress-fill: $gold3;
+$interval-complete-fill: $green2;
+$interval-not-complete-fill: $orange2;
+$interval-not-started-fill: $gray3;
+$interval-skipped-fill: $dark-gray4;
+$interval-failed-fill: $red3;
+$workflow-day-divider: $gold4;
+$interval-activity-darken-cell-by: brightness(0.7);
+//    Waveform Display
+$waveform-interval-boundary: $forest4;
+$waveform-raw: $indigo4;
+$qc-analyst-defined: $forest3;
+$qc-channel-processing: $turquoise3;
+$qc-data-authentication: $indigo3;
+$qc-rejected: $red3;
+$qc-station-soh: $orange3;
+$qc-waveform-quality: $violet3;
+// Map
+$map-stations-unselected: $light-gray5;
+// Data Acq
+$data-acq-ok: $gms-good;
+$data-acq-warning: $gms-warning;
+$data-acq-strong-warning: $gms-strong-warning;
+// Weavess
+$gms-weavess-borders: $gms-scrollbar;
+// Selection
+$gms-selection: lighten($core-input-highlight, 10%);
+
+// the :export directive tells webpack to handle these appropriately when imported
+// i.e. `import * as variables from 'variables.scss'`;
+// then you can access `gms-main` by variables['gms-main']
+:export {
+  gmsMain: $gms-main;
+  gmsRecessed: $gms-recessed;
+  gmsProminent: $gms-prominent;
+  gmsSoft: $gms-soft;
+  gmsBackground: $gms-background;
+  gmsProminentBackground: $gms-prominent-background;
+
+  gmsOk: $gms-good;
+  gmsWarning: $gms-warning;
+  gmsStrongWarning: $gms-strong-warning;
+
+  gmsSelection: $gms-selection;
+
+  gmsChartTickLabelDisabled: $gms-chart-tick-label-disabled;
+  gmsTableHighlightOddRow: $gms-table-highlight-odd-row;
+  gmsTableHighlightEvenRow: $gms-table-highlight-even-row;
+  gmsTableWarningOddRow: $gms-table-warning-odd-row;
+  gmsTableWarningEvenRow: $gms-table-warning-even-row;
+  gmsTableRequiresReviewOddRow: $gms-table-requires-review-odd-row;
+  gmsTableRequiresReviewEvenRow: $gms-table-requires-review-even-row;
+  gmsInputHighlight: $gms-input-highlight;
+  gmsTableSelection: $gms-table-selection;
+  gmsPopoverBackground: $gms-popover-background;
+  analystOpenEvent: $analyst-open-event;
+  analystUnassociated: $analyst-unassociated;
+  analystToWork: $analyst-to-work;
+  analystComplete: $analyst-complete;
+
+  waveformIntervalBoundary: $waveform-interval-boundary;
+  waveformRaw: $waveform-raw;
+  qcAnalystDefined: $qc-analyst-defined;
+  qcChannelProcessing: $qc-channel-processing;
+  qcDataAuthentication: $qc-data-authentication;
+  qcRejected: $qc-rejected;
+  qcStationSOH: $qc-station-soh;
+  qcWaveformQuality: $qc-waveform-quality;
+  mapStationsUnselected: $map-stations-unselected;
+
+  dataAcqOk: $data-acq-ok;
+  dataAcqWarning: $data-acq-warning;
+  dataAcqStrongWarning: $data-acq-strong-warning;
+  dataAcqNone: $gms-non-contributing;
+}

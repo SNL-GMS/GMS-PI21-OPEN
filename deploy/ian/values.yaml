@@ -1,0 +1,812 @@
+global:
+  # baseDomain specifies the domain name suffix applied to all Ingress hostnames. Set by gmskube.
+  baseDomain: "cluster.example.com"
+
+  # hostPath volume mounts are used to provide containers access to response and
+  # waveform files accessible from the Kubernetes worker nodes.
+  bridgeResponses:
+    hostPath: "/data/bridge-responses"
+    containerPath: "/data/bridge-responses"
+  bridgeWaveforms:
+    hostPath: "/data/bridge-waveforms"
+    containerPath: "/data/bridge-waveforms"
+
+  # env specifies environment variables that will be added to all applications
+  # unless `useGlobalEnv: false` for that application
+  env:
+    ETCD_GMS_PASSWORD:
+      key: "password"
+      name: "etcd-gms-user"
+      type: "fromSecret"
+    ETCD_GMS_USER:
+      key: "username"
+      name: "etcd-gms-user"
+      type: "fromSecret"
+    GMS_CONFIG_SQL_PASSWORD:
+      key: "password"
+      name: "postgres-soh-application"
+      type: "fromSecret"
+    GMS_CONFIG_SQL_USERNAME:
+      key: "username"
+      name: "postgres-soh-application"
+      type: "fromSecret"
+    GMS_CONFIG_SQL_ELEV_PASSWORD:
+      key: "password"
+      name: "postgres-soh-application-elevated"
+      type: "fromSecret"
+    GMS_CONFIG_SQL_ELEV_USERNAME:
+      key: "username"
+      name: "postgres-soh-application-elevated"
+      type: "fromSecret"
+
+  # imagePullPolicy is the policy used for all images ('Always', 'IfNotPresent', 'Never').
+  imagePullPolicy: "Always"
+
+  # imageRegistry is the Docker image registry URL where all images will be retrieved. Set by gmskube.
+  imageRegistry: "docker-registry.example.com"
+
+  # imageTag is the Docker image tag used when retrieving all CI-built images. Set by gmskube.
+  imageTag: "develop"
+
+  # Whether or not to use istio. Set by gmskube.
+  istio: false
+
+  # Default PersistentVolumeClaim storage class.
+  # Note that kafka's storageClass is configured independently, but it uses the default storage class
+  # Empty uses the cluster's default storage class
+  storageClassName:
+
+  # Username of the user installing or upgrading the instance. Set by gmskube.
+  user: "UNKNOWN"
+
+
+# namespace LimitRange
+limitRange:
+  enabled: false
+  limits: []
+# Limits can be any valid LimitRangeSpec yaml, example:
+#  limits:
+#   - default:
+#       cpu: 2
+#       memory: "1Gi"
+#     defaultRequest:
+#       cpu: "100m"
+#       memory: "256Mi"
+#     max:
+#       cpu: 4
+#     min:
+#       cpu: "100m"
+#     type: "Container"
+
+# List of GMS standard apps. These are apps that use the common gms app templates.
+# Note: an app definition must also be added in the section below for each standard app.
+#
+# Another Note: Any time a new app is added to IAN, evaluate if it should also be added to SB!
+standardApps:
+  - "config-loader"
+  - "etcd"
+  - "event-manager-service"
+  - "feature-prediction-service"
+  - "frameworks-configuration-service"
+  - "frameworks-osd-service"
+  - "interactive-analysis-api-gateway"
+  - "interactive-analysis-ui"
+  - "minio"
+  - "postgresql-exporter"
+  - "postgresql-gms"
+  - "prometheus"
+  - "signal-detection-manager-service"
+  - "signal-enhancement-configuration-manager-service"
+  - "station-definition-service"
+  - "ui-processing-configuration-service"
+  - "user-manager-service"
+  - "waveform-manager-service"
+  - "workflow-manager-service"
+
+# Secrets to copy from other namespaces
+copySecrets:
+  ingress-default-cert:
+    namespace: "gms"
+  rancher-monitoring-grafana:
+    namespace: "cattle-monitoring-system"
+
+# Configmaps to copy from other namespaces
+copyConfigMaps:
+  keycloak-config:
+    namespace: "gms"
+
+
+#
+# App definitions
+#
+config-loader:
+  env:
+    MINIO_ROOT_USER:
+      key: "access_key"
+      name: "minio-keys"
+      type: "fromSecret"
+    MINIO_ROOT_PASSWORD:
+      key: "secret_key"
+      name: "minio-keys"
+      type: "fromSecret"
+  imageName: "gms-common/config-loader"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+      annotations:
+        nginx.ingress.kubernetes.io/proxy-body-size: "1024m"
+    service:
+      8080:
+        name: "http-web"
+  podSecurityContext:
+    fsGroup: 1001
+  useGlobalEnv: false
+  volume:
+    state:
+      mountPath: "/opt/gms/config-loader/app/state"
+      size: "100Mi"
+      type: "persistentVolumeClaim"
+
+etcd:
+  env:
+    GMS_ETCD_ADMIN_PASSWORD:
+      key: "password"
+      name: "etcd-admin-user"
+      type: "fromSecret"
+    GMS_ETCD_ADMIN_USER:
+      key:  "username"
+      name: "etcd-admin-user"
+      type: "fromSecret"
+    GMS_ETCD_PASSWORD:
+      key: "password"
+      name: "etcd-gms-user"
+      type: "fromSecret"
+    GMS_ETCD_ROOT_PASSWORD:
+      key: "password"
+      name: "etcd-root-user"
+      type: "fromSecret"
+    GMS_ETCD_ROOT_USER:
+      key:  "username"
+      name: "etcd-root-user"
+      type: "fromSecret"
+    GMS_ETCD_USER:
+      key: "username"
+      name: "etcd-gms-user"
+      type: "fromSecret"
+  imageName: "gms-common/etcd"
+  network:
+    metrics:
+      path: "/metrics"
+      port: 2379
+    service:
+      2379:
+        name: "tcp-etcd"
+  secret:
+    etcd-gms-user:
+      stringData:
+        username: "gms"
+        password: "{{ uuidv4 }}"
+    etcd-admin-user:
+      stringData:
+        username: "gmsadmin"
+        password: "{{ uuidv4 }}"
+    etcd-root-user:
+      stringData:
+        username: "root"
+        password: "{{ uuidv4 }}"
+  useGlobalEnv: false
+
+event-manager-service:
+  env:
+    GMS_CONFIG_SQL_PASSWORD: {}
+    GMS_CONFIG_SQL_USERNAME: {}
+  imageName: "gms-common/event-manager"
+  network:
+    ignite: true
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  podAnnotations:
+    traffic.sidecar.istio.io/excludeOutboundPorts: "1521"
+  restartAfterReconfig: true
+  volume:
+    bridge-waveforms:
+      hostPath: "{{ .Values.global.bridgeWaveforms.hostPath }}"
+      mountPath: "{{ .Values.global.bridgeWaveforms.containerPath }}"
+      readOnly: true
+      type: "hostPath"
+    oracle-wallet:
+      mountPath: "/opt/gms/event-manager/oracle-wallet"
+      readOnly: true
+      secretName: "oracle-wallet"
+      type: "secret"
+
+feature-prediction-service:
+  env:
+    MINIO_ROOT_USER:
+      key: "access_key"
+      name: "minio-keys"
+      type: "fromSecret"
+    MINIO_ROOT_PASSWORD:
+      key: "secret_key"
+      name: "minio-keys"
+      type: "fromSecret"
+  imageName: "gms-common/feature-prediction-service"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  restartAfterReconfig: true
+
+frameworks-configuration-service:
+  env:
+    GMS_CONFIG_PROCESSING_CFG__SQL_USERNAME:
+      key: "username"
+      name: "postgres-config-application"
+      type: "fromSecret"
+    GMS_CONFIG_PROCESSING_CFG__SQL_PASSWORD:
+      key: "password"
+      name: "postgres-config-application"
+      type: "fromSecret"
+  imageName: "gms-common/frameworks-configuration-service"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+
+frameworks-osd-service:
+  imageName: "gms-common/frameworks-osd-service"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    metrics:
+      path: "/metrics"
+      port: 8383
+    service:
+      8080:
+        name: "http-web"
+      8383:
+        name: "http-metrics"
+
+interactive-analysis-api-gateway:
+  env:
+    GMS_UI_MODE: "ian"
+    NODE_CONFIG_ENV: "deployed"
+    NODE_ENV: "production"
+  imageName: "gms-common/interactive-analysis-api-gateway"
+  network:
+    ingress:
+      3000:
+        path: "/{{ .appName }}"
+        weight: 200
+      4001:
+        path: "/{{ .appName }}/subscriptions"
+        weight: 100
+      annotations:
+        nginx.ingress.kubernetes.io/proxy-connect-timeout: "86400"
+        nginx.ingress.kubernetes.io/proxy-read-timeout: "86400"
+        nginx.ingress.kubernetes.io/proxy-write-timeout: "86400"
+    service:
+      3000:
+        name: "http-web"
+      4001:
+        name: "http-subscriptions"
+
+interactive-analysis-ui:
+  env:
+    GMS_DISABLE_KEYCLOAK_AUTH: true
+    GMS_KEYCLOAK_CLIENT_ID:
+      key: "client_id"
+      name: "keycloak-config"
+      type: "fromConfigMap"
+    GMS_KEYCLOAK_REALM:
+      key: "realm"
+      name: "keycloak-config"
+      type: "fromConfigMap"
+    GMS_KEYCLOAK_URL:
+      key: "url"
+      name: "keycloak-config"
+      type: "fromConfigMap"
+    GMS_UI_MODE: "ian"
+    NODE_ENV: "production"
+    URL_PATH: "{{ .appName }}"
+  imageName: "gms-common/interactive-analysis-ui"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+      annotations:
+        nginx.ingress.kubernetes.io/proxy-connect-timeout: "86400"
+        nginx.ingress.kubernetes.io/proxy-read-timeout: "86400"
+        nginx.ingress.kubernetes.io/proxy-write-timeout: "86400"
+    service:
+      8080:
+        name: "http-web"
+  restartAfterReconfig: true
+
+# kafka is a subchart
+kafka:
+  args:
+    - "-c"
+    - "export JMX_PORT=5555; /scripts/setup.sh;"
+  autoCreateTopicsEnable: true
+  command:
+    - "/bin/sh"
+  externalAccess:
+    service:
+      annotations:
+        prometheus.io/scrape: "false"
+  fullnameOverride: kafka
+  logRetentionHours: 6
+  image:
+    pullPolicy: Always
+    repository: gms-common/bitnami-kafka
+  metrics:
+    kafka:
+      enabled: true
+      image:
+        repository: gms-common/bitnami-kafka-exporter
+    jmx:
+      enabled: true
+      image:
+        repository: gms-common/bitnami-jmx-exporter
+  persistence:
+    size: "1Gi"
+  podAnnotations:
+    kubectl.kubernetes.io/default-container: kafka
+    kubectl.kubernetes.io/default-logs-container: kafka
+  service:
+    annotations:
+      prometheus.io/scrape: "false"
+  zookeeperConnectionTimeoutMs: 60000
+  zookeeper:
+    fullnameOverride: zookeeper
+    image:
+      repository: gms-common/bitnami-zookeeper
+      pullPolicy: Always
+    listenOnAllIPs: true
+    persistence:
+      size: "100Mi"
+
+minio:
+  command:
+    - "minio"
+    - "server"
+    - "/data"
+    - "--console-address"
+    - ":9001"
+  env:
+    MINIO_PROMETHEUS_AUTH_TYPE: "public"
+    MINIO_ROOT_USER:
+      key: "access_key"
+      name: "minio-keys"
+      type: "fromSecret"
+    MINIO_ROOT_PASSWORD:
+      key: "secret_key"
+      name: "minio-keys"
+      type: "fromSecret"
+  imageName: "gms-common/minio"
+  network:
+    metrics:
+      path: "/minio/v2/metrics/cluster"
+      port: 9000
+    service:
+      9000:
+        name: "http-api"
+      9001:
+        name: "http-web"
+  podSecurityContext:
+    runAsUser: 1001
+    fsGroup: 1001
+  secret:
+    minio-keys:
+      stringData:
+        access_key: "{{ uuidv4 }}"
+        secret_key: "{{ uuidv4 }}"
+  useGlobalEnv: false
+  volume:
+    data:
+      mountPath: "/data"
+      size: "20Mi"
+      type: "persistentVolumeClaim"
+
+postgresql-exporter:
+  env:
+    DATA_SOURCE_PASS:
+      key: "password"
+      name: "postgres-super-user"
+      type: "fromSecret"
+    DATA_SOURCE_URI: "postgresql-gms:5432/gms?sslmode=disable"
+    DATA_SOURCE_USER:
+      key: "username"
+      name: "postgres-super-user"
+      type: "fromSecret"
+  imageName: "gms-common/postgres-exporter"
+  network:
+    metrics:
+      path: "/metrics"
+      port: 9187
+    service:
+      9187:
+        name: "http-metrics"
+  podSecurityContext:
+    runAsUser: 65534
+  useGlobalEnv: false
+
+postgresql-gms:
+  env:
+    GMS_POSTGRES_ADMIN_PASSWORD:
+      key: "password"
+      name: "postgres-admin"
+      type: "fromSecret"
+    GMS_POSTGRES_CONFIG_APPLICATION_PASSWORD:
+      key: "password"
+      name: "postgres-config-application"
+      type: "fromSecret"
+    GMS_POSTGRES_READ_ONLY_PASSWORD:
+      key: "password"
+      name: "postgres-read-only"
+      type: "fromSecret"
+    GMS_POSTGRES_SESSION_APPLICATION_PASSWORD:
+      key: "password"
+      name: "postgres-session-application"
+      type: "fromSecret"
+    GMS_POSTGRES_SOH_APPLICATION_PASSWORD:
+      key: "password"
+      name: "postgres-soh-application"
+      type: "fromSecret"
+    GMS_POSTGRES_SOH_APPLICATION_ELEVATED_PASSWORD:
+      key: "password"
+      name: "postgres-soh-application-elevated"
+      type: "fromSecret"
+    GMS_POSTGRES_SOH_TEST_APPLICATION_PASSWORD:
+      key: "password"
+      name: "postgres-soh-test-application"
+      type: "fromSecret"
+    GMS_POSTGRES_SOH_TTL_APPLICATION_PASSWORD:
+      key: "password"
+      name: "postgres-soh-ttl-application"
+      type: "fromSecret"
+    POSTGRES_DB: "gms"
+    POSTGRES_PASSWORD:
+      key: "password"
+      name: "postgres-super-user"
+      type: "fromSecret"
+    POSTGRES_USER:
+      key: "username"
+      name: "postgres-super-user"
+      type: "fromSecret"
+  deploymentStrategy: Recreate
+  imageName: "gms-common/postgres"
+  network:
+    service:
+      5432:
+        name: "tcp-postgresql"
+  node: "node1"
+  nodeAffinity:
+    type: "soft"
+    key: "kubernetes.io/hostname"
+    operator: "In"
+    values:
+      - "{{ .appValues.node }}"
+  podSecurityContext:
+    fsGroup: 26
+  secret:
+    postgres-super-user:
+      stringData:
+        username: "gms_super_user"
+        password: "{{ uuidv4 }}"
+    postgres-admin:
+      stringData:
+        username: "gms_admin"
+        password: "{{ uuidv4 }}"
+    postgres-config-application:
+      stringData:
+        username: "gms_config_application"
+        password: "{{ uuidv4 }}"
+    postgres-read-only:
+      stringData:
+        username: "gms_read_only"
+        password: "{{ uuidv4 }}"
+    postgres-session-application:
+      stringData:
+        username: "gms_session_appication"
+        password: "{{ uuidv4 }}"
+    postgres-soh-application:
+      stringData:
+        username: "gms_soh_application"
+        password: "{{ uuidv4 }}"
+    postgres-soh-application-elevated:
+      stringData:
+        username: "gms_soh_application_elevated"
+        password: "{{ uuidv4 }}"
+    postgres-soh-test-application:
+      stringData:
+        username: "gms_soh_test_application"
+        password: "{{ uuidv4 }}"
+    postgres-soh-ttl-application:
+      stringData:
+        username: "gms_soh_ttl_application"
+        password: "{{ uuidv4 }}"
+  useGlobalEnv: false
+  volume:
+    data:
+      mountPath: "/var/lib/postgresql/data"
+      size: "4Gi"
+      type: "persistentVolumeClaim"
+    shm:
+      medium: "Memory"
+      mountPath: "/dev/shm"
+      type: "emptyDir"
+
+prometheus:
+  configMap:
+    prometheus-config:
+      data:
+        prometheus.yml: |-
+          global:
+            scrape_interval: 15s
+          scrape_configs:
+            # Scraping kubernetes services in the namespace where the annotation "prometheus.io/scrape"
+            # is set to 'true' in the Service object
+            - job_name: 'kubernetes-services'
+              kubernetes_sd_configs:
+              - role: service
+                namespaces:
+                  own_namespace: true
+              relabel_configs:
+              - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scrape]
+                action: keep
+                regex: true
+              - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_path]
+                action: replace
+                target_label: __metrics_path__
+                regex: (.+)
+              - source_labels: [__address__, __meta_kubernetes_service_annotation_prometheus_io_port]
+                action: replace
+                regex: ([^:]+)(?::\d+)?;(\d+)
+                replacement: $1:$2
+                target_label: __address__
+              - action: labelmap
+                regex: __meta_kubernetes_service_label_(.+)
+              - source_labels: [__meta_kubernetes_namespace]
+                action: replace
+                target_label: kubernetes_namespace
+  args:
+    - --config.file=/etc/prometheus/prometheus.yml
+    - --storage.tsdb.path=/prometheus
+    - --web.console.libraries=/usr/share/prometheus/console_libraries
+    - --web.console.templates=/usr/share/prometheus/consoles
+    - --storage.tsdb.retention.time=30d
+    - --web.external-url=/{{ .appName }}/
+  env:
+    G_USER:
+      key: "admin-user"
+      name: "rancher-monitoring-grafana"
+      type: "fromSecret"
+    G_PASS:
+      key: "admin-password"
+      name: "rancher-monitoring-grafana"
+      type: "fromSecret"
+    G_PROTO: "http"
+    G_HOST: "rancher-monitoring-grafana.cattle-monitoring-system"
+    G_PORT: "80"
+    G_SLEEP: "10m"
+    G_WAIT: "360"
+    PROM_NAME: "prometheus.{{ .Release.Name }}"
+    PROM_URL: "prometheus.{{ .Release.Name }}:9090/{{ .appName }}"
+  deploymentStrategy: Recreate
+  extraContainers: |-
+    - name: prometheus-sidecar
+      image: "{{ .Values.global.imageRegistry }}/gms-common/prometheus-sidecar:{{ .Values.global.imageTag }}"
+      lifecycle:
+        preStop:
+          exec:
+            command: ["/unregister.sh"]
+      imagePullPolicy: {{ .Values.global.imagePullPolicy }}
+      env:
+        {{- include "gms.common.container.env" $ | trim | nindent 4 }}
+      securityContext:
+        {{- include "gms.common.container.securityContext" $ | trim | nindent 4 }}
+  imageName: "gms-common/instance-prometheus"
+  network:
+    metrics:
+      path: "/prometheus/metrics"
+      port: 9090
+    ingress:
+      9090:
+        path: "/{{ .appName }}"
+    service:
+      9090:
+        name: "http-client"
+  podAnnotations:
+    kubectl.kubernetes.io/default-container: "{{ .appName }}"
+    kubectl.kubernetes.io/default-logs-container: "{{ .appName }}"
+  podSecurityContext:
+    runAsUser: 65534
+    runAsGroup: 65534
+    fsGroup: 65534
+  serviceAccount: "prometheus"
+  useGlobalEnv: false
+  volume:
+    config-volume:
+      configMapName: "prometheus-config"
+      mountPath: "/etc/prometheus/prometheus.yml"
+      subPath: "prometheus.yml"
+      type: "configMap"
+    ephemetheus-volume:
+      mountPath: "/prometheus"
+      size: "1Gi"
+      type: "persistentVolumeClaim"
+
+signal-detection-manager-service:
+  env:
+    GMS_CONFIG_SQL_PASSWORD: {}
+    GMS_CONFIG_SQL_USERNAME: {}
+    WALLET_APP_NAME: signal-detection-application
+  imageName: "gms-common/signal-detection-application"
+  network:
+    ignite: true
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  podAnnotations:
+    traffic.sidecar.istio.io/excludeOutboundPorts: "1521"
+  restartAfterReconfig: true
+  volume:
+    bridge-responses:
+      hostPath: "{{ .Values.global.bridgeResponses.hostPath }}"
+      mountPath: "{{ .Values.global.bridgeResponses.containerPath }}"
+      readOnly: true
+      type: "hostPath"
+    bridge-waveforms:
+      hostPath: "{{ .Values.global.bridgeWaveforms.hostPath }}"
+      mountPath: "{{ .Values.global.bridgeWaveforms.containerPath }}"
+      readOnly: true
+      type: "hostPath"
+    oracle-wallet:
+      mountPath: "/opt/gms/signal-detection-application/oracle-wallet"
+      readOnly: true
+      secretName: "oracle-wallet"
+      type: "secret"
+
+signal-enhancement-configuration-manager-service:
+  env:
+    GMS_CONFIG_SQL_PASSWORD: {}
+    GMS_CONFIG_SQL_USERNAME: {}
+  imageName: "gms-common/signal-enhancement-configuration-application"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  restartAfterReconfig: true
+
+station-definition-service:
+  env:
+    WALLET_APP_NAME: station-definition-application
+  imageName: "gms-common/station-definition-application"
+  network:
+    ignite: true
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  podAnnotations:
+    traffic.sidecar.istio.io/excludeOutboundPorts: "1521"
+  restartAfterReconfig: true
+  volume:
+    bridge-responses:
+      hostPath: "{{ .Values.global.bridgeResponses.hostPath }}"
+      mountPath: "{{ .Values.global.bridgeResponses.containerPath }}"
+      readOnly: true
+      type: "hostPath"
+    bridge-waveforms:
+      hostPath: "{{ .Values.global.bridgeWaveforms.hostPath }}"
+      mountPath: "{{ .Values.global.bridgeWaveforms.containerPath }}"
+      readOnly: true
+      type: "hostPath"
+    oracle-wallet:
+      mountPath: "/opt/gms/station-definition-application/oracle-wallet"
+      readOnly: true
+      secretName: "oracle-wallet"
+      type: "secret"
+
+ui-processing-configuration-service:
+  imageName: "gms-common/ui-processing-configuration-service"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  restartAfterReconfig: true
+
+user-manager-service:
+  imageName: "gms-common/user-manager-application"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  restartAfterReconfig: true
+
+waveform-manager-service:
+  env:
+    GMS_CONFIG_SQL_PASSWORD: {}
+    GMS_CONFIG_SQL_USERNAME: {}
+    WALLET_APP_NAME: waveform-manager-application
+  imageName: "gms-common/waveform-manager-application"
+  network:
+    ignite: true
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+      8383:
+        name: "http-metrics"
+  podAnnotations:
+    traffic.sidecar.istio.io/excludeOutboundPorts: "1521"
+  restartAfterReconfig: true
+  volume:
+    bridge-responses:
+      hostPath: "{{ .Values.global.bridgeResponses.hostPath }}"
+      mountPath: "{{ .Values.global.bridgeResponses.containerPath }}"
+      readOnly: true
+      type: "hostPath"
+    bridge-waveforms:
+      hostPath: "{{ .Values.global.bridgeWaveforms.hostPath }}"
+      mountPath: "{{ .Values.global.bridgeWaveforms.containerPath }}"
+      readOnly: true
+      type: "hostPath"
+    oracle-wallet:
+      mountPath: "/opt/gms/waveform-manager-application/oracle-wallet"
+      readOnly: true
+      secretName: "oracle-wallet"
+      type: "secret"
+
+workflow-manager-service:
+  env:
+    GMS_CONFIG_SQL_PASSWORD: {}
+    GMS_CONFIG_SQL_USERNAME: {}
+  imageName: "gms-common/workflow-manager"
+  network:
+    ignite: true
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  podAnnotations:
+    traffic.sidecar.istio.io/excludeOutboundPorts: "1521"
+  restartAfterReconfig: true
+  volume:
+    oracle-wallet:
+      mountPath: "/opt/gms/workflow-manager/oracle-wallet"
+      readOnly: true
+      secretName: "oracle-wallet"
+      type: "secret"

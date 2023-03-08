@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SohEnvironmentPanel class should match snapshot 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "glContainer": Object {},
+      "selectedAceiType": "BEGINNING_TIME_OUTAGE",
+      "setSelectedAceiType": [MockFunction],
+    }
+  }
+>
+  <EnvironmentPanel
+    channelSohs={
+      Array [
+        Object {
+          "allSohMonitorValueAndStatuses": Array [
+            Object {
+              "contributing": true,
+              "hasUnacknowledgedChanges": false,
+              "monitorType": "ENV_ZEROED_DATA",
+              "quietUntilMs": 1,
+              "status": "GOOD",
+              "thresholdBad": 10,
+              "thresholdMarginal": 1,
+              "value": 1,
+              "valuePresent": true,
+            },
+          ],
+          "channelName": "channelName",
+          "channelSohStatus": "GOOD",
+        },
+      ]
+    }
+    channelStatusesToDisplay={
+      Object {
+        "GOOD": true,
+      }
+    }
+    defaultQuietDurationMs={10}
+    isStale={false}
+    monitorStatusesToDisplay={
+      Object {
+        "GOOD": true,
+      }
+    }
+    quietingDurationSelections={
+      Array [
+        1,
+        5,
+        10,
+      ]
+    }
+    stationName="AAK"
+  />
+</ContextProvider>
+`;

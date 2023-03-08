@@ -1,0 +1,12 @@
+{
+  "name": "default-timewindow",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "calculationInterval": "PT30M",
+    "backOffDuration": "PT40S"
+  }
+}

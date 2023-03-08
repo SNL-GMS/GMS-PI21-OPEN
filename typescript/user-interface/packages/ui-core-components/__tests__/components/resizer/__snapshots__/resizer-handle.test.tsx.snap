@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BottomResizeHandle will match the snapshot 1`] = `
+<div>
+  <div
+    class="resizer__handle resizer__handle--height resizer__handle--bottom"
+  />
+  <div
+    class="resizer__sensor resizer__sensor--bottom"
+  />
+</div>
+`;

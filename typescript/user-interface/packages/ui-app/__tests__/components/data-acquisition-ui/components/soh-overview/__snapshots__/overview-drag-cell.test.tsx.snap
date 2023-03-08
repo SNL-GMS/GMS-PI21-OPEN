@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Overview Drag Cell can render and match snapshot 1`] = `<div />`;

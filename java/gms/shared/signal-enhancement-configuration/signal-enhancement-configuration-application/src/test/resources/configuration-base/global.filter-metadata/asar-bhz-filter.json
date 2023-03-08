@@ -1,0 +1,59 @@
+{
+    "name": "asar-bhz-filter",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "station",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "ASAR"
+            ]
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "channelBand",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "B"
+            ]
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "channelInstrument",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "H"
+            ]
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "channelOrientation",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "Z"
+            ]
+        }
+    ],
+    "parameters": {
+        "filterDefinitions": [
+            {
+                "$ref=global.filter-definition": [{
+                    "criterion": "name",
+                    "value": "HAM FIR LP 4.20 Hz"
+                }]
+            }
+        ]
+    }
+}

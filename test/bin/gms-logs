@@ -1,0 +1,385 @@
+#!/usr/bin/env python3
+
+# ------------------------------------------------------------------------------
+# gms-logs test script
+#
+# The gms-logs script queries the elasticsearch interface to search log
+# log messages for a specified container in a running gms instance.
+# ------------------------------------------------------------------------------
+
+import json
+import os
+import requests
+import sys
+import yaml
+
+from argparse import ArgumentParser
+from argparse import RawDescriptionHelpFormatter
+from packaging.version import Version
+from urllib.parse import urlparse
+
+
+def main():
+
+    if "KUBECONFIG" not in os.environ:
+        print("ERROR: Variable 'KUBECONFIG' must be set to the kubernetes "
+              "configuration.")
+        sys.exit(1)
+    if ":" in os.environ["KUBECONFIG"]:
+        msg = ("It looks like your `KUBECONFIG` environment variable points "
+               "to multiple configuration files.  Ensure you run `kubeconfig "
+               "<cluster_name>` to activate a particular cluster, and then "
+               "re-run this script.")
+        raise SystemExit(msg)
+
+    try:
+        with open(os.environ["KUBECONFIG"]) as file:
+            if Version(yaml.__version__) < Version('5.1'):
+                kubeconfig = yaml.load(file)
+            else:
+                kubeconfig = yaml.load(file, Loader=yaml.FullLoader)
+
+            if 'clusters' not in kubeconfig:
+                print("ERROR: No clusters defined in file "
+                      f"'{os.environ['KUBECONFIG']}")
+                sys.exit(1)
+
+            cluster = kubeconfig['clusters'][0]  # use the first cluster
+    except yaml.YAMLError as e:
+        if hasattr(e, 'problem_mark'):
+            mark = e.problem_mark
+            print("ERROR: Failed to parse KUBECONFIG file "
+                  f"'{os.environ['KUBECONFIG']}' at line {mark.line}, column "
+                  f"{mark.column+1}")
+            print(f"{e.problem}")
+        else:
+            print("ERROR: Failed to parse KUBECONFIG file "
+                  f"'{os.environ['KUBECONFIG']}' {e}")
+        sys.exit(1)
+    except Exception as e:
+        print("ERROR: Failed to open KUBECONFIG file "
+              f"'{os.environ['KUBECONFIG']}' {e}")
+        sys.exit(1)
+
+    args = get_args()
+
+    # derive the URL from our cluster name
+    rancher_url = urlparse(cluster['cluster']['server'])
+    elasticsearch_url = ("https://elasticsearch." +
+                         '.'.join(rancher_url.netloc.split('.')[1:]))
+
+    # optionally limit number of results returned
+    if args.agg:
+        # For aggregation we only care about the aggregation results,
+        # not the search results.
+        request_size = 0
+        scroll_param = ''
+    elif args.limit:
+        request_size = args.limit
+        scroll_param = ''
+    else:
+        # 10000 is the maximum number of messages elasticsearch can
+        # return at a time.
+        request_size = 10000
+        scroll_param = '?scroll=20s'
+
+    # build our base request
+    request = {
+        "size": request_size,
+        "_source": {
+            "includes": ["@timestamp", "log", "time", "appLog"]
+        },
+        "sort": ["@timestamp"],
+        "query": {
+            "bool": {
+                "filter": [
+                    {"term": {"kubernetes.namespace_name.keyword":
+                              args.name}},
+                    {"term": {"kubernetes.container_name.keyword":
+                              args.container}},
+                    {"range": {"@timestamp": {"gte": args.after,
+                                              "lte": args.before}}}
+                ]
+            }
+        }
+    }
+
+    # add a 'must' match wildcard to filter (slightly faster)
+    if args.match:
+        for a in args.match:
+            request["query"]["bool"]["filter"].append(
+                {"multi_match": {"query": f'{a}', 'type': 'phrase',
+                                 'fields': ['log', 'appLog.message']}}
+            )
+
+    # Add a 'should' section with the given terms we SHOULD match at
+    # least one of.
+    if args.search:
+        request["query"]["bool"]["minimum_should_match"] = 1
+        request["query"]["bool"]["should"] = []
+        for a in args.search:
+            request["query"]["bool"]["should"].append(
+                {"multi_match": {"query": f'{a}', 'type': 'phrase',
+                                 'fields': ['log', 'appLog.message']}}
+            )
+
+    # Add a 'must_not' section to the overall bool search with the given
+    # terms that we MUST exclude.
+    if args.exclude:
+        request["query"]["bool"]["must_not"] = []
+        for a in args.exclude:
+            request["query"]["bool"]["must_not"].append(
+                {"multi_match": {"query": f'{a}', 'type': 'phrase',
+                                 'fields': ['log', 'appLog.message']}}
+            )
+
+    # add an aggregation section if requested
+    if args.agg:
+        # only consider results that include the specified aggregation field
+        request["query"]["bool"]["filter"].append(
+            {"exists": {"field": args.agg}}
+        )
+
+        # add aggregate request
+        request["aggs"] = {
+            "unique": {
+                "terms": {
+                    "field": f"{args.agg}.keyword",
+                    "size": args.aggnum
+                }
+            }
+        }
+
+    # uncomment for debugging
+    # print(json.dumps(request["query"]["bool"], indent=2))
+
+    response = requests.post(elasticsearch_url +
+                             f"/fluentd-*/_search{scroll_param}",
+                             json=request)
+    if response.status_code != 200:
+        print(f"ERROR [{response.status_code}] {response.reason}: "
+              f"{response.json()['error']['reason']}")
+        sys.exit(1)
+
+    if args.agg:
+        results = response.json()
+
+        if (results
+                and 'aggregations' in results
+                and 'unique' in results['aggregations']
+                and 'buckets' in results['aggregations']['unique']):
+
+            if args.sort:
+                buckets = sorted(results['aggregations']['unique']['buckets'],
+                                 key=lambda k: k['key'])
+            else:
+                buckets = results['aggregations']['unique']['buckets']
+
+            if args.json:
+                print(json.dumps(buckets, indent=2))
+            else:
+                for bucket in buckets:
+                    if args.count:
+                        print(f"{bucket['key']:8}{bucket['doc_count']}")
+                    else:
+                        print(f"{bucket['key']}")
+    else:
+        logs = response.json()
+
+        # The initial query was with a scroll, so we can iterate through
+        # subsequent results.
+        while (logs
+               and 'hits' in logs
+               and 'hits' in logs['hits']
+               and len(logs['hits']['hits']) > 0):
+            if args.json:
+                hits = [hit['_source'] for hit in logs['hits']['hits']]
+                print(json.dumps(hits, indent=2))
+            else:
+                for hit in logs['hits']['hits']:
+                    # In fluentd index, appLog is present but empty in some
+                    # cases so had to add the boolean check
+                    if('appLog' in hit['_source']
+                       and bool(hit['_source']['appLog'])):
+
+                        print(format_app_log_msg(hit['_source']['appLog']))
+                    else:
+                        print(hit['_source']['log'].rstrip())
+
+            # get the next batch of log messages
+            if not args.limit:
+                response = requests.post(
+                    elasticsearch_url + "/_search/scroll",
+                    json={"scroll": "20s", "scroll_id": logs['_scroll_id']}
+                )
+                if response.status_code != 200:
+                    print("ERROR: Failed to get additional log messages.")
+                    print(f"{response.status_code}: {response.reason}")
+                    sys.exit(1)
+                else:
+                    logs = response.json()
+            else:
+                break
+
+        response = requests.delete(elasticsearch_url + "/_search/scroll",
+                                   json={"scroll_id": logs['_scroll_id']})
+        if response.status_code != 200:
+            print("ERROR: Failed to close elasticsearch scroll ID.")
+            print(f"{response.status_code}: {response.reason}")
+            sys.exit(1)
+
+    sys.exit(0)
+
+
+def format_app_log_msg(app_log):
+    """
+    Format a structured appLog entry into a single-line string.
+    """
+
+    src = ''
+    if 'logger_name' in app_log:
+        src = f"{app_log['logger_name']}"
+    if 'thread_name' in app_log:
+        src += f"/{app_log['thread_name']}"
+
+    msg = f"\"{app_log['message']}\""
+    if 'station' in app_log:
+        msg = f"station: {app_log['station']} " + msg
+
+    return f"{app_log['@timestamp']} {app_log['level']} {src} {msg}"
+
+
+def get_args():
+    """
+    Get command-line arguments.
+    """
+
+    description = """
+description:
+  gms-logs queries the elasticsearch interface running on your currently
+  configured cluster to search through and print or analyze log messages
+  for a specified container in a specified instance.
+
+  By default, only the last 24 hours of log messages will be considered.
+  The --after and --before arguments can be used to change the scan
+  window. Times specified can be relative to the current wallclock
+  time of 'now'. For example 'now-1d' is 1 day prior to the current
+  time.
+
+  NOTE: Check your arguments carefully! if an unknown namespace or
+  container is specified, or if no log messages are present for the
+  specified timeframe, then NOTHING will be printed.
+
+  Any number of additional search terms can be specified using the
+  arguments '--match', '--search', and '--exclude'. These can be
+  words or phrases and are case-insensitive.
+
+  * Log messages containing terms specified by '--match' must
+    include ALL the specified '--match' terms.
+  * Log messages containing terms specified by '--search may
+    include ANY ONE OF the specified '--search' terms.
+  * Log messages containing ANY of the terms specified by
+    '--exclude' will be excluded.
+
+  Instead of retrieving log contents, aggregation can be used to
+  identify unique field values (for example, the structured logging
+  field 'appLog.station' could be used to identify unique station
+  names).  When '--agg' is specified, no log messages are printed.
+
+  If '--json' is specified, the output will be printed in JSON.  Note,
+  for large numbers of logs, this will print multiple JSON lists since
+  the logs are returned in batches of no more than 10000 log
+  messages.
+
+examples:
+  Print log messages from the last day for the etcd container
+  from the soh-develop instance:
+    $ gms-logs -c etcd -n soh-develop
+
+  Print log messages from the last TWO DAYS for the etcd container
+  from the soh-develop instance:
+    $ gms-logs -c etcd -n soh-develop -a 'now-2d'
+
+  Print only log messages containing the word 'auth':
+    $ gms-logs -c etcd -n soh-develop -m 'error'
+
+  Print only log messages containing the word 'auth' AND 'password':
+    $ gms-logs -c etcd -n soh-develop -m 'auth' -m 'password'
+
+  Print only log messages containing the word 'auth' OR 'password':
+    $ gms-logs -c etcd -n soh-develop -s 'auth' -s 'password'
+
+  Print only log messages containing the word 'auth' AND 'password'
+  but NOT 'gms':
+    $ gms-logs -c etcd -n soh-develop -m 'auth' -m 'password' -x 'gms'
+
+  List station names received in the last 24 hours:
+    $ gms-logs -c da-dataman -n soh-develop -m 'Received' \
+      --agg 'appLog.station'
+
+    """
+    parser = ArgumentParser(description=description,
+                            formatter_class=RawDescriptionHelpFormatter)
+
+    parser.add_argument('--container', '-c', required=True,
+                        help="Name of the container to get logs for")
+    parser.add_argument('--name', '-n', required=True,
+                        help="Name of the instance with the running container")
+
+    parser.add_argument('--after', '-a', default="now-1d",
+                        help="Only include logs after this time.")
+    parser.add_argument('--before', '-b', default="now",
+                        help="Only include logs before this time.")
+
+    parser.add_argument('--match', '-m', action='append',
+                        help="Log line must include this term.")
+    parser.add_argument('--search', '-s', action='append',
+                        help='Log line should include at least one of these '
+                             'terms.')
+    parser.add_argument('--exclude', '-x', action='append',
+                        help='Log line should NOT include this term.')
+
+    parser.add_argument('--agg', help='Aggregate unique values for a given '
+                                      'field name.')
+    parser.add_argument('--aggnum', default=1000,
+                        help='Max number of unique field names for '
+                             'aggregation')
+    parser.add_argument('--count', default=False, action='store_true',
+                        help='Print count of occurrences of each unique '
+                             'aggregate field')
+    parser.add_argument('--sort', default=False, action='store_true',
+                        help='Sort unique aggregate fields by name (instead '
+                             'of by count)')
+
+    parser.add_argument('--json', '-j', default=False, action='store_true',
+                        help='Print output in JSON')
+    parser.add_argument('--limit', '-l', type=int,
+                        help='Limit results to this many lines (must be < '
+                             '10000).')
+
+    args = parser.parse_args()
+
+    if args.limit:
+        if args.agg:
+            print("WARNING: --limit not used for aggregation. Ignoring.")
+        elif args.limit > 10000:
+            print("ERROR: --limit must be < 10000 lines.")
+            sys.exit(1)
+
+    if args.count:
+        if not args.agg:
+            print("WARNING:  `--count` only used when `--agg` is specified.  "
+                  "Ignoring.")
+        if args.json:
+            print("WARNING: --count ignored when --json is specified.")
+
+    if args.sort:
+        if not args.agg:
+            print("WARNING:  `--sort` only used when `--agg` is specified.  "
+                  "Ignoring.")
+
+    return args
+
+
+if __name__ == "__main__":
+    main()

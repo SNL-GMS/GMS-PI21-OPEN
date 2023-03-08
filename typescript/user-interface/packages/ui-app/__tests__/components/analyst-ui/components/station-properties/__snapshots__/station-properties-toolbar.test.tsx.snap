@@ -1,0 +1,362 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`station-properties-panel matches snapshot 1`] = `
+<div>
+  <div
+    class="toolbar"
+    style="width: 60px;"
+  >
+    <div
+      class="toolbar__left-group"
+    >
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div>
+          <div
+            class="dropdown-container"
+          >
+            <span
+              class="dropdown-label"
+            >
+              Effective at: 
+            </span>
+            <span
+              class="dropdown-selector"
+              data-cy="effective-at-dropdown"
+            >
+              <div
+                class="bp4-html-select"
+              >
+                <select
+                  data-cy="select-effective-at"
+                  style="min-width: 220px; width: 220px;"
+                  title="Select effective time to display"
+                >
+                  <option
+                    value="1970-01-01T00:00:00.000Z"
+                  >
+                    1970-01-01 00:00:00.000
+                  </option>
+                  <option
+                    value="1970-01-01T00:00:00.000Z"
+                  >
+                    1970-01-01 00:00:00.000
+                  </option>
+                </select>
+                <span
+                  class="bp4-icon bp4-icon-double-caret-vertical"
+                  icon="double-caret-vertical"
+                >
+                  <svg
+                    data-icon="double-caret-vertical"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <desc>
+                      Open dropdown
+                    </desc>
+                    <path
+                      d="M5 7h6a1.003 1.003 0 00.71-1.71l-3-3C8.53 2.11 8.28 2 8 2s-.53.11-.71.29l-3 3A1.003 1.003 0 005 7zm6 2H5a1.003 1.003 0 00-.71 1.71l3 3c.18.18.43.29.71.29s.53-.11.71-.29l3-3A1.003 1.003 0 0011 9z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div>
+          <div
+            data-cy="station-properties-channel-group-column-picker"
+          >
+            <button
+              class="bp4-button bp4-align-left toolbar-button"
+              style="width: 220px;"
+              title="Select columns to be shown in the channel group table below"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span>
+                  Channel group columns
+                </span>
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-chevron-down"
+                  icon="chevron-down"
+                >
+                  <svg
+                    data-icon="chevron-down"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div>
+          <div
+            data-cy="station-properties-channel-column-picker"
+          >
+            <button
+              class="bp4-button bp4-align-left toolbar-button"
+              style="width: 220px;"
+              title="Select columns to be shown in the channel table below"
+              type="button"
+            >
+              <span
+                class="bp4-button-text"
+              >
+                <span>
+                  Channel columns
+                </span>
+                <span
+                  aria-hidden="true"
+                  class="bp4-icon bp4-icon-chevron-down"
+                  icon="chevron-down"
+                >
+                  <svg
+                    data-icon="chevron-down"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="toolbar__center-group"
+    >
+      <div
+        class="toolbar__whitespace"
+        style="width: 60px;"
+      />
+    </div>
+    <div
+      class="toolbar__right-group"
+    />
+  </div>
+  <div
+    class="toolbar"
+    style="width: 60px;"
+  >
+    <div
+      class="toolbar__left-group"
+    >
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div
+          class="toolbar-label-value"
+        >
+          <div
+            class="ian-label-value-container"
+          >
+            <div
+              class="ian-label-value__label"
+              data-cy="station-label"
+            >
+              Station: 
+            </div>
+            <div
+              class="ian-label-value__value"
+              data-cy="station-value"
+              title="Currently selected station"
+            >
+              name
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div
+          class="toolbar-label-value"
+        >
+          <div
+            class="ian-label-value-container"
+          >
+            <div
+              class="ian-label-value__label"
+              data-cy="lat-label"
+            >
+              Lat: 
+            </div>
+            <div
+              class="ian-label-value__value"
+              data-cy="lat-value"
+              title="Station latitude"
+            >
+              10.000°
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div
+          class="toolbar-label-value"
+        >
+          <div
+            class="ian-label-value-container"
+          >
+            <div
+              class="ian-label-value__label"
+              data-cy="lon-label"
+            >
+              Lon: 
+            </div>
+            <div
+              class="ian-label-value__value"
+              data-cy="lon-value"
+              title="Station longitude"
+            >
+              10.000°
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div
+          class="toolbar-label-value"
+        >
+          <div
+            class="ian-label-value-container"
+          >
+            <div
+              class="ian-label-value__label"
+              data-cy="depth-label"
+            >
+              Depth: 
+            </div>
+            <div
+              class="ian-label-value__value"
+              data-cy="depth-value"
+              title="Depth (km)"
+            >
+              100.000 km
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div
+          class="toolbar-label-value"
+        >
+          <div
+            class="ian-label-value-container"
+          >
+            <div
+              class="ian-label-value__label"
+              data-cy="elev-label"
+            >
+              Elev: 
+            </div>
+            <div
+              class="ian-label-value__value"
+              data-cy="elev-value"
+              title="Station elevation"
+            >
+              100.000 km
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div
+          class="toolbar-label-value"
+        >
+          <div
+            class="ian-label-value-container"
+          >
+            <div
+              class="ian-label-value__label"
+              data-cy="type-label"
+            >
+              Type: 
+            </div>
+            <div
+              class="ian-label-value__value"
+              data-cy="type-value"
+              title="Single station or array"
+            >
+              Single Station
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div
+          class="toolbar-label-value"
+        >
+          <div
+            class="ian-label-value-container"
+          >
+            <div
+              class="ian-label-value__label"
+              data-cy="description-label"
+            >
+              Description: 
+            </div>
+            <div
+              class="ian-label-value__value"
+              data-cy="description-value"
+              title="Station description"
+            >
+              Unknown
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="toolbar__center-group"
+    >
+      <div
+        class="toolbar__whitespace"
+        style="width: 60px;"
+      />
+    </div>
+    <div
+      class="toolbar__right-group"
+    />
+  </div>
+</div>
+`;

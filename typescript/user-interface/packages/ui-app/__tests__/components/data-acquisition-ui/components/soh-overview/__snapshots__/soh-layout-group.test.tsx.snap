@@ -1,0 +1,388 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Soh station groups layout can generate the SohStationGroupMap 1`] = `
+Map {
+  "Group 4" => Array [
+    Object {
+      "allStationAggregates": Array [],
+      "channelSohs": Array [],
+      "id": "1",
+      "needsAcknowledgement": true,
+      "needsAttention": true,
+      "sohStatusSummary": "GOOD",
+      "stationGroups": Array [
+        Object {
+          "groupName": "Group 4",
+          "sohStationCapability": "GOOD",
+          "stationName": "H05N",
+        },
+      ],
+      "stationName": "H05N",
+      "statusContributors": Array [
+        Object {
+          "contributing": true,
+          "statusSummary": "GOOD",
+          "type": "LAG",
+          "value": 5,
+          "valuePresent": true,
+        },
+      ],
+      "time": 2,
+      "uuid": "1",
+    },
+    Object {
+      "allStationAggregates": Array [],
+      "channelSohs": Array [],
+      "id": "2",
+      "needsAcknowledgement": true,
+      "needsAttention": true,
+      "sohStatusSummary": "MARGINAL",
+      "stationGroups": Array [
+        Object {
+          "groupName": "Group 4",
+          "sohStationCapability": "GOOD",
+          "stationName": "H06N",
+        },
+      ],
+      "stationName": "H06N",
+      "statusContributors": Array [
+        Object {
+          "contributing": true,
+          "statusSummary": "GOOD",
+          "type": "LAG",
+          "value": 5,
+          "valuePresent": true,
+        },
+      ],
+      "time": 2,
+      "uuid": "2",
+    },
+    Object {
+      "allStationAggregates": Array [],
+      "channelSohs": Array [],
+      "id": "3",
+      "needsAcknowledgement": true,
+      "needsAttention": true,
+      "sohStatusSummary": "BAD",
+      "stationGroups": Array [
+        Object {
+          "groupName": "Group 4",
+          "sohStationCapability": "GOOD",
+          "stationName": "H07N",
+        },
+      ],
+      "stationName": "H07N",
+      "statusContributors": Array [
+        Object {
+          "contributing": true,
+          "statusSummary": "GOOD",
+          "type": "LAG",
+          "value": 5,
+          "valuePresent": true,
+        },
+      ],
+      "time": 2,
+      "uuid": "3",
+    },
+    Object {
+      "allStationAggregates": Array [],
+      "channelSohs": Array [],
+      "id": "4",
+      "needsAcknowledgement": true,
+      "needsAttention": true,
+      "sohStatusSummary": "GOOD",
+      "stationGroups": Array [
+        Object {
+          "groupName": "Group 4",
+          "sohStationCapability": "MARGINAL",
+          "stationName": "H08N",
+        },
+      ],
+      "stationName": "H08N",
+      "statusContributors": Array [
+        Object {
+          "contributing": true,
+          "statusSummary": "GOOD",
+          "type": "ENV_AUTHENTICATION_SEAL_BROKEN",
+          "value": 5,
+          "valuePresent": true,
+        },
+      ],
+      "time": 2,
+      "uuid": "4",
+    },
+  ],
+}
+`;
+
+exports[`Soh station groups layout matches the snapshot when provided with a context 1`] = `
+<div>
+  <div
+    class="resize-container 
+        quadra-grid-container
+        display__scroll-container--vertical
+        drop-zone__wrapper"
+  >
+    <div
+      class="resizer quadra-grid-cell soh-overview-table__wrapper"
+      data-cy="soh-overview-group-Group 4"
+      style="height: 360px; max-height: 100vh;"
+    >
+      <div
+        class="divider-container"
+      >
+        <div
+          class="top-component"
+          style="height: 200px; min-height: 145px;"
+        >
+          <div
+            class="soh-overview-table"
+          >
+            <div
+              class="soh-overview-group-header__container"
+              data-cy="soh-overview-header"
+            >
+              <div
+                class="soh-overview-group-header__network"
+                data-capability-status="bad"
+                data-cy="soh-overview-group-header__network"
+                title="Total station count for this group: 4"
+              >
+                Group 4
+              </div>
+              <div
+                class="soh-overview-group-header__count--bad soh-overview-group-header__count"
+                data-cy="soh-overview-group-header__count--bad"
+              >
+                0
+              </div>
+              <div
+                class="soh-overview-group-header__count--marginal soh-overview-group-header__count"
+                data-cy="soh-overview-group-header__count--marginal"
+              >
+                1
+              </div>
+              <div
+                class="soh-overview-group-header__count--good soh-overview-group-header__count"
+                data-cy="soh-overview-group-header__count--good"
+              >
+                3
+              </div>
+            </div>
+            <div
+              class="soh-overview-table__bin soh-overview-table__bin--top"
+            >
+              <div
+                class="soh-table-label"
+              >
+                Needs Attention
+              </div>
+              <div
+                class="soh-overview-cell__container"
+                data-cy="soh-unacknowledged"
+              >
+                <div
+                  draggable="true"
+                >
+                  <div
+                    class="soh-overview-cell
+          soh-overview-cell--draggable
+          
+        "
+                    data-cy="soh-overview-cell"
+                    data-cy-status="GOOD"
+                    data-soh-status="good"
+                    data-station-id="H05N"
+                    tabindex="0"
+                    title="Capability Rollup - GOOD"
+                  >
+                    H05N
+                  </div>
+                </div>
+                <div
+                  draggable="true"
+                >
+                  <div
+                    class="soh-overview-cell
+          soh-overview-cell--draggable
+          
+        "
+                    data-cy="soh-overview-cell"
+                    data-cy-status="GOOD"
+                    data-soh-status="good"
+                    data-station-id="H06N"
+                    tabindex="0"
+                    title="Capability Rollup - GOOD"
+                  >
+                    H06N
+                    <div
+                      class="soh-cell__right-container"
+                      data-capability-status="marginal"
+                      data-cy="soh-worst-of-badge"
+                      style="width: 30px;"
+                    >
+                      <img
+                        alt="MARGINAL"
+                        class="badge"
+                        height="16.88"
+                        src="test-file-stub"
+                        title="Worst of Rollup - MARGINAL"
+                        width="18.996"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  draggable="true"
+                >
+                  <div
+                    class="soh-overview-cell
+          soh-overview-cell--draggable
+          
+        "
+                    data-cy="soh-overview-cell"
+                    data-cy-status="GOOD"
+                    data-soh-status="good"
+                    data-station-id="H07N"
+                    tabindex="0"
+                    title="Capability Rollup - GOOD"
+                  >
+                    H07N
+                    <div
+                      class="soh-cell__right-container"
+                      data-capability-status="bad"
+                      data-cy="soh-worst-of-badge"
+                      style="width: 30px;"
+                    >
+                      <img
+                        alt="BAD"
+                        class="badge"
+                        height="23"
+                        src="test-file-stub"
+                        title="Worst of Rollup - BAD"
+                        width="17.583"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  draggable="true"
+                >
+                  <div
+                    class="soh-overview-cell
+          soh-overview-cell--draggable
+          
+        "
+                    data-cy="soh-overview-cell"
+                    data-cy-status="MARGINAL"
+                    data-soh-status="marginal"
+                    data-station-id="H08N"
+                    tabindex="0"
+                    title="Capability Rollup - MARGINAL"
+                  >
+                    H08N
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="horizontal-divider"
+        >
+          <div
+            class="horizontal-divider__target"
+          />
+          <div
+            class="horizontal-divider__spacer"
+          />
+          <svg
+            class="resize-handle"
+            height="7"
+            viewBox="0 0 18 7"
+            width="18"
+          >
+            <title>
+              Resize
+            </title>
+            <g
+              class="resize-handle-group"
+              data-name="resize-handle-group"
+            >
+              <rect
+                height="7"
+                rx="1"
+                width="2"
+              />
+              <rect
+                height="7"
+                rx="1"
+                width="2"
+                x="4"
+              />
+              <rect
+                height="7"
+                rx="1"
+                width="2"
+                x="8"
+              />
+              <rect
+                height="7"
+                rx="1"
+                width="2"
+                x="12"
+              />
+              <rect
+                height="7"
+                rx="1"
+                width="2"
+                x="16"
+              />
+            </g>
+          </svg>
+          <div
+            class="horizontal-divider__spacer"
+          />
+        </div>
+        <div
+          class="bottom-component"
+          style="height: 1px; min-height: 110px;"
+        >
+          <div
+            class="soh-overview-table"
+          >
+            <div
+              class="soh-overview-table__bin soh-overview-table__bin--bottom"
+              data-cy="soh-acknowledged"
+            >
+              <div
+                class="drop-zone
+          
+          soh-overview-table__drop-zone soh-overview-cell__container
+                  soh-overview-table__drop-zone--highlighted"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="resizer__handle resizer__handle--height resizer__handle--bottom"
+      />
+      <div
+        class="resizer__sensor resizer__sensor--bottom"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Soh station groups layout matches the snapshot when provided with no station groups to display 1`] = `
+<div>
+  <div
+    class="resize-container 
+        quadra-grid-container
+        display__scroll-container--vertical
+        drop-zone__wrapper"
+  />
+</div>
+`;

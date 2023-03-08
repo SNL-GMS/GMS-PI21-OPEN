@@ -1,0 +1,30 @@
+apply plugin: 'java-library'
+
+dependencies {
+    api project(':station-definition-coi')
+    api project(':waveform-coi')
+    api project(':waveform-api')
+    api project(':station-definition-accessor')
+
+    implementation project(':waveman')
+    implementation project(':station-definition-testfixtures')
+    // Utility (dependency is api as apache commons classes are publicly exposed).
+    api libs.org.apache.commons.commons.lang3
+
+    // Serialization (dependencies are api as we expose our ObjectMapper as a singleton).
+    api libs.com.fasterxml.jackson.core.jackson.databind
+    api libs.com.fasterxml.jackson.datatype.jackson.datatype.jdk8
+    api libs.com.fasterxml.jackson.datatype.jackson.datatype.jsr310
+    api libs.com.fasterxml.jackson.datatype.jackson.datatype.guava
+    api libs.org.apache.kafka.kafka.clients
+
+    // msgpack and YAML serialization; kept as private so clients don't have to know about it
+    implementation libs.org.msgpack.jackson.dataformat.msgpack
+    implementation libs.com.fasterxml.jackson.dataformat.jackson.dataformat.yaml
+
+    // other dependencies
+    compileOnly libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+
+}

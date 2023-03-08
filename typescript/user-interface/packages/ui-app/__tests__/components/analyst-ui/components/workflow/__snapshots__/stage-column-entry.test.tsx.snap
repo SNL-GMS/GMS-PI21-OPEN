@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stage Column Entry matches snapshot 1`] = `
+<div>
+  <div
+    class="interval-cell interval-cell--in-progress interval-cell--clickable"
+    data-cy="INTERACTIVE"
+    data-interval="generic-interval"
+    data-sequence-interval="AL1"
+    data-start-time="1622053587"
+  />
+</div>
+`;

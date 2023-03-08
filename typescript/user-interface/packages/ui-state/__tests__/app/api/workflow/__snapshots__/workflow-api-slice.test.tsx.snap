@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`workflow api slice able to update stage intervals 1`] = `
+Array [
+  Object {
+    "name": "AL1",
+    "value": Array [
+      Object {
+        "activityIntervals": Array [
+          Object {
+            "activeAnalysts": Array [
+              "larry",
+              "moe",
+              "curly",
+            ],
+            "comment": "interval example",
+            "endTime": 1622057187,
+            "intervalId": Object {
+              "definitionId": Object {
+                "name": "Auto Network",
+              },
+              "startTime": 1622053587,
+            },
+            "modificationTime": 1622057667,
+            "name": "Event Review",
+            "percentAvailable": 100,
+            "processingEndTime": 1622057547,
+            "processingStartTime": 1622057487,
+            "stageName": "AL1",
+            "startTime": 1622053587,
+            "status": "IN_PROGRESS",
+            "storageTime": 1622057607,
+          },
+        ],
+        "comment": "interval example",
+        "endTime": 1622057187,
+        "intervalId": Object {
+          "definitionId": Object {
+            "name": "Auto Network",
+          },
+          "startTime": 1622053587,
+        },
+        "modificationTime": 1622057667,
+        "name": "AL1",
+        "percentAvailable": 100,
+        "processingEndTime": 1622057547,
+        "processingStartTime": 1622057487,
+        "stageMetrics": Object {
+          "associatedSignalDetectionCount": 34,
+          "eventCount": 21,
+          "maxMagnitude": 8,
+          "unassociatedSignalDetectionCount": 55,
+        },
+        "stageMode": "INTERACTIVE",
+        "startTime": 1622053587,
+        "status": "IN_PROGRESS",
+        "storageTime": 1622057607,
+      },
+      Object {
+        "activityIntervals": Array [
+          Object {
+            "activeAnalysts": Array [
+              "larry",
+              "moe",
+              "curly",
+            ],
+            "comment": "interval example",
+            "endTime": 1622057187,
+            "intervalId": Object {
+              "definitionId": Object {
+                "name": "Auto Network",
+              },
+              "startTime": 1622053587,
+            },
+            "modificationTime": 1622057667,
+            "name": "Event Review",
+            "percentAvailable": 100,
+            "processingEndTime": 1622057547,
+            "processingStartTime": 1622057487,
+            "stageName": "AL1",
+            "startTime": 1622053587,
+            "status": "IN_PROGRESS",
+            "storageTime": 1622057607,
+          },
+        ],
+        "comment": "interval example",
+        "endTime": 1622057192,
+        "intervalId": Object {
+          "definitionId": Object {
+            "name": "Auto Network",
+          },
+          "startTime": 1622053587,
+        },
+        "modificationTime": 1622057667,
+        "name": "AL1",
+        "percentAvailable": 100,
+        "processingEndTime": 1622057547,
+        "processingStartTime": 1622057487,
+        "stageMetrics": Object {
+          "associatedSignalDetectionCount": 34,
+          "eventCount": 21,
+          "maxMagnitude": 8,
+          "unassociatedSignalDetectionCount": 55,
+        },
+        "stageMode": "INTERACTIVE",
+        "startTime": 1622053592,
+        "status": "IN_PROGRESS",
+        "storageTime": 1622057607,
+      },
+    ],
+  },
+]
+`;
+
+exports[`workflow api slice able to use cleanup stage intervals 1`] = `null`;
+
+exports[`workflow api slice get stage interval params 1`] = `
+Object {
+  "all": Array [
+    Object {
+      "endTime": undefined,
+      "stageIds": Array [
+        Object {
+          "name": "test1",
+        },
+        Object {
+          "name": "test2",
+        },
+      ],
+      "startTime": undefined,
+    },
+  ],
+  "current": Object {
+    "endTime": undefined,
+    "stageIds": Array [
+      Object {
+        "name": "test1",
+      },
+      Object {
+        "name": "test2",
+      },
+    ],
+    "startTime": undefined,
+  },
+  "error": undefined,
+}
+`;
+
+exports[`workflow api slice get stage interval params 2`] = `
+Object {
+  "all": Array [
+    Object {
+      "endTime": 10,
+      "stageIds": Array [
+        Object {
+          "name": "test1",
+        },
+        Object {
+          "name": "test2",
+        },
+      ],
+      "startTime": 5,
+    },
+  ],
+  "current": Object {
+    "endTime": 10,
+    "stageIds": Array [
+      Object {
+        "name": "test1",
+      },
+      Object {
+        "name": "test2",
+      },
+    ],
+    "startTime": 5,
+  },
+  "error": undefined,
+}
+`;

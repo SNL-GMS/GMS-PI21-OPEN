@@ -1,0 +1,14 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+    api project(':frameworks-osd-commonobjects')
+    implementation project(':frameworks-configuration-commonobjects')
+    implementation project(':frameworks-configuration-api')
+    implementation project(':frameworks-configuration-repository')
+    implementation project(':cd11-common')
+
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+    api libs.com.google.auto.value.auto.value.annotations
+}

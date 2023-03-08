@@ -1,0 +1,62 @@
+/// Uses absolute positioning and sets top, right, bottom and left to 0 to
+/// fill the parent element. The parent element should have position absolute,
+/// relative, or fixed.
+@mixin fillAllSpaceAbsolutely {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/// Flex column that fills its parent vertically
+@mixin flexColumn {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/// Centers the contents of the parent container using flexbox
+/// Default centers all
+/// @param {*} $orientation one of the following: 'vertical', 'horizontal', 'all'
+@mixin centerChildren($orientation: 'all') {
+  display: flex;
+  @if $orientation == 'horizontal' or $orientation == 'all' {
+    justify-content: center;
+  }
+  @if $orientation == 'vertical' or $orientation == 'all' {
+    align-items: center;
+  }
+}
+
+/// Centers this within its parent, parent must create an absolute positioning context
+/// For example: with position relative
+/// Default centers all
+/// @param {*} $orientation one of the following: 'vertical', 'horizontal', 'all'
+@mixin centerWithinParent($orientation: 'all') {
+  position: absolute;
+  @if $orientation == 'horizontal' {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @if $orientation == 'vertical' {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @if $orientation == 'all' {
+    top: 50%;
+    left: 50%;
+    transform: translate3D(-50%, -50%, 0);
+  }
+}
+
+/// Adds a gap between child elements.
+/// @param {*} $top a valid distance
+/// @param {*} $right a valid distance
+/// @param {*} $bottom a valid distance
+/// @param {*} $left a valid distance
+@mixin hasSpaceBetweenChildren($top, $right, $bottom, $left) {
+  & > * + * {
+    margin: $top $right $bottom $left;
+  }
+}

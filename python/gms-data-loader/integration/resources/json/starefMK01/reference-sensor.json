@@ -1,0 +1,20 @@
+[
+  {
+    "systemTime": "2004-11-30T00:00:00Z",
+    "informationSource": {
+      "originatingOrganization": "External",
+      "informationTime": "2019-02-28T00:00:00Z",
+      "reference": "OffDate: 2018-09-10T12:00:00Z, Loaded from CSS file"
+    },
+    "channelName": "MK01.SHZ",
+    "actualTime": "2004-11-30T00:00:00Z",
+    "instrumentManufacturer": "Geotech_GS-21",
+    "instrumentModel": "GS-21",
+    "serialNumber": "SNxxxx",
+    "numberOfComponents": 1,
+    "cornerPeriod": 1.0,
+    "lowPassband": 0.0,
+    "highPassband": 0.0,
+    "comment": "Sensor is associated with channel MK01.SHZ"
+  }
+]

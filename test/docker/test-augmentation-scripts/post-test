@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [[ $test_exit_status -eq 0 ]]; then
+  echo "TEST AUGMENTATION POD RESULT:  SUCCESS" | tee -a ${TESTRUN_OUTPUT}
+else
+  echo "TEST AUGMENTATION POD RESULT:  FAILURE" | tee -a ${TESTRUN_OUTPUT}
+fi
+if [[ -n "${MINIO_URL}" ]] &&
+   [[ -n "${MINIO_REPORT_BUCKET}" ]] &&
+   [[ -n "${MINIO_ACCESS_KEY}" ]] &&
+   [[ -n "${MINIO_SECRET_KEY}" ]]
+then
+    echo "Copying results to minio cache..."
+    mc alias set minio $MINIO_URL $MINIO_ACCESS_KEY $MINIO_SECRET_KEY
+    POD_NAME="$(cat /etc/hostname)"
+    mv ${RESULTS_PATH} ${POD_NAME}
+    tar czf ${POD_NAME}.tgz ${POD_NAME}
+    mc cp -r ${POD_NAME}.tgz minio/${MINIO_REPORT_BUCKET}
+    mc ls minio/${MINIO_REPORT_BUCKET}
+fi
+

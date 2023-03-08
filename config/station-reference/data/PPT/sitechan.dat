@@ -1,0 +1,6 @@
+PPT    SHZ       1999343     2027  2286324 n       0.0000   -1.0    0.0 Seismic_Short_Period_Vertical_Sensor               20030804 12:00:00
+PPT    SHN       1999343     2028  2286324 n       0.0000    0.0   90.0 Seismic_Short_Period_North_Sensor                  20030804 12:00:00
+PPT    SHE       1999343     2029  2286324 n       0.0000   90.0   90.0 Seismic_Short_Period_East_Sensor                   20030804 12:00:00
+PPT    MHZ       1999343     2024  2286324 n       0.0000   -1.0    0.0 Seismic_Long_Period_Vertical_Sensor                20030804 12:00:00
+PPT    MHN       1999343     2025  2286324 n       0.0000    0.0   90.0 Seismic_Long_Period_North_Sensor                   20030804 12:00:00
+PPT    MHE       1999343     2026  2286324 n       0.0000   90.0   90.0 Seismic_Long_Period_East_Sensor                    20030804 12:00:00

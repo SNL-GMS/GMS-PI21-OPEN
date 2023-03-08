@@ -1,0 +1,60 @@
+#!/bin/bash
+set -o pipefail
+
+# ------------------------------------------------------------------------------
+# ci-docker-clean
+# ------------------------------------------------------------------------------
+
+SCRIPT_DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" > /dev/null && pwd)"
+
+source ${SCRIPT_DIR}/ci.env
+
+#-- decouple from docker-ucp environment settings
+unset DOCKER_HOST
+unset DOCKER_TLS_VERIFY
+
+print_usage() {
+    echo "usage: ci-docker-clean --name NAME"
+    echo ""
+    echo "description:"
+    echo "  docker removes images for a given name given the current branch and git SHA."
+    echo ""
+    echo "arguments:"
+    echo "    --name   Name of the docker image to clean."
+    echo ""
+    echo "examples:"
+    echo "  # Remove the gmsctl image based on our current branch and git sha".
+    echo "  $ ci-docker-clean --name gmsctl"
+    exit 0
+}
+
+if [ $# -eq 0 ]; then print_usage; fi
+
+function docker_rmi() {
+    # silently check if image is already removed
+    eval "docker image inspect $@ 2> /dev/null 1> /dev/null"
+    if [ ${status:=$?} -eq 0 ]; then 
+        echo ">> docker rmi $@"
+        eval "docker rmi $@"
+        if [ ${status:=$?} -ne 0 ]; then echo "Ignoring Error: image already removed..."; fi
+    else
+        echo "$@ already removed..."
+    fi
+}
+
+# Parse our command-line arguments
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --name)    docker_image_name=$2;           shift 2;;
+        -h|--help) print_usage;                    shift 1;;
+        *)  echo "ERROR: unrecognized option '$1'"; exit 1;;
+    esac
+done
+
+if [ ! -n "${docker_image_name:-}" ]; then echo "ERROR: missing required --name argument"; exit 1; fi
+
+docker_rmi "${CI_DOCKER_REGISTRY}/${CI_PROJECT_NAME}/${docker_image_name}:${CI_COMMIT_SHA}"
+docker_rmi "${CI_DOCKER_REGISTRY}/${CI_PROJECT_NAME}/${docker_image_name}:${CI_COMMIT_REF_SLUG}"
+docker_rmi "${CI_DOCKER_REGISTRY}/${CI_PROJECT_NAME}/${docker_image_name}:${DOCKER_IMAGE_TAG}"
+
+exit 0

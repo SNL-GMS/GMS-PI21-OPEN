@@ -1,0 +1,38 @@
+@mixin tableHeaderFontStyle {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 0 10px;
+}
+
+.table-header-cell {
+  @include tableHeaderFontStyle;
+  color: var(--gms-main, $gms-main);
+
+  &.ag-header-cell {
+    padding: 0 10px;
+  }
+}
+
+.table-group-header-cell {
+  @include tableHeaderFontStyle;
+  color: var(--gms-main, $gms-main);
+
+  &.ag-header-cell {
+    justify-content: center;
+  }
+}
+
+.with-separated-rows-color .ag-row {
+  border-top: 2px solid var(--gms-background, $gms-background);
+  border-bottom: 2px solid var(--gms-background, $gms-background);
+  border-color: var(--gms-background, $gms-background);
+
+  .ag-cell {
+    padding: 0;
+  }
+}
+
+.force-left-justification > .table-cell .table-cell__value {
+  justify-content: flex-start;
+}

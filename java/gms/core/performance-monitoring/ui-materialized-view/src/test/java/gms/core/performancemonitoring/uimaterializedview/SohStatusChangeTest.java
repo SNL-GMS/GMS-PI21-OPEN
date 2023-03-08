@@ -1,0 +1,18 @@
+package gms.core.performancemonitoring.uimaterializedview;
+
+import gms.shared.frameworks.osd.coi.soh.quieting.SohStatusChange;
+import gms.shared.frameworks.osd.coi.util.TestUtilities;
+import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
+
+import static gms.core.performancemonitoring.uimaterializedview.utils.MaterializedViewTestFixtures.CLIPPED_CHANGE;
+
+class SohStatusChangeTest {
+
+  @Test
+  void testSerialization() throws IOException {
+    TestUtilities.testSerialization(CLIPPED_CHANGE, SohStatusChange.class);
+  }
+
+}

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventContextMenu matches snapshot 1`] = `
+<div>
+  <ul
+    class="bp4-menu"
+  >
+    <li
+      class=""
+    >
+      <a
+        class="bp4-menu-item bp4-popover-dismiss menu-item-open-event"
+        data-cy="menu-item-open-event"
+        tabindex="0"
+      >
+        <div
+          class="bp4-fill bp4-text-overflow-ellipsis"
+        >
+          Open event
+        </div>
+      </a>
+    </li>
+    <li
+      class=""
+    >
+      <a
+        class="bp4-menu-item bp4-disabled menu-item-close-event"
+        data-cy="menu-item-close-event"
+        tabindex="-1"
+      >
+        <div
+          class="bp4-fill bp4-text-overflow-ellipsis"
+        >
+          Close event
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
+`;

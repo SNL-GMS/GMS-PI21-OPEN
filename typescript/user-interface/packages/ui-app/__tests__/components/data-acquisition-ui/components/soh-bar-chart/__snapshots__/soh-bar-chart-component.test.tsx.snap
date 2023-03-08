@@ -1,0 +1,593 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SohBarChart class should match snapshot 1`] = `
+<div>
+  <div
+    class="base-display lag-display top-level-container scroll-box scroll-box--y"
+  >
+    <div
+      class="missing-wrapper"
+      style="min-height: NaNpx;"
+    >
+      <div
+        class="soh-drill-down__header"
+      >
+        <div
+          class="toolbar"
+          style="width: 960px;"
+        >
+          <div
+            class="toolbar__left-group"
+          >
+            <div
+              class="toolbar-item toolbar-item__left"
+            >
+              <div>
+                <div
+                  data-cy="filter-soh"
+                >
+                  <button
+                    class="bp4-button bp4-align-left toolbar-button"
+                    style="width: 200px;"
+                    title="Filter by Status"
+                    type="button"
+                  >
+                    <span
+                      class="bp4-button-text"
+                    >
+                      <span>
+                        Filter by Status
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        class="bp4-icon bp4-icon-chevron-down"
+                        icon="chevron-down"
+                      >
+                        <svg
+                          data-icon="chevron-down"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                        >
+                          <path
+                            d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="toolbar__center-group"
+          >
+            <div
+              class="toolbar__whitespace"
+              style="width: 944px;"
+            />
+          </div>
+          <div
+            class="toolbar__right-group"
+          >
+            <div
+              class="toolbar-item
+                    "
+            >
+              <div>
+                <div
+                  class="dropdown-container"
+                >
+                  <span
+                    class="dropdown-selector"
+                    data-cy="sort-channels-dropdown"
+                  >
+                    <div
+                      class="bp4-html-select"
+                    >
+                      <select
+                        style="min-width: 220px; width: 220px;"
+                        title="Sort"
+                      >
+                        <option
+                          value="Lag: highest to lowest"
+                        >
+                          Lag: highest to lowest
+                        </option>
+                        <option
+                          value="Lag: lowest to highest"
+                        >
+                          Lag: lowest to highest
+                        </option>
+                        <option
+                          value="Channel: A - Z"
+                        >
+                          Channel: A - Z
+                        </option>
+                        <option
+                          value="Channel: Z - A"
+                        >
+                          Channel: Z - A
+                        </option>
+                      </select>
+                      <span
+                        class="bp4-icon bp4-icon-double-caret-vertical"
+                        icon="double-caret-vertical"
+                      >
+                        <svg
+                          data-icon="double-caret-vertical"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                        >
+                          <desc>
+                            Open dropdown
+                          </desc>
+                          <path
+                            d="M5 7h6a1.003 1.003 0 00.71-1.71l-3-3C8.53 2.11 8.28 2 8 2s-.53.11-.71.29l-3 3A1.003 1.003 0 005 7zm6 2H5a1.003 1.003 0 00-.71 1.71l3 3c.18.18.43.29.71.29s.53-.11.71-.29l3-3A1.003 1.003 0 0011 9z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="toolbar-item
+                    "
+            >
+              <div
+                class="toolbar-label-value"
+                style="margin-left: 1em;"
+              >
+                <div
+                  class="label-value-container"
+                >
+                  <div
+                    class="label-value__label"
+                    data-cy="last-updated-label"
+                  >
+                    Last Updated: 
+                  </div>
+                  <div
+                    class="label-value__value"
+                    data-cy="last-updated-value"
+                    title="Most recent SOH data received"
+                  >
+                    1970-01-01 00:00:00
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="toolbar-item
+                    "
+            >
+              <div
+                class="toolbar-label-value"
+              >
+                <div
+                  class="label-value-container"
+                >
+                  <div
+                    class="label-value__label"
+                    data-cy="update-interval-label"
+                  >
+                    Update Interval: 
+                  </div>
+                  <div
+                    class="label-value__value"
+                    data-cy="update-interval-value"
+                    title="Interval at which SOH data is processed"
+                  >
+                    20 seconds
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="soh-drill-down-station-label display-title"
+          data-cy="drill-down-display-title"
+        >
+          A
+          <div
+            class="display-title__subtitle"
+          >
+            Current lag per channel
+          </div>
+        </div>
+      </div>
+      <div
+        class="legend-and-charts"
+        data-cy="bar-chart"
+      >
+        <div
+          class="core-chart table-display"
+        >
+          <div
+            class="VictoryContainer"
+            style="width: 100%; user-select: none; pointer-events: none; position: relative;"
+          >
+            <svg
+              height="NaN"
+              role="img"
+              style="pointer-events: all; width: 100%; height: 100%;"
+              viewBox="0 0 450 NaN"
+              width="450"
+            >
+              <g
+                role="presentation"
+              >
+                <line
+                  role="presentation"
+                  shape-rendering="auto"
+                  style="stroke: none; stroke-width: 1;"
+                  vector-effect="non-scaling-stroke"
+                  x1="63"
+                  x2="421"
+                  y1="NaN"
+                  y2="NaN"
+                />
+                <g
+                  role="presentation"
+                >
+                  <text
+                    direction="inherit"
+                    dx="0"
+                    id="chart-axis-0-tickLabels-0"
+                    x="242"
+                    y="NaN"
+                  >
+                    <tspan
+                      dx="0"
+                      dy="0"
+                      style="fill: none; font-family: var(--core-sans); font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent;"
+                      text-anchor="middle"
+                      x="242"
+                    >
+                      AAA111
+                    </tspan>
+                  </text>
+                </g>
+              </g>
+              <g
+                role="presentation"
+              >
+                <line
+                  role="presentation"
+                  shape-rendering="auto"
+                  style="stroke: var(--core-soft); stroke-width: 1;"
+                  vector-effect="non-scaling-stroke"
+                  x1="63"
+                  x2="421"
+                  y1="NaN"
+                  y2="NaN"
+                />
+                <text
+                  direction="inherit"
+                  dx="0"
+                  id="chart-undefined-1-axisLabel-0"
+                  x="242"
+                  y="NaN"
+                >
+                  <tspan
+                    dx="0"
+                    dy="0"
+                    style="font-family: var(--core-sans); font-size: 14px; letter-spacing: normal; padding: 82px; fill: var(--core-prominent); stroke: transparent;"
+                    text-anchor="middle"
+                    x="242"
+                  >
+                    Channel Name
+                  </tspan>
+                </text>
+                <g
+                  role="presentation"
+                >
+                  <line
+                    role="presentation"
+                    shape-rendering="auto"
+                    style="stroke: var(--core-main); stroke-width: 1; size: 4px;"
+                    vector-effect="non-scaling-stroke"
+                    x1="242"
+                    x2="242"
+                    y1="NaN"
+                    y2="NaN"
+                  />
+                  <text
+                    direction="inherit"
+                    dx="-25"
+                    id="chart-undefined-1-tickLabels-0"
+                    transform="rotate(-65,242,NaN)"
+                    x="242"
+                    y="NaN"
+                  >
+                    <title>
+                      1.00
+                    </title>
+                    <tspan
+                      dx="-25"
+                      dy="0"
+                      style="font-size: 10px; font-family: var(--core-sans); letter-spacing: normal; padding: 10px; fill: var(--core-main); stroke: transparent;"
+                      text-anchor="middle"
+                      x="242"
+                    >
+                      AAA111
+                    </tspan>
+                  </text>
+                </g>
+              </g>
+              <g
+                role="presentation"
+              >
+                <line
+                  role="presentation"
+                  shape-rendering="auto"
+                  style="stroke: var(--core-soft); stroke-width: 1;"
+                  vector-effect="non-scaling-stroke"
+                  x1="63"
+                  x2="63"
+                  y1="16"
+                  y2="NaN"
+                />
+                <text
+                  direction="inherit"
+                  dx="0"
+                  id="chart-undefined-1-axisLabel-0"
+                  transform="rotate(-90,23,NaN)"
+                  x="23"
+                  y="NaN"
+                >
+                  <tspan
+                    dx="0"
+                    dy="0"
+                    style="font-family: var(--core-sans); font-size: 14px; letter-spacing: normal; padding: 40px; fill: var(--core-prominent); stroke: transparent;"
+                    text-anchor="middle"
+                    x="23"
+                  >
+                    Lag (s)
+                  </tspan>
+                </text>
+                <g
+                  role="presentation"
+                >
+                  <line
+                    role="presentation"
+                    shape-rendering="auto"
+                    style="stroke: var(--core-main); stroke-width: 1; size: 4px;"
+                    vector-effect="non-scaling-stroke"
+                    x1="63"
+                    x2="59"
+                    y1="NaN"
+                    y2="NaN"
+                  />
+                  <text
+                    direction="inherit"
+                    dx="6"
+                    id="chart-undefined-1-tickLabels-0"
+                    x="49"
+                    y="NaN"
+                  >
+                    <title>
+                      2
+                    </title>
+                    <tspan
+                      dx="6"
+                      dy="0"
+                      style="font-size: 10px; font-family: var(--core-sans); letter-spacing: normal; padding: 10px; fill: var(--core-main); stroke: transparent;"
+                      text-anchor="end"
+                      x="49"
+                    >
+                      2
+                    </tspan>
+                  </text>
+                </g>
+                <g
+                  role="presentation"
+                >
+                  <line
+                    role="presentation"
+                    shape-rendering="auto"
+                    style="stroke: var(--core-main); stroke-width: 1; size: 4px;"
+                    vector-effect="non-scaling-stroke"
+                    x1="63"
+                    x2="59"
+                    y1="NaN"
+                    y2="NaN"
+                  />
+                  <text
+                    direction="inherit"
+                    dx="6"
+                    id="chart-undefined-1-tickLabels-1"
+                    x="49"
+                    y="NaN"
+                  >
+                    <title>
+                      4
+                    </title>
+                    <tspan
+                      dx="6"
+                      dy="0"
+                      style="font-size: 10px; font-family: var(--core-sans); letter-spacing: normal; padding: 10px; fill: var(--core-main); stroke: transparent;"
+                      text-anchor="end"
+                      x="49"
+                    >
+                      4
+                    </tspan>
+                  </text>
+                </g>
+                <g
+                  role="presentation"
+                >
+                  <line
+                    role="presentation"
+                    shape-rendering="auto"
+                    style="stroke: var(--core-main); stroke-width: 1; size: 4px;"
+                    vector-effect="non-scaling-stroke"
+                    x1="63"
+                    x2="59"
+                    y1="NaN"
+                    y2="NaN"
+                  />
+                  <text
+                    direction="inherit"
+                    dx="6"
+                    id="chart-undefined-1-tickLabels-2"
+                    x="49"
+                    y="NaN"
+                  >
+                    <title>
+                      6
+                    </title>
+                    <tspan
+                      dx="6"
+                      dy="0"
+                      style="font-size: 10px; font-family: var(--core-sans); letter-spacing: normal; padding: 10px; fill: var(--core-main); stroke: transparent;"
+                      text-anchor="end"
+                      x="49"
+                    >
+                      6
+                    </tspan>
+                  </text>
+                </g>
+                <g
+                  role="presentation"
+                >
+                  <line
+                    role="presentation"
+                    shape-rendering="auto"
+                    style="stroke: var(--core-main); stroke-width: 1; size: 4px;"
+                    vector-effect="non-scaling-stroke"
+                    x1="63"
+                    x2="59"
+                    y1="NaN"
+                    y2="NaN"
+                  />
+                  <text
+                    direction="inherit"
+                    dx="6"
+                    id="chart-undefined-1-tickLabels-3"
+                    x="49"
+                    y="NaN"
+                  >
+                    <title>
+                      8
+                    </title>
+                    <tspan
+                      dx="6"
+                      dy="0"
+                      style="font-size: 10px; font-family: var(--core-sans); letter-spacing: normal; padding: 10px; fill: var(--core-main); stroke: transparent;"
+                      text-anchor="end"
+                      x="49"
+                    >
+                      8
+                    </tspan>
+                  </text>
+                </g>
+                <g
+                  role="presentation"
+                >
+                  <line
+                    role="presentation"
+                    shape-rendering="auto"
+                    style="stroke: var(--core-main); stroke-width: 1; size: 4px;"
+                    vector-effect="non-scaling-stroke"
+                    x1="63"
+                    x2="59"
+                    y1="NaN"
+                    y2="NaN"
+                  />
+                  <text
+                    direction="inherit"
+                    dx="6"
+                    id="chart-undefined-1-tickLabels-4"
+                    x="49"
+                    y="NaN"
+                  >
+                    <title>
+                      10
+                    </title>
+                    <tspan
+                      dx="6"
+                      dy="0"
+                      style="font-size: 10px; font-family: var(--core-sans); letter-spacing: normal; padding: 10px; fill: var(--core-main); stroke: transparent;"
+                      text-anchor="end"
+                      x="49"
+                    >
+                      10
+                    </tspan>
+                  </text>
+                </g>
+              </g>
+              <g
+                role="presentation"
+              >
+                <path
+                  d="M 240, NaN 
+A 0 0 0 0 0, 240, NaN 
+L 240, NaN 
+A 0 0 0 0 0, 240, NaN 
+L 244, NaN 
+A 0 0 0 0 0, 244, NaN 
+L 244, NaN 
+A 0 0 0 0 0, 244, NaN 
+ z"
+                  index="0"
+                  role="presentation"
+                  shape-rendering="auto"
+                  style="stroke: black; padding: 8px; stroke-width: 0;"
+                />
+                <g
+                  transform="translate(137, NaN)"
+                >
+                  <foreignobject
+                    height="60"
+                    width="60"
+                    x="75"
+                    y="0"
+                  />
+                </g>
+              </g>
+              <g
+                style="width: 100%; user-select: none;"
+              >
+                <path
+                  d="M-894999925705.3741,NaNL894999926189.3741,NaN"
+                  role="presentation"
+                  shape-rendering="auto"
+                  style="fill: none; stroke: #be8c0b; stroke-width: 2;"
+                />
+              </g>
+              <g
+                style="width: 100%; user-select: none;"
+              >
+                <path
+                  d="M-894999925705.3741,NaNL894999926189.3741,NaN"
+                  role="presentation"
+                  shape-rendering="auto"
+                  style="fill: none; stroke: #d24c4c; stroke-width: 2;"
+                />
+              </g>
+            </svg>
+            <div
+              style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+            >
+              <svg
+                height="NaN"
+                style="overflow: visible; width: 100%; height: 100%;"
+                viewBox="0 0 450 NaN"
+                width="450"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

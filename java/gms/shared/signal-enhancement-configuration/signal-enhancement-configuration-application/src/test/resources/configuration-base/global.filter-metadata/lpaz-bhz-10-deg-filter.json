@@ -1,0 +1,93 @@
+{
+    "name": "lpaz-bhz-10-deg-filter",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "station",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "LPAZ"
+            ]
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "channelBand",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "B"
+            ]
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "channelInstrument",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "H"
+            ]
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "channelOrientation",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "Z"
+            ]
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "phase",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "P"
+            ]
+        },
+        {
+            "constraintType": "NUMERIC_RANGE",
+            "criterion": "distance",
+            "operator": {
+                "type": "IN",
+                "negated": false
+            },
+            "value": {
+                "min": 0.0,
+                "max": 10.0
+            }
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "filterName",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "Detect"
+            ]
+        }
+    ],
+    "parameters": {
+        "filterDefinitions": [
+            {
+                "$ref=global.filter-definition": [{
+                    "criterion": "name",
+                    "value": "HAM FIR BP 2.00-4.00 Hz"
+                }]
+            }
+        ]
+    }
+}

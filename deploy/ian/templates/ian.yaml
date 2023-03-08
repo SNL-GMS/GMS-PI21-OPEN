@@ -1,0 +1,100 @@
+{{/* Main template for ian */}}
+
+{{- include "gms.common.configMap.standard" $ }}
+{{- include "gms.common.limitrange" $ }}
+{{- include "gms.common.sidecar" $ }}
+{{- include "gms.common.secrets.copy" $ }}
+{{- include "gms.common.configMaps.copy" $ }}
+{{- include "gms.common.secret.oracleWallet" $ }}
+
+{{- range $index, $appName := .Values.standardApps }}
+{{- $appContext := mustMergeOverwrite (mustDeepCopy $) (dict "appValues" (get $.Values $appName)) (dict "appName" $appName) }}
+{{- include "gms.common.app.standard" $appContext }}
+{{- end }}
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: gms
+  labels:
+    {{- include "gms.common.labels.standard" . | trim | nindent 4 }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: gms-psp-role
+  labels:
+    {{- include "gms.common.labels.standard" . | trim | nindent 4 }}
+rules:
+- apiGroups:
+  - extensions
+  resourceNames:
+  - default-psp
+  resources:
+  - podsecuritypolicies
+  verbs:
+    - use
+- apiGroups:
+    - ""
+  resources:
+    - pods
+    - endpoints
+  verbs:
+    - get
+    - list
+    - watch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: gms-psp-bind
+  labels:
+    {{- include "gms.common.labels.standard" . | trim | nindent 4 }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: gms-psp-role
+subjects:
+- kind: ServiceAccount
+  name: gms
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: prometheus
+  labels:
+    {{- include "gms.common.labels.standard" . | trim | nindent 4 }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: prometheus
+  labels:
+    {{- include "gms.common.labels.standard" . | trim | nindent 4 }}
+rules:
+- apiGroups: [""]
+  resources:
+  - nodes
+  - services
+  - endpoints
+  - pods
+  verbs: ["get", "list", "watch"]
+- apiGroups: [""]
+  resources:
+  - configmaps
+  verbs: ["get"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: prometheus
+  labels:
+    {{- include "gms.common.labels.standard" . | trim | nindent 4 }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: prometheus
+subjects:
+- kind: ServiceAccount
+  name: prometheus

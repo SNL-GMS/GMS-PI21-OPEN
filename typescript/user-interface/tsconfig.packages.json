@@ -1,0 +1,47 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./packages/api-gateway/tsconfig-build.json"
+    },
+    {
+      "path": "./packages/common-model/tsconfig-build.json"
+    },
+    {
+      "path": "./packages/common-util/tsconfig-build.json"
+    },
+    {
+      "path": "./packages/integration-tests/tsconfig.json"
+    },
+    {
+      "path": "./packages/ui-app/tsconfig-build.json"
+    },
+    {
+      "path": "./packages/ui-core-components/tsconfig-build.json"
+    },
+    {
+      "path": "./packages/ui-electron/tsconfig-build.json"
+    },
+    {
+      "path": "./packages/ui-state/tsconfig-build.json"
+    },
+    {
+      "path": "./packages/ui-util/tsconfig-build.json"
+    },
+    {
+      "path": "./packages/ui-wasm/tsconfig-build.json"
+    },
+    {
+      "path": "./packages/ui-workers/tsconfig-build.json"
+    },
+    {
+      "path": "./packages/weavess/tsconfig-build.json"
+    },
+    {
+      "path": "./packages/weavess-core/tsconfig-build.json"
+    },
+    {
+      "path": "./packages/webpack-config/tsconfig.json"
+    }
+  ]
+}

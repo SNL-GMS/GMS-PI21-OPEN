@@ -1,0 +1,56 @@
+{
+    "name": "signal-enhancement-configuration.filter-list-definition",
+    "constraints": [
+        {
+            "constraintType": "DEFAULT"
+        }
+    ],
+    "parameters": {
+        "preferredFilterListByActivity": [
+            {
+                "name": "Seismic",
+                "workflowDefinitionId": {
+                    "name": "AL1 Event Review"
+                }
+            },
+		    {
+                "name": "Seismic",
+                "workflowDefinitionId": {
+                    "name": "AL2 Scan"
+                }
+            },
+            {
+                "name": "Long Period",
+                "workflowDefinitionId": {
+                    "name": "AL2 Event Review"
+                }
+            },
+            {
+                "name": "Hydro",
+                "workflowDefinitionId": {
+                    "name": "AL1 Scan"
+                }
+            }
+        ],
+		"filterLists": [
+            {
+				"$ref=global.filter-list": [{
+					"criterion": "name",
+					"value": "Seismic"
+				}]
+            },
+            {
+				"$ref=global.filter-list": [{
+                    "criterion": "name",
+                    "value": "Long Period"
+				}]
+            },
+			{
+				"$ref=global.filter-list": [{
+                    "criterion": "name",
+                    "value": "Hydro"
+				}]
+            }
+        ]
+    }
+}

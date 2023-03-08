@@ -1,0 +1,77 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+        "annotations": {
+            "cattle.io/status": "{\"Conditions\":[{\"Type\":\"ResourceQuotaInit\",\"Status\":\"True\",\"Message\":\"\",\"LastUpdateTime\":\"2021-12-16T22:53:38Z\"},{\"Type\":\"InitialRolesPopulated\",\"Status\":\"True\",\"Message\":\"\",\"LastUpdateTime\":\"2021-12-16T22:53:38Z\"}]}",
+            "lifecycle.cattle.io/create.namespace-auth": "true"
+        },
+        "creationTimestamp": "2021-12-16T22:53:37Z",
+        "finalizers": [
+            "controller.cattle.io/namespace-auth"
+        ],
+        "labels": {
+            "istio-injection": "enabled"
+        },
+        "managedFields": [
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:status": {
+                        "f:phase": {}
+                    }
+                },
+                "manager": "kubectl-create",
+                "operation": "Update",
+                "time": "2021-12-16T22:53:37Z"
+            },
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:metadata": {
+                        "f:labels": {
+                            ".": {},
+                            "f:istio-injection": {}
+                        }
+                    }
+                },
+                "manager": "kubectl-label",
+                "operation": "Update",
+                "time": "2021-12-16T22:53:37Z"
+            },
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:metadata": {
+                        "f:annotations": {
+                            ".": {},
+                            "f:cattle.io/status": {},
+                            "f:lifecycle.cattle.io/create.namespace-auth": {}
+                        },
+                        "f:finalizers": {
+                            ".": {},
+                            "v:\"controller.cattle.io/namespace-auth\"": {}
+                        }
+                    }
+                },
+                "manager": "rancher",
+                "operation": "Update",
+                "time": "2021-12-16T22:53:37Z"
+            }
+        ],
+        "name": "test",
+        "resourceVersion": "28438388",
+        "uid": "748faf94-a388-4339-919b-ba4118536355"
+    },
+    "spec": {
+        "finalizers": [
+            "kubernetes"
+        ]
+    },
+    "status": {
+        "phase": "Active"
+    }
+}

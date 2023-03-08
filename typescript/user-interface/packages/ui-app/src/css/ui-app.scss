@@ -1,0 +1,25 @@
+// Global definitions
+@import './gms-colors';
+@import './gms-fonts';
+@import './utils/_all';
+
+@import 'react-toastify/dist/ReactToastify.min.css';
+@import '~@blueprintjs/popover2/lib/css/blueprint-popover2.css';
+@import '~@blueprintjs/select/lib/css/blueprint-select.css';
+// App scss files
+@import 'goldenlayout-base';
+@import 'gms-ag-grid-overrides';
+@import 'react-virtualized-overrides';
+@import 'gms-base';
+@import 'gms-blueprint-theme-overrides';
+@import 'gms-core-component-overrides';
+@import 'gms-weavess-overrides';
+@import 'goldenlayout-blueprint-theme';
+@import 'components/_all';
+@import 'components/analyst-ui/_all';
+@import 'components/data-acquisition-ui/_all';
+@import 'components/common-ui/_all';
+
+body {
+  font-family: $gms-sans;
+}

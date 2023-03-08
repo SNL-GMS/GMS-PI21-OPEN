@@ -1,0 +1,10 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation libs.io.projectreactor.kafka.reactor.kafka
+
+    // TestContainers
+    implementation libs.org.testcontainers.testcontainers
+    implementation libs.org.testcontainers.junit.jupiter
+    implementation libs.org.testcontainers.kafka
+}

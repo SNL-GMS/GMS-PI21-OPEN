@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Selection commands match snapshot 1`] = `
+Array [
+  Object {
+    "action": [Function],
+    "commandType": "SOH: Select Station",
+    "displayText": "SOH: Select Station ABC",
+    "priority": 10,
+    "searchTags": Array [
+      "select",
+      "ABC",
+      "select ABC",
+      "sel",
+      "sel ABC",
+    ],
+  },
+  Object {
+    "action": [Function],
+    "commandType": "SOH: Select Station",
+    "displayText": "SOH: Select Station TEST",
+    "priority": 10,
+    "searchTags": Array [
+      "select",
+      "TEST",
+      "select TEST",
+      "sel",
+      "sel TEST",
+    ],
+  },
+]
+`;

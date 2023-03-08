@@ -1,0 +1,12 @@
+I20H1  BDF       2017341     8491  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20171207 12:00:00
+I20H1  LDA       2017341     8492  2286324 n       0.0000   -1.0   -1.0 Absolute_barometric_pressure                       20171207 12:00:00
+I20H1  LKO       2017341     8493  2286324 n       0.0000   -1.0   -1.0 External_temperature                               20171207 12:00:00
+I20H1  LWD       2017341     8494  2286324 n       0.0000   -1.0   -1.0 Wind_direction                                     20171207 12:00:00
+I20H1  LWS       2017341     8495  2286324 n       0.0000   -1.0   -1.0 Wind_speed                                         20171207 12:00:00
+I20H2  BDF       2017341     8496  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20171207 12:00:00
+I20H3  BDF       2017341     8497  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20171207 12:00:00
+I20H4  BDF       2017341     8498  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20171207 12:00:00
+I20H5  BDF       2017341     8499  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20171207 12:00:00
+I20H6  BDF       2017341     8500  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20171207 12:00:00
+I20H7  BDF       2017341     8501  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20171207 12:00:00
+I20H8  BDF       2017341     8502  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20171207 12:00:00

@@ -1,0 +1,30 @@
+{
+  "name": "percent-stationB",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "SohValueType",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "PERCENT"
+      ]
+    },
+    {
+      "constraintType": "STRING",
+      "criterion": "StationName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "StationB"
+      ]
+    }
+  ],
+  "parameters": {
+    "backOffDuration": "PT50S"
+  }
+}

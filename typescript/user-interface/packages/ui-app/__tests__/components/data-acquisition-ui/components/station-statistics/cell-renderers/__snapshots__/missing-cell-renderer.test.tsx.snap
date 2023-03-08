@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Missing cell renderer ChannelMissingCellRenderer can be created 1`] = `
+<div>
+  <div
+    draggable="true"
+  >
+    <div
+      data-cy="missing-cell"
+      title=""
+    >
+      <div
+        class="table-cell soh-cell table-cell--numeric"
+        data-cell-status="good"
+        data-cy="table-cell"
+        data-received-status="received"
+        data-station-id="test"
+        style="height: 36px; overflow: hidden;"
+        title="1.00"
+      >
+        <div
+          class=" table-cell__value "
+          data-cy="table-cell__value"
+        >
+          <span>
+            1.00
+          </span>
+        </div>
+        <div
+          class="percent-bar"
+          style="width: 100%; transform: translateX(-99%);"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Missing cell renderer StationMissingCellRenderer can be created 1`] = `<div />`;
+
+exports[`Missing cell renderer can be created handle no data 1`] = `<div />`;

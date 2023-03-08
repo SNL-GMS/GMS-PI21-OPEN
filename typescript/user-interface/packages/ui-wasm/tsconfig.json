@@ -1,0 +1,34 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "typeRoots": ["@types", "./@types", "./node_modules/@types", "../../node_modules/@types"],
+    "types": ["node", "jest", "emscripten"],
+    "baseUrl": ".",
+    "noEmit": true,
+    "outDir": "./lib",
+    "paths": {
+      "@gms/common-model": ["../common-model/src/ts/common-model.ts"],
+      "@gms/common-model/lib/*": ["../common-model/src/ts/*"],
+      "@gms/common-util": ["../common-util/src/ts/common-util.ts"],
+      "@gms/common-util/lib/*": ["../common-util/src/ts/*"],
+      "@gms/ui-util": ["../ui-util/src/ts/ui-util.ts"],
+      "@gms/ui-util/lib/*": ["../ui-util/src/ts/*"]
+    }
+  },
+  "references": [
+    {
+      "path": "../common-util/tsconfig-build.json"
+    },
+    {
+      "path": "../ui-util/tsconfig-build.json"
+    }
+  ],
+  "include": [
+    "src/**/*",
+    "src/ts/**/*.mjs",
+    "src/ts/**/*.wasm",
+    "__tests__/**/*",
+    "__mocks__/**/*",
+    "__tests__/filter-processor/gms-filters/90-minute-waveform-payload.json"
+  ]
+}

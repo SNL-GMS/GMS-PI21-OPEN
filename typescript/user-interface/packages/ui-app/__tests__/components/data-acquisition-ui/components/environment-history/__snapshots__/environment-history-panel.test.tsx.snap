@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Environment history panel matches the snapshot empty channel soh data 1`] = `
+<div>
+  <div
+    class="toolbar"
+    style="width: 60px;"
+  >
+    <div
+      class="toolbar__left-group"
+    >
+      <div
+        class="toolbar-item toolbar-item__left"
+      >
+        <div>
+          <div
+            class="dropdown-container"
+          >
+            <span
+              class="dropdown-selector"
+              data-cy="select-monitor-type-dropdown"
+            >
+              <div
+                class="bp4-html-select"
+              >
+                <select
+                  style="min-width: 220px; width: 220px;"
+                  title="Select Monitor Type"
+                >
+                  <option
+                    value="CHOOSE_A_MONITOR_TYPE"
+                  >
+                    Choose A Monitor Type
+                  </option>
+                  <option
+                    value="AUTHENTICATION_SEAL_BROKEN"
+                  >
+                    Authentication Seal Broken
+                  </option>
+                  <option
+                    value="BACKUP_POWER_UNSTABLE"
+                  >
+                    Backup Power Unstable
+                  </option>
+                  <option
+                    value="CALIBRATION_UNDERWAY"
+                  >
+                    Calibration Underway
+                  </option>
+                  <option
+                    value="CLIPPED"
+                  >
+                    Clipped
+                  </option>
+                  <option
+                    value="CLOCK_DIFFERENTIAL_TOO_LARGE"
+                  >
+                    Clock Differential Too Large
+                  </option>
+                  <option
+                    value="DEAD_SENSOR_CHANNEL"
+                  >
+                    Dead Sensor Channel
+                  </option>
+                  <option
+                    value="DIGITIZER_ANALOG_INPUT_SHORTED"
+                  >
+                    Digitizer Analog Input Shorted
+                  </option>
+                  <option
+                    value="DIGITIZER_CALIBRATION_LOOP_BACK"
+                  >
+                    Digitizer Calibration Loop Back
+                  </option>
+                  <option
+                    value="DIGITIZING_EQUIPMENT_OPEN"
+                  >
+                    Digitizing Equipment Open
+                  </option>
+                  <option
+                    value="EQUIPMENT_HOUSING_OPEN"
+                  >
+                    Equipment Housing Open
+                  </option>
+                  <option
+                    value="EQUIPMENT_MOVED"
+                  >
+                    Equipment Moved
+                  </option>
+                  <option
+                    value="GPS_RECEIVER_OFF"
+                  >
+                    Gps Receiver Off
+                  </option>
+                  <option
+                    value="GPS_RECEIVER_UNLOCKED"
+                  >
+                    Gps Receiver Unlocked
+                  </option>
+                  <option
+                    value="MAIN_POWER_FAILURE"
+                  >
+                    Main Power Failure
+                  </option>
+                  <option
+                    value="VAULT_DOOR_OPENED"
+                  >
+                    Vault Door Opened
+                  </option>
+                  <option
+                    value="ZEROED_DATA"
+                  >
+                    Zeroed Data
+                  </option>
+                </select>
+                <span
+                  class="bp4-icon bp4-icon-double-caret-vertical"
+                  icon="double-caret-vertical"
+                >
+                  <svg
+                    data-icon="double-caret-vertical"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <desc>
+                      Open dropdown
+                    </desc>
+                    <path
+                      d="M5 7h6a1.003 1.003 0 00.71-1.71l-3-3C8.53 2.11 8.28 2 8 2s-.53.11-.71.29l-3 3A1.003 1.003 0 005 7zm6 2H5a1.003 1.003 0 00-.71 1.71l3 3c.18.18.43.29.71.29s.53-.11.71-.29l3-3A1.003 1.003 0 0011 9z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="toolbar__center-group"
+    >
+      <div
+        class="toolbar__whitespace"
+        style="width: 44px;"
+      />
+    </div>
+    <div
+      class="toolbar__right-group"
+    >
+      <div
+        class="toolbar-item
+                    "
+      >
+        <div
+          class="toolbar-button--capsule"
+        >
+          <div
+            class="date-range-picker"
+            id="date-range-picker-id-3"
+          >
+            <label
+              class="bp4-label bp4-label bp4-inline date-range-picker__label"
+            >
+              Time Range: 2021-01-20 02:34:31 to 2021-01-20 02:34:31
+            </label>
+            <div>
+              <button
+                class="bp4-button date-range-picker__apply-button"
+                data-cy="date-range-picker-edit"
+                type="button"
+              >
+                <span
+                  class="bp4-button-text"
+                >
+                  Edit
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="soh-drill-down-station-label display-title"
+    data-cy="drill-down-display-title"
+  >
+    Test
+    <div
+      class="display-title__subtitle"
+    >
+      Amplifier Saturation Detected
+       (Displaying 100% of available points)
+    </div>
+  </div>
+  <div
+    class="bp4-non-ideal-state"
+  >
+    <h4
+      class="bp4-heading"
+    >
+      No Data
+    </h4>
+    <div>
+      No historical environmental data
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,19 @@
+{
+  "providerInputMode":"file",
+
+  "fileConfig": {
+    "dataLocation": "/rsdf/cd11/1for30min",
+    "referenceTime": "2020-03-11T21:56:10.00Z",
+    "initialDelaySeconds": 2
+  },
+
+  "connectionRetryConfig": {
+    "initialDelay": 5,
+    "maxDelay": 30,
+    "delayUnits": "SECONDS",
+    "maxAttempts": 5
+  },
+
+  "connectionFrameCreator": "TEST",
+  "connectionFrameDestination": "GMS"
+}

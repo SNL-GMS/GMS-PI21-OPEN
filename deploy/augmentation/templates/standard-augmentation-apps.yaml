@@ -1,0 +1,4 @@
+{{- range $index, $appName := .Values.standardAugmentationApps }}
+{{- $appContext := mustMergeOverwrite (mustDeepCopy $) (dict "appValues" (get $.Values $appName)) (dict "appName" $appName) }}
+{{- include "gms.common.app.augmentation" $appContext }}
+{{- end }}

@@ -1,0 +1,6 @@
+GNI    SHZ       1991193     4095  2010279 n       0.0000   -1.0    0.0 short-period_vertical                              20101028 12:00:00
+GNI    SHN       1991193     4096  2010279 n       0.0000    0.0   90.0 short-period_north                                 20101028 12:00:00
+GNI    SHE       1991193     4097  2010279 n       0.0000   90.0   90.0 short-period_east                                  20101028 12:00:00
+GNI    BHZ       1991193     4092  2286324 n       0.0000   -1.0    0.0 broad-band_vertical                                20101028 12:00:00
+GNI    BHN       1991193     4093  2286324 n       0.0000    0.0   90.0 broad-band_north                                   20101028 12:00:00
+GNI    BHE       1991193     4094  2286324 n       0.0000   90.0   90.0 broad-band_east                                    20101028 12:00:00

@@ -1,0 +1,11 @@
+I46H1  BWS       2006334     4289  2286324 n       0.0000   -1.0    0.0 Wind_speed                                         20090114 12:00:00
+I46H1  BWD       2006334     4288  2286324 n       0.0000   -1.0    0.0 Wind_Direction                                     20090114 12:00:00
+I46H1  BKO       2006334     4287  2286324 n       0.0000   -1.0    0.0 External_temperature                               20090114 12:00:00
+I46H1  BDF       2006334     4280  2286324 n       0.0000   -1.0    0.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090114 12:00:00
+I46H1  BDA       2006334     4279  2286324 n       0.0000   -1.0    0.0 Atmospheric_pressure                               20090114 12:00:00
+I46H2  BDF       2006334     4282  2286324 n       0.0000   -1.0    0.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090114 12:00:00
+I46H2  BDA       2006334     4281  2286324 n       0.0000   -1.0    0.0 Atmospheric_pressure                               20090114 12:00:00
+I46H3  BDF       2006334     4284  2286324 n       0.0000   -1.0    0.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090114 12:00:00
+I46H3  BDA       2006334     4283  2286324 n       0.0000   -1.0    0.0 Atmospheric_pressure                               20090114 12:00:00
+I46H4  BDF       2006334     4286  2286324 n       0.0000   -1.0    0.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090114 12:00:00
+I46H4  BDA       2006334     4285  2286324 n       0.0000   -1.0    0.0 Atmospheric_pressure                               20090114 12:00:00

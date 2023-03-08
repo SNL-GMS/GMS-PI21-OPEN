@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Workflow Util handles setIntervalStatus with activity 1`] = `[Function]`;
+
+exports[`Workflow Util handles setIntervalStatus with stage 1`] = `[Function]`;
+
+exports[`Workflow Util handles useCloseInterval Hook 1`] = `[Function]`;
+
+exports[`Workflow Util handles useSetOpenInterval Hook 1`] = `[Function]`;

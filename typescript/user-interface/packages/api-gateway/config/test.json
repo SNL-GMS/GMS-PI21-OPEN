@@ -1,0 +1,38 @@
+{
+  "configName": "test",
+  "logLevel": "error",
+
+  "server": {
+    "http": {
+      "host": "localhost",
+      "port": 3000,
+      "httpPath": "/interactive-analysis-api-gateway"
+    },
+    "ws": {
+      "host": "localhost",
+      "port": 4001,
+      "path": "/interactive-analysis-api-gateway/subscriptions"
+    }
+  },
+
+  "kafka": {
+    "clientId": "api-gateway",
+    "groupId": "user-interface",
+    "brokers": ["kafka:9092"],
+    "connectionTimeout": 3000,
+    "maxWaitTimeInMs": 100,
+    "heartbeatInterval": 500,
+    "consumerTopics": {
+      "systemEvent": "system-event"
+    },
+    "producerTopics": {
+      "acknowledgedTopic": "soh.ack-station-soh",
+      "quietedTopic": "soh.quieted-list"
+    }
+  },
+  "testData": {
+    "dataPath": "resources/test_data",
+    "stationGroupsFileName": "processing-station-group.json",
+    "historicalAceiFilename": "historicalAceiResponse.json"
+  }
+}

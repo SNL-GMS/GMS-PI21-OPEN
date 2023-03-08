@@ -1,0 +1,8 @@
+TIXI   BHE       2010153     5626  2286324 n       0.0000   90.0   90.0 Broad_band_east                                    20110420 12:00:00
+TIXI   BHN       2010153     5625  2286324 n       0.0000    0.0   90.0 Broad_band_north                                   20110420 12:00:00
+TIXI   BHZ       2010153     5624  2286324 n       0.0000   -1.0    0.0 Broad_band_vertical                                20110420 12:00:00
+TIXI   SHE       2010153     5623  2015210 n       0.0000   90.0   90.0 Short_period_east                                  20150731 12:00:00
+TIXI   SHE       2015210     5623  2017334 n       0.0000  288.0   90.0 Short_period_east                                  20171205 12:00:00
+TIXI   SHN       2010153     5622  2015210 n       0.0000    0.0   90.0 Short_period_north                                 20150731 12:00:00
+TIXI   SHN       2015210     5622  2017334 n       0.0000  198.0   90.0 Short_period_north                                 20171205 12:00:00
+TIXI   SHZ       2010153     5621  2017334 n       0.0000   -1.0    0.0 Short period vertical                              20171205 12:00:00

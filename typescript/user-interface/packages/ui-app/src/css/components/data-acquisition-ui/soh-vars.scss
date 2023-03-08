@@ -1,0 +1,64 @@
+$animation-duration: 0.25s;
+$darken-percent: -25%;
+$good-color: $gms-good;
+$marginal-color: $gms-warning;
+$bad-color: $gms-strong-warning;
+$neutral-color: $gms-popover-background;
+$non-contributing-color: $gms-non-contributing;
+$neutral-background: $gms-popover-background;
+$group-background: $gms-popover-background;
+$cell-cap-radius: 4px;
+$selected-border-color: $gms-input-highlight-border;
+
+/// Definitions
+/// rollup-status selector
+$good-cell: '[data-cell-status="good"]';
+$marginal-cell: '[data-cell-status="marginal"]';
+$bad-cell: '[data-cell-status="bad"]';
+$non-contributing-cell: '[data-cell-status="non-contributing"]';
+
+/// received-status selector
+$data-received: '[data-received-status="received"]';
+$data-not-enough: '[data-received-status="not-enough-data"]';
+$data-not-received: '[data-received-status="not-received"]';
+
+@mixin disabledBackground($color: $neutral-background) {
+  color: var(--gms-main, $gms-main);
+  @include diagonalStripedBackground(
+    $color,
+    darken($color, $diagonal-texture-darken-percent),
+    $diagonal-texture-distance
+  );
+}
+
+@mixin selectedBorder($where...) {
+  position: relative;
+  &::after {
+    @include fillAllSpaceAbsolutely;
+    content: '';
+    @if length($where) > 0 {
+      @each $place in $where {
+        border-#{$place}: 4px
+          solid
+          var(--gms-input-highlight-border, var(--gms-input-highlight, $gms-input-highlight));
+      }
+    } @else {
+      border: 4px
+        solid
+        var(--gms-input-highlight-border, var(--gms-input-highlight, $gms-input-highlight));
+    }
+    z-index: 1;
+    opacity: 1;
+    background-color: transparent;
+  }
+}
+
+@mixin titleCellOpacity {
+  .table-cell__value {
+    opacity: 0.8;
+  }
+}
+
+@mixin darkenedBorder($border-color: $non-contributing-color) {
+  border: 1px solid darken($border-color, $diagonal-texture-darken-percent);
+}

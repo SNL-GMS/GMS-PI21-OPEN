@@ -1,0 +1,16 @@
+{
+  "name": "station-acquisition-config",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "$ref=global.cd11.station-parameters": [
+      {
+        "criterion": "DEFAULT",
+        "value": "DEFAULT"
+      }
+    ]
+  }
+}

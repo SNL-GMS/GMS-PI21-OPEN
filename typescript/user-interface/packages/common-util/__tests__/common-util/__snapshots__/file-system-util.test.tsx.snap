@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`file system utils readCsvData 1`] = `
+Array [
+  Object {
+    "# Channels": "3",
+    "Comments": "",
+    "IMS #": "",
+    "Location": "Ala-archa Kyrgyzstan",
+    "Original Format": "GSE",
+    "Station Name": "AAK",
+    "Station Type": "ss",
+  },
+  Object {
+    "# Channels": "26",
+    "Comments": "",
+    "IMS #": "",
+    "Location": "Malin Array Ukraine",
+    "Original Format": "CD11",
+    "Station Name": "AKASG",
+    "Station Type": "ar",
+  },
+  Object {
+    "# Channels": "3",
+    "Comments": "",
+    "IMS #": "",
+    "Location": "Mt.furi Ethiopia",
+    "Original Format": "GSE",
+    "Station Name": "FURI",
+    "Station Type": "ss",
+  },
+]
+`;
+
+exports[`file system utils readJsonData 1`] = `
+Object {
+  "file-system-util-entry": "foobar",
+}
+`;

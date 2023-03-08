@@ -1,0 +1,193 @@
+/// Definitions
+/// rollup-status selector
+$good-cell: '[data-cell-status="good"]';
+$marginal-cell: '[data-cell-status="marginal"]';
+$bad-cell: '[data-cell-status="bad"]';
+$non-contributing-cell: '[data-cell-status="non-contributing"]';
+$none-cell: '[data-cell-status="none"]';
+
+/// received-status selector
+$data-received: '[data-received-status="received"]';
+$data-not-enough: '[data-received-status="not-enough-data"]';
+$data-not-received: '[data-received-status="not-received"]';
+
+/// general backgrounds
+$general-backgrounds: (
+  '#{$good-cell}': $neutral-color,
+  '#{$marginal-cell}': $marginal-color,
+  '#{$bad-cell}': $bad-color,
+  '#{$non-contributing-cell}': $non-contributing-color
+);
+
+$title-backgrounds: (
+  '#{$good-cell}': $good-color,
+  '#{$marginal-cell}': $marginal-color,
+  '#{$bad-cell}': $bad-color,
+  '#{$non-contributing-cell}': $non-contributing-color
+);
+
+/***************************
+ * Percent Cell Generator
+ */
+@mixin createPercentSohCellStyles($selector, $bg-color) {
+  &#{$selector} {
+    background: scale-color($bg-color, $lightness: $darken-percent);
+    .percent-bar {
+      background: $bg-color;
+    }
+  }
+}
+
+/***************************
+ * Solid Cell Generator
+ */
+@mixin createSolidSohCellStyles($selector, $bg-color) {
+  &#{$selector} {
+    background: $bg-color;
+    border: none;
+  }
+}
+
+/***************************
+ * Hashed Cell Generator
+ */
+@mixin createHashedSohCellStyles($selector, $bg-color) {
+  &#{$selector} {
+    @include disabledBackground($bg-color);
+    @include darkenedBorder($bg-color);
+    // Add the drop shadow inside the cell so that it
+    // fills the gap created by rounding errors in firefox
+    -webkit-filter: drop-shadow(0 0 0 $bg-color);
+    filter: drop-shadow(0 0 0 $bg-color);
+  }
+}
+
+// SOH Cell styles
+.soh-cell {
+  &#{$marginal-cell},
+  &#{$marginal-cell} .table-cell__value {
+    color: var(--gms-background, $gms-background);
+  }
+
+  /// Percent cells
+  @each $selector, $bg in $general-backgrounds {
+    @include createPercentSohCellStyles($selector, $bg);
+  }
+
+  /// Solid Cells
+  &--solid {
+    @each $selector, $bg in $general-backgrounds {
+      @include createSolidSohCellStyles($selector, $bg);
+    }
+  }
+
+  /// Title Cells
+  &__title {
+    font-weight: 500;
+    letter-spacing: 1px;
+    &--neutral {
+      background: $neutral-color;
+    }
+    @each $selector, $bg in $title-backgrounds {
+      @include createSolidSohCellStyles($selector, $bg);
+    }
+    &#{$non-contributing-cell} {
+      @include darkenedBorder;
+      @include titleCellOpacity;
+    }
+  }
+
+  /// Data Not Received Cells
+  &#{$data-not-enough},
+  &#{$data-not-received} {
+    @each $selector, $bg in $general-backgrounds {
+      @include createHashedSohCellStyles($selector, $bg);
+    }
+    .percent-bar {
+      opacity: 0;
+    }
+    /// Title Cell overrides
+    &.soh-cell__title {
+      // default is overridden by the styles below, unless we did not get a
+      // status rollup
+      @include createHashedSohCellStyles('.soh-cell', $non-contributing-color);
+
+      &#{$good-cell} {
+        @include createSolidSohCellStyles(#{$good-cell}, $good-color);
+      }
+      &#{$marginal-cell} {
+        @include createSolidSohCellStyles(#{$marginal-cell}, $marginal-color);
+      }
+      &#{$bad-cell} {
+        @include createSolidSohCellStyles($bad-cell, $bad-color);
+      }
+      &#{$non-contributing-cell} {
+        @include createHashedSohCellStyles(#{$non-contributing-cell}, $non-contributing-color);
+      }
+      &#{$data-not-received},
+      &#{$data-not-enough},
+      &--none {
+        @include titleCellOpacity;
+      }
+    }
+  }
+
+  &__right-container {
+    @include centerChildren;
+    position: relative;
+    margin-left: auto;
+    height: 100%;
+    width: 30px;
+    border-left: 2px solid var(--gms-prominent-background, $gms-prominent-background);
+    border-radius: 0 $rounded-rectangle-radius $rounded-rectangle-radius 0;
+    img {
+      z-index: 7;
+    }
+    &[data-capability-status='bad'] {
+      background-color: $bad-color;
+    }
+    &[data-capability-status='marginal'] {
+      background-color: $marginal-color;
+    }
+  }
+}
+
+/// Header cells
+// AG Grid doesn't like adding data attributes to header cells,
+// and we want to avoid a custom cell renderer framework for
+// performance reasons, so we're using CSS classes instead
+@mixin createHeaderCellDataStatusStyles($bg-color) {
+  @include createHashedSohCellStyles('.soh-header-cell--not-received', $bg-color);
+  @include createHashedSohCellStyles('.soh-header-cell--not-enough-data', $bg-color);
+  @include createSolidSohCellStyles('.soh-header-cell--received', $bg-color);
+}
+.soh-header-cell {
+  @include tableHeaderFontStyle;
+  color: var(--gms-main, $gms-main);
+
+  &.ag-header-cell {
+    padding: 0 10px;
+  }
+  &--good {
+    @include createHeaderCellDataStatusStyles($good-color);
+  }
+  &--neutral {
+    background-color: $neutral-color;
+  }
+  &--marginal {
+    @include createHeaderCellDataStatusStyles($marginal-color);
+    &,
+    .ag-theme-dark & .ag-icon {
+      color: var(--gms-background, $gms-background) !important;
+    }
+  }
+  &--bad {
+    @include createHeaderCellDataStatusStyles($bad-color);
+  }
+  &--none {
+    @include createHeaderCellDataStatusStyles($non-contributing-color);
+    &.soh-header-cell--received {
+      @include darkenedBorder;
+    }
+  }
+}

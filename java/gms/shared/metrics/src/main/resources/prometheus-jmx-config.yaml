@@ -1,0 +1,4 @@
+---
+#A config file for the jmx-exporter MUST exsist in order for the jmx-exporter to run. It can be blank but it must exist.
+#This file is intentionally left blank, as a blank yaml file is the most basic config possible.
+#This is where you can white/black list certain metrics and select using patterns.

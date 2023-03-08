@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ui map can mount map 1`] = `
+<div>
+  <div
+    class="base-display ian-map-gl-container"
+    data-cy="ian-map-container"
+    data-non-preferred-event-count="0"
+    data-preferred-event-count="0"
+    data-signal-detection-count="0"
+    data-station-count="0"
+  >
+    <div
+      class="bp4-context-menu2"
+    >
+      <div />
+    </div>
+    <div
+      class="cesium-viewer-toolbar"
+    >
+      <span
+        class="cesium-sceneModePicker-wrapper cesium-toolbar-button"
+      />
+    </div>
+  </div>
+</div>
+`;

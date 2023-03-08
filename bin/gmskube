@@ -1,0 +1,242 @@
+#!/bin/bash
+
+# ------------------------------------------------------------------------------
+# gmskube invocation script
+#
+# The gmskube (GMS Kubernetes Control) program is a Python script used to manage running
+# instances of the GMS (Geophysical Monitoring System) system.
+#
+# The gmskube.py Python script is packaged up with all needed dependencies in
+# a gmskube Docker image which is invoked by this bash script. Running gmskube
+# requires that you have a local installation of Docker that is used to run
+# this container, and a local installation of kubectl.
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Verify kubectl is present
+# ------------------------------------------------------------------------------
+if ! hash kubectl 2>/dev/null; then
+    echo \
+    "ERROR: 'kubectl' executable was not found in PATH. Please install kubectl."
+    exit 1
+fi
+
+# ------------------------------------------------------------------------------
+# Verify CI_DOCKER_REGISTRY is set
+# ------------------------------------------------------------------------------
+if [[ -z "${CI_DOCKER_REGISTRY}" ]]; then
+    echo \
+    "ERROR: Variable 'CI_DOCKER_REGISTRY' must be set to the docker registry hostname
+            Example:
+            > export CI_DOCKER_REGISTRY=gms-docker-registry.mydomain.com
+
+            Consider adding this to your .bashrc
+            "
+    exit 1
+fi
+
+# ------------------------------------------------------------------------------
+# Handle bash-side command-line parsing.
+#
+# The gmskube Python script actually handles the MAJORITY of the command-line
+# parsing, but we need to preprocess a few arguments and handle some prep work
+# before pulling the docker container and invoking the script.
+#
+#   --config: This is a local directory containing configuration overrides.
+#             If specified, we need to volume mount that directory so gmskube
+#             can see it inside the container. Since the directory name inside
+#             the container will be different, we want to transform the argument
+#             for gmskube so it is the path inside the container.
+#
+#   --chart: This is a local directory with a custom helm chart to deploy. It is
+#            processed similar to --config.
+#
+#   --wallet-path: This is a local directory with a custom oracle wallet to deploy.
+#                  It is processed similar to --config.
+#
+#   --values: This is a yaml file with override values that will be passed to helm.
+#
+#   --tag: If a tag was specified, we also want to pull the gmskube
+#          container for that tag instead of the one from develop.
+# ------------------------------------------------------------------------------
+gmskubeargs=()
+dockerargs=("--rm")
+
+# Consume our script arguments and build up the arguments for gmskube
+while [ $# -gt 0 ]; do
+    case "$1" in
+      --config)
+          # Extract the user supplied config overrides directory and shift the command line by 2 (to skip over flag and value)
+          CONFIG_OVERRIDES=$2
+          shift 2
+          ;;
+      --chart)
+          # Extract the user supplied chart directory
+          CHART_OVERRIDES=$2
+          shift 2
+          ;;
+      --wallet-path)
+          # Extract the user supplied Oracle Wallet overrides directory
+          ORACLE_WALLET_OVERRIDES=$2
+          shift 2
+          ;;
+      --values)
+          # Extract the user supplied values overrides file
+          VALUES_OVERRIDES=$2
+          shift 2
+          ;;
+      --tag)
+          # Extract the user supplied tag name (used to reconcile GMSKUBE_TAG)
+          TAG=$2
+          shift 2
+          ;;
+      --)
+          # Command line is done so break out
+          break
+          ;;
+      *)
+          # Append any other arguments to the gmskubeargs array to be passed on to docker run
+          gmskubeargs+=("$1")
+          shift
+          ;;
+    esac
+done
+
+if [[ -n "${CONFIG_OVERRIDES}" ]] ; then
+    if [[ ! -e "${CONFIG_OVERRIDES}" ]]; then
+        echo "ERROR: specified --config directory '${CONFIG_OVERRIDES}' does not exist"
+        exit 1
+    fi
+    # Expand the config to ensure this is the full path to the config dir
+    CONFIG_DIR=$(cd ${CONFIG_OVERRIDES}; pwd)
+    echo Using config directory: ${CONFIG_DIR}
+    dockerargs+=("-v" "${CONFIG_DIR}:/overrides:ro")
+
+    # --config is mounted as /overrides
+    gmskubeargs+=("--config" "/overrides")
+fi
+
+if [[ -n "${CHART_OVERRIDES}" ]] ; then
+    if [[ ! -e "${CHART_OVERRIDES}" ]]; then
+        echo "ERROR: specified --chart directory '${CHART_OVERRIDES}' does not exist"
+        exit 1
+    fi
+    # Expand the chart to ensure this is the full path to the chart dir
+    CHART_DIR=$(cd ${CHART_OVERRIDES}; pwd)
+    echo Using chart directory: ${CHART_DIR}
+    dockerargs+=("-v" "${CHART_DIR}:/deploy/custom:ro")
+
+    # --chart is mounted into /deploy
+    gmskubeargs+=("--chart" "/deploy/custom")
+
+    # Also mount linked charts
+    if [[ -e "${CHART_DIR}/../common" ]]; then
+      COMMON_CHART_DIR=$(cd ${CHART_DIR}/../common; pwd)
+      echo Also mounting common chart directory: ${COMMON_CHART_DIR}
+      dockerargs+=("-v" "${COMMON_CHART_DIR}:/deploy/common:ro")
+    fi
+
+    if [[ -e "${CHART_DIR}/../kafka" ]]; then
+      KAFKA_CHART_DIR=$(cd ${CHART_DIR}/../kafka; pwd)
+      echo Also mounting kafka chart directory: ${KAFKA_CHART_DIR}
+      dockerargs+=("-v" "${KAFKA_CHART_DIR}:/deploy/kafka:ro")
+    fi
+
+    if [[ -e "${CHART_DIR}/../augmentation" ]]; then
+      AUGMENTATION_CHART_DIR=$(cd ${CHART_DIR}/../augmentation; pwd)
+      echo Also mounting augmentation chart directory: ${AUGMENTATION_CHART_DIR}
+      dockerargs+=("-v" "${AUGMENTATION_CHART_DIR}:/deploy/augmentation:ro")
+    fi
+
+    if [[ -e "${CHART_DIR}/../container-wallet" ]]; then
+      CONTAINER_WALLET_DIR=$(cd ${CHART_DIR}/../container-wallet; pwd)
+      echo Also mounting container wallet directory: ${CONTAINER_WALLET_DIR}
+      dockerargs+=("-v" "${CONTAINER_WALLET_DIR}:/deploy/container-wallet:ro")
+    fi
+fi
+
+if [[ -n "${ORACLE_WALLET_OVERRIDES}" ]] ; then
+    if [[ ! -e "${ORACLE_WALLET_OVERRIDES}" ]]; then
+        echo "ERROR: specified oracle wallet directory '${ORACLE_WALLET_OVERRIDES}' does not exist"
+        exit 1
+    fi
+    # Expand the wallet to ensure this is the full path to the Oracle Wallet dir
+    ORACLE_WALLET_DIR=$(cd ${ORACLE_WALLET_OVERRIDES}; pwd)
+    echo Using oracle wallet directory: ${ORACLE_WALLET_DIR}
+    dockerargs+=("-v" "${ORACLE_WALLET_DIR}:/oracle-wallet:ro")
+
+    # --wallet-path is mounted as /oracle-wallet
+    gmskubeargs+=("--wallet-path" "/oracle-wallet")
+
+fi
+
+if [[ -n "${VALUES_OVERRIDES}" ]] ; then
+    if [[ ! -f "${VALUES_OVERRIDES}" ]]; then
+        echo "ERROR: specified --values '${VALUES_OVERRIDES}' does not exist"
+        exit 1
+    fi
+    # Expand the values to ensure this is the full path to the values dir and file
+    VALUES_OVERRIDES_DIR=$(cd $(dirname "${VALUES_OVERRIDES}"); pwd)
+    VALUES_OVERRIDES_FILE=$(basename ${VALUES_OVERRIDES})
+    echo Using values override file: ${VALUES_OVERRIDES_DIR}/${VALUES_OVERRIDES_FILE}
+    dockerargs+=("-v" "${VALUES_OVERRIDES_DIR}/${VALUES_OVERRIDES_FILE}:/deploy/values_overrides.yaml:ro")
+
+    # --value is mounted into /deploy/values_overrides.yaml
+    gmskubeargs+=("--values" "/deploy/values_overrides.yaml")
+fi
+
+# Check for ARM architecture and add docker compatibility arguments
+if [[ $(uname -m) = arm64 ]] ; then
+  dockerargs+=("--platform" "linux/amd64")
+fi
+
+# If --tag is specified, then always use that value for GMSKUBE_TAG
+if [[ -n "${TAG}" ]]; then
+    # Fix the GMSKUBE_TAG to match our system conventions
+    # sed replaces violating chars w/ dash and ensures no trailing/leading dashes, tr ensures lowercase and cut ensures it's <=63 chars
+    export GMSKUBE_TAG=$(echo "${TAG}" | sed -e 's/[^a-zA-Z0-9]/-/g' -e 's/^-//' -e 's/-$//' | tr '[:upper:]' '[:lower:]' | cut -c-63)
+
+    # --tag should be propogated as-is to gmskube
+    gmskubeargs+=("--tag" "${TAG}")
+elif [[ -z "${GMSKUBE_TAG}" ]]; then
+    # set GMSKUBE_TAG to a default value if it is not defined at this point
+    export GMSKUBE_TAG=develop
+fi
+
+# If we are running from a TTY, use the -it option with docker run
+if [ -t 1 ]; then
+    dockerargs+=("-it")
+fi
+
+# Get the current kubectl context
+export KUBECTL_CONTEXT=$(kubectl config view --minify --raw)
+
+# Derive the KUBECTL_HOST from the kubectl context if not set in the environment
+# This should be the wildcard ingress route for the cluster
+if [[ -z "${KUBECTL_HOST}" ]]; then
+    # get the server url, extract the host name, remove "rancher.", remove any port
+    export KUBECTL_HOST=$(kubectl config view -o jsonpath='{.clusters[].cluster.server}' --minify --raw | awk -F/ '{print $3}' | sed 's/^rancher\.//' | sed s/:[0-9][0-9]*$//)
+fi
+
+# Add docker environment vars
+dockerargs+=(
+    "-e" "CI"
+    "-e" "CI_DOCKER_REGISTRY"
+    "-e" "COLUMNS"
+    "-e" "HOSTNAME"
+    "-e" "KUBECTL_CONTEXT"
+    "-e" "KUBECTL_HOST"
+    "-e" "LOCAL_UID=$(id -u)"
+    "-e" "LOGNAME"
+    "-e" "RICH_LOG_PATH"
+)
+
+# Pull the latest image unless GMSKUBE_NO_PULL is set
+if [[ -z "${GMSKUBE_NO_PULL}" ]]; then
+    # Pull the image. This is run on the local docker daemon
+    DOCKER_HOST= DOCKER_TLS_VERIFY= docker pull ${CI_DOCKER_REGISTRY}/gms-common/gmskube:${GMSKUBE_TAG} | sed 's/^/# /'
+    echo
+fi
+
+# Run the image. This is run on the local docker daemon
+DOCKER_HOST= DOCKER_TLS_VERIFY=  docker run ${dockerargs[@]} ${CI_DOCKER_REGISTRY}/gms-common/gmskube:${GMSKUBE_TAG} "${gmskubeargs[@]}"

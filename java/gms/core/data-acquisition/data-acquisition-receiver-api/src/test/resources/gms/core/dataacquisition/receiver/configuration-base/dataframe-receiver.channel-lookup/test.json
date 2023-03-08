@@ -1,0 +1,21 @@
+{
+  "name": "test",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "protocol",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "CD11"
+      ]
+    }
+  ],
+  "parameters": {
+    "channelIdsByPacketName": {
+      "foo": "bar"
+    }
+  }
+}

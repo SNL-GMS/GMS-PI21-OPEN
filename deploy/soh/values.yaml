@@ -1,0 +1,818 @@
+global:
+  # baseDomain specifies the domain name suffix applied to all Ingress hostnames. Set by gmskube.
+  baseDomain: "cluster.example.com"
+
+  # env specifies environment variables that will be added to all applications
+  # unless `useGlobalEnv: false` for that application
+  env:
+    ETCD_GMS_PASSWORD:
+      key: "password"
+      name: "etcd-gms-user"
+      type: "fromSecret"
+    ETCD_GMS_USER:
+      key: "username"
+      name: "etcd-gms-user"
+      type: "fromSecret"
+    GMS_CONFIG_SQL_PASSWORD:
+      key: "password"
+      name: "postgres-soh-application"
+      type: "fromSecret"
+    GMS_CONFIG_SQL_USERNAME:
+      key: "username"
+      name: "postgres-soh-application"
+      type: "fromSecret"
+    GMS_CONFIG_SQL_ELEV_PASSWORD:
+      key: "password"
+      name: "postgres-soh-application-elevated"
+      type: "fromSecret"
+    GMS_CONFIG_SQL_ELEV_USERNAME:
+      key: "username"
+      name: "postgres-soh-application-elevated"
+      type: "fromSecret"
+
+  # imagePullPolicy is the policy used for all images ('Always', 'IfNotPresent', 'Never').
+  imagePullPolicy: "Always"
+
+  # imageRegistry is the Docker image registry URL where all images will be retrieved. Set by gmskube.
+  imageRegistry: "docker-registry.example.com"
+
+  # imageTag is the Docker image tag used when retrieving all CI-built images. Set by gmskube.
+  imageTag: "develop"
+
+  # If cd11-injector is enabled. Set by gmskube.
+  injector: false
+
+  # Whether or not to use istio. Set by gmskube.
+  istio: false
+
+  # If liveData is true, the da-connman and da-dataman apps will use hostPorts to listen for external live data. Set by gmskube.
+  liveData: false
+
+  # Default PersistentVolumeClaim storage class.
+  # Note that kafka's storageClass is configured independently, but it uses the default storage class
+  # Empty uses the cluster's default storage class
+  storageClassName:
+
+  # Username of the user installing or upgrading the instance. Set by gmskube.
+  user: "UNKNOWN"
+
+
+# namespace LimitRange
+limitRange:
+  enabled: false
+  limits: []
+# Limits can be any valid LimitRangeSpec yaml, example:
+#  limits:
+#   - default:
+#       cpu: 2
+#       memory: "1Gi"
+#     defaultRequest:
+#       cpu: "100m"
+#       memory: "256Mi"
+#     max:
+#       cpu: 4
+#     min:
+#       cpu: "100m"
+#     type: "Container"
+
+
+# List of GMS standard apps. These are apps that use the common gms app templates.
+# Note: an app definition must also be added in the section below for each standard app.
+standardApps:
+  - "acei-merge-processor"
+  - "capability-soh-rollup-kafka-consumer"
+  - "cd11-rsdf-processor"
+  - "config-loader"
+  - "da-connman"
+  - "da-dataman"
+  - "etcd"
+  - "frameworks-configuration-service"
+  - "frameworks-osd-rsdf-kafka-consumer"
+  - "frameworks-osd-service"
+  - "frameworks-osd-station-soh-kafka-consumer"
+  - "frameworks-osd-systemmessage-kafka-consumer"
+  - "frameworks-osd-ttl-worker"
+  - "interactive-analysis-api-gateway"
+  - "interactive-analysis-ui"
+  - "postgresql-exporter"
+  - "postgresql-gms"
+  - "prometheus"
+  - "smds-service"
+  - "soh-control"
+  - "soh-quieted-list-kafka-consumer"
+  - "soh-status-change-kafka-consumer"
+  - "ssam-control"
+  - "ui-processing-configuration-service"
+  - "user-manager-service"
+
+# Secrets to copy from other namespaces
+copySecrets:
+  ingress-default-cert:
+    namespace: "gms"
+  rancher-monitoring-grafana:
+    namespace: "cattle-monitoring-system"
+
+# Configmaps to copy from other namespaces
+copyConfigMaps:
+  keycloak-config:
+    namespace: "gms"
+
+
+#
+# App definitions
+#
+acei-merge-processor:
+  imageName: "gms-common/acei-merge-processor"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  replicas: 6
+  restartAfterReconfig: "true"
+
+capability-soh-rollup-kafka-consumer:
+  imageName: "gms-common/capability-soh-rollup-kafka-consumer"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+
+cd11-rsdf-processor:
+  imageName: "gms-common/cd11-rsdf-processor"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  restartAfterReconfig: "true"
+
+config-loader:
+  deploymentStrategy: Recreate
+  imageName: "gms-common/config-loader"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+      annotations:
+          nginx.ingress.kubernetes.io/proxy-body-size: "1024m"
+    service:
+      8080:
+        name: "http-web"
+  podSecurityContext:
+    fsGroup: 1001
+  useGlobalEnv: false
+  volume:
+    state:
+      mountPath: "/opt/gms/config-loader/app/state"
+      size: "100Mi"
+      type: "persistentVolumeClaim"
+
+da-connman:
+  connPort: 8041
+  deploymentStrategy: Recreate
+  env:
+    GMS_CONFIG_CD11_DATACONSUMER_BASEPORT: '{{ get (get .Values "da-dataman") "dataPortStart" }}'
+    GMS_CONFIG_CONNMAN__CONNECTION_MANAGER_WELL_KNOWN_PORT: '{{ get (get .Values "da-connman") "connPort" }}'
+    GMS_CONFIG_CONNMAN__DATA_MANAGER_IP_ADDRESS: "da-dataman"
+  imageName: "gms-common/cd11-connman"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  restartAfterReconfig: "true"
+
+da-dataman:
+  dataPortEnd: 8449
+  dataPortStart: 8100
+  deploymentStrategy: Recreate
+  env:
+    GMS_CONFIG_CD11_DATACONSUMER_BASEPORT: '{{ get (get .Values "da-dataman") "dataPortStart" }}'
+  imageName: "gms-common/cd11-dataman"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  podSecurityContext:
+    fsGroup: 1001
+  restartAfterReconfig: "true"
+  volume:
+    cd11:
+      mountPath: "/data-receiver/shared-volume"
+      size: "150Mi"
+      type: "persistentVolumeClaim"
+
+etcd:
+  env:
+    GMS_ETCD_ADMIN_PASSWORD:
+      key: "password"
+      name: "etcd-admin-user"
+      type: "fromSecret"
+    GMS_ETCD_ADMIN_USER:
+      key:  "username"
+      name: "etcd-admin-user"
+      type: "fromSecret"
+    GMS_ETCD_PASSWORD:
+      key: "password"
+      name: "etcd-gms-user"
+      type: "fromSecret"
+    GMS_ETCD_ROOT_PASSWORD:
+      key: "password"
+      name: "etcd-root-user"
+      type: "fromSecret"
+    GMS_ETCD_ROOT_USER:
+      key:  "username"
+      name: "etcd-root-user"
+      type: "fromSecret"
+    GMS_ETCD_USER:
+      key: "username"
+      name: "etcd-gms-user"
+      type: "fromSecret"
+  imageName: "gms-common/etcd"
+  network:
+    metrics:
+      path: "/metrics"
+      port: 2379
+    service:
+      2379:
+        name: "tcp-etcd"
+  secret:
+    etcd-gms-user:
+      stringData:
+        username: "gms"
+        password: "{{ uuidv4 }}"
+    etcd-admin-user:
+      stringData:
+        username: "gmsadmin"
+        password: "{{ uuidv4 }}"
+    etcd-root-user:
+      stringData:
+        username: "root"
+        password: "{{ uuidv4 }}"
+  useGlobalEnv: false
+
+frameworks-configuration-service:
+  env:
+    GMS_CONFIG_PROCESSING_CFG__SQL_USERNAME:
+      key: "username"
+      name: "postgres-config-application"
+      type: "fromSecret"
+    GMS_CONFIG_PROCESSING_CFG__SQL_PASSWORD:
+      key: "password"
+      name: "postgres-config-application"
+      type: "fromSecret"
+  imageName: "gms-common/frameworks-configuration-service"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+
+frameworks-osd-rsdf-kafka-consumer:
+  imageName: "gms-common/frameworks-osd-rsdf-kafka-consumer"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+
+frameworks-osd-service:
+  imageName: "gms-common/frameworks-osd-service"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    metrics:
+      path: "/metrics"
+      port: 8383
+    service:
+      8080:
+        name: "http-web"
+      8383:
+        name: "http-metrics"
+
+frameworks-osd-station-soh-kafka-consumer:
+  imageName: "gms-common/frameworks-osd-station-soh-kafka-consumer"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  replicas: 1
+
+frameworks-osd-systemmessage-kafka-consumer:
+  imageName: "gms-common/frameworks-osd-systemmessage-kafka-consumer"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+
+frameworks-osd-ttl-worker:
+  deploymentStrategy: "Recreate"
+  env:
+    # Note that TTL can only be defined in hours, default to 720 hours (30 days)
+    ACEI_TTL_IN_HOURS: "720"
+    DATA_SOURCE_HOST: "postgresql-gms"
+    DATA_SOURCE_PASS:
+      key: "password"
+      name: "postgres-soh-ttl-application"
+      type: "fromSecret"
+    DATA_SOURCE_USER:
+      key: "username"
+      name: "postgres-soh-ttl-application"
+      type: "fromSecret"
+    FREQUENCY_SECONDS: "3600"
+    GMS_CONFIG_OSD_TTL_WORKER__SQL_PASSWORD:
+      key: "password"
+      name: "postgres-soh-ttl-application"
+      type: "fromSecret"
+  imageName: "gms-common/frameworks-osd-ttl-worker"
+  useGlobalEnv: false
+
+interactive-analysis-api-gateway:
+  env:
+    APP_NAME: "{{ .appName }}"
+    GMS_CONFIG_SQL_DB_NAME: "gms"
+    GMS_CONFIG_SQL_HOST: "postgresql-gms"
+    GMS_CONFIG_SQL_PASSWORD:
+      key: "password"
+      name: "postgres-session-application"
+      type: "fromSecret"
+    GMS_CONFIG_SQL_PORT: "5432"
+    GMS_CONFIG_SQL_USERNAME:
+      key: "username"
+      name: "postgres-session-application"
+      type: "fromSecret"
+    GMS_UI_MODE: "soh"
+    NODE_CONFIG_ENV: "deployed"
+    NODE_ENV: "production"
+  imageName: "gms-common/interactive-analysis-api-gateway"
+  network:
+    ingress:
+      3000:
+        path: "/{{ .appName }}"
+        weight: 200
+      4001:
+        path: "/{{ .appName }}/subscriptions"
+        weight: 100
+      annotations:
+        nginx.ingress.kubernetes.io/proxy-connect-timeout: "86400"
+        nginx.ingress.kubernetes.io/proxy-read-timeout: "86400"
+        nginx.ingress.kubernetes.io/proxy-write-timeout: "86400"
+    service:
+      3000:
+        name: "http-graphql"
+      4001:
+        name: "http-subscriptions"
+  restartAfterReconfig: "true"
+
+interactive-analysis-ui:
+  env:
+    GMS_DISABLE_KEYCLOAK_AUTH: true
+    GMS_KEYCLOAK_CLIENT_ID:
+      key: "client_id"
+      name: "keycloak-config"
+      type: "fromConfigMap"
+    GMS_KEYCLOAK_REALM:
+      key: "realm"
+      name: "keycloak-config"
+      type: "fromConfigMap"
+    GMS_KEYCLOAK_URL:
+      key: "url"
+      name: "keycloak-config"
+      type: "fromConfigMap"
+    GMS_UI_MODE: "soh"
+    NODE_ENV: "production"
+    URL_PATH: "{{ .appName }}"
+  imageName: "gms-common/interactive-analysis-ui"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+      annotations:
+        nginx.ingress.kubernetes.io/proxy-connect-timeout: "86400"
+        nginx.ingress.kubernetes.io/proxy-read-timeout: "86400"
+        nginx.ingress.kubernetes.io/proxy-write-timeout: "86400"
+    service:
+      8080:
+        name: "http-web"
+  restartAfterReconfig: "true"
+
+# kafka is a subchart
+kafka:
+  args:
+    - "-c"
+    - "export JMX_PORT=5555; /scripts/setup.sh;"
+  autoCreateTopicsEnable: false
+  command:
+    - "/bin/sh"
+  extraEnvVars:
+    - name: KAFKA_CFG_GROUP_INITIAL_REBALANCE_DELAY_MS
+      value: "120000"
+    - name: KAFKA_CFG_LOG_ROLL_HOURS
+      value: "5"
+  fullnameOverride: kafka
+  image:
+    pullPolicy: Always
+    repository: gms-common/bitnami-kafka
+  logRetentionBytes: _1073741824 # 1 GB
+  logRetentionHours: 6
+  logSegmentBytes: _104857600 # 100 MB
+  metrics:
+    kafka:
+      enabled: true
+      image:
+        repository: gms-common/bitnami-kafka-exporter
+    jmx:
+      enabled: true
+      image:
+        repository: gms-common/bitnami-jmx-exporter
+  offsetsTopicReplicationFactor: 3
+  persistence:
+    size: "220Gi"
+  podAnnotations:
+    kubectl.kubernetes.io/default-container: kafka
+    kubectl.kubernetes.io/default-logs-container: kafka
+  provisioning:
+    enabled: true
+    numPartitions: 6
+    replicationFactor: 3
+    podAnnotations:
+      sidecar.istio.io/inject: "false"
+    topics:
+      - name: malformed.frames
+        partitions: 1
+        config:
+          max.message.bytes: "10485760" # 10 MB
+          retention.ms: "86400000" # 24 hours
+      - name: soh.acei
+        partitions: 12
+        config:
+          retention.bytes: "536870912" # 500 MB
+      - name: soh.ack-station-soh
+      - name: soh.capability-rollup
+      - name: soh.extract
+      - name: soh.rsdf
+      - name: soh.station-soh
+        partitions: 1
+      - name: soh.status-change-event
+      - name: soh.quieted-list
+      - name: soh.quieted-status-change
+      - name: system-event
+      - name: system.system-messages
+  replicaCount: 3
+  service:
+    annotations:
+      prometheus.io/scrape: "false"
+  transactionStateLogMinIsr: 2
+  transactionStateLogReplicationFactor: 3
+  zookeeperConnectionTimeoutMs: 60000
+  zookeeper:
+    fullnameOverride: zookeeper
+    image:
+      pullPolicy: Always
+      repository: gms-common/bitnami-zookeeper
+    listenOnAllIPs: true
+    persistence:
+      size: "100Mi"
+    replicaCount: 3
+
+postgresql-exporter:
+  env:
+    DATA_SOURCE_PASS:
+      key: "password"
+      name: "postgres-super-user"
+      type: "fromSecret"
+    DATA_SOURCE_URI: "postgresql-gms:5432/gms?sslmode=disable"
+    DATA_SOURCE_USER:
+      key: "username"
+      name: "postgres-super-user"
+      type: "fromSecret"
+  imageName: "gms-common/postgres-exporter"
+  network:
+    metrics:
+      path: "/metrics"
+      port: 9187
+    service:
+      9187:
+        name: "http-metrics"
+  podSecurityContext:
+    runAsUser: 65534
+  useGlobalEnv: false
+
+postgresql-gms:
+  deploymentStrategy: Recreate
+  env:
+    GMS_POSTGRES_ADMIN_PASSWORD:
+      key: "password"
+      name: "postgres-admin"
+      type: "fromSecret"
+    GMS_POSTGRES_CONFIG_APPLICATION_PASSWORD:
+      key: "password"
+      name: "postgres-config-application"
+      type: "fromSecret"
+    GMS_POSTGRES_READ_ONLY_PASSWORD:
+      key: "password"
+      name: "postgres-read-only"
+      type: "fromSecret"
+    GMS_POSTGRES_SESSION_APPLICATION_PASSWORD:
+      key: "password"
+      name: "postgres-session-application"
+      type: "fromSecret"
+    GMS_POSTGRES_SOH_APPLICATION_PASSWORD:
+      key: "password"
+      name: "postgres-soh-application"
+      type: "fromSecret"
+    GMS_POSTGRES_SOH_APPLICATION_ELEVATED_PASSWORD:
+      key: "password"
+      name: "postgres-soh-application-elevated"
+      type: "fromSecret"
+    GMS_POSTGRES_SOH_TEST_APPLICATION_PASSWORD:
+      key: "password"
+      name: "postgres-soh-test-application"
+      type: "fromSecret"
+    GMS_POSTGRES_SOH_TTL_APPLICATION_PASSWORD:
+      key: "password"
+      name: "postgres-soh-ttl-application"
+      type: "fromSecret"
+    POSTGRES_DB: "gms"
+    POSTGRES_PASSWORD:
+      key: "password"
+      name: "postgres-super-user"
+      type: "fromSecret"
+    POSTGRES_USER:
+      key: "username"
+      name: "postgres-super-user"
+      type: "fromSecret"
+  imageName: "gms-common/postgres"
+  network:
+    service:
+      5432:
+        name: "tcp-postgresql"
+  node: "node1"
+  nodeAffinity:
+    type: "soft"
+    key: "kubernetes.io/hostname"
+    operator: "In"
+    values:
+      - "{{ .appValues.node }}"
+  podSecurityContext:
+    fsGroup: 26
+  secret:
+    postgres-super-user:
+      stringData:
+        username: "gms_super_user"
+        password: "{{ uuidv4 }}"
+    postgres-admin:
+      stringData:
+        username: "gms_admin"
+        password: "{{ uuidv4 }}"
+    postgres-config-application:
+      stringData:
+        username: "gms_config_application"
+        password: "{{ uuidv4 }}"
+    postgres-read-only:
+      stringData:
+        username: "gms_read_only"
+        password: "{{ uuidv4 }}"
+    postgres-session-application:
+      stringData:
+        username: "gms_session_appication"
+        password: "{{ uuidv4 }}"
+    postgres-soh-application:
+      stringData:
+        username: "gms_soh_application"
+        password: "{{ uuidv4 }}"
+    postgres-soh-application-elevated:
+      stringData:
+        username: "gms_soh_application_elevated"
+        password: "{{ uuidv4 }}"
+    postgres-soh-test-application:
+      stringData:
+        username: "gms_soh_test_application"
+        password: "{{ uuidv4 }}"
+    postgres-soh-ttl-application:
+      stringData:
+        username: "gms_soh_ttl_application"
+        password: "{{ uuidv4 }}"
+  useGlobalEnv: false
+  volume:
+    data:
+      mountPath: "/var/lib/postgresql/data"
+      size: "2000Gi"
+      type: "persistentVolumeClaim"
+    shm:
+      medium: "Memory"
+      mountPath: "/dev/shm"
+      type: "emptyDir"
+
+prometheus:
+  configMap:
+    prometheus-config:
+      data:
+        prometheus.yml: |-
+          global:
+            scrape_interval: 15s
+          scrape_configs:
+            # Scraping kubernetes services in the namespace where the annotation "prometheus.io/scrape"
+            # is set to 'true' in the Service object
+            - job_name: 'kubernetes-services'
+              kubernetes_sd_configs:
+              - role: service
+                namespaces:
+                  own_namespace: true
+              relabel_configs:
+              - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scrape]
+                action: keep
+                regex: true
+              - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_path]
+                action: replace
+                target_label: __metrics_path__
+                regex: (.+)
+              - source_labels: [__address__, __meta_kubernetes_service_annotation_prometheus_io_port]
+                action: replace
+                regex: ([^:]+)(?::\d+)?;(\d+)
+                replacement: $1:$2
+                target_label: __address__
+              - action: labelmap
+                regex: __meta_kubernetes_service_label_(.+)
+              - source_labels: [__meta_kubernetes_namespace]
+                action: replace
+                target_label: kubernetes_namespace
+  args:
+    - --config.file=/etc/prometheus/prometheus.yml
+    - --storage.tsdb.path=/prometheus
+    - --web.console.libraries=/usr/share/prometheus/console_libraries
+    - --web.console.templates=/usr/share/prometheus/consoles
+    - --storage.tsdb.retention.time=30d
+    - --web.external-url=/{{ .appName }}/
+  env:
+    G_USER:
+      key: "admin-user"
+      name: "rancher-monitoring-grafana"
+      type: "fromSecret"
+    G_PASS:
+      key: "admin-password"
+      name: "rancher-monitoring-grafana"
+      type: "fromSecret"
+    G_PROTO: "http"
+    G_HOST: "rancher-monitoring-grafana.cattle-monitoring-system"
+    G_PORT: "80"
+    G_SLEEP: "10m"
+    G_WAIT: "360"
+    PROM_NAME: "prometheus.{{ .Release.Name }}"
+    PROM_URL: "prometheus.{{ .Release.Name }}:9090/{{ .appName }}"
+  deploymentStrategy: Recreate
+  extraContainers: |-
+    - name: prometheus-sidecar
+      image: "{{ .Values.global.imageRegistry }}/gms-common/prometheus-sidecar:{{ .Values.global.imageTag }}"
+      lifecycle:
+        preStop:
+          exec:
+            command: ["/unregister.sh"]
+      imagePullPolicy: {{ .Values.global.imagePullPolicy }}
+      env:
+        {{- include "gms.common.container.env" $ | trim | nindent 4 }}
+      securityContext:
+        {{- include "gms.common.container.securityContext" $ | trim | nindent 4 }}
+  imageName: "gms-common/instance-prometheus"
+  network:
+    metrics:
+      path: "/prometheus/metrics"
+      port: 9090
+    ingress:
+      9090:
+        path: "/{{ .appName }}"
+    service:
+      9090:
+        name: "http-client"
+  podAnnotations:
+    kubectl.kubernetes.io/default-container: "{{ .appName }}"
+    kubectl.kubernetes.io/default-logs-container: "{{ .appName }}"
+  podSecurityContext:
+    runAsUser: 65534
+    runAsGroup: 65534
+    fsGroup: 65534
+  serviceAccount: "prometheus"
+  useGlobalEnv: false
+  volume:
+    config-volume:
+      configMapName: "prometheus-config"
+      mountPath: "/etc/prometheus/prometheus.yml"
+      subPath: "prometheus.yml"
+      type: "configMap"
+    ephemetheus-volume:
+      mountPath: "/prometheus"
+      size: "1Gi"
+      type: "persistentVolumeClaim"
+
+smds-service:
+  env:
+    # Other valid values are TIMING and SOH_TIMING
+    GMS_CONFIG_LOG_LEVEL: "INFO"
+  imageName: "gms-common/smds-application"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  restartAfterReconfig: "true"
+
+soh-control:
+  cpuLimit: 2
+  cpuRequest: 1
+  env:
+    # Other valid values are TIMING and SOH_TIMING
+    GMS_CONFIG_LOG_LEVEL: "INFO"
+  imageName: "gms-common/soh-application"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  restartAfterReconfig: "true"
+
+soh-quieted-list-kafka-consumer:
+  imageName: "gms-common/soh-quieted-list-kafka-consumer"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+
+soh-status-change-kafka-consumer:
+  imageName: "gms-common/soh-status-change-kafka-consumer"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+
+ssam-control:
+  env:
+    # Other valid values are TIMING and SOH_TIMING
+    GMS_CONFIG_LOG_LEVEL: "INFO"
+  imageName: "gms-common/ssam-application"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+      annotations:
+        nginx.ingress.kubernetes.io/proxy-connect-timeout: "1800"
+        nginx.ingress.kubernetes.io/proxy-read-timeout: "1800"
+        nginx.ingress.kubernetes.io/proxy-write-timeout: "1800"
+    service:
+      8080:
+        name: "http-web"
+  restartAfterReconfig: "true"
+
+ui-processing-configuration-service:
+  imageName: "gms-common/ui-processing-configuration-service"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  restartAfterReconfig: "true"
+
+user-manager-service:
+  imageName: "gms-common/user-manager-application"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"

@@ -1,0 +1,16 @@
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 1em;
+  background-color: var(--gms-table-header-background, $gms-table-header-background);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  border-top: 1px solid var(--gms-recessed, $gms-recessed);
+  @include addBoxShadow('lg');
+  .inline-label {
+    font-weight: 500;
+  }
+  & [class^='inline'] {
+    padding-right: 0.5em;
+  }
+}

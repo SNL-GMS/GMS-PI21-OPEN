@@ -1,0 +1,60 @@
+[data-gms-ui-mode='SOH'] {
+  //TODO this affects all bp4 headings, not just in the soh-map
+  .bp4-heading {
+    margin: 10px 5px 5px;
+  }
+}
+
+.icon-cell-content {
+  &__container {
+    margin-top: -28px;
+    margin-left: 10px;
+    position: absolute;
+    background-color: var(--gms-popover-background, $gms-popover-background);
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  &__left {
+    align-items: stretch;
+    &--header {
+      padding: 8px;
+      background-color: var(--gms-popover-background, $gms-popover-background);
+      margin: 0;
+      border-bottom: solid 1px;
+    }
+  }
+  &__right {
+    align-items: stretch;
+    &--header {
+      background-color: var(--gms-popover-background, $gms-popover-background);
+      padding: 8px;
+      margin: 0;
+      border-bottom: solid 1px;
+    }
+    &--radio-list {
+      padding: 8px;
+    }
+  }
+}
+
+.map__layer-button {
+  position: absolute;
+  z-index: 10;
+  top: 5px; //to align with cesium toolbar buttons
+  left: 5px;
+}
+
+.soh-map-wrapper {
+  padding: 0;
+}
+
+// Overrides the global max-height of .checkbox-list__body just in the context of this container
+// Prevents overflow issues related to the floating window not having a parent height size
+.icon-cell-content__left--checkbox-list > .checkbox-list__body {
+  max-height: 300px;
+}
+
+// Disabling Columbus view
+.cesium-sceneModePicker-dropDown-icon[data-bind*='COLUMBUS_VIEW'] {
+  display: none;
+}

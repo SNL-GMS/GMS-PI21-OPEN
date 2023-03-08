@@ -1,0 +1,95 @@
+[
+  {
+    "name": "HYDRO - CD1.1 PROFILE - CHANNEL CAPABILILITY ROLLUP",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "StationName",
+        "operator": {
+          "type": "IN",
+          "negated": false
+        },
+        "value": [
+          "H01W",
+          "H02S",
+          "H03N",
+          "H03S",
+          "H04N",
+          "H04S",
+          "H05N",
+          "H05S",
+          "H07N",
+          "H07S",
+          "H08N",
+          "H08S",
+          "H09N",
+          "H09W",
+          "H10N",
+          "H10S",
+          "H11N",
+          "H11S"
+        ]
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "StationGroupName",
+        "operator": {
+          "type": "IN",
+          "negated": false
+        },
+        "value": [
+          "ALL",
+          "CD1.1",
+          "CD1.0",
+          "MiniSD",
+          "GSE",
+          "Primary",
+          "Secondary",
+          "Auxiliary",
+          "SEISMIC",
+          "INFRA",
+          "HYDRO"
+        ]
+      }
+    ],
+    "parameters": {
+      "sohMonitorsToChannelRollupOperator": {
+        "operatorType": "WORST_OF",
+        "rollupOperatorOperands": [
+          {
+            "operatorType": "WORST_OF",
+            "sohMonitorTypeOperands": [
+              "TIMELINESS"
+            ]
+          },
+          {
+            "operatorType": "MIN_GOOD_OF",
+            "goodThreshold": 16,
+            "marginalThreshold": 0,
+            "sohMonitorTypeOperands": [
+              "ENV_AUTHENTICATION_SEAL_BROKEN",
+              "ENV_BACKUP_POWER_UNSTABLE",
+              "ENV_CALIBRATION_UNDERWAY",
+              "ENV_CLIPPED",
+              "ENV_CLOCK_DIFFERENTIAL_TOO_LARGE",
+              "ENV_DEAD_SENSOR_CHANNEL",
+              "ENV_DIGITIZER_ANALOG_INPUT_SHORTED",
+              "ENV_DIGITIZER_CALIBRATION_LOOP_BACK",
+              "ENV_DIGITIZING_EQUIPMENT_OPEN",
+              "ENV_EQUIPMENT_HOUSING_OPEN",
+              "ENV_EQUIPMENT_MOVED",
+              "ENV_GPS_RECEIVER_OFF",
+              "ENV_GPS_RECEIVER_UNLOCKED",
+              "ENV_MAIN_POWER_FAILURE",
+              "ENV_VAULT_DOOR_OPENED",
+              "ENV_ZEROED_DATA"
+            ]
+          }
+        ]
+      }
+    }
+  }
+]

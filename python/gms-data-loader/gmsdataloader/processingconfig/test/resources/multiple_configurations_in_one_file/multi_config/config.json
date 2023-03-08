@@ -1,0 +1,38 @@
+[
+  {
+    "name": "test_constraint1.1",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      }
+    ],
+    "parameters": {
+      "defaultNetwork": "demo"
+    }
+  },
+  {
+    "name": "test_constraint1.2",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "DEFAULT"
+      }
+    ],
+    "parameters": {
+      "defaultNetwork": "demo"
+    }
+  },
+  {
+    "name": "test_constraint2.1",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      }
+    ],
+    "parameters": {
+      "defaultNetwork": "demo"
+    }
+  }
+]

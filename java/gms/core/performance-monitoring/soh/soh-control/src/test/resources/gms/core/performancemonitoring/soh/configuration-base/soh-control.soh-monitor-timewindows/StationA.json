@@ -1,0 +1,20 @@
+{
+  "name": "StationA",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "StationName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "StationA"
+      ]
+    }
+  ],
+  "parameters": {
+    "calculationInterval": "PT31M",
+    "backOffDuration": "PT31M"
+  }
+}

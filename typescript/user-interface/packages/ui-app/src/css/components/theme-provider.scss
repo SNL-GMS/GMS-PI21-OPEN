@@ -1,0 +1,4 @@
+.gms-theme-provider {
+  @include fillAllSpaceAbsolutely;
+  background-color: var(--gms-background, var(--gms-background, $gms-background));
+}

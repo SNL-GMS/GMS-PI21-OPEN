@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WEAVESS Core: Position Buffer Utils throws when values is undefined 1`] = `"Typed array conversion failed; Invalid waveform should contain an array of numbers."`;
+
+exports[`WEAVESS Core: Position Buffer Utils throws when visibleDomain is undefined 1`] = `"Typed array conversion failed; No visible domain was provided."`;
+
+exports[`WEAVESS Core: Position Buffer Utils throws when waveform is undefined 1`] = `"Typed array conversion failed; Invalid waveform should contain an array of numbers."`;

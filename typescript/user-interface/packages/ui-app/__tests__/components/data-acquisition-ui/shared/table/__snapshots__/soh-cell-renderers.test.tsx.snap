@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Station cell renderers PercentBar match snapshot 1`] = `
+<PercentBar
+  percentage={10}
+>
+  <div
+    className="percent-bar"
+    key="1"
+    style={
+      Object {
+        "transform": "translateX(-90%)",
+        "width": "100%",
+      }
+    }
+  />
+</PercentBar>
+`;
+
+exports[`Station cell renderers nameCell should have props of type nameCellProps 1`] = `
+Object {
+  "api": undefined,
+  "cellStatus": "good",
+  "colDef": undefined,
+  "column": undefined,
+  "columnApi": undefined,
+  "context": undefined,
+  "data": undefined,
+  "dataReceivedStatus": "received",
+  "eGridCell": undefined,
+  "eParentOfValue": undefined,
+  "formatValue": [MockFunction],
+  "getValue": [MockFunction],
+  "name": "test",
+  "node": undefined,
+  "refreshCell": undefined,
+  "registerRowDragger": [Function],
+  "rowIndex": 1,
+  "setValue": [MockFunction],
+  "value": "name",
+  "valueFormatted": "NAME",
+}
+`;
+
+exports[`Station cell renderers stationCellRenderer should have props of type stationCellRendererProps 1`] = `
+Object {
+  "cellStatus": "good",
+  "className": "string",
+  "dataReceivedStatus": "received",
+  "stationId": "string",
+  "value": "string",
+}
+`;
+
+exports[`Station cell renderers stationCellRenderer should match snapshot 1`] = `
+<div>
+  <div
+    class="table-cell soh-cell string"
+    data-cell-status="good"
+    data-cy="table-cell"
+    data-received-status="received"
+    data-station-id="string"
+    style="height: 36px; overflow: hidden;"
+    title="string"
+  >
+    <div
+      class=" table-cell__value "
+      data-cy="table-cell__value"
+    >
+      <span>
+        string
+      </span>
+    </div>
+  </div>
+</div>
+`;

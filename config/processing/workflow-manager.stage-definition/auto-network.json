@@ -1,0 +1,43 @@
+{
+    "name": "auto-network",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "name",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "Auto Network"
+            ]
+        }
+    ],
+    "parameters": {
+        "name": "Auto Network",
+        "duration": "PT5M",
+        "mode": "AUTOMATIC",
+        "sequences": [
+            {
+                "name": "Auto Network Seq",
+                "steps": [
+                    {
+                        "name": "Arrival Beam SP"
+                    },
+                    {
+                        "name": "Association"
+                    },
+                    {
+                        "name": "Conflict Resolution"
+                    },
+                    {
+                        "name": "Origin Beam SP"
+                    },
+                    {
+                        "name": "Partial Processing"
+                    }
+                ]
+            }
+        ]
+    }
+}

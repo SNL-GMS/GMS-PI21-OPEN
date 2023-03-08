@@ -1,0 +1,48 @@
+// Change this to increase or decrease the size of the contents of this component
+$base-font-size: 0.875rem;
+$image-height: 120px;
+
+.about-menu {
+  padding: 1.25em;
+  font-size: $base-font-size;
+  color: var(--gms-main, $gms-main);
+}
+.about-menu__header {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: $base-font-size;
+}
+.bp4-dark-mode .about-menu__logo {
+  filter: invert(100%);
+}
+.about-menu__title-container {
+  font-size: 2.5em;
+  line-height: 1em;
+  padding: 0.25em 0;
+  // Vertically centering: this container is 1.5em tall (line height plus padding)
+  // The extra 1px makes it visually centered with the logo's center line
+  margin-top: calc(calc(calc($image-height / 2) - 0.75em) - 1px);
+  border-bottom: 1px solid var(--gms-soft, $gms-soft);
+  vertical-align: middle;
+  span {
+    display: inline-block;
+    line-height: 1em;
+  }
+}
+.about-menu__commit-container {
+  margin-top: 0.75em;
+  color: var(--gms-prominent, $gms-prominent);
+}
+.about-menu__version {
+  color: var(--gms-prominent, $gms-prominent);
+  font-size: 0.75em;
+}
+.about-menu__version,
+.about-menu__commit {
+  font-family: $gms-mono;
+}
+.about-menu__commit-container {
+  * + * {
+    padding-left: $base-font-size;
+  }
+}

@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`label-value label-value renders with ian false 1`] = `
+<div>
+  <div
+    class="label-value-container"
+  >
+    <div
+      class="label-value__label"
+      data-cy="label-label"
+    >
+      label: 
+    </div>
+    <div
+      class="label-value__value"
+      data-cy="label-value"
+      style="color: blue;"
+      title="tooltip"
+    >
+      value
+    </div>
+  </div>
+</div>
+`;
+
+exports[`label-value label-value renders with ian true 1`] = `
+<div>
+  <div
+    class="ian-label-value-container"
+  >
+    <div
+      class="ian-label-value__label"
+      data-cy="label-label"
+    >
+      label: 
+    </div>
+    <div
+      class="ian-label-value__value"
+      data-cy="label-value"
+      style="color: blue;"
+      title="tooltip"
+    >
+      value
+    </div>
+  </div>
+</div>
+`;

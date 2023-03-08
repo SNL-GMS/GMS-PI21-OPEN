@@ -1,0 +1,33 @@
+plugins {
+    id 'application'
+    alias(libs.plugins.com.palantir.docker)
+}
+
+run {
+    if (System.getProperty("exec.args") != null) {
+        args System.getProperty("exec.args").split()
+    }
+}
+
+dependencies {
+    implementation 'gms:frameworks-osd-commonobjects:LATEST'
+    implementation 'gms:ui-materialized-view:LATEST'
+    implementation 'gms:frameworks-system-config:LATEST'
+    implementation 'gms:ssam-control:LATEST'
+    implementation 'gms:ssam-control-api:LATEST'
+    implementation 'gms:frameworks-control:LATEST'
+    implementation 'gms:frameworks-osd-repository:LATEST'
+    implementation 'gms:soh-control:LATEST'
+    implementation 'gms:workflow-coi:LATEST'
+
+    implementation libs.io.projectreactor.reactor.core
+    implementation libs.io.projectreactor.kafka.reactor.kafka
+    implementation libs.args4j.args4j
+    implementation libs.org.apache.kafka.kafka.clients
+
+    // Google AutoValue
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+}
+
+mainClassName = 'gms.shared.frameworks.injector.DataInjector'

@@ -1,0 +1,81 @@
+.date-range-picker {
+  display: flex;
+  flex-flow: wrap;
+  box-sizing: border-box;
+  align-items: center;
+  // TODO: Don't use a hardcoded width
+  & > * {
+    margin-left: 0.5rem;
+  }
+}
+.date-range-picker__menu-popover {
+  min-width: 420px;
+  margin-bottom: 0.5em;
+  label.bp4-label {
+    margin-bottom: 0;
+  }
+}
+.date-range-picker__range-input {
+  border: none;
+  background-color: var(
+    --core-popover-background,
+    var(--gms-popover-background, $core-popover-background)
+  );
+  display: flex;
+  flex-direction: row;
+  align-items: normal;
+  overflow: visible;
+}
+.date-range-picker__apply-button {
+  border: none;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: normal;
+}
+.date-range-picker--column {
+  display: flex;
+  flex-direction: column;
+}
+.date-range-picker--stacked {
+  display: flex;
+  padding: 8px 12px 8px 12px;
+}
+.date-range-picker__input-row {
+  display: flex;
+  border: none;
+}
+.date-range-picker__input_column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.date-range-picker__input {
+  display: flex;
+  align-items: center;
+}
+.date-range-picker__input--right {
+  margin-left: 0px;
+}
+.date-range-picker__input--stacked {
+  margin-bottom: 8px;
+}
+.toolbar-button {
+  width: 128px;
+  max-width: auto;
+}
+.date-range-picker__time-picker-label {
+  margin-right: 8px;
+  white-space: nowrap;
+}
+.date-range-picker__enter-button--stacked {
+  margin-top: 8px;
+}
+.date-range-picker__enter-button--flat {
+  margin-left: 0px;
+}
+
+.bp4-datepicker-caption select {
+  // adjust padding so that the months are always displayed without the carets overlapping
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "CD1.1",
+    "active": true,
+    "source": {
+      "originatingOrganization": "External",
+      "informationTime": "2020-02-24T00:00:00Z",
+      "reference": "Loaded from CSS file"
+    },
+    "actualChangeTime": "1970-01-01T00:00:00Z",
+    "systemChangeTime": "1970-01-01T00:00:00Z",
+    "description": "Stations originally in CD-1.1 format, plus AAK, INK, KURK",
+    "organization": "CTBTO",
+    "region": "GLOBAL",
+    "comment": "Loaded from CSS network file"
+  }
+]

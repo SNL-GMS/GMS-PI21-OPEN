@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`qc-mask-filter has the props we passed in 1`] = `
+Object {
+  "maskDisplayFilters": Object {
+    "ANALYST_DEFINED": Object {
+      "color": "string",
+      "name": "string",
+      "visible": true,
+    },
+    "CHANNEL_PROCESSING": Object {
+      "color": "string",
+      "name": "string",
+      "visible": true,
+    },
+    "DATA_AUTHENTICATION": Object {
+      "color": "string",
+      "name": "string",
+      "visible": true,
+    },
+    "REJECTED": Object {
+      "color": "string",
+      "name": "string",
+      "visible": true,
+    },
+    "STATION_SOH": Object {
+      "color": "string",
+      "name": "string",
+      "visible": true,
+    },
+    "WAVEFORM_QUALITY": Object {
+      "color": "string",
+      "name": "string",
+      "visible": true,
+    },
+  },
+  "setMaskDisplayFilters": [MockFunction],
+}
+`;
+
+exports[`qc-mask-filter renders when given correct props 1`] = `
+<div>
+  <div>
+    <table
+      class="bp4-html-table qc-mask-legend__body"
+    >
+      <tbody>
+        <tr>
+          <td>
+            <label
+              class="bp4-control bp4-checkbox qc-mask-legend-table__checkbox"
+            >
+              <input
+                checked=""
+                type="checkbox"
+              />
+              <span
+                class="bp4-control-indicator"
+              />
+            </label>
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            <div
+              class="qc-mask-legend-table__legend-box"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label
+              class="bp4-control bp4-checkbox qc-mask-legend-table__checkbox"
+            >
+              <input
+                checked=""
+                type="checkbox"
+              />
+              <span
+                class="bp4-control-indicator"
+              />
+            </label>
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            <div
+              class="qc-mask-legend-table__legend-box"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label
+              class="bp4-control bp4-checkbox qc-mask-legend-table__checkbox"
+            >
+              <input
+                checked=""
+                type="checkbox"
+              />
+              <span
+                class="bp4-control-indicator"
+              />
+            </label>
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            <div
+              class="qc-mask-legend-table__legend-box"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label
+              class="bp4-control bp4-checkbox qc-mask-legend-table__checkbox"
+            >
+              <input
+                checked=""
+                type="checkbox"
+              />
+              <span
+                class="bp4-control-indicator"
+              />
+            </label>
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            <div
+              class="qc-mask-legend-table__legend-box"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label
+              class="bp4-control bp4-checkbox qc-mask-legend-table__checkbox"
+            >
+              <input
+                checked=""
+                type="checkbox"
+              />
+              <span
+                class="bp4-control-indicator"
+              />
+            </label>
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            <div
+              class="qc-mask-legend-table__legend-box"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label
+              class="bp4-control bp4-checkbox qc-mask-legend-table__checkbox"
+            >
+              <input
+                checked=""
+                type="checkbox"
+              />
+              <span
+                class="bp4-control-indicator"
+              />
+            </label>
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            <div
+              class="qc-mask-legend-table__legend-box"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

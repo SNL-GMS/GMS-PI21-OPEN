@@ -1,0 +1,23 @@
+.history-display {
+  .soh-legend {
+    // # is passing through the contents as a string
+    height: calc(100% - #{$toolbar-height} - 1rem);
+    top: initial !important;
+  }
+  .legend-and-charts {
+    @include flexColumn;
+    flex-grow: 1;
+    height: auto;
+  }
+  .core-chart {
+    flex-grow: 1;
+    overflow-y: none;
+    height: auto;
+    max-width: 100%;
+  }
+
+  // override the WEAVESS left container label component width for the line-chart
+  .core-chart .label-container .label-container-left-parent {
+    width: 5px;
+  }
+}

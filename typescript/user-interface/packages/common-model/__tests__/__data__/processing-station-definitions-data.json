@@ -1,0 +1,421 @@
+[
+  {
+    "name": "AAK",
+    "type": "SEISMIC_3_COMPONENT",
+    "description": "Ala-Archa,_Kyrgyzstan",
+    "effectiveAt": "2021-01-04T19:57:02.457440Z",
+    "relativePositionsByChannel": {
+      "AAK.AAK.BHN": {
+        "northDisplacementKm": 0,
+        "eastDisplacementKm": 0,
+        "verticalDisplacementKm": 0
+      },
+      "AAK.AAK.BHE": {
+        "northDisplacementKm": 0,
+        "eastDisplacementKm": 0,
+        "verticalDisplacementKm": 0
+      },
+      "AAK.AAK.BHZ": {
+        "northDisplacementKm": 0,
+        "eastDisplacementKm": 0,
+        "verticalDisplacementKm": 0
+      }
+    },
+    "location": {
+      "latitudeDegrees": 42.6391,
+      "longitudeDegrees": 74.4942,
+      "depthKm": 0,
+      "elevationKm": 1.645
+    },
+    "channelGroups": [
+      {
+        "name": "AAK",
+        "description": "Ala-Archa,_Kyrgyzstan",
+        "effectiveAt": "2021-01-04T19:57:02.457440Z",
+        "location": {
+          "latitudeDegrees": 42.6391,
+          "longitudeDegrees": 74.4942,
+          "depthKm": 0,
+          "elevationKm": 1.645
+        },
+        "type": "SITE_GROUP",
+        "channels": [
+          {
+            "name": "AAK.AAK.BHE",
+            "canonicalName": "AAK.AAK.BHE",
+            "description": "Raw Channel created from ReferenceChannel 8273f695-cf66-38d4-8ed6-6817a1709bc1 with version de7afb88-0ec8-3866-a3b8-0b590494ee0f",
+            "effectiveAt": "2021-01-04T19:57:02.457440Z",
+            "station": "AAK",
+            "channelDataType": "SEISMIC",
+            "channelBandType": "BROADBAND",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationType": "EAST_WEST",
+            "channelOrientationCode": "E",
+            "units": "COUNTS_PER_NANOMETER",
+            "nominalSampleRateHz": 0,
+            "location": {
+              "latitudeDegrees": 42.6391,
+              "longitudeDegrees": 74.4942,
+              "depthKm": 0.03,
+              "elevationKm": 1.645
+            },
+            "orientationAngles": {
+              "horizontalAngleDeg": 90,
+              "verticalAngleDeg": 90
+            },
+            "configuredInputs": [],
+            "processingDefinition": {},
+            "processingMetadata": {
+              "CHANNEL_GROUP": "AAK"
+            }
+          },
+          {
+            "name": "AAK.AAK.BHN",
+            "canonicalName": "AAK.AAK.BHN",
+            "description": "Raw Channel created from ReferenceChannel 455fe77f-4313-34a9-81c4-9d9a2c7fd455 with version 5b1c117b-9e43-3023-b384-718657b7cc70",
+            "effectiveAt": "2021-01-04T19:57:02.457440Z",
+            "station": "AAK",
+            "channelDataType": "SEISMIC",
+            "channelBandType": "BROADBAND",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationType": "NORTH_SOUTH",
+            "channelOrientationCode": "N",
+            "units": "COUNTS_PER_NANOMETER",
+            "nominalSampleRateHz": 0,
+            "location": {
+              "latitudeDegrees": 42.6391,
+              "longitudeDegrees": 74.4942,
+              "depthKm": 0.03,
+              "elevationKm": 1.645
+            },
+            "orientationAngles": {
+              "horizontalAngleDeg": 0,
+              "verticalAngleDeg": 90
+            },
+            "configuredInputs": [],
+            "processingDefinition": {},
+            "processingMetadata": {
+              "CHANNEL_GROUP": "AAK"
+            }
+          },
+          {
+            "name": "AAK.AAK.BHZ",
+            "canonicalName": "AAK.AAK.BHZ",
+            "description": "Raw Channel created from ReferenceChannel 23290db1-05fd-3fd2-b927-c1b350c35ef7 with version c088ad1f-a8f0-3203-b841-d67c87f501e2",
+            "effectiveAt": "2021-01-04T19:57:02.457440Z",
+            "station": "AAK",
+            "channelDataType": "SEISMIC",
+            "channelBandType": "BROADBAND",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationType": "VERTICAL",
+            "channelOrientationCode": "Z",
+            "units": "COUNTS_PER_NANOMETER",
+            "nominalSampleRateHz": 0,
+            "location": {
+              "latitudeDegrees": 42.6391,
+              "longitudeDegrees": 74.4942,
+              "depthKm": 0.03,
+              "elevationKm": 1.645
+            },
+            "orientationAngles": {
+              "horizontalAngleDeg": -1,
+              "verticalAngleDeg": 0
+            },
+            "configuredInputs": [],
+            "processingDefinition": {},
+            "processingMetadata": {
+              "CHANNEL_GROUP": "AAK"
+            }
+          }
+        ]
+      }
+    ],
+    "channels": [
+      {
+        "name": "AAK.AAK.BHE",
+        "canonicalName": "AAK.AAK.BHE",
+        "description": "Raw Channel created from ReferenceChannel 8273f695-cf66-38d4-8ed6-6817a1709bc1 with version de7afb88-0ec8-3866-a3b8-0b590494ee0f",
+        "effectiveAt": "2021-01-04T19:57:02.457440Z",
+        "station": "AAK",
+        "channelDataType": "SEISMIC",
+        "channelBandType": "BROADBAND",
+        "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+        "channelOrientationType": "EAST_WEST",
+        "channelOrientationCode": "E",
+        "units": "COUNTS_PER_NANOMETER",
+        "nominalSampleRateHz": 0,
+        "location": {
+          "latitudeDegrees": 42.6391,
+          "longitudeDegrees": 74.4942,
+          "depthKm": 0.03,
+          "elevationKm": 1.645
+        },
+        "orientationAngles": {
+          "horizontalAngleDeg": 90,
+          "verticalAngleDeg": 90
+        },
+        "configuredInputs": [],
+        "processingDefinition": {},
+        "processingMetadata": {
+          "CHANNEL_GROUP": "AAK"
+        }
+      },
+      {
+        "name": "AAK.AAK.BHN",
+        "canonicalName": "AAK.AAK.BHN",
+        "description": "Raw Channel created from ReferenceChannel 455fe77f-4313-34a9-81c4-9d9a2c7fd455 with version 5b1c117b-9e43-3023-b384-718657b7cc70",
+        "effectiveAt": "2021-01-04T19:57:02.457440Z",
+        "station": "AAK",
+        "channelDataType": "SEISMIC",
+        "channelBandType": "BROADBAND",
+        "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+        "channelOrientationType": "NORTH_SOUTH",
+        "channelOrientationCode": "N",
+        "units": "COUNTS_PER_NANOMETER",
+        "nominalSampleRateHz": 0,
+        "location": {
+          "latitudeDegrees": 42.6391,
+          "longitudeDegrees": 74.4942,
+          "depthKm": 0.03,
+          "elevationKm": 1.645
+        },
+        "orientationAngles": {
+          "horizontalAngleDeg": 0,
+          "verticalAngleDeg": 90
+        },
+        "configuredInputs": [],
+        "processingDefinition": {},
+        "processingMetadata": {
+          "CHANNEL_GROUP": "AAK"
+        }
+      },
+      {
+        "name": "AAK.AAK.BHZ",
+        "canonicalName": "AAK.AAK.BHZ",
+        "description": "Raw Channel created from ReferenceChannel 23290db1-05fd-3fd2-b927-c1b350c35ef7 with version c088ad1f-a8f0-3203-b841-d67c87f501e2",
+        "effectiveAt": "2021-01-04T19:57:02.457440Z",
+        "station": "AAK",
+        "channelDataType": "SEISMIC",
+        "channelBandType": "BROADBAND",
+        "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+        "channelOrientationType": "VERTICAL",
+        "channelOrientationCode": "Z",
+        "units": "COUNTS_PER_NANOMETER",
+        "nominalSampleRateHz": 0,
+        "location": {
+          "latitudeDegrees": 42.6391,
+          "longitudeDegrees": 74.4942,
+          "depthKm": 0.03,
+          "elevationKm": 1.645
+        },
+        "orientationAngles": {
+          "horizontalAngleDeg": -1,
+          "verticalAngleDeg": 0
+        },
+        "configuredInputs": [],
+        "processingDefinition": {},
+        "processingMetadata": {
+          "CHANNEL_GROUP": "AAK"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Example Station",
+    "location": {
+      "latitudeDegrees": 35.647,
+      "longitudeDegrees": 100,
+      "depthKm": 50,
+      "elevationKm": 10
+    },
+    "type": "HYDROACOUSTIC",
+    "description": "This is a test station",
+    "effectiveAt": "2021-01-05T22:40:29.826466Z",
+    "channels": [
+      {
+        "name": "Real Channel Name One",
+        "canonicalName": "Canonical Name One",
+        "location": {
+          "latitudeDegrees": 35,
+          "longitudeDegrees": -125,
+          "depthKm": 100,
+          "elevationKm": 5500
+        },
+        "response": {
+          "id": "5dc3dce4-ae3c-3fb0-84ba-2f83fb5a89d2",
+          "effectiveAt": "2021-01-05T22:40:29.794268Z",
+          "fapResponse": {
+            "id": "1689a6d4-81de-4437-b5d3-275ac2b9ec8d",
+            "frequencies": [0.001],
+            "amplitudeResponseUnits": "NANOMETERS_PER_COUNT",
+            "amplitudeResponse": [0.000014254],
+            "amplitudeResponseStdDev": [0],
+            "phaseResponseUnits": "DEGREES",
+            "phaseResponse": [350.140599],
+            "phaseResponseStdDev": [0]
+          },
+          "calibration": {
+            "calibrationPeriodSec": 14.5,
+            "calibrationTimeShift": "PT2S",
+            "calibrationFactor": {
+              "value": 1.2,
+              "standardDeviation": 0.112,
+              "units": "SECONDS"
+            }
+          }
+        },
+        "description": "Example description",
+        "effectiveAt": "2021-01-05T22:40:29.796103Z",
+        "station": "Example Station",
+        "channelDataType": "DIAGNOSTIC_SOH",
+        "channelBandType": "BROADBAND",
+        "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+        "channelOrientationType": "VERTICAL",
+        "channelOrientationCode": "Z",
+        "units": "COUNTS_PER_NANOMETER",
+        "nominalSampleRateHz": 65,
+        "orientationAngles": {
+          "horizontalAngleDeg": 65,
+          "verticalAngleDeg": 135
+        },
+        "configuredInputs": [],
+        "processingDefinition": {},
+        "processingMetadata": {
+          "CHANNEL_GROUP": "GROUP"
+        }
+      },
+      {
+        "name": "Real Channel Name Two",
+        "canonicalName": "Canonical Name Two",
+        "location": {
+          "latitudeDegrees": 35,
+          "longitudeDegrees": -125,
+          "depthKm": 100,
+          "elevationKm": 5500
+        },
+        "response": {
+          "id": "a9497b80-f49c-3bdc-9283-7c64b5562cd6",
+          "effectiveAt": "2021-01-05T22:40:29.800254Z",
+          "fapResponse": {
+            "id": "1689a6d4-81de-4437-b5d3-275ac2b9ec8d",
+            "frequencies": [0.001],
+            "amplitudeResponseUnits": "NANOMETERS_PER_COUNT",
+            "amplitudeResponse": [0.000014254],
+            "amplitudeResponseStdDev": [0],
+            "phaseResponseUnits": "DEGREES",
+            "phaseResponse": [350.140599],
+            "phaseResponseStdDev": [0]
+          },
+          "calibration": {
+            "calibrationPeriodSec": 14.5,
+            "calibrationTimeShift": "PT2S",
+            "calibrationFactor": {
+              "value": 1.2,
+              "standardDeviation": 0.112,
+              "units": "SECONDS"
+            }
+          }
+        },
+        "description": "Example description",
+        "effectiveAt": "2021-01-05T22:40:29.800279Z",
+        "station": "Example Station",
+        "channelDataType": "DIAGNOSTIC_SOH",
+        "channelBandType": "BROADBAND",
+        "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+        "channelOrientationType": "VERTICAL",
+        "channelOrientationCode": "Z",
+        "units": "COUNTS_PER_NANOMETER",
+        "nominalSampleRateHz": 65,
+        "orientationAngles": {
+          "horizontalAngleDeg": 65,
+          "verticalAngleDeg": 135
+        },
+        "configuredInputs": [],
+        "processingDefinition": {},
+        "processingMetadata": {
+          "CHANNEL_GROUP": "GROUP"
+        }
+      }
+    ],
+    "relativePositionsByChannel": {
+      "Real Channel Name One": {
+        "northDisplacementKm": 50,
+        "eastDisplacementKm": 5,
+        "verticalDisplacementKm": 10
+      },
+      "Real Channel Name Two": {
+        "northDisplacementKm": 50,
+        "eastDisplacementKm": 5,
+        "verticalDisplacementKm": 10
+      }
+    },
+    "channelGroups": [
+      {
+        "name": "Test Channel Group",
+        "description": "Channel Group Description",
+        "effectiveAt": "2021-01-05T22:40:29.802394Z",
+        "location": {
+          "latitudeDegrees": 35,
+          "longitudeDegrees": -125,
+          "depthKm": 100,
+          "elevationKm": 5500
+        },
+        "type": "PROCESSING_GROUP",
+        "channels": [
+          {
+            "name": "Real Channel Name One",
+            "canonicalName": "Canonical Name One",
+            "location": {
+              "latitudeDegrees": 35,
+              "longitudeDegrees": -125,
+              "depthKm": 100,
+              "elevationKm": 5500
+            },
+            "response": {
+              "id": "5dc3dce4-ae3c-3fb0-84ba-2f83fb5a89d2",
+              "effectiveAt": "2021-01-05T22:40:29.794268Z",
+              "fapResponse": {
+                "id": "1689a6d4-81de-4437-b5d3-275ac2b9ec8d",
+                "frequencies": [0.001],
+                "amplitudeResponseUnits": "NANOMETERS_PER_COUNT",
+                "amplitudeResponse": [0.000014254],
+                "amplitudeResponseStdDev": [0],
+                "phaseResponseUnits": "DEGREES",
+                "phaseResponse": [350.140599],
+                "phaseResponseStdDev": [0]
+              },
+              "calibration": {
+                "calibrationPeriodSec": 14.5,
+                "calibrationTimeShift": "PT2S",
+                "calibrationFactor": {
+                  "value": 1.2,
+                  "standardDeviation": 0.112,
+                  "units": "SECONDS"
+                }
+              }
+            },
+            "description": "Example description",
+            "effectiveAt": "2021-01-05T22:40:29.796103Z",
+            "station": "Example Station",
+            "channelDataType": "DIAGNOSTIC_SOH",
+            "channelBandType": "BROADBAND",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationType": "VERTICAL",
+            "channelOrientationCode": "Z",
+            "units": "COUNTS_PER_NANOMETER",
+            "nominalSampleRateHz": 65,
+            "orientationAngles": {
+              "horizontalAngleDeg": 65,
+              "verticalAngleDeg": 135
+            },
+            "configuredInputs": [],
+            "processingDefinition": {},
+            "processingMetadata": {
+              "CHANNEL_GROUP": "GROUP"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

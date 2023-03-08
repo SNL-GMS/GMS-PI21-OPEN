@@ -1,0 +1,101 @@
+/* 
+  This is a workaround causing a wrapper to handle the scroll, rather than the 
+  table itself
+*/
+.station-statistics-table__wrapper {
+  border-radius: $rounded-rectangle-radius;
+
+  overflow: auto;
+  flex-grow: 999;
+  background-color: var(--gms-prominent-background, $gms-prominent-background);
+}
+
+.station-statistics-table-container {
+  position: relative;
+  &--needs-attention,
+  &--acknowledged {
+    .ag-header-cell-label {
+      padding-left: 7px;
+    }
+    .ag-cell-focus:focus {
+      border: none !important;
+    }
+  }
+
+  &--needs-attention {
+    @include flexColumn;
+    user-select: none;
+  }
+
+  &--acknowledged {
+    @include flexColumn;
+  }
+
+  &--highlighted .station-statistics-table__wrapper {
+    background-color: var(--gms-input-highlight, $gms-input-highlight);
+    border-radius: $rounded-rectangle-radius + 2;
+  }
+  & .table-cell {
+    cursor: pointer;
+    .soh-cell__right-container {
+      border-radius: 0;
+      margin-right: -10px; // Compensate for the 10px of padding that the cell adds so this is right-aligned
+    }
+  }
+}
+
+.soh-divider-container {
+  @include flexColumn;
+  .top-component,
+  .bottom-component {
+    overflow: auto;
+  }
+  .horizontal-divider {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.station-statistics__needs-attention-label {
+  padding: 0.5em 0 0.25em 0;
+  .station-statistics-table-container--acknowledged & {
+    padding-top: 0;
+  }
+  color: var(--gms-prominent, $gms-prominent);
+  margin-left: 0.25em;
+  font-size: 1.1rem;
+  font-weight: 100;
+}
+
+.station-statistics-table-container .table-cell {
+  cursor: pointer;
+}
+
+.soh-table__drop-zone--highlight {
+  & * {
+    overflow: visible; // don't cut off shadows
+  }
+  .table-cell {
+    @include addBoxShadow('md');
+    overflow: visible;
+  }
+}
+
+.drop-zone {
+  height: 100%;
+  flex-grow: 2;
+  .station-statistics-table-container & {
+    display: flex;
+  }
+  &--highlighted {
+    .station-statistics-table__wrapper {
+      background-color: var(--gms-input-highlight, $gms-input-highlight);
+      border-radius: $rounded-rectangle-radius + 2;
+    }
+  }
+}
+
+.table-background-icon {
+  fill: var(--gms-prominent, $gms-prominent);
+  color: var(--gms-prominent, $gms-prominent);
+}

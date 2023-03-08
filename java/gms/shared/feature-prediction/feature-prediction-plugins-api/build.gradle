@@ -1,0 +1,20 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+
+  // GMS
+  implementation project(':event-coi')
+  implementation project(':feature-prediction-utilities')
+  implementation project(':plugin-spring')
+  
+  // Google AutoValue
+  api libs.com.google.guava.guava
+  implementation libs.com.google.auto.value.auto.value.annotations
+  annotationProcessor libs.com.google.auto.value.auto.value.base
+  
+  // Spring
+  implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+  implementation libs.org.springframework.boot.spring.boot.starter.web
+}

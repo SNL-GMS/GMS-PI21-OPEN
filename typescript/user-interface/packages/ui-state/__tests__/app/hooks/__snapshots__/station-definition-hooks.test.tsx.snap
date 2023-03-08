@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`station definition hooks can handle undefined 1`] = `
+<div>
+  <div />
+  <div />
+</div>
+`;
+
+exports[`station definition hooks can use get all stations query 1`] = `
+<div>
+  [{"name":"station name","description":"station description","type":"HYDROACOUSTIC","effectiveAt":123,"effectiveUntil":456,"allRawChannels":[],"channelGroups":[]}]
+</div>
+`;
+
+exports[`station definition hooks can use get current station query 1`] = `
+<div>
+  [{"name":"station name","description":"station description","type":"HYDROACOUSTIC","effectiveAt":123,"effectiveUntil":456,"allRawChannels":[],"channelGroups":[]}]
+</div>
+`;
+
+exports[`station definition hooks can use get current station query 2`] = `
+<div>
+  [{"name":"station name","description":"station description","type":"HYDROACOUSTIC","effectiveAt":123,"effectiveUntil":456,"allRawChannels":[],"channelGroups":[]}]
+</div>
+`;
+
+exports[`station definition hooks can use get stations by station group name query 1`] = `
+<div>
+  <div>
+    [{"name":"station name","description":"station description","type":"HYDROACOUSTIC","effectiveAt":123,"effectiveUntil":456,"allRawChannels":[],"channelGroups":[]}]
+  </div>
+  <div>
+    [{"name":"station name","description":"station description","type":"HYDROACOUSTIC","effectiveAt":123,"effectiveUntil":456,"allRawChannels":[],"channelGroups":[]}]
+  </div>
+</div>
+`;

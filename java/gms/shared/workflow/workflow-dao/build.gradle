@@ -1,0 +1,11 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+    implementation libs.org.hibernate.hibernate.core
+    implementation libs.org.hibernate.hibernate.c3p0
+    implementation libs.org.hibernate.hibernate.entitymanager
+    implementation libs.com.vladmihalcea.hibernate.types52
+    implementation libs.com.oracle.ojdbc.ojdbc8
+}

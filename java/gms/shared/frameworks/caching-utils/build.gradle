@@ -1,0 +1,21 @@
+apply plugin: 'java-library'
+
+dependencies {
+    // Utility (dependency is api as apache commons classes are publicly exposed).
+    api libs.org.apache.commons.commons.lang3
+
+    implementation libs.com.google.guava.guava
+
+    //Ignite cache libs
+    implementation libs.javax.cache.cache.api
+    api libs.org.apache.ignite.ignite.core
+    implementation libs.org.apache.ignite.ignite.slf4j
+    implementation libs.org.apache.ignite.ignite.kubernetes
+
+    api project(':frameworks-system-config')
+    testImplementation project(':frameworks-test-utilities')
+
+    // testing dependencies
+    testImplementation libs.org.testcontainers.testcontainers
+    testImplementation libs.org.testcontainers.junit.jupiter
+}

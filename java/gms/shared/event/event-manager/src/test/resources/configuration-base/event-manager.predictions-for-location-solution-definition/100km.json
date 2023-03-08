@@ -1,0 +1,28 @@
+{
+  "name": "predictions-for-location-solution-definition",
+  "constraints": [
+    {
+      "constraintType": "NUMERIC_RANGE",
+      "criterion": "distance",
+      "operator": {
+        "type": "IN",
+        "negated": false
+      },
+      "value": {
+        "min": 50,
+        "max": 75
+      }
+    }
+  ],
+  "parameters": {
+    "featurePredictionsDefinitions": [
+      {
+        "earthModel": "Iaspei",
+        "predictionTypes": [
+          "SOURCE_TO_RECEIVER_DISTANCE"
+        ],
+        "correctionDefinitions": []
+      }
+    ]
+  }
+}

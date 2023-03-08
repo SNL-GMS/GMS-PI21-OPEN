@@ -1,0 +1,439 @@
+[
+  {
+    "name": "default-soh-monitor-thresholds-TIMELINESS",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "TIMELINESS"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": "PT5M",
+      "marginalThreshold": "PT15M"
+    }
+  },
+  {
+    "name": "default-soh-monitor-thresholds-LAG",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "LAG"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": "PT5M",
+      "marginalThreshold": "PT15M"
+    }
+  }, 
+  {
+    "name": "default-soh-monitor-thresholds-MISSING",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "MISSING"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 2,
+      "marginalThreshold": 10
+    }
+  },  
+  {
+    "name": "default-soh-monitor-thresholds-ENV_AUTHENTICATION_SEAL_BROKEN",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "ENV_AUTHENTICATION_SEAL_BROKEN"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 0,
+      "marginalThreshold": 75
+    }
+  }, 
+  {
+    "name": "default-soh-monitor-thresholds-ENV_BACKUP_POWER_UNSTABLE",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "ENV_BACKUP_POWER_UNSTABLE"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 0,
+      "marginalThreshold": 75
+    }
+  }, 
+  {
+    "name": "default-soh-monitor-thresholds-ENV_CALIBRATION_UNDERWAY",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "ENV_CALIBRATION_UNDERWAY"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 0,
+      "marginalThreshold": 75
+    }
+  }, 
+  {
+    "name": "default-soh-monitor-thresholds-ENV_CLIPPED",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "ENV_CLIPPED"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 0,
+      "marginalThreshold": 75
+    }
+  }, 
+  {
+    "name": "default-soh-monitor-thresholds-ENV_CLOCK_DIFFERENTIAL_TOO_LARGE",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "ENV_CLOCK_DIFFERENTIAL_TOO_LARGE"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 0,
+      "marginalThreshold": 75
+    }
+  }, 
+  {
+    "name": "default-soh-monitor-thresholds-ENV_DEAD_SENSOR_CHANNEL",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "ENV_DEAD_SENSOR_CHANNEL"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 0,
+      "marginalThreshold": 75
+    }
+  }, 
+  {
+    "name": "default-soh-monitor-thresholds-ENV_DIGITIZER_ANALOG_INPUT_SHORTED",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "ENV_DIGITIZER_ANALOG_INPUT_SHORTED"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 0,
+      "marginalThreshold": 75
+    }
+  }, 
+  {
+    "name": "default-soh-monitor-thresholds-ENV_DIGITIZER_CALIBRATION_LOOP_BACK",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "ENV_DIGITIZER_CALIBRATION_LOOP_BACK"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 0,
+      "marginalThreshold": 75
+    }
+  }, 
+  {
+    "name": "default-soh-monitor-thresholds-ENV_DIGITIZING_EQUIPMENT_OPEN",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "ENV_DIGITIZING_EQUIPMENT_OPEN"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 0,
+      "marginalThreshold": 75
+    }
+  },
+  {
+    "name": "default-soh-monitor-thresholds-ENV_EQUIPMENT_HOUSING_OPEN",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "ENV_EQUIPMENT_HOUSING_OPEN"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 0,
+      "marginalThreshold": 75
+    }
+  }, 
+  {
+    "name": "default-soh-monitor-thresholds-ENV_EQUIPMENT_MOVED",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "ENV_EQUIPMENT_MOVED"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 0,
+      "marginalThreshold": 75
+    }
+  }, 
+  {
+    "name": "default-soh-monitor-thresholds-ENV_GPS_RECEIVER_OFF",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "ENV_GPS_RECEIVER_OFF"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 0,
+      "marginalThreshold": 75
+    }
+  }, 
+  {
+    "name": "default-soh-monitor-thresholds-ENV_GPS_RECEIVER_UNLOCKED",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "ENV_GPS_RECEIVER_UNLOCKED"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 0,
+      "marginalThreshold": 75
+    }
+  }, 
+  {
+    "name": "default-soh-monitor-thresholds-ENV_MAIN_POWER_FAILURE",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "ENV_MAIN_POWER_FAILURE"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 0,
+      "marginalThreshold": 75
+    }
+  },
+  {
+    "name": "default-soh-monitor-thresholds-ENV_VAULT_DOOR_OPENED",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "ENV_VAULT_DOOR_OPENED"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 0,
+      "marginalThreshold": 75
+    }
+  }, 
+  {
+    "name": "default-soh-monitor-thresholds-ENV_ZEROED_DATA",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "ENV_ZEROED_DATA"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 0,
+      "marginalThreshold": 75
+    }
+  }
+]

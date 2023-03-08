@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`user manager hooks can set audible notifications 1`] = `"\\"set audible notifications\\""`;
+
+exports[`user manager hooks can set layout 1`] = `"\\"set layout\\""`;
+
+exports[`user manager hooks can set user theme 1`] = `"\\"set current theme\\""`;

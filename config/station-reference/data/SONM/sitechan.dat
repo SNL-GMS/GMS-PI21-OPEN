@@ -1,0 +1,15 @@
+SONA0  SHZ       2000245     2271  2286324 n       0.0000   -1.0    0.0 short-period_vertical                              20040527 12:00:00
+SONA0  SHN       2000245     2270  2286324 n       0.0000    0.0   90.0 short-period_north                                 20040527 12:00:00
+SONA0  SHE       2000245     2269  2286324 n       0.0000   90.0   90.0 short-period_east                                  20040527 12:00:00
+SONA0  MHZ       2000245     2268  2286324 n       0.0000   -1.0    0.0 mid-period_vertical                                20040527 12:00:00
+SONA0  MHN       2000245     2267  2286324 n       0.0000    0.0   90.0 mid-period_north                                   20040527 12:00:00
+SONA0  MHE       2000245     2266  2286324 n       0.0000   90.0   90.0 mid-period_east                                    20040527 12:00:00
+SONA1  SHZ       2002155     2272  2286324 n       0.0000   -1.0    0.0 short-period_vertical                              20040527 12:00:00
+SONA2  SHZ       2002155     2273  2286324 n       0.0000   -1.0    0.0 short-period_vertical                              20040527 12:00:00
+SONA3  SHZ       2002155     2274  2286324 n       0.0000   -1.0    0.0 short-period_vertical                              20040527 12:00:00
+SONA4  SHZ       2002155     2275  2286324 n       0.0000   -1.0    0.0 short-period_vertical                              20040527 12:00:00
+SONB1  SHZ       2000245     2276  2286324 n       0.0000   -1.0    0.0 short-period_vertical                              20040527 12:00:00
+SONB2  SHZ       2002155     2277  2286324 n       0.0000   -1.0    0.0 short-period_vertical                              20040527 12:00:00
+SONB3  SHZ       2002155     2278  2286324 n       0.0000   -1.0    0.0 short-period_vertical                              20040527 12:00:00
+SONB4  SHZ       2002155     2279  2286324 n       0.0000   -1.0    0.0 short-period_vertical                              20040527 12:00:00
+SONB5  SHZ       2002155     2280  2286324 n       0.0000   -1.0    0.0 short-period_vertical                              20040527 12:00:00

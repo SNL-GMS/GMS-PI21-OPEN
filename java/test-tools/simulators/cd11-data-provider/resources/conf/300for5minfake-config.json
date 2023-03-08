@@ -1,0 +1,12 @@
+{
+  "providerInputMode":"file",
+
+  "fileConfig": {
+    "dataLocation": "/rsdf/cd11/300for5minfake",
+    "referenceTime": "2020-02-28T17:44:40Z",
+    "initialDelaySeconds": 10
+  },
+
+  "connectionFrameCreator": "DATAPROV",
+  "connectionFrameDestination": "CONNMAN"
+}

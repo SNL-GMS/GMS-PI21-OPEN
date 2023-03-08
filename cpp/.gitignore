@@ -1,0 +1,15 @@
+**/node_modules/
+emcmake-build/
+cmake-build-debug/
+cmake-build/
+build/
+.idea/
+.project
+lib/
+
+# Allow the .vscode directory but ban all non-whitelisted files
+.vscode/*
+# Whitelist files from .vscode
+!.vscode/
+!.vscode/cSpell.json
+

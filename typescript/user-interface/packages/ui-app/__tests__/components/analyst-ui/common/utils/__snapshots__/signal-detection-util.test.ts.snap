@@ -1,0 +1,252 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can get use signal detection utils and get expected results getChannelSegmentStringForCurrentHypothesis 1`] = `"ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4.1636503404.1636503404.1636503404.1636503704"`;
+
+exports[`can get use signal detection utils and get expected results getSignalDetectionChannelName 1`] = `"ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4"`;
+
+exports[`can get use signal detection utils and get expected results parseStationNameFromChannelSegment 1`] = `"ASAR"`;
+
+exports[`getWaveformValueForTime find FeatureMeasurement and Values find Amplitude feature measurement and value 1`] = `
+Object {
+  "channel": Object {
+    "effectiveAt": 1636503404,
+    "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+  },
+  "featureMeasurementType": "AMPLITUDE_A5_OVER_2",
+  "measuredChannelSegment": Object {
+    "id": Object {
+      "channel": Object {
+        "effectiveAt": 1636503404,
+        "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+      },
+      "creationTime": 1636503404,
+      "endTime": 1636503704,
+      "startTime": 1636503404,
+    },
+  },
+  "measurementValue": Object {
+    "amplitude": Object {
+      "standardDeviation": 0.5,
+      "units": "MAGNITUDE",
+      "value": 5,
+    },
+    "period": 0.25,
+    "startTime": 1636503404,
+  },
+  "snr": Object {
+    "standardDeviation": null,
+    "units": "DECIBELS",
+    "value": 8.9939442,
+  },
+}
+`;
+
+exports[`getWaveformValueForTime find FeatureMeasurement and Values find Amplitude feature measurement and value 2`] = `
+Object {
+  "amplitude": Object {
+    "standardDeviation": 0.5,
+    "units": "MAGNITUDE",
+    "value": 5,
+  },
+  "period": 0.25,
+  "startTime": 1636503404,
+}
+`;
+
+exports[`getWaveformValueForTime find FeatureMeasurement and Values find ArrivalTime feature measurement and value 1`] = `
+Object {
+  "channel": Object {
+    "effectiveAt": 1636503404,
+    "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+  },
+  "featureMeasurementType": "ARRIVAL_TIME",
+  "measuredChannelSegment": Object {
+    "id": Object {
+      "channel": Object {
+        "effectiveAt": 1636503404,
+        "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+      },
+      "creationTime": 1636503404,
+      "endTime": 1636503704,
+      "startTime": 1636503404,
+    },
+  },
+  "measurementValue": Object {
+    "arrivalTime": Object {
+      "standardDeviation": 1.162,
+      "value": 1636503404,
+    },
+    "travelTime": null,
+  },
+  "snr": Object {
+    "standardDeviation": null,
+    "units": "DECIBELS",
+    "value": 8.9939442,
+  },
+}
+`;
+
+exports[`getWaveformValueForTime find FeatureMeasurement and Values find ArrivalTime feature measurement and value 2`] = `
+Object {
+  "arrivalTime": Object {
+    "standardDeviation": 1.162,
+    "value": 1636503404,
+  },
+  "travelTime": null,
+}
+`;
+
+exports[`getWaveformValueForTime find FeatureMeasurement and Values find Azimuth feature measurement and value 1`] = `
+Object {
+  "channel": Object {
+    "effectiveAt": 1636503404,
+    "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+  },
+  "featureMeasurementType": "RECEIVER_TO_SOURCE_AZIMUTH",
+  "measuredChannelSegment": Object {
+    "id": Object {
+      "channel": Object {
+        "effectiveAt": 1636503404,
+        "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+      },
+      "creationTime": 1636503404,
+      "endTime": 1636503704,
+      "startTime": 1636503404,
+    },
+  },
+  "measurementValue": Object {
+    "measuredValue": Object {
+      "standardDeviation": 2.2089042,
+      "units": "DEGREES",
+      "value": 90.142121,
+    },
+    "referenceTime": null,
+  },
+  "snr": null,
+}
+`;
+
+exports[`getWaveformValueForTime find FeatureMeasurement and Values find Azimuth feature measurement and value 2`] = `
+Object {
+  "measuredValue": Object {
+    "standardDeviation": 2.2089042,
+    "units": "DEGREES",
+    "value": 90.142121,
+  },
+  "referenceTime": null,
+}
+`;
+
+exports[`getWaveformValueForTime find FeatureMeasurement and Values find Emergence Angle feature measurementvalue 1`] = `
+Object {
+  "measuredValue": Object {
+    "standardDeviation": null,
+    "units": "DEGREES",
+    "value": -1,
+  },
+  "referenceTime": null,
+}
+`;
+
+exports[`getWaveformValueForTime find FeatureMeasurement and Values find LongPeriodFirstMotionFeatureMeasurementValue 1`] = `
+Object {
+  "confidence": null,
+  "referenceTime": 1636503404,
+  "value": "INDETERMINATE",
+}
+`;
+
+exports[`getWaveformValueForTime find FeatureMeasurement and Values find Phase feature measurement and value 1`] = `
+Object {
+  "channel": Object {
+    "effectiveAt": 1636503404,
+    "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+  },
+  "featureMeasurementType": "PHASE",
+  "measuredChannelSegment": Object {
+    "id": Object {
+      "channel": Object {
+        "effectiveAt": 1636503404,
+        "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+      },
+      "creationTime": 1636503404,
+      "endTime": 1636503704,
+      "startTime": 1636503404,
+    },
+  },
+  "measurementValue": Object {
+    "confidence": 50,
+    "referenceTime": 1636503404,
+    "value": "P",
+  },
+  "snr": null,
+}
+`;
+
+exports[`getWaveformValueForTime find FeatureMeasurement and Values find Phase feature measurement and value 2`] = `
+Object {
+  "confidence": 50,
+  "referenceTime": 1636503404,
+  "value": "P",
+}
+`;
+
+exports[`getWaveformValueForTime find FeatureMeasurement and Values find Rectilinearity feature measurementvalue 1`] = `
+Object {
+  "measuredValue": Object {
+    "standardDeviation": null,
+    "units": "UNITLESS",
+    "value": -1,
+  },
+  "referenceTime": null,
+}
+`;
+
+exports[`getWaveformValueForTime find FeatureMeasurement and Values find ShortPeriodFirstMotionFeatureMeasurementValue 1`] = `
+Object {
+  "confidence": null,
+  "referenceTime": 1636503404,
+  "value": "INDETERMINATE",
+}
+`;
+
+exports[`getWaveformValueForTime find FeatureMeasurement and Values find Slowness feature measurement and value 1`] = `
+Object {
+  "channel": Object {
+    "effectiveAt": 1636503404,
+    "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+  },
+  "featureMeasurementType": "SLOWNESS",
+  "measuredChannelSegment": Object {
+    "id": Object {
+      "channel": Object {
+        "effectiveAt": 1636503404,
+        "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_90.142deg,slow_7.122s_per_deg/06c0cb24-ab8f-3853-941d-bdf5e73a51b4",
+      },
+      "creationTime": 1636503404,
+      "endTime": 1636503704,
+      "startTime": 1636503404,
+    },
+  },
+  "measurementValue": Object {
+    "measuredValue": Object {
+      "standardDeviation": 0.27,
+      "units": "SECONDS_PER_DEGREE",
+      "value": 7.1219535,
+    },
+    "referenceTime": null,
+  },
+  "snr": null,
+}
+`;
+
+exports[`getWaveformValueForTime find FeatureMeasurement and Values find Slowness feature measurement and value 2`] = `
+Object {
+  "measuredValue": Object {
+    "standardDeviation": 0.27,
+    "units": "SECONDS_PER_DEGREE",
+    "value": 7.1219535,
+  },
+  "referenceTime": null,
+}
+`;

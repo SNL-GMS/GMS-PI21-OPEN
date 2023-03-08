@@ -1,0 +1,16 @@
+{
+    "name": "event-repository-bridged-monitoring-organization",
+    "constraints": [
+        {
+            "constraintType": "DEFAULT"
+        }
+    ],
+    "parameters": {
+        "$ref=global.monitoring-org": [
+            {
+                "criterion": "DEFAULT",
+                "value": "DEFAULT"
+            }
+        ]
+    }
+}

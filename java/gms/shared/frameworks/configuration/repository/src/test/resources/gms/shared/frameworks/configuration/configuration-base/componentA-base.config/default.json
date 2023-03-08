@@ -1,0 +1,22 @@
+{
+  "name": "foo-default",
+  "constraints": [
+  {
+    "constraintType": "DEFAULT"
+  }, {
+    "constraintType": "STRING",
+    "criterion": "name",
+    "operator": {
+      "type": "EQ",
+      "negated": false
+    },
+    "value": [ "foo" ],
+    "priority": 100
+  }
+  ],
+  "parameters": {
+    "numeric": 4.4,
+    "string": "fooString",
+    "binary": true
+  }
+}

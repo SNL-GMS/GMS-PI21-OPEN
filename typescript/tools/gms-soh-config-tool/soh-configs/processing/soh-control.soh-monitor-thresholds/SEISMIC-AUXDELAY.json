@@ -1,0 +1,130 @@
+[
+  {
+    "name": "SEISMIC-AUXDELAY-soh-monitor-thresholds-TIMELINESS",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "StationName",
+        "operator": {
+          "type": "IN",
+          "negated": false
+        },
+        "value": [
+          "APG",
+          "ARTI",
+          "ATD",
+          "BELG",
+          "BJT",
+          "CTA",
+          "DAVOX",
+          "GNI",
+          "JAY",
+          "JCJ",
+          "JTS",
+          "KAPI",
+          "KLR",
+          "KIRV",
+          "KURK",
+          "KVAR",
+          "MA2",
+          "MLR",
+          "MDP",
+          "MMAI",
+          "OBN",
+          "RCBR",
+          "RPN",
+          "RPZ",
+          "SDV",
+          "SEY",
+          "SNAA",
+          "TIXI",
+          "TLY",
+          "URZ",
+          "YAK"
+        ]
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "TIMELINESS"	
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": "PT90M",
+      "marginalThreshold": "PT150M"
+    }
+  },
+  {
+    "name": "SEISMIC-AUXDELAY-soh-monitor-thresholds-LAG",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "LAG"	
+        ]
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "StationName",
+        "operator": {
+          "type": "IN",
+          "negated": false
+        },
+        "value": [
+          "APG",
+          "ARTI",
+          "ATD",
+          "BELG",
+          "BJT",
+          "CTA",
+          "DAVOX",
+          "GNI",
+          "JAY",
+          "JCJ",
+          "JTS",
+          "KAPI",
+          "KLR",
+          "KIRV",
+          "KURK",
+          "KVAR",
+          "MA2",
+          "MLR",
+          "MDP",
+          "MMAI",
+          "OBN",
+          "RCBR",
+          "RPN",
+          "RPZ",
+          "SDV",
+          "SEY",
+          "SNAA",
+          "TIXI",
+          "TLY",
+          "URZ",
+          "YAK"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": "PT90M",
+      "marginalThreshold": "PT150M"
+    }
+  }
+]

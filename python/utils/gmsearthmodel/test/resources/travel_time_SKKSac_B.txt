@@ -1,0 +1,12 @@
+# ak135 travel-time table for phase: SKKSac_B (back branch)
+ 2   Number of depth samples at the following depths (km):
+    0.00 700.00
+ 2   Number of distance samples at the following distances (deg):
+   84.00 180.00
+# Travel time at depth =   0.00 km.
+   2283.1418
+   1970.1995
+# Travel time at depth = 700.00 km.
+   2139.1785
+   1828.8542
+#@(#)        ak135.SKKSac_B     2.1     06 Jun 1996

@@ -1,0 +1,15 @@
+parserOptions:
+  project: './tsconfig.json'
+extends:
+  - '../../.eslintrc.yaml'
+settings:
+  import/resolver:
+    node:
+      extensions: ['.ts', '.tsx', '.js']
+      moduleDirectory:
+        - './node_modules'
+        - '../../node_modules'
+    typescript:
+      alwaysTryTypes: true
+      project:
+        - tsconfig.json

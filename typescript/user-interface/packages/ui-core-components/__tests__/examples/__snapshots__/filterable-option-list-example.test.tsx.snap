@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a component 1`] = `
+<div>
+  <div
+    class="ag-dark"
+    style="flex: 1 1 auto; position: relative; width: 700px;"
+  >
+    <div
+      class="filterable-option-list"
+    >
+      <input
+        class="filterable-option-list__search"
+        placeholder="Search input"
+        tabindex="0"
+        type="search"
+        value=""
+      />
+      <div
+        class="filterable-option-list__list"
+      >
+        <div
+          class="filterable-option-list-item"
+          data-cy="filterable-option-option A"
+          id="option A"
+          tabindex="0"
+        >
+          option A
+        </div>
+        <div
+          class="filterable-option-list-item"
+          data-cy="filterable-option-option B"
+          id="option B"
+          tabindex="0"
+        >
+          option B
+        </div>
+        <div
+          class="filterable-option-list-item"
+          data-cy="filterable-option-option C"
+          id="option C"
+          tabindex="0"
+        >
+          option C
+        </div>
+        <div
+          class="filterable-option-list-item"
+          data-cy="filterable-option-option D"
+          id="option D"
+          tabindex="0"
+        >
+          option D
+        </div>
+        <div
+          class="filterable-option-list-item"
+          data-cy="filterable-option-option E"
+          id="option E"
+          tabindex="0"
+        >
+          option E
+        </div>
+      </div>
+    </div>
+    <div
+      style="color: rgb(215, 183, 64); font-family: monospace;"
+    >
+      Selected Option: 
+      <br />
+    </div>
+    <div
+      class="filterable-option-list"
+    >
+      <input
+        class="filterable-option-list__search"
+        placeholder="Search input"
+        tabindex="0"
+        type="search"
+        value="c"
+      />
+      <div
+        class="filterable-option-list__list"
+      >
+        <div
+          class="filterable-option-list-item"
+          data-cy="filterable-option-option C"
+          id="option C"
+          tabindex="0"
+        >
+          option C
+        </div>
+      </div>
+    </div>
+    <div
+      style="color: rgb(215, 183, 64); font-family: monospace;"
+    >
+      Selected Option: option A
+      <br />
+    </div>
+  </div>
+</div>
+`;

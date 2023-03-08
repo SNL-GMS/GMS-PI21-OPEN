@@ -1,0 +1,15 @@
+I43H1  BWS       2009140     5369  2286324 n       0.0000   -1.0    0.0 Wind_speed                                         20090731 12:00:00
+I43H1  BWD       2009140     5368  2286324 n       0.0000   -1.0    0.0 Wind_direction                                     20090731 12:00:00
+I43H1  BKO       2009140     5367  2286324 n       0.0000   -1.0    0.0 External_temperature                               20090731 12:00:00
+I43H1  BDF       2009140     5356  2286324 n       0.0000   -1.0    0.0 Infrasonic_Micropressure_data                      20090731 12:00:00
+I43H1  BDA       2009140     5355  2286324 n       0.0000   -1.0    0.0 Absolute_barometric_pressure                       20090731 12:00:00
+I43H2  BDF       2009140     5358  2286324 n       0.0000   -1.0    0.0 Infrasonic_Micropressure_data                      20090731 12:00:00
+I43H2  BDA       2009140     5357  2286324 n       0.0000   -1.0    0.0 Absolute_barometric_pressure                       20090731 12:00:00
+I43H3  BDF       2009140     5360  2286324 n       0.0000   -1.0    0.0 Infrasonic_Micropressure_data                      20090731 12:00:00
+I43H3  BDA       2009140     5359  2286324 n       0.0000   -1.0    0.0 Absolute_barometric_pressure                       20090731 12:00:00
+I43H4  BDF       2009140     5362  2286324 n       0.0000   -1.0    0.0 Infrasonic_Micropressure_data                      20090731 12:00:00
+I43H4  BDA       2009140     5361  2286324 n       0.0000   -1.0    0.0 Absolute_barometric_pressure                       20090731 12:00:00
+I43H5  BDF       2009140     5364  2286324 n       0.0000   -1.0    0.0 Infrasonic_Micropressure_data                      20090731 12:00:00
+I43H5  BDA       2009140     5363  2286324 n       0.0000   -1.0    0.0 Absolute_barometric_pressure                       20090731 12:00:00
+I43H6  BDF       2009140     5366  2286324 n       0.0000   -1.0    0.0 Infrasonic_Micropressure_data                      20090731 12:00:00
+I43H6  BDA       2009140     5365  2286324 n       0.0000   -1.0    0.0 Absolute_barometric_pressure                       20090731 12:00:00

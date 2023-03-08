@@ -1,0 +1,297 @@
+/***************************************************************************************
+ MODIFY THIS FILE WITH CARE!!!
+ /***************************************************************************************/
+pluginManagement {
+    repositories {
+        maven {
+            url "${plugin_repository_url}"
+        }
+    }
+}
+
+rootProject.name = "gms-common"
+enableFeaturePreview("VERSION_CATALOGS")
+
+include "acei-merge-processor"
+project(":acei-merge-processor").projectDir = file("core/data-acquisition/acei-merge-processor")
+
+// Include the ui processing configuration service projects
+include "ui-processing-configuration-service"
+project(":ui-processing-configuration-service").projectDir = file("core/ui-services/ui-processing-configuration-service")
+
+// Include Data Acquisition subprojects
+include "data-acquisition-receiver-api"
+project(":data-acquisition-receiver-api").projectDir = file("core/data-acquisition/data-acquisition-receiver-api")
+
+// Include the CD 1.1 Receiver subprojects.
+include "cd11-common"
+project(":cd11-common").projectDir = file("core/data-acquisition/cd11-station-receiver/cd11-common")
+include "cd11-connman"
+project(":cd11-connman").projectDir = file("core/data-acquisition/cd11-station-receiver/cd11-connman")
+include "cd11-dataman"
+project(":cd11-dataman").projectDir = file("core/data-acquisition/cd11-station-receiver/cd11-dataman")
+include "cd11-parser"
+project(":cd11-parser").projectDir = file("core/data-acquisition/cd11-station-receiver/cd11-parser")
+
+// Include the station-soh-control subprojects
+include "soh-control"
+project(":soh-control").projectDir = file("core/performance-monitoring/soh/soh-control")
+include "soh-control-api"
+project(":soh-control-api").projectDir = file("core/performance-monitoring/soh/soh-control-api")
+include("soh-application")
+project(":soh-application").projectDir = file("core/performance-monitoring/soh/soh-application")
+include("soh-config-checker")
+project(":soh-config-checker").projectDir = file("core/performance-monitoring/soh/soh-config-checker")
+
+include "ui-materialized-view"
+project(":ui-materialized-view").projectDir = file("core/performance-monitoring/ui-materialized-view")
+include "ssam-application"
+project(":ssam-application").projectDir = file("core/performance-monitoring/station-soh-analysis-manager/ssam-application")
+include "ssam-control"
+project(":ssam-control").projectDir = file("core/performance-monitoring/station-soh-analysis-manager/ssam-control")
+include "ssam-control-api"
+project(":ssam-control-api").projectDir = file("core/performance-monitoring/station-soh-analysis-manager/ssam-control-api")
+
+include "smds-application"
+project(":smds-application").projectDir = file("core/performance-monitoring/system-message-definition-service/smds-application")
+include "smds-service"
+project(":smds-service").projectDir = file("core/performance-monitoring/system-message-definition-service/smds-service")
+
+// Include the Waveform Reader Utility subprojects.
+include "waveman"
+project(":waveman").projectDir = file("core/data-acquisition/waveform-reader-utility/waveman")
+
+// Include other data acquisition subprojects.
+include("cd11-rsdf-processor")
+project(":cd11-rsdf-processor").projectDir = file("core/data-acquisition/cd11-rsdf-processor")
+
+// Include the Standard Earthmodel Format utility
+
+// Include Utility projects.
+include "java-utilities"
+project(":java-utilities").projectDir = file("shared/utilities/java-utilities")
+include "kafka-utilities"
+project(":kafka-utilities").projectDir = file("shared/utilities/kafka-utilities")
+include "reactor-utils"
+project(":reactor-utils").projectDir = file("shared/utilities/reactor-utils")
+include "kafka-test-utils"
+project(":kafka-test-utils").projectDir = file("shared/utilities/kafka-test-utils")
+include "validation"
+project(":validation").projectDir = file("shared/utilities/validation")
+include("file-store-utility")
+project(":file-store-utility").projectDir = file("shared/utilities/file-store-utility")
+
+// Include frameworks projects
+include 'cache-service'
+project(':cache-service').projectDir = file("shared/frameworks/cache-service")
+include 'caching-utils'
+project(':caching-utils').projectDir = file("shared/frameworks/caching-utils")
+include "frameworks-client-generator"
+project(":frameworks-client-generator").projectDir = file("shared/frameworks/frameworks-client-generator")
+include "frameworks-client-library"
+project(":frameworks-client-library").projectDir = file("shared/frameworks/frameworks-client-library")
+include "frameworks-control"
+project(":frameworks-control").projectDir = file("shared/frameworks/frameworks-control")
+include "frameworks-service-interface-base"
+project(":frameworks-service-interface-base").projectDir = file("shared/frameworks/frameworks-service-interface-base")
+include "frameworks-http-service-library"
+project(":frameworks-http-service-library").projectDir = file("shared/frameworks/frameworks-http-service-library")
+include "frameworks-service-generator"
+project(":frameworks-service-generator").projectDir = file("shared/frameworks/frameworks-service-generator")
+include "frameworks-shared-objects"
+project(":frameworks-shared-objects").projectDir = file("shared/frameworks/frameworks-shared-objects")
+include "frameworks-osd-commonobjects"
+project(":frameworks-osd-commonobjects").projectDir = file("shared/frameworks/frameworks-osd/frameworks-osd-commonobjects")
+include "frameworks-osd-testfixtures"
+project(":frameworks-osd-testfixtures").projectDir = file("shared/frameworks/frameworks-osd/frameworks-osd-testfixtures")
+include "frameworks-system-config"
+project(":frameworks-system-config").projectDir = file("shared/frameworks/frameworks-system-config")
+include "frameworks-utilities"
+project(":frameworks-utilities").projectDir = file("shared/frameworks/frameworks-utilities")
+include(':frameworks-osd-daos')
+project(':frameworks-osd-daos').projectDir = file('shared/frameworks/frameworks-osd/frameworks-osd-daos')
+include 'frameworks-osd-repository'
+project(':frameworks-osd-repository').projectDir = file("shared/frameworks/frameworks-osd/frameworks-osd-repository")
+include 'frameworks-osd-service'
+project(':frameworks-osd-service').projectDir = file("shared/frameworks/frameworks-osd/frameworks-osd-service")
+include(':frameworks-osd-api')
+project(':frameworks-osd-api').projectDir = file('shared/frameworks/frameworks-osd/frameworks-osd-api')
+include(':flux-frameworks')
+project(':flux-frameworks').projectDir = file('shared/reactor/flux-frameworks')
+include(':kafka-consumer-frameworks')
+project(':kafka-consumer-frameworks').projectDir = file('shared/frameworks/messaging/kafka-consumer-frameworks')
+
+// Include the station-definition
+include(':station-definition-dao')
+project(':station-definition-dao').projectDir = file('shared/station-definition/station-definition-dao')
+include(':station-definition-api')
+project(':station-definition-api').projectDir = file('shared/station-definition/station-definition-api')
+include(':station-definition-repository')
+project(':station-definition-repository').projectDir = file('shared/station-definition/station-definition-repository')
+include(":station-definition-coi")
+project(":station-definition-coi").projectDir = file("shared/station-definition/station-definition-coi")
+include(":station-definition-testfixtures")
+project(":station-definition-testfixtures").projectDir = file("shared/station-definition/station-definition-testfixtures")
+include(':station-definition-converter')
+project(':station-definition-converter').projectDir = file('shared/station-definition/station-definition-converter')
+include(':station-definition-accessor')
+project(':station-definition-accessor').projectDir = file('shared/station-definition/station-definition-accessor')
+include(':station-definition-application')
+project(':station-definition-application').projectDir = file('shared/station-definition/station-definition-application')
+
+// Include the system-events
+include(':system-events')
+project(':system-events').projectDir = file('shared/system-events')
+
+// Include the workflow projects
+include(':workflow-coi')
+project(':workflow-coi').projectDir = file('shared/workflow/workflow-coi')
+include(':workflow-dao')
+project(':workflow-dao').projectDir = file('shared/workflow/workflow-dao')
+include(':workflow-api')
+project(':workflow-api').projectDir = file('shared/workflow/workflow-api')
+include(':workflow-manager')
+project(':workflow-manager').projectDir = file('shared/workflow/workflow-manager')
+include(':workflow-accessor')
+project(':workflow-accessor').projectDir = file('shared/workflow/workflow-accessor')
+include(':workflow-repository')
+project(':workflow-repository').projectDir = file('shared/workflow/workflow-repository')
+
+// Include the event projects
+include(':event-accessor')
+project(':event-accessor').projectDir = file('shared/event/event-accessor')
+include(':event-api')
+project(':event-api').projectDir = file('shared/event/event-api')
+include(':event-coi')
+project(':event-coi').projectDir = file('shared/event/event-coi')
+include(':event-dao')
+project(':event-dao').projectDir = file('shared/event/event-dao')
+include(':event-repository')
+project(':event-repository').projectDir = file('shared/event/event-repository')
+include(':event-manager')
+project(':event-manager').projectDir = file('shared/event/event-manager')
+
+// Include the feature-prediction projects
+include(':feature-prediction-api')
+project(':feature-prediction-api').projectDir = file('shared/feature-prediction/feature-prediction-api')
+include(':feature-prediction-service')
+project(':feature-prediction-service').projectDir = file('shared/feature-prediction/feature-prediction-service')
+include(':feature-prediction-utilities')
+project(':feature-prediction-utilities').projectDir = file('shared/feature-prediction/feature-prediction-utilities')
+include(':elevation-correction')
+project(':elevation-correction').projectDir = file('shared/feature-prediction/elevation-correction')
+include(':ellipticity-correction')
+project(':ellipticity-correction').projectDir = file('shared/feature-prediction/ellipticity-correction')
+include(':feature-prediction-plugins-api')
+project(':feature-prediction-plugins-api').projectDir = file('shared/feature-prediction/feature-prediction-plugins-api')
+include(':feature-predictor')
+project(':feature-predictor').projectDir = file('shared/feature-prediction/feature-predictor')
+include(':lookup-table')
+project(':lookup-table').projectDir = file('shared/feature-prediction/lookup-table')
+
+// Include the user-manager-service
+include ":user-manager-application"
+project(':user-manager-application').projectDir = file('shared/user-manager/user-manager-application')
+include(':user-preferences-dao')
+project(':user-preferences-dao').projectDir = file('shared/user-manager/user-preferences-dao')
+include(':user-preferences-api')
+project(':user-preferences-api').projectDir = file('shared/user-manager/user-preferences-api')
+include(':user-preferences-repository')
+project(':user-preferences-repository').projectDir = file('shared/user-manager/user-preferences-repository')
+include(":user-preferences-coi")
+project(":user-preferences-coi").projectDir = file("shared/user-manager/user-preferences-coi")
+include(":user-preferences-testfixtures")
+project(":user-preferences-testfixtures").projectDir = file("shared/user-manager/user-preferences-testfixtures")
+
+// Include the metrics subproject.
+include(':metrics')
+project(':metrics').projectDir = file('shared/metrics')
+
+// Include the structured logging subproject.
+include(':structured-logging')
+project(':structured-logging').projectDir = file('shared/utilities/logging')
+
+// Include the database utils, for testing
+include(':db-test-utils')
+project(':db-test-utils').projectDir = file('shared/utilities/db-test-utils')
+include(':test-utils')
+project(':test-utils').projectDir = file('shared/utilities/test-utils')
+
+// Include the configuration subproject.
+include "frameworks-configuration-commonobjects"
+project(":frameworks-configuration-commonobjects").projectDir = file("shared/frameworks/configuration/commonobjects")
+include "frameworks-configuration-service"
+project(":frameworks-configuration-service").projectDir = file("shared/frameworks/configuration/service")
+include "frameworks-osd-rsdf-kafka-consumer"
+project(':frameworks-osd-rsdf-kafka-consumer').projectDir = file('shared/frameworks/frameworks-osd/frameworks-osd-rsdf-kafka-consumer')
+include "soh-status-change-kafka-consumer"
+project(':soh-status-change-kafka-consumer').projectDir = file('shared/frameworks/frameworks-osd/soh-status-change-kafka-consumer')
+include "frameworks-osd-station-soh-kafka-consumer"
+project(':frameworks-osd-station-soh-kafka-consumer').projectDir = file('shared/frameworks/frameworks-osd/frameworks-osd-station-soh-kafka-consumer')
+include "frameworks-configuration-api"
+project(":frameworks-configuration-api").projectDir = file("shared/frameworks/configuration/api")
+include "frameworks-configuration-repository"
+project(":frameworks-configuration-repository").projectDir = file("shared/frameworks/configuration/repository")
+include "frameworks-utilities-jpa"
+project(":frameworks-utilities-jpa").projectDir = file("shared/frameworks/utilities/jpa")
+include "frameworks-test-utilities"
+project(":frameworks-test-utilities").projectDir = file("shared/frameworks/utilities/test-utilities")
+include 'frameworks-osd-systemmessage-kafka-consumer'
+project(':frameworks-osd-systemmessage-kafka-consumer').projectDir = file('shared/frameworks/frameworks-osd/frameworks-osd-systemmessage-kafka-consumer')
+include "soh-quieted-list-kafka-consumer"
+project(':soh-quieted-list-kafka-consumer').projectDir = file("shared/frameworks/frameworks-osd/soh-quieted-list-kafka-consumer")
+include "capability-soh-rollup-kafka-consumer"
+project(':capability-soh-rollup-kafka-consumer').projectDir = file("shared/frameworks/frameworks-osd/capability-soh-rollup-kafka-consumer")
+
+//spring utility projects
+include "spring-framework-utilities"
+project(':spring-framework-utilities').projectDir = file("shared/utilities/spring-framework-utilities")
+include 'spring-persistence-oracle'
+project(':spring-persistence-oracle').projectDir = file("shared/utilities/spring-persistence-oracle")
+include(":spring-persistence-postgres")
+project(":spring-persistence-postgres").projectDir = file("shared/utilities/spring-persistence-postgres")
+
+// include waveform manager sub projects
+include "waveform-bridge-repository"
+project(':waveform-bridge-repository').projectDir = file("shared/waveform/waveform-bridge-repository")
+include "waveform-accessor"
+project(':waveform-accessor').projectDir = file("shared/waveform/waveform-accessor")
+include "waveform-coi"
+project(':waveform-coi').projectDir = file("shared/waveform/waveform-coi")
+include "waveform-api"
+project(':waveform-api').projectDir = file("shared/waveform/waveform-api")
+include "waveform-converter"
+project(':waveform-converter').projectDir = file("shared/waveform/waveform-converter")
+include "waveform-testfixtures"
+project(':waveform-testfixtures').projectDir = file("shared/waveform/waveform-testfixtures")
+include "waveform-manager-application"
+project(':waveform-manager-application').projectDir = file("shared/waveform/waveform-manager-application")
+
+include "bridge-utilities"
+project(':bridge-utilities').projectDir = file("shared/utilities/bridge-utilities")
+
+// Include signal-detection sub project
+include(":signal-detection-accessor")
+project(':signal-detection-accessor').projectDir = file("shared/signal-detection/signal-detection-accessor")
+include(":signal-detection-api")
+project(':signal-detection-api').projectDir = file("shared/signal-detection/signal-detection-api")
+include(":signal-detection-application")
+project(':signal-detection-application').projectDir = file("shared/signal-detection/signal-detection-application")
+include(":signal-detection-coi")
+project(':signal-detection-coi').projectDir = file("shared/signal-detection/signal-detection-coi")
+include(":signal-detection-dao")
+project(':signal-detection-dao').projectDir = file("shared/signal-detection/signal-detection-dao")
+include("signal-detection-testfixtures")
+project(':signal-detection-testfixtures').projectDir = file("shared/signal-detection/signal-detection-testfixtures")
+include(":signal-detection-database-connector")
+project(":signal-detection-database-connector").projectDir = file("shared/signal-detection/signal-detection-database-connector")
+
+// Include signal-enhancement-configuration sub project
+include(":signal-enhancement-configuration-coi")
+project(':signal-enhancement-configuration-coi').projectDir = file("shared/signal-enhancement-configuration/signal-enhancement-configuration-coi")
+include(":signal-enhancement-configuration-application")
+project(':signal-enhancement-configuration-application').projectDir = file("shared/signal-enhancement-configuration/signal-enhancement-configuration-application")
+
+// Include plugin project, implemented with spring
+include "plugin-spring"
+project(":plugin-spring").projectDir = file("shared/plugin")

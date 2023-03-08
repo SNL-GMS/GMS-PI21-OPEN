@@ -1,0 +1,6 @@
+[nodesource]
+name=Node.js Packages for Enterprise Linux $releasever - $basearch
+baseurl=#NODE_YUM_URL#/pub_#NODE_MAJOR_VERSION#.x/el/$releasever/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=#NODE_YUM_URL#/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL

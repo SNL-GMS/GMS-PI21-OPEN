@@ -1,0 +1,39 @@
+[
+  {
+    "name": "HYDRO-CD1.0-soh-monitor-thresholds-MISSING",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "StationName",
+        "operator": {
+          "type": "IN",
+          "negated": false
+        },
+        "value": [
+          "H02N",
+          "H06E",
+          "H06N",
+          "H06S"
+        ]
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "MISSING"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 10.01,
+      "marginalThreshold": 20
+    }
+  }
+]

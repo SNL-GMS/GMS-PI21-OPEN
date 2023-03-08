@@ -1,0 +1,9 @@
+$animation-duration: 0.25s;
+$diagonal-texture-darken-percent: 7%;
+$diagonal-texture-distance: 8px;
+$display-padding: 20px;
+$rounded-rectangle-radius: 5px;
+:export {
+  displayPadding: $display-padding;
+  roundedRectangleRadius: $rounded-rectangle-radius;
+}

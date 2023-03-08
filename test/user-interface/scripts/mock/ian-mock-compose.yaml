@@ -1,0 +1,89 @@
+version: '3.7'
+
+services:
+  etcd:
+    platform: linux/amd64
+    image: '${CI_DOCKER_REGISTRY}/gms-common/etcd:${ETCD_VERSION:-develop}'
+    restart: on-failure
+    environment:
+      GMS_ETCD_USER: gms
+      GMS_ETCD_PASSWORD: SOME-PASSWORD
+      GMS_ETCD_ADMIN_USER: gmsadmin
+      GMS_ETCD_ADMIN_PASSWORD: ANOTHER-PASSWORD
+      GMS_ETCD_ROOT_USER: root
+      GMS_ETCD_ROOT_PASSWORD: FINAL-PASSWORD
+    networks:
+      - kafka-net
+  mock-data-server:
+    platform: linux/amd64
+    image: '${CI_DOCKER_REGISTRY}/gms-common/mock-data-server:${MOCK_SERVER_VERSION:-develop}'
+    ports:
+      - '3001:3000'
+    networks:
+      - kafka-net
+  mock-signal-detection:
+    platform: linux/amd64
+    image: '${CI_DOCKER_REGISTRY}/gms-common/mock-signal-detection-application:${MOCK_SIGNAL_DETECTION_VERSION:-develop}'
+    environment:
+      ETCD_GMS_USER: gms
+      ETCD_GMS_PASSWORD: SOME-PASSWORD
+    ports:
+      - '3004:8080'
+    networks:
+      - kafka-net
+  mock-waveform:
+    platform: linux/amd64
+    image: '${CI_DOCKER_REGISTRY}/gms-common/mock-waveform-application:${MOCK_WAVEFORM_VERSION:-develop}'
+    environment:
+      ETCD_GMS_USER: gms
+      ETCD_GMS_PASSWORD: SOME-PASSWORD
+    ports:
+      - '3002:8080'
+    networks:
+      - kafka-net
+  mock-workflow:
+    platform: linux/amd64
+    image: '${CI_DOCKER_REGISTRY}/gms-common/workflow-manager:${WORKFLOW_VERSION:-develop}'
+    environment:
+      ETCD_GMS_USER: gms
+      ETCD_GMS_PASSWORD: SOME-PASSWORD
+      GMS_CONFIG_WORKFLOW_MANAGER__IGNITE_KUBERNETES_IPFINDER: 'false'
+      GMS_CONFIG_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      JAVA_TOOL_OPTIONS: '-Dspring.profiles.active=ui-dev -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005'
+    ports:
+      - '3003:8080'
+      - '5005:5005'
+    networks:
+      - kafka-net
+  kafka:
+    platform: linux/amd64
+    image: '${CI_DOCKER_REGISTRY}/confluentinc/cp-kafka:5.0.0'
+    container_name: kafka
+    networks:
+      - kafka-net
+    ports:
+      - '9092:9092'
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_CREATE_TOPICS: 'system-event.intervals:1:1'
+    depends_on:
+      - zookeeper
+  zookeeper:
+    platform: linux/amd64
+    image: '${CI_DOCKER_REGISTRY}/confluentinc/cp-zookeeper:5.0.0'
+    container_name: zookeeper
+    networks:
+      - kafka-net
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+
+networks:
+  kafka-net:
+    name: kafka-net
+    attachable: true

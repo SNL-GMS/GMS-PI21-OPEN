@@ -1,0 +1,33 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation project(':metrics')
+    implementation project(':frameworks-utilities-jpa')
+    implementation project(':frameworks-osd-daos')
+    implementation project(':frameworks-osd-api')
+
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    // JPA dependencies
+    api libs.org.hibernate.hibernate.entitymanager
+    implementation libs.org.hibernate.hibernate.core
+    implementation libs.org.hibernate.hibernate.c3p0
+    implementation libs.org.hibernate.hibernate.ehcache
+
+    implementation libs.net.jodah.failsafe
+    implementation libs.com.google.guava.guava
+
+    // Testing.
+    testImplementation project(':db-test-utils')
+    testImplementation project(':frameworks-osd-testfixtures')
+    testImplementation project(':frameworks-osd-daos')
+    testImplementation libs.org.testcontainers.testcontainers
+    testImplementation libs.org.postgresql.postgresql
+    testImplementation libs.org.testcontainers.junit.jupiter
+    testImplementation libs.org.testcontainers.postgresql
+    testImplementation libs.org.testcontainers.kafka
+
+    testRuntimeOnly libs.ch.qos.logback.logback.classic
+    testRuntimeOnly libs.net.logstash.logback.logstash.logback.encoder
+}

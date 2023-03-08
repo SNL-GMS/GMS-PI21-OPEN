@@ -1,0 +1,8 @@
+.pie-chart {
+  &__pie-slice {
+    fill: transparent;
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+    stroke: var(--core-main, var(--gms-main, $core-main)); // default
+  }
+}

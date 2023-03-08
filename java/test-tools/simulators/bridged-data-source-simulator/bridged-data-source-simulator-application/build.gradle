@@ -1,0 +1,35 @@
+plugins {
+    id('application')
+    alias(libs.plugins.com.palantir.docker)
+}
+
+mainClassName = "gms.testtools.simulators.bridgeddatasourcesimulator.application.BridgedDataSourceSimulatorApplication"
+
+dependencies {
+    implementation project(':bridged-data-source-simulator-api')
+    implementation project(':bridged-data-source-simulator-jpa')
+    implementation project(':bridged-data-source-analysis-simulator')
+    implementation project(':bridged-data-source-station-simulator')
+    implementation project(':bridged-data-source-interval-simulator')
+
+    implementation 'gms:frameworks-service-generator:LATEST'
+    implementation 'gms:frameworks-configuration-repository:LATEST'
+    implementation 'gms:frameworks-configuration-commonobjects:LATEST'
+    implementation 'gms:frameworks-control:LATEST'
+    implementation 'gms:signal-detection-database-connector:LATEST'
+    implementation 'gms:station-definition-repository:LATEST'
+    implementation 'gms:workflow-repository:LATEST'
+    implementation 'gms:event-repository:LATEST'
+    implementation 'gms:java-utilities:LATEST'
+    implementation 'gms:bridge-utilities:LATEST'
+
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    implementation libs.org.hibernate.hibernate.entitymanager
+    implementation libs.io.projectreactor.reactor.core
+    implementation libs.org.apache.commons.commons.lang3
+
+    testImplementation 'gms:station-definition-testfixtures:LATEST'
+    testImplementation libs.io.projectreactor.reactor.test
+}

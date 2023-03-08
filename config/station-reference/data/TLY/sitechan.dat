@@ -1,0 +1,6 @@
+TLY    BHE       2009301     3519  2286324 n       0.0200   90.0   90.0 Broad_band_east                                    20091216 12:00:00
+TLY    BHN       2009301     3518  2286324 n       0.0200    0.0   90.0 Broad_band_north                                   20091216 12:00:00
+TLY    BHZ       2009301     3517  2286324 n       0.0200   -1.0    0.0 Broad_band_vertical                                20091216 12:00:00
+TLY    SHE       2009301     3516  2020047 n       0.0200   90.0   90.0 Short_period_east                                  20210723 12:00:00
+TLY    SHN       2009301     3515  2020047 n       0.0200    0.0   90.0 Short_period_north                                 20210723 12:00:00
+TLY    SHZ       2009301     3514  2020047 n       0.0200   -1.0    0.0 Short_period_vertical                              20210723 12:00:00

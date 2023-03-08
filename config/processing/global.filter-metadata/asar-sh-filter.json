@@ -1,0 +1,60 @@
+{
+    "name": "asar-sh-filter",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "station",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "ASAR"
+            ]
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "channelBand",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "S"
+            ]
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "channelInstrument",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "H"
+            ]
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "filterName",
+            "operator": {
+                "type": "IN",
+                "negated": false
+            },
+            "value": [
+                "Detect",
+                "Onset"
+            ]
+        }
+    ],
+    "parameters": {
+        "filterDefinitions": [
+            {
+                "$ref=global.filter-definition": [{
+                    "criterion": "name",
+                    "value": "0.7 2.0 3 BP causal"
+                }]
+            }
+        ]
+    }
+}

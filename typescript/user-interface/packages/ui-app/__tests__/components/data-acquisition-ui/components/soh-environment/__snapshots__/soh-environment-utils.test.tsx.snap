@@ -1,0 +1,407 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Environment Utils getEnvironmentTableRows function get the table rows 1`] = `
+Array [
+  Object {
+    "id": "ENV_AUTHENTICATION_SEAL_BROKEN",
+    "monitorIsSelected": false,
+    "monitorStatus": "NONE",
+    "monitorType": "ENV_AUTHENTICATION_SEAL_BROKEN",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": undefined,
+        "isContributing": false,
+        "isSelected": false,
+        "monitorTypes": undefined,
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": undefined,
+        },
+        "status": undefined,
+        "value": undefined,
+      },
+    },
+  },
+  Object {
+    "id": "ENV_BACKUP_POWER_UNSTABLE",
+    "monitorIsSelected": false,
+    "monitorStatus": "NONE",
+    "monitorType": "ENV_BACKUP_POWER_UNSTABLE",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": undefined,
+        "isContributing": false,
+        "isSelected": false,
+        "monitorTypes": undefined,
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": undefined,
+        },
+        "status": undefined,
+        "value": undefined,
+      },
+    },
+  },
+  Object {
+    "id": "ENV_CALIBRATION_UNDERWAY",
+    "monitorIsSelected": false,
+    "monitorStatus": "NONE",
+    "monitorType": "ENV_CALIBRATION_UNDERWAY",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": undefined,
+        "isContributing": false,
+        "isSelected": false,
+        "monitorTypes": undefined,
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": undefined,
+        },
+        "status": undefined,
+        "value": undefined,
+      },
+    },
+  },
+  Object {
+    "id": "ENV_CLIPPED",
+    "monitorIsSelected": false,
+    "monitorStatus": "NONE",
+    "monitorType": "ENV_CLIPPED",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": undefined,
+        "isContributing": false,
+        "isSelected": false,
+        "monitorTypes": undefined,
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": undefined,
+        },
+        "status": undefined,
+        "value": undefined,
+      },
+    },
+  },
+  Object {
+    "id": "ENV_CLOCK_DIFFERENTIAL_IN_MICROSECONDS",
+    "monitorIsSelected": false,
+    "monitorStatus": "NONE",
+    "monitorType": "ENV_CLOCK_DIFFERENTIAL_IN_MICROSECONDS",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": undefined,
+        "isContributing": false,
+        "isSelected": false,
+        "monitorTypes": undefined,
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": undefined,
+        },
+        "status": undefined,
+        "value": undefined,
+      },
+    },
+  },
+  Object {
+    "id": "ENV_CLOCK_DIFFERENTIAL_TOO_LARGE",
+    "monitorIsSelected": false,
+    "monitorStatus": "NONE",
+    "monitorType": "ENV_CLOCK_DIFFERENTIAL_TOO_LARGE",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": undefined,
+        "isContributing": false,
+        "isSelected": false,
+        "monitorTypes": undefined,
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": undefined,
+        },
+        "status": undefined,
+        "value": undefined,
+      },
+    },
+  },
+  Object {
+    "id": "ENV_LAST_GPS_SYNC_TIME",
+    "monitorIsSelected": false,
+    "monitorStatus": "NONE",
+    "monitorType": "ENV_LAST_GPS_SYNC_TIME",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": undefined,
+        "isContributing": false,
+        "isSelected": false,
+        "monitorTypes": undefined,
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": undefined,
+        },
+        "status": undefined,
+        "value": undefined,
+      },
+    },
+  },
+  Object {
+    "id": "ENV_DEAD_SENSOR_CHANNEL",
+    "monitorIsSelected": false,
+    "monitorStatus": "NONE",
+    "monitorType": "ENV_DEAD_SENSOR_CHANNEL",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": undefined,
+        "isContributing": false,
+        "isSelected": false,
+        "monitorTypes": undefined,
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": undefined,
+        },
+        "status": undefined,
+        "value": undefined,
+      },
+    },
+  },
+  Object {
+    "id": "ENV_DIGITIZER_ANALOG_INPUT_SHORTED",
+    "monitorIsSelected": false,
+    "monitorStatus": "NONE",
+    "monitorType": "ENV_DIGITIZER_ANALOG_INPUT_SHORTED",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": undefined,
+        "isContributing": false,
+        "isSelected": false,
+        "monitorTypes": undefined,
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": undefined,
+        },
+        "status": undefined,
+        "value": undefined,
+      },
+    },
+  },
+  Object {
+    "id": "ENV_DIGITIZER_CALIBRATION_LOOP_BACK",
+    "monitorIsSelected": false,
+    "monitorStatus": "NONE",
+    "monitorType": "ENV_DIGITIZER_CALIBRATION_LOOP_BACK",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": undefined,
+        "isContributing": false,
+        "isSelected": false,
+        "monitorTypes": undefined,
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": undefined,
+        },
+        "status": undefined,
+        "value": undefined,
+      },
+    },
+  },
+  Object {
+    "id": "ENV_DIGITIZING_EQUIPMENT_OPEN",
+    "monitorIsSelected": false,
+    "monitorStatus": "NONE",
+    "monitorType": "ENV_DIGITIZING_EQUIPMENT_OPEN",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": undefined,
+        "isContributing": false,
+        "isSelected": false,
+        "monitorTypes": undefined,
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": undefined,
+        },
+        "status": undefined,
+        "value": undefined,
+      },
+    },
+  },
+  Object {
+    "id": "ENV_EQUIPMENT_HOUSING_OPEN",
+    "monitorIsSelected": false,
+    "monitorStatus": "NONE",
+    "monitorType": "ENV_EQUIPMENT_HOUSING_OPEN",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": undefined,
+        "isContributing": false,
+        "isSelected": false,
+        "monitorTypes": undefined,
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": undefined,
+        },
+        "status": undefined,
+        "value": undefined,
+      },
+    },
+  },
+  Object {
+    "id": "ENV_EQUIPMENT_MOVED",
+    "monitorIsSelected": false,
+    "monitorStatus": "NONE",
+    "monitorType": "ENV_EQUIPMENT_MOVED",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": undefined,
+        "isContributing": false,
+        "isSelected": false,
+        "monitorTypes": undefined,
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": undefined,
+        },
+        "status": undefined,
+        "value": undefined,
+      },
+    },
+  },
+  Object {
+    "id": "ENV_GPS_RECEIVER_OFF",
+    "monitorIsSelected": false,
+    "monitorStatus": "NONE",
+    "monitorType": "ENV_GPS_RECEIVER_OFF",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": undefined,
+        "isContributing": false,
+        "isSelected": false,
+        "monitorTypes": undefined,
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": undefined,
+        },
+        "status": undefined,
+        "value": undefined,
+      },
+    },
+  },
+  Object {
+    "id": "ENV_GPS_RECEIVER_UNLOCKED",
+    "monitorIsSelected": false,
+    "monitorStatus": "NONE",
+    "monitorType": "ENV_GPS_RECEIVER_UNLOCKED",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": undefined,
+        "isContributing": false,
+        "isSelected": false,
+        "monitorTypes": undefined,
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": undefined,
+        },
+        "status": undefined,
+        "value": undefined,
+      },
+    },
+  },
+  Object {
+    "id": "ENV_MAIN_POWER_FAILURE",
+    "monitorIsSelected": false,
+    "monitorStatus": "NONE",
+    "monitorType": "ENV_MAIN_POWER_FAILURE",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": undefined,
+        "isContributing": false,
+        "isSelected": false,
+        "monitorTypes": undefined,
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": undefined,
+        },
+        "status": undefined,
+        "value": undefined,
+      },
+    },
+  },
+  Object {
+    "id": "ENV_STATION_POWER_VOLTAGE",
+    "monitorIsSelected": false,
+    "monitorStatus": "NONE",
+    "monitorType": "ENV_STATION_POWER_VOLTAGE",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": undefined,
+        "isContributing": false,
+        "isSelected": false,
+        "monitorTypes": undefined,
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": undefined,
+        },
+        "status": undefined,
+        "value": undefined,
+      },
+    },
+  },
+  Object {
+    "id": "ENV_VAULT_DOOR_OPENED",
+    "monitorIsSelected": false,
+    "monitorStatus": "NONE",
+    "monitorType": "ENV_VAULT_DOOR_OPENED",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": undefined,
+        "isContributing": false,
+        "isSelected": false,
+        "monitorTypes": undefined,
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": undefined,
+        },
+        "status": undefined,
+        "value": undefined,
+      },
+    },
+  },
+  Object {
+    "id": "ENV_ZEROED_DATA",
+    "monitorIsSelected": false,
+    "monitorStatus": "GOOD",
+    "monitorType": "ENV_ZEROED_DATA",
+    "valueAndStatusByChannelName": Map {
+      "channelName" => Object {
+        "channelName": "channelName",
+        "hasUnacknowledgedChanges": false,
+        "isContributing": true,
+        "isSelected": false,
+        "monitorTypes": "ENV_ZEROED_DATA",
+        "quietTimingInfo": Object {
+          "quietDurationMs": undefined,
+          "quietUntilMs": 1,
+        },
+        "status": "GOOD",
+        "value": 1,
+      },
+    },
+  },
+]
+`;
+
+exports[`Environment Utils getPerChannelEnvRollup function get env rollup 1`] = `"GOOD"`;

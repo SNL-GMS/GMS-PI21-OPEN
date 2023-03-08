@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`signal detections table matches snapshot given data synced 1`] = `<div />`;
+
+exports[`signal detections table matches snapshot given data unsynced 1`] = `<div />`;
+
+exports[`signal detections table non-ideal state no data Synced 1`] = `<div />`;
+
+exports[`signal detections table non-ideal state no data UNSynced 1`] = `<div />`;
+
+exports[`signal detections table non-ideal state no data error 1`] = `<div />`;
+
+exports[`signal detections table non-ideal state no data loading and pending 1`] = `<div />`;
+
+exports[`signal detections table non-ideal state no data loading not pending 1`] = `<div />`;

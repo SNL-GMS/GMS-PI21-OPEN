@@ -1,0 +1,19 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+    implementation project(':frameworks-service-interface-base')
+    implementation project(':bridge-utilities')
+
+    api project(':event-coi')
+    api project(':signal-detection-api')
+
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    testImplementation project(':test-utils')
+    testImplementation project(':java-utilities')
+    testImplementation project(':signal-detection-testfixtures')
+    testImplementation(testFixtures(project(':event-coi')))
+}

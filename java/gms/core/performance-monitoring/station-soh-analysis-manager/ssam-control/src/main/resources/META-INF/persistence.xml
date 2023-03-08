@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             version="2.0"
+             xmlns="http://java.sun.com/xml/ns/persistence"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+    <persistence-unit name="gms_ssam">
+
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- Station SOH -->
+        <class>gms.shared.frameworks.osd.dao.soh.SohMonitorValueAndStatusDao</class>
+        <class>gms.shared.frameworks.osd.dao.soh.DurationStationAggregateDao</class>
+        <class>gms.shared.frameworks.osd.dao.soh.DurationSohMonitorValueAndStatusDao</class>
+        <class>gms.shared.frameworks.osd.dao.soh.PercentStationAggregateDao</class>
+        <class>gms.shared.frameworks.osd.dao.soh.PercentSohMonitorValueAndStatusDao</class>
+        <class>gms.shared.frameworks.osd.dao.soh.ChannelSohDao</class>
+        <class>gms.shared.frameworks.osd.dao.soh.StationAggregateDao</class>
+        <class>gms.shared.frameworks.osd.dao.soh.StationSohMonitorValueAndStatusDao</class>
+        <class>gms.shared.frameworks.osd.dao.soh.ChannelSohMonitorValueAndStatusDao</class>
+        <class>gms.shared.frameworks.osd.dao.soh.StationSohDao</class>
+
+        <!-- Capability Rollup -->
+        <class>gms.shared.frameworks.osd.dao.soh.CapabilitySohRollupDao</class>
+
+        <properties>
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+            <property name="hibernate.default_schema" value="gms_soh"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
+            <property name="hibernate.jdbc.time_zone" value="UTC"/>
+            <property name="hibernate.hbm2ddl.auto" value="validate"/>
+            <property name="hibernate.hbm2ddl.extra_physical_table_types" value="PARTITIONED TABLE"/>
+            <property name="hibernate.c3p0.min_size" value="2"/>
+            <property name="hibernate.c3p0.max_size" value="10"/>
+            <property name="hibernate.c3p0.acquire_increment" value="2"/>
+            <property name="hibernate.c3p0.timeout" value="600"/>
+            <property name="hibernate.flushmode" value="FLUSH_AUTO"/>
+            <!-- Useful for debugging connection leaks: time out and give a stack trace if a connection cannot be acquired in 15 seconds -->
+            <property name="hibernate.c3p0.unreturnedConnectionTimeout" value="600"/>
+            <property name="hibernate.c3p0.debugUnreturnedConnectionStackTraces" value="true"/>
+            <property name="hibernate.cache.use_query_cache" value="true"/>
+            <property name="hibernate.cache.region.factory_class"
+                      value="org.hibernate.cache.ehcache.EhCacheRegionFactory"/>
+            <property name="hibernate.cache.ehcache.missing_cache_strategy" value="create"/>
+            <property name="net.sf.ehcache.configurationResourceName"
+                      value="META-INF/ehcache.xml"/>
+            <!--  configure caching -->
+            <!-- enabling batch inserts -->
+            <property name="hibernate.physical_naming_strategy" value="gms.shared.frameworks.osd.dao.util.StagedPrefixNamingStrategy" />
+            <property name="hibernate.jdbc.batch_size" value="10"/>
+            <property name="hibernate.order_inserts" value="true"/>
+            <property name="hibernate.order_updates" value="true"/>
+            <property name="hibernate.jdbc.batch_versioned_data" value="true"/>
+            <!-- Generates a lot of stats output -->
+            <property name="hibernate.generate_statistics" value="false"/>
+            <!-- If you really, really, really want to see a lot of sql, set this to true -->
+            <!-- WARNING: For debugging only - should never be true in production -->
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.format_sql" value="false"/>
+        </properties>
+    </persistence-unit>
+</persistence>

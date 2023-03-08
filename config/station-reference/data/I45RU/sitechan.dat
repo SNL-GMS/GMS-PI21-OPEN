@@ -1,0 +1,11 @@
+I45H1  BWS       2008315     5149  2286324 n       0.0000   -1.0    0.0 Wind_speed                                         20090114 12:00:00
+I45H1  BWD       2008315     5148  2286324 n       0.0000   -1.0    0.0 Wind_Direction                                     20090114 12:00:00
+I45H1  BKO       2008315     5147  2286324 n       0.0000   -1.0    0.0 External_temperature                               20090114 12:00:00
+I45H1  BDF       2008315     5140  2286324 n       0.0000   -1.0    0.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090114 12:00:00
+I45H1  BDA       2008315     5139  2286324 n       0.0000   -1.0    0.0 Atmospheric_pressure                               20090114 12:00:00
+I45H2  BDF       2008315     5142  2286324 n       0.0000   -1.0    0.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090114 12:00:00
+I45H2  BDA       2008315     5141  2286324 n       0.0000   -1.0    0.0 Atmospheric_pressure                               20090114 12:00:00
+I45H3  BDF       2008315     5144  2286324 n       0.0000   -1.0    0.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090114 12:00:00
+I45H3  BDA       2008315     5143  2286324 n       0.0000   -1.0    0.0 Atmospheric_pressure                               20090114 12:00:00
+I45H4  BDF       2008315     5146  2286324 n       0.0000   -1.0    0.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090114 12:00:00
+I45H4  BDA       2008315     5145  2286324 n       0.0000   -1.0    0.0 Atmospheric_pressure                               20090114 12:00:00

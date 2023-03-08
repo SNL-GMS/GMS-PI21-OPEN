@@ -1,0 +1,136 @@
+body,
+body.bp4-dark {
+  background-color: var(--gms-background, $gms-background);
+}
+
+.bp4-navbar {
+  padding: 0;
+}
+
+.bp4-control input:focus ~ .bp4-control-indicator {
+  outline: none;
+  outline-offset: 0px;
+}
+.bp4-control {
+  margin-bottom: 0px;
+}
+.bp4-control:not(.checkbox-horizontal) + .bp4-control:not(.checkbox-horizontal) {
+  margin-top: 10px;
+}
+.bp4-control.checkbox-horizontal + .bp4-control.checkbox-horizontal {
+  margin-left: 8px;
+}
+.bp4-dark .bp4-control.bp4-switch .bp4-control-indicator {
+  background: var(--gms-popover-background, $gms-popover-background);
+  margin-left: 4px;
+}
+.bp4-dark .bp4-control.bp4-switch .bp4-control-indicator::before {
+  background: var(--gms-main, $gms-main);
+}
+.bp4-dark .bp4-control.bp4-switch:hover .bp4-control-indicator {
+  background: var(--gms-soft, $gms-soft);
+}
+
+.bp4-dark .bp4-button:not([class*='bp4-intent-']) {
+  background: var(--gms-button, $gms-button);
+}
+.bp4-dark .bp4-button:not([class*='bp4-intent-']):hover {
+  background: var(--gms-button-hover, $gms-button-hover);
+}
+.bp4-dark .bp4-button.bp4-minimal {
+  background: none;
+  background-color: none;
+}
+
+.bp4-dark .bp4-popover .bp4-popover-content,
+.bp4-popover.bp4-dark .bp4-popover-content {
+  background-color: var(--gms-popover-background, $gms-popover-background);
+  color: var(--gms-prominent, $gms-prominent);
+}
+
+.bp4-popover .bp4-popover-arrow-fill {
+  fill: var(--gms-popover-background, $gms-popover-background) !important;
+}
+
+.bp4-dialog {
+  padding-bottom: 0.5rem;
+}
+.bp4-dark .bp4-dialog {
+  background-color: var(--gms-dialog-background, $gms-dialog-background);
+}
+
+.bp4-dialog-header {
+  box-shadow: none;
+}
+
+.bp4-dark .bp4-dialog-header {
+  box-shadow: none;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--gms-scrollbar-background, $gms-scrollbar-background);
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--gms-scrollbar, $gms-scrollbar);
+  border-radius: 2px;
+}
+
+:focus {
+  outline: none;
+  outline-offset: 0px;
+}
+
+// override some focus styles from blueprint that dont look good.
+.bp4-control input:focus ~ .bp4-control-indicator {
+  outline: none;
+  outline-offset: 0px;
+}
+
+.max {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.duo-grid-left {
+  position: absolute;
+  top: 22%;
+  right: 0%;
+  left: 1.5%;
+  width: 48%;
+  height: 18%;
+}
+
+.duo-grid-right {
+  position: absolute;
+  top: 22%;
+  right: 0%;
+  left: 52%;
+  width: 48%;
+  height: 18%;
+}
+
+.bp4-menu {
+  min-width: auto !important;
+}
+
+.gms-disconnected {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 100;
+  background-color: rgba(var(--gms-background, $gms-background), 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

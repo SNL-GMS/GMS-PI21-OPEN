@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+"""
+Generate a report of all the skipped Jest and Cypress integration tests
+in the repository, so we can stay on top of prioritizing getting them
+fixed and turned back on.
+"""
+
+import sys
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).resolve().parents[2] / "python/utils"))
+from skipped_tests import (SkippedCypressIntegrationTests,
+                           SkippedJestIntegrationTests)  # noqa: E402
+
+repo_root = Path(__file__).resolve().parents[2]
+jest = SkippedJestIntegrationTests(
+    repo_root / "typescript/user-interface/packages/integration-tests/"
+    "__tests__"
+)
+jest.examine_tests()
+cypress = SkippedCypressIntegrationTests(
+    repo_root / "typescript/user-interface/packages/cypress-tests/cypress/e2e"
+)
+cypress.examine_tests()

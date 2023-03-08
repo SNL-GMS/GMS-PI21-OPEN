@@ -1,0 +1,54 @@
+.command-palette-overlay__contents {
+  width: 33vw;
+  max-width: 40rem;
+  padding: 0.5em;
+}
+.command-palette {
+  &__input {
+    flex-grow: 1;
+    border: 1px solid transparent;
+    background: var(--gms-recessed, $gms-recessed);
+    color: var(--gms-main, $gms-main);
+
+    & input {
+      font-size: 1rem;
+    }
+  }
+
+  &__results-wrapper {
+    max-height: max(50vh, 25em);
+    overflow: auto;
+    margin: 0 calc(-0.5em + 1px);
+  }
+
+  &__result-list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__result {
+    flex-grow: 1;
+    background: var(--gms-prominent-background, $gms-prominent-background);
+    padding: 0.5em;
+    margin: 1px 0;
+    list-style-type: none;
+
+    &:first-of-type {
+      margin-top: 0.5em;
+    }
+
+    &:hover {
+      @include brighten;
+    }
+
+    &--selected {
+      background-color: var(--gms-table-selection, $gms-table-selection);
+      color: var(--table-selection-text-color, white);
+    }
+  }
+  & .is-highlighted {
+    background-color: rgba(var(--gms-main, $gms-main), 0.15);
+  }
+}

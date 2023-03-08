@@ -1,0 +1,20 @@
+plugins {
+    id('application')
+    alias(libs.plugins.com.palantir.docker)
+}
+
+mainClassName = "gms.core.performancemonitoring.ssam.application.StationSohAnalysisManagerApplication"
+
+dependencies {
+
+    implementation project(':frameworks-control')
+    implementation project(':kafka-consumer-frameworks')
+    implementation libs.net.jodah.failsafe
+
+    implementation project(':frameworks-osd-commonobjects')
+    implementation project(':ssam-control-api')
+    implementation project(':ssam-control')
+
+    implementation libs.io.projectreactor.reactor.core
+    implementation libs.io.projectreactor.kafka.reactor.kafka
+}

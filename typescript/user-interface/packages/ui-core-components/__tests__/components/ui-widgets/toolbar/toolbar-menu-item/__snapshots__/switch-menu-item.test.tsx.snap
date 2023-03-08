@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SwitchOverflowMenuToolbarItem SwitchOverflowMenuToolbarItem renders 1`] = `
+<div>
+  <li
+    class=""
+  >
+    <a
+      class="bp4-menu-item bp4-popover-dismiss"
+      tabindex="0"
+    >
+      <div
+        class="bp4-fill bp4-text-overflow-ellipsis"
+      />
+    </a>
+  </li>
+</div>
+`;
+
+exports[`SwitchOverflowMenuToolbarItem SwitchOverflowMenuToolbarItem renders empty due to incorrect type 1`] = `<div />`;

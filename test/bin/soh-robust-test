@@ -1,0 +1,495 @@
+#!/usr/bin/env python3
+
+# ------------------------------------------------------------------------------
+# perf-robusttest test script
+#
+# The perf-robusttest script allows a tester to perform the
+# I&T SOH Perfomance Robustness tests.
+# ------------------------------------------------------------------------------
+
+import argparse
+import json
+import os
+import re
+import shlex
+import subprocess
+import sys
+import yaml
+import time
+import concurrent.futures
+
+from collections import defaultdict
+from argparse import ArgumentParser
+from argparse import RawDescriptionHelpFormatter
+
+from concurrent.futures import ThreadPoolExecutor
+
+# termcolors
+class tc:
+    BOLD = '\033[1m'
+    RED = '\033[31m'
+    GREEN = '\033[32m'
+    YELLOW = '\033[33m'
+    MAGENTA = '\033[35m'
+    CYAN = '\033[36m'
+    ENDC = '\033[0m'
+
+# ------------------------------------------------------------------------------
+# These are the deployed containers we will be manipulating
+# ------------------------------------------------------------------------------
+expected_containers = {}
+
+expected_containers['layer1'] = [
+    'etcd',
+    'postgresql-gms',
+    'zookeeper' ]
+
+expected_containers['layer2'] = [
+    'kafka',
+    'frameworks-osd-service',
+    'frameworks-osd-station-soh-kafka-consumer',
+    'frameworks-osd-rsdf-kafka-consumer' ]
+
+expected_containers['layer3'] = [
+    'frameworks-osd-systemmessage-kafka-consumer',
+    'ssam-control',
+    'soh-status-change-kafka-consumer',
+    'soh-quieted-list-kafka-consumer',
+    'da-connman',
+    'soh-control',
+    'ui-processing-configuration-service',
+    'cd11-rsdf-processor' ]
+
+expected_containers['layer4'] = [
+    'da-dataman',
+    'interactive-analysis-api-gateway',
+    'interactive-analysis-ui',
+    'smds-service' ]
+
+
+def main():
+
+    #-- verify kubectl is available
+    if not which('kubectl'):
+        print("ERROR: 'kubectl' executable not found in PATH. Please install kubectl.")
+        sys.exit(1)
+
+    #-- verify helm is available
+    if not which('gmskube'):
+        print("ERROR: 'gmskube' executable not found in PATH. Please install gmskube.")
+        sys.exit(1)
+    
+    #-- verify KUBECONFIG is set
+    if not "KUBECONFIG" in os.environ:
+        print("ERROR: Variable 'KUBECONFIG' must be set to the kubernetes configuration.")
+        sys.exit(1)
+
+    try:
+        with open(os.environ["KUBECONFIG"]) as file:
+            kubeconfig = yaml.load(file, Loader=yaml.FullLoader)
+            if 'clusters' not in kubeconfig:
+                print(f"ERROR: No clusters defined in file '{ os.environ['KUBECONFIG'] }")
+                sys.exit(1)
+
+            cluster = kubeconfig['clusters'][0]  # use the first cluster
+    except:
+        print(f"ERROR: Failed to open KUBECONFIG file '{ os.environ['KUBECONFIG'] }'")
+        sys.exit(1)
+
+    args = get_args()
+    working_layer = ''
+
+
+    # -- verify that the Robustness Layer is 1, 2, 3, or 4
+    if args.layer not in ['1', '2', '3', '4']:
+        print("ERROR: Invalid Robustness Layer specified - must be either 1, 2, 3, or 4.")
+        sys.exit(1)
+    else:
+        working_layer = "layer" + args.layer
+        print_color(tc.GREEN, "\nPerforming the Robustness Layer " + args.layer + " test\n")
+
+    # -- collect the pod information for the instance
+    print_color(tc.GREEN, "Getting instance " + args.name + " pod information.")
+    pods = get_pod_info(args.name)
+    print_color(tc.GREEN, "Number of pods in " + args.name + ":  " + str(len(pods)) + '\n')
+    if len(pods) == 0:
+        print_color(tc.RED, "It does not appear that your instance is running correctly. Please verify that it is running, and try again.")
+        sys.exit(1)
+    else:
+        # -- verify the pods that we will be exercising are available
+        status = verify_pods(pods, working_layer)
+        if status != len(expected_containers[working_layer]):
+            print_color(tc.RED, "Exiting Robustness Layer " + args.layer + " test\n")
+            sys.exit(1)
+        candidate = get_candidate(args.name)
+
+    #-- set baseline vars
+    total_pods = len(expected_containers[working_layer])
+    spun_down = 0
+    pods_down = 0
+    pods_notdown = 0
+    spun_up = 0
+    pods_up = 0
+    pods_notup = 0
+    pods_nowork = total_pods
+    podlable = ''
+
+    # -- cycle through the pods that we are exercising
+    for pod in expected_containers[working_layer]:
+        if (expected_containers[working_layer].index(pod)) + 1 <= total_pods:
+            podwork = ''
+            while podwork.upper() != 'Y':
+                podlable = pod
+                podwork = input("\nWould you like to SCALE DOWN pod: " + podlable + " (Y/N)? ")
+                if podwork.upper()=='Y':
+                    print_color(tc.CYAN, "Starting to scale down pod(s): " + podlable + "\n")
+                    spun_down += 1
+                    pods_nowork -= 1
+                    status = scale_down_pod(candidate, args.name, pod)
+                    if status != 0:
+                        print_color(tc.RED, "\nTHERE WAS A SYSTEM ERROR WHILE TRYING TO SCALE DOWN THE POD\n" +
+                                    "PROGRAM WILL EXIT\n")
+                        sys.exit(1)
+
+                    verif = ''
+                    while verif.upper() != 'Y':
+                        if pod in ['interactive-analysis-api-gateway']:
+                            verif = input("\nPlease verify on your watch list -- Did the pod scale down appropriately " +
+                                          "and is the UI no longer updating (Y/N)? ")
+                        else:
+                            verif = input("\nPlease verify on your watch list -- Did the pod(s) scale down appropriately (Y/N)? ")
+
+                        if verif.upper() == 'Y':
+                            print_color(tc.GREEN, "STATUS: Pod(s): " + podlable + " successfully scaled down\n")
+                            pods_down += 1
+                        elif verif.upper() == 'N':
+                            print_color(tc.RED, "STATUS: Pod(s): " + podlable + " did not scale down successfully\n")
+                            pods_notdown += 1
+                            verif2 = ''
+                            while verif2.upper() != 'Y':
+                                verif2 = input("Would you like to continue with the test (Y/N)? ")
+                                if verif2.upper() == 'Y':
+                                    print_color(tc.GREEN, "Continuing with the Robustness Layer " + args.layer + " test.\n")
+                                elif verif2.upper() == 'N':
+                                    print_color(tc.RED, "\nExiting Robustness Layer " + args.layer + " test.\n")
+                                    print_summary(args.layer, total_pods, pods_nowork, spun_down, pods_down, pods_notdown, spun_up, pods_up, pods_notup)
+                                    sys.exit(1)
+                                else:
+                                    print("\nI don't understand that choice, please try again.\n")
+                            break
+                        else:
+                            print("\nI don't understand that choice, please try again.\n")
+
+                    cont = ''
+                    while cont.upper() != 'Y':
+                        cont =  input("Would you like to continue and RESTART pod(s): " + podlable + " (Y/N)? ")
+                        if cont.upper()=='Y':
+                            print_color(tc.CYAN, "Restarting pod(s): " + podlable + "\n")
+                            spun_up += 1
+                            status = restart_pod(candidate, args.name, pod)
+                            if status != 0:
+                                print_color(tc.RED,
+                                            "\nTHERE WAS A SYSTEM ERROR WHILE TRYING TO RESTART THE POD\n" +
+                                            "PROGRAM WILL EXIT\n")
+                                sys.exit(1)
+
+                            cont2 = ''
+                            while cont2.upper() != 'Y':
+                                cont2 = input("\nDid the pod(s) restart appropriately? Is the UI updating as expected (Y/N)? ")
+                                if cont2.upper()=='Y':
+                                    print_color(tc.GREEN, "STATUS: Pod(s): " + podlable + " successfully restarted\n")
+                                    pods_up += 1
+                                elif cont2.upper()=='N':
+                                    print_color(tc.RED, "STATUS: Pod(s): " + podlable + " did not restart successfully\n")
+                                    pods_notup += 1
+                                    break
+                                else:
+                                    print("\nI don't understand that choice, please try again.\n")
+
+                            cont3 = ''
+                            while cont3.upper() != 'Y':
+                                cont3 = input("\nWould you like to continue the Robustness Layer " + args.layer + " test (Y/N)? ")
+                                if cont3.upper() == 'Y':
+                                    if (expected_containers[working_layer].index(pod)) + 1 != total_pods:
+                                        print_color(tc.GREEN, "\nContinuing with the Robustness Layer " + args.layer + " test.\n")
+                                elif cont3.upper() == 'N':
+                                    print_color(tc.RED, "\nExiting Robustness Layer " + args.layer + " test.\n")
+                                    print_summary(args.layer, total_pods, pods_nowork, spun_down, pods_down, pods_notdown, spun_up, pods_up, pods_notup)
+                                    sys.exit(1)
+                                else:
+                                    print("\nI don't understand that choice, please try again.\n")
+                        elif cont.upper()=='N':
+                            print_color(tc.RED, "WARNING: You are NOT restarting pod(s): " + podlable + "\n")
+                            verif3 = ''
+                            while verif3.upper() != 'Y':
+                                verif3 = input("Would you like to continue with the test (Y/N)? ")
+                                if verif3.upper() == 'Y':
+                                    print_color(tc.GREEN, "Continuing with the Robustness Layer " + args.layer + " test.\n")
+                                elif verif3.upper() == 'N':
+                                    print_color(tc.RED, "\nExiting Robustness Layer " + args.layer + " test.\n")
+                                    print_summary(args.layer, total_pods, pods_nowork, spun_down, pods_down, pods_notdown, spun_up, pods_up, pods_notup)
+                                    sys.exit(1)
+                                else:
+                                    print("\nI don't understand that choice, please try again.\n")
+                            break
+                        else:
+                            print("\nI don't understand that choice, please try again.\n")
+                elif podwork.upper()=='N':
+                    print_color(tc.RED, "NOTICE: Not performing work on pod(s): " + podlable + "\n")
+                    break
+                else:
+                    print("\nI don't understand that choice, please try again.\n")
+
+    # uninstall instance
+    uninstallStat = uninstall_instance(args.name)
+    if uninstallStat != 0:
+        print_color(tc.RED, "\nTHERE WAS A SYSTEM ERROR WHILE TRYING TO UNINSTALL THE INSTANCE\n" +
+                    "YOU MAY NEED TO UNINSTALL THE INSTANCE MANUALLY\n")
+
+    print_color(tc.GREEN, "\nAll pods complete - exiting Robustness Layer " + args.layer + " test.\n")
+    print_summary(args.layer, total_pods, pods_nowork, spun_down, pods_down, pods_notdown, spun_up, pods_up, pods_notup)
+    sys.exit(0)
+
+        
+def get_args():
+    'Get command-line arguments.'
+    
+    description = """
+description:
+  The perf-robusttest script allows a tester to perform a 
+  I&T SOH Perfomance Robustness test on the GMS system.
+
+    """
+    parser = ArgumentParser(description=description,
+                            formatter_class=RawDescriptionHelpFormatter)
+    
+    parser.add_argument('--name', '-n', required=True, help="Name of the instance to checkout")
+
+    parser.add_argument('--layer', '-l', required=True, help="The Robustness Layer to test (1/2/3/4)")
+
+    args = parser.parse_args()
+
+    
+    return args
+    
+
+def verify_pods(pods, layer):
+    """
+    Verify that the pods that we will be scaling are on the list.
+    """
+
+    val = 0
+    expected = 0
+    for pod in expected_containers[layer]:
+        expected += 1
+        for deployment_name in pods:
+            if pod in deployment_name:
+                val += 1
+                break
+        if val != expected:
+            print_color(tc.RED, "Pod: " + pod + " - not found in list of pods\n")
+            expected -= 1
+
+    return val
+
+
+def get_candidate(name):
+    """
+    Get the instance candidate information.
+    """
+    awk_str = "awk '{print $7}'"
+
+    rc, out, err = run(f"gmskube ls | grep {name} | {awk_str}")
+
+    return out.strip()
+
+
+def scale_down_pod(candidate, name, pod):
+    """
+    Scale down a running pod.
+    """
+
+    if pod in ['kafka', 'zookeeper']:
+        print_color(tc.YELLOW, f"Issuing command:   kubectl -n {name} scale statefulsets { pod } --replicas=2")
+        rc, out, err = run(f"kubectl -n {name} scale statefulsets { pod } --replicas=2")
+    else:
+        print_color(tc.YELLOW, f"Issuing command:   gmskube upgrade --tag { candidate } --set { pod }.replicas=0 { name }")
+        rc, out, err = run(f"gmskube upgrade --tag { candidate } --set { pod }.replicas=0 { name }")
+
+    if rc != 0:
+        print_color(tc.RED, err)
+        return 1
+
+    return 0
+
+
+def restart_pod(candidate, name, pod):
+    """
+    Restart a stopped pod.
+    """
+
+    if pod in ['kafka', 'zookeeper']:
+        print_color(tc.YELLOW, f"Issuing command:   kubectl -n {name} scale statefulsets { pod } --replicas=3")
+        rc, out, err = run(f"kubectl -n {name} scale statefulsets { pod } --replicas=3")
+    else:
+        print_color(tc.YELLOW, f"Issuing command:   gmskube upgrade --tag { candidate } --set { pod }.replicas=1 { name }")
+        rc, out, err = run(f"gmskube upgrade --tag { candidate } --set { pod }.replicas=1 { name }")
+
+    if rc != 0:
+        print_color(tc.RED, err)
+        return 1
+
+    return 0
+
+
+def uninstall_instance(name):
+    """
+    Uninstall the instance.
+    """
+
+    removeInst = ''
+    while removeInst.upper() != 'Y':
+        removeInst = input(
+            "\nWould you like to uninstall the \'" + name + "\' instance that was used for this test (Y/N)? ")
+        if removeInst.upper() == 'Y':
+            print_color(tc.RED, "Uninstalling instance:  " + name + "\n")
+
+            print_color(tc.YELLOW, f"Issuing command:   gmskube uninstall {name}")
+            rc, out, err = run(f"gmskube uninstall {name}")
+
+            if rc != 0:
+                print_color(tc.RED, err)
+                return 1
+            else:
+                print_color(tc.GREEN, "Instance " + name + " uninstalled successfully!\n")
+
+        elif removeInst.upper() == 'N':
+            print_color(tc.RED, "The " + name + " instance will NOT be uninstalled\n")
+            break
+        else:
+            print("\nI don't understand that choice, please try again.\n")
+
+    return 0
+
+
+def print_summary(layer, total_pods, pods_nowork, spun_down, pods_down, pods_notdown, spun_up, pods_up, pods_notup):
+    """
+    Print the summary of the current run.
+    """
+
+    print_color(tc.GREEN, "\n************************* SUMMARY *************************")
+    print_color(tc.GREEN, "Total number of Robustness Layer " + layer + " pods: " + str(total_pods) + "\n")
+    print_color(tc.GREEN, "Of " + str(total_pods) + " pods, " + str(pods_nowork) + " were not addressed\n")
+    print_color(tc.GREEN, "Of " + str(total_pods) + " pods, " + str(spun_down) + " were spun down :  "
+                + str(pods_down) + " spun down successfully, and " + str(pods_notdown) + " did not\n")
+    print_color(tc.GREEN, "Of " + str(total_pods) + " pods, " + str(spun_up) + " were restarted :  "
+                + str(pods_up) + " restarted successfully, and " + str(pods_notup) + " did not\n")
+
+    return 0
+
+
+def get_pod_info(name):
+    """
+    Gather a dictionary of running pods for the given instance name.
+    """
+
+    rc, out, err = run(f"kubectl get pods -n { name } --no-headers")
+    podnum = 0
+
+    pods = defaultdict(list)
+    for line in out.splitlines():
+        columns = line.split()
+        deployment_name = columns[0].rsplit('-', 2)[0]
+        if pods[deployment_name]:
+            depname = deployment_name
+            podnum+=1
+            deployment_name = deployment_name + "_" + str(podnum)
+            while pods[deployment_name]:
+                podnum+=1
+                deployment_name = depname + "_" + str(podnum)
+        else:
+            podnum=0
+        pod = {}
+        pod['deployment_name'] = deployment_name
+        pod['name'] = columns[0]
+        pod['ready'] = columns[1]
+        pod['status'] = columns[2]
+        pod['restarts'] = columns[3]
+        pod['age'] = columns[4]
+
+        pods[deployment_name].append(pod)
+
+    return pods
+
+
+def run(cmd, print_output=False, num_tries=1):
+    """
+    Execute the specified command and return when the command execution is completed.
+    :param print_output: Enable printing of stdout and stderr immediately
+    :param num_tries: Retry this number of times if command fails
+    Returns the return code, stdout, and stderr of the command.
+    """
+
+    while True:
+        # cmd = subprocess.Popen(command.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+
+        if "|" in cmd:
+            cmd_parts = cmd.split('|')
+        else:
+            cmd_parts = []
+            cmd_parts.append(cmd)
+        i = 0
+        p = {}
+        for cmd_part in cmd_parts:
+            cmd_part = cmd_part.strip()
+            if i == 0:
+                p[i] = subprocess.Popen(shlex.split(cmd_part), stdin=None, stdout=subprocess.PIPE,
+                                        stderr=subprocess.PIPE)
+            else:
+                p[i] = subprocess.Popen(shlex.split(cmd_part), stdin=p[i - 1].stdout, stdout=subprocess.PIPE,
+                                        stderr=subprocess.PIPE)
+            i += 1
+
+        out, err = p[i - 1].communicate()
+        out = out.decode()
+        err = err.decode()
+
+        if print_output:
+            print(out)
+            if len(err) > 0:
+                print_color(tc.YELLOW, err)
+
+        if p[i - 1].returncode == 0 or num_tries == 0:
+            break
+        else:
+            num_tries = num_tries - 1
+
+    return p[i - 1].returncode, out, err
+
+
+def print_color(termcolor, message, bold=False):
+    """
+    Prints a message with the specified termcolor
+    :param termcolor: Color to print the message in
+    :param message: Message string to print
+    :param bold: Bold text
+    """
+    print_str = f'{termcolor}{message}{tc.ENDC}'
+    if bold:
+        print_str = f'{tc.BOLD}{print_str}'
+    print(print_str)
+
+
+def which(program):
+    """
+    Search PATH for a given program.
+    """
+    for path in os.environ["PATH"].split(os.pathsep):
+        fpath = os.path.join(path, program)
+        if os.path.exists(fpath) and os.path.isfile(fpath) and os.access(fpath, os.X_OK):
+            return fpath
+
+    return None        
+    
+if __name__ == "__main__":
+    main()

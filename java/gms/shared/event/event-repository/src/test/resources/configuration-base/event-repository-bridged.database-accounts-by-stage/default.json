@@ -1,0 +1,16 @@
+{
+  "name": "event-repository-bridged-database-accounts-by-stage",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "$ref=global.stage-accounts": [
+      {
+        "criterion": "DEFAULT",
+        "value": "DEFAULT"
+      }
+    ]
+  }
+}

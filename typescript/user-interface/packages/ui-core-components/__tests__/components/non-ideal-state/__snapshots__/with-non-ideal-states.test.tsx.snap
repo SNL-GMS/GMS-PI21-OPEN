@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`With Non Ideal States bad props renders 1`] = `
+<div>
+  <div
+    class="bp4-non-ideal-state"
+  >
+    <h4
+      class="bp4-heading"
+    >
+      No Group Data:
+    </h4>
+    <div>
+      Test
+    </div>
+    <div
+      class="bp4-spinner bp4-intent-primary"
+      role="progressbar"
+    >
+      <div
+        class="bp4-spinner-animation"
+      >
+        <svg
+          height="50"
+          stroke-width="8.00"
+          viewBox="1.00 1.00 98.00 98.00"
+          width="50"
+        >
+          <path
+            class="bp4-spinner-track"
+            d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+          />
+          <path
+            class="bp4-spinner-head"
+            d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"
+            pathLength="280"
+            stroke-dasharray="280 280"
+            stroke-dashoffset="210"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`With Non Ideal States bad props shallow renders 1`] = `
+<div>
+  <div
+    class="bp4-card bp4-interactive bp4-elevation-0"
+  >
+    <h5
+      class="bp4-heading"
+    >
+      Card heading
+    </h5>
+    <p>
+      Card content
+    </p>
+  </div>
+</div>
+`;
+
+exports[`With Non Ideal States renders 1`] = `
+<div>
+  <div
+    class="bp4-card bp4-interactive bp4-elevation-0"
+  >
+    <h5
+      class="bp4-heading"
+    >
+      Card heading
+    </h5>
+    <p>
+      Card content
+    </p>
+  </div>
+</div>
+`;

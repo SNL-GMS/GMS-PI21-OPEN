@@ -1,0 +1,34 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+
+    api project(':user-preferences-dao')
+    api project(':user-preferences-api')
+
+    // JPA dependencies
+    implementation libs.org.hibernate.hibernate.core
+    implementation libs.org.hibernate.hibernate.c3p0
+    implementation libs.org.hibernate.hibernate.entitymanager
+    implementation libs.org.hibernate.hibernate.ehcache
+
+    // Spring dependencies
+    implementation project(':spring-framework-utilities')
+
+    implementation project(':user-preferences-coi')
+    implementation project(':metrics')
+    implementation project(':frameworks-utilities-jpa')
+    // RepositoryException
+    implementation project(':frameworks-osd-commonobjects')
+
+    // Spring import
+    implementation libs.org.springframework.spring.beans
+    implementation libs.org.springframework.spring.context
+
+    // Testing.
+    testImplementation project(':user-preferences-testfixtures')
+    testImplementation project(':db-test-utils')
+    testImplementation libs.org.testcontainers.testcontainers
+    testImplementation libs.org.testcontainers.junit.jupiter
+    testImplementation libs.org.testcontainers.postgresql
+}

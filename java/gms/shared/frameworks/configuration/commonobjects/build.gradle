@@ -1,0 +1,14 @@
+// Apply Gradle plugins here, if you need extra ones for your builds
+apply plugin: "java-library"
+
+dependencies {
+    implementation project(':frameworks-osd-commonobjects')
+
+    api project(':frameworks-system-config')
+    api project(':frameworks-service-generator')
+
+    implementation project(':frameworks-utilities')
+    implementation libs.com.google.auto.value.auto.value.annotations
+
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+}

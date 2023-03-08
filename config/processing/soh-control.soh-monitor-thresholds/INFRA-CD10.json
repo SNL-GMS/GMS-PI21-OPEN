@@ -1,0 +1,44 @@
+[
+  {
+    "name": "INFRA-CD1.0-soh-monitor-thresholds-MISSING",
+    "constraints": [
+      {
+        "constraintType": "DEFAULT"
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "StationName",
+        "operator": {
+          "type": "IN",
+          "negated": false
+        },
+        "value": [
+          "I08BO",
+          "I10CA",
+          "I17CI",
+          "I21FR",
+          "I22FR",
+          "I23FR",
+          "I32KE",
+          "I33MG",
+          "I34MN"
+        ]
+      },
+      {
+        "constraintType": "STRING",
+        "criterion": "MonitorType",
+        "operator": {
+          "type": "EQ",
+          "negated": false
+        },
+        "value": [
+          "MISSING"
+        ]
+      }
+    ],
+    "parameters": {
+      "goodThreshold": 5.01,
+      "marginalThreshold": 10
+    }
+  }
+]

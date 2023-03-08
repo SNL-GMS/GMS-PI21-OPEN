@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Measure window selection should return a contentRenderer that matches a snapshot 1`] = `
+<div>
+  <div
+    id="START"
+  />
+  <div
+    class="measure-window-selection measure-window-selection__container"
+    style="display: none; transform: translateX(-50%);"
+  >
+    <div
+      class="measure-window-selection__overlay"
+      data-cy="measure-window-selection"
+      draggable="true"
+      style="display: none; left: 50%; width: 0%;"
+    />
+  </div>
+</div>
+`;

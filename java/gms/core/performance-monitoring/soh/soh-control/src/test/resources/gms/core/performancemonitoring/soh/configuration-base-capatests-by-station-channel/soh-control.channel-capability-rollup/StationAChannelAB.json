@@ -1,0 +1,37 @@
+{
+  "name": "stationA-channelAB-rollup",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "StationName",
+      "operator": {
+        "type": "IN",
+        "negated": false
+      },
+      "value": [
+        "StationA"
+      ]
+    },
+    {
+      "constraintType": "STRING",
+      "criterion": "ChannelName",
+      "operator": {
+        "type": "IN",
+        "negated": false
+      },
+      "value": [
+        "ChannelA",
+        "ChannelB"
+      ]
+    }
+  ],
+  "parameters": {
+    "sohMonitorsToChannelRollupOperator": {
+      "operatorType": "BEST_OF",
+      "sohMonitorTypeOperands": [
+        "MISSING",
+        "LAG"
+      ]
+    }
+  }
+}

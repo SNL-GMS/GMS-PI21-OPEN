@@ -1,0 +1,28 @@
+plugins {
+    id('application')
+    alias(libs.plugins.com.palantir.docker)
+}
+
+mainClassName = 'gms.shared.utilities.coidataloader.CoiLoaderApplication'
+
+dependencies {
+    implementation project(':css-reader')
+
+    implementation 'gms:frameworks-osd-repository:LATEST'
+    implementation 'gms:frameworks-client-generator:LATEST'
+    implementation 'gms:frameworks-osd-commonobjects:LATEST'
+    implementation 'gms:frameworks-osd-api:LATEST'
+    implementation 'gms:frameworks-system-config:LATEST'
+
+    implementation libs.args4j.args4j
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+}
+
+run {
+    jvmArgs "-Xmx4g"
+    if (System.getProperty("exec.args") != null) {
+        args System.getProperty("exec.args").split()
+    }
+    systemProperties System.properties
+}

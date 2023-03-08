@@ -1,0 +1,40 @@
+.weavess-tooltip {
+  &--help {
+    cursor: help;
+    & * {
+      cursor: help;
+    }
+  }
+  &__target {
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+  }
+  &__content {
+    padding: 5px 6px;
+    background-color: #30404d;
+    color: #bfccd6;
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px rgba(16, 22, 26, 10%), 0 2px 4px rgba(16, 22, 26, 20%),
+      0 8px 24px rgba(16, 22, 26, 20%);
+  }
+}
+
+.weavess-label-value-container {
+  display: flex;
+  line-height: 30px;
+  font-size: 1.125em;
+  align-items: baseline;
+}
+.weavess-label-value__label {
+  font-weight: 600;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.weavess-label-value__value {
+  font-weight: 250;
+  margin-left: 0;
+  margin-right: 5px;
+  font-family: monospace;
+}

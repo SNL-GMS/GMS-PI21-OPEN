@@ -1,0 +1,24 @@
+plugins {
+    id 'java-library'
+    alias(libs.plugins.io.swagger.core.v3.swagger.gradle)
+}
+
+dependencies {
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+
+    implementation project(':frameworks-service-interface-base')
+    implementation project(':java-utilities')
+    implementation project(':station-definition-api')
+
+    api project(':waveform-coi')
+    api project(':station-definition-coi')
+    testImplementation project(':waveform-testfixtures')
+
+    testImplementation project(':station-definition-testfixtures')
+    testImplementation project(':test-utils')
+
+    implementation libs.org.springframework.boot.spring.boot.starter
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+    implementation libs.org.apache.commons.commons.lang3
+}

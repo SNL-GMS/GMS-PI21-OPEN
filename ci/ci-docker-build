@@ -1,0 +1,175 @@
+#!/bin/bash
+set -o pipefail
+
+# ------------------------------------------------------------------------------
+# ci-docker-build
+# ------------------------------------------------------------------------------
+
+SCRIPT_DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" > /dev/null && pwd)"
+
+source ${SCRIPT_DIR}/ci.env
+source ${SCRIPT_DIR}/repository.env
+source ${SCRIPT_DIR}/versions.env
+
+#-- decouple from docker-ucp environment settings
+unset DOCKER_HOST
+unset DOCKER_TLS_VERIFY
+
+print_usage() {
+    echo "usage: ci-docker-build --name NAME [--dir DIR]"
+    echo ""
+    echo "description:"
+    echo "  Build (and optionally push) a docker image."
+    echo ""
+    echo "arguments:"
+    echo "    --name        Name of the docker image to build."
+    echo "    --dir         Directory to run docker build (default '.')"
+    echo "    --file        Name of the Dockerfile (default 'Dockerfile')"
+    echo "    --build-arg   Docker build argument. Multiple build-args may be specified."
+    echo "                  Environment variable references should be escaped."
+    echo "    --push        Push the resulting image to the remote artifactory repo."
+    echo "    --pull        Always attempt to pull a newer version of the source images."
+    echo "    --no-cache    Do not use cache when building the image."
+    echo ""
+    echo "  The --push argument is typically only used by the automated CI pipeline to "
+    echo "  push the build container to the docker registry specified by CI_DOCKER_REGISTRY."
+    echo "  To push the environment variables CI_USER and CI_PASSWORD must be defined to "
+    echo "  obtain access to the CI_DOCKER_REGISTRY."
+    echo ""
+    echo "  The --pull argument is also typically only used by the automated CI pipeline "
+    echo "  to pull the most-recently pushed containers from the CI_DOCKER_REGISTRY for the "
+    echo "  given branch. The environment variable CI_FORCE_PUSH can be defined to implicitly "
+    echo "  pass this argument. For local builds, this would OVERWRITE any locally built "
+    echo "  images with those from the last CI build."
+    echo ""
+    echo "  Setting the environment variable CI_USE_PROXY will pass in http_proxy,"
+    echo "  https_proxy, and no_proxy build arguments from the host into the docker build command."
+    echo "  Note that this does not work with SSL intercepting proxies."
+    echo ""
+    echo "examples:"
+    echo "  # Build the gmsctl container"
+    echo "  $ ci-docker-build --name gmsctl --build-arg 'DOCKER_YUM_URL=\${DOCKER_YUM_URL}'"
+    exit 0
+}
+
+if [ $# -eq 0 ]; then print_usage; fi
+
+function echo_run() {
+    echo ">> $@"
+    SECONDS=0
+    eval $@ | while read line; do echo "[$(date +%T.%3N)] $line"; done;
+    status=$?
+    echo "[$(date +%T.%3N)] Previous command executed in $SECONDS second(s)"
+    if [ ${status} -ne 0 ]; then echo "ERROR: failed with exit status ${status}"; exit ${status}; fi
+}
+
+#-- default values may be overwritten by command-line arguments
+docker_build_dir="."
+docker_file="Dockerfile"
+docker_pull=""
+docker_no_cache=""
+docker_build_args=()
+
+# Parse our command-line arguments
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --name)       docker_image_name=$2;        shift 2;;
+        --dir)        docker_build_dir=$2;         shift 2;;
+        --file)       docker_file=$2;              shift 2;;
+        --build-arg)  docker_build_args+=($1 $2);  shift 2;;
+        --push)       docker_push=1;               shift 1;;
+        --pull)       docker_pull=$1;              shift 1;;
+        --no-cache)   docker_no_cache=$1;          shift 1;;
+        -h|--help) print_usage;                    shift 1;;
+        *)  echo "ERROR: unrecognized option '$1'"; exit 1;;
+    esac
+done
+
+#-- pass select build environment settings as Docker build args
+docker_build_args+=("--build-arg" "DOCKER_IMAGE_TAG=${DOCKER_IMAGE_TAG}")
+docker_build_args+=("--build-arg" "DOCKER_REGISTRY=${CI_DOCKER_REGISTRY}")
+docker_build_args+=("--build-arg" "PROJECT_NAME=${CI_PROJECT_NAME}")
+docker_build_args+=("--build-arg" "CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME}")
+docker_build_args+=("--build-arg" "CI_COMMIT_SHA=${CI_COMMIT_SHA}")
+
+if [ ! -n "${docker_image_name:-}" ]; then echo "ERROR: missing required --name argument"; exit 1; fi
+
+#-- tag the container with additional environment information
+docker_build_tags=()
+docker_build_tags+=("--tag" "${CI_DOCKER_REGISTRY}/${CI_PROJECT_NAME}/${docker_image_name}:${DOCKER_IMAGE_TAG}")
+docker_build_tags+=("--tag" "${CI_DOCKER_REGISTRY}/${CI_PROJECT_NAME}/${docker_image_name}:${CI_COMMIT_REF_SLUG}")
+docker_build_tags+=("--tag" "${CI_DOCKER_REGISTRY}/${CI_PROJECT_NAME}/${docker_image_name}:${CI_COMMIT_SHA}")
+
+#-- explicitly expand any escaped variables in build_args
+for i in ${!docker_build_args[@]}; do
+    docker_build_args[$i]=$(eval echo ${docker_build_args[$i]})
+done
+
+if [ ${CI_FORCE_PULL:-} ]; then
+    docker_pull="--pull"
+fi
+
+if [ ${CI_DOCKER_NO_CACHE:-} ]; then
+    docker_no_cache="--no-cache"
+fi
+
+#-- pass proxy args into build
+if [ ${CI_USE_PROXY:-0} == 1  ]; then
+    docker_build_args+=("--build-arg" "http_proxy" "--build-arg" "https_proxy" "--build-arg" "no_proxy")
+fi
+
+if [ ${CI_DEBUG:-} ]; then
+    echo "DEBUG: docker_image_name=${docker_image_name}"
+    echo "DEBUG: docker_build_dir=${docker_build_dir}"
+    echo "DEBUG: docker_file=${docker_file}"
+fi
+
+if [ -e "${docker_build_dir}/docker-prep.sh" ]; then
+    echo "---------------------------------------------------------------------"
+    echo ""
+    echo "PREPARING LOCAL FILES FOR DOCKER FOR ${CI_PROJECT_NAME}/${docker_image_name}"
+    echo ""
+    echo "---------------------------------------------------------------------"
+    pushd ${docker_build_dir} > /dev/null
+    echo_run ./docker-prep.sh
+    if [ ${status:=$?} -ne 0 ]; then
+        echo "ERROR: docker-prep failed for ${docker_image_name}. Aborting..."
+        popd
+        exit ${status}
+    fi
+    popd
+fi
+
+echo "---------------------------------------------------------------------"
+echo ""
+echo "BUILDING ${CI_PROJECT_NAME}/${docker_image_name}"
+echo ""
+echo "---------------------------------------------------------------------"
+echo_run docker build ${docker_pull} ${docker_no_cache} -f ${docker_file} ${docker_build_tags[@]} ${docker_build_args[@]} ${docker_build_dir}
+
+if [ ${docker_push:-0} == 1  ]; then
+    if [ -n "${CI_USER:-}" ] && [ -n "${CI_PASSWORD:-}" ]; then
+        echo "---------------------------------------------------------------------"
+        echo ""
+        echo "PUSHING ${CI_PROJECT_NAME}/${docker_image_name}"
+        echo ""
+        echo "---------------------------------------------------------------------"
+        
+        echo ">> docker login ${CI_DOCKER_REGISTRY} -u ${CI_USER} -p **************"
+        docker login ${CI_DOCKER_REGISTRY} -u "${CI_USER}" -p "${CI_PASSWORD}"
+        if [ ${status:=$?} -ne 0 ]; then echo "ERROR: failed with exit status ${status}"; exit ${status}; fi
+        
+        echo_run docker push ${CI_DOCKER_REGISTRY}/${CI_PROJECT_NAME}/${docker_image_name}:${DOCKER_IMAGE_TAG}
+
+        if [ "${DOCKER_IMAGE_TAG}" == "${CI_COMMIT_SHA}" ]; then
+            #-- this is the normal case when building during CI
+            echo_run docker push ${CI_DOCKER_REGISTRY}/${CI_PROJECT_NAME}/${docker_image_name}:${CI_COMMIT_REF_SLUG}
+        else
+            #-- this case is when someone is building locally and manually sets DOCKER_IMAGE_TAG
+            echo_run docker push ${CI_DOCKER_REGISTRY}/${CI_PROJECT_NAME}/${docker_image_name}:${CI_COMMIT_SHA}
+        fi
+    else
+        echo "WARNING: CI_USER or CI_PASSWORD not defined in environment. Push ignored."
+    fi
+fi
+exit 0

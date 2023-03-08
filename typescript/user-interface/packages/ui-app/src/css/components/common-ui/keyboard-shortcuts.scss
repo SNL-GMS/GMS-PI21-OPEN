@@ -1,0 +1,103 @@
+.key-mark {
+  --key-mark-text-color: var(--gms-main-inverted, $gms-main-inverted);
+  font-size: 0.75em;
+  font-weight: 600;
+  line-height: 1em;
+  padding: 0.25em 0.5em;
+  display: inline-block;
+  border-radius: 0.25em;
+  background-color: var(--gms-prominent, $gms-prominent);
+  color: var(--key-mark-text-color);
+  border: 1px solid var(--key-mark-text-color);
+  & + & {
+    margin: 0 0 0 0.25em;
+  }
+}
+
+.keyboard-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  gap: 2rem;
+  overflow-y: auto;
+
+  & ul {
+    list-style: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-left: auto;
+    padding-inline-start: 0;
+  }
+  &__shortcuts-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__search-container {
+    width: 100%;
+    position: sticky;
+    padding: 0.5rem 0.5rem 1px 0.5rem;
+    background-color: var(--gms-dialog-background, $gms-dialog-background);
+    top: 0;
+    z-index: 1;
+  }
+  &__dialog {
+    height: 800px;
+    max-height: calc(100vh - 6rem);
+    max-width: 90%;
+    width: 600px;
+  }
+  &__group-title {
+    font-weight: 700;
+    font-size: 1em;
+    margin: 0 0 0.5em 0;
+  }
+  // its function is to join multiple hotkey combos
+  &__conjunction-junction {
+    margin: 0 0.25em;
+  }
+  &__category {
+    margin-bottom: 2em;
+    & > * {
+      padding-left: 1.5em;
+    }
+  }
+  &__hotkey-entry {
+    align-items: center;
+    background-color: var(--gms-prominent-background, $gms-prominent-background);
+    display: flex;
+    margin: 0 0.25rem 0.25rem 0.25rem;
+    padding: 0.125rem 1.5rem;
+  }
+  &__input {
+    transition: box-shadow 0.25s ease;
+  }
+  &__description {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  &__help-text {
+    opacity: 0.5;
+    left: -1.125em;
+    top: -1px; // to account for larger key boxes
+    line-height: 1;
+    position: absolute;
+    margin: 0;
+    display: none;
+    &--wrap {
+      max-width: 55ch;
+      margin: 0;
+      padding: 0;
+    }
+    .keyboard-shortcuts__hotkey-entry:hover & {
+      display: block;
+    }
+    .keyboard-shortcuts__hotkey-entry:hover &:hover {
+      opacity: 0.75;
+    }
+  }
+  &:not([data-scroll='0']) .keyboard-shortcuts__input {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+}

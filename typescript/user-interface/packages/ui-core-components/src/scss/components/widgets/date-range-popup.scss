@@ -1,0 +1,170 @@
+@mixin brightnessFilter($fraction) {
+  ::after {
+    content: ' ';
+    pointer-events: none;
+    @include fillAllSpaceAbsolutely;
+    filter: brightness(0.05);
+  }
+}
+
+ul.bp4-menu.bp4-daterangepicker-shortcuts {
+  position: absolute;
+  top: 40px;
+  bottom: 36px;
+  left: 0;
+  margin: 0.5rem;
+  background-color: var(
+    --core-prominent-background,
+    var(--gms-prominent-background, $core-prominent-background)
+  );
+  @include brightnessFilter(0.05);
+}
+
+.bp4-dialog.dialog_parent.dialog_parent--wide {
+  position: relative;
+}
+
+.bp4-dialog.dialog_parent.dialog_parent--wide > .bp4-dialog-header {
+  margin-left: 0;
+}
+
+.date-range-popup__range-input.bp4-dark .bp4-datepicker {
+  background-color: var(
+    --core-popover-background,
+    var(--gms-popover-background, $core-popover-background)
+  );
+}
+
+.date-range-popup__range-input > div {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  gap: 0.5em;
+}
+
+.calendar-group {
+  display: flex;
+}
+.calendar-place-holder {
+  width: 230px;
+  display: flex;
+  flex-grow: 1;
+  color: var(--core-soft, var(--gms-soft, $core-soft));
+  padding: 0.5em;
+  border-radius: 3px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  font-size: 1.25em;
+  background-color: var(
+    --core-prominent-background,
+    var(--gms-prominent-background, $core-prominent-background)
+  );
+  @include brightnessFilter(0.05);
+}
+
+.date-range-popup__range-input .bp4-divider {
+  display: none;
+}
+
+.date-range-popup__range-input.bp4-datepicker {
+  position: static;
+}
+/* From date-range-popup.scss */
+
+.date-input-groups {
+  margin-bottom: 0;
+  border-radius: 3px;
+  gap: 0.5em;
+  background-color: var(
+    --core-prominent-background,
+    var(--gms-prominent-background, $core-prominent-background)
+  );
+  @include brightnessFilter(0.05);
+}
+
+.date-input-group {
+  display: flex;
+  align-items: center;
+}
+
+.date-input {
+  max-width: 7em;
+  padding: 0 0.5em 0 0;
+}
+
+.date-input-label {
+  padding: 0 0.5em 0 0;
+  line-height: 1;
+  color: var(--core-prominent, var(--gms-prominent, $core-prominent));
+  font-weight: 600;
+  width: 3em;
+}
+
+.time-input {
+  max-width: 80px;
+  padding: 0 0.5em 0 0;
+}
+
+.date-input-apply-cancel {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  padding: 0.5em 0.5em 0 0;
+  gap: 0.5em;
+  flex-direction: row;
+}
+
+.DayPicker.date-range-picker--column {
+  background-color: var(
+    --core-popover-background,
+    var(--gms-popover-background, $core-popover-background)
+  );
+  border-radius: 3px;
+}
+
+.date-input-error {
+  color: $core-strong-warning;
+  display: flex;
+  min-height: 0;
+  margin: 0.5em 0.5em 0 0.5em;
+}
+
+.date-input-error-durations {
+  color: $core-strong-warning;
+  display: flex;
+  min-height: 0;
+  margin: 0.5em 0.5em 0 117px;
+}
+
+.date-input-error-text {
+  margin-left: 5px;
+  width: calc(100% - 20px);
+}
+
+.date-input-apply-cancel button {
+  min-width: 5rem;
+}
+
+.date-range-picker__selectors {
+  padding: 0.5em;
+  margin: 0.5em 0.5em 0 0.5em;
+  border-radius: 3px;
+  background-color: var(
+    --core-prominent-background,
+    var(--gms-prominent-background, $core-prominent-background)
+  );
+  @include brightnessFilter(0.05);
+}
+
+.date-range-picker__selectors-durations {
+  padding: 0.5em;
+  margin: 0.5em 0.5em 0 117px;
+  border-radius: 3px;
+  background-color: var(
+    --core-prominent-background,
+    var(--gms-prominent-background, $core-prominent-background)
+  );
+  @include brightnessFilter(0.05);
+}

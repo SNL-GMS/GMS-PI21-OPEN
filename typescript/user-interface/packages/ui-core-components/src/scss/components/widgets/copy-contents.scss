@@ -1,0 +1,12 @@
+.copy-contents {
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin: 0.25rem -0.5rem 0.5rem -0.5rem;
+  padding: 0.25rem 0.5rem;
+  &__tooltip_contents h5 {
+    margin: 0.25em 0 0.5em 0;
+  }
+  &:hover {
+    background-color: rgba(45, 114, 210, 0.2);
+  }
+}

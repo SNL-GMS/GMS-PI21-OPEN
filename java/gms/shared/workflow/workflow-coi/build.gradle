@@ -1,0 +1,26 @@
+plugins {
+    id('java-library')
+    id('java-test-fixtures')
+}
+
+dependencies {
+    constraints {
+        testFixturesImplementation libs.org.apache.commons.commons.lang3
+        testFixturesImplementation libs.com.google.guava.guava
+        testFixturesImplementation libs.com.fasterxml.jackson.core.jackson.databind
+        testFixturesImplementation libs.com.fasterxml.jackson.datatype.jackson.datatype.guava
+        testFixturesImplementation libs.com.fasterxml.jackson.datatype.jackson.datatype.jdk8
+        testFixturesImplementation libs.com.fasterxml.jackson.datatype.jackson.datatype.jsr310
+    }
+
+    // GMS Dependencies
+    api project(':station-definition-coi')
+    implementation project(':bridge-utilities')
+
+    // Google AutoValue
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    testImplementation project(':test-utils')
+    testFixturesImplementation project(":bridge-utilities")
+}

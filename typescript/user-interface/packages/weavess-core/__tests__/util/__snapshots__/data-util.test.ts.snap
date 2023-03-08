@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WEAVESS Core: Data Util creates a step result that matches a snapshot 1`] = `
+Object {
+  "values": Array [
+    Object {
+      "timeSecs": 0,
+      "value": 0,
+    },
+    Object {
+      "timeSecs": 0,
+      "value": 1,
+    },
+    Object {
+      "timeSecs": 0.001,
+      "value": 1,
+    },
+    Object {
+      "timeSecs": 0.002,
+      "value": 1,
+    },
+    Object {
+      "timeSecs": 0.003,
+      "value": 1,
+    },
+    Object {
+      "timeSecs": 0.004,
+      "value": 1,
+    },
+    Object {
+      "timeSecs": 0.005,
+      "value": 1,
+    },
+    Object {
+      "timeSecs": 0.005,
+      "value": 0,
+    },
+    Object {
+      "timeSecs": 0.006,
+      "value": 0,
+    },
+  ],
+}
+`;

@@ -1,0 +1,12 @@
+{
+  "name": "soh-control-default",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "reprocessingPeriod": "PT1M",
+    "backOffDuration": "PT40S"
+  }
+}

@@ -1,0 +1,80 @@
+@mixin font($font-family, $font-file, $font-weight, $font-style) {
+  @font-face {
+    font-family: $font-family;
+    src: url($font-file + '.ttf');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+
+/** Open Sans **/
+@include font('OpenSans', '../../resources/fonts/OpenSans-Bold', 700, normal);
+@include font('OpenSans', '../../resources/fonts/OpenSans-BoldItalic', 700, italic);
+@include font('OpenSans', '../../resources/fonts/OpenSans-ExtraBold', 900, normal);
+@include font(
+  'OpenSans-variable',
+  '../../resources/fonts/OpenSans-Italic-VariableFont_width-weight',
+  400,
+  italic
+);
+@include font('OpenSans', '../../resources/fonts/OpenSans-Italic', 400, italic);
+@include font('OpenSans', '../../resources/fonts/OpenSans-Light', 300, normal);
+@include font('OpenSans', '../../resources/fonts/OpenSans-LightItalic', 300, italic);
+@include font('OpenSans', '../../resources/fonts/OpenSans-Medium', 500, normal);
+@include font('OpenSans', '../../resources/fonts/OpenSans-MediumItalic', 500, italic);
+@include font('OpenSans', '../../resources/fonts/OpenSans-Regular', 400, normal);
+@include font('OpenSans', '../../resources/fonts/OpenSans-SemiBold', 600, normal);
+@include font('OpenSans', '../../resources/fonts/OpenSans-SemiBoldItalic', 600, italic);
+@include font(
+  'OpenSans-variable',
+  '../../resources/fonts/OpenSans-VariableFont_width-weight',
+  400,
+  normal
+);
+
+/** Source Code Pro **/
+@include font('SourceCodePro', '../../resources/fonts/SourceCodePro-Black', 900, normal);
+@include font('SourceCodePro', '../../resources/fonts/SourceCodePro-BlackItalic', 900, italic);
+@include font('SourceCodePro', '../../resources/fonts/SourceCodePro-Bold', 700, normal);
+@include font('SourceCodePro', '../../resources/fonts/SourceCodePro-BoldItalic', 700, italic);
+@include font('SourceCodePro', '../../resources/fonts/SourceCodePro-ExtraBold', 800, normal);
+@include font('SourceCodePro', '../../resources/fonts/SourceCodePro-ExtraBoldItalic', 800, italic);
+@include font('SourceCodePro', '../../resources/fonts/SourceCodePro-ExtraLight', 200, normal);
+@include font('SourceCodePro', '../../resources/fonts/SourceCodePro-ExtraLightItalic', 200, italic);
+@include font(
+  'SourceCodePro-variable',
+  '../../resources/fonts/SourceCodePro-Italic-VariableFont_weight',
+  400,
+  italic
+);
+@include font('SourceCodePro', '../../resources/fonts/SourceCodePro-Italic', 400, normal);
+@include font('SourceCodePro', '../../resources/fonts/SourceCodePro-Light', 300, normal);
+@include font('SourceCodePro', '../../resources/fonts/SourceCodePro-LightItalic', 300, italic);
+@include font('SourceCodePro', '../../resources/fonts/SourceCodePro-Medium', 500, normal);
+@include font('SourceCodePro', '../../resources/fonts/SourceCodePro-MediumItalic', 500, italic);
+@include font('SourceCodePro', '../../resources/fonts/SourceCodePro-Regular', 400, normal);
+@include font('SourceCodePro', '../../resources/fonts/SourceCodePro-SemiBold', 600, normal);
+@include font('SourceCodePro', '../../resources/fonts/SourceCodePro-SemiBoldItalic', 600, italic);
+@include font(
+  'SourceCodePro-variable',
+  '../../resources/fonts/SourceCodePro-VariableFont_weight',
+  400,
+  normal
+);
+
+$gms-sans: 'OpenSans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Helvetica Neue', 'Icons16', 'sans-serif';
+
+$gms-mono: 'SourceCodePro', 'Source Code Pro', monospace;
+
+.monospace {
+  font-family: $gms-mono;
+}
+
+// the :export directive tells webpack to handle these appropriately when imported
+// i.e. `import * as variables from 'variables.scss'`;
+// then you can access `gms-main` by variables['gms-main']
+:export {
+  gmsSans: $gms-sans;
+  gmsMono: $gms-mono;
+}

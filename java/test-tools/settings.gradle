@@ -1,0 +1,33 @@
+pluginManagement {
+    repositories {
+        maven {
+            url "${plugin_repository_url}"
+        }
+    }
+}
+
+rootProject.name = 'gms-test-tools'
+enableFeaturePreview("VERSION_CATALOGS")
+
+includeBuild '../gms'
+includeBuild '../tools'
+
+include 'mock-waveform-application'
+include 'mock-signal-detection-application'
+include 'cd11-data-provider'
+include 'bridged-data-source-simulator-api'
+include 'bridged-data-source-simulator-application'
+include 'bridged-data-source-analysis-simulator'
+include 'bridged-data-source-station-simulator'
+include 'bridged-data-source-simulator-jpa'
+include 'bridged-data-source-interval-simulator'
+
+project(':mock-waveform-application').projectDir = file('mocks/mock-waveform-application')
+project(':mock-signal-detection-application').projectDir = file('mocks/mock-signal-detection-application')
+project(':cd11-data-provider').projectDir = file('simulators/cd11-data-provider')
+project(':bridged-data-source-simulator-api').projectDir = file('simulators/bridged-data-source-simulator/bridged-data-source-simulator-api')
+project(':bridged-data-source-simulator-application').projectDir = file('simulators/bridged-data-source-simulator/bridged-data-source-simulator-application')
+project(':bridged-data-source-analysis-simulator').projectDir = file('simulators/bridged-data-source-simulator/bridged-data-source-analysis-simulator')
+project(':bridged-data-source-station-simulator').projectDir = file('simulators/bridged-data-source-simulator/bridged-data-source-station-simulator')
+project(':bridged-data-source-simulator-jpa').projectDir = file('simulators/bridged-data-source-simulator/bridged-data-source-simulator-jpa')
+project(':bridged-data-source-interval-simulator').projectDir = file('simulators/bridged-data-source-simulator/bridged-data-source-interval-simulator')

@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConflictMarkerCellRenderer matches the snapshot 1`] = `
+<div>
+  <div
+    class="table-cell events__conflict-marker"
+  >
+    <span
+      aria-hidden="true"
+      class="bp4-icon bp4-icon-issue bp4-intent-danger"
+      icon="issue"
+    >
+      <svg
+        data-icon="issue"
+        fill="red"
+        height="20"
+        viewBox="0 0 20 20"
+        width="20"
+      >
+        <path
+          d="M10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16zm1-2H9v-2h2v2zm0-3H9V4h2v9z"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ConflictMarkerCellRenderer matches the snapshot 2`] = `
+<div>
+  <div
+    class="table-cell"
+    style="height: 36px;"
+  >
+    <span>
+      TBD
+    </span>
+  </div>
+</div>
+`;
+
+exports[`StatusCellRenderer matches the snapshot 1`] = `
+<div>
+  <div
+    class="table-cell "
+    data-cy="table-cell"
+    style="height: 36px; overflow: hidden;"
+    title="Complete"
+  >
+    <div
+      class=" table-cell__value table-cell__value--complete"
+      data-cy="table-cell__value"
+    >
+      <span>
+        Complete
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StatusCellRenderer matches the snapshot 2`] = `
+<div>
+  <div
+    class="table-cell "
+    data-cy="table-cell"
+    style="height: 36px; overflow: hidden;"
+    title="In progress"
+  >
+    <div
+      class=" table-cell__value "
+      data-cy="table-cell__value"
+    >
+      <span>
+        In progress
+      </span>
+    </div>
+  </div>
+</div>
+`;

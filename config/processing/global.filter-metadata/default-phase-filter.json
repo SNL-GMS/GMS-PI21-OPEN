@@ -1,0 +1,26 @@
+{
+    "name": "default-phase-filter",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "phase",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "S"
+            ]
+        }
+    ],
+    "parameters": {
+        "filterDefinitions": [
+            {
+                "$ref=global.filter-definition": [{
+                    "criterion": "name",
+                    "value": "1.5 3.0 3 BP causal"
+                }]
+            }
+        ]
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "apiVersion": "v1",
+    "data": {
+        "id": "local:p-j5jfn"
+    },
+    "kind": "ConfigMap",
+    "metadata": {
+        "creationTimestamp": "2022-08-30T19:52:26Z",
+        "managedFields": [
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:data": {
+                        ".": {},
+                        "f:id": {}
+                    }
+                },
+                "manager": "kubectl-create",
+                "operation": "Update",
+                "time": "2022-08-30T19:52:26Z"
+            }
+        ],
+        "name": "rancher-project-config",
+        "namespace": "gms",
+        "resourceVersion": "179739569",
+        "uid": "e4657cf2-f6c8-4c6f-a8f6-7c2eb13208cf"
+    }
+}

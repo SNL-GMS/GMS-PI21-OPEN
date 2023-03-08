@@ -1,0 +1,9 @@
+I02H1  BDF       2006124     3077  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090116 12:00:00
+I02H2  BDF       2006124     3078  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090116 12:00:00
+I02H3  BDF       2006124     3079  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090116 12:00:00
+I02H4  BDF       2006124     3080  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090116 12:00:00
+I02H5  LWS       2006124     3085  2286324 n       0.0000   -1.0    0.0 Wind_speed                                         20090116 12:00:00
+I02H5  LWD       2006124     3084  2286324 n       0.0000   -1.0    0.0 Wind_Direction                                     20090116 12:00:00
+I02H5  LKO       2006124     3083  2286324 n       0.0000   -1.0    0.0 External_temperature                               20090116 12:00:00
+I02H5  LDA       2006124     3082  2286324 n       0.0000   -1.0    0.0 Absolute_Pressure                                  20090116 12:00:00
+I02H5  BDF       2006124     3081  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090116 12:00:00

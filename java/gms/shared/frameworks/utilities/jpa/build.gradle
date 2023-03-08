@@ -1,0 +1,9 @@
+// Apply Gradle plugins here, if you need extra ones for your builds
+apply plugin: "java-library"
+
+dependencies {
+    api project(':frameworks-system-config')
+
+    implementation libs.org.apache.commons.commons.lang3
+    implementation libs.javax.persistence.javax.persistence.api
+}

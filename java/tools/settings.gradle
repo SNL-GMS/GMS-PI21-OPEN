@@ -1,0 +1,31 @@
+pluginManagement {
+    repositories {
+        maven {
+            url "${plugin_repository_url}"
+        }
+    }
+}
+
+rootProject.name = 'gms-tools'
+enableFeaturePreview("VERSION_CATALOGS")
+
+includeBuild '../gms'
+
+// Include non-ops tools
+include 'cd11-datamanipulator'
+include 'coi-data-loader'
+include 'coi-data-injector'
+include 'coi-data-preloader'
+include 'css-reader'
+include 'css-stationref-converter'
+include 'css-stationref-builder'
+include 'kafka-client'
+
+project(':cd11-datamanipulator').projectDir = file('cd11/cd11-datamanipulator')
+project(':coi-data-loader').projectDir = file('coi/coi-data-loader')
+project(':coi-data-injector').projectDir = file('coi/coi-data-injector')
+project(':coi-data-preloader').projectDir = file('coi/coi-data-preloader')
+project(':css-reader').projectDir = file('css/css-reader')
+project(':css-stationref-converter').projectDir = file('css/css-stationref-converter')
+project(':css-stationref-builder').projectDir = file('css/css-stationref-builder')
+project(':kafka-client').projectDir = file('kafka/kafka-client')

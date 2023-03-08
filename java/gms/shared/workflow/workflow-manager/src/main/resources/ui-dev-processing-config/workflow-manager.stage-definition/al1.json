@@ -1,0 +1,37 @@
+{
+    "name": "al1",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "name",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "AL1"
+            ]
+        }
+    ],
+    "parameters": {
+        "name": "AL1",
+        "duration": "PT1H",
+        "mode": "INTERACTIVE",
+        "activities": [
+            {
+                "name": "Event Review",
+                "stationGroup": {
+                    "name": "Primary"
+                },
+                "analysisMode": "EVENT_REVIEW"
+            },
+            {
+                "name": "Scan",
+                "stationGroup": {
+                    "name": "AuxDel"
+                },
+                "analysisMode": "SCAN"
+            }
+        ]
+    }
+}

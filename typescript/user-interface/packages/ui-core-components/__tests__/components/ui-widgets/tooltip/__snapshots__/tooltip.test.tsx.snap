@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip2Wrapper matches a snapshot 1`] = `
+<div
+  aria-haspopup="true"
+  className="core-tooltip bp4-popover2-target"
+  onBlur={[Function]}
+  onContextMenu={[Function]}
+  onFocus={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <span
+    className=""
+    tabIndex={0}
+  >
+    target rendered here
+  </span>
+</div>
+`;

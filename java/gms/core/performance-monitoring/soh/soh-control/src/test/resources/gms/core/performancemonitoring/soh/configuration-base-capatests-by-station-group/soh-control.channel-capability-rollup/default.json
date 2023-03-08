@@ -1,0 +1,17 @@
+{
+  "name": "default-channel-capability-rollup",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "sohMonitorsToChannelRollupOperator": {
+      "operatorType": "WORST_OF",
+      "sohMonitorTypeOperands": [
+        "MISSING",
+        "LAG"
+      ]
+    }
+  }
+}

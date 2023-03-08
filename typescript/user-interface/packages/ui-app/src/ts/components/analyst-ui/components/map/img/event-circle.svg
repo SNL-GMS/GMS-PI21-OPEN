@@ -1,0 +1,5 @@
+<!-- Saving this file for future use-->
+<!-- TODO: update webpack config so that we can import SVGs -->
+<svg id="event_circle" data-name="Event Circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 124">
+  <circle cx="62.71" cy="62.25" r="57.07" style="fill: #fff; stroke: #fff; stroke-miterlimit: 10;"/>
+</svg>

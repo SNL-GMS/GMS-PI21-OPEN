@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UIThemeWrapper convert color theme to css 1`] = `
+Object {
+  "--complete-event-s-d-color": "#62D96B",
+  "--gms-background": "#182026",
+  "--gms-main": "#f5f8fa",
+  "--gms-main-inverted": "#10161a",
+  "--gms-selection": "#1589d1",
+  "--gms-table-selection": "#f5f8fa",
+  "--map-station-default": "#6F6E74",
+  "--map-visible-station": "#D9822B",
+  "--open-event-s-d-color": "#C87619",
+  "--other-event-s-d-color": "#FFFFFF",
+  "--prediction-s-d-color": "#C58C1B",
+  "--unassociated-s-d-color": "#C23030",
+  "--waveform-dim-percent": "0.75",
+  "--waveform-filter-label": "#f5f8fa",
+  "--waveform-raw": "#4580e6",
+}
+`;
+
+exports[`UIThemeWrapper matches snapshot 1`] = `
+<div>
+  <div
+    class="gms-theme-provider bp4-dark"
+    style="--open-associated-text-color: #10161a; --complete-associated-text-color: #10161a; --other-associated-text-color: #10161a; --unassociated-text-color: #f5f8fa; --table-selection-text-color: #000000;"
+  >
+    arbitrary children for wrapper
+  </div>
+</div>
+`;

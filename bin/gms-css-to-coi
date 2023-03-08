@@ -1,0 +1,169 @@
+#!/usr/bin/env bash
+
+if [[ -z "${CI_DOCKER_REGISTRY}" ]]; then
+    echo \
+    "ERROR: Variable 'CI_DOCKER_REGISTRY' must be set to the docker registry hostname
+            Example:
+            > export CI_DOCKER_REGISTRY=gms-docker-registry.example.com
+  
+            Consider adding this to your .bashrc
+            "
+    exit 1
+fi
+
+CSSROOT="/css-stationref-converter/css-root"
+COIROOT="/css-stationref-converter/coi-root"
+DESTINATIONDIR="coi-root"
+DOCKERIMAGENAME="gms-common/css-stationref-converter"
+NETWORKFILENAME="network.dat"
+DOCKERIMAGETAG="develop"
+DOCKERREGISTRY="${CI_DOCKER_REGISTRY}"
+
+print_help() 
+{
+    echo ""
+    echo "-s|--source <absolute path to local CSS root>                  | optional, if not specified default json will be generated"
+    echo "-d|--destination <absolute path to local COI output directory> | optional, defaults to <working dir>/${DESTINATIONDIR}"
+    echo "-f|--networkfilename <network filename with no path>           | optional, defaults to ${NETWORKFILENAME}"
+    echo "-i|--cssroot <CSS root in Docker container>                    | optional, defaults to ${CSSROOT}"
+    echo "-o|--coiroot <COI root in Docker container>                    | optional, defaults to ${COIROOT}"
+    echo "-r|--registry <Docker registry>                                | optional, defaults to ${DOCKERREGISTRY}"
+    echo "-n|--imagename <name of docker image to use>                   | optional, defaults to ${DOCKERIMAGENAME}" 
+    echo "-t|--imagetag <Docker image tag>                               | optional, defaults to ${DOCKERIMAGETAG}"
+    echo ""
+    echo "-h|--help, print this help message"
+    echo ""
+    echo "Note: The full Docker image name is <registry>/<imagename>:<imagetag>,"
+    echo "      e.g. ${DOCKERREGISTRY}/${DOCKERIMAGENAME}:${DOCKERIMAGETAG}"
+    echo ""
+    exit 0
+}
+
+POSITIONAL=()
+while [[ $# -gt 0 ]]
+do
+key="$1"
+
+case $key in
+    -i|--cssroot)
+    CSSROOT="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    -d|--destination)
+    DESTINATIONDIR="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    -h|--help)
+    print_help
+    shift # past argument
+    shift # past value
+    ;;
+    -n|--imagename)
+    DOCKERIMAGENAME="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    -o|--coiroot)
+    COIROOT="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    -f|--networkfilename)
+    NETWORKFILENAME="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    -r|--registry)
+    DOCKERREGISTRY="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    -s|--source)
+    SOURCEDIR="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    -t|--imagetag)
+    DOCKERIMAGETAG="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    *)    # unknown option
+    POSITIONAL+=("$1") # save it in an array for later
+    shift # past argument
+    ;;
+esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
+# create an empty source directory if one was not specified
+if [ ! -z "${SOURCEDIR}" ]; then
+   # Expand SOURCEDIR  to ensure it has a full path
+   SOURCEDIR=$(cd ${SOURCEDIR}; pwd)
+fi
+
+if [ ! -d "${DESTINATIONDIR}" ]; then
+    echo ""
+    echo "Destination directory ${DESTINATIONDIR} does not exist. Using destination directory coi-root."
+    echo ""
+    DESTINATIONDIR="coi-root"
+    mkdir -p $DESTINATIONDIR
+else
+    if [ ! -z "$(ls -A $DESTINATIONDIR)" ]; then
+        echo ""
+        echo "The destination directory $DESTINATIONDIR is not empty."
+        echo "Proceeding with a non-empty destination directory will cause the converter application to fail."
+        read -r -p "Do you wish to remove the contents? [y/N] " RESPONSE
+        case "$RESPONSE" in 
+            [yY][eE][sS]|[yY])
+                echo "Removing directory contents."
+                rm -fr $DESTINATIONDIR
+                mkdir -p $DESTINATIONDIR
+                ;;
+            *)
+                echo "Proceeding with no action."
+                ;;
+        esac;
+        echo ""
+    fi;
+fi;
+
+# Expand DESTINATIONDIR  to ensure it has a full path
+DESTINATIONDIR=$(cd ${DESTINATIONDIR}; pwd)
+
+# Fix the DOCKERIMAGETAG to match our system conventions
+if [[ ! -z "${DOCKERIMAGETAG}" ]]; then
+    # sed replaces violating chars w/ dash and ensures no trailing/leading dashes, tr ensures lowercase and cut ensures it's <=63 chars
+    export DOCKERIMAGETAG=$(echo "$DOCKERIMAGETAG" | sed -e 's/[^a-zA-Z0-9]/-/g' -e 's/^-//' -e 's/-$//' | tr '[:upper:]' '[:lower:]' | cut -c-62)
+fi
+
+echo "* Starting CSS to COI Conversion *"
+echo ""
+if [ ! -z "${SOURCEDIR}" ]; then 
+    echo "Local Source Directory (CSS)            = ${SOURCEDIR}"
+else
+    echo "Remote Source Directory (CSS)"
+fi
+echo "Local Destination Directory (COI JSON)  = ${DESTINATIONDIR}"
+echo "Network Filename                        = ${NETWORKFILENAME}"
+echo "COI Root (in Docker container)          = ${COIROOT}"
+echo "CSS Root (in Docker container)          = ${CSSROOT}"
+echo "Docker Registry                         = ${DOCKERREGISTRY}"
+echo "Docker Image Name                       = ${DOCKERIMAGENAME}"
+echo "Docker Image Tag                        = ${DOCKERIMAGETAG}"
+echo ""
+
+# run without docker variables set to use the local docker daemon
+DOCKER_HOST= DOCKER_TLS_VERIFY= docker pull ${DOCKERREGISTRY}/$DOCKERIMAGENAME:${DOCKERIMAGETAG:-develop} | sed 's/^/# /'
+
+if [ -z "$SOURCEDIR" ]; then
+    DOCKER_HOST= DOCKER_TLS_VERIFY= docker run --user $(id -u):$(id -g) --rm -e CSSROOT=$CSSROOT -e COIROOT=$COIROOT -v $DESTINATIONDIR:$COIROOT ${DOCKERREGISTRY}/$DOCKERIMAGENAME:${DOCKERIMAGETAG:-develop} -network $NETWORKFILENAME -data $CSSROOT -outputDir $COIROOT
+else
+    DOCKER_HOST= DOCKER_TLS_VERIFY= docker run --user $(id -u):$(id -g) --rm -e CSSROOT=$CSSROOT -e COIROOT=$COIROOT -v $SOURCEDIR:$CSSROOT -v $DESTINATIONDIR:$COIROOT ${DOCKERREGISTRY}/$DOCKERIMAGENAME:${DOCKERIMAGETAG:-develop} -network $NETWORKFILENAME -data $CSSROOT -outputDir $COIROOT
+fi;
+
+echo ""
+echo "* Conversion Process Finished *"
+echo ""

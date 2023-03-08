@@ -1,0 +1,24 @@
+{
+    "mediumVelocities": {
+        "P": 5.8,
+        "S": 3.35
+    },
+    "invalidPhases": [
+        "L",
+        "LQ",
+        "LR",
+        "G",
+        "H",
+        "HPg",
+        "HSg",
+        "HRg",
+        "I",
+        "IPg",
+        "ISg",
+        "IRg",
+        "T",
+        "TPg",
+        "TSg",
+        "TRg"
+    ]
+}

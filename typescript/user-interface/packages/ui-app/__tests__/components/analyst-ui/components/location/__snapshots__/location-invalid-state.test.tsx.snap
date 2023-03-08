@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Location invalid state tests Renders invalid state for no event opened 1`] = `
+<Blueprint4.NonIdealState
+  action={null}
+  description="Select an event to refine location"
+  title="No undo/redo history available"
+/>
+`;
+
+exports[`Location invalid state tests Renders invalid state for no events loaded 1`] = `
+<Blueprint4.NonIdealState
+  action={
+    <Blueprint4.Spinner
+      intent="primary"
+    />
+  }
+  description="Events..."
+  title="Loading:"
+/>
+`;
+
+exports[`Location invalid state tests Renders invalid state for no open interval 1`] = `
+<Blueprint4.NonIdealState
+  action={null}
+  description="Open interval to load events"
+  title="No events loaded"
+/>
+`;
+
+exports[`Location invalid state tests Renders invalid state for no sds 1`] = `
+<Blueprint4.NonIdealState
+  action={
+    <Blueprint4.Spinner
+      intent="primary"
+    />
+  }
+  description="Signal Detections..."
+  title="Loading:"
+/>
+`;

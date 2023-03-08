@@ -1,0 +1,40 @@
+{
+    "name": "cascade-filter-3",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "name",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "Cascade Filter 3"
+            ]
+        }
+    ],
+    "parameters": {
+	    "type": "CascadeFilterDescription",
+        "comments": "Cascade Filter 3 comments",
+		"filterDescriptions": [
+            {
+				"$ref=global.filter-description": [{
+						"criterion": "name",
+						"value": "HAM FIR BP 0.70-2.00 Hz Description"
+				}]
+			},
+            {
+                "$ref=global.filter-description": [{
+                        "criterion": "name",
+                        "value": "HAM FIR BP 1.00-5.00 Hz Description"
+                }]
+            }
+
+        ],
+		"parameters": {
+            "sampleRateHz": 20.0,
+			"sampleRateToleranceHz": 0.05,
+			"groupDelaySec": "PT1.2S"
+		}
+    }
+}

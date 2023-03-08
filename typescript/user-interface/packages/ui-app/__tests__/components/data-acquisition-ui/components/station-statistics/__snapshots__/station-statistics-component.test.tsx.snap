@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Station Statistics Component can shallow render 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "getServerState": undefined,
+      "store": Object {
+        "@@observable": [Function],
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "subscription": Object {
+        "addNestedSub": [Function],
+        "getListeners": [Function],
+        "handleChangeWrapper": [Function],
+        "isSubscribed": [Function],
+        "notifyNestedSubs": [Function],
+        "trySubscribe": [Function],
+        "tryUnsubscribe": [Function],
+      },
+    }
+  }
+>
+  <StationStatisticsComponent
+    acknowledgeStationsByName={[MockFunction]}
+    glContainer={
+      Object {
+        "close": [MockFunction],
+        "emit": [MockFunction],
+        "extendState": [MockFunction],
+        "getElement": [MockFunction],
+        "getState": [MockFunction],
+        "height": 500,
+        "hide": [MockFunction],
+        "isHidden": false,
+        "layoutManager": undefined,
+        "off": [MockFunction],
+        "on": [MockFunction],
+        "parent": undefined,
+        "setSize": [MockFunction],
+        "setState": [MockFunction],
+        "setTitle": [MockFunction],
+        "show": [MockFunction],
+        "tab": undefined,
+        "title": "container-title",
+        "trigger": [MockFunction],
+        "unbind": [MockFunction],
+        "width": 1000,
+      }
+    }
+    saveStationGroupSohStatus={[MockFunction]}
+    selectedStationIds={
+      Array [
+        "A",
+      ]
+    }
+    setSelectedStationIds={[MockFunction]}
+    sohConfigurationQuery={
+      Object {
+        "currentData": undefined,
+        "data": Object {
+          "acknowledgementQuietMs": 300000,
+          "availableQuietTimesMs": Array [
+            300000,
+            900000,
+            3600000,
+            86400000,
+            604800000,
+          ],
+          "displayedStationGroups": Array [
+            "ALL_1",
+            "ALL_2",
+            "A_TO_H",
+            "I_TO_Z",
+            "EurAsia",
+            "OthCont",
+            "IMS_Sta",
+            "CD1.1",
+            "CD1.0",
+            "MiniSD",
+            "GSE",
+            "Primary",
+            "Second",
+            "AuxFast",
+            "AuxDel",
+            "SEISMIC",
+            "INFRA",
+            "HYDRO",
+          ],
+          "historicalSamplesPerChannel": 50000,
+          "maxHistoricalQueryIntervalSizeMs": 432000000,
+          "redisplayPeriodMs": 5000,
+          "reprocessingPeriodSecs": 20,
+          "rollupStationSohTimeToleranceMs": 600000,
+          "sohHistoricalTimesMs": Array [
+            21600000,
+            43200000,
+            86400000,
+          ],
+          "sohStationStaleMs": 300000,
+        },
+        "endpointName": undefined,
+        "error": undefined,
+        "fulfilledTimeStamp": undefined,
+        "isError": false,
+        "isFetching": false,
+        "isLoading": false,
+        "isSuccess": true,
+        "isUninitialized": true,
+        "originalArgs": undefined,
+        "requestId": undefined,
+        "startedTimeStamp": undefined,
+        "status": undefined,
+      }
+    }
+    sohStationAndGroupStatusQuery={
+      Object {
+        "loading": false,
+        "stationAndStationGroupSoh": Object {
+          "stationSoh": Array [
+            Object {
+              "stationName": "A",
+            },
+          ],
+        },
+      }
+    }
+    sohStatus={
+      Object {
+        "loading": false,
+        "stationAndStationGroupSoh": Object {
+          "stationSoh": Array [
+            Object {
+              "channelSohs": Array [
+                Object {
+                  "allSohMonitorValueAndStatuses": Array [
+                    Object {
+                      "contributing": false,
+                      "hasUnacknowledgedChanges": false,
+                      "monitorType": "ENV_ZEROED_DATA",
+                      "quietUntilMs": 1,
+                      "status": "GOOD",
+                      "thresholdBad": 10,
+                      "thresholdMarginal": 1,
+                      "value": 1,
+                      "valuePresent": true,
+                    },
+                  ],
+                  "channelName": "AAA111",
+                  "channelSohStatus": "GOOD",
+                },
+              ],
+              "stationName": "A",
+            },
+          ],
+        },
+      }
+    }
+  />
+</ContextProvider>
+`;

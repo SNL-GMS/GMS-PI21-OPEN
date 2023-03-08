@@ -1,0 +1,52 @@
+{
+  "compilerOptions": {
+    "module": "ES2015",
+    "target": "ES2015",
+    "composite": true,
+    "jsx": "react",
+    "declaration": true,
+    "declarationMap": true,
+    "allowJs": false,
+    "removeComments": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strictBindCallApply": true,
+    "strictNullChecks": false,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": false,
+    "resolveJsonModule": true,
+    "noImplicitReturns": true,
+    "importsNotUsedAsValues": "error",
+    "suppressImplicitAnyIndexErrors": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "pretty": true,
+    "moduleResolution": "node",
+    "lib": ["ES2020", "DOM", "DOM.Iterable", "ScriptHost"],
+    "plugins": [
+      {
+        "name": "typescript-eslint-language-service"
+      }
+    ],
+    "types": ["node", "jest"],
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "preserveSymlinks": true
+  },
+  "exclude": [
+    ".vscode",
+    "build",
+    "config",
+    "coverage",
+    "dist",
+    "docs",
+    "nginx",
+    "node_modules",
+    "resources",
+    "webpack-config"
+  ]
+}

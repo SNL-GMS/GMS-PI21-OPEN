@@ -1,0 +1,16 @@
+I07H1  BDF       2000133     1985  2286324 n       0.0000   -1.0   -1.0 0.01_to_5_Hz_infrasound_micropressure              20030730 12:00:00
+I07H1  LDA       2013143     4712  2286324 n       0.0000   -1.0   -1.0 Absolute_barometric_pressure                       20130805 12:00:00
+I07H1  LKO       2013143     4713  2286324 n       0.0000   -1.0   -1.0 External_temperature                               20130805 12:00:00
+I07H1  LWD       2013143     4714  2286324 n       0.0000   -1.0   -1.0 Wind_direction                                     20130805 12:00:00
+I07H1  LWS       2013143     4715  2286324 n       0.0000   -1.0   -1.0 Wind_speed                                         20130805 12:00:00
+I07H2  BDF       2000133     1986  2286324 n       0.0000   -1.0   -1.0 0.01_to_5_Hz_infrasound_micropressure              20030730 12:00:00
+I07H3  BDF       2000133     1987  2286324 n       0.0000   -1.0   -1.0 0.01_to_5_Hz_infrasound_micropressure              20030730 12:00:00
+I07H4  BDF       2000133     1988  2286324 n       0.0000   -1.0   -1.0 0.01_to_5_Hz_infrasound_micropressure              20030730 12:00:00
+I07H5  BDF       2013143     4716  2286324 n       0.0000   -1.0   -1.0 0.01_to_5_Hz_infrasound_micropressure              20130805 12:00:00
+I07H6  BDF       2013143     4717  2286324 n       0.0000   -1.0   -1.0 0.01_to_5_Hz_infrasound_micropressure              20130805 12:00:00
+I07H7  BDF       2013143     4718  2286324 n       0.0000   -1.0   -1.0 0.01_to_5_Hz_infrasound_micropressure              20130805 12:00:00
+I07H8  BDF       2013143     4719  2286324 n       0.0000   -1.0   -1.0 0.01_to_5_Hz_infrasound_micropressure              20130805 12:00:00
+I07L1  BDF       2000133     1989  2013142 n       0.0000   -1.0   -1.0 0.01_to_5_Hz_infrasound_micropressure              20130805 12:00:00
+I07L2  BDF       2000133     1990  2013142 n       0.0000   -1.0   -1.0 0.01_to_5_Hz_infrasound_micropressure              20130805 12:00:00
+I07L3  BDF       2000133     1991  2013142 n       0.0000   -1.0   -1.0 0.01_to_5_Hz_infrasound_micropressure              20130805 12:00:00
+I07L4  BDF       2000133     1992  2013142 n       0.0000   -1.0   -1.0 0.01_to_5_Hz_infrasound_micropressure              20130805 12:00:00

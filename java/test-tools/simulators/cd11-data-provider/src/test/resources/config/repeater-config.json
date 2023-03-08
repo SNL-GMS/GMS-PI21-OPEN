@@ -1,0 +1,19 @@
+{
+  "providerInputMode":"kafka",
+
+  "kafkaConfig": {
+    "applicationId": "repeater",
+    "sourceTopic": "repeater.rsdf"
+  },
+
+  "connectionRetryConfig": {
+    "initialDelay": 5,
+    "maxDelay": 30,
+    "delayUnits": "SECONDS",
+    "maxAttempts": 5
+  },
+
+  "connectionFrameCreator": "TEST",
+  "connectionFrameDestination": "IDC"
+}
+

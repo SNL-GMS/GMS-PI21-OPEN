@@ -1,0 +1,26 @@
+{
+    "name": "4.09-4.39-4-br-non-causal",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "name",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "4.09 4.39 4 BR non-causal"
+            ]
+        }
+    ],
+    "parameters": {
+        "name": "4.09 4.39 4 BR non-causal",
+        "comments": "Butterworth IIR band-reject, 4.09-4.39 Hz, order 4, non-causal",
+        "filterDescription": {
+            "$ref=global.filter-description":[{
+                "criterion": "name",
+                "value": "4.09 4.39 4 BR non-causal Description"
+            }]
+        }
+    }
+}

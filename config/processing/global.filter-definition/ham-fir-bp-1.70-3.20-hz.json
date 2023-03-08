@@ -1,0 +1,26 @@
+{
+    "name": "ham-fir-bp-1.70-3.20-hz",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "name",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "HAM FIR BP 1.70-3.20 Hz"
+            ]
+        }
+    ],
+    "parameters": {
+        "name": "HAM FIR BP 1.70-3.20 Hz",
+        "comments": "Filter 11 comments",
+        "filterDescription": {
+            "$ref=global.filter-description":[{
+                "criterion": "name",
+                "value": "HAM FIR BP 1.70-3.20 Hz Description"
+            }]
+        }
+    }
+}

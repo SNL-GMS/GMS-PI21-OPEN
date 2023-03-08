@@ -1,0 +1,7 @@
+@mixin withScrollSnap($orientation: y, $type: mandatory, $align-to: start, $scroll-padding: 0) {
+  scroll-snap-type: $orientation $type;
+  scroll-padding: $scroll-padding;
+  & > * {
+    scroll-snap-align: $align-to;
+  }
+}

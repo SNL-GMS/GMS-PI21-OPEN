@@ -1,0 +1,14 @@
+{
+  "name": "station-group-names-default",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "stationGroupNames": [
+      "GroupA",
+      "GroupB"
+    ]
+  }
+}

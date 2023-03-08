@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LabelValueOverflowMenuToolbarItem LabelValueOverflowMenuToolbarItem renders 1`] = `
+<div>
+  <li
+    class=""
+  >
+    <a
+      class="bp4-menu-item bp4-popover-dismiss"
+      tabindex="0"
+      title="Hello label"
+    >
+      <div
+        class="bp4-fill bp4-text-overflow-ellipsis"
+      >
+        label:  
+      </div>
+    </a>
+  </li>
+</div>
+`;
+
+exports[`LabelValueOverflowMenuToolbarItem LabelValueOverflowMenuToolbarItem renders empty due to incorrect type 1`] = `<div />`;

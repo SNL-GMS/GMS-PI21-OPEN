@@ -1,0 +1,72 @@
+:root {
+  --file-input-button: 15rem;
+}
+
+html {
+  font-size: 16px;
+}
+
+.App {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.App-logo {
+  height: 40px;
+  padding-left: 0.5rem;
+}
+
+.App-header {
+  background-color: rgb(6, 26, 33);
+  padding: 0.25em;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.App-title {
+  font-size: 1.25em;
+  padding-left: 1rem;
+}
+
+.nav--right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-self: flex-end;
+  margin-left: auto;
+}
+
+/* Add nav element to get higher specificity than material styles */
+nav.nav--right > * {
+  margin-left: 0.5rem;
+}
+
+/** Transitions **/
+
+.fadeIn {
+  animation: 0.08s fadeIn forwards;
+}
+
+.fadeOut {
+  animation: 0.08s fadeOut forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

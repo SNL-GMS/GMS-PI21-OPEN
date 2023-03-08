@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="jsonConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+    </appender>
+
+    <root level="${LOGGING_LEVEL_ROOT:-info}">
+        <appender-ref ref="jsonConsoleAppender"/>
+    </root>
+
+    <logger name="gms.shared.frameworks.osd.repository" level="${LOGGING_LEVEL_OSD:-info}"/>
+
+</configuration>

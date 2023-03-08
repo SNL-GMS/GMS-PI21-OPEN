@@ -1,0 +1,114 @@
+$critical-selector: '[data-severity*=CRITICAL]';
+$warning-selector: '[data-severity*=WARNING]';
+$info-selector: '[data-severity*=INFO]';
+
+@mixin createColoredCount($selector, $color) {
+  #{$selector} &__count {
+    color: lighten($color, 10%);
+  }
+}
+
+.system-message-display {
+  @include flexColumn;
+  width: 100%;
+  height: 100%;
+  .toolbar {
+    margin-bottom: 0.5em;
+  }
+}
+
+.system-message-table {
+  @include flexColumn;
+  width: 100%;
+  height: 100%;
+  background-color: var(--gms-prominent-background, $gms-prominent-background);
+  .system-cell {
+    &#{$critical-selector} {
+      background-color: var(--system-message-critical-color, $system-message-critical-color);
+    }
+    &#{$warning-selector} {
+      background-color: var(--system-message-warning-color, $system-message-warning-color);
+    }
+    &#{$info-selector} {
+      background-color: var(--system-message-info-color, $system-message-info-color);
+    }
+  }
+  &__button {
+    &--floating {
+      position: absolute;
+      left: 50%;
+      bottom: 3rem;
+      transform: translate3D(-50%, -50%, 0);
+    }
+    &--desc {
+      bottom: auto;
+      top: 9rem;
+    }
+  }
+}
+
+.system-message-summary {
+  @include centerChildren;
+  background: var(--gms-prominent-background, $gms-prominent-background);
+  height: 100%;
+  padding: 0 1em;
+  border-radius: $rounded-rectangle-radius;
+  font-size: 1rem;
+
+  @include createColoredCount($critical-selector, $gms-strong-warning);
+  @include createColoredCount($warning-selector, $gms-warning);
+  @include createColoredCount($info-selector, $gms-good-count);
+
+  &__entry {
+    @include centerChildren('vertical');
+    cursor: pointer;
+    & + & {
+      margin-left: 1.5em;
+    }
+    &--disabled .system-message-summary__count {
+      color: var(--gms-soft, $gms-soft);
+    }
+  }
+
+  &__count {
+    font-family: $gms-mono;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 0.5ch;
+    &--prefix {
+      opacity: 0.33;
+    }
+    &--main {
+      opacity: 1;
+    }
+  }
+}
+
+/// AG Grid Overrides
+.system-message-table {
+  .ag-body-viewport,
+  .ag-root-wrapper {
+    scroll-behavior: smooth;
+  }
+  .ag-row .ag-cell {
+    background-color: var(
+      system-message-prominent-background,
+      var(--gms-prominent-background, $gms-prominent-background)
+    );
+    border-left: 1px solid var(--gms-prominent-background, $gms-prominent-background);
+    border-right: 1px solid var(--gms-prominent-background, $gms-prominent-background);
+  }
+  .ag-header-cell {
+    padding: 0 10px;
+    background-color: var(--gms-popover-background, $gms-popover-background);
+    .ag-header-cell-text {
+      color: var(--gms-main, $gms-main);
+    }
+  }
+  .ag-header-cell-label,
+  .ag-header-cell-label {
+    padding-left: 7px;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}

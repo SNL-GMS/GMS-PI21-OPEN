@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Daily boundary indicator should match snapshot with large height 1`] = `
+<div>
+  <div
+    class="workflow-day-boundary-container"
+    style="width: 2880.3333333333335px; height: 500px;"
+  >
+    <div
+      class="workflow-day-divider"
+      style="left: 0px; height: 100%;"
+    />
+    <div
+      class="workflow-day-divider"
+      style="left: 2880px; height: 100%;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Daily boundary indicator should match snapshot with standard props 1`] = `
+<div>
+  <div
+    class="workflow-day-boundary-container"
+    style="width: 2880.3333333333335px; height: 300px;"
+  >
+    <div
+      class="workflow-day-divider"
+      style="left: 0px; height: 100%;"
+    />
+    <div
+      class="workflow-day-divider"
+      style="left: 2880px; height: 100%;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Daily boundary indicator should match snapshot with updated height and time 1`] = `
+<div>
+  <div
+    class="workflow-day-boundary-container"
+    style="width: 14401.666666666666px; height: 600px;"
+  >
+    <div
+      class="workflow-day-divider"
+      style="left: 0px; height: 100%;"
+    />
+    <div
+      class="workflow-day-divider"
+      style="left: 2880px; height: 100%;"
+    />
+    <div
+      class="workflow-day-divider"
+      style="left: 5760px; height: 100%;"
+    />
+    <div
+      class="workflow-day-divider"
+      style="left: 8639.999999999998px; height: 100%;"
+    />
+    <div
+      class="workflow-day-divider"
+      style="left: 11520px; height: 100%;"
+    />
+    <div
+      class="workflow-day-divider"
+      style="left: 14399.999999999998px; height: 100%;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Daily boundary indicator should match snapshot with updated large time range 1`] = `
+<div>
+  <div
+    class="workflow-day-boundary-container"
+    style="width: 11521.333333333334px; height: 500px;"
+  >
+    <div
+      class="workflow-day-divider"
+      style="left: 0px; height: 100%;"
+    />
+    <div
+      class="workflow-day-divider"
+      style="left: 2880px; height: 100%;"
+    />
+    <div
+      class="workflow-day-divider"
+      style="left: 5760px; height: 100%;"
+    />
+    <div
+      class="workflow-day-divider"
+      style="left: 8640px; height: 100%;"
+    />
+    <div
+      class="workflow-day-divider"
+      style="left: 11520px; height: 100%;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Daily boundary indicator should match snapshot with updated small time range 1`] = `
+<div>
+  <div
+    class="workflow-day-boundary-container"
+    style="width: 2880.5px; height: 500px;"
+  >
+    <div
+      class="workflow-day-divider"
+      style="left: 0px; height: 100%;"
+    />
+    <div
+      class="workflow-day-divider"
+      style="left: 2880px; height: 100%;"
+    />
+  </div>
+</div>
+`;

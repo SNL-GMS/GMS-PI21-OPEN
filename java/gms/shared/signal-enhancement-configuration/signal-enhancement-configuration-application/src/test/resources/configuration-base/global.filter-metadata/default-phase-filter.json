@@ -1,0 +1,26 @@
+{
+    "name": "default-phase-filter",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "phase",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "S"
+            ]
+        }
+    ],
+    "parameters": {
+        "filterDefinitions": [
+            {
+                "$ref=global.filter-definition": [{
+                    "criterion": "name",
+                    "value": "HAM FIR BP 1.50-3.00 Hz"
+                }]
+            }
+        ]
+    }
+}

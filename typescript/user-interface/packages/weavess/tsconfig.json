@@ -1,0 +1,35 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "typeRoots": ["@types", "./@types", "./node_modules/@types", "../../node_modules/@types"],
+    "baseUrl": ".",
+    "noEmit": true,
+    "outDir": "./lib",
+    "paths": {
+      "@gms/common-util": ["../common-util/src/ts/common-util.ts"],
+      "@gms/common-util/lib/*": ["../common-util/src/ts/*"],
+      "@gms/ui-util": ["../ui-util/src/ts/ui-util.ts"],
+      "@gms/ui-util/lib/*": ["../ui-util/src/ts/*"],
+      "@gms/weavess-core": ["../weavess-core/src/ts/weavess-core.ts"],
+      "@gms/weavess-core/lib/*": ["../weavess-core/src/ts/*"],
+      "@gms/webpack-config": ["../webpack-config/src/ts/webpack-config.ts"],
+      "@gms/webpack-config/lib/*": ["../webpack-config/src/ts/*"]
+    }
+  },
+  "references": [
+    {
+      "path": "../common-util/tsconfig-build.json"
+    },
+    {
+      "path": "../ui-util/tsconfig-build.json"
+    },
+    {
+      "path": "../weavess-core/tsconfig-build.json"
+    },
+    {
+      "path": "../webpack-config"
+    }
+  ],
+  "include": ["src/**/*", "__tests__/**/*", "__mocks__/**/*"]
+}

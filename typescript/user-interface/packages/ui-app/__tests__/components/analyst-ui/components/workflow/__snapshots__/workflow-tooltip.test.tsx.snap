@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Workflow Tooltip can handle undefined interval with tooltip 1`] = `
+<div>
+   
+</div>
+`;
+
+exports[`Workflow Tooltip matches tooltip panel snapshot 1`] = `
+<div>
+  <div
+    class="workflow-tooltip"
+    data-cy="workflow-tooltip"
+    tabindex="0"
+  />
+</div>
+`;
+
+exports[`Workflow Tooltip matches tooltip panel snapshot 2`] = `
+<div>
+  <div
+    class="workflow-tooltip"
+    data-cy="workflow-tooltip"
+    tabindex="0"
+  >
+    <div
+      class="label-value-container workflow-tooltip-container"
+    >
+      <div
+        class="label-value__label"
+        data-cy="status-label"
+      >
+        Status: 
+      </div>
+      <div
+        class="label-value__value"
+        data-cy="status-value"
+        title="Status"
+      >
+        IN_PROGRESS 
+      </div>
+    </div>
+    <div
+      class="label-value-container workflow-tooltip-container"
+    >
+      <div
+        class="label-value__label"
+        data-cy="active-analysts-label"
+      >
+        Active Analysts: 
+      </div>
+      <div
+        class="label-value__value"
+        data-cy="active-analysts-value"
+        title="Active Analysts"
+      >
+        analyst 1, analyst 2
+      </div>
+    </div>
+    <div
+      class="label-value-container workflow-tooltip-container"
+    >
+      <div
+        class="label-value__label"
+        data-cy="start-time-label"
+      >
+        Start Time: 
+      </div>
+      <div
+        class="label-value__value label-value__value--numeric"
+        data-cy="start-time-value"
+        title="Start Time"
+      >
+        500
+      </div>
+    </div>
+    <div
+      class="label-value-container workflow-tooltip-container"
+    >
+      <div
+        class="label-value__label"
+        data-cy="end-time-label"
+      >
+        End Time: 
+      </div>
+      <div
+        class="label-value__value label-value__value--numeric"
+        data-cy="end-time-value"
+        title="End Time"
+      >
+        600
+      </div>
+    </div>
+    <div
+      class="label-value-container workflow-tooltip-container"
+    >
+      <div
+        class="label-value__label"
+        data-cy="last-modified-label"
+      >
+        Last Modified: 
+      </div>
+      <div
+        class="label-value__value label-value__value--numeric"
+        data-cy="last-modified-value"
+        title="Last Modified"
+      >
+        1970-01-01 00:00:00
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Workflow Tooltip matches tooltip snapshot 1`] = `
+<div>
+  <div
+    class="bp4-popover-wrapper core-tooltip"
+  >
+    <div
+      aria-haspopup="true"
+      class="bp4-popover-target core-tooltip__target"
+    >
+      <span
+        class=""
+        tabindex="0"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Workflow Tooltip matches tooltip snapshot 2`] = `
+<div>
+  <div
+    class="bp4-popover-wrapper core-tooltip"
+  >
+    <div
+      aria-haspopup="true"
+      class="bp4-popover-target core-tooltip__target"
+    >
+      <div
+        class=""
+        tabindex="0"
+      >
+        content
+      </div>
+    </div>
+  </div>
+</div>
+`;

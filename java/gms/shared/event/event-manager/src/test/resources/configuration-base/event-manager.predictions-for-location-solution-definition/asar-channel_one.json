@@ -1,0 +1,38 @@
+{
+  "name": "predictions-for-location-solution-definition",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "stationName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "ASAR"
+      ]
+    },
+    {
+      "constraintType": "STRING",
+      "criterion": "channelName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "CHANNEL_ONE"
+      ]
+    }
+  ],
+  "parameters": {
+    "featurePredictionsDefinitions": [
+      {
+        "earthModel": "Iaspei",
+        "predictionTypes": [
+          "EMERGENCE_ANGLE"
+        ],
+        "correctionDefinitions": []
+      }
+    ]
+  }
+}

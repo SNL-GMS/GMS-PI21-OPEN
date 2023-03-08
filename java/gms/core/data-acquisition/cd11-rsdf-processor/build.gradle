@@ -1,0 +1,24 @@
+plugins {
+    id('application')
+    alias(libs.plugins.com.palantir.docker)
+}
+
+mainClassName = 'gms.dataacquisition.cd11.rsdf.processor.Cd11RsdfProcessorService'
+
+dependencies {
+    implementation project(':cd11-common')
+    implementation project(':cd11-parser')
+    implementation project(':data-acquisition-receiver-api')
+    implementation project(':frameworks-control')
+    implementation project(':frameworks-osd-commonobjects')
+    implementation project(':kafka-utilities')
+
+    // Third-party dependencies
+    implementation libs.ch.qos.logback.logback.classic
+    implementation libs.com.google.guava.guava
+    implementation libs.io.projectreactor.reactor.core
+    implementation libs.io.projectreactor.kafka.reactor.kafka
+    implementation libs.net.logstash.logback.logstash.logback.encoder
+
+    testImplementation libs.io.projectreactor.reactor.test
+}

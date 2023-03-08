@@ -1,0 +1,14 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+    implementation project(':spring-framework-utilities')
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+    implementation libs.org.springframework.boot.spring.boot.starter
+
+    testImplementation libs.org.springframework.boot.spring.boot.starter.test
+    testImplementation libs.org.junit.jupiter.junit.jupiter.api
+
+
+}

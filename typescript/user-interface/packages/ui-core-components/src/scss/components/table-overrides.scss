@@ -1,0 +1,44 @@
+.bp4-dark .bp4-table-column-headers .bp4-table-header {
+  min-height: 40px;
+  vertical-align: top;
+  font-size: 1.25em;
+  line-height: 40px;
+}
+
+.disable-alternating-row-colors {
+  .ag-theme-dark .ag-row-odd {
+    background-color: transparent;
+  }
+
+  .ag-row:nth-child(even) .ui-grid-cell,
+  .ag-row:nth-child(even),
+  .ag-theme-dark .ag-row-even {
+    background-color: transparent !important;
+    .ag-cell {
+      background-color: transparent !important;
+    }
+  }
+}
+
+.ag-cell {
+  .percent-bar {
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transition: transform ease-in-out $animation-duration;
+  }
+}
+
+.with-separated-rows .ag-row {
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  background-color: transparent !important;
+  .ag-cell {
+    padding: 0;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+  }
+}

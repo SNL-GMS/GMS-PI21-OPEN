@@ -1,0 +1,400 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weavess Empty Renderer renders 1`] = `
+<div>
+  <div
+    class="y-axis-container"
+    style="border-left: solid; border-width: 3px; height: 100%; position: absolute; width: 100%;"
+  >
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 1.8036072144288577%; transform: translate(0, -50%);"
+    >
+      -
+      20
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 3.807615230460922%; transform: translate(0, -50%);"
+    >
+      -
+      40
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 5.811623246492986%; transform: translate(0, -50%);"
+    >
+      -
+      60
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 7.81563126252505%; transform: translate(0, -50%);"
+    >
+      -
+      80
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 9.819639278557114%; transform: translate(0, -50%);"
+    >
+      -
+      100
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 11.823647294589179%; transform: translate(0, -50%);"
+    >
+      -
+      120
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 13.827655310621243%; transform: translate(0, -50%);"
+    >
+      -
+      140
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 15.831663326653308%; transform: translate(0, -50%);"
+    >
+      -
+      160
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 17.835671342685373%; transform: translate(0, -50%);"
+    >
+      -
+      180
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 19.839679358717436%; transform: translate(0, -50%);"
+    >
+      -
+      200
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 21.8436873747495%; transform: translate(0, -50%);"
+    >
+      -
+      220
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 23.847695390781563%; transform: translate(0, -50%);"
+    >
+      -
+      240
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 25.851703406813627%; transform: translate(0, -50%);"
+    >
+      -
+      260
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 27.855711422845694%; transform: translate(0, -50%);"
+    >
+      -
+      280
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 29.859719438877757%; transform: translate(0, -50%);"
+    >
+      -
+      300
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 31.86372745490982%; transform: translate(0, -50%);"
+    >
+      -
+      320
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 33.86773547094189%; transform: translate(0, -50%);"
+    >
+      -
+      340
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 35.87174348697395%; transform: translate(0, -50%);"
+    >
+      -
+      360
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 37.875751503006015%; transform: translate(0, -50%);"
+    >
+      -
+      380
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 39.879759519038075%; transform: translate(0, -50%);"
+    >
+      -
+      400
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 41.88376753507014%; transform: translate(0, -50%);"
+    >
+      -
+      420
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 43.88777555110221%; transform: translate(0, -50%);"
+    >
+      -
+      440
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 45.89178356713427%; transform: translate(0, -50%);"
+    >
+      -
+      460
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 47.895791583166336%; transform: translate(0, -50%);"
+    >
+      -
+      480
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 49.899799599198396%; transform: translate(0, -50%);"
+    >
+      -
+      500
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 51.90380761523046%; transform: translate(0, -50%);"
+    >
+      -
+      520
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 53.90781563126253%; transform: translate(0, -50%);"
+    >
+      -
+      540
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 55.91182364729459%; transform: translate(0, -50%);"
+    >
+      -
+      560
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 57.91583166332666%; transform: translate(0, -50%);"
+    >
+      -
+      580
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 59.91983967935872%; transform: translate(0, -50%);"
+    >
+      -
+      600
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 61.92384769539078%; transform: translate(0, -50%);"
+    >
+      -
+      620
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 63.92785571142285%; transform: translate(0, -50%);"
+    >
+      -
+      640
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 65.93186372745491%; transform: translate(0, -50%);"
+    >
+      -
+      660
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 67.93587174348697%; transform: translate(0, -50%);"
+    >
+      -
+      680
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 69.93987975951904%; transform: translate(0, -50%);"
+    >
+      -
+      700
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 71.9438877755511%; transform: translate(0, -50%);"
+    >
+      -
+      720
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 73.94789579158316%; transform: translate(0, -50%);"
+    >
+      -
+      740
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 75.95190380761524%; transform: translate(0, -50%);"
+    >
+      -
+      760
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 77.9559118236473%; transform: translate(0, -50%);"
+    >
+      -
+      780
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 79.95991983967936%; transform: translate(0, -50%);"
+    >
+      -
+      800
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 81.96392785571143%; transform: translate(0, -50%);"
+    >
+      -
+      820
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 83.96793587174349%; transform: translate(0, -50%);"
+    >
+      -
+      840
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 85.97194388777555%; transform: translate(0, -50%);"
+    >
+      -
+      860
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 87.97595190380761%; transform: translate(0, -50%);"
+    >
+      -
+      880
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 89.97995991983969%; transform: translate(0, -50%);"
+    >
+      -
+      900
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 91.98396793587175%; transform: translate(0, -50%);"
+    >
+      -
+      920
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 93.9879759519038%; transform: translate(0, -50%);"
+    >
+      -
+      940
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 95.99198396793588%; transform: translate(0, -50%);"
+    >
+      -
+      960
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 97.99599198396794%; transform: translate(0, -50%);"
+    >
+      -
+      980
+    </div>
+    <div
+      style="left: 4%; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 6%;"
+    >
+      phase 1
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Weavess Empty Renderer uses an interval of 5 1`] = `
+<div>
+  <div
+    class="y-axis-container"
+    style="border-left: solid; border-width: 3px; height: 100%; position: absolute; width: 100%;"
+  >
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 25%; transform: translate(0, -50%);"
+    >
+      -
+      85
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 50%; transform: translate(0, -50%);"
+    >
+      -
+      90
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 75%; transform: translate(0, -50%);"
+    >
+      -
+      95
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 100%; transform: translate(0, -50%);"
+    >
+      -
+      100
+    </div>
+    <div
+      style="left: 4%; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 6%;"
+    >
+      phase 1
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Weavess Empty Renderer uses an interval of 10 1`] = `
+<div>
+  <div
+    class="y-axis-container"
+    style="border-left: solid; border-width: 3px; height: 100%; position: absolute; width: 100%;"
+  >
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 16.666666666666668%; transform: translate(0, -50%);"
+    >
+      -
+      50
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 33.333333333333336%; transform: translate(0, -50%);"
+    >
+      -
+      60
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 50%; transform: translate(0, -50%);"
+    >
+      -
+      70
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 66.66666666666667%; transform: translate(0, -50%);"
+    >
+      -
+      80
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 83.33333333333334%; transform: translate(0, -50%);"
+    >
+      -
+      90
+    </div>
+    <div
+      style="left: -1px; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 100%; transform: translate(0, -50%);"
+    >
+      -
+      100
+    </div>
+    <div
+      style="left: 4%; position: absolute; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; top: 6%;"
+    >
+      phase 1
+    </div>
+  </div>
+</div>
+`;

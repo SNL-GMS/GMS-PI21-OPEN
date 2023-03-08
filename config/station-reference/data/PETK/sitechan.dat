@@ -1,0 +1,14 @@
+PEA0   SHZ       2006291     4830  2286324 n       0.0500   -1.0    0.0 short_period_vertical                              20070608 12:00:00
+PEA0B  BH1       2006291     4841  2286324 n       0.0500  330.6   90.0 broadband_horizontal_1                             20070608 12:00:00
+PEA0B  BH2       2006291     4842  2286324 n       0.0500   60.6   90.0 broadband_horizontal_2                             20070608 12:00:00
+PEA0B  BHZ       2006291     4840  2286324 n       0.0500   -1.0    0.0 broadband_vertical                                 20070608 12:00:00
+PEA1   SHZ       2006291     4831  2286324 n       0.0500   -1.0    0.0 short_period_vertical                              20070608 12:00:00
+PEA2   SHZ       2006291     4832  2286324 n       0.0500   -1.0    0.0 short_period_vertical                              20070608 12:00:00
+PEA3   SHZ       2006291     4833  2286324 n       0.0500   -1.0    0.0 short_period_vertical                              20070608 12:00:00
+PEB1   SHZ       2006291     4834  2286324 n       0.0500   -1.0    0.0 short_period_vertical                              20070608 12:00:00
+PEB2   SHZ       2006291     4835  2286324 n       0.0500   -1.0    0.0 short_period_vertical                              20070608 12:00:00
+PEB3   SHZ       2006291     4836  2286324 n       0.0500   -1.0    0.0 short_period_vertical                              20070608 12:00:00
+PEB4   SHZ       2006291     4837  2017305 n       0.0500   -1.0    0.0 short_period_vertical                              20171107 12:00:00
+PEB4   SHZ       2017306     4837  2286324 n       0.0400   -1.0    0.0 short_period_vertical                              20171107 12:00:00
+PEB5   SHZ       2006291     4838  2286324 n       0.0500   -1.0    0.0 short_period_vertical                              20070608 12:00:00
+PES2   SHZ       2006291     4839  2286324 n       0.0500   -1.0    0.0 short_period_vertical                              20070608 12:00:00

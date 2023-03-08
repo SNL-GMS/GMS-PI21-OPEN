@@ -1,0 +1,6 @@
+VAE    BHE       2000001     5238  2018073 n       0.0000   90.0   90.0 broad-band_east                                    20180725 12:00:00
+VAE    BHN       2000001     5237  2018073 n       0.0000    0.0   90.0 broad-band_north                                   20180725 12:00:00
+VAE    BHZ       2000001     5236  2018073 n       0.0000   -1.0    0.0 broad-band_vertical                                20180725 12:00:00
+VAE    HHE       2018074     8570  2286324 n       0.0000   90.0   90.0 High_broad_band_east                               20180725 12:00:00
+VAE    HHN       2018074     8569  2286324 n       0.0000    0.0   90.0 High_broad_band_north                              20180725 12:00:00
+VAE    HHZ       2018074     8568  2286324 n       0.0000   -1.0    0.0 High_broad_band_vertical                           20180725 12:00:00

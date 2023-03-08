@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "properties": {
+    "backOffDuration": {
+      "type": "string",
+      "minLength": 1
+    },
+    "calculationInterval": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sohMonitorTypesForRollup": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "isIncluded": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "goodThreshold": {
+            "type": [
+              "string",
+              "number"
+            ]
+          },
+          "marginalThreshold": {
+            "type": [
+              "string",
+              "number"
+            ]
+          },
+          "channelOverrides": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "isIncluded": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "backOffDuration",
+    "calculationInterval"
+  ]
+}

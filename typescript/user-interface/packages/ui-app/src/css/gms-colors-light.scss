@@ -1,0 +1,190 @@
+@import '@blueprintjs/core/lib/scss/variables.scss';
+@import '@gms/ui-core-components/src/scss/core-colors.scss';
+
+/**
+  These are the top-level colors for the application
+
+  These colors will eventually be customizable via themes.
+
+  Please place all colors used into this files, and be judicious in
+  defining new colors.
+*/
+/*
+  Colors used for essential UI text and chrome.
+
+  For now, their names refer to particular shades,
+  but as usage patterns develop they will be renamed by usage
+  "gms-heavy-border" / "gms-default" etc.
+*/
+
+// Primary text color used for UI elements and high-contrast text
+$gms-main: $black;
+// Color that is recessed from the background. Notable used as a table border
+$gms-recessed: $white;
+// Color that is prominent on dark backgrounds
+$gms-main-inverted: $white;
+// A prominent color used for important borders and text. Lower contrast than gms-main
+$gms-prominent: $gray2;
+// A softer color used for secondary borders and text. Lower contrast than gms-prominent
+$gms-soft: $gray5;
+// The color of panel backgrounds
+$gms-background: $light-gray5;
+// The color of more prominent backgrounds
+$gms-prominent-background: $light-gray4;
+// The color of popover backgrounds
+$gms-popover-background: $light-gray2;
+$gms-transparent: rgba(0, 0, 0, 0);
+$gms-scrollbar: $gray5;
+$gms-scrollbar-background: rgba(0, 0, 0, 0.15);
+$gms-table-header-background: $gray5;
+$gms-button: $gray5;
+$gms-button-hover: $gray4;
+$gms-dialog-background: $gms-prominent-background;
+
+$gms-grid-background: $core-grid-background;
+
+// label fill color for chart x tick tables when they are disabled or null
+$gms-chart-tick-label-disabled: $gray5;
+
+// Highlight for odd-indexed table cell
+$gms-table-highlight-odd-row: $gray5;
+// Highlight for even-indexed table cell
+$gms-table-highlight-even-row: $gray4;
+// Highlight for odd-indexed table cell that requires review
+$gms-table-requires-review-odd-row: $gold4;
+// Highlight for even-indexed table cell that requires review
+$gms-table-requires-review-even-row: $gold5;
+// Warning color for odd table rows
+$gms-table-warning-odd-row: $red2;
+// Warning color for even table rows
+$gms-table-warning-even-row: $red1;
+// Highlights for a selected table row
+$gms-table-selection: $blue1;
+// Blends highlight colors for selected, highlighted rows
+$gms-table-highlight-selected: mix($gms-table-highlight-odd-row, $gms-table-selection, 50%);
+// Blends highlight colors for selected warning rows
+$gms-table-warning-selected: mix($gms-table-warning-even-row, $gms-table-selection, 50%);
+// Blends highlight colors for selected warning rows
+$gms-table-requires-review-selected: mix(
+  $gms-table-requires-review-even-row,
+  $gms-table-selection,
+  50%
+);
+// Color used to indicate that data has changed but does not require review
+$gms-table-change-marker: $gold1;
+// Color used when a group of rows is selected
+$gms-table-subset-selected: $gray5;
+// Marks as requiring urgent attention or as being in conflict
+// Warning color for odd table rows
+$gms-table-warning-odd-row: $red2;
+// Warning color for even table rows
+$gms-table-warning-even-row: $red1;
+
+// Intent colors that span workspaces
+$gms-warning: $gold4;
+$gms-strong-warning: $red1;
+$gms-good: $forest1;
+$gms-input-highlight: $blue2;
+$gms-input-highlight-border: lighten($gms-input-highlight, 10%);
+$gms-non-contributing: $core-non-contributing;
+$gms-good-count: $core-prominent;
+
+// Semantic Colors
+// Analyst Workspace
+$analyst-open-event: $orange3;
+$analyst-unassociated: $red3;
+$analyst-to-work: $gms-main;
+$analyst-complete: $forest5;
+$analyst-requires-review: $gold4;
+$analyst-other: $white;
+
+//    Workflow
+$interval-in-progress-fill: $orange4;
+$interval-complete-fill: $green4;
+$interval-not-complete-fill: $orange2;
+$interval-not-started-fill: $gray3;
+$interval-skipped-fill: $dark-gray4;
+$interval-failed-fill: $red3;
+$workflow-day-divider: $gold4;
+$interval-activity-darken-cell-by: brightness(0.7);
+
+//    Waveform Display
+$waveform-interval-boundary: $forest4;
+$waveform-raw: $indigo3;
+$qc-analyst-defined: $forest3;
+$qc-channel-processing: $turquoise3;
+$qc-data-authentication: $indigo3;
+$qc-rejected: $red3;
+$qc-station-soh: $orange3;
+$qc-waveform-quality: $violet3;
+// Map
+$map-stations-unselected: $light-gray5;
+
+// Data Acq
+$data-acq-ok: $gms-good;
+$data-acq-warning: $gold4;
+$data-acq-strong-warning: $gms-warning;
+
+// Weavess
+$gms-weavess-borders: $gms-scrollbar;
+
+// Selection
+$gms-selection: lighten($gms-input-highlight, 10%);
+
+// System message colors
+$system-message-critical-color: #5c363d;
+$system-message-warning-color: #615e3a;
+$system-message-info-color: $gms-popover-background;
+
+// the :export directive tells webpack to handle these appropriately when imported
+// i.e. `import * as variables from 'variables.scss'`;
+// then you can access `gms-main` by variables['gms-main']
+:export {
+  gmsMain: $gms-main;
+  gmsRecessed: $gms-recessed;
+  gmsProminent: $gms-prominent;
+  gmsSoft: $gms-soft;
+  gmsBackground: $gms-background;
+  gmsProminentBackground: $gms-prominent-background;
+
+  gmsOk: $gms-good;
+  gmsWarning: $gms-warning;
+  gmsStrongWarning: $gms-strong-warning;
+
+  gmsSelection: $gms-selection;
+
+  gmsChartTickLabelDisabled: $gms-chart-tick-label-disabled;
+  gmsTableHighlightOddRow: $gms-table-highlight-odd-row;
+  gmsTableHighlightEvenRow: $gms-table-highlight-even-row;
+  gmsTableWarningOddRow: $gms-table-warning-odd-row;
+  gmsTableWarningEvenRow: $gms-table-warning-even-row;
+  gmsTableRequiresReviewOddRow: $gms-table-requires-review-odd-row;
+  gmsTableRequiresReviewEvenRow: $gms-table-requires-review-even-row;
+  gmsInputHighlight: $gms-input-highlight;
+  gmsTableSelection: $gms-table-selection;
+  gmsTableHighlightSelected: $gms-table-highlight-selected;
+  gmsTableWarningSelected: $gms-table-warning-selected;
+  gmsTableRequiresReviewSelected: $gms-table-requires-review-selected;
+  gmsTableChangeMarker: $gms-table-change-marker;
+  gmsPopoverBackground: $gms-popover-background;
+  gmsTableSubsetSelected: $gms-table-subset-selected;
+  analystOpenEvent: $analyst-open-event;
+  analystUnassociated: $analyst-unassociated;
+  analystToWork: $analyst-to-work;
+  analystComplete: $analyst-complete;
+
+  waveformIntervalBoundary: $waveform-interval-boundary;
+  waveformRaw: $waveform-raw;
+  qcAnalystDefined: $qc-analyst-defined;
+  qcChannelProcessing: $qc-channel-processing;
+  qcDataAuthentication: $qc-data-authentication;
+  qcRejected: $qc-rejected;
+  qcStationSOH: $qc-station-soh;
+  qcWaveformQuality: $qc-waveform-quality;
+  mapStationsUnselected: $map-stations-unselected;
+
+  dataAcqOk: $data-acq-ok;
+  dataAcqWarning: $data-acq-warning;
+  dataAcqStrongWarning: $data-acq-strong-warning;
+  dataAcqNone: $gms-non-contributing;
+}

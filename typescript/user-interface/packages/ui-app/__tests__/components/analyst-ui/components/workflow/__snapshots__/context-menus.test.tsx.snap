@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Activity Interval Context Menu Interval context menu shallow renders 1`] = `
+<div>
+  <ul
+    class="bp4-menu"
+  >
+    <li
+      class=""
+    >
+      <a
+        class="bp4-menu-item bp4-popover-dismiss menu-item-open-interval"
+        data-cy="open-interval-btn"
+        tabindex="0"
+      >
+        <div
+          class="bp4-fill bp4-text-overflow-ellipsis"
+        >
+          Open interval
+        </div>
+      </a>
+    </li>
+    <li
+      class=""
+    >
+      <a
+        class="bp4-menu-item bp4-disabled menu-item-close-interval"
+        data-cy="close-interval-btn"
+        tabindex="-1"
+      >
+        <div
+          class="bp4-fill bp4-text-overflow-ellipsis"
+        >
+          Close interval
+        </div>
+      </a>
+    </li>
+  </ul>
+   
+</div>
+`;
+
+exports[`Activity Interval Context Menu matches snapshot 1`] = `
+<div>
+  <ul
+    class="bp4-menu"
+  >
+    <li
+      class=""
+    >
+      <a
+        class="bp4-menu-item bp4-disabled menu-item-open-interval"
+        data-cy="open-interval-btn"
+        tabindex="-1"
+      >
+        <div
+          class="bp4-fill bp4-text-overflow-ellipsis"
+        >
+          Open interval
+        </div>
+      </a>
+    </li>
+    <li
+      class=""
+    >
+      <a
+        class="bp4-menu-item bp4-popover-dismiss menu-item-close-interval"
+        data-cy="close-interval-btn"
+        tabindex="0"
+      >
+        <div
+          class="bp4-fill bp4-text-overflow-ellipsis"
+        >
+          Close interval
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
+`;

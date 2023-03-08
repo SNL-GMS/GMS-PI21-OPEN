@@ -1,0 +1,19 @@
+plugins {
+    id 'java-library'
+    alias(libs.plugins.io.swagger.core.v3.swagger.gradle)
+}
+
+dependencies {
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+    implementation project(':java-utilities')
+    implementation project(':frameworks-service-interface-base')
+    api project(':station-definition-coi')
+    api project(':station-definition-dao')
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+    implementation libs.org.apache.commons.commons.lang3
+    api libs.com.fasterxml.jackson.core.jackson.databind
+
+    implementation libs.org.springframework.boot.spring.boot.starter
+    testImplementation project(':station-definition-testfixtures')
+}

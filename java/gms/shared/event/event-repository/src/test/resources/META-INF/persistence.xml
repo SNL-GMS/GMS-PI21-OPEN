@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  version="2.0"
+  xmlns="http://java.sun.com/xml/ns/persistence"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+  <persistence-unit name="gms_event">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <class>gms.shared.event.dao.EventDao</class>
+    <class>gms.shared.event.dao.OrigerrDao</class>
+    <class>gms.shared.event.dao.OriginDao</class>
+    <class>gms.shared.event.dao.NetMagDao</class>
+    <class>gms.shared.event.dao.StaMagDao</class>
+    <class>gms.shared.event.dao.EventControlDao</class>
+    <class>gms.shared.event.dao.ArInfoDao</class>
+    <class>gms.shared.event.dao.GaTagDao</class>
+    <class>gms.shared.signaldetection.dao.css.AssocDao</class>
+
+    <properties>
+      <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+      <property name="hibernate.jdbc.time_zone" value="UTC"/>
+      <property name="hibernate.hbm2ddl.auto" value="none"/>
+      <property name="hibernate.c3p0.min_size" value="1"/>
+      <property name="hibernate.c3p0.max_size" value="5"/>
+      <property name="hibernate.c3p0.acquire_increment" value="2"/>
+      <property name="hibernate.c3p0.timeout" value="300"/>
+      <property name="hibernate.flushmode" value="FLUSH_AUTO"/>
+      <!-- Useful for debugging connection leaks: time out and give a stack trace if a connection cannot be acquired in 15 seconds -->
+      <property name="hibernate.c3p0.unreturnedConnectionTimeout" value="300"/>
+      <property name="hibernate.c3p0.debugUnreturnedConnectionStackTraces" value="true"/>
+
+      <!-- enabling batch inserts -->
+      <property name="hibernate.jdbc.batch_size" value="50"/>
+      <property name="hibernate.order_inserts" value="true"/>
+      <property name="hibernate.order_updates" value="true"/>
+      <property name="hibernate.jdbc.batch_versioned_data" value="true"/>
+      <!-- Generates a lot of stats output -->
+      <property name="hibernate.generate_statistics" value="false"/>
+      <!-- If you really, really, really want to see a lot of sql, set this to true -->
+      <!-- WARNING: For debugging only - should never be true in production -->
+      <property name="hibernate.show_sql" value="false"/>
+      <property name="hibernate.format_sql" value="false"/>
+    </properties>
+  </persistence-unit>
+</persistence>

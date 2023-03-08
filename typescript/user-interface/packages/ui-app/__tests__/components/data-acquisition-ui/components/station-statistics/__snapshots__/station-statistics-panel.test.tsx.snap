@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Station statistics class Panel can handle acknowledgeContextMenu 1`] = `
+<DisabledStationSohContextMenu
+  acknowledgeCallback={[MockFunction]}
+  stationNames={
+    Array [
+      "test",
+      "test2",
+    ]
+  }
+/>
+`;
+
+exports[`Station statistics class Panel can handle getEnvRollup 1`] = `
+Object {
+  "contributing": true,
+  "statusSummary": "GOOD",
+  "type": undefined,
+  "value": 5,
+  "valuePresent": true,
+}
+`;
+
+exports[`Station statistics class Panel should match snapshot 1`] = `
+<StationStatisticsPanel
+  setGroupSelected={[MockFunction]}
+  setStatusesToDisplay={[MockFunction]}
+  stationGroups={
+    Array [
+      Object {
+        "groupCapabilityStatus": "BAD",
+        "id": "1",
+        "priority": 1,
+        "stationGroupName": "Group 4",
+        "time": 0,
+      },
+    ]
+  }
+  stationSohs={
+    Array [
+      Object {
+        "allStationAggregates": Array [],
+        "channelSohs": Array [],
+        "id": "1",
+        "needsAcknowledgement": true,
+        "needsAttention": true,
+        "sohStatusSummary": "GOOD",
+        "stationGroups": Array [
+          Object {
+            "groupName": "Group 4",
+            "sohStationCapability": "GOOD",
+            "stationName": "H05N",
+          },
+        ],
+        "stationName": "H05N",
+        "statusContributors": Array [
+          Object {
+            "contributing": true,
+            "statusSummary": "GOOD",
+            "type": "LAG",
+            "value": 5,
+            "valuePresent": true,
+          },
+        ],
+        "time": 2,
+        "uuid": "1",
+      },
+      Object {
+        "allStationAggregates": Array [],
+        "channelSohs": Array [],
+        "id": "2",
+        "needsAcknowledgement": true,
+        "needsAttention": true,
+        "sohStatusSummary": "MARGINAL",
+        "stationGroups": Array [
+          Object {
+            "groupName": "Group 4",
+            "sohStationCapability": "GOOD",
+            "stationName": "H06N",
+          },
+        ],
+        "stationName": "H06N",
+        "statusContributors": Array [
+          Object {
+            "contributing": true,
+            "statusSummary": "GOOD",
+            "type": "LAG",
+            "value": 5,
+            "valuePresent": true,
+          },
+        ],
+        "time": 2,
+        "uuid": "2",
+      },
+      Object {
+        "allStationAggregates": Array [],
+        "channelSohs": Array [],
+        "id": "3",
+        "needsAcknowledgement": true,
+        "needsAttention": true,
+        "sohStatusSummary": "BAD",
+        "stationGroups": Array [
+          Object {
+            "groupName": "Group 4",
+            "sohStationCapability": "GOOD",
+            "stationName": "H07N",
+          },
+        ],
+        "stationName": "H07N",
+        "statusContributors": Array [
+          Object {
+            "contributing": true,
+            "statusSummary": "GOOD",
+            "type": "LAG",
+            "value": 5,
+            "valuePresent": true,
+          },
+        ],
+        "time": 2,
+        "uuid": "3",
+      },
+      Object {
+        "allStationAggregates": Array [],
+        "channelSohs": Array [],
+        "id": "4",
+        "needsAcknowledgement": true,
+        "needsAttention": true,
+        "sohStatusSummary": "GOOD",
+        "stationGroups": Array [
+          Object {
+            "groupName": "Group 4",
+            "sohStationCapability": "MARGINAL",
+            "stationName": "H08N",
+          },
+        ],
+        "stationName": "H08N",
+        "statusContributors": Array [
+          Object {
+            "contributing": true,
+            "statusSummary": "GOOD",
+            "type": "ENV_AUTHENTICATION_SEAL_BROKEN",
+            "value": 5,
+            "valuePresent": true,
+          },
+        ],
+        "time": 2,
+        "uuid": "4",
+      },
+    ]
+  }
+  statusesToDisplay={
+    Object {
+      "BAD": true,
+      "GOOD": true,
+      "MARGINAL": true,
+      "NONE": true,
+    }
+  }
+/>
+`;

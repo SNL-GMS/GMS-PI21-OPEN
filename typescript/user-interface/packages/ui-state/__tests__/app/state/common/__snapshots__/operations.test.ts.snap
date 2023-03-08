@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`state common-workspace operations operations setGlDisplayState throws when given an invalid display name 1`] = `"Invalid display name: GARBAGE is not a name of a known display."`;

@@ -1,0 +1,12 @@
+I11L1  BWS       2007150     4962  2286324 n       0.0000   -1.0   -1.0 Wind_speed                                         20090909 12:00:00
+I11L1  BWD       2007150     4961  2286324 n       0.0000   -1.0   -1.0 Wind_Direction                                     20090909 12:00:00
+I11L1  BKO       2007150     4960  2286324 n       0.0000   -1.0   -1.0 External_temperature                               20090909 12:00:00
+I11L1  BDF       2007150     4951  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090909 12:00:00
+I11L1  BDA       2007150     4959  2286324 n       0.0000   -1.0   -1.0 Atmospheric_pressure                               20090909 12:00:00
+I11L2  BDF       2007150     4952  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090909 12:00:00
+I11L3  BDF       2007150     4953  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090909 12:00:00
+I11L4  BDF       2007150     4954  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090909 12:00:00
+I11L5  BDF       2007150     4955  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090909 12:00:00
+I11L6  BDF       2007150     4956  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090909 12:00:00
+I11L7  BDF       2007150     4957  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090909 12:00:00
+I11L8  BDF       2007150     4958  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20090909 12:00:00

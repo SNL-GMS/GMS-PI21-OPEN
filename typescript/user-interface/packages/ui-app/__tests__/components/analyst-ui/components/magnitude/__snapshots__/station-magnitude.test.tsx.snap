@@ -1,0 +1,1117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when loading station Magnitude Network station magnitude table renders 1`] = `
+<StationMagnitude
+  checkBoxCallback={[MockFunction]}
+  displayedMagnitudeTypes={Immutable.Map {}}
+  historicalMode={false}
+  locationSolution={
+    Object {
+      "featurePredictions": undefined,
+      "id": "123",
+      "location": Object {
+        "depthKm": 1,
+        "latitudeDegrees": 1,
+        "longitudeDegrees": 1,
+        "time": 1,
+      },
+      "locationBehaviors": undefined,
+      "locationRestraint": undefined,
+      "locationToStationDistances": Array [
+        Object {
+          "azimuth": 1,
+          "distance": Object {
+            "degrees": 1,
+            "km": 2,
+          },
+          "stationId": "1",
+        },
+      ],
+      "locationType": "type",
+      "networkMagnitudeSolutions": Array [
+        Object {
+          "magnitude": 1,
+          "magnitudeType": "MB",
+          "networkMagnitudeBehaviors": Array [],
+          "uncertainty": 1,
+        },
+        Object {
+          "magnitude": 1,
+          "magnitudeType": "MS",
+          "networkMagnitudeBehaviors": Array [],
+          "uncertainty": 1,
+        },
+        Object {
+          "magnitude": 1,
+          "magnitudeType": "MBMLE",
+          "networkMagnitudeBehaviors": Array [],
+          "uncertainty": 1,
+        },
+        Object {
+          "magnitude": 1,
+          "magnitudeType": "MSMLE",
+          "networkMagnitudeBehaviors": Array [],
+          "uncertainty": 1,
+        },
+      ],
+      "snapshots": undefined,
+    }
+  }
+  selectedSdIds={
+    Array [
+      "123",
+    ]
+  }
+  setSelectedSdIds={[MockFunction]}
+  stationsAndSignalDetectionsByStationId={
+    Map {
+      "1" => Object {
+        "distance": 1,
+        "lrPhaseDetection": undefined,
+        "pPhaseDetection": undefined,
+        "station": Object {
+          "defaultChannel": Object {
+            "depth": 1,
+          },
+          "id": "1",
+          "name": "stringName",
+        },
+      },
+    }
+  }
+>
+  <div
+    className="ag-theme-dark table-container"
+  >
+    <div
+      className="list-wrapper"
+    >
+      <div
+        className="max"
+      >
+        <PureComponent
+          columnDefs={
+            Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "station",
+                    "filter": true,
+                    "headerName": "Station",
+                    "pinned": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 70,
+                  },
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "dist",
+                    "filter": true,
+                    "headerName": "Dist (°)",
+                    "pinned": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 80,
+                  },
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "azimuth",
+                    "filter": true,
+                    "headerComponentFramework": [Function],
+                    "headerName": "S-R Azimuth (°)",
+                    "pinned": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 110,
+                  },
+                ],
+                "headerName": "Station magnitude",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "mbChannel",
+                    "filter": true,
+                    "headerName": "Channel",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 70,
+                  },
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "mbPhase",
+                    "filter": true,
+                    "headerName": "Phase",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 60,
+                  },
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "mbA5",
+                    "filter": true,
+                    "headerName": "A5/2",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 60,
+                  },
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "mbPeriod",
+                    "filter": true,
+                    "headerName": "Period (s)",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 80,
+                  },
+                  Object {
+                    "cellRendererFramework": [Function],
+                    "cellRendererParams": Object {
+                      "magnitudeType": "MB",
+                      "padding": 25,
+                    },
+                    "cellStyle": [Function],
+                    "field": "mbDefining",
+                    "filter": true,
+                    "headerName": "Def",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 50,
+                  },
+                  Object {
+                    "cellStyle": Object {
+                      "background-color": "#fff",
+                      "text-align": "right",
+                    },
+                    "field": "mbMag",
+                    "filter": true,
+                    "headerName": "Mag",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 60,
+                  },
+                  Object {
+                    "cellStyle": Object {
+                      "background-color": "#fff",
+                      "text-align": "right",
+                    },
+                    "field": "mbRes",
+                    "filter": true,
+                    "headerName": "Res",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 60,
+                  },
+                ],
+                "headerGroupComponentFramework": [Function],
+                "headerGroupComponentParams": Object {
+                  "callback": [MockFunction],
+                  "definingState": "NONE",
+                  "magnitudeType": "MB",
+                  "stationIds": Array [],
+                },
+                "headerName": "Mb",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "msChannel",
+                    "filter": true,
+                    "headerName": "Channel",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 70,
+                  },
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "msPhase",
+                    "filter": true,
+                    "headerName": "Phase",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 60,
+                  },
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "msALR",
+                    "filter": true,
+                    "headerName": "ALR/2",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 60,
+                  },
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "msPeriod",
+                    "filter": true,
+                    "headerName": "Period (s)",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 80,
+                  },
+                  Object {
+                    "cellRendererFramework": [Function],
+                    "cellRendererParams": Object {
+                      "magnitudeType": "MS",
+                      "padding": 25,
+                    },
+                    "cellStyle": [Function],
+                    "field": "msDefining",
+                    "filter": true,
+                    "headerName": "Def",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 50,
+                  },
+                  Object {
+                    "cellStyle": Object {
+                      "background-color": "#fff",
+                      "text-align": "right",
+                    },
+                    "field": "msMag",
+                    "filter": true,
+                    "headerName": "Mag",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 60,
+                  },
+                  Object {
+                    "cellStyle": Object {
+                      "background-color": "#fff",
+                      "text-align": "right",
+                    },
+                    "field": "msRes",
+                    "filter": true,
+                    "headerName": "Res",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 60,
+                  },
+                ],
+                "headerGroupComponentFramework": [Function],
+                "headerGroupComponentParams": Object {
+                  "callback": [MockFunction],
+                  "definingState": "NONE",
+                  "magnitudeType": "MS",
+                  "stationIds": Array [],
+                },
+                "headerName": "Ms",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "mbMleChannel",
+                    "filter": true,
+                    "headerName": "Channel",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 70,
+                  },
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "mbMlePhase",
+                    "filter": true,
+                    "headerName": "Phase",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 60,
+                  },
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "mbMleA5",
+                    "filter": true,
+                    "headerName": "A5/2",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 60,
+                  },
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "mbMlePeriod",
+                    "filter": true,
+                    "headerName": "Period (s)",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 80,
+                  },
+                  Object {
+                    "cellRendererFramework": [Function],
+                    "cellRendererParams": Object {
+                      "magnitudeType": "MBMLE",
+                      "padding": 25,
+                    },
+                    "cellStyle": [Function],
+                    "field": "mbMleDefining",
+                    "filter": true,
+                    "headerName": "Def",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 50,
+                  },
+                  Object {
+                    "cellStyle": Object {
+                      "background-color": "#fff",
+                      "text-align": "right",
+                    },
+                    "field": "mbMleMag",
+                    "filter": true,
+                    "headerName": "Mag",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 60,
+                  },
+                  Object {
+                    "cellStyle": Object {
+                      "background-color": "#fff",
+                      "text-align": "right",
+                    },
+                    "field": "mbMleRes",
+                    "filter": true,
+                    "headerName": "Res",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 60,
+                  },
+                ],
+                "headerGroupComponentFramework": [Function],
+                "headerGroupComponentParams": Object {
+                  "callback": [MockFunction],
+                  "definingState": "NONE",
+                  "magnitudeType": "MBMLE",
+                  "stationIds": Array [],
+                },
+                "headerName": "Mb Mle",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "msMleChannel",
+                    "filter": true,
+                    "headerName": "Channel",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 70,
+                  },
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "msMlePhase",
+                    "filter": true,
+                    "headerName": "Phase",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 60,
+                  },
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "msMleALR",
+                    "filter": true,
+                    "headerName": "ALR/2",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 60,
+                  },
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "msMlePeriod",
+                    "filter": true,
+                    "headerName": "Period (s)",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 80,
+                  },
+                  Object {
+                    "cellRendererFramework": [Function],
+                    "cellRendererParams": Object {
+                      "magnitudeType": "MSMLE",
+                      "padding": 25,
+                    },
+                    "cellStyle": [Function],
+                    "field": "msMleDefining",
+                    "filter": true,
+                    "headerName": "Def",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 50,
+                  },
+                  Object {
+                    "cellStyle": Object {
+                      "background-color": "#fff",
+                      "text-align": "right",
+                    },
+                    "field": "msMleMag",
+                    "filter": true,
+                    "headerName": "Mag",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 60,
+                  },
+                  Object {
+                    "cellStyle": [Function],
+                    "field": "msMleRes",
+                    "filter": true,
+                    "headerName": "Res",
+                    "hide": true,
+                    "resizable": false,
+                    "sortable": true,
+                    "width": 60,
+                  },
+                ],
+                "headerGroupComponentFramework": [Function],
+                "headerGroupComponentParams": Object {
+                  "callback": [MockFunction],
+                  "definingState": "NONE",
+                  "magnitudeType": "MSMLE",
+                  "stationIds": Array [],
+                },
+                "headerName": "Ms Mle",
+              },
+            ]
+          }
+          context={Object {}}
+          immutableData={true}
+          getRowNodeId={[Function]}
+          onCellClicked={[Function]}
+          onGridReady={[Function]}
+          overlayNoRowsTemplate="No associated signal detections with appropriate phases"
+          rowData={
+            Array [
+              Object {
+                "azimuth": "1.000",
+                "checkBoxCallback": [MockFunction],
+                "dist": "1.000",
+                "historicalMode": false,
+                "id": "1",
+                "mbA5": "",
+                "mbChannel": "",
+                "mbDefining": false,
+                "mbMag": undefined,
+                "mbMleA5": "",
+                "mbMleChannel": "",
+                "mbMleDefining": false,
+                "mbMleMag": undefined,
+                "mbMlePeriod": "",
+                "mbMlePhase": "",
+                "mbMleRes": undefined,
+                "mbPeriod": "",
+                "mbPhase": "",
+                "mbRes": undefined,
+                "mbSignalDetectionId": "",
+                "msALR": "",
+                "msChannel": "",
+                "msDefining": false,
+                "msMag": undefined,
+                "msMleALR": "",
+                "msMleChannel": "",
+                "msMleDefining": false,
+                "msMleMag": undefined,
+                "msMlePeriod": "",
+                "msMlePhase": "",
+                "msMleRes": undefined,
+                "msPeriod": "",
+                "msPhase": "",
+                "msRes": undefined,
+                "msSignalDetectionId": "",
+                "selectedSdIds": Array [
+                  "123",
+                ],
+                "station": "stringName",
+                "stationId": "1",
+              },
+            ]
+          }
+          rowDeselection={true}
+          rowSelection="none"
+          suppressContextMenu={true}
+        >
+          <AgGridReact
+            columnDefs={
+              Array [
+                Object {
+                  "children": Array [
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "station",
+                      "filter": true,
+                      "headerName": "Station",
+                      "pinned": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 70,
+                    },
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "dist",
+                      "filter": true,
+                      "headerName": "Dist (°)",
+                      "pinned": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 80,
+                    },
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "azimuth",
+                      "filter": true,
+                      "headerComponentFramework": [Function],
+                      "headerName": "S-R Azimuth (°)",
+                      "pinned": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 110,
+                    },
+                  ],
+                  "headerName": "Station magnitude",
+                },
+                Object {
+                  "children": Array [
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "mbChannel",
+                      "filter": true,
+                      "headerName": "Channel",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 70,
+                    },
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "mbPhase",
+                      "filter": true,
+                      "headerName": "Phase",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 60,
+                    },
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "mbA5",
+                      "filter": true,
+                      "headerName": "A5/2",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 60,
+                    },
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "mbPeriod",
+                      "filter": true,
+                      "headerName": "Period (s)",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 80,
+                    },
+                    Object {
+                      "cellRendererFramework": [Function],
+                      "cellRendererParams": Object {
+                        "magnitudeType": "MB",
+                        "padding": 25,
+                      },
+                      "cellStyle": [Function],
+                      "field": "mbDefining",
+                      "filter": true,
+                      "headerName": "Def",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 50,
+                    },
+                    Object {
+                      "cellStyle": Object {
+                        "background-color": "#fff",
+                        "text-align": "right",
+                      },
+                      "field": "mbMag",
+                      "filter": true,
+                      "headerName": "Mag",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 60,
+                    },
+                    Object {
+                      "cellStyle": Object {
+                        "background-color": "#fff",
+                        "text-align": "right",
+                      },
+                      "field": "mbRes",
+                      "filter": true,
+                      "headerName": "Res",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 60,
+                    },
+                  ],
+                  "headerGroupComponentFramework": [Function],
+                  "headerGroupComponentParams": Object {
+                    "callback": [MockFunction],
+                    "definingState": "NONE",
+                    "magnitudeType": "MB",
+                    "stationIds": Array [],
+                  },
+                  "headerName": "Mb",
+                },
+                Object {
+                  "children": Array [
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "msChannel",
+                      "filter": true,
+                      "headerName": "Channel",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 70,
+                    },
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "msPhase",
+                      "filter": true,
+                      "headerName": "Phase",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 60,
+                    },
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "msALR",
+                      "filter": true,
+                      "headerName": "ALR/2",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 60,
+                    },
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "msPeriod",
+                      "filter": true,
+                      "headerName": "Period (s)",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 80,
+                    },
+                    Object {
+                      "cellRendererFramework": [Function],
+                      "cellRendererParams": Object {
+                        "magnitudeType": "MS",
+                        "padding": 25,
+                      },
+                      "cellStyle": [Function],
+                      "field": "msDefining",
+                      "filter": true,
+                      "headerName": "Def",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 50,
+                    },
+                    Object {
+                      "cellStyle": Object {
+                        "background-color": "#fff",
+                        "text-align": "right",
+                      },
+                      "field": "msMag",
+                      "filter": true,
+                      "headerName": "Mag",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 60,
+                    },
+                    Object {
+                      "cellStyle": Object {
+                        "background-color": "#fff",
+                        "text-align": "right",
+                      },
+                      "field": "msRes",
+                      "filter": true,
+                      "headerName": "Res",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 60,
+                    },
+                  ],
+                  "headerGroupComponentFramework": [Function],
+                  "headerGroupComponentParams": Object {
+                    "callback": [MockFunction],
+                    "definingState": "NONE",
+                    "magnitudeType": "MS",
+                    "stationIds": Array [],
+                  },
+                  "headerName": "Ms",
+                },
+                Object {
+                  "children": Array [
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "mbMleChannel",
+                      "filter": true,
+                      "headerName": "Channel",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 70,
+                    },
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "mbMlePhase",
+                      "filter": true,
+                      "headerName": "Phase",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 60,
+                    },
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "mbMleA5",
+                      "filter": true,
+                      "headerName": "A5/2",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 60,
+                    },
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "mbMlePeriod",
+                      "filter": true,
+                      "headerName": "Period (s)",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 80,
+                    },
+                    Object {
+                      "cellRendererFramework": [Function],
+                      "cellRendererParams": Object {
+                        "magnitudeType": "MBMLE",
+                        "padding": 25,
+                      },
+                      "cellStyle": [Function],
+                      "field": "mbMleDefining",
+                      "filter": true,
+                      "headerName": "Def",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 50,
+                    },
+                    Object {
+                      "cellStyle": Object {
+                        "background-color": "#fff",
+                        "text-align": "right",
+                      },
+                      "field": "mbMleMag",
+                      "filter": true,
+                      "headerName": "Mag",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 60,
+                    },
+                    Object {
+                      "cellStyle": Object {
+                        "background-color": "#fff",
+                        "text-align": "right",
+                      },
+                      "field": "mbMleRes",
+                      "filter": true,
+                      "headerName": "Res",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 60,
+                    },
+                  ],
+                  "headerGroupComponentFramework": [Function],
+                  "headerGroupComponentParams": Object {
+                    "callback": [MockFunction],
+                    "definingState": "NONE",
+                    "magnitudeType": "MBMLE",
+                    "stationIds": Array [],
+                  },
+                  "headerName": "Mb Mle",
+                },
+                Object {
+                  "children": Array [
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "msMleChannel",
+                      "filter": true,
+                      "headerName": "Channel",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 70,
+                    },
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "msMlePhase",
+                      "filter": true,
+                      "headerName": "Phase",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 60,
+                    },
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "msMleALR",
+                      "filter": true,
+                      "headerName": "ALR/2",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 60,
+                    },
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "msMlePeriod",
+                      "filter": true,
+                      "headerName": "Period (s)",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 80,
+                    },
+                    Object {
+                      "cellRendererFramework": [Function],
+                      "cellRendererParams": Object {
+                        "magnitudeType": "MSMLE",
+                        "padding": 25,
+                      },
+                      "cellStyle": [Function],
+                      "field": "msMleDefining",
+                      "filter": true,
+                      "headerName": "Def",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 50,
+                    },
+                    Object {
+                      "cellStyle": Object {
+                        "background-color": "#fff",
+                        "text-align": "right",
+                      },
+                      "field": "msMleMag",
+                      "filter": true,
+                      "headerName": "Mag",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 60,
+                    },
+                    Object {
+                      "cellStyle": [Function],
+                      "field": "msMleRes",
+                      "filter": true,
+                      "headerName": "Res",
+                      "hide": true,
+                      "resizable": false,
+                      "sortable": true,
+                      "width": 60,
+                    },
+                  ],
+                  "headerGroupComponentFramework": [Function],
+                  "headerGroupComponentParams": Object {
+                    "callback": [MockFunction],
+                    "definingState": "NONE",
+                    "magnitudeType": "MSMLE",
+                    "stationIds": Array [],
+                  },
+                  "headerName": "Ms Mle",
+                },
+              ]
+            }
+            context={Object {}}
+            immutableData={true}
+            getRowNodeId={[Function]}
+            onCellClicked={[Function]}
+            onGridReady={[Function]}
+            overlayNoRowsTemplate="No associated signal detections with appropriate phases"
+            rowData={
+              Array [
+                Object {
+                  "azimuth": "1.000",
+                  "checkBoxCallback": [MockFunction],
+                  "dist": "1.000",
+                  "historicalMode": false,
+                  "id": "1",
+                  "mbA5": "",
+                  "mbChannel": "",
+                  "mbDefining": false,
+                  "mbMag": undefined,
+                  "mbMleA5": "",
+                  "mbMleChannel": "",
+                  "mbMleDefining": false,
+                  "mbMleMag": undefined,
+                  "mbMlePeriod": "",
+                  "mbMlePhase": "",
+                  "mbMleRes": undefined,
+                  "mbPeriod": "",
+                  "mbPhase": "",
+                  "mbRes": undefined,
+                  "mbSignalDetectionId": "",
+                  "msALR": "",
+                  "msChannel": "",
+                  "msDefining": false,
+                  "msMag": undefined,
+                  "msMleALR": "",
+                  "msMleChannel": "",
+                  "msMleDefining": false,
+                  "msMleMag": undefined,
+                  "msMlePeriod": "",
+                  "msMlePhase": "",
+                  "msMleRes": undefined,
+                  "msPeriod": "",
+                  "msPhase": "",
+                  "msRes": undefined,
+                  "msSignalDetectionId": "",
+                  "selectedSdIds": Array [
+                    "123",
+                  ],
+                  "station": "stringName",
+                  "stationId": "1",
+                },
+              ]
+            }
+            rowDeselection={true}
+            rowSelection="none"
+            suppressAsyncEvents={true}
+            suppressContextMenu={true}
+          >
+            <div
+              style={
+                Object {
+                  "height": "100%",
+                }
+              }
+            />
+          </AgGridReact>
+        </PureComponent>
+      </div>
+    </div>
+  </div>
+</StationMagnitude>
+`;
+
+exports[`when loading station Magnitude we have null initial state 1`] = `null`;
+
+exports[`when loading station Magnitude we populate props 1`] = `
+Object {
+  "checkBoxCallback": [MockFunction],
+  "computeNetworkMagnitudeSolution": undefined,
+  "displayedMagnitudeTypes": Immutable.Map {},
+  "historicalMode": false,
+  "locationSolution": Object {
+    "featurePredictions": undefined,
+    "id": "123",
+    "location": Object {
+      "depthKm": 1,
+      "latitudeDegrees": 1,
+      "longitudeDegrees": 1,
+      "time": 1,
+    },
+    "locationBehaviors": undefined,
+    "locationRestraint": undefined,
+    "locationToStationDistances": Array [
+      Object {
+        "azimuth": 1,
+        "distance": Object {
+          "degrees": 1,
+          "km": 2,
+        },
+        "stationId": "1",
+      },
+    ],
+    "locationType": "type",
+    "networkMagnitudeSolutions": Array [
+      Object {
+        "magnitude": 1,
+        "magnitudeType": "MB",
+        "networkMagnitudeBehaviors": Array [],
+        "uncertainty": 1,
+      },
+      Object {
+        "magnitude": 1,
+        "magnitudeType": "MS",
+        "networkMagnitudeBehaviors": Array [],
+        "uncertainty": 1,
+      },
+      Object {
+        "magnitude": 1,
+        "magnitudeType": "MBMLE",
+        "networkMagnitudeBehaviors": Array [],
+        "uncertainty": 1,
+      },
+      Object {
+        "magnitude": 1,
+        "magnitudeType": "MSMLE",
+        "networkMagnitudeBehaviors": Array [],
+        "uncertainty": 1,
+      },
+    ],
+    "snapshots": undefined,
+  },
+  "selectedSdIds": Array [
+    "123",
+  ],
+  "setSelectedSdIds": [MockFunction],
+  "stationsAndSignalDetectionsByStationId": Map {
+    "1" => Object {
+      "distance": 1,
+      "lrPhaseDetection": undefined,
+      "pPhaseDetection": undefined,
+      "station": Object {
+        "defaultChannel": Object {
+          "depth": 1,
+        },
+        "id": "1",
+        "name": "stringName",
+      },
+    },
+  },
+}
+`;

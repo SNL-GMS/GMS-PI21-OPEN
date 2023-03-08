@@ -1,0 +1,15 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+
+    implementation project(':event-coi')
+    implementation project(':signal-detection-coi')
+
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    testImplementation project(':test-utils')
+    testImplementation(testFixtures(project(':event-coi')))
+}

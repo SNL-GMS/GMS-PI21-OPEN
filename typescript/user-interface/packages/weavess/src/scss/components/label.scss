@@ -1,0 +1,118 @@
+$labelPadding: 3px;
+
+.label {
+  height: 100%;
+  transition: height 0.1s linear;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  &:focus {
+    outline: none;
+  }
+  background-color: #202b33;
+  cursor: pointer;
+
+  // adding both selectors gives higher specificity than the weavess waveform
+  // panel css, which sets a default that we need to override.
+  &.label--actionable {
+    cursor: pointer;
+    * {
+      cursor: pointer;
+    }
+    // so we don't fight for specificity
+    .weavess-tooltip--help * {
+      cursor: help;
+    }
+    &:hover {
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.1);
+        pointer-events: none;
+      }
+    }
+  }
+
+  .label-container {
+    display: flex;
+    height: 100%;
+    flex: 0 0 auto;
+
+    &.is-selected {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .label-container-left-parent {
+      width: 24px;
+      flex: 0 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right: $labelPadding;
+
+      .label-container-left-parent-expansion-button {
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+          background: dodgerblue;
+        }
+      }
+    }
+
+    .label-container-left-child {
+      width: 0px;
+      flex: 0 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-left: 24px solid rgba(128, 128, 128, 0.05); // translucent gray should work over both dark and light modes
+      padding-right: $labelPadding;
+    }
+
+    .label-container-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      width: 100%;
+
+      .label-container-content-label {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        word-wrap: break-word;
+        position: relative;
+
+        & > * {
+          display: flex;
+          align-items: center;
+          justify-content: left;
+        }
+      }
+
+      .label-container-content-mask-indicator {
+        color: red;
+      }
+    }
+  }
+}
+
+.label-tooltip-wrapper__value {
+  padding-left: 0.5ch;
+  &:first-child {
+    padding-right: 0.5ch;
+    padding-left: 0;
+  }
+}

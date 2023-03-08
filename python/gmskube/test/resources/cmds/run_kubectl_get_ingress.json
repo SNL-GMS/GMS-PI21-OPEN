@@ -1,0 +1,29 @@
+{
+    "items": [
+        {
+            "spec": {
+                "rules": [
+                    {
+                        "host": "test-develop.cluster.gms.domain.com",
+                        "http": {
+                            "paths": [
+                                {
+                                    "backend": {
+                                        "service": {
+                                            "name": "acei-merge-processor",
+                                            "port": {
+                                                "number": 8080
+                                            }
+                                        }
+                                    },
+                                    "path": "/acei-merge-processor",
+                                    "pathType": "Prefix"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

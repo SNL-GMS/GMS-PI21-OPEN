@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Get events by time build a builder using addGetChannelSegmentsByChannelReducers 1`] = `
+Map {
+  "events/getEventsWithDetectionsAndSegmentsByTime/pending" => [Function],
+  "events/getEventsWithDetectionsAndSegmentsByTime/fulfilled" => [Function],
+  "events/getEventsWithDetectionsAndSegmentsByTime/rejected" => [Function],
+}
+`;
+
+exports[`Get events by time build a builder using addGetChannelSegmentsByChannelReducers 2`] = `
+Object {
+  "channelSegments": Array [
+    Object {
+      "channelName": "stationName1",
+    },
+  ],
+  "events": Array [
+    Object {
+      "id": "eventID1",
+    },
+  ],
+  "queries": Object {
+    "getEventsWithDetectionsAndSegmentsByTime": Object {
+      "eventsWithDetectionsAndSegmentsByTime": Object {
+        "12345": Object {
+          "arg": Object {},
+          "error": undefined,
+          "status": "pending",
+        },
+      },
+    },
+  },
+  "signalDetections": Array [
+    Object {
+      "id": "sdID1",
+      "station": Object {
+        "name": "stationName1",
+      },
+    },
+  ],
+}
+`;
+
+exports[`Get events by time build a builder using addGetChannelSegmentsByChannelReducers 3`] = `
+Object {
+  "channelSegments": Array [
+    Object {
+      "channelName": "stationName1",
+    },
+  ],
+  "events": Array [
+    Object {
+      "id": "eventID1",
+    },
+  ],
+  "queries": Object {
+    "getEventsWithDetectionsAndSegmentsByTime": Object {
+      "eventsWithDetectionsAndSegmentsByTime": Object {
+        "12345": Object {
+          "arg": Object {},
+          "error": undefined,
+          "status": "fulfilled",
+        },
+      },
+    },
+  },
+  "signalDetections": Array [
+    Object {
+      "id": "sdID1",
+      "station": Object {
+        "name": "stationName1",
+      },
+    },
+  ],
+  "uiChannelSegments": undefined,
+}
+`;
+
+exports[`Get events by time build a builder using addGetChannelSegmentsByChannelReducers 4`] = `
+Object {
+  "channelSegments": Array [
+    Object {
+      "channelName": "stationName1",
+    },
+  ],
+  "events": Array [
+    Object {
+      "id": "eventID1",
+    },
+  ],
+  "queries": Object {
+    "getEventsWithDetectionsAndSegmentsByTime": Object {
+      "eventsWithDetectionsAndSegmentsByTime": Object {
+        "12345": Object {
+          "arg": Object {},
+          "error": undefined,
+          "status": "rejected",
+        },
+      },
+    },
+  },
+  "signalDetections": Array [
+    Object {
+      "id": "sdID1",
+      "station": Object {
+        "name": "stationName1",
+      },
+    },
+  ],
+  "uiChannelSegments": undefined,
+}
+`;

@@ -1,0 +1,27 @@
+{
+    "name": "4.09-4.39-4-br-noncausal-description",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "name",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "4.09 4.39 4 BR non-causal Description"
+            ]
+        }
+    ],
+    "parameters": {
+		"type": "LinearFilterDescription",
+		"comments": "4.09 4.39 4 BR non-causal",
+		"causal": false,
+		"filterType": "IIR_BUTTERWORTH",
+		"lowFrequency": 4.09,
+		"highFrequency": 4.39,
+		"order": 4,
+		"zeroPhase": false,
+		"passBandType": "BAND_REJECT"
+    }
+}

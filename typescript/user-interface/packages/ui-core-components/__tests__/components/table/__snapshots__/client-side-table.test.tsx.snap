@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Client Side Table Renders 1`] = `
+<CoreTable
+  columnDefs={
+    Array [
+      Object {
+        "field": "test",
+        "headerName": "test",
+        "headerTooltip": "test",
+        "width": 10,
+      },
+      Object {
+        "field": "test2",
+        "headerName": "test2",
+        "headerTooltip": "test2",
+        "sort": "asc",
+        "width": 10,
+      },
+    ]
+  }
+  onCellClicked={[MockFunction]}
+  onCellContextMenu={[MockFunction]}
+  onGridReady={[Function]}
+  onRowSelected={[MockFunction]}
+  rowBuffer={10}
+  rowData={
+    Array [
+      Object {
+        "Ids": Array [
+          1,
+          2,
+        ],
+        "category": "normal",
+        "color": "RED",
+        "endTime": 2000,
+        "first-in-table": true,
+        "id": "1",
+        "rationale": "user",
+        "startTime": 1000,
+        "type": "info",
+        "versionId": 1,
+      },
+      Object {
+        "Ids": Array [
+          1,
+          2,
+        ],
+        "category": "normal",
+        "color": "GREEN",
+        "endTime": 3000,
+        "id": "2",
+        "rationale": "user",
+        "startTime": 2000,
+        "type": "info",
+        "versionId": 1,
+      },
+    ]
+  }
+/>
+`;

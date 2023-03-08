@@ -1,0 +1,26 @@
+{
+    "name": "1.5-3.0-3-bp-causal",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "name",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "1.5 3.0 3 BP causal"
+            ]
+        }
+    ],
+    "parameters": {
+        "name": "1.5 3.0 3 BP causal",
+        "comments": "Butterworth IIR band-pass, 1.5-3.0 Hz, order 3, causal",
+		"filterDescription": {
+			"$ref=global.filter-description":[{ 
+				"criterion": "name",
+				"value": "1.5 3.0 3 BP causal Description"
+			}]
+		}
+    }
+}

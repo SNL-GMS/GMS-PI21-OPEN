@@ -1,0 +1,25 @@
+apply plugin: 'java-library'
+
+dependencies {
+    api project(':frameworks-osd-commonobjects')
+    implementation project(':ssam-control-api')
+    implementation project(':soh-control')
+    implementation project(':reactor-utils')
+    // Google AutoValue
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    // Serialization (dependencies are api as we expose our ObjectMapper as a singleton).
+    api libs.com.fasterxml.jackson.core.jackson.databind
+    api libs.com.fasterxml.jackson.datatype.jackson.datatype.jdk8
+    api libs.com.fasterxml.jackson.datatype.jackson.datatype.jsr310
+    api libs.com.fasterxml.jackson.datatype.jackson.datatype.guava
+
+    // msgpack and YAML serialization; kept as private so clients don't have to know about it
+    implementation libs.org.msgpack.jackson.dataformat.msgpack
+    implementation libs.com.fasterxml.jackson.dataformat.jackson.dataformat.yaml
+    implementation libs.io.projectreactor.reactor.core
+    implementation libs.com.google.guava.guava
+
+    testImplementation project(':frameworks-osd-testfixtures')
+}

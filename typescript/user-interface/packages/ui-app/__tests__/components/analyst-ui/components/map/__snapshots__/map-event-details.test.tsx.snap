@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MapEventDetails matches snapshot 1`] = `
+<div
+  className="map-station-details__container"
+>
+  <div
+    className="form"
+  >
+    <h6
+      className="bp4-heading form__header"
+    >
+      <div>
+        Event Details
+      </div>
+    </h6>
+    <div
+      className="form__panel-selector"
+    />
+    <div
+      className="form-body"
+    >
+      <div
+        className="form-label"
+      >
+        Event Time:
+      </div>
+      <div
+        className="form-value form-value--uneditable form-value--time"
+        title=""
+      >
+        1970-01-01 00:00:00
+      </div>
+      <div
+        className="form-label"
+      >
+        Lat (°):
+      </div>
+      <div
+        className="form-value form-value--uneditable form-value--time"
+        title=""
+      >
+        45.000
+      </div>
+      <div
+        className="form-label"
+      >
+        Lon (°):
+      </div>
+      <div
+        className="form-value form-value--uneditable form-value--time"
+        title=""
+      >
+        45.000
+      </div>
+      <div
+        className="form-label"
+      >
+        Depth (km):
+      </div>
+      <div
+        className="form-value form-value--uneditable form-value--time"
+        title=""
+      >
+        10.000
+      </div>
+      <div
+        className="form-label"
+      >
+        Workflow Status:
+      </div>
+      <div
+        className="form-value form-value--uneditable"
+        title=""
+      >
+        Not started
+      </div>
+    </div>
+    <div
+      className="form__buttons"
+    >
+      <div
+        className="form__buttons--right"
+      >
+        <button
+          className="bp4-button form__button"
+          data-cy="cancel-event-details"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          type="button"
+        >
+          <span
+            className="bp4-button-text"
+          >
+            Close
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

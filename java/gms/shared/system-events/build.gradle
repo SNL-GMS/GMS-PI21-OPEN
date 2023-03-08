@@ -1,0 +1,25 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+    // Google AutoValue
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    implementation project(':frameworks-control')
+    implementation project(':spring-framework-utilities')
+    implementation project(':java-utilities')
+
+    // Serialization (dependencies are api as we expose our ObjectMapper as a singleton).
+    api libs.com.fasterxml.jackson.core.jackson.databind
+    api libs.com.fasterxml.jackson.datatype.jackson.datatype.jdk8
+    api libs.com.fasterxml.jackson.datatype.jackson.datatype.jsr310
+    api libs.com.fasterxml.jackson.datatype.jackson.datatype.guava
+
+    implementation libs.org.apache.kafka.kafka.clients
+
+    //Spring Dependencies
+    implementation libs.org.springdoc.springdoc.openapi.ui
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+}

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Processing Configuration Util can retreive ui theme configuration 1`] = `
+Object {
+  "colors": Object {
+    "completeEventSDColor": "#62D96B",
+    "gmsBackground": "#182026",
+    "gmsMain": "#f5f8fa",
+    "gmsMainInverted": "#10161a",
+    "gmsSelection": "#1589d1",
+    "gmsTableSelection": "#f5f8fa",
+    "mapStationDefault": "#6F6E74",
+    "mapVisibleStation": "#D9822B",
+    "openEventSDColor": "#C87619",
+    "otherEventSDColor": "#FFFFFF",
+    "predictionSDColor": "#C58C1B",
+    "unassociatedSDColor": "#CD4246",
+    "waveformDimPercent": 0.75,
+    "waveformFilterLabel": "#F6F7F9",
+    "waveformRaw": "#3FA6DA",
+  },
+  "display": Object {
+    "edgeEventOpacity": 0.35,
+    "edgeSDOpacity": 0.2,
+    "predictionSDOpacity": 0.1,
+  },
+  "isDarkMode": true,
+  "name": "GMS Default (dark)",
+}
+`;

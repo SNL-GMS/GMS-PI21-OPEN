@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumericInputToolbarItem NumericInputToolbarItem renders directly 1`] = `
+<div>
+  <div>
+    <span
+      class="toolbar-numeric__label toolbar-numeric__label-left"
+    >
+      Numeric label
+    </span>
+    <div
+      class="numeric-input__wrapper"
+    >
+      <div
+        class="bp4-control-group bp4-fill bp4-numeric-input numeric-input"
+      >
+        <div
+          class="bp4-input-group"
+        >
+          <input
+            autocomplete="off"
+            class="bp4-input"
+            max="43"
+            min="41"
+            placeholder="Enter a number..."
+            title="Hello Numeric"
+            type="text"
+            value="42"
+          />
+        </div>
+        <div
+          class="bp4-button-group bp4-vertical bp4-fixed"
+        >
+          <button
+            aria-label="increment"
+            class="bp4-button"
+            type="button"
+          >
+            <span
+              aria-hidden="true"
+              class="bp4-icon bp4-icon-chevron-up"
+              icon="chevron-up"
+            >
+              <svg
+                data-icon="chevron-up"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M12.71 9.29l-4-4C8.53 5.11 8.28 5 8 5s-.53.11-.71.29l-4 4a1.003 1.003 0 001.42 1.42L8 7.41l3.29 3.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            aria-label="decrement"
+            class="bp4-button"
+            type="button"
+          >
+            <span
+              aria-hidden="true"
+              class="bp4-icon bp4-icon-chevron-down"
+              icon="chevron-down"
+            >
+              <svg
+                data-icon="chevron-down"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NumericInputToolbarItem NumericInputToolbarItem renders with labelRight 1`] = `
+<div>
+  <div>
+    <div
+      class="numeric-input__wrapper"
+    >
+      <div
+        class="bp4-control-group bp4-fill bp4-numeric-input numeric-input"
+      >
+        <div
+          class="bp4-input-group"
+        >
+          <input
+            autocomplete="off"
+            class="bp4-input"
+            max="43"
+            min="41"
+            placeholder="Enter a number..."
+            title="Hello Numeric"
+            type="text"
+            value="42"
+          />
+        </div>
+        <div
+          class="bp4-button-group bp4-vertical bp4-fixed"
+        >
+          <button
+            aria-label="increment"
+            class="bp4-button"
+            type="button"
+          >
+            <span
+              aria-hidden="true"
+              class="bp4-icon bp4-icon-chevron-up"
+              icon="chevron-up"
+            >
+              <svg
+                data-icon="chevron-up"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M12.71 9.29l-4-4C8.53 5.11 8.28 5 8 5s-.53.11-.71.29l-4 4a1.003 1.003 0 001.42 1.42L8 7.41l3.29 3.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            aria-label="decrement"
+            class="bp4-button"
+            type="button"
+          >
+            <span
+              aria-hidden="true"
+              class="bp4-icon bp4-icon-chevron-down"
+              icon="chevron-down"
+            >
+              <svg
+                data-icon="chevron-down"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <span
+      class="toolbar-numeric__label"
+    >
+      Numeric label right
+    </span>
+  </div>
+</div>
+`;

@@ -1,0 +1,167 @@
+apply plugin: "java"
+apply plugin: "jacoco"
+
+// Define global variables for Docker.
+ext {
+    dockerRegistry = System.getenv('CI_DOCKER_REGISTRY') ?: 'local'
+    dockerPath = System.getenv('CI_PROJECT_NAME') ?: 'gms-common'
+    dockerImageTag = System.getenv('DOCKER_IMAGE_TAG') ?: 'local'
+    dockerPull = Boolean.parseBoolean(System.getenv('CI_FORCE_PULL')) ?: false
+    dockerNoCache = Boolean.parseBoolean(System.getenv('CI_DOCKER_NO_CACHE')) ?: false
+    dockerCiCommitSha = System.getenv('CI_COMMIT_SHA') ?: 'NA'
+    dockerCiCommitRefSlug = System.getenv('CI_COMMIT_REF_SLUG') ?: 'local'
+    // proxy is used by opensource build
+    dockerCiUseProxy = System.getenv('CI_USE_PROXY') ?: ''
+    dockerHttpProxy = System.getenv('http_proxy') ?: ''
+    dockerHttpsProxy = System.getenv('https_proxy') ?: ''
+    dockerNoProxy = System.getenv('no_proxy') ?: ''
+}
+
+sourceCompatibility = 11
+
+repositories {
+    maven {
+        url "${repository_url}"
+    }
+}
+
+// Project-wide dependencies
+apply from: file("${rootDir}/gradle/scripts/dependencies.gradle")
+// Project-wide dependency constraints.
+apply from: file("${rootDir}/gradle/scripts/constraints.gradle")
+
+configurations {
+    compileClasspath {
+        resolutionStrategy.activateDependencyLocking()
+    }
+    runtimeClasspath {
+        resolutionStrategy.activateDependencyLocking()
+        runtimeClasspath.shouldResolveConsistentlyWith(compileClasspath)
+    }
+    annotationProcessor {
+        resolutionStrategy.activateDependencyLocking()
+    }
+
+}
+
+test {
+    useJUnitPlatform() {
+        excludeTags 'component'
+    }
+}
+
+task componentTest(type: Test) {
+    group = 'verification'
+    description = 'Runs all component tests that leverage connections to an external container.' +
+            'Tag your test/test class/test superclass with @Tag("component") to include here/exclude from unit tests'
+    maxParallelForks = 1
+    useJUnitPlatform() {
+        includeTags 'component'
+    }
+}
+
+task postgresTest(type: Test) {
+    group = 'verification'
+    description = 'Runs the postgres component tests. Tag your test/test class/test superclass' +
+            ' with @Tag("postgres") to include here'
+    maxParallelForks = 1
+    useJUnitPlatform() {
+        includeTags 'postgres'
+    }
+}
+
+task kafkaTest(type: Test) {
+    group = 'verification'
+    description = 'Runs the kafka component tests. Tag your test/test class/test superclass' +
+            ' with @Tag("kafka") to include here'
+    maxParallelForks = 1
+    useJUnitPlatform() {
+        includeTags 'kafka'
+    }
+}
+
+task zookeeperTest(type: Test) {
+    group = 'verification'
+    description = 'Runs the zookeeper component tests. Tag your test/test class/test superclass' +
+            ' with @Tag("zookeeper") to include here/exclude from unit tests'
+    maxParallelForks = 1
+    useJUnitPlatform() {
+        includeTags 'zookeeper'
+    }
+}
+
+jacoco {
+    toolVersion = libs.versions.jacocoVersion.get()
+}
+
+jacocoTestReport {
+    executionData.setFrom(fileTree(buildDir).include("/jacoco/*.exec"))
+    reports {
+        xml.enabled true
+    }
+}
+
+sonarqube {
+    properties {
+        property 'sonar.coverage.jacoco.xmlReportPaths', 'build/reports/jacoco/test/jacocoTestReport.xml'
+    }
+}
+
+// Add compiler args during java compilation.
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+    //disabling generation of jni headers directories
+    options.headerOutputDirectory.convention(null)
+}
+
+task allDependencies(type: DependencyReportTask, group: 'help') {}
+
+pluginManager.withPlugin('application') {
+    tasks.distZip.enabled = false
+    tasks.distTar.enabled = false
+}
+
+pluginManager.withPlugin('com.palantir.docker') {
+    docker {
+        name "${dockerRegistry}/${dockerPath}/${project.name}"
+        tag 'ImageTag', "${dockerRegistry}/${dockerPath}/${project.name}:${dockerImageTag}"
+        tag 'CiCommitSha', "${dockerRegistry}/${dockerPath}/${project.name}:${dockerCiCommitSha}"
+        tag 'CiCommitRefSlug', "${dockerRegistry}/${dockerPath}/${project.name}:${dockerCiCommitRefSlug}"
+        pull dockerPull
+        noCache dockerNoCache
+        if(dockerCiUseProxy == '') {
+            buildArgs([DOCKER_REGISTRY: "${dockerRegistry}", DOCKER_IMAGE_TAG: "${dockerImageTag}"])
+        }
+        else {
+            buildArgs([DOCKER_REGISTRY: "${dockerRegistry}", DOCKER_IMAGE_TAG: "${dockerImageTag}", http_proxy: "${dockerHttpProxy}", https_proxy: "${dockerHttpsProxy}", no_proxy: "${dockerNoProxy}"])
+        }
+        
+    }
+
+    plugins.withId('application') {
+        docker {
+            files tasks.installDist.outputs
+        }
+    }
+
+    plugins.withId('org.springframework.boot') {
+        docker {
+            files tasks.bootJar.outputs
+        }
+    }
+}
+
+pluginManager.withPlugin('io.swagger.core.v3.swagger-gradle-plugin') {
+    tasks.resolve {
+        outputFileName = project.name
+        classpath = sourceSets.main.runtimeClasspath
+        outputDir = file("build/swagger")
+        modelConverterClasses = ["gms.shared.frameworks.swagger.JavaInstantSwaggerConverter"]
+    }
+}
+
+// Activating reproducible archives
+tasks.withType(AbstractArchiveTask) {
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
+}

@@ -1,0 +1,28 @@
+{
+  "name": "predictions-for-location-solution-definition",
+  "constraints": [
+    {
+      "constraintType": "STRING",
+      "criterion": "stationName",
+      "operator": {
+        "type": "EQ",
+        "negated": false
+      },
+      "value": [
+        "ASAR"
+      ]
+    }
+  ],
+  "parameters": {
+    "featurePredictionsDefinitions": [
+      {
+        "earthModel": "Iaspei",
+        "predictionTypes": [
+          "ARRIVAL_TIME",
+          "SOURCE_TO_RECEIVER_AZIMUTH"
+        ],
+        "correctionDefinitions": []
+      }
+    ]
+  }
+}

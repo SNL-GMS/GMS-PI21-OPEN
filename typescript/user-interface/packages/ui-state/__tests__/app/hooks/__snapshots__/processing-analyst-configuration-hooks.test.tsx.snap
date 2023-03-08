@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`processing analyst configuration hooks can retrieve all UI themes 1`] = `
+Array [
+  Object {
+    "colors": Object {
+      "completeEventSDColor": "#62D96B",
+      "gmsBackground": "#182026",
+      "gmsMain": "#f5f8fa",
+      "gmsMainInverted": "#10161a",
+      "gmsSelection": "#1589d1",
+      "gmsTableSelection": "#f5f8fa",
+      "mapStationDefault": "#6F6E74",
+      "mapVisibleStation": "#D9822B",
+      "openEventSDColor": "#C87619",
+      "otherEventSDColor": "#FFFFFF",
+      "predictionSDColor": "#C58C1B",
+      "unassociatedSDColor": "#C23030",
+      "waveformDimPercent": 0.75,
+      "waveformFilterLabel": "#f5f8fa",
+      "waveformRaw": "#4580e6",
+    },
+    "display": Object {
+      "edgeEventOpacity": 0.35,
+      "edgeSDOpacity": 0.2,
+      "predictionSDOpacity": 0.1,
+    },
+    "name": "GMS Dark Theme",
+  },
+]
+`;
+
+exports[`processing analyst configuration hooks can use associated complete signal detection color 1`] = `"#62D96B"`;
+
+exports[`processing analyst configuration hooks can use associated complete signal detection color 2`] = `"#62D96B"`;
+
+exports[`processing analyst configuration hooks can use associated open signal detection color 1`] = `"#C87619"`;
+
+exports[`processing analyst configuration hooks can use associated open signal detection color 2`] = `"#C87619"`;
+
+exports[`processing analyst configuration hooks can use associated other signal detection color 1`] = `"#FFFFFF"`;
+
+exports[`processing analyst configuration hooks can use associated other signal detection color 2`] = `"#FFFFFF"`;
+
+exports[`processing analyst configuration hooks can use default interactive analysis station group 1`] = `null`;
+
+exports[`processing analyst configuration hooks can use default interactive analysis station group 2`] = `"test"`;
+
+exports[`processing analyst configuration hooks can use map default (non-visible) station color 1`] = `"#6F6E74"`;
+
+exports[`processing analyst configuration hooks can use map default (non-visible) station color 2`] = `"#6F6E74"`;
+
+exports[`processing analyst configuration hooks can use ui theme 1`] = `"{\\"colors\\":{\\"gmsMain\\":\\"#f5f8fa\\",\\"gmsMainInverted\\":\\"#10161a\\",\\"gmsBackground\\":\\"#182026\\",\\"gmsSelection\\":\\"#1589d1\\",\\"gmsTableSelection\\":\\"#f5f8fa\\",\\"mapVisibleStation\\":\\"#D9822B\\",\\"mapStationDefault\\":\\"#6F6E74\\",\\"waveformDimPercent\\":0.75,\\"waveformFilterLabel\\":\\"#f5f8fa\\",\\"waveformRaw\\":\\"#4580e6\\",\\"unassociatedSDColor\\":\\"#C23030\\",\\"openEventSDColor\\":\\"#C87619\\",\\"completeEventSDColor\\":\\"#62D96B\\",\\"otherEventSDColor\\":\\"#FFFFFF\\",\\"predictionSDColor\\":\\"#C58C1B\\"},\\"display\\":{\\"edgeEventOpacity\\":0.35,\\"edgeSDOpacity\\":0.2,\\"predictionSDOpacity\\":0.1},\\"name\\":\\"GMS Dark Theme\\"}"`;
+
+exports[`processing analyst configuration hooks can use ui theme 2`] = `"{\\"colors\\":{\\"gmsMain\\":\\"#f5f8fa\\",\\"gmsMainInverted\\":\\"#10161a\\",\\"gmsBackground\\":\\"#182026\\",\\"gmsSelection\\":\\"#1589d1\\",\\"gmsTableSelection\\":\\"#f5f8fa\\",\\"mapVisibleStation\\":\\"#D9822B\\",\\"mapStationDefault\\":\\"#6F6E74\\",\\"waveformDimPercent\\":0.75,\\"waveformFilterLabel\\":\\"#f5f8fa\\",\\"waveformRaw\\":\\"#4580e6\\",\\"unassociatedSDColor\\":\\"#C23030\\",\\"openEventSDColor\\":\\"#C87619\\",\\"completeEventSDColor\\":\\"#62D96B\\",\\"otherEventSDColor\\":\\"#FFFFFF\\",\\"predictionSDColor\\":\\"#C58C1B\\"},\\"display\\":{\\"edgeEventOpacity\\":0.35,\\"edgeSDOpacity\\":0.2,\\"predictionSDOpacity\\":0.1},\\"name\\":\\"GMS Dark Theme\\"}"`;
+
+exports[`processing analyst configuration hooks can use unassociated signal detection color 1`] = `"#CD4246"`;
+
+exports[`processing analyst configuration hooks can use unassociated signal detection color 2`] = `"#C23030"`;
+
+exports[`processing analyst configuration hooks can use unassociated signal detection length in meters 1`] = `"11100000"`;
+
+exports[`processing analyst configuration hooks can use unassociated signal detection length in meters 2`] = `"10"`;
+
+exports[`processing analyst configuration hooks can use visible station color 1`] = `"#D9822B"`;
+
+exports[`processing analyst configuration hooks can use visible station color 2`] = `"#D9822B"`;
+
+exports[`processing analyst configuration hooks creates the expected custom css vars for our event association colors 1`] = `"{\\"--open-associated-text-color\\":\\"#10161a\\",\\"--complete-associated-text-color\\":\\"#10161a\\",\\"--other-associated-text-color\\":\\"#10161a\\",\\"--unassociated-text-color\\":\\"#f5f8fa\\"}"`;

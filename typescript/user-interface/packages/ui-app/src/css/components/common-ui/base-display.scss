@@ -1,0 +1,21 @@
+.base-display {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  contain: strict; // Performance optimization to speed up render step
+  &.full-width-height {
+    height: 100%;
+    width: 100%;
+    flex-grow: 1;
+  }
+  &.scroll-box--x {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  &.scroll-box--y {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}

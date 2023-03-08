@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: signal-enhancement-configuration
+  processing:
+    configuration-names: signal-enhancement-configuration
+
+server:
+  compression:
+    enabled: true
+    mime-types: "text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json,application/msgpack"
+    min-response-size: 1024
+  servlet:
+    context-path: /signal-enhancement-configuration-manager-service
+
+filterDefinitionConfig: global.filter-definition
+filterDescriptionConfig: global.filter-a-description
+cascadeFilterConfig: global.filter-cascade
+filterListConfig: global.filter-list
+filterListDefinitionConfig: global.filter-list-definition
+filterMetadataConfig: global.filter-metadata
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true

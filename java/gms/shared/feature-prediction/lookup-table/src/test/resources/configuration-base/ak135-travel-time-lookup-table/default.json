@@ -1,0 +1,11 @@
+{
+  "name": "feature-prediction-service",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "minio_key_prefix": "travel-time/ak135/"
+  }
+}

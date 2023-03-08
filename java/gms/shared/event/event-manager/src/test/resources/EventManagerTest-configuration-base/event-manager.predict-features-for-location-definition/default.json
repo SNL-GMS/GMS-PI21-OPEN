@@ -1,0 +1,24 @@
+{
+  "name": "predict-features-for-location-definition",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "featurePredictionsDefinitions": [
+      {
+        "earthModel": "Ak135",
+        "predictionTypes": [
+          "ARRIVAL_TIME"
+        ],
+        "correctionDefinitions": [
+          {
+            "mediumVelocityEarthModel": "Ak135",
+            "correctionType": "ELEVATION_CORRECTION"
+          }
+        ]
+      }
+    ]
+  }
+}

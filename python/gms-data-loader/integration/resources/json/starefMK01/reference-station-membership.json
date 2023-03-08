@@ -1,0 +1,11 @@
+[
+  {
+    "id": "b69492d1-44b5-309b-a90a-edbb54a8a107",
+    "stationId": "6bdc9cc8-daf5-3f8b-b9bd-bf8eca93311a",
+    "actualChangeTime": "2000-04-01T00:00:00Z",
+    "systemChangeTime": "2000-04-01T00:00:00Z",
+    "siteId": "3c9745bf-8aba-32d0-94b2-3b8c360ce086",
+    "status": "ACTIVE",
+    "comment": "Relationship for station MKAR and site MK01"
+  }
+]

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Time Utils Can put time units into a high precision string 1`] = `"8 days 1 minute 30 seconds"`;
+
+exports[`Time Utils Can put time units into a max precision string 1`] = `"1 minute"`;
+
+exports[`Time Utils Can split seconds 1`] = `
+Object {
+  "days": 8,
+  "hours": 0,
+  "milliseconds": 0,
+  "minutes": 1,
+  "seconds": 30,
+}
+`;
+
+exports[`Time Utils getIndexOfFirstSignificantTimeUnit and timeUnitsToString 1`] = `"1 day"`;
+
+exports[`Time Utils getIndexOfFirstSignificantTimeUnit and timeUnitsToString 2`] = `"1 hour"`;
+
+exports[`Time Utils getIndexOfFirstSignificantTimeUnit and timeUnitsToString 3`] = `"1 minute"`;
+
+exports[`Time Utils getIndexOfFirstSignificantTimeUnit and timeUnitsToString 4`] = `"1 second"`;
+
+exports[`Time Utils getIndexOfFirstSignificantTimeUnit and timeUnitsToString 5`] = `"1 millisecond"`;

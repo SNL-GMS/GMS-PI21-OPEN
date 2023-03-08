@@ -1,0 +1,42 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+    implementation libs.org.springframework.boot.spring.boot.starter.web
+
+    implementation project(':frameworks-system-config')
+    api project(':event-api')
+    api project(':event-coi')
+    api project(':signal-detection-api')
+    api project(':station-definition-api')
+    api project(':waveform-api')
+    implementation project(':signal-detection-accessor')
+    implementation project(':signal-detection-database-connector')
+    implementation project(':spring-persistence-oracle')
+    implementation project(':event-repository')
+
+    testImplementation(testFixtures(project(':event-coi')))
+    testImplementation libs.org.mockito.mockito.inline
+    testImplementation libs.org.mockito.mockito.core
+
+    implementation project(':signal-detection-testfixtures')
+
+    //db and oracle
+    implementation libs.org.springframework.boot.spring.boot.starter.data.jpa
+    implementation libs.com.oracle.ojdbc.ojdbc8
+    implementation libs.org.hibernate.hibernate.c3p0
+
+    // Required by SignalDetection/StationDefinition/Waveform Accessors
+    implementation project(':signal-detection-api')
+    implementation project(':station-definition-accessor')
+    implementation project(':bridge-utilities')
+    implementation project(':waveform-api')
+    implementation project(':waveform-accessor')
+    implementation project(':station-definition-repository')
+    implementation project(':spring-framework-utilities')
+    implementation project(':frameworks-control')
+    implementation project(':waveform-bridge-repository')
+    implementation project(':caching-utils')
+}

@@ -1,0 +1,15 @@
+{
+  "groups": [
+    {
+      "group": "ALL",
+      "description": "All stations in datafeed",
+      "uiPosition": 1,
+      "rules": [
+        {
+          "name": "all",
+          "type": "none"
+        }
+      ]
+    }
+  ]
+}

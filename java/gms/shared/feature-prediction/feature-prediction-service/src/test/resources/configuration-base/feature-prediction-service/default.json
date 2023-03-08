@@ -1,0 +1,13 @@
+{
+  "name": "feature-prediction-service",
+  "constraints": [
+    {
+      "constraintType": "DEFAULT"
+    }
+  ],
+  "parameters": {
+    "pluginByFeatureMeasurementType": {
+      "ARRIVAL_TIME": "BicubicSplineFeaturePredictor"
+    }
+  }
+}

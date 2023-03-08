@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`workflow time axis tests matches snapshot 1`] = `
+<TimeRange
+  endTime={86410}
+  startTime={0}
+>
+  <div
+    className="workflow-time-range"
+  >
+    <span
+      className="time-range-left"
+    >
+      1970-01-01
+    </span>
+    <span
+      className="time-range-right"
+    >
+      1970-01-02
+    </span>
+  </div>
+</TimeRange>
+`;
+
+exports[`workflow time axis tests matches snapshot 2`] = `
+<TimeRange
+  endTime={86410}
+  startTime={0}
+>
+  <div
+    className="workflow-time-range"
+  >
+    <span
+      className="time-range-left"
+    >
+      1970-01-01
+    </span>
+    <span
+      className="time-range-right"
+    >
+      1970-01-02
+    </span>
+  </div>
+</TimeRange>
+`;
+
+exports[`workflow time axis tests matches snapshot 3`] = `
+<TimeRange
+  endTime={86420}
+  startTime={0}
+>
+  <div
+    className="workflow-time-range"
+  >
+    <span
+      className="time-range-left"
+    >
+      1970-01-01
+    </span>
+    <span
+      className="time-range-right"
+    >
+      1970-01-02
+    </span>
+  </div>
+</TimeRange>
+`;
+
+exports[`workflow time axis tests matches snapshot 4`] = `
+<TimeRange
+  endTime={345640}
+  startTime={0}
+>
+  <div
+    className="workflow-time-range"
+  >
+    <span
+      className="time-range-left"
+    >
+      1970-01-01
+    </span>
+    <span
+      className="time-range-right"
+    >
+      1970-01-05
+    </span>
+  </div>
+</TimeRange>
+`;

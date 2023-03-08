@@ -1,0 +1,11 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+    // Third-party dependencies.
+    implementation libs.org.apache.commons.commons.math3
+    implementation libs.io.projectreactor.reactor.core
+}
+
+

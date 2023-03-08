@@ -1,0 +1,71 @@
+.workspace-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  --webkit-user-select: none;
+  flex-direction: column;
+}
+
+.bp4-navbar.workspace-navbar {
+  background-color: var(--gms-popover-background, $gms-popover-background);
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.workspace-logo {
+  margin-left: 9px;
+  padding: 6px 3px;
+  .bp4-dark & {
+    filter: invert(100%);
+  }
+}
+
+.workspace-logo__label {
+  margin-left: 0.25rem;
+}
+.keypress-signifier {
+  animation-name: flash-active;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+@keyframes flash-active {
+  from {
+    color: var(--gms-input-highlight, $gms-input-highlight);
+  }
+  to {
+    color: var(--gms-main, $gms-main);
+  }
+}
+
+.workspace-invalid-state {
+  display: flex;
+  flex: 1 1 auto;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.workspace {
+  width: calc(100%);
+  max-width: 100%;
+  height: calc(100% - 36px);
+  flex: 1 1 auto;
+}
+
+.workspace-navbar__image-label {
+  display: flex;
+  align-items: center;
+}
+
+.unopened-layout {
+  margin-left: 24px;
+}
+
+// Override the default menu header. To be safe, we add our own class, too.
+.bp4-dark .menu-title > h6,
+.bp4-dark .bp4-menu-header > h6 {
+  color: var(--gms-menu-header-bold-text-color, var(--gms-prominent, $gms-prominent));
+  letter-spacing: 1px;
+}

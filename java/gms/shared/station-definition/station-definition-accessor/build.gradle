@@ -1,0 +1,48 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation project(':station-definition-repository')
+    implementation project(':station-definition-converter')
+    implementation project(':station-definition-dao')
+    implementation project(':station-definition-api')
+    implementation project(':caching-utils')
+    implementation project(':frameworks-configuration-repository')
+    implementation project(':frameworks-configuration-commonobjects')
+    implementation project(':frameworks-control')
+    implementation project(':java-utilities')
+    implementation project(':bridge-utilities')
+    implementation project(':spring-framework-utilities')
+
+    implementation libs.com.oracle.ojdbc.ojdbc8
+
+    // Ignite cache libs
+    implementation libs.javax.cache.cache.api
+    implementation libs.org.apache.ignite.ignite.core
+    implementation libs.org.apache.ignite.ignite.slf4j
+
+    //Google autovalue
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    implementation libs.com.google.guava.guava
+
+    implementation libs.net.jodah.failsafe
+    implementation libs.org.springframework.boot.spring.boot.starter.web
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+
+    implementation libs.org.hibernate.hibernate.entitymanager
+    // unit testing dependencies
+    testImplementation project(':frameworks-test-utilities')
+    testImplementation project(':station-definition-testfixtures')
+    testImplementation libs.org.testcontainers.testcontainers
+    testImplementation libs.org.testcontainers.junit.jupiter
+    testImplementation libs.org.mockito.mockito.inline
+    testImplementation libs.org.mockito.mockito.core
+    testImplementation libs.org.mockito.mockito.junit.jupiter
+    testImplementation libs.org.springframework.boot.spring.boot.starter.test
+}
+configurations {
+    all {
+        exclude group: 'org.apache.logging.log4j', module: 'log4j-slf4j-impl'
+    }
+}

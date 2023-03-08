@@ -1,0 +1,446 @@
+#!/usr/bin/env python3
+
+# ------------------------------------------------------------------------------
+# soh-timing-analysis test script
+#
+# soh-timing-analysis examines special diagnostic log messages from
+# a running GMS SOH instance to compute the latency for processing
+# Raw Station Data Frame (RSDF) data through the GMS SOH system.
+# ------------------------------------------------------------------------------
+
+import locale
+import os
+import statistics
+import subprocess
+import sys
+import concurrent.futures
+import matplotlib.pyplot as plt
+
+from argparse import ArgumentParser
+from argparse import RawDescriptionHelpFormatter
+from datetime import datetime
+from datetime import timedelta
+from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
+from matplotlib.dates import DateFormatter
+from shutil import which
+
+locale.setlocale(locale.LC_ALL, "")
+
+
+def main():
+    args = get_args()
+
+    def run_get_timing_points(instance, service, timing_point, user=None,
+                              after='now-24h', before='now'):
+        return {
+            'timing_point': timing_point,
+            'points': get_timing_points(
+                instance, service, timing_point, user, after, before
+            )
+        }
+
+    timing_points = [{'name': 'A',
+                      'container': 'soh-control',
+                      'username': None},
+                     {'name': 'C',
+                      'container': 'interactive-analysis-api-gateway',
+                      'username': args.user}]
+    futures = []
+    for p in timing_points:
+        futures.append(ThreadPoolExecutor(max_workers=3).submit(
+            run_get_timing_points,
+            args.name,
+            p['container'],
+            p['name'],
+            p['username'],
+            args.after,
+            args.before
+        ))
+
+    # combine the timing points once as they are gathered
+    points = {}
+    for future in concurrent.futures.as_completed(futures):
+        result = future.result()
+        print(f"... {len(result['points']):n} '{result['timing_point']}' "
+              "timing points gathered ...")
+
+        # merge timing point results for each uuid
+        for uuid in result['points']:
+            if uuid not in points:
+                points[uuid] = result['points'][uuid]
+            else:
+                points[uuid].update(result['points'][uuid])
+
+    # compute timing statistics over all UUIDs
+    fully_covered_count = 0
+    failed_timing_count = 0
+    total_ac_count = 0
+    total_contributing_count = 0
+    c_before_a_count = 0
+    missing_count = {}
+    for p in ['A', 'C']:
+        missing_count[p] = 0
+    for uuid in points:
+        for p in ['A', 'C']:
+            if p not in points[uuid]:
+                missing_count[p] += 1
+
+        if 'A' in points[uuid] and 'C' in points[uuid]:
+            # only consider points that are in time-order
+            if points[uuid]['A'] < points[uuid]['C']:
+                points[uuid]['A-to-C'] = points[uuid]['C'] - points[uuid]['A']
+                total_ac_count += 1
+            else:
+                c_before_a_count += 1
+
+        if 'A' in points[uuid] and 'C' in points[uuid]:
+            fully_covered_count += 1
+
+        # Check A-to-C (or A-to-B, if that's all we have) to see if we
+        # exceed the highwater mark.
+        if 'A-to-C' in points[uuid]:
+            total_contributing_count += 1
+            if points[uuid]['A-to-C'] > timedelta(seconds=args.highwater):
+                failed_timing_count += 1
+
+    if total_contributing_count == 0:
+        print("---\nNO CONTRIBUTING TIMING POINTS (A-to-C) FOUND")
+        sys.exit(1)
+
+    times = {}
+
+    for p in ["A", "C"]:
+        times[p] = [points[uuid][p] for uuid in points if p in points[uuid]]
+    data_start_time = min(times["A"] + times["C"])
+    data_end_time = max(times["A"] + times["C"])
+    failed_percentage = (failed_timing_count/total_contributing_count)*100.0
+
+    if args.report:
+        report_filename = os.path.join(args.dst,
+                                       f"{args.name}_timing_report.txt")
+        print(f"---\nwriting report to '{report_filename}'...")
+    else:
+        report_filename = None
+
+    r = Reporter(report_filename)
+
+    r.print(f"---\nRSDF UUIDs from {data_start_time:%Y-%m-%d %H:%M:%S} to "
+            f"{data_end_time:%Y-%m-%d %H:%M:%S}")
+    r.print(f"     failed count:       {failed_timing_count:n} timing points "
+            f"exceed {args.highwater} seconds")
+    r.print(f"     failed percentage:  {failed_percentage:.2f}% timing points "
+            f"exceed {args.highwater} seconds")
+    r.print(f"     total contributing: {total_contributing_count:n}")
+    r.print(f"     total count:        {len(points):n}")
+    r.print(f"     A,C present:      {fully_covered_count:n} "
+            f"({fully_covered_count/len(points)*100.0:.2f}%)")
+    for p in ['A', 'C']:
+        r.print(f"     {p} missing:          {missing_count[p]:n} "
+                f"({missing_count[p]/len(points)*100.0:.2f}%)")
+    a_to_c = [points[uuid]['A-to-C'] for uuid in points if 'A-to-C' in
+              points[uuid]]
+    r.print("---")
+    r.print(f"A to C   count: {len(a_to_c):n} ({c_before_a_count:n} rejected "
+            "out of time order)")
+    if a_to_c:
+        r.print(f"         min:   {min(a_to_c)}")
+        r.print(f"         max:   {max(a_to_c)}")
+        r.print(f"         mean:  {timedelta_mean(a_to_c)}")
+        r.print(f"         stdev: {timedelta_stdev(a_to_c)}")
+    r.print("---")
+
+    if args.timing_plot:
+        print("generating timing plots...")
+
+        y_ac = [p.total_seconds() for p in a_to_c]
+        x_ac = [points[uuid]["A"] for uuid in points if "A-to-C" in
+                points[uuid]]
+        fig, axs = plt.subplots(2, 1, figsize=(7, 9), tight_layout=True)
+
+        timing_plots = [{'name': 'A to C', "x_vals": x_ac, 'y_vals': y_ac,
+                         'highwater': args.highwater, 'align': 'center'}]
+
+        for ax, p in zip(axs, timing_plots):
+            if not p["y_vals"]:
+                continue
+
+            min_y_val = min(p['y_vals'])
+            max_y_val = max(p['y_vals'])
+            mean_y_val = statistics.mean(p['y_vals'])
+            x_range = [min(p["x_vals"]), max(p["x_vals"])]
+
+            # ax.bar(range(len(p['y_vals'])), p['y_vals'], width=0.4,
+            #        align='center', label=p['name'])     # VERY slow :(
+            ax.plot(p["x_vals"], p['y_vals'], '.', markersize=1, alpha=0.5,
+                    label=p['name'])   # MUCH faster (but uglier)
+            ax.xaxis.set_major_formatter(DateFormatter("%m-%d\n%H:%M"))
+            ax.grid(axis="x")
+            if p['highwater']:
+                ax.plot(x_range, [p['highwater'], p['highwater']], color='r',
+                        linestyle=':', label=f"{p['highwater']} Sec")
+            ax.plot(x_range, [min_y_val, min_y_val], color='g', linestyle='--',
+                    label='Min')
+            ax.plot(x_range, [max_y_val, max_y_val], color='y', linestyle='--',
+                    label='Max')
+            ax.plot(x_range, [mean_y_val, mean_y_val], color='b',
+                    linestyle='--', label='Mean')
+
+            ax.set_title(f"Timing {p['name']}", loc=p['align'])
+            ax.set_xlabel(f'{data_start_time:%Y-%m-%d %H:%M:%S} to '
+                          f'{data_end_time:%Y-%m-%d %H:%M:%S}')
+            ax.set_xlim(data_start_time, data_end_time)
+            ax.set_ylabel('Seconds')
+            ax.legend(loc='upper right', bbox_to_anchor=(1.05, 1))
+
+        axs[1].plot(times["A"], [2 for _ in times["A"]], ".")
+        axs[1].plot(times["C"], [1 for _ in times["C"]], ".")
+        axs[1].xaxis.set_major_formatter(DateFormatter("%m-%d\n%H:%M"))
+        axs[1].grid(axis="x")
+        axs[1].set_xlabel("Time")
+        axs[1].set_xlim(data_start_time, data_end_time)
+        axs[1].set_yticks([1, 2])
+        axs[1].set_ylim(0, 4)
+        axs[1].set_yticklabels(["C", "A"])
+        axs[1].set_ylabel("Timing Point")
+        axs[1].set_title("Continuity of Logged Timing Points Over Time")
+
+        filename = os.path.join(args.dst, f"{args.name}_timing_plot.jpg")
+        plt.savefig(filename)
+        print(f"timing plots saved as '{filename}'")
+        print("---")
+
+        if args.display:
+            plt.show()
+
+    if args.distribution_plot:
+        print("generating distribution plot...")
+        fig, ax = plt.subplots(figsize=(9, 7), tight_layout=True)
+        x_ac = [points[uuid]['A'] for uuid in points if 'A-to-C' in
+                points[uuid]]
+        y_ac = [points[uuid]['A-to-C'].total_seconds() for uuid in points if
+                'A-to-C' in points[uuid]]
+        ax.set_title("Distribution of Timing Point Contributions",
+                     loc='center')
+        ax.plot(x_ac, y_ac, '.', markersize=4, label="A to C")
+        ax.xaxis.set_major_formatter(DateFormatter("%m-%d\n%H:%M"))
+        ax.grid(axis="x")
+        ax.set_ylabel('Seconds')
+        ax.set_xlabel('Time')
+        ax.legend()
+
+        filename = os.path.join(args.dst, f"{args.name}_distribution_plot.jpg")
+        plt.savefig(filename)
+        print(f"distribution plot saved as '{filename}'")
+        print("---")
+
+        if args.display:
+            plt.show()
+
+    if failed_percentage > args.min_percentage:
+        r.print(f"FAILED PERCENTAGE {failed_percentage:.2f}% EXCEEDED MINIMUM "
+                f"{args.min_percentage:.2f}%: TEST FAILED")
+        r.print("---")
+        sys.exit(1)
+
+    sys.exit(0)
+
+
+def get_timing_points(instance, service, timing_point, username=None,
+                      after='now-24h', before='now'):
+    """
+    Parse the logs from a given service in a named instance for
+    messages referring to the requested timing point.  Log messages
+    are expected to be of the form 'Timing Point X' (where 'X' is the
+    requested timing point).
+    """
+
+    print(f"gathering '{timing_point}' timing points...")
+
+    points = defaultdict(dict)
+
+    if which("gms-logs") is None:
+        raise RuntimeError(
+            "Unable to locate the `gms-logs` script in your `PATH`.  Ensure "
+            "you `export GMS_COMMON_INCLUDE_TEST_LIB=1` before you `source "
+            "gms-common/.bash_env` in your `.bashrc`."
+        )
+    command = (f'gms-logs -c {service} -n {instance} -a {after} -b {before} '
+               f'-m "Timing Point {timing_point}"')
+    if username:
+        command = command + f' -m "{username}"'
+
+    cmd = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE,
+                           stderr=subprocess.PIPE)
+    while True:
+        line = cmd.stdout.readline().decode('ascii')
+        if not line:
+            break
+        try:
+            # budget parsing using 'split' to get 'uuid' and 'timing point'
+            fields = line.rstrip().split(" ")
+
+            if timing_point == 'A':
+                uuid = fields[11][1:-1]
+                timestamp = convert_datetime(fields[14][1:-1])
+            elif timing_point == 'C':
+                uuid = fields[10]
+                timestamp = convert_datetime(fields[15])
+            else:
+                print("Analysis for unsupported timing point "
+                      f"'{timing_point}' requested.")
+
+            points[uuid][timing_point] = timestamp
+        except Exception as e:
+            print(f"{timing_point}: Failed to read line '{line}' {e}")
+
+    rc = cmd.poll()
+    if rc != 0:
+        print(f"ERROR: Failed to gather timing points '{timing_point}'.  RC: "
+              f"{cmd.returncode}")
+        while True:
+            err = cmd.stderr.readline().decode('ascii')
+            if err:
+                print(err.rstrip())
+            out = cmd.stderr.readline().decode('ascii')
+            if out:
+                print(out.rstrip())
+            if not err and not out:
+                break
+        sys.exit(1)
+
+    return points
+
+
+def convert_datetime(s):
+    supported_formats = ["%Y-%m-%dT%H:%M:%S.%fZ",
+                         "%Y-%m-%dT%H:%M:%SZ",
+                         "%Y-%m-%dT%H:%M:%S"]
+    value = None
+    for fmt in supported_formats:
+        try:
+            value = datetime.strptime(s, fmt)
+        except Exception:
+            pass
+        if value:
+            break
+
+    if not value:
+        print(f"ERROR: time data '{s}' does not match any expected date/time "
+              "format")
+        sys.exit(1)
+
+    return value
+
+
+def timedelta_mean(items):
+    return timedelta(seconds=statistics.mean([v.total_seconds() for v in
+                                              items]))
+
+
+def timedelta_stdev(items):
+    return timedelta(seconds=statistics.pstdev([v.total_seconds() for v in
+                                                items]))
+
+
+class Reporter:
+    """
+    Report printing class that prints to stdout as well as an optional
+    report file.
+    """
+    def __init__(self, report_filename=None):
+        self.report_file = None
+        if report_filename:
+            self.report_file = open(report_filename, 'w')
+
+    def print(self, *objects):
+        print(*objects)
+        if self.report_file:
+            print(*objects, file=self.report_file)
+
+
+def get_args():
+    """
+    Get command-line arguments.
+    """
+
+    description = """
+description:
+  soh-timing-analysis examines special diagnostic log messages from
+  a running GMS SOH instance to compute the latency for processing
+  Raw Station Data Frame (RSDF) data through the GMS SOH system.
+
+  These timing diagnostic messages MUST have been enabled by providing
+  the following arguments when installing the system with gmskube:
+
+    --set soh-control.env.GMS_CONFIG_LOG_LEVEL=TIMING
+    --set interactive-analysis-api-gateway.env.GMS_CONFIG_LOG_LEVEL=TIMING
+    --set ssam-control.env.GMS_CONFIG_LOG_LEVEL=TIMING
+
+  There are two points gathered for each received RSDF:
+
+  * The first (A) is printed when a new station packet is received for
+    SOH processing.
+
+  * The second (C) measures the transmission time betwen the back-end
+    services and the front-end UI. A UI must be open and logged in
+    for these log messages to be printed.
+
+  NOTE: Timing Point 'C' metrics are gathered per-user and are
+  computed only for the username specified by the --user argument.
+
+examples:
+  Perform a timing analysis on soh-develop for the gms user:
+    $ soh-timing-analysis -n soh-develop -u gms
+
+    """
+    parser = ArgumentParser(description=description,
+                            formatter_class=RawDescriptionHelpFormatter)
+
+    parser.add_argument('--name', '-n', required=True,
+                        help="Name of the SOH instance to scan")
+    parser.add_argument('--user', '-u', default='fin-sm',
+                        help="Username logged into UI (needed for Timing "
+                             "Point C)")
+    parser.add_argument('--highwater', default=60,
+                        help="Exceeding this number of seconds is considered "
+                             "a failure")
+    parser.add_argument('--min_percentage', '-m', type=float, default=3.0,
+                        help="Minimum percentage (0.0 to 100.0) allowed to "
+                             "exceed")
+    parser.add_argument('--after', '-a', default='now-24h',
+                        help="Only consider timing points logged after this "
+                             "time")
+    parser.add_argument('--before', '-b', default='now',
+                        help="Only consider timing points logged before this "
+                             "time")
+
+    parser.add_argument('--dst', '-d', default='.',
+                        help="Destination directory for reports and plots.")
+
+    parser.add_argument('--report', '-r', action='store_true',
+                        help="Write a summary report file")
+    parser.add_argument('--timing-plot', action='store_true',
+                        help="Generate a timing plot")
+    parser.add_argument('--distribution-plot', action='store_true',
+                        help="Generate a distribution plot")
+    parser.add_argument('--display', action='store_true',
+                        help="Interactive display of generated plots")
+
+    args = parser.parse_args()
+
+    # create the report destination directory if necessary
+    if args.report or args.timing_plot or args.distribution_plot:
+        if not os.path.exists(args.dst):
+            try:
+                os.mkdir(args.dst)
+            except Exception:
+                print(f"Failed to create report directory '{args.dst}'.  "
+                      "Defaulting to '.'")
+                args.dst = '.'
+
+    return args
+
+
+if __name__ == "__main__":
+    main()

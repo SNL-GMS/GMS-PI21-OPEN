@@ -1,0 +1,2700 @@
+{
+  "predictionTypes": [
+    "ARRIVAL_TIME"
+  ],
+  "sourceLocationSolution": {
+    "locationRestraint": {
+      "positionRestraintType": "UNRESTRAINED",
+      "timeRestraintType": "UNRESTRAINED",
+      "depthRestraintType": "UNRESTRAINED",
+      "depthRestraintReason": null,
+      "depthRestraintKm": null,
+      "latitudeRestraintDegrees": null,
+      "longitudeRestraintDegrees": null,
+      "timeRestraint": null
+    },
+    "locationUncertainty": {
+      "xx": 4292.5325,
+      "stDevOneObservation": 1.3459672,
+      "xy": -2816.5082,
+      "xz": -1.0,
+      "xt": 396.86611,
+      "yy": 9026.1962,
+      "yz": -1.0,
+      "yt": -989.85959,
+      "zz": -1.0,
+      "zt": -1.0,
+      "tt": 113.49333,
+      "ellipses": [
+        {
+          "kWeight": 0.0,
+          "scalingFactorType": "CONFIDENCE",
+          "confidenceLevel": 0.9,
+          "semiMajorAxisLengthKm": 218.07482,
+          "semiMajorAxisTrendDeg": 155.02088,
+          "semiMinorAxisLengthKm": 117.08999,
+          "depthUncertaintyKm": -1.0,
+          "timeUncertainty": "PT17.537663S"
+        }
+      ],
+      "ellipsoids": []
+    },
+    "networkMagnitudeSolutions": [
+      {
+        "networkMagnitudeBehaviors": [
+          {
+            "residual": 0.0,
+            "weight": 1.0,
+            "defining": true,
+            "stationMagnitudeSolution": {
+              "model": "UNKNOWN",
+              "modelCorrection": null,
+              "stationCorrection": null,
+              "measurement": {
+                "channel": {
+                  "canonicalName": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a",
+                  "channelBandType": "SHORT_PERIOD",
+                  "channelDataType": "SEISMIC",
+                  "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+                  "channelOrientationCode": "Z",
+                  "channelOrientationType": "VERTICAL",
+                  "configuredInputs": [],
+                  "description": "ASAR/SHZ fk beam",
+                  "effectiveUntil": "2019-01-05T16:10:33.350Z",
+                  "location": {
+                    "depthKm": 0.0274,
+                    "elevationKm": 0.6273,
+                    "latitudeDegrees": -23.665134,
+                    "longitudeDegrees": 133.905261
+                  },
+                  "nominalSampleRateHz": 20.0,
+                  "orientationAngles": {
+                    "horizontalAngleDeg": -1.0,
+                    "verticalAngleDeg": 0.0
+                  },
+                  "processingDefinition": {
+                    "STEERING_AZIMUTH": 330.61408,
+                    "BEAM_COHERENT": "B",
+                    "STEERING_SLOWNESS": 10.04632
+                  },
+                  "processingMetadata": {
+                    "BRIDGED": "/bridged,ARID:138282190",
+                    "CHANNEL_GROUP": "beam",
+                    "STEERING_AZIMUTH": 330.61408,
+                    "STEERING_SLOWNESS": 10.04632,
+                    "BEAM_COHERENT": "B",
+                    "BEAM_TYPE": "FK"
+                  },
+                  "response": null,
+                  "station": {
+                    "effectiveAt": "2005-06-14T00:00:00Z",
+                    "name": "ASAR"
+                  },
+                  "units": "NANOMETERS",
+                  "effectiveAt": "2019-01-05T16:05:33.400Z",
+                  "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+                },
+                "measuredChannelSegment": {
+                  "timeseriesType": "WAVEFORM",
+                  "units": "UNITLESS",
+                  "timeseries": [],
+                  "id": {
+                    "channel": {
+                      "effectiveAt": "2019-01-05T16:05:33.400Z",
+                      "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+                    },
+                    "startTime": "2019-01-05T16:05:33.400Z",
+                    "endTime": "2019-01-05T16:10:33.350Z",
+                    "creationTime": "2019-01-05T16:05:33.400Z"
+                  }
+                },
+                "featureMeasurementType": "AMPLITUDE_A5_OVER_2",
+                "measurementValue": {
+                  "measurementTime": "2019-01-05T16:06:35.950Z",
+                  "measurementWindowStart": "2019-01-05T16:06:32.900Z",
+                  "measurementWindowDuration": "PT6S",
+                  "period": "PT0.82082303S",
+                  "amplitude": {
+                    "value": 0.81847975,
+                    "standardDeviation": null,
+                    "units": "UNITLESS"
+                  }
+                },
+                "snr": null
+              },
+              "type": "MB",
+              "phase": "P",
+              "station": {
+                "effectiveAt": null,
+                "name": "ASAR"
+              },
+              "magnitude": {
+                "value": 3.097741,
+                "standardDeviation": 0.4,
+                "units": "UNITLESS"
+              }
+            }
+          }
+        ],
+        "type": "MB",
+        "magnitude": {
+          "value": 3.097741,
+          "standardDeviation": -1.0,
+          "units": "UNITLESS"
+        }
+      },
+      {
+        "networkMagnitudeBehaviors": [
+          {
+            "residual": -0.13289098,
+            "weight": 1.0,
+            "defining": true,
+            "stationMagnitudeSolution": {
+              "model": "UNKNOWN",
+              "modelCorrection": null,
+              "stationCorrection": null,
+              "measurement": {
+                "channel": {
+                  "canonicalName": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266",
+                  "channelBandType": "BROADBAND",
+                  "channelDataType": "SEISMIC",
+                  "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+                  "channelOrientationCode": "Z",
+                  "channelOrientationType": "VERTICAL",
+                  "configuredInputs": [],
+                  "description": "WRA/BHZ fk beam",
+                  "effectiveUntil": "2019-01-05T16:09:59.700Z",
+                  "location": {
+                    "depthKm": 0.005,
+                    "elevationKm": 0.3888,
+                    "latitudeDegrees": -19.9426,
+                    "longitudeDegrees": 134.3395
+                  },
+                  "nominalSampleRateHz": 40.0,
+                  "orientationAngles": {
+                    "horizontalAngleDeg": -1.0,
+                    "verticalAngleDeg": 0.0
+                  },
+                  "processingDefinition": {
+                    "STEERING_AZIMUTH": 340.97998,
+                    "BEAM_COHERENT": "B",
+                    "STEERING_SLOWNESS": 12.60525
+                  },
+                  "processingMetadata": {
+                    "BRIDGED": "/bridged,ARID:138282263",
+                    "CHANNEL_GROUP": "beam",
+                    "STEERING_AZIMUTH": 340.97998,
+                    "STEERING_SLOWNESS": 12.60525,
+                    "BEAM_COHERENT": "B",
+                    "BEAM_TYPE": "FK"
+                  },
+                  "response": null,
+                  "station": {
+                    "effectiveAt": "1999-07-01T00:00:00Z",
+                    "name": "WRA"
+                  },
+                  "units": "NANOMETERS",
+                  "effectiveAt": "2019-01-05T16:04:59.725Z",
+                  "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+                },
+                "measuredChannelSegment": {
+                  "timeseriesType": "WAVEFORM",
+                  "units": "UNITLESS",
+                  "timeseries": [],
+                  "id": {
+                    "channel": {
+                      "effectiveAt": "2019-01-05T16:04:59.725Z",
+                      "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+                    },
+                    "startTime": "2019-01-05T16:04:59.725Z",
+                    "endTime": "2019-01-05T16:09:59.700Z",
+                    "creationTime": "2019-01-05T16:04:59.725Z"
+                  }
+                },
+                "featureMeasurementType": "AMPLITUDE_A5_OVER_2",
+                "measurementValue": {
+                  "measurementTime": "2019-01-05T16:06:02.450Z",
+                  "measurementWindowStart": "2019-01-05T16:05:59.225Z",
+                  "measurementWindowDuration": "PT6S",
+                  "period": "PT0.38827896S",
+                  "amplitude": {
+                    "value": 0.2162143,
+                    "standardDeviation": null,
+                    "units": "UNITLESS"
+                  }
+                },
+                "snr": null
+              },
+              "type": "ML",
+              "phase": "P",
+              "station": {
+                "effectiveAt": null,
+                "name": "WRA"
+              },
+              "magnitude": {
+                "value": 3.3467894,
+                "standardDeviation": 0.40000001,
+                "units": "UNITLESS"
+              }
+            }
+          }
+        ],
+        "type": "ML",
+        "magnitude": {
+          "value": 3.4796804,
+          "standardDeviation": 0.31234753,
+          "units": "UNITLESS"
+        }
+      },
+      {
+        "networkMagnitudeBehaviors": [
+          {
+            "residual": 0.0,
+            "weight": 1.0,
+            "defining": true,
+            "stationMagnitudeSolution": {
+              "model": "UNKNOWN",
+              "modelCorrection": null,
+              "stationCorrection": null,
+              "measurement": {
+                "channel": {
+                  "canonicalName": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a",
+                  "channelBandType": "SHORT_PERIOD",
+                  "channelDataType": "SEISMIC",
+                  "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+                  "channelOrientationCode": "Z",
+                  "channelOrientationType": "VERTICAL",
+                  "configuredInputs": [],
+                  "description": "ASAR/SHZ fk beam",
+                  "effectiveUntil": "2019-01-05T16:10:33.350Z",
+                  "location": {
+                    "depthKm": 0.0274,
+                    "elevationKm": 0.6273,
+                    "latitudeDegrees": -23.665134,
+                    "longitudeDegrees": 133.905261
+                  },
+                  "nominalSampleRateHz": 20.0,
+                  "orientationAngles": {
+                    "horizontalAngleDeg": -1.0,
+                    "verticalAngleDeg": 0.0
+                  },
+                  "processingDefinition": {
+                    "STEERING_AZIMUTH": 330.61408,
+                    "BEAM_COHERENT": "B",
+                    "STEERING_SLOWNESS": 10.04632
+                  },
+                  "processingMetadata": {
+                    "BRIDGED": "/bridged,ARID:138282190",
+                    "CHANNEL_GROUP": "beam",
+                    "STEERING_AZIMUTH": 330.61408,
+                    "STEERING_SLOWNESS": 10.04632,
+                    "BEAM_COHERENT": "B",
+                    "BEAM_TYPE": "FK"
+                  },
+                  "response": null,
+                  "station": {
+                    "effectiveAt": "2005-06-14T00:00:00Z",
+                    "name": "ASAR"
+                  },
+                  "units": "NANOMETERS",
+                  "effectiveAt": "2019-01-05T16:05:33.400Z",
+                  "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+                },
+                "measuredChannelSegment": {
+                  "timeseriesType": "WAVEFORM",
+                  "units": "UNITLESS",
+                  "timeseries": [],
+                  "id": {
+                    "channel": {
+                      "effectiveAt": "2019-01-05T16:05:33.400Z",
+                      "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+                    },
+                    "startTime": "2019-01-05T16:05:33.400Z",
+                    "endTime": "2019-01-05T16:10:33.350Z",
+                    "creationTime": "2019-01-05T16:05:33.400Z"
+                  }
+                },
+                "featureMeasurementType": "AMPLITUDE_A5_OVER_2",
+                "measurementValue": {
+                  "measurementTime": "2019-01-05T16:06:35.950Z",
+                  "measurementWindowStart": "2019-01-05T16:06:32.900Z",
+                  "measurementWindowDuration": "PT6S",
+                  "period": "PT0.82082303S",
+                  "amplitude": {
+                    "value": 0.81847975,
+                    "standardDeviation": null,
+                    "units": "UNITLESS"
+                  }
+                },
+                "snr": null
+              },
+              "type": "MB",
+              "phase": "P",
+              "station": {
+                "effectiveAt": null,
+                "name": "ASAR"
+              },
+              "magnitude": {
+                "value": 3.097741,
+                "standardDeviation": 0.4,
+                "units": "UNITLESS"
+              }
+            }
+          }
+        ],
+        "type": "MB",
+        "magnitude": {
+          "value": 3.097741,
+          "standardDeviation": -1.0,
+          "units": "UNITLESS"
+        }
+      },
+      {
+        "networkMagnitudeBehaviors": [
+          {
+            "residual": -0.13289098,
+            "weight": 1.0,
+            "defining": true,
+            "stationMagnitudeSolution": {
+              "model": "UNKNOWN",
+              "modelCorrection": null,
+              "stationCorrection": null,
+              "measurement": {
+                "channel": {
+                  "canonicalName": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266",
+                  "channelBandType": "BROADBAND",
+                  "channelDataType": "SEISMIC",
+                  "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+                  "channelOrientationCode": "Z",
+                  "channelOrientationType": "VERTICAL",
+                  "configuredInputs": [],
+                  "description": "WRA/BHZ fk beam",
+                  "effectiveUntil": "2019-01-05T16:09:59.700Z",
+                  "location": {
+                    "depthKm": 0.005,
+                    "elevationKm": 0.3888,
+                    "latitudeDegrees": -19.9426,
+                    "longitudeDegrees": 134.3395
+                  },
+                  "nominalSampleRateHz": 40.0,
+                  "orientationAngles": {
+                    "horizontalAngleDeg": -1.0,
+                    "verticalAngleDeg": 0.0
+                  },
+                  "processingDefinition": {
+                    "STEERING_AZIMUTH": 340.97998,
+                    "BEAM_COHERENT": "B",
+                    "STEERING_SLOWNESS": 12.60525
+                  },
+                  "processingMetadata": {
+                    "BRIDGED": "/bridged,ARID:138282263",
+                    "CHANNEL_GROUP": "beam",
+                    "STEERING_AZIMUTH": 340.97998,
+                    "STEERING_SLOWNESS": 12.60525,
+                    "BEAM_COHERENT": "B",
+                    "BEAM_TYPE": "FK"
+                  },
+                  "response": null,
+                  "station": {
+                    "effectiveAt": "1999-07-01T00:00:00Z",
+                    "name": "WRA"
+                  },
+                  "units": "NANOMETERS",
+                  "effectiveAt": "2019-01-05T16:04:59.725Z",
+                  "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+                },
+                "measuredChannelSegment": {
+                  "timeseriesType": "WAVEFORM",
+                  "units": "UNITLESS",
+                  "timeseries": [],
+                  "id": {
+                    "channel": {
+                      "effectiveAt": "2019-01-05T16:04:59.725Z",
+                      "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+                    },
+                    "startTime": "2019-01-05T16:04:59.725Z",
+                    "endTime": "2019-01-05T16:09:59.700Z",
+                    "creationTime": "2019-01-05T16:04:59.725Z"
+                  }
+                },
+                "featureMeasurementType": "AMPLITUDE_A5_OVER_2",
+                "measurementValue": {
+                  "measurementTime": "2019-01-05T16:06:02.450Z",
+                  "measurementWindowStart": "2019-01-05T16:05:59.225Z",
+                  "measurementWindowDuration": "PT6S",
+                  "period": "PT0.38827896S",
+                  "amplitude": {
+                    "value": 0.2162143,
+                    "standardDeviation": null,
+                    "units": "UNITLESS"
+                  }
+                },
+                "snr": null
+              },
+              "type": "ML",
+              "phase": "P",
+              "station": {
+                "effectiveAt": null,
+                "name": "WRA"
+              },
+              "magnitude": {
+                "value": 3.3467894,
+                "standardDeviation": 0.40000001,
+                "units": "UNITLESS"
+              }
+            }
+          }
+        ],
+        "type": "ML",
+        "magnitude": {
+          "value": 3.4796804,
+          "standardDeviation": 0.31234753,
+          "units": "UNITLESS"
+        }
+      }
+    ],
+    "featurePredictions": {
+      "featurePredictions": [
+        {
+          "predictionValue": {
+            "featureMeasurementType": "ARRIVAL_TIME",
+            "predictedValue": {
+              "arrivalTime": {
+                "value": "2019-01-05T16:06:33.835Z",
+                "standardDeviation": null
+              },
+              "travelTime": {
+                "value": "PT4M44.6232S",
+                "standardDeviation": "PT1.8734S"
+              }
+            },
+            "derivativeMap": {},
+            "featurePredictionComponentSet": [
+              {
+                "value": {
+                  "value": "PT0S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "SOURCE_DEPENDENT_CORRECTION"
+              },
+              {
+                "value": {
+                  "value": "PT-0.21738S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "ELLIPTICITY_CORRECTION"
+              },
+              {
+                "value": {
+                  "value": "PT4M44.3291S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BASELINE_PREDICTION"
+              },
+              {
+                "value": {
+                  "value": "PT0.061668S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BULK_STATIC_STATION_CORRECTION"
+              },
+              {
+                "value": {
+                  "value": "PT0.44985S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "ELEVATION_CORRECTION"
+              }
+            ]
+          },
+          "predictionType": "ARRIVAL_TIME",
+          "phase": "P",
+          "extrapolated": false,
+          "sourceLocation": {
+            "latitudeDegrees": -3.7316673,
+            "longitudeDegrees": 126.89858,
+            "depthKm": 0.0,
+            "time": "2019-01-05T16:01:49.835Z"
+          },
+          "receiverLocation": {
+            "depthKm": 0.0274,
+            "elevationKm": 0.6273,
+            "latitudeDegrees": -23.665134,
+            "longitudeDegrees": 133.905261
+          },
+          "channel": {
+            "canonicalName": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a",
+            "channelBandType": "SHORT_PERIOD",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "ASAR/SHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:10:33.350Z",
+            "location": {
+              "depthKm": 0.0274,
+              "elevationKm": 0.6273,
+              "latitudeDegrees": -23.665134,
+              "longitudeDegrees": 133.905261
+            },
+            "nominalSampleRateHz": 20.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 330.61408,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 10.04632
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282190",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 330.61408,
+              "STEERING_SLOWNESS": 10.04632,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "2005-06-14T00:00:00Z",
+              "name": "ASAR"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:05:33.400Z",
+            "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+          },
+          "predictionChannelSegment": null
+        },
+        {
+          "predictionValue": {
+            "featureMeasurementType": "ARRIVAL_TIME",
+            "predictedValue": {
+              "arrivalTime": {
+                "value": "2019-01-05T16:05:56.835Z",
+                "standardDeviation": null
+              },
+              "travelTime": {
+                "value": "PT4M7.8248S",
+                "standardDeviation": "PT2.6978S"
+              }
+            },
+            "derivativeMap": {},
+            "featurePredictionComponentSet": [
+              {
+                "value": {
+                  "value": "PT-0.082136S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BULK_STATIC_STATION_CORRECTION"
+              },
+              {
+                "value": {
+                  "value": "PT0.0037177S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "ELLIPTICITY_CORRECTION"
+              },
+              {
+                "value": {
+                  "value": "PT0S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "SOURCE_DEPENDENT_CORRECTION"
+              },
+              {
+                "value": {
+                  "value": "PT0.41405S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "ELEVATION_CORRECTION"
+              },
+              {
+                "value": {
+                  "value": "PT4M7.4892S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BASELINE_PREDICTION"
+              }
+            ]
+          },
+          "predictionType": "ARRIVAL_TIME",
+          "phase": "Pn",
+          "extrapolated": false,
+          "sourceLocation": {
+            "latitudeDegrees": -3.7316673,
+            "longitudeDegrees": 126.89858,
+            "depthKm": 0.0,
+            "time": "2019-01-05T16:01:49.835Z"
+          },
+          "receiverLocation": {
+            "depthKm": 0.005,
+            "elevationKm": 0.3888,
+            "latitudeDegrees": -19.9426,
+            "longitudeDegrees": 134.3395
+          },
+          "channel": {
+            "canonicalName": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266",
+            "channelBandType": "BROADBAND",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "WRA/BHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:09:59.700Z",
+            "location": {
+              "depthKm": 0.005,
+              "elevationKm": 0.3888,
+              "latitudeDegrees": -19.9426,
+              "longitudeDegrees": 134.3395
+            },
+            "nominalSampleRateHz": 40.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 340.97998,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 12.60525
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282263",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 340.97998,
+              "STEERING_SLOWNESS": 12.60525,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "1999-07-01T00:00:00Z",
+              "name": "WRA"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:04:59.725Z",
+            "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+          },
+          "predictionChannelSegment": null
+        },
+        {
+          "predictionValue": {
+            "featureMeasurementType": "RECEIVER_TO_SOURCE_AZIMUTH",
+            "predictedValue": {
+              "referenceTime": null,
+              "measuredValue": {
+                "value": 334.80362,
+                "standardDeviation": 20.0,
+                "units": "DEGREES"
+              }
+            },
+            "derivativeMap": {},
+            "featurePredictionComponentSet": [
+              {
+                "value": {
+                  "value": 0.0,
+                  "standardDeviation": null,
+                  "units": "DEGREES"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "SOURCE_DEPENDENT_CORRECTION"
+              },
+              {
+                "value": {
+                  "value": 334.80362,
+                  "standardDeviation": null,
+                  "units": "DEGREES"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BASELINE_PREDICTION"
+              }
+            ]
+          },
+          "predictionType": "RECEIVER_TO_SOURCE_AZIMUTH",
+          "phase": "Pn",
+          "extrapolated": false,
+          "sourceLocation": {
+            "latitudeDegrees": -3.7316673,
+            "longitudeDegrees": 126.89858,
+            "depthKm": 0.0,
+            "time": "2019-01-05T16:01:49.835Z"
+          },
+          "receiverLocation": {
+            "depthKm": 0.005,
+            "elevationKm": 0.3888,
+            "latitudeDegrees": -19.9426,
+            "longitudeDegrees": 134.3395
+          },
+          "channel": {
+            "canonicalName": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266",
+            "channelBandType": "BROADBAND",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "WRA/BHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:09:59.700Z",
+            "location": {
+              "depthKm": 0.005,
+              "elevationKm": 0.3888,
+              "latitudeDegrees": -19.9426,
+              "longitudeDegrees": 134.3395
+            },
+            "nominalSampleRateHz": 40.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 340.97998,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 12.60525
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282263",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 340.97998,
+              "STEERING_SLOWNESS": 12.60525,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "1999-07-01T00:00:00Z",
+              "name": "WRA"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:04:59.725Z",
+            "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+          },
+          "predictionChannelSegment": null
+        },
+        {
+          "predictionValue": {
+            "featureMeasurementType": "RECEIVER_TO_SOURCE_AZIMUTH",
+            "predictedValue": {
+              "referenceTime": null,
+              "measuredValue": {
+                "value": 340.08751,
+                "standardDeviation": 20.0,
+                "units": "DEGREES"
+              }
+            },
+            "derivativeMap": {},
+            "featurePredictionComponentSet": [
+              {
+                "value": {
+                  "value": 0.0,
+                  "standardDeviation": null,
+                  "units": "DEGREES"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "SOURCE_DEPENDENT_CORRECTION"
+              },
+              {
+                "value": {
+                  "value": 340.08751,
+                  "standardDeviation": null,
+                  "units": "DEGREES"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BASELINE_PREDICTION"
+              }
+            ]
+          },
+          "predictionType": "RECEIVER_TO_SOURCE_AZIMUTH",
+          "phase": "P",
+          "extrapolated": false,
+          "sourceLocation": {
+            "latitudeDegrees": -3.7316673,
+            "longitudeDegrees": 126.89858,
+            "depthKm": 0.0,
+            "time": "2019-01-05T16:01:49.835Z"
+          },
+          "receiverLocation": {
+            "depthKm": 0.0274,
+            "elevationKm": 0.6273,
+            "latitudeDegrees": -23.665134,
+            "longitudeDegrees": 133.905261
+          },
+          "channel": {
+            "canonicalName": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a",
+            "channelBandType": "SHORT_PERIOD",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "ASAR/SHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:10:33.350Z",
+            "location": {
+              "depthKm": 0.0274,
+              "elevationKm": 0.6273,
+              "latitudeDegrees": -23.665134,
+              "longitudeDegrees": 133.905261
+            },
+            "nominalSampleRateHz": 20.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 330.61408,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 10.04632
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282190",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 330.61408,
+              "STEERING_SLOWNESS": 10.04632,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "2005-06-14T00:00:00Z",
+              "name": "ASAR"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:05:33.400Z",
+            "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+          },
+          "predictionChannelSegment": null
+        },
+        {
+          "predictionValue": {
+            "featureMeasurementType": "EMERGENCE_ANGLE",
+            "predictedValue": {
+              "referenceTime": null,
+              "measuredValue": {
+                "value": 998.0,
+                "standardDeviation": null,
+                "units": "DEGREES"
+              }
+            },
+            "derivativeMap": {},
+            "featurePredictionComponentSet": [
+              {
+                "value": {
+                  "value": 998.0,
+                  "standardDeviation": null,
+                  "units": "DEGREES"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BASELINE_PREDICTION"
+              }
+            ]
+          },
+          "predictionType": "EMERGENCE_ANGLE",
+          "phase": "Pn",
+          "extrapolated": false,
+          "sourceLocation": {
+            "latitudeDegrees": -3.7316673,
+            "longitudeDegrees": 126.89858,
+            "depthKm": 0.0,
+            "time": "2019-01-05T16:01:49.835Z"
+          },
+          "receiverLocation": {
+            "depthKm": 0.005,
+            "elevationKm": 0.3888,
+            "latitudeDegrees": -19.9426,
+            "longitudeDegrees": 134.3395
+          },
+          "channel": {
+            "canonicalName": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266",
+            "channelBandType": "BROADBAND",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "WRA/BHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:09:59.700Z",
+            "location": {
+              "depthKm": 0.005,
+              "elevationKm": 0.3888,
+              "latitudeDegrees": -19.9426,
+              "longitudeDegrees": 134.3395
+            },
+            "nominalSampleRateHz": 40.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 340.97998,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 12.60525
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282263",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 340.97998,
+              "STEERING_SLOWNESS": 12.60525,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "1999-07-01T00:00:00Z",
+              "name": "WRA"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:04:59.725Z",
+            "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+          },
+          "predictionChannelSegment": null
+        },
+        {
+          "predictionValue": {
+            "featureMeasurementType": "EMERGENCE_ANGLE",
+            "predictedValue": {
+              "referenceTime": null,
+              "measuredValue": {
+                "value": 998.0,
+                "standardDeviation": null,
+                "units": "DEGREES"
+              }
+            },
+            "derivativeMap": {},
+            "featurePredictionComponentSet": [
+              {
+                "value": {
+                  "value": 998.0,
+                  "standardDeviation": null,
+                  "units": "DEGREES"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BASELINE_PREDICTION"
+              }
+            ]
+          },
+          "predictionType": "EMERGENCE_ANGLE",
+          "phase": "P",
+          "extrapolated": false,
+          "sourceLocation": {
+            "latitudeDegrees": -3.7316673,
+            "longitudeDegrees": 126.89858,
+            "depthKm": 0.0,
+            "time": "2019-01-05T16:01:49.835Z"
+          },
+          "receiverLocation": {
+            "depthKm": 0.0274,
+            "elevationKm": 0.6273,
+            "latitudeDegrees": -23.665134,
+            "longitudeDegrees": 133.905261
+          },
+          "channel": {
+            "canonicalName": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a",
+            "channelBandType": "SHORT_PERIOD",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "ASAR/SHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:10:33.350Z",
+            "location": {
+              "depthKm": 0.0274,
+              "elevationKm": 0.6273,
+              "latitudeDegrees": -23.665134,
+              "longitudeDegrees": 133.905261
+            },
+            "nominalSampleRateHz": 20.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 330.61408,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 10.04632
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282190",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 330.61408,
+              "STEERING_SLOWNESS": 10.04632,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "2005-06-14T00:00:00Z",
+              "name": "ASAR"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:05:33.400Z",
+            "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+          },
+          "predictionChannelSegment": null
+        },
+        {
+          "predictionValue": {
+            "featureMeasurementType": "SLOWNESS",
+            "predictedValue": {
+              "referenceTime": null,
+              "measuredValue": {
+                "value": 12.3119459,
+                "standardDeviation": 0.15,
+                "units": "SECONDS_PER_DEGREE"
+              }
+            },
+            "derivativeMap": {},
+            "featurePredictionComponentSet": [
+              {
+                "value": {
+                  "value": 12.3119459,
+                  "standardDeviation": null,
+                  "units": "SECONDS_PER_DEGREE"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BASELINE_PREDICTION"
+              },
+              {
+                "value": {
+                  "value": 0.0,
+                  "standardDeviation": null,
+                  "units": "SECONDS_PER_DEGREE"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "SOURCE_DEPENDENT_CORRECTION"
+              }
+            ]
+          },
+          "predictionType": "SLOWNESS",
+          "phase": "Pn",
+          "extrapolated": false,
+          "sourceLocation": {
+            "latitudeDegrees": -3.7316673,
+            "longitudeDegrees": 126.89858,
+            "depthKm": 0.0,
+            "time": "2019-01-05T16:01:49.835Z"
+          },
+          "receiverLocation": {
+            "depthKm": 0.005,
+            "elevationKm": 0.3888,
+            "latitudeDegrees": -19.9426,
+            "longitudeDegrees": 134.3395
+          },
+          "channel": {
+            "canonicalName": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266",
+            "channelBandType": "BROADBAND",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "WRA/BHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:09:59.700Z",
+            "location": {
+              "depthKm": 0.005,
+              "elevationKm": 0.3888,
+              "latitudeDegrees": -19.9426,
+              "longitudeDegrees": 134.3395
+            },
+            "nominalSampleRateHz": 40.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 340.97998,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 12.60525
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282263",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 340.97998,
+              "STEERING_SLOWNESS": 12.60525,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "1999-07-01T00:00:00Z",
+              "name": "WRA"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:04:59.725Z",
+            "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+          },
+          "predictionChannelSegment": null
+        },
+        {
+          "predictionValue": {
+            "featureMeasurementType": "SLOWNESS",
+            "predictedValue": {
+              "referenceTime": null,
+              "measuredValue": {
+                "value": 10.780047060000001,
+                "standardDeviation": 0.15,
+                "units": "SECONDS_PER_DEGREE"
+              }
+            },
+            "derivativeMap": {},
+            "featurePredictionComponentSet": [
+              {
+                "value": {
+                  "value": 10.780047060000001,
+                  "standardDeviation": null,
+                  "units": "SECONDS_PER_DEGREE"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BASELINE_PREDICTION"
+              },
+              {
+                "value": {
+                  "value": 0.0,
+                  "standardDeviation": null,
+                  "units": "SECONDS_PER_DEGREE"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "SOURCE_DEPENDENT_CORRECTION"
+              }
+            ]
+          },
+          "predictionType": "SLOWNESS",
+          "phase": "P",
+          "extrapolated": false,
+          "sourceLocation": {
+            "latitudeDegrees": -3.7316673,
+            "longitudeDegrees": 126.89858,
+            "depthKm": 0.0,
+            "time": "2019-01-05T16:01:49.835Z"
+          },
+          "receiverLocation": {
+            "depthKm": 0.0274,
+            "elevationKm": 0.6273,
+            "latitudeDegrees": -23.665134,
+            "longitudeDegrees": 133.905261
+          },
+          "channel": {
+            "canonicalName": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a",
+            "channelBandType": "SHORT_PERIOD",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "ASAR/SHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:10:33.350Z",
+            "location": {
+              "depthKm": 0.0274,
+              "elevationKm": 0.6273,
+              "latitudeDegrees": -23.665134,
+              "longitudeDegrees": 133.905261
+            },
+            "nominalSampleRateHz": 20.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 330.61408,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 10.04632
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282190",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 330.61408,
+              "STEERING_SLOWNESS": 10.04632,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "2005-06-14T00:00:00Z",
+              "name": "ASAR"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:05:33.400Z",
+            "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+          },
+          "predictionChannelSegment": null
+        }
+      ]
+    },
+    "location": {
+      "latitudeDegrees": -3.7316673,
+      "longitudeDegrees": 126.89858,
+      "depthKm": 0.0,
+      "time": "2019-01-05T16:01:49.835Z"
+    },
+    "locationBehaviors": [
+      {
+        "residual": 2.6753585,
+        "weight": 1.0,
+        "defining": true,
+        "featurePrediction": {
+          "predictionValue": {
+            "featureMeasurementType": "RECEIVER_TO_SOURCE_AZIMUTH",
+            "predictedValue": {
+              "referenceTime": null,
+              "measuredValue": {
+                "value": 334.80362,
+                "standardDeviation": 20.0,
+                "units": "DEGREES"
+              }
+            },
+            "derivativeMap": {},
+            "featurePredictionComponentSet": [
+              {
+                "value": {
+                  "value": 0.0,
+                  "standardDeviation": null,
+                  "units": "DEGREES"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "SOURCE_DEPENDENT_CORRECTION"
+              },
+              {
+                "value": {
+                  "value": 334.80362,
+                  "standardDeviation": null,
+                  "units": "DEGREES"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BASELINE_PREDICTION"
+              }
+            ]
+          },
+          "predictionType": "RECEIVER_TO_SOURCE_AZIMUTH",
+          "phase": "Pn",
+          "extrapolated": false,
+          "sourceLocation": {
+            "latitudeDegrees": -3.7316673,
+            "longitudeDegrees": 126.89858,
+            "depthKm": 0.0,
+            "time": "2019-01-05T16:01:49.835Z"
+          },
+          "receiverLocation": {
+            "depthKm": 0.005,
+            "elevationKm": 0.3888,
+            "latitudeDegrees": -19.9426,
+            "longitudeDegrees": 134.3395
+          },
+          "channel": {
+            "canonicalName": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266",
+            "channelBandType": "BROADBAND",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "WRA/BHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:09:59.700Z",
+            "location": {
+              "depthKm": 0.005,
+              "elevationKm": 0.3888,
+              "latitudeDegrees": -19.9426,
+              "longitudeDegrees": 134.3395
+            },
+            "nominalSampleRateHz": 40.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 340.97998,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 12.60525
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282263",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 340.97998,
+              "STEERING_SLOWNESS": 12.60525,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "1999-07-01T00:00:00Z",
+              "name": "WRA"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:04:59.725Z",
+            "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+          },
+          "predictionChannelSegment": null
+        },
+        "featureMeasurement": {
+          "channel": {
+            "canonicalName": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266",
+            "channelBandType": "BROADBAND",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "WRA/BHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:09:59.700Z",
+            "location": {
+              "depthKm": 0.005,
+              "elevationKm": 0.3888,
+              "latitudeDegrees": -19.9426,
+              "longitudeDegrees": 134.3395
+            },
+            "nominalSampleRateHz": 40.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 340.97998,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 12.60525
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282263",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 340.97998,
+              "STEERING_SLOWNESS": 12.60525,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "1999-07-01T00:00:00Z",
+              "name": "WRA"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:04:59.725Z",
+            "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+          },
+          "measuredChannelSegment": {
+            "timeseriesType": "WAVEFORM",
+            "units": "UNITLESS",
+            "timeseries": [],
+            "id": {
+              "channel": {
+                "effectiveAt": "2019-01-05T16:04:59.725Z",
+                "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+              },
+              "startTime": "2019-01-05T16:04:59.725Z",
+              "endTime": "2019-01-05T16:09:59.700Z",
+              "creationTime": "2019-01-05T16:04:59.725Z"
+            }
+          },
+          "featureMeasurementType": "RECEIVER_TO_SOURCE_AZIMUTH",
+          "measurementValue": {
+            "referenceTime": null,
+            "measuredValue": {
+              "value": 340.97998,
+              "standardDeviation": 1.2466667,
+              "units": "DEGREES"
+            }
+          },
+          "snr": null
+        }
+      },
+      {
+        "residual": -999.0,
+        "weight": 0.0,
+        "defining": false,
+        "featurePrediction": {
+          "predictionValue": {
+            "featureMeasurementType": "EMERGENCE_ANGLE",
+            "predictedValue": {
+              "referenceTime": null,
+              "measuredValue": {
+                "value": 998.0,
+                "standardDeviation": null,
+                "units": "DEGREES"
+              }
+            },
+            "derivativeMap": {},
+            "featurePredictionComponentSet": [
+              {
+                "value": {
+                  "value": 998.0,
+                  "standardDeviation": null,
+                  "units": "DEGREES"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BASELINE_PREDICTION"
+              }
+            ]
+          },
+          "predictionType": "EMERGENCE_ANGLE",
+          "phase": "Pn",
+          "extrapolated": false,
+          "sourceLocation": {
+            "latitudeDegrees": -3.7316673,
+            "longitudeDegrees": 126.89858,
+            "depthKm": 0.0,
+            "time": "2019-01-05T16:01:49.835Z"
+          },
+          "receiverLocation": {
+            "depthKm": 0.005,
+            "elevationKm": 0.3888,
+            "latitudeDegrees": -19.9426,
+            "longitudeDegrees": 134.3395
+          },
+          "channel": {
+            "canonicalName": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266",
+            "channelBandType": "BROADBAND",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "WRA/BHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:09:59.700Z",
+            "location": {
+              "depthKm": 0.005,
+              "elevationKm": 0.3888,
+              "latitudeDegrees": -19.9426,
+              "longitudeDegrees": 134.3395
+            },
+            "nominalSampleRateHz": 40.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 340.97998,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 12.60525
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282263",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 340.97998,
+              "STEERING_SLOWNESS": 12.60525,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "1999-07-01T00:00:00Z",
+              "name": "WRA"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:04:59.725Z",
+            "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+          },
+          "predictionChannelSegment": null
+        },
+        "featureMeasurement": {
+          "channel": {
+            "canonicalName": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266",
+            "channelBandType": "BROADBAND",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "WRA/BHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:09:59.700Z",
+            "location": {
+              "depthKm": 0.005,
+              "elevationKm": 0.3888,
+              "latitudeDegrees": -19.9426,
+              "longitudeDegrees": 134.3395
+            },
+            "nominalSampleRateHz": 40.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 340.97998,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 12.60525
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282263",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 340.97998,
+              "STEERING_SLOWNESS": 12.60525,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "1999-07-01T00:00:00Z",
+              "name": "WRA"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:04:59.725Z",
+            "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+          },
+          "measuredChannelSegment": {
+            "timeseriesType": "WAVEFORM",
+            "units": "UNITLESS",
+            "timeseries": [],
+            "id": {
+              "channel": {
+                "effectiveAt": "2019-01-05T16:04:59.725Z",
+                "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+              },
+              "startTime": "2019-01-05T16:04:59.725Z",
+              "endTime": "2019-01-05T16:09:59.700Z",
+              "creationTime": "2019-01-05T16:04:59.725Z"
+            }
+          },
+          "featureMeasurementType": "EMERGENCE_ANGLE",
+          "measurementValue": {
+            "referenceTime": null,
+            "measuredValue": {
+              "value": -1.0,
+              "standardDeviation": null,
+              "units": "DEGREES"
+            }
+          },
+          "snr": null
+        }
+      },
+      {
+        "residual": 2.0650612,
+        "weight": 1.0,
+        "defining": true,
+        "featurePrediction": {
+          "predictionValue": {
+            "featureMeasurementType": "ARRIVAL_TIME",
+            "predictedValue": {
+              "arrivalTime": {
+                "value": "2019-01-05T16:05:56.835Z",
+                "standardDeviation": null
+              },
+              "travelTime": {
+                "value": "PT4M7.8248S",
+                "standardDeviation": "PT2.6978S"
+              }
+            },
+            "derivativeMap": {},
+            "featurePredictionComponentSet": [
+              {
+                "value": {
+                  "value": "PT-0.082136S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BULK_STATIC_STATION_CORRECTION"
+              },
+              {
+                "value": {
+                  "value": "PT0.0037177S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "ELLIPTICITY_CORRECTION"
+              },
+              {
+                "value": {
+                  "value": "PT0S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "SOURCE_DEPENDENT_CORRECTION"
+              },
+              {
+                "value": {
+                  "value": "PT0.41405S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "ELEVATION_CORRECTION"
+              },
+              {
+                "value": {
+                  "value": "PT4M7.4892S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BASELINE_PREDICTION"
+              }
+            ]
+          },
+          "predictionType": "ARRIVAL_TIME",
+          "phase": "Pn",
+          "extrapolated": false,
+          "sourceLocation": {
+            "latitudeDegrees": -3.7316673,
+            "longitudeDegrees": 126.89858,
+            "depthKm": 0.0,
+            "time": "2019-01-05T16:01:49.835Z"
+          },
+          "receiverLocation": {
+            "depthKm": 0.005,
+            "elevationKm": 0.3888,
+            "latitudeDegrees": -19.9426,
+            "longitudeDegrees": 134.3395
+          },
+          "channel": {
+            "canonicalName": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266",
+            "channelBandType": "BROADBAND",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "WRA/BHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:09:59.700Z",
+            "location": {
+              "depthKm": 0.005,
+              "elevationKm": 0.3888,
+              "latitudeDegrees": -19.9426,
+              "longitudeDegrees": 134.3395
+            },
+            "nominalSampleRateHz": 40.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 340.97998,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 12.60525
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282263",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 340.97998,
+              "STEERING_SLOWNESS": 12.60525,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "1999-07-01T00:00:00Z",
+              "name": "WRA"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:04:59.725Z",
+            "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+          },
+          "predictionChannelSegment": null
+        },
+        "featureMeasurement": {
+          "channel": {
+            "canonicalName": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266",
+            "channelBandType": "BROADBAND",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "WRA/BHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:09:59.700Z",
+            "location": {
+              "depthKm": 0.005,
+              "elevationKm": 0.3888,
+              "latitudeDegrees": -19.9426,
+              "longitudeDegrees": 134.3395
+            },
+            "nominalSampleRateHz": 40.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 340.97998,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 12.60525
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282263",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 340.97998,
+              "STEERING_SLOWNESS": 12.60525,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "1999-07-01T00:00:00Z",
+              "name": "WRA"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:04:59.725Z",
+            "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+          },
+          "measuredChannelSegment": {
+            "timeseriesType": "WAVEFORM",
+            "units": "UNITLESS",
+            "timeseries": [],
+            "id": {
+              "channel": {
+                "effectiveAt": "2019-01-05T16:04:59.725Z",
+                "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+              },
+              "startTime": "2019-01-05T16:04:59.725Z",
+              "endTime": "2019-01-05T16:09:59.700Z",
+              "creationTime": "2019-01-05T16:04:59.725Z"
+            }
+          },
+          "featureMeasurementType": "ARRIVAL_TIME",
+          "measurementValue": {
+            "arrivalTime": {
+              "value": "2019-01-05T16:05:59.725Z",
+              "standardDeviation": "PT1.422S"
+            },
+            "travelTime": null
+          },
+          "snr": {
+            "value": 6.1609406,
+            "standardDeviation": null,
+            "units": "DECIBELS"
+          }
+        }
+      },
+      {
+        "residual": 0.2933071,
+        "weight": 1.0,
+        "defining": true,
+        "featurePrediction": {
+          "predictionValue": {
+            "featureMeasurementType": "SLOWNESS",
+            "predictedValue": {
+              "referenceTime": null,
+              "measuredValue": {
+                "value": 12.3119459,
+                "standardDeviation": 0.15,
+                "units": "SECONDS_PER_DEGREE"
+              }
+            },
+            "derivativeMap": {},
+            "featurePredictionComponentSet": [
+              {
+                "value": {
+                  "value": 12.3119459,
+                  "standardDeviation": null,
+                  "units": "SECONDS_PER_DEGREE"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BASELINE_PREDICTION"
+              },
+              {
+                "value": {
+                  "value": 0.0,
+                  "standardDeviation": null,
+                  "units": "SECONDS_PER_DEGREE"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "SOURCE_DEPENDENT_CORRECTION"
+              }
+            ]
+          },
+          "predictionType": "SLOWNESS",
+          "phase": "Pn",
+          "extrapolated": false,
+          "sourceLocation": {
+            "latitudeDegrees": -3.7316673,
+            "longitudeDegrees": 126.89858,
+            "depthKm": 0.0,
+            "time": "2019-01-05T16:01:49.835Z"
+          },
+          "receiverLocation": {
+            "depthKm": 0.005,
+            "elevationKm": 0.3888,
+            "latitudeDegrees": -19.9426,
+            "longitudeDegrees": 134.3395
+          },
+          "channel": {
+            "canonicalName": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266",
+            "channelBandType": "BROADBAND",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "WRA/BHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:09:59.700Z",
+            "location": {
+              "depthKm": 0.005,
+              "elevationKm": 0.3888,
+              "latitudeDegrees": -19.9426,
+              "longitudeDegrees": 134.3395
+            },
+            "nominalSampleRateHz": 40.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 340.97998,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 12.60525
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282263",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 340.97998,
+              "STEERING_SLOWNESS": 12.60525,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "1999-07-01T00:00:00Z",
+              "name": "WRA"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:04:59.725Z",
+            "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+          },
+          "predictionChannelSegment": null
+        },
+        "featureMeasurement": {
+          "channel": {
+            "canonicalName": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266",
+            "channelBandType": "BROADBAND",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "WRA/BHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:09:59.700Z",
+            "location": {
+              "depthKm": 0.005,
+              "elevationKm": 0.3888,
+              "latitudeDegrees": -19.9426,
+              "longitudeDegrees": 134.3395
+            },
+            "nominalSampleRateHz": 40.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 340.97998,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 12.60525
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282263",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 340.97998,
+              "STEERING_SLOWNESS": 12.60525,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "1999-07-01T00:00:00Z",
+              "name": "WRA"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:04:59.725Z",
+            "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+          },
+          "measuredChannelSegment": {
+            "timeseriesType": "WAVEFORM",
+            "units": "UNITLESS",
+            "timeseries": [],
+            "id": {
+              "channel": {
+                "effectiveAt": "2019-01-05T16:04:59.725Z",
+                "name": "WRA.beam.BHZ/beam,fk,coherent/steer,az_340.980deg,slow_12.605s_per_deg/34b87950-efde-3da1-a71e-29024f3f0266"
+              },
+              "startTime": "2019-01-05T16:04:59.725Z",
+              "endTime": "2019-01-05T16:09:59.700Z",
+              "creationTime": "2019-01-05T16:04:59.725Z"
+            }
+          },
+          "featureMeasurementType": "SLOWNESS",
+          "measurementValue": {
+            "referenceTime": null,
+            "measuredValue": {
+              "value": 12.605253,
+              "standardDeviation": 0.27,
+              "units": "SECONDS_PER_DEGREE"
+            }
+          },
+          "snr": null
+        }
+      },
+      {
+        "residual": -7.7924254,
+        "weight": 1.0,
+        "defining": true,
+        "featurePrediction": {
+          "predictionValue": {
+            "featureMeasurementType": "RECEIVER_TO_SOURCE_AZIMUTH",
+            "predictedValue": {
+              "referenceTime": null,
+              "measuredValue": {
+                "value": 340.08751,
+                "standardDeviation": 20.0,
+                "units": "DEGREES"
+              }
+            },
+            "derivativeMap": {},
+            "featurePredictionComponentSet": [
+              {
+                "value": {
+                  "value": 0.0,
+                  "standardDeviation": null,
+                  "units": "DEGREES"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "SOURCE_DEPENDENT_CORRECTION"
+              },
+              {
+                "value": {
+                  "value": 340.08751,
+                  "standardDeviation": null,
+                  "units": "DEGREES"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BASELINE_PREDICTION"
+              }
+            ]
+          },
+          "predictionType": "RECEIVER_TO_SOURCE_AZIMUTH",
+          "phase": "P",
+          "extrapolated": false,
+          "sourceLocation": {
+            "latitudeDegrees": -3.7316673,
+            "longitudeDegrees": 126.89858,
+            "depthKm": 0.0,
+            "time": "2019-01-05T16:01:49.835Z"
+          },
+          "receiverLocation": {
+            "depthKm": 0.0274,
+            "elevationKm": 0.6273,
+            "latitudeDegrees": -23.665134,
+            "longitudeDegrees": 133.905261
+          },
+          "channel": {
+            "canonicalName": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a",
+            "channelBandType": "SHORT_PERIOD",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "ASAR/SHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:10:33.350Z",
+            "location": {
+              "depthKm": 0.0274,
+              "elevationKm": 0.6273,
+              "latitudeDegrees": -23.665134,
+              "longitudeDegrees": 133.905261
+            },
+            "nominalSampleRateHz": 20.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 330.61408,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 10.04632
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282190",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 330.61408,
+              "STEERING_SLOWNESS": 10.04632,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "2005-06-14T00:00:00Z",
+              "name": "ASAR"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:05:33.400Z",
+            "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+          },
+          "predictionChannelSegment": null
+        },
+        "featureMeasurement": {
+          "channel": {
+            "canonicalName": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a",
+            "channelBandType": "SHORT_PERIOD",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "ASAR/SHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:10:33.350Z",
+            "location": {
+              "depthKm": 0.0274,
+              "elevationKm": 0.6273,
+              "latitudeDegrees": -23.665134,
+              "longitudeDegrees": 133.905261
+            },
+            "nominalSampleRateHz": 20.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 330.61408,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 10.04632
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282190",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 330.61408,
+              "STEERING_SLOWNESS": 10.04632,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "2005-06-14T00:00:00Z",
+              "name": "ASAR"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:05:33.400Z",
+            "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+          },
+          "measuredChannelSegment": {
+            "timeseriesType": "WAVEFORM",
+            "units": "UNITLESS",
+            "timeseries": [],
+            "id": {
+              "channel": {
+                "effectiveAt": "2019-01-05T16:05:33.400Z",
+                "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+              },
+              "startTime": "2019-01-05T16:05:33.400Z",
+              "endTime": "2019-01-05T16:10:33.350Z",
+              "creationTime": "2019-01-05T16:05:33.400Z"
+            }
+          },
+          "featureMeasurementType": "RECEIVER_TO_SOURCE_AZIMUTH",
+          "measurementValue": {
+            "referenceTime": null,
+            "measuredValue": {
+              "value": 330.61408,
+              "standardDeviation": 3.5360251,
+              "units": "DEGREES"
+            }
+          },
+          "snr": null
+        }
+      },
+      {
+        "residual": -0.73372606,
+        "weight": 1.0,
+        "defining": true,
+        "featurePrediction": {
+          "predictionValue": {
+            "featureMeasurementType": "SLOWNESS",
+            "predictedValue": {
+              "referenceTime": null,
+              "measuredValue": {
+                "value": 10.780047060000001,
+                "standardDeviation": 0.15,
+                "units": "SECONDS_PER_DEGREE"
+              }
+            },
+            "derivativeMap": {},
+            "featurePredictionComponentSet": [
+              {
+                "value": {
+                  "value": 10.780047060000001,
+                  "standardDeviation": null,
+                  "units": "SECONDS_PER_DEGREE"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BASELINE_PREDICTION"
+              },
+              {
+                "value": {
+                  "value": 0.0,
+                  "standardDeviation": null,
+                  "units": "SECONDS_PER_DEGREE"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "SOURCE_DEPENDENT_CORRECTION"
+              }
+            ]
+          },
+          "predictionType": "SLOWNESS",
+          "phase": "P",
+          "extrapolated": false,
+          "sourceLocation": {
+            "latitudeDegrees": -3.7316673,
+            "longitudeDegrees": 126.89858,
+            "depthKm": 0.0,
+            "time": "2019-01-05T16:01:49.835Z"
+          },
+          "receiverLocation": {
+            "depthKm": 0.0274,
+            "elevationKm": 0.6273,
+            "latitudeDegrees": -23.665134,
+            "longitudeDegrees": 133.905261
+          },
+          "channel": {
+            "canonicalName": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a",
+            "channelBandType": "SHORT_PERIOD",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "ASAR/SHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:10:33.350Z",
+            "location": {
+              "depthKm": 0.0274,
+              "elevationKm": 0.6273,
+              "latitudeDegrees": -23.665134,
+              "longitudeDegrees": 133.905261
+            },
+            "nominalSampleRateHz": 20.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 330.61408,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 10.04632
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282190",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 330.61408,
+              "STEERING_SLOWNESS": 10.04632,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "2005-06-14T00:00:00Z",
+              "name": "ASAR"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:05:33.400Z",
+            "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+          },
+          "predictionChannelSegment": null
+        },
+        "featureMeasurement": {
+          "channel": {
+            "canonicalName": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a",
+            "channelBandType": "SHORT_PERIOD",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "ASAR/SHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:10:33.350Z",
+            "location": {
+              "depthKm": 0.0274,
+              "elevationKm": 0.6273,
+              "latitudeDegrees": -23.665134,
+              "longitudeDegrees": 133.905261
+            },
+            "nominalSampleRateHz": 20.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 330.61408,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 10.04632
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282190",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 330.61408,
+              "STEERING_SLOWNESS": 10.04632,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "2005-06-14T00:00:00Z",
+              "name": "ASAR"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:05:33.400Z",
+            "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+          },
+          "measuredChannelSegment": {
+            "timeseriesType": "WAVEFORM",
+            "units": "UNITLESS",
+            "timeseries": [],
+            "id": {
+              "channel": {
+                "effectiveAt": "2019-01-05T16:05:33.400Z",
+                "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+              },
+              "startTime": "2019-01-05T16:05:33.400Z",
+              "endTime": "2019-01-05T16:10:33.350Z",
+              "creationTime": "2019-01-05T16:05:33.400Z"
+            }
+          },
+          "featureMeasurementType": "SLOWNESS",
+          "measurementValue": {
+            "referenceTime": null,
+            "measuredValue": {
+              "value": 10.046321,
+              "standardDeviation": 0.62,
+              "units": "SECONDS_PER_DEGREE"
+            }
+          },
+          "snr": null
+        }
+      },
+      {
+        "residual": -999.0,
+        "weight": 0.0,
+        "defining": false,
+        "featurePrediction": {
+          "predictionValue": {
+            "featureMeasurementType": "EMERGENCE_ANGLE",
+            "predictedValue": {
+              "referenceTime": null,
+              "measuredValue": {
+                "value": 998.0,
+                "standardDeviation": null,
+                "units": "DEGREES"
+              }
+            },
+            "derivativeMap": {},
+            "featurePredictionComponentSet": [
+              {
+                "value": {
+                  "value": 998.0,
+                  "standardDeviation": null,
+                  "units": "DEGREES"
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BASELINE_PREDICTION"
+              }
+            ]
+          },
+          "predictionType": "EMERGENCE_ANGLE",
+          "phase": "P",
+          "extrapolated": false,
+          "sourceLocation": {
+            "latitudeDegrees": -3.7316673,
+            "longitudeDegrees": 126.89858,
+            "depthKm": 0.0,
+            "time": "2019-01-05T16:01:49.835Z"
+          },
+          "receiverLocation": {
+            "depthKm": 0.0274,
+            "elevationKm": 0.6273,
+            "latitudeDegrees": -23.665134,
+            "longitudeDegrees": 133.905261
+          },
+          "channel": {
+            "canonicalName": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a",
+            "channelBandType": "SHORT_PERIOD",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "ASAR/SHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:10:33.350Z",
+            "location": {
+              "depthKm": 0.0274,
+              "elevationKm": 0.6273,
+              "latitudeDegrees": -23.665134,
+              "longitudeDegrees": 133.905261
+            },
+            "nominalSampleRateHz": 20.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 330.61408,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 10.04632
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282190",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 330.61408,
+              "STEERING_SLOWNESS": 10.04632,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "2005-06-14T00:00:00Z",
+              "name": "ASAR"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:05:33.400Z",
+            "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+          },
+          "predictionChannelSegment": null
+        },
+        "featureMeasurement": {
+          "channel": {
+            "canonicalName": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a",
+            "channelBandType": "SHORT_PERIOD",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "ASAR/SHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:10:33.350Z",
+            "location": {
+              "depthKm": 0.0274,
+              "elevationKm": 0.6273,
+              "latitudeDegrees": -23.665134,
+              "longitudeDegrees": 133.905261
+            },
+            "nominalSampleRateHz": 20.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 330.61408,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 10.04632
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282190",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 330.61408,
+              "STEERING_SLOWNESS": 10.04632,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "2005-06-14T00:00:00Z",
+              "name": "ASAR"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:05:33.400Z",
+            "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+          },
+          "measuredChannelSegment": {
+            "timeseriesType": "WAVEFORM",
+            "units": "UNITLESS",
+            "timeseries": [],
+            "id": {
+              "channel": {
+                "effectiveAt": "2019-01-05T16:05:33.400Z",
+                "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+              },
+              "startTime": "2019-01-05T16:05:33.400Z",
+              "endTime": "2019-01-05T16:10:33.350Z",
+              "creationTime": "2019-01-05T16:05:33.400Z"
+            }
+          },
+          "featureMeasurementType": "EMERGENCE_ANGLE",
+          "measurementValue": {
+            "referenceTime": null,
+            "measuredValue": {
+              "value": -1.0,
+              "standardDeviation": null,
+              "units": "DEGREES"
+            }
+          },
+          "snr": null
+        }
+      },
+      {
+        "residual": -1.0583558,
+        "weight": 1.0,
+        "defining": true,
+        "featurePrediction": {
+          "predictionValue": {
+            "featureMeasurementType": "ARRIVAL_TIME",
+            "predictedValue": {
+              "arrivalTime": {
+                "value": "2019-01-05T16:06:33.835Z",
+                "standardDeviation": null
+              },
+              "travelTime": {
+                "value": "PT4M44.6232S",
+                "standardDeviation": "PT1.8734S"
+              }
+            },
+            "derivativeMap": {},
+            "featurePredictionComponentSet": [
+              {
+                "value": {
+                  "value": "PT0S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "SOURCE_DEPENDENT_CORRECTION"
+              },
+              {
+                "value": {
+                  "value": "PT-0.21738S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "ELLIPTICITY_CORRECTION"
+              },
+              {
+                "value": {
+                  "value": "PT4M44.3291S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BASELINE_PREDICTION"
+              },
+              {
+                "value": {
+                  "value": "PT0.061668S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "BULK_STATIC_STATION_CORRECTION"
+              },
+              {
+                "value": {
+                  "value": "PT0.44985S",
+                  "standardDeviation": null
+                },
+                "extrapolated": false,
+                "featurePredictionComponent": "ELEVATION_CORRECTION"
+              }
+            ]
+          },
+          "predictionType": "ARRIVAL_TIME",
+          "phase": "P",
+          "extrapolated": false,
+          "sourceLocation": {
+            "latitudeDegrees": -3.7316673,
+            "longitudeDegrees": 126.89858,
+            "depthKm": 0.0,
+            "time": "2019-01-05T16:01:49.835Z"
+          },
+          "receiverLocation": {
+            "depthKm": 0.0274,
+            "elevationKm": 0.6273,
+            "latitudeDegrees": -23.665134,
+            "longitudeDegrees": 133.905261
+          },
+          "channel": {
+            "canonicalName": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a",
+            "channelBandType": "SHORT_PERIOD",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "ASAR/SHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:10:33.350Z",
+            "location": {
+              "depthKm": 0.0274,
+              "elevationKm": 0.6273,
+              "latitudeDegrees": -23.665134,
+              "longitudeDegrees": 133.905261
+            },
+            "nominalSampleRateHz": 20.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 330.61408,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 10.04632
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282190",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 330.61408,
+              "STEERING_SLOWNESS": 10.04632,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "2005-06-14T00:00:00Z",
+              "name": "ASAR"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:05:33.400Z",
+            "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+          },
+          "predictionChannelSegment": null
+        },
+        "featureMeasurement": {
+          "channel": {
+            "canonicalName": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a",
+            "channelBandType": "SHORT_PERIOD",
+            "channelDataType": "SEISMIC",
+            "channelInstrumentType": "HIGH_GAIN_SEISMOMETER",
+            "channelOrientationCode": "Z",
+            "channelOrientationType": "VERTICAL",
+            "configuredInputs": [],
+            "description": "ASAR/SHZ fk beam",
+            "effectiveUntil": "2019-01-05T16:10:33.350Z",
+            "location": {
+              "depthKm": 0.0274,
+              "elevationKm": 0.6273,
+              "latitudeDegrees": -23.665134,
+              "longitudeDegrees": 133.905261
+            },
+            "nominalSampleRateHz": 20.0,
+            "orientationAngles": {
+              "horizontalAngleDeg": -1.0,
+              "verticalAngleDeg": 0.0
+            },
+            "processingDefinition": {
+              "STEERING_AZIMUTH": 330.61408,
+              "BEAM_COHERENT": "B",
+              "STEERING_SLOWNESS": 10.04632
+            },
+            "processingMetadata": {
+              "BRIDGED": "/bridged,ARID:138282190",
+              "CHANNEL_GROUP": "beam",
+              "STEERING_AZIMUTH": 330.61408,
+              "STEERING_SLOWNESS": 10.04632,
+              "BEAM_COHERENT": "B",
+              "BEAM_TYPE": "FK"
+            },
+            "response": null,
+            "station": {
+              "effectiveAt": "2005-06-14T00:00:00Z",
+              "name": "ASAR"
+            },
+            "units": "NANOMETERS",
+            "effectiveAt": "2019-01-05T16:05:33.400Z",
+            "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+          },
+          "measuredChannelSegment": {
+            "timeseriesType": "WAVEFORM",
+            "units": "UNITLESS",
+            "timeseries": [],
+            "id": {
+              "channel": {
+                "effectiveAt": "2019-01-05T16:05:33.400Z",
+                "name": "ASAR.beam.SHZ/beam,fk,coherent/steer,az_330.614deg,slow_10.046s_per_deg/82f526a3-26fa-30ab-82ee-e9db7b05a58a"
+              },
+              "startTime": "2019-01-05T16:05:33.400Z",
+              "endTime": "2019-01-05T16:10:33.350Z",
+              "creationTime": "2019-01-05T16:05:33.400Z"
+            }
+          },
+          "featureMeasurementType": "ARRIVAL_TIME",
+          "measurementValue": {
+            "arrivalTime": {
+              "value": "2019-01-05T16:06:33.400Z",
+              "standardDeviation": "PT1.363S"
+            },
+            "travelTime": null
+          },
+          "snr": {
+            "value": 6.7155628,
+            "standardDeviation": null,
+            "units": "DECIBELS"
+          }
+        }
+      }
+    ],
+    "id": "79a85e6f-1cd3-4b1a-9170-436d980c3d61"
+  },
+  "receivingChannels": [
+    {
+      "units": "DEGREES",
+      "canonicalName": "string",
+      "location": {
+        "depthKm": 0,
+        "elevationKm": 0,
+        "latitudeDegrees": 0,
+        "longitudeDegrees": 0
+      },
+      "effectiveUntil": "2022-04-21T22:02:00.533Z",
+      "channelDataType": "SEISMIC",
+      "channelBandType": "UNKNOWN",
+      "channelInstrumentType": "UNKNOWN",
+      "channelOrientationType": "UNKNOWN",
+      "channelOrientationCode": "Z",
+      "nominalSampleRateHz": 0,
+      "orientationAngles": {
+        "horizontalAngleDeg": 0,
+        "verticalAngleDeg": 0
+      },
+      "processingDefinition": {
+      },
+      "processingMetadata": {
+        "BRIDGED": "/bridged,ARID:138282190",
+        "CHANNEL_GROUP": "beam",
+        "STEERING_AZIMUTH": 330.61408,
+        "STEERING_SLOWNESS": 10.04632,
+        "BEAM_COHERENT": "B",
+        "BEAM_TYPE": "FK"
+      },
+      "description": "string",
+      "response": {
+        "calibration": {
+          "calibrationFactor": {
+            "value": 0,
+            "standardDeviation": 0,
+            "units": "DEGREES"
+          },
+          "calibrationPeriodSec": 0,
+          "calibrationTimeShift": "PT0S"
+        },
+        "effectiveUntil": "2022-04-21T22:02:00.533Z",
+        "fapResponse": {
+          "amplitudeResponse": [
+            0
+          ],
+          "amplitudeResponseStdDev": [
+            0
+          ],
+          "amplitudeResponseUnits": "DEGREES",
+          "frequencies": [
+            0
+          ],
+          "phaseResponse": [
+            0
+          ],
+          "phaseResponseStdDev": [
+            0
+          ],
+          "phaseResponseUnits": "DEGREES",
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+        },
+        "effectiveAt": "2022-04-21T22:02:00.533Z",
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+      },
+      "configuredInputs": [
+        {
+          "effectiveAt": "2022-04-21T22:02:00.533Z",
+          "name": "string"
+        }
+      ],
+      "station": {
+        "effectiveAt": "2022-04-21T22:02:00.533Z",
+        "name": "string"
+      },
+      "effectiveAt": "2022-04-21T22:02:00.533Z",
+      "name": "string"
+    }
+  ],
+  "phases": [
+    "P"
+  ],
+  "earthModel": "string"
+}

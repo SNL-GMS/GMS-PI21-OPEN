@@ -1,0 +1,25 @@
+/// Apply Sass max function instead of css max
+/// @return the Sass computed max of the values provided
+@function sass-max($numbers...) {
+  @return max($numbers);
+}
+
+/// Apply Sass min function instead of css min
+/// @return the Sass computed min of the values provided
+@function sass-min($numbers...) {
+  @return min($numbers);
+}
+
+/// Sass max and min functions override base CSS functions.
+/// This is to force use of CSS function
+/// @return a string-interpolated max function that will compile into a css max function
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+/// Sass max and min functions override base CSS functions.
+/// This is to force use of CSS function
+/// @return a string-interpolated min function that will compile into a css min function
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}

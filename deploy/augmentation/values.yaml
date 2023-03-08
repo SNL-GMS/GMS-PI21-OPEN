@@ -1,0 +1,435 @@
+# Global values are set by the parent chart
+
+
+# List of GMS standard augmentation apps. These are apps that use the common gms augmentation app templates.
+# Note: an augmentation app definition must also be added in the section below for each standard augmentation app.
+standardAugmentationApps:
+  - "bastion-ian"
+  - "bastion-sb"
+  - "bastion-soh"
+  - "bridged-data-source-simulator"
+  - "cache-service"
+  - "cd11-injector"
+  - "data-preloader"
+  - "javadoc"
+  - "jupyter"
+  - "minio-test-reports"
+  - "mock-data-server"
+  - "mock-waveform-service"
+  - "oracle"
+  - "swagger"
+  - "test-cypress"
+  - "test-sb-jest"
+
+
+#
+# Augmentation app definitions
+# Note: the `metadata` section is required for an app to be considered an augmentation
+#
+bastion-ian:
+  command:
+    - "/bin/bash"
+    - "-c"
+    - 'mc alias set minio http://minio:9000 ${MINIO_ACCESS_KEY} ${MINIO_SECRET_KEY} && /bin/sleep infinity'
+  env:
+    MINIO_ACCESS_KEY:
+      key: "access_key"
+      name: "minio-keys"
+      type: "fromSecret"
+    MINIO_SECRET_KEY:
+      key: "secret_key"
+      name: "minio-keys"
+      type: "fromSecret"
+    TNS_ADMIN: "/opt/gms/bastion/oracle-wallet"
+    WALLET_APP_NAME: "bastion"
+  imageName: "gms-common/bastion"
+  metadata:
+    description: "A bastion container that can be exec'd into for debugging IAN"
+    labels:
+      - "ian"
+    type: "harness"
+  useGlobalEnv: false
+  volume:
+    oracle-wallet:
+      mountPath: "/opt/gms/bastion/oracle-wallet"
+      readOnly: true
+      secretName: "oracle-wallet"
+      type: "secret"
+
+bastion-sb:
+  env:
+    TNS_ADMIN: "/opt/gms/bastion/oracle-wallet"
+    WALLET_APP_NAME: "bastion"
+  imageName: "gms-common/bastion"
+  metadata:
+    description: "A bastion container that can be exec'd into for debugging SB"
+    labels:
+      - "sb"
+    type: "harness"
+  volume:
+    oracle-wallet:
+      mountPath: "/opt/gms/bastion/oracle-wallet"
+      readOnly: true
+      secretName: "oracle-wallet"
+      type: "secret"
+
+bastion-soh:
+  imageName: "gms-common/bastion"
+  metadata:
+    description: "A bastion container that can be exec'd into for debugging SOH"
+    labels:
+      - "soh"
+    type: "harness"
+
+bridged-data-source-simulator:
+  env:
+    JAVA_TOOL_OPTIONS: "-agentlib:jdwp='transport=dt_socket,server=y,suspend=n,address=*:5005'"
+  imageName: "gms-common/bridged-data-source-simulator-application"
+  metadata:
+    description: "Bridged data source simulator for testing IAN and SB"
+    labels:
+      - "ian"
+      - "sb"
+      - "sim"
+    type: "harness"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  volume:
+    bridge-responses:
+      hostPath: "{{ .Values.global.bridgeResponses.hostPath }}"
+      mountPath: "{{ .Values.global.bridgeResponses.containerPath }}"
+      readOnly: true
+      type: "hostPath"
+    bridge-waveforms:
+      hostPath: "{{ .Values.global.bridgeWaveforms.hostPath }}"
+      mountPath: "{{ .Values.global.bridgeWaveforms.containerPath }}"
+      readOnly: true
+      type: "hostPath"
+    oracle-wallet:
+      mountPath: "/opt/gms/bridged-data-source-simulator-application/oracle-wallet"
+      readOnly: true
+      secretName: "oracle-wallet"
+      type: "secret"
+
+cache-service:
+  imageName: "gms-common/cache-service"
+  metadata:
+    description: "Ignite cache service for IAN and SB"
+    labels:
+      - "ian"
+      - "sb"
+    type: "harness"
+  network:
+    ignite: true
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+
+cd11-injector:
+  env:
+    CD11_INJECTOR_CONFIG_NAME: "81for10min"
+    GMS_CONFIG_CD11_DATA_PROVIDER__CONSUMER_ID: "{{ .Release.Name }}"
+    GMS_CONFIG_CD11_DATA_PROVIDER__REPEATER_SERVERS: "{{ .Values.global.baseDomain }}:9094,{{ .Values.global.baseDomain }}:9095,{{ .Values.global.baseDomain }}:9096"
+    GMS_CONFIG_CONNMAN_ADDRESS: "da-connman"
+    GMS_CONFIG_CONNMAN_PORT: "8041"
+  imageName: "gms-common/cd11-data-provider"
+  metadata:
+    description: "CD11 test data injector for SOH"
+    labels:
+      - "soh"
+      - "sim"
+    type: "harness"
+  network:
+    service:
+      8080:
+        name: "http-web"
+
+data-preloader:
+  cpuLimit: 128
+  cpuRequest: 2
+  env:
+    #JAVA_OPTS: "-Dreactor.schedulers.defaultPoolSize=50"
+    STATION_GROUP: "Primary"
+    DAYS_TO_LOAD: '45'
+    DAYS_AGO_TO_START: '45'
+    LOAD_RSDFS: "TRUE"
+    RECEPTION_DELAY: "PT10S"
+    RSDF_SAMPLE_DURATION: "PT10S"
+    LOAD_STATION_SOHS: "TRUE"
+    STATION_SOH_SAMPLE_DURATION: "PT20S"
+    LOAD_ANALOG_ACEIS: "TRUE"
+    ACEI_ANALOG_SAMPLE_DURATION: "PT10S"
+    LOAD_BOOLEAN_ACEIS: "TRUE"
+    ACEI_BOOLEAN_SAMPLE_DURATION: "PT2M"
+    LOAD_ROLLUPS: "TRUE"
+    ROLLUP_SAMPLE_DURATION: "PT20S"
+  imageName: "gms-common/data-preloader"
+  kind: "job"
+  memoryLimit: "16G"
+  memoryRequest: "8G"
+  metadata:
+    description: "This will preload data for SOH"
+    labels:
+      - "soh"
+      - "soak"
+    type: "harness"
+  restartPolicy: "Never"
+
+javadoc:
+  imageName: "gms-common/javadoc_server"
+  metadata:
+    description: "Provides a container that serves up javadoc documentation"
+    labels:
+      - "ian"
+      - "sb"
+      - "soh"
+    type: "harness"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  useGlobalEnv: false
+
+jupyter:
+  env:
+    PLACEHOLDER: "/dev/null"
+  imageName: "gms-common/jupyter"
+  metadata:
+    description: "Provides a Jupyter notebook service for IAN and SB"
+    labels:
+      - "ian"
+      - "sb"
+      - "sim"
+    type: "harness"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    annotations:
+      nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+    service:
+      8080:
+        name: "http-web"
+  useGlobalEnv: false
+
+minio-test-reports:
+  command:
+    - "/bin/bash"
+    - "-c"
+    - 'mkdir -p /data/{{ .appValues.minioReportBucket | default "results"  }} && minio server /data'
+  configMap:
+    minio-test-reports:
+      data:
+        minio_report_bucket: "{{ .appValues.minioReportBucket | default \"reports\" }}"
+  env:
+    MINIO_ROOT_USER:
+      key: "minio_access_key"
+      name: "minio-test-reports-keys"
+      type: "fromSecret"
+    MINIO_ROOT_PASSWORD:
+      key: "minio_secret_key"
+      name: "minio-test-reports-keys"
+      type: "fromSecret"
+  imageName: "gms-common/minio"
+  metadata:
+    description: "MINIO service for gathering test reports"
+    labels:
+      - "ian"
+      - "sb"
+      - "soh"
+    type: "harness"
+  network:
+    ingress:
+      9000:
+        path: "/"
+      host: "{{ .appName }}-{{ .Release.Name }}.{{ .Values.global.baseDomain }}"
+    service:
+      9000:
+        name: "http-web"
+  podSecurityContext:
+    runAsUser: 1001
+    fsGroup: 1001
+  secret:
+    minio-test-reports-keys:
+      stringData:
+        minio_access_key: "{{ .appValues.minioAccessKey | default \"minio\" }}"
+        minio_secret_key: "{{ .appValues.minioSecretKey | default \"minio123\" }}"
+  useGlobalEnv: false
+  volume:
+    memdisk:
+      mountPath: "/data"
+      type: "emptyDir"
+
+mock-data-server:
+  imageName: "gms-common/mock-data-server"
+  metadata:
+    description: "Provides a mock data server for IAN"
+    labels:
+      - "ian"
+    type: "harness"
+  network:
+    ingress:
+      3000:
+        path: "/{{ .appName }}"
+    service:
+      3000:
+        name: "http-web"
+
+mock-waveform-service:
+  imageName: "gms-common/mock-waveform-application"
+  metadata:
+    description: "Provides a mock waveform service for IAN"
+    labels:
+      - "ian"
+    type: "harness"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+
+oracle:
+  deploymentStrategy: Recreate
+  env:
+    ORACLE_CHARACTERSET: "AL32UTF8"
+    ORACLE_PWD:
+      key: "sysuserpass"
+      name: "oracle-sys-user"
+      type: "fromSecret"
+  imageName: "gms-common/oracle"
+  metadata:
+    description: "Development oracle container for IAN and SB"
+    labels:
+      - "ian"
+      - "sb"
+      - "database"
+    type: "harness"
+  network:
+    service:
+      1521:
+        name: "tcp-oracle"
+  podAnnotations:
+    sidecar.istio.io/inject: "false"
+  podSecurityContext:
+    fsGroup: 54321
+  secret:
+    oracle-sys-user:
+      data:
+        sysuserpass: REDACTED
+  useGlobalEnv: false
+  volume:
+    data:
+      mountPath: "/opt/oracle/oradata"
+      size: "35Gi"
+      type: "persistentVolumeClaim"
+    oracle-wallet:
+      mountPath: "/opt/gms/oracle-wallet"
+      readOnly: true
+      secretName: "oracle-wallet"
+      type: "secret"
+
+swagger:
+  env:
+    BASE_URL: "/swagger"
+  imageName: "gms-common/swagger-gms"
+  metadata:
+    description: "Provides a container to serve swagger API documentation"
+    labels:
+      - "ian"
+      - "sb"
+      - "soh"
+    type: "harness"
+  network:
+    ingress:
+      8080:
+        path: "/{{ .appName }}"
+    service:
+      8080:
+        name: "http-web"
+  useGlobalEnv: false
+
+test-cypress:
+  backoffLimit: 0
+  cpuLimit: 32
+  cpuRequest: 2
+  env:
+    CYPRESS_BASE_URL: "https://{{ .Release.Name }}.{{ .Values.global.baseDomain }}:{{ .Values.global.basePort }}/interactive-analysis-ui/"
+    DEBUG: "cypress:*"
+    MINIO_ACCESS_KEY:
+      name: "minio-test-reports-keys"
+      key: "minio_access_key"
+      type: "fromSecret"
+    MINIO_REPORT_BUCKET:
+      name: "minio-test-reports"
+      key: "minio_report_bucket"
+      type: "fromConfigMap"
+    MINIO_SECRET_KEY:
+      name: "minio-test-reports-keys"
+      key: "minio_secret_key"
+      type: "fromSecret"
+    MINIO_URL: "http://minio-test-reports:9000"
+  imageName: "gms-common/cypress-tests"
+  kind: "job"
+  memoryLimit: "16G"
+  memoryRequest: "8G"
+  metadata:
+    description: "Runs Cypress UI tests"
+    type: "test"
+  numIdenticalPods: 1
+  restartPolicy: "Never"
+  useGlobalEnv: false
+  volume:
+    shm:
+      medium: "Memory"
+      mountPath: "/dev/shm"
+      type: "emptyDir"
+
+test-sb-jest:
+  backoffLimit: 0
+  cpuLimit: 32
+  cpuRequest: 2
+  env:
+    DEPLOYMENT_NAME: "{{ .Release.Name }}"
+    MINIO_ACCESS_KEY:
+      name: "minio-test-reports-keys"
+      key: "minio_access_key"
+      type: "fromSecret"
+    MINIO_REPORT_BUCKET:
+      name: "minio-test-reports"
+      key: "minio_report_bucket"
+      type: "fromConfigMap"
+    MINIO_SECRET_KEY:
+      name: "minio-test-reports-keys"
+      key: "minio_secret_key"
+      type: "fromSecret"
+    MINIO_URL: "http://minio-test-reports:9000"
+    SERVICE_URL: "{{ .Values.global.baseDomain }}:{{ .Values.global.basePort }}"
+  imageName: "gms-common/jest-tests"
+  kind: "job"
+  memoryLimit: "16G"
+  memoryRequest: "8G"
+  metadata:
+    description: "Runs SB-specific Jest-UI tests"
+    type: "test"
+  numIdenticalPods: 1
+  restartPolicy: "Never"
+  useGlobalEnv: false
+  volume:
+    shm:
+      medium: "Memory"
+      mountPath: "/dev/shm"
+      size: "2Gi"
+      type: "emptyDir"

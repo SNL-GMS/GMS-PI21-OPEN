@@ -1,0 +1,23 @@
+apply plugin: 'java-library'
+
+dependencies {
+    api project(':station-definition-dao')
+    api project(':station-definition-api')
+    implementation project(':structured-logging')
+    implementation project(':bridge-utilities')
+
+    implementation libs.org.springframework.boot.spring.boot.starter.web
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+
+    implementation libs.com.google.guava.guava
+    implementation libs.com.github.ffpojo.ffpojo
+    implementation libs.org.apache.commons.commons.lang3
+
+    // Google AutoValue
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+
+    // Testing.
+    testImplementation project(':station-definition-testfixtures')
+    testImplementation libs.org.testcontainers.junit.jupiter
+}

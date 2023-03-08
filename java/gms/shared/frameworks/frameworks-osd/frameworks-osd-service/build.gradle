@@ -1,0 +1,56 @@
+plugins {
+    id 'application'
+    alias(libs.plugins.com.palantir.docker)
+}
+
+mainClassName = 'gms.shared.frameworks.osd.service.OsdServiceApplication'
+
+dependencies {
+    // Gradle sub-project dependencies.
+    implementation project(':frameworks-service-generator')
+    implementation project(':frameworks-osd-repository')
+
+    runtimeOnly libs.ch.qos.logback.logback.classic
+    runtimeOnly libs.net.logstash.logback.logstash.logback.encoder
+
+    // Custom metrics JMX dependency
+    implementation libs.io.prometheus.jmx.jmx.prometheus.javaagent
+}
+
+ext {
+    jmxJarName = "jmx_prometheus_javaagent-${jmxVersion}.jar"
+    jmxExporterFlag = "-javaagent:%s=${jmxPort}:%s/${jmxConfigName}"
+}
+
+if (project.hasProperty('jmxEnable') && jmxEnable == "true") {
+    /**
+     * Configure the "application" plugin.
+     *
+     * For all application runtime tasks, include the Java agent parameter that enables metrics as the default JVM
+     * argument. The defaults args resemble the following when fully rendered:
+     *
+     *   ex. -javaagent:/path/to/jmx_prometheus_javaagent-0.12.0.jar=8383:/path/to/prometheus-jmx-config.yaml
+     *
+     */
+    application {
+        def jmxJarPath = "${sourceSets.main.runtimeClasspath.find { it.name == jmxJarName }}"
+        applicationDefaultJvmArgs = [sprintf("${jmxExporterFlag}", jmxJarPath, projectDir)]
+    }
+
+    /**
+     * Configure the "distribution" plugin.
+     *
+     * Include the Prometheus metrics yaml file which is needed in the runtime environment of the distribution.
+     */
+    distributions.main.contents { from jmxConfigName }
+
+    /**
+     * Configure the "startScripts" task provided by the "distribution" plugin.
+     *
+     * Set the JVM_OPTS of the start script such that the Java agent parameter that enables metrics is included. The
+     * format of this argument is the same as described in the comment for the application configuration section.
+     */
+    tasks.startScripts {
+        defaultJvmOpts = [sprintf("${jmxExporterFlag}", "${jmxConfigDockerPath}/${jmxJarName}", ".")]
+    }
+}

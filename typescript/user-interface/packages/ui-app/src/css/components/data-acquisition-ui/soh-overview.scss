@@ -1,0 +1,208 @@
+$badge-padding: 6px;
+
+.soh-overview {
+  height: 100%;
+  user-select: none;
+  overflow: auto;
+  .divider-container {
+    .bottom-component {
+      display: flex;
+    }
+  }
+  .deselect-handler {
+    height: calc(100% - #{$toolbar-height} - 0.5rem);
+  }
+}
+
+/// Toolbar
+.soh-overview-toolbar__container {
+  margin-bottom: 0.5rem;
+}
+
+/// Group header
+.soh-overview-group-header {
+  background-color: var(--gms-recessed, $gms-recessed);
+  &__container {
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr;
+    font-size: 24px;
+  }
+  &__network {
+    padding: 6px;
+    margin-right: 12px;
+    border-radius: $rounded-rectangle-radius;
+    color: var(--gms-main, $gms-main);
+    background-color: var(--gms-prominent-background, $gms-prominent-background);
+    &[data-capability-status='bad'] {
+      background: $bad-color;
+    }
+    &[data-capability-status='marginal'] {
+      background: $marginal-color;
+      color: var(--gms-background, $gms-background);
+    }
+    &[data-capability-status='good'] {
+      background: $good-color;
+      color: var(--gms-main, $gms-main);
+    }
+    img.badge {
+      @include addBoxShadow('md');
+      float: right;
+    }
+  }
+  &__count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $gms-sans;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__count--bad {
+    color: lighten($gms-strong-warning, 10%);
+  }
+  &__count--marginal {
+    color: darken($gms-warning, 10%);
+  }
+  &__count--good {
+    color: lighten($gms-good, 10%);
+  }
+  &__count--none {
+    color: lighten($gms-background, 20%);
+  }
+}
+
+/// Table
+.soh-overview-table {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  &__wrapper {
+    background-color: var(--gms-popover-background, $gms-popover-background);
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    & .top-component {
+      transition: height ease 0.08s;
+    }
+  }
+  &__bin {
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    &--top {
+      min-height: 50px;
+      flex-grow: 1;
+    }
+    &--bottom {
+      height: 100%;
+    }
+  }
+  &__label {
+    font-size: 1.25em;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    display: flex;
+    padding-left: 0.25em;
+    margin-top: 0.25em;
+    color: var(--gms-prominent, $gms-prominent);
+    align-content: center;
+  }
+
+  /// Drop zone highlighting
+  & &__drop-zone,
+  & .soh-overview-table__drop-zone {
+    height: 100%;
+    flex-grow: 1;
+    &--highlighted {
+      background-color: var(--gms-table-selection, $gms-table-selection);
+      pointer-events: all !important;
+    }
+  }
+}
+
+/// Cells
+
+.soh-overview-cell {
+  $cell-height: 30px;
+  $cell-margin: 12px;
+  @include gpuAccelerated;
+  letter-spacing: 1.25px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 0.375em 0 0.75em;
+  height: $cell-height;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-right: $cell-margin;
+  border-radius: 4px;
+  margin-bottom: $cell-margin;
+  @include disabledBackground;
+  cursor: pointer;
+  &:hover {
+    @include brighten;
+  }
+  &__container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13ch, 1fr));
+    grid-template-rows: repeat(auto-fill, #{$cell-height + $cell-margin});
+    padding-top: $badge-padding + 4;
+    padding-left: calc($badge-padding / 2);
+    padding-right: 2px;
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-y: overlay;
+    background-color: var(--gms-prominent-background, $gms-prominent-background);
+    border-radius: 4px;
+    @include withScrollSnap(y, mandatory, start, 0.5em);
+  }
+  &[data-soh-status='good'] {
+    background: $good-color;
+  }
+  &[data-soh-status='marginal'] {
+    background: $marginal-color;
+    color: var(--gms-background, $gms-background);
+  }
+  &[data-soh-status='bad'] {
+    background: $bad-color;
+  }
+
+  @include createHashedSohCellStyles('[data-soh-status="none"]', $non-contributing-color);
+  @include createHashedSohCellStyles('[data-soh-status=""]', $non-contributing-color);
+
+  &--selected {
+    @include selectedBorder;
+    &::after {
+      border-radius: $rounded-rectangle-radius;
+    }
+    // Override the selected border to account for the added width of the 1 px border that these cells have
+    &[data-soh-status='none'],
+    &[data-soh-status=''] {
+      border: none;
+    }
+  }
+  // if a table is draggable, give it a hover state and cursor to indicate as much
+  &--draggable {
+    cursor: pointer;
+  }
+  // Compensate for the soh-overview-cell's padding in this case
+  .soh-cell__right-container {
+    margin-right: -0.375em;
+  }
+}
+
+.resize-container {
+  .resizer {
+    transition: opacity 120ms ease;
+  }
+  &--resizing .resizer {
+    opacity: 0.5;
+  }
+  &--resizing .resizer--resizing {
+    opacity: 1;
+  }
+}

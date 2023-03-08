@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Station Name cell renderer StationNameCellRenderer can be created 1`] = `
+<div>
+  <div
+    data-cy="station-name-cell"
+  >
+    <div
+      draggable="true"
+    >
+      <div
+        class="table-cell soh-cell 
+        soh-cell__title
+        soh-cell--solid
+      "
+        data-cell-status="good"
+        data-cy="soh-name-cell"
+        data-received-status="received"
+        data-station-id="test"
+        style="height: 36px; overflow: hidden;"
+        title="Capability Rollup - GOOD"
+      >
+        <div
+          class="stacked-counts"
+        >
+          <div
+            class="stacked-counts__entry"
+            data-capability-status="bad"
+          >
+             
+          </div>
+          <div
+            class="stacked-counts__entry"
+            data-capability-status="marginal"
+          >
+             
+          </div>
+        </div>
+        <div
+          class=" table-cell__value "
+          data-cy="table-cell__value"
+        >
+          <span>
+            2.5
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Station Name cell renderer can be created handle no data 1`] = `<div />`;

@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toolbar utils renderMenuItem renders items 1`] = `
+Array [
+  <ButtonOverflowMenuToolbarItem
+    item={
+      Object {
+        "hasIssue": false,
+        "onButtonClick": [MockFunction],
+        "tooltip": "Button Hello",
+        "widthPx": 50,
+      }
+    }
+    menuKey="button"
+  />,
+  <ButtonGroupOverflowMenuToolbarItem
+    item={
+      Object {
+        "buttons": Array [
+          Object {
+            "disabled": false,
+            "icon": "arrow-left",
+            "key": "button-item-1",
+            "label": "Pan Left",
+            "onButtonClick": [Function],
+            "onlyShowIcon": true,
+            "tooltip": "Pan waveforms to the left",
+          },
+        ],
+        "hasIssue": false,
+        "tooltip": "Button675 Group Hello",
+        "widthPx": 50,
+      }
+    }
+    menuKey="buttongroup"
+  />,
+  <Blueprint4.MenuItem
+    active={false}
+    disabled={false}
+    multiline={false}
+    popoverProps={Object {}}
+    selected={false}
+    shouldDismissPopover={true}
+    text=""
+  />,
+  <Blueprint4.MenuItem
+    active={false}
+    disabled={false}
+    multiline={false}
+    popoverProps={Object {}}
+    selected={false}
+    shouldDismissPopover={true}
+    text=""
+  />,
+  <DropdownOverflowMenuToolbarItem
+    item={
+      Object {
+        "dropdownOptions": Array [],
+        "hasIssue": false,
+        "onChange": [MockFunction],
+        "tooltip": "Hello Dropdown",
+        "value": "Hello Dropdown",
+        "widthPx": 50,
+      }
+    }
+    menuKey="dropdown"
+  />,
+  <IntervalPickerOverflowMenuToolbarItem
+    item={
+      Object {
+        "defaultIntervalInHours": 12,
+        "endDate": 1970-01-01T00:00:01.000Z,
+        "onApplyButton": [MockFunction],
+        "onChange": [MockFunction],
+        "startDate": 1970-01-01T00:00:00.100Z,
+        "tooltip": "Hello Interval",
+        "widthPx": 50,
+      }
+    }
+    menuKey="intervalpicker"
+  />,
+  <LabelValueOverflowMenuToolbarItem
+    item={
+      Object {
+        "label": "label",
+        "labelValue": "",
+        "menuLabel": "menu label",
+        "tooltip": "Hello label",
+        "widthPx": 50,
+      }
+    }
+    menuKey="labelvalue"
+  />,
+  <LoadingSpinnerOverflowMenuToolbarItem
+    item={
+      Object {
+        "hasIssue": false,
+        "itemsToLoad": 1,
+        "tooltip": "Hello LoadingSpinner",
+        "widthPx": 50,
+      }
+    }
+    menuKey="loadingspinner"
+  />,
+  <NumericOverflowMenuToolbarItem
+    item={
+      Object {
+        "hasIssue": false,
+        "minMax": Object {
+          "max": 43,
+          "min": 41,
+        },
+        "numericValue": 42,
+        "onChange": [MockFunction],
+        "tooltip": "Hello Numeric",
+        "widthPx": 50,
+      }
+    }
+    menuKey="numericinput"
+  />,
+  <PopoverButtonOverflowMenuToolbarItem
+    item={
+      Object {
+        "hasIssue": false,
+        "onPopoverDismissed": [MockFunction],
+        "popoverContent": <Unknown>
+          Test
+        </Unknown>,
+        "tooltip": "Hello Popover",
+        "widthPx": 50,
+      }
+    }
+    menuKey="popover"
+  />,
+  <SwitchOverflowMenuToolbarItem
+    item={
+      Object {
+        "onChange": [MockFunction],
+        "switchValue": true,
+        "widthPx": 50,
+      }
+    }
+    menuKey="switch-test"
+  />,
+]
+`;

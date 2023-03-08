@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Workspace commands match snapshot 1`] = `
+Array [
+  Object {
+    "action": [Function],
+    "commandType": "User: Log Out",
+    "searchTags": Array [
+      "quit",
+      "exit",
+      "logout",
+      "log out",
+    ],
+  },
+  Object {
+    "action": [Function],
+    "commandType": "Help: Show Keyboard Shortcuts",
+    "searchTags": Array [
+      "hotkey",
+      "hot key",
+      "keys",
+      "keyboard",
+      "shortcut",
+    ],
+  },
+  Object {
+    "action": [Function],
+    "commandType": "Developer: Clear Layout",
+    "searchTags": Array [
+      "clear",
+      "reset",
+      "layout",
+      "workspace",
+    ],
+  },
+  Object {
+    "action": [Function],
+    "commandType": "Developer: Show Logs",
+    "searchTags": Array [
+      "logs",
+    ],
+  },
+]
+`;

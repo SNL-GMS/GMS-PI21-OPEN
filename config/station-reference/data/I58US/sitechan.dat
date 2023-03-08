@@ -1,0 +1,11 @@
+I58H1  BDF       2013315     4741  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20130109 12:00:00
+I58H1  LKO       2013315     4746  2018178 n       0.0000   -1.0   -1.0 Temperature                                        20180709 12:00:00
+I58H1  LWD       2013315     4747  2018178 n       0.0000   -1.0   -1.0 Wind_Sensor_Direction                              20180709 12:00:00
+I58H1  LWS       2013315     4748  2018178 n       0.0000   -1.0   -1.0 Wind_Sensor_Speed                                  20180709 12:00:00
+I58H2  BDF       2013315     4742  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20130109 12:00:00
+I58H2  LKO       2018179     8571  2286324 n       0.0000   -1.0   -1.0 Temperature                                        20180813 12:00:00
+I58H2  LWD       2018179     8572  2286324 n       0.0000   -1.0   -1.0 Wind_Sensor_Direction                              20180813 12:00:00
+I58H2  LWS       2018179     8573  2286324 n       0.0000   -1.0   -1.0 Wind_Sensor_Speed                                  20180813 12:00:00
+I58H3  BDF       2013315     4743  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20130109 12:00:00
+I58H4  BDF       2013315     4744  2286324 n       0.0000   -1.0   -1.0 Infrasonic_Micropressure_data                      20130109 12:00:00
+I58H4  LDA       2013315     4745  2286324 n       0.0000   -1.0   -1.0 Absolute_Pressure                                  20130109 12:00:00

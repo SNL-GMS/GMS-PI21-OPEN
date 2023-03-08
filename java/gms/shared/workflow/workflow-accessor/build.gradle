@@ -1,0 +1,27 @@
+plugins {
+    id('java-library')
+}
+
+dependencies {
+
+    api project(':workflow-api')
+    api project(':workflow-coi')
+    api project(':workflow-repository')
+    implementation project(':caching-utils')
+    implementation project(':frameworks-control')
+    implementation project(':frameworks-configuration-repository')
+    implementation project(':spring-framework-utilities')
+    implementation project(':bridge-utilities')
+
+    implementation libs.net.jodah.failsafe
+    implementation libs.org.springframework.boot.spring.boot.starter.web
+    implementation platform(libs.org.springframework.boot.spring.boot.dependencies)
+
+    // Testing.
+    testImplementation project(':frameworks-test-utilities')
+}
+configurations {
+    all {
+        exclude group: 'org.apache.logging.log4j', module: 'log4j-slf4j-impl'
+    }
+}

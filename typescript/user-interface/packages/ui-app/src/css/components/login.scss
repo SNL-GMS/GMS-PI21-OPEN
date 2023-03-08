@@ -1,0 +1,69 @@
+.login-screen-body {
+  background-color: var(--gms-prominent-background, #202b33);
+  height: 100%;
+}
+
+.login-container {
+  font-size: 16px;
+  width: 100%;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-row {
+  display: flex;
+  width: 380px;
+  align-items: flex-start;
+  margin-top: 12px;
+}
+
+.login-row.login-button {
+  justify-content: flex-end;
+}
+
+.login-label {
+  margin-right: 16px;
+  width: 84px;
+}
+
+.gms-light-mode #GMSLogo {
+  // Filter used to invert colors in light mode,
+  // so that the white logo appears black on the light background.
+  filter: invert(1);
+}
+
+.bp4-dark #GMSLogo {
+  filter: none;
+}
+
+.login-input {
+  border-radius: 0;
+  .bp4-dark & {
+    color: $analyst-requires-review;
+  }
+  color: var(--gms-main, $gms-main);
+  background-color: var(--gms-prominent-background, #202b33);
+  font-size: 16px;
+  width: 280px;
+  line-height: 16px;
+  margin-top: 3px;
+  border: none;
+}
+
+.login-legal {
+  max-width: 660px;
+  line-height: 12px;
+  font-size: 12px;
+  text-align: justify;
+}
+
+.app-menu-button {
+  padding-right: 1.25em;
+  padding-left: 1em;
+  border-left: 1px solid var(--gms-prominent, $gms-prominent);
+  border-radius: 0px;
+}

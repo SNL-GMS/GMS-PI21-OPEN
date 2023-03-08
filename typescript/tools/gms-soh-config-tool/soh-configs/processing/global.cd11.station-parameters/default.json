@@ -1,0 +1,1129 @@
+{
+    "name" : "station-acquisition-config",
+    "constraints" : [ {
+        "constraintType" : "DEFAULT"
+    } ],
+    "parameters" : {
+        "stations" : [ {
+            "acquired" : true,
+            "portOffset" : 0,
+            "frameProcessingDisabled" : false,
+            "stationName" : "AAK"
+        }, {
+            "acquired" : true,
+            "portOffset" : 1,
+            "frameProcessingDisabled" : false,
+            "stationName" : "AFI"
+        }, {
+            "acquired" : true,
+            "portOffset" : 5,
+            "frameProcessingDisabled" : false,
+            "stationName" : "AKASG"
+        }, {
+            "acquired" : true,
+            "portOffset" : 6,
+            "frameProcessingDisabled" : false,
+            "stationName" : "AKTO"
+        }, {
+            "acquired" : true,
+            "portOffset" : 7,
+            "frameProcessingDisabled" : false,
+            "stationName" : "ANMO"
+        }, {
+            "acquired" : true,
+            "portOffset" : 9,
+            "frameProcessingDisabled" : false,
+            "stationName" : "APG"
+        }, {
+            "acquired" : true,
+            "portOffset" : 11,
+            "frameProcessingDisabled" : false,
+            "stationName" : "ARCES"
+        }, {
+            "acquired" : true,
+            "portOffset" : 12,
+            "frameProcessingDisabled" : false,
+            "stationName" : "ARTI"
+        }, {
+            "acquired" : true,
+            "portOffset" : 13,
+            "frameProcessingDisabled" : false,
+            "stationName" : "ASAR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 14,
+            "frameProcessingDisabled" : false,
+            "stationName" : "ASF"
+        }, {
+            "acquired" : true,
+            "portOffset" : 15,
+            "frameProcessingDisabled" : false,
+            "stationName" : "ATAH"
+        }, {
+            "acquired" : true,
+            "portOffset" : 16,
+            "frameProcessingDisabled" : false,
+            "stationName" : "ATD"
+        }, {
+            "acquired" : true,
+            "portOffset" : 17,
+            "frameProcessingDisabled" : false,
+            "stationName" : "BATI"
+        }, {
+            "acquired" : true,
+            "portOffset" : 20,
+            "frameProcessingDisabled" : false,
+            "stationName" : "BBB"
+        }, {
+            "acquired" : true,
+            "portOffset" : 21,
+            "frameProcessingDisabled" : false,
+            "stationName" : "BBTS"
+        }, {
+            "acquired" : true,
+            "portOffset" : 22,
+            "frameProcessingDisabled" : false,
+            "stationName" : "BDFB"
+        }, {
+            "acquired" : true,
+            "portOffset" : 24,
+            "frameProcessingDisabled" : false,
+            "stationName" : "BELG"
+        }, {
+            "acquired" : true,
+            "portOffset" : 25,
+            "frameProcessingDisabled" : false,
+            "stationName" : "BJT"
+        }, {
+            "acquired" : true,
+            "portOffset" : 29,
+            "frameProcessingDisabled" : false,
+            "stationName" : "BORG"
+        }, {
+            "acquired" : true,
+            "portOffset" : 35,
+            "frameProcessingDisabled" : false,
+            "stationName" : "BOSA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 36,
+            "frameProcessingDisabled" : false,
+            "stationName" : "BRDH"
+        }, {
+            "acquired" : true,
+            "portOffset" : 38,
+            "frameProcessingDisabled" : false,
+            "stationName" : "BRTR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 39,
+            "frameProcessingDisabled" : false,
+            "stationName" : "BVAR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 42,
+            "frameProcessingDisabled" : false,
+            "stationName" : "CFA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 46,
+            "frameProcessingDisabled" : false,
+            "stationName" : "CMAR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 48,
+            "frameProcessingDisabled" : false,
+            "stationName" : "CMIG"
+        }, {
+            "acquired" : true,
+            "portOffset" : 49,
+            "frameProcessingDisabled" : false,
+            "stationName" : "CPUP"
+        }, {
+            "acquired" : true,
+            "portOffset" : 53,
+            "frameProcessingDisabled" : false,
+            "stationName" : "CTA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 54,
+            "frameProcessingDisabled" : false,
+            "stationName" : "DAV"
+        }, {
+            "acquired" : true,
+            "portOffset" : 57,
+            "frameProcessingDisabled" : false,
+            "stationName" : "DAVOX"
+        }, {
+            "acquired" : true,
+            "portOffset" : 58,
+            "frameProcessingDisabled" : false,
+            "stationName" : "DBIC"
+        }, {
+            "acquired" : true,
+            "portOffset" : 59,
+            "frameProcessingDisabled" : false,
+            "stationName" : "DLBC"
+        }, {
+            "acquired" : true,
+            "portOffset" : 63,
+            "frameProcessingDisabled" : false,
+            "stationName" : "DZM"
+        }, {
+            "acquired" : true,
+            "portOffset" : 65,
+            "frameProcessingDisabled" : false,
+            "stationName" : "EIL"
+        }, {
+            "acquired" : true,
+            "portOffset" : 67,
+            "frameProcessingDisabled" : false,
+            "stationName" : "EKA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 68,
+            "frameProcessingDisabled" : false,
+            "stationName" : "ELK"
+        }, {
+            "acquired" : true,
+            "portOffset" : 69,
+            "frameProcessingDisabled" : false,
+            "stationName" : "ESDC"
+        }, {
+            "acquired" : true,
+            "portOffset" : 73,
+            "frameProcessingDisabled" : false,
+            "stationName" : "FINES"
+        }, {
+            "acquired" : true,
+            "portOffset" : 76,
+            "frameProcessingDisabled" : false,
+            "stationName" : "FITZ"
+        }, {
+            "acquired" : true,
+            "portOffset" : 78,
+            "frameProcessingDisabled" : false,
+            "stationName" : "FRB"
+        }, {
+            "acquired" : true,
+            "portOffset" : 80,
+            "frameProcessingDisabled" : false,
+            "stationName" : "FURI"
+        }, {
+            "acquired" : true,
+            "portOffset" : 82,
+            "frameProcessingDisabled" : false,
+            "stationName" : "GERES"
+        }, {
+            "acquired" : true,
+            "portOffset" : 84,
+            "frameProcessingDisabled" : false,
+            "stationName" : "GEYT"
+        }, {
+            "acquired" : true,
+            "portOffset" : 85,
+            "frameProcessingDisabled" : false,
+            "stationName" : "GNI"
+        }, {
+            "acquired" : true,
+            "portOffset" : 86,
+            "frameProcessingDisabled" : false,
+            "stationName" : "GUMO"
+        }, {
+            "acquired" : true,
+            "portOffset" : 88,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H01W"
+        }, {
+            "acquired" : true,
+            "portOffset" : 89,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H02N"
+        }, {
+            "acquired" : true,
+            "portOffset" : 90,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H02S"
+        }, {
+            "acquired" : true,
+            "portOffset" : 91,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H03N"
+        }, {
+            "acquired" : true,
+            "portOffset" : 92,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H03S"
+        }, {
+            "acquired" : true,
+            "portOffset" : 93,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H04N"
+        }, {
+            "acquired" : true,
+            "portOffset" : 94,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H04S"
+        }, {
+            "acquired" : true,
+            "portOffset" : 95,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H05N"
+        }, {
+            "acquired" : true,
+            "portOffset" : 96,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H05S"
+        }, {
+            "acquired" : true,
+            "portOffset" : 97,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H06E"
+        }, {
+            "acquired" : true,
+            "portOffset" : 98,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H06N"
+        }, {
+            "acquired" : true,
+            "portOffset" : 99,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H06S"
+        }, {
+            "acquired" : true,
+            "portOffset" : 100,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H07N"
+        }, {
+            "acquired" : true,
+            "portOffset" : 101,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H07S"
+        }, {
+            "acquired" : true,
+            "portOffset" : 102,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H08N"
+        }, {
+            "acquired" : true,
+            "portOffset" : 103,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H08S"
+        }, {
+            "acquired" : true,
+            "portOffset" : 104,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H09N"
+        }, {
+            "acquired" : true,
+            "portOffset" : 105,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H09W"
+        }, {
+            "acquired" : true,
+            "portOffset" : 106,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H10N"
+        }, {
+            "acquired" : true,
+            "portOffset" : 107,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H10S"
+        }, {
+            "acquired" : true,
+            "portOffset" : 108,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H11N"
+        }, {
+            "acquired" : true,
+            "portOffset" : 109,
+            "frameProcessingDisabled" : false,
+            "stationName" : "H11S"
+        }, {
+            "acquired" : true,
+            "portOffset" : 110,
+            "frameProcessingDisabled" : false,
+            "stationName" : "HFS"
+        }, {
+            "acquired" : true,
+            "portOffset" : 114,
+            "frameProcessingDisabled" : false,
+            "stationName" : "HILR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 116,
+            "frameProcessingDisabled" : false,
+            "stationName" : "HNR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 119,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I02AR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 122,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I03AU"
+        }, {
+            "acquired" : true,
+            "portOffset" : 123,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I04AU"
+        }, {
+            "acquired" : true,
+            "portOffset" : 124,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I05AU"
+        }, {
+            "acquired" : true,
+            "portOffset" : 125,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I06AU"
+        }, {
+            "acquired" : true,
+            "portOffset" : 126,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I07AU"
+        }, {
+            "acquired" : true,
+            "portOffset" : 127,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I08BO"
+        }, {
+            "acquired" : true,
+            "portOffset" : 128,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I09BR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 129,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I10CA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 130,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I11CV"
+        }, {
+            "acquired" : true,
+            "portOffset" : 131,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I13CL"
+        }, {
+            "acquired" : true,
+            "portOffset" : 132,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I17CI"
+        }, {
+            "acquired" : true,
+            "portOffset" : 133,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I18DK"
+        }, {
+            "acquired" : true,
+            "portOffset" : 134,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I19DJ"
+        }, {
+            "acquired" : true,
+            "portOffset" : 135,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I20EC"
+        }, {
+            "acquired" : true,
+            "portOffset" : 136,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I21FR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 137,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I22FR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 138,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I23FR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 139,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I24FR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 140,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I26DE"
+        }, {
+            "acquired" : true,
+            "portOffset" : 141,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I27DE"
+        }, {
+            "acquired" : true,
+            "portOffset" : 142,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I30JP"
+        }, {
+            "acquired" : true,
+            "portOffset" : 143,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I31KZ"
+        }, {
+            "acquired" : true,
+            "portOffset" : 144,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I32KE"
+        }, {
+            "acquired" : true,
+            "portOffset" : 145,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I33MG"
+        }, {
+            "acquired" : true,
+            "portOffset" : 146,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I34MN"
+        }, {
+            "acquired" : true,
+            "portOffset" : 147,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I35NA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 148,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I36NZ"
+        }, {
+            "acquired" : true,
+            "portOffset" : 149,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I37NO"
+        }, {
+            "acquired" : true,
+            "portOffset" : 150,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I39PW"
+        }, {
+            "acquired" : true,
+            "portOffset" : 151,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I40PG"
+        }, {
+            "acquired" : true,
+            "portOffset" : 152,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I41PY"
+        }, {
+            "acquired" : true,
+            "portOffset" : 153,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I42PT"
+        }, {
+            "acquired" : true,
+            "portOffset" : 154,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I43RU"
+        }, {
+            "acquired" : true,
+            "portOffset" : 155,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I44RU"
+        }, {
+            "acquired" : true,
+            "portOffset" : 156,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I45RU"
+        }, {
+            "acquired" : true,
+            "portOffset" : 157,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I46RU"
+        }, {
+            "acquired" : true,
+            "portOffset" : 158,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I47ZA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 159,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I48TN"
+        }, {
+            "acquired" : true,
+            "portOffset" : 160,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I49GB"
+        }, {
+            "acquired" : true,
+            "portOffset" : 161,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I50GB"
+        }, {
+            "acquired" : true,
+            "portOffset" : 162,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I51GB"
+        }, {
+            "acquired" : true,
+            "portOffset" : 163,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I52GB"
+        }, {
+            "acquired" : true,
+            "portOffset" : 164,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I53US"
+        }, {
+            "acquired" : true,
+            "portOffset" : 165,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I55US"
+        }, {
+            "acquired" : true,
+            "portOffset" : 166,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I56US"
+        }, {
+            "acquired" : true,
+            "portOffset" : 167,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I57US"
+        }, {
+            "acquired" : true,
+            "portOffset" : 168,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I58US"
+        }, {
+            "acquired" : true,
+            "portOffset" : 169,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I59US"
+        }, {
+            "acquired" : true,
+            "portOffset" : 170,
+            "frameProcessingDisabled" : false,
+            "stationName" : "I60US"
+        }, {
+            "acquired" : true,
+            "portOffset" : 171,
+            "frameProcessingDisabled" : false,
+            "stationName" : "IDI"
+        }, {
+            "acquired" : true,
+            "portOffset" : 172,
+            "frameProcessingDisabled" : false,
+            "stationName" : "ILAR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 173,
+            "frameProcessingDisabled" : false,
+            "stationName" : "INK"
+        }, {
+            "acquired" : true,
+            "portOffset" : 174,
+            "frameProcessingDisabled" : false,
+            "stationName" : "JAY"
+        }, {
+            "acquired" : true,
+            "portOffset" : 177,
+            "frameProcessingDisabled" : false,
+            "stationName" : "JCJ"
+        }, {
+            "acquired" : true,
+            "portOffset" : 178,
+            "frameProcessingDisabled" : false,
+            "stationName" : "JHJ"
+        }, {
+            "acquired" : true,
+            "portOffset" : 180,
+            "frameProcessingDisabled" : false,
+            "stationName" : "JKA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 181,
+            "frameProcessingDisabled" : false,
+            "stationName" : "JMIC"
+        }, {
+            "acquired" : true,
+            "portOffset" : 182,
+            "frameProcessingDisabled" : false,
+            "stationName" : "JNU"
+        }, {
+            "acquired" : true,
+            "portOffset" : 183,
+            "frameProcessingDisabled" : false,
+            "stationName" : "JOW"
+        }, {
+            "acquired" : true,
+            "portOffset" : 186,
+            "frameProcessingDisabled" : false,
+            "stationName" : "JTS"
+        }, {
+            "acquired" : true,
+            "portOffset" : 187,
+            "frameProcessingDisabled" : false,
+            "stationName" : "KAPI"
+        }, {
+            "acquired" : true,
+            "portOffset" : 189,
+            "frameProcessingDisabled" : false,
+            "stationName" : "KBZ"
+        }, {
+            "acquired" : true,
+            "portOffset" : 191,
+            "frameProcessingDisabled" : false,
+            "stationName" : "KDAK"
+        }, {
+            "acquired" : true,
+            "portOffset" : 192,
+            "frameProcessingDisabled" : false,
+            "stationName" : "KEST"
+        }, {
+            "acquired" : true,
+            "portOffset" : 193,
+            "frameProcessingDisabled" : false,
+            "stationName" : "KIRV"
+        }, {
+            "acquired" : true,
+            "portOffset" : 196,
+            "frameProcessingDisabled" : false,
+            "stationName" : "KLR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 198,
+            "frameProcessingDisabled" : false,
+            "stationName" : "KMBO"
+        }, {
+            "acquired" : true,
+            "portOffset" : 199,
+            "frameProcessingDisabled" : false,
+            "stationName" : "KOWA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 202,
+            "frameProcessingDisabled" : false,
+            "stationName" : "KRVT"
+        }, {
+            "acquired" : true,
+            "portOffset" : 203,
+            "frameProcessingDisabled" : false,
+            "stationName" : "KSRS"
+        }, {
+            "acquired" : true,
+            "portOffset" : 204,
+            "frameProcessingDisabled" : false,
+            "stationName" : "KURK"
+        }, {
+            "acquired" : true,
+            "portOffset" : 206,
+            "frameProcessingDisabled" : false,
+            "stationName" : "KVAR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 207,
+            "frameProcessingDisabled" : false,
+            "stationName" : "LBTB"
+        }, {
+            "acquired" : true,
+            "portOffset" : 209,
+            "frameProcessingDisabled" : false,
+            "stationName" : "LEM"
+        }, {
+            "acquired" : true,
+            "portOffset" : 210,
+            "frameProcessingDisabled" : false,
+            "stationName" : "LPAZ"
+        }, {
+            "acquired" : true,
+            "portOffset" : 213,
+            "frameProcessingDisabled" : false,
+            "stationName" : "LPIG"
+        }, {
+            "acquired" : true,
+            "portOffset" : 214,
+            "frameProcessingDisabled" : false,
+            "stationName" : "LSZ"
+        }, {
+            "acquired" : true,
+            "portOffset" : 217,
+            "frameProcessingDisabled" : false,
+            "stationName" : "LVC"
+        }, {
+            "acquired" : true,
+            "portOffset" : 218,
+            "frameProcessingDisabled" : false,
+            "stationName" : "LZDM"
+        }, {
+            "acquired" : true,
+            "portOffset" : 220,
+            "frameProcessingDisabled" : false,
+            "stationName" : "MA2"
+        }, {
+            "acquired" : true,
+            "portOffset" : 221,
+            "frameProcessingDisabled" : false,
+            "stationName" : "MATP"
+        }, {
+            "acquired" : true,
+            "portOffset" : 224,
+            "frameProcessingDisabled" : false,
+            "stationName" : "MAW"
+        }, {
+            "acquired" : true,
+            "portOffset" : 225,
+            "frameProcessingDisabled" : false,
+            "stationName" : "MBAR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 226,
+            "frameProcessingDisabled" : false,
+            "stationName" : "MDP"
+        }, {
+            "acquired" : true,
+            "portOffset" : 229,
+            "frameProcessingDisabled" : false,
+            "stationName" : "MDT"
+        }, {
+            "acquired" : true,
+            "portOffset" : 230,
+            "frameProcessingDisabled" : false,
+            "stationName" : "MJAR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 231,
+            "frameProcessingDisabled" : false,
+            "stationName" : "MKAR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 232,
+            "frameProcessingDisabled" : false,
+            "stationName" : "MLR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 233,
+            "frameProcessingDisabled" : false,
+            "stationName" : "MMAI"
+        }, {
+            "acquired" : true,
+            "portOffset" : 234,
+            "frameProcessingDisabled" : false,
+            "stationName" : "MSKU"
+        }, {
+            "acquired" : true,
+            "portOffset" : 238,
+            "frameProcessingDisabled" : false,
+            "stationName" : "MSVF"
+        }, {
+            "acquired" : true,
+            "portOffset" : 239,
+            "frameProcessingDisabled" : false,
+            "stationName" : "NEW"
+        }, {
+            "acquired" : true,
+            "portOffset" : 240,
+            "frameProcessingDisabled" : false,
+            "stationName" : "NNA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 243,
+            "frameProcessingDisabled" : false,
+            "stationName" : "NOA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 244,
+            "frameProcessingDisabled" : false,
+            "stationName" : "NRIK"
+        }, {
+            "acquired" : true,
+            "portOffset" : 245,
+            "frameProcessingDisabled" : false,
+            "stationName" : "NVAR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 246,
+            "frameProcessingDisabled" : false,
+            "stationName" : "NWAO"
+        }, {
+            "acquired" : true,
+            "portOffset" : 247,
+            "frameProcessingDisabled" : false,
+            "stationName" : "OBN"
+        }, {
+            "acquired" : true,
+            "portOffset" : 248,
+            "frameProcessingDisabled" : false,
+            "stationName" : "OPO"
+        }, {
+            "acquired" : true,
+            "portOffset" : 249,
+            "frameProcessingDisabled" : false,
+            "stationName" : "PALK"
+        }, {
+            "acquired" : true,
+            "portOffset" : 251,
+            "frameProcessingDisabled" : false,
+            "stationName" : "PCRV"
+        }, {
+            "acquired" : true,
+            "portOffset" : 255,
+            "frameProcessingDisabled" : false,
+            "stationName" : "PDAR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 256,
+            "frameProcessingDisabled" : false,
+            "stationName" : "PETK"
+        }, {
+            "acquired" : true,
+            "portOffset" : 257,
+            "frameProcessingDisabled" : false,
+            "stationName" : "PFO"
+        }, {
+            "acquired" : true,
+            "portOffset" : 258,
+            "frameProcessingDisabled" : false,
+            "stationName" : "PLCA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 260,
+            "frameProcessingDisabled" : false,
+            "stationName" : "PMG"
+        }, {
+            "acquired" : true,
+            "portOffset" : 261,
+            "frameProcessingDisabled" : false,
+            "stationName" : "PMSA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 262,
+            "frameProcessingDisabled" : false,
+            "stationName" : "PPT"
+        }, {
+            "acquired" : true,
+            "portOffset" : 264,
+            "frameProcessingDisabled" : false,
+            "stationName" : "PSI"
+        }, {
+            "acquired" : true,
+            "portOffset" : 265,
+            "frameProcessingDisabled" : false,
+            "stationName" : "PTGA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 266,
+            "frameProcessingDisabled" : false,
+            "stationName" : "QSPA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 268,
+            "frameProcessingDisabled" : false,
+            "stationName" : "RAO"
+        }, {
+            "acquired" : true,
+            "portOffset" : 270,
+            "frameProcessingDisabled" : false,
+            "stationName" : "RAR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 271,
+            "frameProcessingDisabled" : false,
+            "stationName" : "RCBR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 273,
+            "frameProcessingDisabled" : false,
+            "stationName" : "RES"
+        }, {
+            "acquired" : true,
+            "portOffset" : 274,
+            "frameProcessingDisabled" : false,
+            "stationName" : "ROSC"
+        }, {
+            "acquired" : true,
+            "portOffset" : 276,
+            "frameProcessingDisabled" : false,
+            "stationName" : "RPN"
+        }, {
+            "acquired" : true,
+            "portOffset" : 277,
+            "frameProcessingDisabled" : false,
+            "stationName" : "RPZ"
+        }, {
+            "acquired" : true,
+            "portOffset" : 278,
+            "frameProcessingDisabled" : false,
+            "stationName" : "SADO"
+        }, {
+            "acquired" : true,
+            "portOffset" : 281,
+            "frameProcessingDisabled" : false,
+            "stationName" : "SCHQ"
+        }, {
+            "acquired" : true,
+            "portOffset" : 283,
+            "frameProcessingDisabled" : false,
+            "stationName" : "SDV"
+        }, {
+            "acquired" : true,
+            "portOffset" : 285,
+            "frameProcessingDisabled" : false,
+            "stationName" : "SEY"
+        }, {
+            "acquired" : true,
+            "portOffset" : 286,
+            "frameProcessingDisabled" : false,
+            "stationName" : "SFJD"
+        }, {
+            "acquired" : true,
+            "portOffset" : 287,
+            "frameProcessingDisabled" : false,
+            "stationName" : "SHEM"
+        }, {
+            "acquired" : true,
+            "portOffset" : 289,
+            "frameProcessingDisabled" : false,
+            "stationName" : "SIJI"
+        }, {
+            "acquired" : true,
+            "portOffset" : 290,
+            "frameProcessingDisabled" : false,
+            "stationName" : "SIV"
+        }, {
+            "acquired" : true,
+            "portOffset" : 292,
+            "frameProcessingDisabled" : false,
+            "stationName" : "SJG"
+        }, {
+            "acquired" : true,
+            "portOffset" : 293,
+            "frameProcessingDisabled" : false,
+            "stationName" : "SNAA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 295,
+            "frameProcessingDisabled" : false,
+            "stationName" : "SONM"
+        }, {
+            "acquired" : true,
+            "portOffset" : 297,
+            "frameProcessingDisabled" : false,
+            "stationName" : "SPITS"
+        }, {
+            "acquired" : true,
+            "portOffset" : 298,
+            "frameProcessingDisabled" : false,
+            "stationName" : "STKA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 299,
+            "frameProcessingDisabled" : false,
+            "stationName" : "SUR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 300,
+            "frameProcessingDisabled" : false,
+            "stationName" : "TEIG"
+        }, {
+            "acquired" : true,
+            "portOffset" : 304,
+            "frameProcessingDisabled" : false,
+            "stationName" : "TGY"
+        }, {
+            "acquired" : true,
+            "portOffset" : 305,
+            "frameProcessingDisabled" : false,
+            "stationName" : "TIXI"
+        }, {
+            "acquired" : true,
+            "portOffset" : 306,
+            "frameProcessingDisabled" : false,
+            "stationName" : "TKL"
+        }, {
+            "acquired" : true,
+            "portOffset" : 307,
+            "frameProcessingDisabled" : false,
+            "stationName" : "TLY"
+        }, {
+            "acquired" : true,
+            "portOffset" : 308,
+            "frameProcessingDisabled" : false,
+            "stationName" : "TORD"
+        }, {
+            "acquired" : true,
+            "portOffset" : 310,
+            "frameProcessingDisabled" : false,
+            "stationName" : "TSUM"
+        }, {
+            "acquired" : true,
+            "portOffset" : 312,
+            "frameProcessingDisabled" : false,
+            "stationName" : "TXAR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 314,
+            "frameProcessingDisabled" : false,
+            "stationName" : "ULM"
+        }, {
+            "acquired" : true,
+            "portOffset" : 317,
+            "frameProcessingDisabled" : false,
+            "stationName" : "URZ"
+        }, {
+            "acquired" : true,
+            "portOffset" : 320,
+            "frameProcessingDisabled" : false,
+            "stationName" : "USHA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 321,
+            "frameProcessingDisabled" : false,
+            "stationName" : "USRK"
+        }, {
+            "acquired" : true,
+            "portOffset" : 322,
+            "frameProcessingDisabled" : false,
+            "stationName" : "VAE"
+        }, {
+            "acquired" : true,
+            "portOffset" : 323,
+            "frameProcessingDisabled" : false,
+            "stationName" : "VNDA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 324,
+            "frameProcessingDisabled" : false,
+            "stationName" : "VRAC"
+        }, {
+            "acquired" : true,
+            "portOffset" : 325,
+            "frameProcessingDisabled" : false,
+            "stationName" : "WRA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 329,
+            "frameProcessingDisabled" : false,
+            "stationName" : "WSAR"
+        }, {
+            "acquired" : true,
+            "portOffset" : 331,
+            "frameProcessingDisabled" : false,
+            "stationName" : "YAK"
+        }, {
+            "acquired" : true,
+            "portOffset" : 333,
+            "frameProcessingDisabled" : false,
+            "stationName" : "YBH"
+        }, {
+            "acquired" : true,
+            "portOffset" : 334,
+            "frameProcessingDisabled" : false,
+            "stationName" : "YKA"
+        }, {
+            "acquired" : true,
+            "portOffset" : 335,
+            "frameProcessingDisabled" : false,
+            "stationName" : "ZALV"
+        } ]
+    }
+}

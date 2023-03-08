@@ -1,0 +1,34 @@
+plugins {
+    id 'application'
+    alias(libs.plugins.com.palantir.docker)
+}
+
+mainClassName = 'gms.dataacquisition.stationreceiver.cd11.connman.Cd11ConnManService';
+
+run {
+    if (System.getProperty("exec.args") != null) {
+        args System.getProperty("exec.args").split()
+    }
+    systemProperties System.properties
+}
+
+dependencies {
+    // Project dependencies.
+    implementation project(':cd11-common')
+    implementation project(':frameworks-control')
+    implementation project(':frameworks-service-interface-base')
+    implementation project(':frameworks-system-config')
+    implementation project(':structured-logging')
+
+    // Third-party dependencies.
+    implementation libs.com.google.guava.guava
+    implementation libs.net.jodah.failsafe
+
+    // reactor and reactor netty dependencies
+    implementation libs.io.projectreactor.reactor.core
+    implementation libs.io.projectreactor.netty.reactor.netty
+    implementation libs.io.micrometer.micrometer.core
+
+    // Reactor and kafka test tools
+    testImplementation libs.io.projectreactor.reactor.test
+}

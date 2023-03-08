@@ -1,0 +1,60 @@
+{
+    "name": "txar-bb-mid-distance-filter",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "station",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "TXAR"
+            ]
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "channelBand",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "B"
+            ]
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "phase",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "P"
+            ]
+        },
+        {
+            "constraintType": "NUMERIC_RANGE",
+            "criterion": "distance",
+            "operator": {
+                "type": "IN",
+                "negated": false
+            },
+            "value": {
+                "min": 50.0,
+                "max": 100.0
+            }
+        }
+    ],
+    "parameters": {
+        "filterDefinitions": [
+            {
+                "$ref=global.filter-definition": [{
+                    "criterion": "name",
+                    "value": "HAM FIR HP 0.30 Hz"
+                }]
+            }
+        ]
+    }
+}

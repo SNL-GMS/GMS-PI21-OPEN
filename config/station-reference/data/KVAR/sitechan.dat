@@ -1,0 +1,9 @@
+KIV0   SHZ       2008330     5384  2286324 n       0.0000   -1.0    0.0 short-period_vertical                              20110331 12:00:00
+KIV0   SHN       2008330     5385  2286324 n       0.0000    0.0   90.0 short-period_north                                 20110331 12:00:00
+KIV0   SHE       2008330     5386  2286324 n       0.0000   90.0   90.0 short-period_east                                  20110331 12:00:00
+KIV1   SHZ       2008330     5387  2286324 n       0.0000   -1.0    0.0 short-period_vertical                              20110331 12:00:00
+KIV2   SHZ       2008330     5388  2286324 n       0.0000   -1.0    0.0 short-period_vertical                              20110331 12:00:00
+KIV3   SHZ       2008330     5389  2286324 n       0.0000   -1.0    0.0 short-period_vertical                              20110331 12:00:00
+KIVB   BHZ       2008330     5618  2286324 n       0.0030   -1.0     .0 broad-band_vertical                                20110425 12:00:00
+KIVB   BHN       2008330     5619  2286324 n       0.0030     .0   90.0 broad-band_north                                   20110425 12:00:00
+KIVB   BHE       2008330     5620  2286324 n       0.0030   90.0   90.0 broad-band_east                                    20110425 12:00:00

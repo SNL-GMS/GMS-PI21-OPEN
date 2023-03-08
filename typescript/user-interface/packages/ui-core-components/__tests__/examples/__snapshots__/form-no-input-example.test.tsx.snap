@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a component 1`] = `
+<div>
+  <div
+    class="ag-dark"
+    style="flex: 1 1 auto; position: relative; width: 700px;"
+  >
+    <div
+      class="form"
+    >
+      <h6
+        class="bp4-heading form__header"
+      >
+        <div>
+          Details
+        </div>
+      </h6>
+      <div
+        class="form__panel-selector"
+      >
+        <div
+          class="bp4-button-group"
+        >
+          <button
+            class="bp4-button bp4-active"
+            type="button"
+            value="default"
+          >
+            <span
+              class="bp4-button-text"
+            >
+              key1
+            </span>
+          </button>
+          <button
+            class="bp4-button"
+            type="button"
+            value="key2"
+          >
+            <span
+              class="bp4-button-text"
+            >
+              key2
+            </span>
+          </button>
+          <button
+            class="bp4-button"
+            type="button"
+            value="key3"
+          >
+            <span
+              class="bp4-button-text"
+            >
+              key3
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="form-body"
+      >
+        <div
+          class="form-label"
+        >
+          Label One:
+        </div>
+        <div
+          class="form-value form-value--uneditable"
+          title=""
+        >
+          Example Value
+        </div>
+        <div
+          class="form-label"
+        >
+          Label Two:
+        </div>
+        <div
+          class="form-value form-value--uneditable form-value--time"
+          title=""
+        >
+          test two
+        </div>
+        <div
+          class="form-label"
+        >
+          Label Three
+        </div>
+        <div
+          class="form-value form-value--uneditable"
+          title=""
+        >
+          Example Display Text
+        </div>
+      </div>
+      <div
+        class="form__buttons"
+      >
+        <div
+          class="form__buttons--right"
+        >
+          <button
+            class="bp4-button form__button"
+            data-cy="cancel-details"
+            type="button"
+          >
+            <span
+              class="bp4-button-text"
+            >
+              Close
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

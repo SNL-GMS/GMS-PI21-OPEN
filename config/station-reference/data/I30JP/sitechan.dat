@@ -1,0 +1,15 @@
+I30H1  BWS       2005059     2737  2286324 n       0.0000   -1.0   -1.0 Wind_speed                                         20060418 12:00:00
+I30H1  BWD       2005059     2736  2286324 n       0.0000   -1.0   -1.0 Wind_Direction                                     20060418 12:00:00
+I30H1  BKO       2005059     2735  2286324 n       0.0000   -1.0   -1.0 External_temperature                               20060418 12:00:00
+I30H1  BDF       2005059     2724  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20060418 12:00:00
+I30H1  BDA       2005059     2723  2286324 n       0.0000   -1.0   -1.0 Atmospheric_pressure                               20060418 12:00:00
+I30H2  BDF       2005059     2726  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20060418 12:00:00
+I30H2  BDA       2005059     2725  2286324 n       0.0000   -1.0   -1.0 Atmospheric_pressure                               20060418 12:00:00
+I30H3  BDF       2005059     2728  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20060418 12:00:00
+I30H3  BDA       2005059     2727  2286324 n       0.0000   -1.0   -1.0 Atmospheric_pressure                               20060418 12:00:00
+I30H4  BDF       2005059     2730  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20060418 12:00:00
+I30H4  BDA       2005059     2729  2286324 n       0.0000   -1.0   -1.0 Atmospheric_pressure                               20060418 12:00:00
+I30H5  BDF       2005059     2732  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20060418 12:00:00
+I30H5  BDA       2005059     2731  2286324 n       0.0000   -1.0   -1.0 Atmospheric_pressure                               20060418 12:00:00
+I30H6  BDF       2005059     2734  2286324 n       0.0000   -1.0   -1.0 0.01_Hz_to_5_Hz_infrasound_micropressure           20060418 12:00:00
+I30H6  BDA       2005059     2733  2286324 n       0.0000   -1.0   -1.0 Atmospheric_pressure                               20060418 12:00:00

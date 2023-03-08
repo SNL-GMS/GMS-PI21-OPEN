@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  version="2.0"
+  xmlns="http://java.sun.com/xml/ns/persistence"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+  <persistence-unit name="processing-cfg">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+    <class>gms.shared.frameworks.configuration.repository.dao.ConfigurationDao</class>
+    <class>gms.shared.frameworks.configuration.repository.dao.ConfigurationOptionDao</class>
+    <class>gms.shared.frameworks.configuration.repository.dao.ConstraintDao</class>
+    <class>gms.shared.frameworks.configuration.repository.dao.OperatorDao</class>
+    <class>gms.shared.frameworks.configuration.repository.dao.constraint.BooleanConstraintDao</class>
+    <class>gms.shared.frameworks.configuration.repository.dao.constraint.DefaultConstraintDao</class>
+    <class>gms.shared.frameworks.configuration.repository.dao.constraint.NumericRangeConstraintDao</class>
+    <class>gms.shared.frameworks.configuration.repository.dao.constraint.NumericScalarConstraintDao</class>
+    <class>gms.shared.frameworks.configuration.repository.dao.constraint.PhaseConstraintDao</class>
+    <class>gms.shared.frameworks.configuration.repository.dao.constraint.PhaseConstraintValuesDao</class>
+    <class>gms.shared.frameworks.configuration.repository.dao.constraint.StringConstraintDao</class>
+    <class>gms.shared.frameworks.configuration.repository.dao.constraint.StringConstraintValuesDao</class>
+    <class>gms.shared.frameworks.configuration.repository.dao.constraint.TimeOfDayRangeConstraintDao</class>
+    <class>gms.shared.frameworks.configuration.repository.dao.constraint.TimeOfYearRangeConstraintDao</class>
+    <class>gms.shared.frameworks.configuration.repository.dao.constraint.WildcardConstraintDao</class>
+
+    <properties>
+
+      <!-- ====================================================== -->
+      <!-- These values come from SystemConfig and are passed as parameters when creating the EntityManager -->
+
+      <!--            <property name="hibernate.connection.url" value=""/>-->
+      <!--            <property name="hibernate.connection.username" value=""/>-->
+      <!--            <property name="hibernate.connection.password" value=""/>-->
+      <!--            <property name="hibernate.c3p0.max_size" value=""/>-->
+      <!-- ====================================================== -->
+      <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
+      <property name="hibernate.jdbc.time_zone" value="UTC"/>
+      <property name="hibernate.hbm2ddl.auto" value="validate"/>
+      <property name="hibernate.c3p0.min_size" value="2"/>
+      <property name="hibernate.c3p0.acquire_increment" value="2"/>
+      <property name="hibernate.c3p0.timeout" value="300"/>
+      <!-- Useful for debugging connection leaks: time out and give a stack trace if a connection cannot be acquired in 15 seconds -->
+      <property name="hibernate.c3p0.unreturnedConnectionTimeout" value="300"/>
+      <property name="hibernate.c3p0.debugUnreturnedConnectionStackTraces" value="true"/>
+      <property name="hibernate.default_schema" value="gms_config"/>
+    </properties>
+  </persistence-unit>
+</persistence>

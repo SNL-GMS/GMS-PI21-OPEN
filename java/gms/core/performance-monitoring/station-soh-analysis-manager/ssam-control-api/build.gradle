@@ -1,0 +1,16 @@
+plugins {
+    id 'java-library'
+    alias(libs.plugins.io.swagger.core.v3.swagger.gradle)
+}
+
+dependencies {
+    implementation project(':soh-control')
+    implementation project(':frameworks-service-interface-base')
+    implementation project(':frameworks-system-config')
+    implementation project(':frameworks-osd-commonobjects')
+    testImplementation project(':test-utils')
+
+    // Google AutoValue
+    implementation libs.com.google.auto.value.auto.value.annotations
+    annotationProcessor libs.com.google.auto.value.auto.value.base
+}

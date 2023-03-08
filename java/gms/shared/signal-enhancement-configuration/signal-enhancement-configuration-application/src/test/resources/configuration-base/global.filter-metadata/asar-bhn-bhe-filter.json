@@ -1,0 +1,71 @@
+{
+    "name": "asar-bhn-bhe-filter",
+    "constraints": [
+        {
+            "constraintType": "STRING",
+            "criterion": "station",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "ASAR"
+            ]
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "channelGroup",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "AS31"
+            ]
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "channelBand",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "B"
+            ]
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "channelInstrument",
+            "operator": {
+                "type": "EQ",
+                "negated": false
+            },
+            "value": [
+                "H"
+            ]
+        },
+        {
+            "constraintType": "STRING",
+            "criterion": "channelOrientation",
+            "operator": {
+                "type": "IN",
+                "negated": false
+            },
+            "value": [
+                "N",
+                "E"
+            ]
+        }
+    ],
+    "parameters": {
+        "filterDefinitions": [
+            {
+                "$ref=global.filter-definition": [{
+                    "criterion": "name",
+                    "value": "HAM FIR BP 0.50-1.50 Hz"
+                }]
+            }
+        ]
+    }
+}

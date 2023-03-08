@@ -1,0 +1,807 @@
+{
+  "cd11DataFrameSoh": {
+    "cd11AcquiredSohList": [
+      [
+        {
+          "id": "d6fe06fc-bef8-4857-9227-20cab89e9e27",
+          "channelName": "SHZ",
+          "type": "DEAD_SENSOR_CHANNEL",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "10142a7a-ff22-484f-b688-8c6b238f8a4a",
+          "channelName": "SHZ",
+          "type": "ZEROED_DATA",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "071c36d0-abf4-4eb1-8891-b4d23199d403",
+          "channelName": "SHZ",
+          "type": "CLIPPED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "8111e567-906c-4c85-8638-4cfd8402e380",
+          "channelName": "SHZ",
+          "type": "CALIBRATION_UNDERWAY",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "72deea25-69d1-4935-a7c9-a0bdb4a3d170",
+          "channelName": "SHZ",
+          "type": "EQUIPMENT_HOUSING_OPEN",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "434071ae-4e3d-4232-aee2-33c038a1eb7d",
+          "channelName": "SHZ",
+          "type": "DIGITIZING_EQUIPMENT_OPEN",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "eed1acde-3246-4501-8128-f76a0a81b515",
+          "channelName": "SHZ",
+          "type": "VAULT_DOOR_OPENED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "41fabf53-29f6-4003-a834-6a6ddd338857",
+          "channelName": "SHZ",
+          "type": "AUTHENTICATION_SEAL_BROKEN",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": true,
+          "valueType": "boolean"
+        },
+        {
+          "id": "b431b43b-70aa-404c-9397-a60c8d070b79",
+          "channelName": "SHZ",
+          "type": "EQUIPMENT_MOVED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "1c8798a3-f2c3-4cbf-bd8b-924b40796c60",
+          "channelName": "SHZ",
+          "type": "CLOCK_DIFFERENTIAL_TOO_LARGE",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "cc5d5534-68d4-499e-932b-659d9de67824",
+          "channelName": "SHZ",
+          "type": "GPS_RECEIVER_OFF",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "5140b04e-d0e2-4721-8d1b-2fc501d7cf29",
+          "channelName": "SHZ",
+          "type": "GPS_RECEIVER_UNLOCKED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "9468c924-adbd-4a4a-a996-43749b9d7496",
+          "channelName": "SHZ",
+          "type": "DIGITIZER_ANALOG_INPUT_SHORTED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "6119a76c-4e21-4d33-8a9a-3f813def8626",
+          "channelName": "SHZ",
+          "type": "DIGITIZER_CALIBRATION_LOOP_BACK",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "c071cc73-6169-456a-b185-287853dc50b5",
+          "channelName": "SHZ",
+          "type": "MAIN_POWER_FAILURE",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "8c0f4b2c-8f54-4f0f-b3ea-59b189162820",
+          "channelName": "SHZ",
+          "type": "BACKUP_POWER_UNSTABLE",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "c2977d06-d06b-4da8-bd84-39bbb1954554",
+          "channelName": "SHZ",
+          "type": "CLOCK_DIFFERENTIAL_IN_MICROSECONDS",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": 0.0,
+          "valueType": "analog"
+        }
+      ],
+      [
+        {
+          "id": "4c21272b-15b8-45bb-98ef-a0ebcf7366c7",
+          "channelName": "BHZ",
+          "type": "DEAD_SENSOR_CHANNEL",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "bf02702d-0eab-44cb-91df-8595299f7125",
+          "channelName": "BHZ",
+          "type": "ZEROED_DATA",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "55eb922a-8dfc-4ed7-965a-6a77e62f8504",
+          "channelName": "BHZ",
+          "type": "CLIPPED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "e89bb142-6ca5-449c-9826-e15dd4d05117",
+          "channelName": "BHZ",
+          "type": "CALIBRATION_UNDERWAY",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "a894bd1e-36e3-4989-93e8-e615b9915935",
+          "channelName": "BHZ",
+          "type": "EQUIPMENT_HOUSING_OPEN",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "75b86d44-6175-464a-8a77-ace892fbb925",
+          "channelName": "BHZ",
+          "type": "DIGITIZING_EQUIPMENT_OPEN",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "967497c4-c303-4897-b809-6f566d88cb8a",
+          "channelName": "BHZ",
+          "type": "VAULT_DOOR_OPENED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "d2bdd38c-2874-42e0-b712-ea1d676c53cb",
+          "channelName": "BHZ",
+          "type": "AUTHENTICATION_SEAL_BROKEN",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "f32d7ae6-da36-41c5-9a00-9f7025bae869",
+          "channelName": "BHZ",
+          "type": "EQUIPMENT_MOVED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "b8041f95-aa55-48ba-9e4d-22a3de5e42cb",
+          "channelName": "BHZ",
+          "type": "CLOCK_DIFFERENTIAL_TOO_LARGE",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "6622fa46-d341-40b0-81a4-bd2f0c26e9e4",
+          "channelName": "BHZ",
+          "type": "GPS_RECEIVER_OFF",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "6eb8768f-4412-490b-a5f3-13e14284e181",
+          "channelName": "BHZ",
+          "type": "GPS_RECEIVER_UNLOCKED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "d15cb2cd-733f-4302-ac14-0a425d1fff71",
+          "channelName": "BHZ",
+          "type": "DIGITIZER_ANALOG_INPUT_SHORTED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "fb74aef8-1b88-4e07-abee-2c71e7eca8df",
+          "channelName": "BHZ",
+          "type": "DIGITIZER_CALIBRATION_LOOP_BACK",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "8bed4907-0d32-4fe1-9c7b-5c6a89b476c6",
+          "channelName": "BHZ",
+          "type": "MAIN_POWER_FAILURE",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "59cdf4ef-3c60-4d45-8941-4f4e43f3c21e",
+          "channelName": "BHZ",
+          "type": "BACKUP_POWER_UNSTABLE",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "1f21e905-7c33-4ce5-b2e0-024b4c3b1203",
+          "channelName": "BHZ",
+          "type": "CLOCK_DIFFERENTIAL_IN_MICROSECONDS",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": 0.0,
+          "valueType": "analog"
+        }
+      ],
+      [
+        {
+          "id": "f8674891-5ca6-43ed-a8d6-91e5c61e0acb",
+          "channelName": "BHN",
+          "type": "DEAD_SENSOR_CHANNEL",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "8213fafe-de8c-416b-b380-cea53b8f8938",
+          "channelName": "BHN",
+          "type": "ZEROED_DATA",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "17d81d7e-b268-4bd6-8441-b1997b0499df",
+          "channelName": "BHN",
+          "type": "CLIPPED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "c98fe29a-8e26-4365-8335-16e689a957f0",
+          "channelName": "BHN",
+          "type": "CALIBRATION_UNDERWAY",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "3d3158b8-282d-445d-b440-ddfe4744e7ca",
+          "channelName": "BHN",
+          "type": "EQUIPMENT_HOUSING_OPEN",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "4daf4c3b-c87c-43b0-94cb-360496106034",
+          "channelName": "BHN",
+          "type": "DIGITIZING_EQUIPMENT_OPEN",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "acae1b9e-8454-40ad-9fb1-717a2c791e37",
+          "channelName": "BHN",
+          "type": "VAULT_DOOR_OPENED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "d4dbe046-8dd1-4eeb-ae98-7a5c040e8726",
+          "channelName": "BHN",
+          "type": "AUTHENTICATION_SEAL_BROKEN",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "7f15e658-7f36-4f21-86d4-b2a50b9c41ab",
+          "channelName": "BHN",
+          "type": "EQUIPMENT_MOVED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "d32e027d-a86f-46d3-a78e-c50ef15e0229",
+          "channelName": "BHN",
+          "type": "CLOCK_DIFFERENTIAL_TOO_LARGE",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "8ebd227c-1483-435a-af44-657ddc4687c3",
+          "channelName": "BHN",
+          "type": "GPS_RECEIVER_OFF",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "a77b2ae4-64e1-436d-bc44-100b7c7ec9c2",
+          "channelName": "BHN",
+          "type": "GPS_RECEIVER_UNLOCKED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "6ffbcbed-58c1-42ff-9e1b-f99dfd53707c",
+          "channelName": "BHN",
+          "type": "DIGITIZER_ANALOG_INPUT_SHORTED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "53622409-3c35-4d10-a074-51bce2b25ee3",
+          "channelName": "BHN",
+          "type": "DIGITIZER_CALIBRATION_LOOP_BACK",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "5565857a-afcf-42fc-b9f3-12e885e2111a",
+          "channelName": "BHN",
+          "type": "MAIN_POWER_FAILURE",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "b13cf7ed-1c8d-4866-8e09-73f51cc1fe36",
+          "channelName": "BHN",
+          "type": "BACKUP_POWER_UNSTABLE",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "f379e829-7ed1-4d61-ba49-bf79fba86ee5",
+          "channelName": "BHN",
+          "type": "CLOCK_DIFFERENTIAL_IN_MICROSECONDS",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": 0.0,
+          "valueType": "analog"
+        }
+      ],
+      [
+        {
+          "id": "921f6ab5-3497-45d6-8c61-37fd6835cb32",
+          "channelName": "BHE",
+          "type": "DEAD_SENSOR_CHANNEL",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "75c4c104-6882-413b-8626-d0f075adfa4e",
+          "channelName": "BHE",
+          "type": "ZEROED_DATA",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "c4c98a97-94c0-458c-a141-a79b15cff1d8",
+          "channelName": "BHE",
+          "type": "CLIPPED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "b639ab71-4ecf-49c1-b430-16e5a2ff1b1c",
+          "channelName": "BHE",
+          "type": "CALIBRATION_UNDERWAY",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "08088bf9-1596-4194-8b99-765bcc56cf50",
+          "channelName": "BHE",
+          "type": "EQUIPMENT_HOUSING_OPEN",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "5f562567-af55-4857-ad5c-f1bde276b970",
+          "channelName": "BHE",
+          "type": "DIGITIZING_EQUIPMENT_OPEN",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "5a97499b-f059-41cf-b3a0-4850fe8bbcc1",
+          "channelName": "BHE",
+          "type": "VAULT_DOOR_OPENED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "8ce7342b-29cd-4818-b65f-f5ce44af59a0",
+          "channelName": "BHE",
+          "type": "AUTHENTICATION_SEAL_BROKEN",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "caea8949-2ed6-4e65-84aa-1fc5cc56e447",
+          "channelName": "BHE",
+          "type": "EQUIPMENT_MOVED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "f87b4afb-a3b8-436e-ae46-fbcc2e426c2d",
+          "channelName": "BHE",
+          "type": "CLOCK_DIFFERENTIAL_TOO_LARGE",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "1a95beb0-17c4-4529-9594-68dcf0a51d22",
+          "channelName": "BHE",
+          "type": "GPS_RECEIVER_OFF",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "0e0d5e88-6abd-4d5f-9a1d-accfdb81f3a2",
+          "channelName": "BHE",
+          "type": "GPS_RECEIVER_UNLOCKED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "570cb7f8-232f-4ad4-b5a4-7e4e1266db58",
+          "channelName": "BHE",
+          "type": "DIGITIZER_ANALOG_INPUT_SHORTED",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "cd10f034-a8ff-49b5-94d2-ce5ebe021c0c",
+          "channelName": "BHE",
+          "type": "DIGITIZER_CALIBRATION_LOOP_BACK",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "35000022-ea0d-4c21-9d41-0dee1977b185",
+          "channelName": "BHE",
+          "type": "MAIN_POWER_FAILURE",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "262a8513-eba1-4791-a273-734cd875a908",
+          "channelName": "BHE",
+          "type": "BACKUP_POWER_UNSTABLE",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": false,
+          "valueType": "boolean"
+        },
+        {
+          "id": "1bb3eab9-4920-4e7d-b342-aa396f84a467",
+          "channelName": "BHE",
+          "type": "CLOCK_DIFFERENTIAL_IN_MICROSECONDS",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "status": 0.0,
+          "valueType": "analog"
+        }
+      ]
+    ],
+    "header": {
+      "frameType": "DATA",
+      "trailerOffset": 2044,
+      "frameCreator": "LPAZ",
+      "frameDestination": "0",
+      "sequenceNumber": 5489370,
+      "series": 0
+    },
+    "dataPayload": {
+      "chanSubframeHeader": {
+        "numOfChannels": 4,
+        "frameTimeLength": 10000,
+        "nominalTime": "2019-11-11T13:51:00Z",
+        "channelStringCount": 40,
+        "channelString": "LPAZ1SHZBOLPAZBBHZBOLPAZBBHNBOLPAZBBHEBO",
+        "paddedChannelStringLength": 40,
+        "NOM_TIME_LENGTH": 20,
+        "size": 72
+      },
+      "channelSubframes": [
+        {
+          "channelLength": 596,
+          "authOffset": 552,
+          "authenticationOn": true,
+          "compressionFormat": "CANADIAN_AFTER_SIGNATURE",
+          "sensorType": "SEISMIC",
+          "isCalib": true,
+          "siteName": "LPAZ1",
+          "channelName": "SHZ",
+          "locationName": "BO",
+          "cd11DataFormat": "S4",
+          "calibrationFactor": 0.01222,
+          "calibrationPeriod": 1.0,
+          "timeStamp": "2019-11-11T13:51:00Z",
+          "subframeTimeLength": 10000,
+          "samples": 400,
+          "channelStatusSize": 32,
+          "channelStatusData": "AQAAAAAAAAAyMDE5MzE1IDEzOjUxOjA5LjAwMAAAAAA=",
+          "dataSize": 446,
+          "channelData": "JJIkkiSSJJEkkSSSJIo20iTTNtIkkiJSJJIkkiSSJJIkkiSSJJIkkQAAAHXw6in2KQIM2esxqx0x3R760+8fOuK/IBXfDwwTA84vEswdHwHV2vUpPuTc9uAQKOsZH9cb+MkoL/a881MAxegcDdpERLLRCOsaCtYpT2Qx+swfJepTt8I84zHdxzMDHvpvQiTx+y3WsUEy1xvp7B/g6yA7EuDJ2R8SDQTy/sIPfAmita2HAvPENwk2AjiGD8XJF6tZ9X5dAheMFbX7OsNtDc9Ozf7Ss/QBSM/L2BPxV+kKPrw/xyDKUFOs+URgI08HiK9/zSYxzhLcixpEeS61B8KuDCB09aAdxPV758c6H8bfHAP4NbynEH3vIv3PLfzOKvz7QeTM8RkvE++lLGqUwDYGGTTwp/9HDRP74AbT2yfn+k7fDEnB3/j4Of8HDOfswPdK9+c3J+XEzDtOtsdgR8HJLeTPMBXW3Soh3zwz1vbHwR0hH//y9AlBvLlI7vw84u09DsgHBbYTKt08Nbjc9BhH7rzzDSAjAvDY9v4aJOPsAFwgvATH9hv8HdAGLN/7DAgN/zbmgUpo1OO8AVjDuEAAAA==",
+          "subframeCount": 0,
+          "authKeyIdentifier": 10063196,
+          "authSize": 40,
+          "authValue": "yB6roV8XYD5jyfLeARpaUtLHBZndqC4tzB1KW8aSYXrYJYRiqQaDrw==",
+          "sampleRate": 40.0,
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "size": 600
+        },
+        {
+          "channelLength": 464,
+          "authOffset": 420,
+          "authenticationOn": true,
+          "compressionFormat": "CANADIAN_AFTER_SIGNATURE",
+          "sensorType": "SEISMIC",
+          "isCalib": true,
+          "siteName": "LPAZB",
+          "channelName": "BHZ",
+          "locationName": "BO",
+          "cd11DataFormat": "S4",
+          "calibrationFactor": 0.02117,
+          "calibrationPeriod": 1.0,
+          "timeStamp": "2019-11-11T13:51:00Z",
+          "subframeTimeLength": 10000,
+          "samples": 400,
+          "channelStatusSize": 32,
+          "channelStatusData": "AQAAAAAAAAAyMDE5MzE1IDEzOjUxOjA5LjAwMAAAAAA=",
+          "dataSize": 313,
+          "channelData": "EggACRJBAEACAQJJEEAUSRJJIkkSSQIAEEkCSRJIEgkQSRJBEkgAAP//x3mP8HzkggYy+PQygvGPdCuRTlIw6JAHK6+85JJF727+GJAEMdEkbnw0YfznFIK6jss1VgSa+BPFvNWp2gjAeYNzC80+//LH84/28PGGCz2B8u77YQ/qqy2J8145CigV+KqMtQ0yhOMd+xhCEPPQ9b7wRQiBRSTB6NjyAw9crzzm/4T4gQInafDwxtIfuzMEIc0SzsvgQsFfWuiwwhP+Zd8wAPSSedTxJF9EFD+23EKKPKYwgsDjzf0UEMgIgf3YQMRMbbrfoYIEocCRDP+xzCgut6I726GLKOH3v29/Rr0j/vnIT78X4UnnP3vfwcPwTnfi++swCAPOd/OPSPvBiSeLvhux2z615UknLd/DYAAAAA==",
+          "subframeCount": 0,
+          "authKeyIdentifier": 10063158,
+          "authSize": 40,
+          "authValue": "2AGo4wfRcgT6yJHII12JfHdOionkwKeiNACy+HBb2WCH0wqK+jKt4g==",
+          "sampleRate": 40.0,
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "size": 468
+        },
+        {
+          "channelLength": 440,
+          "authOffset": 396,
+          "authenticationOn": true,
+          "compressionFormat": "CANADIAN_AFTER_SIGNATURE",
+          "sensorType": "SEISMIC",
+          "isCalib": true,
+          "siteName": "LPAZB",
+          "channelName": "BHN",
+          "locationName": "BO",
+          "cd11DataFormat": "S4",
+          "calibrationFactor": 0.02144,
+          "calibrationPeriod": 1.0,
+          "timeStamp": "2019-11-11T13:51:00Z",
+          "subframeTimeLength": 10000,
+          "samples": 400,
+          "channelStatusSize": 32,
+          "channelStatusData": "AQAAAAAAAAAyMDE5MzE1IDEzOjUxOjA5LjAwMAAAAAA=",
+          "dataSize": 290,
+          "channelData": "AAESCQAAEgEQABBAAEkSSRBIAEEASAAAAgAQABAIAkkCQRIAEgESCf//7saCUl870+/F2DO9hQiw/QtvgrFOD86LE5/2JdMDI0AN9O5nwAuNiCvAwYFL4N7oAgUHfcQdC8BF8SkFfcvSASfj/u8OVag/JO71dDHq7cwgMjkEHsn/cMgfvfgJEX04G/fvUdEoXzudw0xAP8uQxj9yrEAWbe/9uncT53HGUrAuzfeviyvOge5/1sjeZLMZ4vIDaKfs30HIE970QOnV3AM/xkjEHvrVWj3ksUZNOP/03DG+rXYgkv7QCgihv9//9/igveHdD97IK856oDYn/0v/P8TzoobugzL8E74MkfXcAEVVqHKEJFF31F94HKCByisAYYj7goAAAA==",
+          "subframeCount": 0,
+          "authKeyIdentifier": 10063158,
+          "authSize": 40,
+          "authValue": "i70FyYYlymTZg0AUPrlvr25eUtBdB6TFYYiMw04/pkX8vYKL0RKgfQ==",
+          "sampleRate": 40.0,
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "size": 444
+        },
+        {
+          "channelLength": 420,
+          "authOffset": 376,
+          "authenticationOn": true,
+          "compressionFormat": "CANADIAN_AFTER_SIGNATURE",
+          "sensorType": "SEISMIC",
+          "isCalib": true,
+          "siteName": "LPAZB",
+          "channelName": "BHE",
+          "locationName": "BO",
+          "cd11DataFormat": "S4",
+          "calibrationFactor": 0.02179,
+          "calibrationPeriod": 1.0,
+          "timeStamp": "2019-11-11T13:51:00Z",
+          "subframeTimeLength": 10000,
+          "samples": 400,
+          "channelStatusSize": 32,
+          "channelStatusData": "AQAAAAAAAAAyMDE5MzE1IDEzOjUxOjA5LjAwMAAAAAA=",
+          "dataSize": 271,
+          "channelData": "EAAAAAIAAAAQAAAAAAACSAABAgEQAAIBEAgCARABAgkSAAIAAAkQAP//2H5D8EJjsUTLVB7B3+ZOrfpVoB6t+l8WoANQh2G/4MlLAOHm/FzxL68+kUDwQHTVRuBC7i3EDeQJPZQjRQ7dDlSsAiLiPQPB2UfsXo0Q0L8TzTYUsUcQrQ9zBh8apWY6B56MAXkQ4P6vXjAV9B37KEGEAdUJ9X0Ptf2v8jfORfEA+CTwMsDkD/bWNf+fLE06Ev3xxiOvusQDD/7b4T0IkEEMjBIdoTMYLHNE9xxu86/03BJ5BG833CF+GE294WvdxADyCDvsrwI8fsDuw2GyfRH/9OH3kkoXrUYPsAleShaWbUZeYAA=",
+          "subframeCount": 0,
+          "authKeyIdentifier": 10063158,
+          "authSize": 40,
+          "authValue": "tdplYBVS/5xUFTlVDeiiGe6lIr7f6mpFmF4iBqsYHxs1lXtB/fZlYw==",
+          "sampleRate": 40.0,
+          "endTime": "2019-11-11T13:51:09.975Z",
+          "size": 424
+        }
+      ],
+      "byteCount": 2008
+    },
+    "trailer": {
+      "authenticationKeyIdentifier": 2,
+      "authenticationSize": 40,
+      "authenticationValue": "Rxoijyriz4owdLEpxUXN3eN1ayrq4bWNH+kFZmP0CTac83oGsB3XNg==",
+      "commVerification": 2073815027551035044
+    }
+  },
+  "rsdf": {
+    "id": "85c50010-e7cf-4ca2-8c32-37fad7b59c84",
+    "rawPayload": "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",
+    "metadata": {
+      "stationName": "LPAZ",
+      "channelNames": [
+        "LPAZ.LPAZ1.SHZ",
+        "LPAZ.LPAZB.BHZ",
+        "LPAZ.LPAZB.BHN",
+        "LPAZ.LPAZB.BHE"
+      ],
+      "payloadStartTime": "2019-11-11T13:51:00Z",
+      "payloadEndTime": "2019-11-11T13:51:10Z",
+      "receptionTime": "2019-11-11T13:51:40.163396Z",
+      "authenticationStatus": "NOT_YET_AUTHENTICATED",
+      "waveformSummaries": {
+        "LPAZ.LPAZB.BHN": {
+          "channelName": "LPAZ.LPAZB.BHN",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z"
+        },
+        "LPAZ.LPAZ1.SHZ": {
+          "channelName": "LPAZ.LPAZ1.SHZ",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z"
+        },
+        "LPAZ.LPAZB.BHZ": {
+          "channelName": "LPAZ.LPAZB.BHZ",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z"
+        },
+        "LPAZ.LPAZB.BHE": {
+          "channelName": "LPAZ.LPAZB.BHE",
+          "startTime": "2019-11-11T13:51:00Z",
+          "endTime": "2019-11-11T13:51:09.975Z"
+        }
+      },
+      "payloadFormat": "CD11"
+    }
+  }
+}

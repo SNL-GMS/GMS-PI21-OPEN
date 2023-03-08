@@ -1,0 +1,804 @@
+#!/bin/bash
+
+
+debug_output() {
+  if [[ "${PRINT_DEBUG}" == "true" || "${PRINT_DEBUG}" == "TRUE" ]]; then
+    echo $1
+  fi
+}
+
+sim_ingress_check() {
+  if [ -z ${NAME} ]; then
+    echo "WARNING: No deployment name provided.  Unable to check for deployment status"
+  else
+    echo "Validating deployment '${NAME}' exists"
+    if [ $(gmskube ls | awk '{ print $1}'|grep -x ${NAME}) ]; then
+      echo "Deployment '${NAME}' found"
+      set_sim_url
+    else
+      echo "ERROR: Deployment '${NAME}' not found.  A valid deployment is required."
+      echo "ERROR: Unable to continue requested operation."
+      exit -1
+    fi 
+  fi
+}
+
+set_sim_url() {
+  if [ -z "${SIMULATOR_URL}" ]; then
+    SIMULATOR_URL=$(gmskube ingress ${NAME} | awk '{ print $2}'|grep "bridged-data-source-simulator")
+    if [ -z "${SIMULATOR_URL}" ]; then
+      echo "ERROR: Unable to retrieve simulator URL. A simulator deployment is required."
+      echo "ERROR: Unable to continue requested operation."
+      exit -1
+    fi
+    echo "SIMULATOR_URL discovered.  Set to ${SIMULATOR_URL}"
+  else
+    debug_output "SIMULATOR_URL set to ${SIMULATOR_URL}"
+  fi
+}
+
+print_help() {
+  echo ""
+  echo "Script to deploy an ian instance using a containerized oracle and simulator augmentation."
+  echo "This script sets the appropriate environment variables for the respective services and needs to be updated accordingly when new schema (i.e., stages) become available for services and/or new bridge services come online."
+  echo "Additionally, this script allows users to initialize, start, stop, cleanup, and status a simulator for an existing deployment."
+  echo "When a simulator is initialized the start time defaults to 8 hours in the past from the last even hour in UTC.   For example if the current date and time is: 2022-01-17T11:32:12Z, then the default start time will be:  2022-01-17T03:00:00Z. "
+  echo "When a simulator is initialized you may provide an optional start time string.  See examples below.  Further, an optional delay time, in seconds, can  be added after the start time, should a delay be necessary (in a gitlab runner script, for instance). "
+  echo "The script provides a simulation start time and a default seed data start/end time of 2019-01-05T16:00:00Z to 2019-01-05T22:00:00Z so that signal detections and beams are included in every interval. "
+  echo "The default operational time period is 24H and the default calib update frequency is 1H."
+  echo ""
+  echo "If you wish to override the default simulator request timeout of 5 minutes, set the TIMEOUT environment variable:"
+  echo "    export TIMEOUT=5"
+  echo "    -OR-"
+  echo "    TIMEOUT=5 ian-sim-deploy <rest of the command>"
+  echo ""
+  echo "If you wish to deploy the ian instance without the Istio service mesh, you must first set an environment variable:"
+  echo "    export DISABLE_ISTIO=true"
+  echo "    -OR-"
+  echo "    export DISABLE_ISTIO=TRUE"
+  echo "    -OR, as a one-line call-"
+  echo "    DISABLE_ISTIO=TRUE ian-sim-deploy ..."
+  echo "When this variable is set as above, gmskube will be passed the --no-istio flag and the Istio ingress port number will be appended to all URLs allowing communication in the Istio service mesh"
+  echo ""
+  echo "If you wish to disable KEYCLOAK authentication:"
+  echo "    export GMS_DISABLE_KEYCLOAK_AUTH=true"
+  echo "    -OR-"
+  echo "    GMS_DISABLE_KEYCLOAK_AUTH=true ian-sim-deploy <rest of the command>"
+  echo "When this variable is set as above, KEYCLOAK authentication will be disabled"
+  echo ""
+  echo "If you wish to adjust the KEYCLOAK authentication parameters:"
+  echo "    export GMS_KEYCLOAK_REALM=keycloak-realm"
+  echo "    export GMS_KEYCLOAK_URL=http://localhost:8080"
+  echo "    export GMS_KEYCLOAK_CLIENT_ID=keycloak-client-id"
+  echo "    -OR-"
+  echo "    GMS_KEYCLOAK_REALM=keycloak-realm GMS_KEYCLOAK_URL=http://localhost:8080 GMS_KEYCLOAK_CLIENT_ID=keycloak-client-id ian-sim-deploy <rest of the command>"
+  echo "When this variables are set as above, the KEYCLOAK authentication will use the above to communicate with the the KEYCLOAK server"
+  echo ""
+  echo "Usage:"
+  echo "  ian-sim-deploy --tag-auto <branch or tag name> <instance name> <development|production> <simulation start time>"
+  echo "  ian-sim-deploy --sim-auto <instance name> <development|production> <simulation start time>"
+  echo "  ian-sim-deploy --tag <branch or tag name> <instance name> <development|production>"
+  echo "  ian-sim-deploy --init <instance name> <simulation start time> <delay>"
+  echo "  ian-sim-deploy --status <instance name> "
+  echo "  ian-sim-deploy --start <instance name>"
+  echo "  ian-sim-deploy --stop <instance name>"
+  echo "  ian-sim-deploy --cleanup <instance name>"
+  echo "  ian-sim-deploy --sim-shutdown <instance name>"
+  echo ""
+  echo "Note: By default the UI is started up in production mode"
+  echo "Note: Both the <development|production> and <simulation start time> are an optional arguments. The default start time is described above"
+  echo ""
+  echo "Example usage #1: Start a deployment with an oracle and simulator augmentation, initialize the simulator and start it"
+  echo "  ian-sim-deploy --tag-auto my-awesome-branch ian-test-instance"
+  echo "  ian-sim-deploy --tag-auto my-awesome-branch ian-test-instance development"
+  echo "  ian-sim-deploy --tag-auto my-awesome-branch ian-test-instance production "2021-01-12T00:00:00Z" 300"
+  echo ""
+  echo "Example usage #2: Initialize the simulator and start it for a deployment with an oracle and simulator augmentation"
+  echo "  ian-sim-deploy --sim-auto ian-test-instance"
+  echo "  ian-sim-deploy --sim-auto ian-test-instance development"
+  echo "  ian-sim-deploy --sim-auto ian-test-instance production "2021-01-12T00:00:00Z" 300"
+  echo ""
+  echo "Note:  Both <simulation start time> and <delay> are optional arguments.    The default start time is described above.    The default delay is 0 seconds."
+  echo ""
+  echo "Example usage #3: Start a deployment with an oracle and simulator augmentation:"
+  echo "  ian-sim-deploy --tag my-awesome-branch ian-test-instance"
+  echo "  ian-sim-deploy --tag my-awesome-branch ian-test-instance development"
+  echo "  ian-sim-deploy --tag my-awesome-branch ian-test-instance production "
+  echo ""
+  echo "Note:  Both <simulation start time> and <delay> are optional arguments.    The default start time is described above.    The default delay is 0 seconds."
+  echo ""
+  echo "Example usage #4: Initialize a simulator for an existing deployment:"
+  echo "  ian-sim-deploy --init ian-test-instance"
+  echo "  ian-sim-deploy --init ian-test-instance SimStartTime"
+  echo "  ian-sim-deploy --init ian-test-instance "2021-01-12T00:00:00Z" "
+  echo "  ian-sim-deploy --init ian-test-instance "2021-01-12T00:00:00Z" 300"
+  echo ""
+  echo "Example usage #5: Get the status of a simulator for an existing deployment:"
+  echo "  ian-sim-deploy --status ian-test-instance"
+  echo ""
+  echo "Example usage #6: Start a simulator for an existing deployment:"
+  echo "  ian-sim-deploy --start ian-test-instance"
+  echo ""
+  echo "Example usage #7: Stop a simulator for an existing deployment:"
+  echo "  ian-sim-deploy --stop ian-test-instance"
+  echo ""
+  echo "Example usage #8: Cleanup a simulator for an existing deployment:"
+  echo "  ian-sim-deploy --cleanup ian-test-instance"
+  echo ""
+  echo "Example usage #9: Performs Stop and Cleanup a simulator for an existing deployment:"
+  echo "  ian-sim-deploy --sim-shutdown ian-test-instance"
+  echo ""
+  echo "Example usage #10: Start without an ISTIO service mesh deployment with an oracle and simulator augmentation, initialize the simulator and start it"
+  echo "  export DISABLE_ISTIO=true"
+  echo "  ian-sim-deploy --tag-auto my-awesome-branch ian-istio-test-instance" 
+  echo ""
+  echo "-h|--help                                                         | Print this help message"
+  echo "--tag <branch or tag name> <instance name>                        | The branch or tag name to install; instance name to install"
+  echo "--tag-auto <branch or tag name> <instance name>                   | Automatically install and initialize (8 hrs in the past) the simulator with branch or tag name; instance name to install"
+  echo "--sim-auto <instance name>                   | Automatically initialize (8 hrs in the past) the simulator with branch or tag name; instance name to install"
+  echo "--init <instance name> <simulation start time> <delay>            | Instance name to initialize simulator for"
+  echo "                                                                  | Simulation start time to initialize the simulator - (This argument is optional but required if a delay is specified.)"
+  echo "                                                                  | The default start time is set to 8 hours in the past from the last even hour in UTC. "
+  echo "                                                                  | Start time should be formatted in UTC time in the following format "2022-01-12T00:00:00Z";"
+  echo "                                                                  | A delay, in seconds, before the initialization is executed.  (Optional - needed for the gitlab runner)"
+  echo "--status <instance name>                                          | The instance name to get the status of a simulator for"
+  echo "--start <instance name>                                           | The instance name to start a simulator for"
+  echo "--stop <instance name>                                            | The instance name to stop a simulator for"
+  echo "--cleanup <instance name>                                         | The instance name to cleanup a simulator for"
+  echo "--sim-shutdown <instance name>                                    | The instance name to shutdown a simulator for"
+  echo ""
+  echo "Set PRINT_DEBUG=true to see configuration settings used by script"
+  echo ""
+  echo ""
+}
+
+do_verify_properties() {
+  if [ -z ${NAME} ]; then
+    echo "WARNING: No data exists for parameter NAME.  This may impact ian-sim-deploy and its ability to function"
+  fi
+  debug_output "NAME set to ${NAME}"
+
+  if [ -z ${DEF_START_TIME} ]; then
+    echo "WARNING: No data exists for parameter DEF_START_TIME.  This may impact ian-sim-deploy and its ability to function"
+  fi
+  debug_output "DEF_START_TIME set to ${DEF_START_TIME}"
+
+}
+
+do_verify_sim_output() {
+
+  OUTPUT_STR="$1"
+  if [[ "$OUTPUT_STR" == *"Invalid Status Transition Detected"* ]]; then
+    echo "WARN: Curl output contained \"Invalid Status Transition Detected\" indicating error state."
+  fi
+
+  if [[ "$OUTPUT_STR" == *"Error"* ]]; then
+    echo "WARN: Curl output contained \"Error\" indicating error state."
+  fi
+
+  if [[ "$OUTPUT_STR" == *"Exception"* ]]; then
+    echo "WARN: Curl output contained \"Exception\" indicating error state."
+  fi
+
+  HTTP_RESPONSE_CODE=$(tail -n1 <<<"$OUTPUT_STR")
+
+  if [[ $CURL_RESPONSE_CODE -ne 0 ]]; then
+    echo "Error:Curl failed with code $CURL_RESPONSE_CODE"
+    RET_VAL=$CURL_RESPONSE_CODE
+  elif [[ HTTP_RESPONSE_CODE -ne 200 ]]; then
+    echo "Error:HTTP Response was not successful Expected:[200] Actual: [$HTTP_RESPONSE_CODE]"
+    RET_VAL=101
+  else
+    echo "Done!"
+    RET_VAL=0
+  fi
+}
+
+# KEYCLOAK settings
+GMS_DISABLE_KEYCLOAK_AUTH=${GMS_DISABLE_KEYCLOAK_AUTH}
+
+# Common TIMEOUT across functions 15 minutes = 900 seconds
+TIMEOUT=${TIMEOUT:-15}
+TIMEOUT_SECS=$(($TIMEOUT*60))
+
+# Set up the functions to implement the various cases
+
+# Function to install an instance with the tag, instance name provided
+do_install() {
+  echo ""
+  echo "Timeouts set for this run are: TIMEOUT IN MINUTES: ${TIMEOUT}"
+  echo "TIMEOUT IN SECONDS: ${TIMEOUT_SECS}"
+  echo ""
+  echo "###########################################################################################################################"
+  echo "Installing the ${NAME} deployment using the ${TAG} tag...."
+  echo ""
+  echo "###########################################################################################################################"
+  if [ -z ${GMS_DISABLE_KEYCLOAK_AUTH} ] || [ $GMS_DISABLE_KEYCLOAK_AUTH == "true" ] ; then  
+    echo "KEYCLOAK Authentication is disabled!"
+    echo ""
+    echo "###########################################################################################################################"
+  else
+    echo "KEYCLOAK Authentication is enabled"
+    if [ -z ${GMS_KEYCLOAK_REALM} ] ; then
+      echo "Using the default configured value for GMS_KEYCLOAK_REALM"
+    else
+      echo "Configured custom value for GMS_KEYCLOAK_REALM, ${GMS_KEYCLOAK_REALM}"
+    fi
+    if [ -z ${GMS_KEYCLOAK_URL} ] ; then
+      echo "Using the default configured value for GMS_KEYCLOAK_URL"
+    else
+      GMS_KEYCLOAK_URL=${GMS_KEYCLOAK_URL}
+      echo "Configured custom value for GMS_KEYCLOAK_URL, ${GMS_KEYCLOAK_URL}"
+    fi
+    if [ -z ${GMS_KEYCLOAK_CLIENT_ID} ] ; then
+      GMS_KEYCLOAK_CLIENT_ID=${GMS_KEYCLOAK_CLIENT_ID}
+      echo "Using the default configured value for GMS_KEYCLOAK_CLIENT_ID"
+    else
+      GMS_KEYCLOAK_CLIENT_ID=${GMS_KEYCLOAK_CLIENT_ID}
+      echo "Configured custom value for GMS_KEYCLOAK_CLIENT_ID, ${GMS_KEYCLOAK_CLIENT_ID}"
+    fi
+    echo ""
+    echo "###########################################################################################################################"
+  fi  
+  if [ $NODE_ENV == "production" ] || [ $NODE_ENV == "development" ]; then
+    echo "Running with NODE_ENV as $NODE_ENV for interactive-analysis-ui"
+    echo ""
+    echo "###########################################################################################################################"
+  else
+    echo "###########################################################################################################################"
+    echo "ERROR: invalid NODE_ENV option found"
+    echo "See help below for more information"
+    print_help
+    echo "###########################################################################################################################"
+    exit 1
+  fi
+
+  # Create a deployment with an oracle and simulator augmentation. Ensure all the environment variables are set appropriately for each service
+  MOUNT=""
+
+
+  # Building Strings used for the gmskube installation
+  TIMEOUT_STRING="--timeout ${TIMEOUT}"
+
+  INSTALL_STRING="install --type ian --tag ${TAG} ${MOUNT}"
+  INSTALL_STRING="$INSTALL_STRING --augment oracle"
+  INSTALL_STRING="$INSTALL_STRING --augment bridged-data-source-simulator"
+  INSTALL_STRING="$INSTALL_STRING --set interactive-analysis-ui.env.NODE_ENV=${NODE_ENV}"
+  if [ ! -z ${GMS_KEYCLOAK_REALM} ] ; then
+    INSTALL_STRING="$INSTALL_STRING --set interactive-analysis-ui.env.GMS_KEYCLOAK_REALM=${GMS_KEYCLOAK_REALM}"
+  fi
+  if [ ! -z ${GMS_KEYCLOAK_URL} ] ; then
+      INSTALL_STRING="$INSTALL_STRING --set interactive-analysis-ui.env.GMS_KEYCLOAK_URL=${GMS_KEYCLOAK_URL}"
+  fi
+  if [ ! -z ${GMS_KEYCLOAK_CLIENT_ID} ] ; then
+    INSTALL_STRING="$INSTALL_STRING --set interactive-analysis-ui.env.GMS_KEYCLOAK_CLIENT_ID=${GMS_KEYCLOAK_CLIENT_ID}"
+  fi
+  if [ ! -z ${GMS_DISABLE_KEYCLOAK_AUTH} ] ; then
+    INSTALL_STRING="$INSTALL_STRING --set interactive-analysis-ui.env.GMS_DISABLE_KEYCLOAK_AUTH=${GMS_DISABLE_KEYCLOAK_AUTH}"
+  fi
+  INSTALL_STRING="$INSTALL_STRING --set global.env.GMS_CONFIG_WORKFLOW_MANAGER__JDBC_URL=jdbc:oracle:thin:/@gms_simulation_global"
+  INSTALL_STRING="$INSTALL_STRING --set global.env.GMS_CONFIG_STATION_DEFINITION__JDBC_URL=jdbc:oracle:thin:/@gms_simulation_global"
+  INSTALL_STRING="$INSTALL_STRING --set global.env.GMS_CONFIG_WAVEFORM_MANAGER__JDBC_URL=jdbc:oracle:thin:/@gms_simulation_global"
+  INSTALL_STRING="$INSTALL_STRING --set global.env.GMS_CONFIG_SOCCPRO_JDBC_URL=jdbc:oracle:thin:/@gms_simulation_soccpro"
+  INSTALL_STRING="$INSTALL_STRING --set global.env.GMS_CONFIG_AL1_JDBC_URL=jdbc:oracle:thin:/@gms_simulation_al1"
+  INSTALL_STRING="$INSTALL_STRING --set global.env.GMS_CONFIG_AL2_JDBC_URL=jdbc:oracle:thin:/@gms_simulation_al2"
+  INSTALL_STRING="$INSTALL_STRING --set global.env.GMS_CONFIG_EVENT_MANAGER__GMS_SOCCPRO_URL=jdbc:oracle:thin:/@gms_simulation_soccpro"
+  INSTALL_STRING="$INSTALL_STRING --set global.env.GMS_CONFIG_EVENT_MANAGER__GMS_AL1_URL=jdbc:oracle:thin:/@gms_simulation_al1"
+  INSTALL_STRING="$INSTALL_STRING --set global.env.GMS_CONFIG_EVENT_MANAGER__SOCCPRO_JDBC_URL=jdbc:oracle:thin:/@gms_simulation_soccpro"
+  INSTALL_STRING="$INSTALL_STRING --set global.env.GMS_CONFIG_EVENT_MANAGER__AL1_JDBC_URL=jdbc:oracle:thin:/@gms_simulation_al1"
+  INSTALL_STRING="$INSTALL_STRING --set global.env.GMS_CONFIG_EVENT_MANAGER__AL2_JDBC_URL=jdbc:oracle:thin:/@gms_simulation_al2"
+
+  # Note to enable remote debugging on a particular service add the following line but use the service you want to debug:
+  # INSTALL_STRING="$INSTALL_STRING --set feature-prediction-service.env.JAVA_TOOL_OPTIONS='-agentlib:jdwp=transport=dt_socket\,server=y\,suspend=n\,address=*:5005'"
+
+  INSTALL_STRING="$INSTALL_STRING ${ISTIO_FLAG} ${NAME}"
+
+  echo ""
+  echo "Executing: gmskube $TIMEOUT_STRING $INSTALL_STRING"
+  echo ""
+  echo ""
+
+  if ! gmskube $TIMEOUT_STRING $INSTALL_STRING; then
+    echo "Something went wrong with the 'gmskube install'."
+    exit 1
+  fi
+
+  echo ""
+  echo "Done!"
+  echo "###########################################################################################################################"
+}
+
+# Function to initialize a simulator for an existing deployment with the simulation start time (STime) and the instance name provided
+do_initialize() {
+  echo ""
+  echo "###########################################################################################################################"
+  echo "Initializing a simulator for the ${NAME} deployment using the following simulationStartTime: ${STime}..."
+  echo "###########################################################################################################################"
+  echo ""
+  set_sim_url
+  echo "Executing the following curl command:"
+  echo "curl --location --post302 -sSL -w \"\n%{http_code}\" --request POST "${SIMULATOR_URL}/initialize" --header 'Content-Type: application/json' --data '{
+    "seedDataStartTime": "2019-01-05T16:00:00Z",
+    "seedDataEndTime": "2019-01-05T22:00:00Z",
+    "simulationStartTime": ${STime},
+    "operationalTimePeriod": "PT24H",
+    "calibUpdateFrequency": "PT6H"
+    }'"
+  if [[ $DELAY > 0 ]]; then
+    echo "$DELAY second delay prior to initialization"
+    sleep $DELAY
+  fi
+  cmd=$(curl --location --post302 -sSL -w "\n%{http_code}"  --request POST "${SIMULATOR_URL}/initialize" --header 'Content-Type: application/json' --data '{
+    "seedDataStartTime": "2019-01-05T16:00:00Z",
+    "seedDataEndTime": "2019-01-05T22:00:00Z",
+    "simulationStartTime": "'${STime}'",
+    "operationalTimePeriod": "PT24H",
+    "calibUpdateFrequency": "PT6H"
+    }')
+  CURL_RESPONSE_CODE=$?
+  echo "Status:${cmd}"
+  do_verify_sim_output "${cmd}"
+  echo ""
+  echo "###########################################################################################################################"
+}
+
+# Function to get the status of a simulator for an existing deployment based on the instance name provided
+do_status() {
+  echo ""
+  echo "###########################################################################################################################"
+  echo "Checking the status of the simulator for the ${NAME} deployment..."
+  echo "###########################################################################################################################"
+  echo ""
+  set_sim_url
+  echo "Executing the following curl command:"
+  echo "curl --location --post302 -sSL -w \"\n%{http_code}\" --request POST "${SIMULATOR_URL}/status" --header 'Content-Type: application/json' --data '""'"
+  cmd=$(curl --location --post302 -sSL -w "\n%{http_code}" --request POST "${SIMULATOR_URL}/status" --header 'Content-Type: application/json' --data '""')
+  CURL_RESPONSE_CODE=$?
+  echo "Status:${cmd}"
+  do_verify_sim_output "${cmd}"
+  echo ""
+  echo "###########################################################################################################################"
+}
+
+# Function to start a simulator for an existing deployment based on the instance name provided
+do_start() {
+  echo ""
+  echo "###########################################################################################################################"
+  echo "Starting a simulator for the ${NAME} deployment..."
+  echo "###########################################################################################################################"
+  echo ""
+  set_sim_url
+  echo "Executing the following curl command:"
+  echo "curl --location --post302 -sSL -w \"\n%{http_code}\" --request POST "${SIMULATOR_URL}/start" --header 'Content-Type: application/json' --data '""'"
+  echo ""
+  cmd=$(curl --location --post302 -sSL -w "\n%{http_code}" --request POST "${SIMULATOR_URL}/start" --header 'Content-Type: application/json' --data '""')
+  CURL_RESPONSE_CODE=$?
+  echo "Status:${cmd}"
+  do_verify_sim_output "${cmd}"
+  echo ""
+  echo "###########################################################################################################################"
+}
+
+# Function to stop a simulator for an existing deployment based on the instance name provided
+do_stop() {
+  echo ""
+  echo "###########################################################################################################################"
+  echo "Stopping a simulator for the ${NAME} deployment..."
+  echo "###########################################################################################################################"
+  echo ""
+  set_sim_url
+  echo "Executing the following curl command:"
+  echo "curl --location --post302 -sSL -w \"\n%{http_code}\" --request POST "${SIMULATOR_URL}/stop" --header 'Content-Type: application/json' --data '""'"
+  echo ""
+  cmd=$(curl --location --post302 -sSL -w "\n%{http_code}" --request POST "${SIMULATOR_URL}/stop" --header 'Content-Type: application/json' --data '""')
+  CURL_RESPONSE_CODE=$?
+  echo "Status:${cmd}"
+  do_verify_sim_output "${cmd}"
+  echo ""
+  echo "###########################################################################################################################"
+}
+
+do_auto_sim() {
+  echo ""
+  echo "###########################################################################################################################"
+  echo "Performing an automated init and start up of a simulator for the ${NAME} deployment..."
+  echo "###########################################################################################################################"
+  echo ""
+  # wait until the service responds with a 200 HTTP code indicating the service is up and database is ready
+  set_sim_url
+  querySimulator
+  SECONDS=0
+  while [[ "$code" != "200" ]]; do
+    if [[ $SECONDS -gt $TIMEOUT_SECS ]]; then
+      echo "Timed out after ${TIMEOUT_SECS} seconds."
+      exit 1
+    fi
+    echo "The simulator is waiting on the database to be ready (HTTP Code Received:$code), trying again in 10 seconds (Use ctrl-c to cancel the simulator initialization)"
+    sleep 10
+    querySimulator
+  done
+
+  querySimulator
+  echo "Simulator currently in \"$response\" state"
+  if [[ "$response" == "STARTED" ]]; then
+    echo "NOTICE: Simulator already in the correct state, will not attempt to start. Simulator state \"$response\""
+    RET_VAL=0
+    return $RET_VAL
+  fi
+  if [[ "$response" == "INITIALIZED" ]]; then
+    echo "NOTICE: Simulator already in the correct state, will not attempt to initialize. Simulator state \"$response\""
+    RET_VAL=0
+  elif [[ "$response" == "UNINITIALIZED" || "$response" == "INITIALIZING" ]]; then
+    do_initialize
+    querySimulator
+    # wait until the status value is INITIALIZED meaning that the loading has completed
+    SECONDS=0
+    while [[ "$response" != "INITIALIZED" ]]; do
+      if [[ $SECONDS -gt $TIMEOUT_SECS ]]; then
+        echo "Timed out after ${TIMEOUT_SECS} seconds."
+        exit 1
+      fi
+      echo "The simulator is still loading data (current state is \"$response\"), will try to start in 5 seconds (Use ctrl-c to cancel auto simulator start)"
+      sleep 5
+      querySimulator
+    done
+    echo "Simulator transitioned to state ["$response"]"
+  else
+    echo "WARN: Wrong state to initialize the simulator (State is \"$response\"), will not attempt to initialize. Simulator state \"$response\""
+    RET_VAL=101
+  fi
+
+  if [[ "$response" != "INITIALIZED" || "$response" != "STOPPED" ]]; then
+    do_start
+    querySimulator
+    # wait until the status value is INITIALIZED meaning that the loading has completed
+    SECONDS=0
+    while [[ "$response" != "STARTED" ]]; do
+      if [[ $SECONDS -gt $TIMEOUT_SECS ]]; then
+        echo "Timed out after ${TIMEOUT_SECS} seconds."
+        exit 1
+      fi
+      echo "The simulator is still loading data (current state is \"$response\"), will try to start in 5 seconds (Use ctrl-c to cancel auto simulator start)"
+      sleep 5
+      querySimulator
+    done
+    echo "Simulator transitioned to state ["$response"]"
+  else
+    echo "WARN: Wrong state to start the simulator, will not attempt to start.  Simulator state \"$response\""
+    RET_VAL=101
+  fi
+
+  querySimulator
+  echo "Simulator currently in \"$response\" state"
+  if [[ "$response" != "STARTED" ]]; then
+    echo "ERROR: Simulator did not finish in the expected state [STARTED]. Simulator state \"$response\""
+    RET_VAL=101
+  fi
+}
+
+do_sim_shutdown() {
+  echo ""
+  echo "###########################################################################################################################"
+  echo "Performing an automated stop and cleanup of a simulator for the ${NAME} deployment..."
+  echo "###########################################################################################################################"
+  echo ""
+  set_sim_url
+  querySimulator
+  echo "Simulator currently in \"$response\" state"
+  SECONDS=0
+  while [[ "$code" != "200" ]]; do
+    if [[ $SECONDS -gt $TIMEOUT_SECS ]]; then
+      echo "Timed out after ${TIMEOUT_SECS} seconds."
+      exit 1
+    fi
+    echo "The simulator is waiting on the database to be ready (HTTP Code Received:$code), trying again in 10 seconds (Use ctrl-c to cancel the simulator shutdown)"
+    sleep 10
+    querySimulator
+  done
+
+  if [[ "$response" == "UNINITIALIZED" ]]; then
+    echo "NOTICE: Simulator already in the correct state, will not attempt to shutdown. Simulator state \"$response\""
+    RET_VAL=0
+    return $RET_VAL
+  fi
+
+  if [[ "$response" != "STARTED" ]]; then
+    echo "WARN: Simulator is not in a state to be stopped. Simulator state \"$response\""
+  else
+    do_stop
+    querySimulator
+    # wait until the status value is INITIALIZED meaning that the loading has completed
+    SECONDS=0
+    while [[ "$response" != "STOPPED" ]]; do
+      if [[ $SECONDS -gt $TIMEOUT_SECS ]]; then
+        echo "Timed out after ${TIMEOUT_SECS} seconds."
+        exit 1
+      fi
+      echo "The simulator is still transitioning (current state is \"$response\"), will try to start in 5 seconds (Use ctrl-c to cancel auto simulator start)"
+      sleep 5
+      querySimulator
+    done
+    echo "Simulator transitioned to state ["$response"]"
+  fi
+
+  if [[ "$response" != "STOPPED" ]]; then
+    echo "WARN: Simulator is not in a state for cleanup. Simulator state \"$response\""
+  else
+    do_cleanup
+    querySimulator
+    # wait until the status value is INITIALIZED meaning that the loading has completed
+    SECONDS=0
+    while [[ "$response" != "UNINITIALIZED" ]]; do
+      if [[ $SECONDS -gt $TIMEOUT_SECS ]]; then
+        echo "Timed out after ${TIMEOUT_SECS} seconds."
+        exit 1
+      fi
+      echo "The simulator is still transitioning (current state is \"$response\"), will try to start in 5 seconds (Use ctrl-c to cancel auto simulator start)"
+      sleep 5
+      querySimulator
+    done
+    echo "Simulator transitioned to state ["$response"]"
+  fi
+
+  querySimulator
+  echo "Simulator currently in \"$response\" state"
+  if [[ "$response" != "UNINITIALIZED" ]]; then
+    echo "ERROR: Simulator did not finish in the expected state [UNINITIALIZED]. Simulator state \"$response\""
+    RET_VAL=101
+  fi
+}
+
+# Function to cleanup a simulator for an existing deployment based on the instance name provided
+do_cleanup() {
+  echo ""
+  echo "###########################################################################################################################"
+  echo "Cleaning up a simulator for the ${NAME} deployment..."
+  echo "###########################################################################################################################"
+  echo ""
+  echo "Executing the following curl command:"
+  echo "curl --location --post302 -sSL -w \"\n%{http_code}\" --request POST "${SIMULATOR_URL}/cleanup" --header 'Content-Type: application/json' --data '""'"
+  echo ""
+  cmd=$(curl --location --post302 -sSL -w "\n%{http_code}" --request POST "${SIMULATOR_URL}/cleanup" --header 'Content-Type: application/json' --data '""')
+  CURL_RESPONSE_CODE=$?
+  echo "Status:${cmd}"
+  do_verify_sim_output "${cmd}"
+  echo ""
+  echo "###########################################################################################################################"
+}
+
+# check to see if the bridged-data-source-simulator is returning a valid HTTP status
+querySimulator() {
+  result=$(curl --location --post302 -s -w '%{http_code}' --request POST "${SIMULATOR_URL}/status" --header 'Content-Type: application/json' --data '" "')
+  response=$(echo "$result" | sed 's/^"\(.*\)".*$/\1/')
+  code=$(echo "$result" | sed 's/^".*"\(.*\)$/\1/')
+}
+
+# Initialize state for various cases
+install="false"
+initialize="false"
+status="false"
+start="false"
+stop="false"
+cleanup="false"
+
+# If environment variable is defined, check value and set the no Istio port and flag
+if [[ "${DISABLE_ISTIO}" == "true" || "${DISABLE_ISTIO}" == "TRUE" ]]; then
+  ISTIO_FLAG="--no-istio"
+  echo "Disable ISTIO flag set.  To undo, execute 'unset DISABLE_ISTIO' or remove setting from .bash_profile"
+else
+  ISTIO_FLAG=""
+fi
+
+
+
+# Create a default start time - 8 hours in the past from the last even hour
+if hash python 2>/dev/null; then
+  DEF_START_TIME=$(python -c "from datetime import datetime, timedelta; print((datetime.utcnow() - timedelta(hours=8)).strftime('%Y-%m-%dT%H:00:00Z'))")
+elif hash python3 2>/dev/null; then
+  DEF_START_TIME=$(python3 -c "from datetime import datetime, timedelta; print((datetime.utcnow() - timedelta(hours=8)).strftime('%Y-%m-%dT%H:00:00Z'))")
+else
+  echo "WARNING: python not found on system.  Unable to set DEF_START_TIME"
+fi
+
+# Create case for deployment
+case $1 in
+"")
+  echo "Usage: $0 [--tag] [--tag-auto] [--init] [--status] [--start] [--stop] [--cleanup]"
+  exit 1
+  ;;
+--sim-auto)
+  # Grab out user arguments and set them appropriately
+  NAME="$2"
+  # Set the node env setting, defaulting to production
+  NODE_ENV=${3:-production}
+  STime=${3:-"$DEF_START_TIME"}
+  # Set install to true to do the deployment install below
+  init_start="true"
+  # Ensure the user is providing the proper number of arguments
+  if [[ $# -lt 2 ]]; then
+    echo "###########################################################################################################################"
+    echo "ERROR: At least 2 arguments required when using --sim-auto"
+    echo "See help below for more information"
+    print_help
+    echo "###########################################################################################################################"
+    exit 1
+  fi
+  ;;
+--tag-auto)
+  # Grab out user arguments and set them appropriately
+  TAG="$2"
+  NAME="$3"
+  # Set the node env setting, defaulting to production
+  NODE_ENV=${4:-production}
+  STime=${5:-"$DEF_START_TIME"}
+  # Set install to true to do the deployment install below
+  install_init_start="true"
+  # Ensure the user is providing the proper number of arguments
+  if [[ $# -lt 3 ]]; then
+    echo "###########################################################################################################################"
+    echo "ERROR: At least 3 arguments required when using --tag-auto"
+    echo "See help below for more information"
+    print_help
+    echo "###########################################################################################################################"
+    exit 1
+  fi
+  ;;
+--tag)
+  # Grab out user arguments and set them appropriately
+  TAG="$2"
+  NAME="$3"
+  # Set the node env setting, defaulting to production
+  NODE_ENV=${4:-production}
+  # Set install to true to do the deployment install below
+  install="true"
+  # Ensure the user is providing the proper number of arguments
+  if [[ $# -lt 3 ]]; then
+    echo "###########################################################################################################################"
+    echo "ERROR: At least 3 arguments required when using --tag"
+    echo "See help below for more information"
+    print_help
+    echo "###########################################################################################################################"
+    exit 1
+  fi
+  ;;
+--init)
+  # Grab out user arguments and set them appropriately
+  NAME="$2"
+  STime=${3:-"$DEF_START_TIME"}
+  DELAY=${4:-"0"}
+  # Set initialize to true to initialize the simulator below
+  initialize="true"
+  # Ensure the user is providing the proper number of arguments
+  if [[ $# -lt 2 ]]; then
+    echo "###########################################################################################################################"
+    echo "ERROR: At least 2 arguments required when using --init"
+    echo "See help below for more information"
+    print_help
+    echo "###########################################################################################################################"
+    exit 1
+  fi
+  ;;
+--status)
+  # Grab out user arguments and set them appropriately
+  NAME="$2"
+  # Set status to true to get the status of the simulator below
+  status="true"
+  # Ensure the user is providing the proper number of arguments
+  if [[ $# -lt 2 ]]; then
+    echo "###########################################################################################################################"
+    echo "ERROR: At least 2 arguments required when using --status"
+    echo "See help below for more information"
+    print_help
+    echo "###########################################################################################################################"
+    exit 1
+  fi
+  ;;
+--start)
+  # Grab out user arguments and set them appropriately
+  NAME="$2"
+  # Set start to true to start the simulator below
+  start="true"
+  # Ensure the user is providing the proper number of arguments
+  if [[ $# -lt 2 ]]; then
+    echo "###########################################################################################################################"
+    echo "ERROR: At least 2 arguments required when using --start"
+    echo "See help below for more information"
+    print_help
+    echo "###########################################################################################################################"
+    exit 1
+  fi
+  ;;
+--stop)
+  # Grab out user arguments and set them appropriately
+  NAME="$2"
+  # Set stop to true to stop the simulator below
+  stop="true"
+  # Ensure the user is providing the proper number of arguments
+  if [[ $# -lt 2 ]]; then
+    echo "###########################################################################################################################"
+    echo "ERROR: At least 2 arguments required when using --stop"
+    echo "See help below for more information"
+    print_help
+    echo "###########################################################################################################################"
+    exit 1
+  fi
+  ;;
+--cleanup)
+  # Grab out user arguments and set them appropriately
+  NAME="$2"
+  # Set start to true to cleanup the simulator below
+  cleanup="true"
+  # Ensure the user is providing the proper number of arguments
+  if [[ $# -lt 2 ]]; then
+    echo "###########################################################################################################################"
+    echo "ERROR: At least 2 arguments required when using --cleanup"
+    echo "See help below for more information"
+    print_help
+    echo "###########################################################################################################################"
+    exit 1
+  fi
+  ;;
+--sim-shutdown)
+  # Grab out user arguments and set them appropriately
+  NAME="$2"
+  # Set start to true to cleanup the simulator below
+  sim_shutdown="true"
+  # Ensure the user is providing the proper number of arguments
+  if [[ $# -lt 2 ]]; then
+    echo "###########################################################################################################################"
+    echo "ERROR: At least 2 arguments required when using --sim-shutdown"
+    echo "See help below for more information"
+    print_help
+    echo "###########################################################################################################################"
+    exit 1
+  fi
+  ;;
+-h | --help)
+  print_help
+  exit 0
+  ;;
+*)
+  echo "ERROR: invalid option found: $1"
+  print_help
+  exit 1
+  ;;
+esac
+
+do_verify_properties
+
+
+# Pick which set of statements to execute based on the case statements above
+
+if [ "$install" == "true" ]; then
+  do_install
+  exit $RET_VAL
+elif [ "$init_start" == "true" ]; then
+  sim_ingress_check
+  do_auto_sim
+  exit $RET_VAL
+elif [ "$install_init_start" == "true" ]; then
+  do_install
+  do_auto_sim
+  exit $RET_VAL
+fi
+
+sim_ingress_check
+if [ "$initialize" == "true" ]; then
+  do_initialize
+  exit $RET_VAL
+elif [ "$status" == "true" ]; then
+  do_status
+  exit $RET_VAL
+elif [ "$start" == "true" ]; then
+  do_start
+  exit $RET_VAL
+elif [ "$stop" == "true" ]; then
+  do_stop
+  exit $RET_VAL
+elif [ "$cleanup" == "true" ]; then
+  do_cleanup
+  exit $RET_VAL
+elif [ "$sim_shutdown" == "true" ]; then
+  do_sim_shutdown
+  exit $RET_VAL
+fi

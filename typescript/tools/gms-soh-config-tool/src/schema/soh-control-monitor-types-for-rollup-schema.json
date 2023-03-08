@@ -1,0 +1,71 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "constraintType": {
+            "type": "string",
+            "enum": [
+              "BOOLEAN",
+              "DEFAULT",
+              "NUMERIC_RANGE",
+              "NUMERIC_SCALAR",
+              "PHASE",
+              "STRING",
+              "TIME_OF_DAY_RANGE",
+              "TIME_OF_YEAR_RANGE",
+              "WILDCARD"
+            ]
+          }
+        }
+      }
+    },
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "sohMonitorTypesForRollup": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "constraintType": {
+                "type": "string",
+                "enum": [
+                  "TIMELINESS",
+                  "ENV_AUTHENTICATION_SEAL_BROKEN",
+                  "ENV_BACKUP_POWER_UNSTABLE",
+                  "ENV_CALIBRATION_UNDERWAY",
+                  "ENV_CLIPPED",
+                  "ENV_CLOCK_DIFFERENTIAL_TOO_LARGE",
+                  "ENV_DEAD_SENSOR_CHANNEL",
+                  "ENV_DIGITIZER_ANALOG_INPUT_SHORTED",
+                  "ENV_DIGITIZER_CALIBRATION_LOOP_BACK",
+                  "ENV_DIGITIZING_EQUIPMENT_OPEN",
+                  "ENV_EQUIPMENT_HOUSING_OPEN",
+                  "ENV_EQUIPMENT_MOVED",
+                  "ENV_GPS_RECEIVER_OFF",
+                  "ENV_GPS_RECEIVER_UNLOCKED",
+                  "ENV_MAIN_POWER_FAILURE",
+                  "ENV_VAULT_DOOR_OPENED",
+                  "ENV_ZEROED_DATA"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "name",
+    "constraints",
+    "parameters"
+  ]
+}
